@@ -1,0 +1,111 @@
+name: Update competition data
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      cyi:
+        description: Competition Year ID (overrides auto-detection)
+        required: false
+      force:
+        description: Force re-download even if cached
+        required: false
+        default: "false"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Check if run is needed
+        id: check
+        run: |
+          python - <<'EOF'
+          import sys, json
+          from pathlib import Path
+          from schedule.runner import should_run
+          if should_run(Path("data")):
+              print("run=true")
+          else:
+              print("run=false")
+              sys.exit(0)
+          EOF
+          # capture output
+          OUTPUT=$(python - <<'PYEOF'
+          from pathlib import Path
+          from schedule.runner import should_run
+          print("true" if should_run(Path("data")) else "false")
+          PYEOF
+          )
+          echo "run=$OUTPUT" >> $GITHUB_OUTPUT
+
+      - name: Detect active competition
+        id: detect
+        if: steps.check.outputs.run == 'true'
+        run: |
+          CYI="${{ github.event.inputs.cyi }}"
+          if [ -z "$CYI" ]; then
+            CYI=$(python - <<'EOF'
+          from pathlib import Path
+          from schedule.active import is_comp_active
+          from schedule.calendar import refresh_calendar
+          from scrape.client import NDCAClient
+          import json, sys
+          cal = refresh_calendar(Path("data"), NDCAClient())
+          active, cyi = is_comp_active(cal)
+          if cyi:
+              print(cyi)
+          else:
+              comps = cal.get("competitions", [])
+              if comps:
+                  print(comps[-1]["cyi"])
+              else:
+                  sys.exit(1)
+          EOF
+            )
+          fi
+          echo "cyi=$CYI" >> $GITHUB_OUTPUT
+
+      - name: Scrape
+        if: steps.check.outputs.run == 'true'
+        run: |
+          FORCE=""
+          [ "${{ github.event.inputs.force }}" = "true" ] && FORCE="--force"
+          uv run python dancetime_cli.py scrape --cyi ${{ steps.detect.outputs.cyi }} $FORCE
+
+      - name: Generate heats
+        if: steps.check.outputs.run == 'true'
+        run: uv run python dancetime_cli.py heats --cyi ${{ steps.detect.outputs.cyi }}
+
+      - name: Generate ranking
+        if: steps.check.outputs.run == 'true'
+        run: uv run python dancetime_cli.py ranking --cyi ${{ steps.detect.outputs.cyi }}
+
+      - name: Publish
+        if: steps.check.outputs.run == 'true'
+        run: uv run python dancetime_cli.py publish
+
+      - name: Commit and push if changed
+        if: steps.check.outputs.run == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ index.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update comp data [skip ci]"
+            git push
+          fi

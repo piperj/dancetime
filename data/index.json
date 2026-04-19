@@ -1,0 +1,13 @@
+{
+  "updated_at": "2026-04-19T22:58:00.586732+00:00",
+  "competitions": [
+    {
+      "cyi": 373,
+      "name": "City Lights Open",
+      "date_range": "Jan 22 to 25, 2026",
+      "location": "",
+      "heats_file": "data/heats_373.json",
+      "ranking_file": "data/ranking_373.json"
+    }
+  ]
+}

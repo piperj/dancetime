@@ -1,0 +1,41 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v4
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Validate committed JSON files
+        run: |
+          python - <<'EOF'
+          import json, sys
+          from pathlib import Path
+          errors = []
+          for f in Path("data").glob("*.json"):
+              try:
+                  json.loads(f.read_text())
+              except json.JSONDecodeError as e:
+                  errors.append(f"{f}: {e}")
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          print(f"Validated {len(list(Path('data').glob('*.json')))} JSON files")
+          EOF
+
+      - name: Run tests
+        run: uv run pytest tests/ -v --cov --cov-report=term-missing

@@ -1,0 +1,85 @@
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+from heats.parser import HeatInstance
+
+
+def build_heats_json(
+    cyi: int,
+    competition_info: dict,
+    heat_instances: list[HeatInstance],
+    top_matchups: dict,
+) -> dict:
+    sessions = {}
+    competitors = set()
+    studios = set()
+    competitor_studios: dict[str, str] = {}
+    competitor_heats: dict[str, list[str]] = {}
+
+    for instance in heat_instances:
+        sessions[instance.session] = instance.session_name
+        for entry in instance.entries:
+            competitors.add(entry.competitor1)
+            if entry.studio:
+                studios.add(entry.studio)
+                competitor_studios[entry.competitor1] = entry.studio
+            competitor_heats.setdefault(entry.competitor1, []).append(instance.key)
+
+    heats_list = [
+        {
+            "key": h.key,
+            "heat_number": h.heat_number,
+            "session": h.session,
+            "session_name": h.session_name,
+            "time": h.time,
+            "round": h.round_name,
+            "entries": [
+                {
+                    "couple": e.couple,
+                    "competitor1": e.competitor1,
+                    "competitor2": e.competitor2,
+                    "bib": e.bib,
+                    "studio": e.studio,
+                    "event": e.event,
+                    "result": e.result,
+                }
+                for e in h.entries
+            ],
+        }
+        for h in heat_instances
+    ]
+
+    name = competition_info.get("Competition_Name") or competition_info.get("Name", "")
+    date_range = competition_info.get("Date_Range", "")
+    if not date_range:
+        start = competition_info.get("Start_Date") or competition_info.get("StartDate", "")
+        end = competition_info.get("End_Date") or competition_info.get("EndDate", "")
+        date_range = f"{start} – {end}" if start and end else start or end
+    location = competition_info.get("Location", "")
+
+    return {
+        "meta": {
+            "cyi": cyi,
+            "name": name,
+            "date_range": date_range,
+            "location": location,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        },
+        "sessions": sessions,
+        "heats": heats_list,
+        "competitors": sorted(competitors),
+        "studios": sorted(studios),
+        "competitor_studios": competitor_studios,
+        "competitor_heats": competitor_heats,
+        "top_matchups": top_matchups,
+    }
+
+
+def write_heats_json(data: dict, out_dir: Path) -> Path:
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    cyi = data["meta"]["cyi"]
+    path = out_dir / f"heats_{cyi}.json"
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+    return path
