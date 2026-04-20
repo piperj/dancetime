@@ -233,6 +233,15 @@
       .then(([h, r]) => {
         heatsData = h;
         rankingData = r;
+        Object.values(rankingData.leaderboards || {}).forEach(lb => {
+          const seen = new Set();
+          lb.couples = lb.couples.filter(c => {
+            const key = [c.competitor, c.partner || ''].sort().join('|');
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+          });
+        });
 
         heatsByKey = Object.fromEntries(h.heats.map(heat => [heat.key, heat]));
         Object.entries(h.competitor_studios || {}).forEach(([name, studio]) => {
@@ -382,7 +391,7 @@
           e.competitor2 !== selectedCompetitor
         );
         const contestedBadge = isContested
-          ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 ml-2">Contested</span>'
+          ? `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 ml-2">${contestedLabel(myEntry?.result)}</span>`
           : '';
         const n = heat.entries.length;
         const couplesBadge = n === 1
@@ -395,7 +404,8 @@
           entries.sort((a, b) => (parseInt(a.result) || 999) - (parseInt(b.result) || 999));
           const rows = entries.map(e => {
             const r = parseInt(e.result);
-            const rank = r === 1 ? '🥇 ' : r === 2 ? '🥈 ' : r === 3 ? '🥉 ' : r >= 4 ? `${r}. ` : '';
+            const medal = rankPrefix(r);
+            const rank = medal ? medal + ' ' : r >= 4 ? `${r}. ` : '';
             return `<div>${rank}${esc(e.bib)} ${esc(e.couple)}</div>`;
           }).join('');
           const contested = entries.length > 1 ? ' <span class="text-yellow-600">(Contested)</span>' : '';
@@ -404,7 +414,7 @@
 
         html += `<div class="heat-box" onclick="toggleHeatDetails('h-${heat.key}')">
           <div class="text-base text-gray-900">
-            <strong>Heat ${esc(heat.heat_number)}</strong> · ${esc(formatTime(heat.time))} ${contestedBadge} ${couplesBadge}
+            <strong>${esc(heat.heat_number)}</strong> · ${esc(formatTime(heat.time))} ${contestedBadge} ${couplesBadge}
           </div>
           <div class="text-sm text-gray-700 mt-1">${esc(myEvent)}</div>
           <div id="h-${heat.key}" class="heat-details${expandedHeats.has(heat.key) ? ' expanded' : ''}">
@@ -459,7 +469,7 @@
       heat.entries.forEach(e => {
         if (e.event !== myEntry.event) return;
         if (e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor) return;
-        opps[e.couple] ??= { couple: e.couple, count: 0, my_wins: 0, their_wins: 0, ties: 0 };
+        opps[e.couple] ??= { couple: e.couple, my_couple: myEntry.couple ?? selectedCompetitor, count: 0, my_wins: 0, their_wins: 0, ties: 0 };
         opps[e.couple].count++;
         const r = parseInt(e.result);
         if (!isNaN(myResult) && !isNaN(r)) {
@@ -484,7 +494,7 @@
           <span class="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full text-xs font-medium">${s.count} heats</span>
         </div>
         <div class="space-y-2">
-          <div class="bg-white border border-indigo-200 rounded p-2 text-sm">${esc(selectedCompetitor)}</div>
+          <div class="bg-white border border-indigo-200 rounded p-2 text-sm">${esc(s.my_couple)}</div>
           <div class="text-center text-xs font-semibold ${cls}">${record}</div>
           <div class="bg-white border border-gray-200 rounded p-2 text-sm">${esc(s.couple)}</div>
         </div>
@@ -605,6 +615,23 @@
 
   function esc(s) {
     return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  const ORDINAL_SFX = ['th','st','nd','rd','th'];
+  function ordinal(n) {
+    const v = n % 100;
+    return n + (v >= 11 && v <= 13 ? 'th' : ORDINAL_SFX[Math.min(n % 10, 4)]);
+  }
+
+  function rankPrefix(r) {
+    return r === 1 ? '🥇' : r === 2 ? '🥈' : r === 3 ? '🥉' : null;
+  }
+
+  function contestedLabel(result) {
+    const r = parseInt(result);
+    if (isNaN(r)) return 'Contested';
+    const medal = rankPrefix(r);
+    return medal ? `${medal} Contested` : `${ordinal(r)} Contested`;
   }
 
   // Auto-refresh during live competition
