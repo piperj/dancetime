@@ -19,12 +19,6 @@ class EloCalculator:
     def get_rating(self, competitor: str) -> float:
         return self._ratings.get(competitor, 1500.0)
 
-    def _couple_rating(self, competitor: str) -> float:
-        partner = None
-        r_comp = self.get_rating(competitor)
-        # Partner weighting requires knowing who the partner is — callers pass it in
-        return r_comp
-
     def _couple_rating_with_partner(self, competitor: str, partner: str | None) -> float:
         r_comp = self.get_rating(competitor)
         if partner:

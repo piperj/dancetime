@@ -3,6 +3,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+from common import comp_meta
 from ranking.models import DanceResult
 
 
@@ -56,12 +57,7 @@ def build_ranking_json(
             couple["rank"] = rank
         result_leaderboards[label] = {"label": label, "size": len(couples), "couples": couples}
 
-    name = competition_info.get("Competition_Name") or competition_info.get("Name", "")
-    date_range = competition_info.get("Date_Range", "")
-    if not date_range:
-        start = competition_info.get("Start_Date") or competition_info.get("StartDate", "")
-        end = competition_info.get("End_Date") or competition_info.get("EndDate", "")
-        date_range = f"{start} – {end}" if start and end else start or end
+    name, date_range, location = comp_meta(competition_info)
 
     all_competitors = sorted(final_ratings.keys())
     studios = sorted({s for s in competitor_studios.values() if s})
@@ -71,7 +67,7 @@ def build_ranking_json(
             "cyi": cyi,
             "name": name,
             "date_range": date_range,
-            "location": competition_info.get("Location", ""),
+            "location": location,
             "generated_at": datetime.now(timezone.utc).isoformat(),
             "elo_params": elo_params,
         },

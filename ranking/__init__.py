@@ -41,6 +41,7 @@ def run(args):
             competitor_studios[name] = studio
 
     elo_deltas = compute_deltas(final_ratings, prior_ratings)
+    save_ratings(final_ratings, prior_ratings, args.cyi, out_dir)
 
     data = build_ranking_json(
         cyi=args.cyi,

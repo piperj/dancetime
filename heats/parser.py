@@ -39,7 +39,6 @@ def parse_heatlists(
         studio = meta.get("studio", "")
 
         for entry in competitor_data.get("Entries", []):
-            # Each entry is one partner pairing
             partner_parts = []
             for p in entry.get("Participants", []):
                 name_parts = p.get("Name", [])

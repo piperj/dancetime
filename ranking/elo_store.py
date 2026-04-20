@@ -17,7 +17,6 @@ def save_ratings(
     cyi: int,
     out_dir: Path,
 ) -> None:
-    out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / "elo_ratings.json"
 

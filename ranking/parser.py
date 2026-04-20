@@ -63,22 +63,7 @@ def _parse_individual_dances(
                 if marks:
                     placement = num_judges - sum(marks) + 1
 
-            if len(participants) == 1:
-                name = _join_name(participants[0].get("Name", []))
-                competitors.append(name)
-                if placement is not None:
-                    placements[name] = int(placement)
-            elif len(participants) == 2:
-                n1 = _join_name(participants[0].get("Name", []))
-                n2 = _join_name(participants[1].get("Name", []))
-                for n in (n1, n2):
-                    if n not in competitors:
-                        competitors.append(n)
-                partners[n1] = n2
-                partners[n2] = n1
-                if placement is not None:
-                    placements[n1] = int(placement)
-                    placements[n2] = int(placement)
+            _process_participants(participants, placement, competitors, partners, placements)
 
         if competitors:
             results.append(DanceResult(
@@ -107,22 +92,7 @@ def _parse_summary_fallback(
             continue
         placement = _extract_placement(comp)
 
-        if len(participants) == 1:
-            name = _join_name(participants[0].get("Name", []))
-            competitors.append(name)
-            if placement is not None:
-                placements[name] = placement
-        elif len(participants) == 2:
-            n1 = _join_name(participants[0].get("Name", []))
-            n2 = _join_name(participants[1].get("Name", []))
-            for n in (n1, n2):
-                if n not in competitors:
-                    competitors.append(n)
-            partners[n1] = n2
-            partners[n2] = n1
-            if placement is not None:
-                placements[n1] = placement
-                placements[n2] = placement
+        _process_participants(participants, placement, competitors, partners, placements)
 
     if not competitors:
         return None
@@ -133,6 +103,31 @@ def _parse_summary_fallback(
         session_id=session_id, heat_number=0, time="",
         competitors=competitors, partners=partners, placements=placements,
     )
+
+
+def _process_participants(
+    participants: list,
+    placement,
+    competitors: list,
+    partners: dict,
+    placements: dict,
+) -> None:
+    if len(participants) == 1:
+        name = _join_name(participants[0].get("Name", []))
+        competitors.append(name)
+        if placement is not None:
+            placements[name] = int(placement)
+    elif len(participants) == 2:
+        n1 = _join_name(participants[0].get("Name", []))
+        n2 = _join_name(participants[1].get("Name", []))
+        for n in (n1, n2):
+            if n not in competitors:
+                competitors.append(n)
+        partners[n1] = n2
+        partners[n2] = n1
+        if placement is not None:
+            placements[n1] = int(placement)
+            placements[n2] = int(placement)
 
 
 def _deduplicate(results: list[DanceResult]) -> list[DanceResult]:

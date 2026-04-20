@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from common import comp_meta
 from heats.parser import HeatInstance
 
 
@@ -50,13 +51,7 @@ def build_heats_json(
         for h in heat_instances
     ]
 
-    name = competition_info.get("Competition_Name") or competition_info.get("Name", "")
-    date_range = competition_info.get("Date_Range", "")
-    if not date_range:
-        start = competition_info.get("Start_Date") or competition_info.get("StartDate", "")
-        end = competition_info.get("End_Date") or competition_info.get("EndDate", "")
-        date_range = f"{start} – {end}" if start and end else start or end
-    location = competition_info.get("Location", "")
+    name, date_range, location = comp_meta(competition_info)
 
     return {
         "meta": {
