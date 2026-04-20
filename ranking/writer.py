@@ -7,6 +7,19 @@ from common import comp_meta
 from ranking.models import DanceResult
 
 
+def dedup_couples(couples: list[dict]) -> list[dict]:
+    """Return couples with mirrored pairs (A&B / B&A) collapsed to the first occurrence."""
+    seen: set[tuple] = set()
+    out = []
+    for c in couples:
+        a, b = c["competitor"], c.get("partner") or ""
+        key = (a, b) if a < b else (b, a)
+        if key not in seen:
+            seen.add(key)
+            out.append(c)
+    return out
+
+
 def build_ranking_json(
     cyi: int,
     competition_info: dict,
@@ -53,6 +66,7 @@ def build_ranking_json(
     result_leaderboards = {}
     for label, couples in leaderboards.items():
         couples.sort(key=lambda x: x["elo"], reverse=True)
+        couples = dedup_couples(couples)
         for rank, couple in enumerate(couples, start=1):
             couple["rank"] = rank
         result_leaderboards[label] = {"label": label, "size": len(couples), "couples": couples}
