@@ -335,14 +335,14 @@
       const first = sessionHeats[0];
       const last  = sessionHeats[sessionHeats.length - 1];
       const dayName = formatDate(first.time).split(' ')[0];
-      const sessionType = getSessionType(first.time);
+      const sessionType = first.session_name || getSessionType(first.time);
 
       const partners = new Set();
       sessionHeats.forEach(h => { const p = getPartner(selectedCompetitor, h); if (p) partners.add(p); });
       const partnerText = partners.size ? Array.from(partners).join(', ') : 'Solo';
 
       html += `<div class="blue-box">
-        <div class="text-sm">${esc(dayName)} ${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
+        <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
         <div class="font-semibold">${esc(partnerText)}</div>
       </div>`;
 
