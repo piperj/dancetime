@@ -4,234 +4,523 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dancetime</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; background: #f8f8f8; color: #222; }
-    header { background: #1a1a2e; color: #fff; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    header h1 { font-size: 1.4rem; flex: 1; }
-    select { padding: .4rem .6rem; border-radius: 4px; border: none; font-size: .95rem; background: #fff; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #222; padding-bottom: 2rem; }
+
     nav { display: flex; gap: 0; border-bottom: 2px solid #ddd; background: #fff; }
     nav button { padding: .6rem 1.4rem; border: none; background: none; cursor: pointer; font-size: 1rem; color: #555; border-bottom: 3px solid transparent; margin-bottom: -2px; }
-    nav button.active { color: #1a1a2e; border-bottom-color: #1a1a2e; font-weight: 600; }
+    nav button.active { color: #6366f1; border-bottom-color: #6366f1; font-weight: 600; }
+
+    .sticky-header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
+    .blue-box { background: #6366f1; color: white; padding: 0.75rem 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-bottom: 0.5rem; }
+    .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; }
+    .heat-box:active { transform: scale(0.98); }
+    .heat-details { display: none; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e5e7eb; }
+    .heat-details.expanded { display: block; }
+    .next-marker  { color: #065f46; margin: 0.375rem 0; text-align: center; font-style: italic; }
+    .done-marker  { color: #065f46; margin: 0.375rem 0; text-align: center; font-style: italic; }
+    .break-marker { color: #6b7280; margin: 0.375rem 0; text-align: center; font-style: italic; }
+    .partner-change-marker { color: #1e40af; margin: 0.375rem 0; text-align: center; font-style: italic; }
+
     .search-bar { padding: .75rem 1.5rem; background: #fff; border-bottom: 1px solid #eee; display: flex; gap: .5rem; flex-wrap: wrap; }
     .search-bar input { flex: 1; min-width: 180px; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
-    .search-bar select { min-width: 140px; border: 1px solid #ccc; background: #fff; color: #333; }
-    main { padding: 1rem 1.5rem; }
-    .heat-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: .6rem; overflow: hidden; }
-    .heat-header { display: flex; align-items: center; gap: .75rem; padding: .6rem 1rem; cursor: pointer; user-select: none; }
-    .heat-header:hover { background: #f5f5f5; }
-    .heat-num { font-weight: 700; font-size: 1rem; min-width: 2.5rem; }
-    .heat-info { flex: 1; font-size: .9rem; color: #555; }
-    .heat-session { font-size: .8rem; background: #e8e8f0; padding: .15rem .5rem; border-radius: 10px; color: #444; }
-    .heat-entries { display: none; border-top: 1px solid #eee; }
-    .heat-entries.open { display: block; }
-    .entry-row { display: flex; align-items: center; gap: .75rem; padding: .5rem 1rem; border-bottom: 1px solid #f0f0f0; font-size: .9rem; }
-    .entry-row:last-child { border-bottom: none; }
-    .entry-place { min-width: 1.8rem; font-weight: 700; color: #888; }
-    .entry-place.p1 { color: #c9a227; }
-    .entry-place.p2 { color: #888; }
-    .entry-place.p3 { color: #a0522d; }
-    .entry-couple { flex: 1; }
-    .entry-bib { font-size: .8rem; color: #aaa; }
-    .entry-studio { font-size: .8rem; color: #888; font-style: italic; }
+
     .lb-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; border: 1px solid #e0e0e0; }
-    .lb-table th { text-align: left; padding: .6rem 1rem; background: #1a1a2e; color: #fff; font-size: .85rem; }
+    .lb-table th { text-align: left; padding: .6rem 1rem; background: #6366f1; color: #fff; font-size: .85rem; }
     .lb-table td { padding: .55rem 1rem; border-bottom: 1px solid #eee; font-size: .9rem; }
     .lb-table tr:last-child td { border-bottom: none; }
     .lb-table tr:hover td { background: #f8f8f8; }
     .lb-section { margin-bottom: 2rem; }
-    .lb-section h2 { font-size: 1.1rem; margin-bottom: .6rem; color: #1a1a2e; }
+    .lb-section h2 { font-size: 1.1rem; margin-bottom: .6rem; color: #6366f1; }
     .delta-pos { color: #2e7d32; }
     .delta-neg { color: #c62828; }
+
     .hidden { display: none; }
     #status { text-align: center; padding: 3rem; color: #888; font-size: 1.1rem; }
+
+    .tagify { width: 100% !important; max-width: 100% !important; min-height: 2.5rem !important; border-radius: 0.375rem; }
+    .tagify__input { min-width: 120px !important; }
+    .tagify__tag { background: #e5e7eb; margin: 2px !important; }
+
+    #comp-dropdown { position: absolute; left: 0; right: 0; z-index: 20; background: #fff; border-bottom: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>Dancetime</h1>
-  <select id="comp-select"><option value="">Loading competitions…</option></select>
-</header>
 
 <nav>
   <button class="active" data-tab="heats">Heats</button>
   <button data-tab="ranking">Ranking</button>
 </nav>
 
-<div class="search-bar" id="heats-controls">
-  <input type="search" id="search-competitor" placeholder="Search competitor…" />
-  <select id="filter-session"><option value="">All sessions</option></select>
+<!-- Competition header: thumbnail + name (clickable) + details -->
+<div id="comp-header" class="hidden bg-white border-b border-gray-200" style="position:relative">
+  <div class="px-4 py-3 flex items-center gap-4">
+    <div class="flex-shrink-0" style="width:25%">
+      <img id="comp-icon" src="" alt=""
+           class="h-auto object-contain max-h-20"
+           onerror="this.style.visibility='hidden'">
+    </div>
+    <div class="flex-1 min-w-0">
+      <h2 id="comp-name"
+          class="text-xl font-bold text-gray-900 leading-tight cursor-pointer hover:text-indigo-600 flex items-center gap-1"
+          onclick="toggleCompDropdown()">
+        <span id="comp-name-text"></span>
+        <span id="comp-chevron" class="text-base text-gray-400">▾</span>
+      </h2>
+      <p id="comp-details" class="text-sm text-gray-600 mt-1"></p>
+    </div>
+  </div>
+
+  <!-- Competition picker dropdown -->
+  <div id="comp-dropdown" class="hidden">
+    <div id="comp-dropdown-list" class="divide-y divide-gray-100"></div>
+  </div>
 </div>
 
-<main>
-  <div id="status">Select a competition to begin.</div>
-  <div id="heats-view" class="hidden"></div>
+<!-- Sticky participant header + Tagify search (heats tab) -->
+<div id="heats-controls" class="sticky-header hidden">
+  <div class="px-4 py-3 flex items-center justify-between">
+    <div class="flex-1 min-w-0">
+      <h1 id="participantName"
+          class="text-lg font-bold text-gray-900 truncate cursor-pointer hover:text-indigo-600 transition-colors"
+          onclick="toggleContestedStats()">Select Participant</h1>
+      <p id="heatCount" class="text-xs text-gray-500">Heat Schedule • 0 heats</p>
+    </div>
+    <button onclick="findMe()"
+            class="ml-3 bg-blue-100 text-blue-900 px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap">
+      Find me
+    </button>
+  </div>
+  <div class="px-4 pb-3 border-t border-gray-200 pt-3">
+    <input type="text" id="competitorSearch" placeholder="Search competitors…">
+  </div>
+</div>
+
+<!-- Contested stats box -->
+<div id="contestedStatsBox" class="hidden px-4 py-4">
+  <div class="cursor-pointer" onclick="toggleContestedStats()">
+    <div class="text-base font-semibold text-blue-900 bg-blue-100 px-3 py-2 rounded mb-3">
+      Top contestants
+    </div>
+    <div id="contestedStatsDetails" class="heat-details">
+      <div id="contestedStatsList" class="text-xs text-gray-600 space-y-3"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Schedule content (heats tab) -->
+<div id="scheduleContent" class="hidden px-4 py-4">
+  <p class="text-gray-500 text-center">Select a competitor to view their schedule</p>
+</div>
+
+<!-- Ranking search bar -->
+<div id="ranking-controls" class="search-bar hidden">
+  <input type="search" id="search-ranking" placeholder="Search competitor or studio…" />
+</div>
+
+<main style="padding: 1rem 1.5rem">
+  <div id="status">Loading…</div>
   <div id="ranking-view" class="hidden"></div>
 </main>
 
 <script>
-  const compSelect = document.getElementById('comp-select');
-  const searchInput = document.getElementById('search-competitor');
-  const sessionFilter = document.getElementById('filter-session');
-  const heatsView = document.getElementById('heats-view');
-  const rankingView = document.getElementById('ranking-view');
-  const status = document.getElementById('status');
-  const heatsControls = document.getElementById('heats-controls');
+  const compHeader     = document.getElementById('comp-header');
+  const heatsControls  = document.getElementById('heats-controls');
+  const rankingControls = document.getElementById('ranking-controls');
+  const scheduleContent = document.getElementById('scheduleContent');
+  const rankingView    = document.getElementById('ranking-view');
+  const status         = document.getElementById('status');
 
   let activeTab = 'heats';
   let heatsData = null;
   let rankingData = null;
+  let heatsByKey = {};
+  let studioCompetitors = {};
+  let selectedCompetitor = null;
+  let tagify = null;
+  let expandedHeats = new Set();
+  let compList = [];
+  let activeCompIdx = 0;
 
-  // Tab switching
+  // ── Tab switching ──────────────────────────────────────────────────────────
   document.querySelectorAll('nav button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeTab = btn.dataset.tab;
-      heatsControls.style.display = activeTab === 'heats' ? 'flex' : 'none';
+      updateTabVisibility();
       renderActive();
     });
   });
 
-  // Load index
+  function updateTabVisibility() {
+    const isHeats = activeTab === 'heats';
+    compHeader.classList.toggle('hidden', !heatsData && !rankingData);
+    heatsControls.classList.toggle('hidden', !isHeats || !heatsData);
+    document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
+    scheduleContent.classList.toggle('hidden', !isHeats || !heatsData);
+    rankingControls.classList.toggle('hidden', isHeats || !rankingData);
+    rankingView.classList.toggle('hidden', isHeats);
+    status.classList.toggle('hidden', (isHeats && !!heatsData) || (!isHeats && !!rankingData));
+  }
+
+  // ── Competition dropdown ───────────────────────────────────────────────────
+  function toggleCompDropdown() {
+    const dd = document.getElementById('comp-dropdown');
+    const chevron = document.getElementById('comp-chevron');
+    const isOpen = !dd.classList.contains('hidden');
+    dd.classList.toggle('hidden', isOpen);
+    chevron.textContent = isOpen ? '▾' : '▴';
+  }
+
+  function closeCompDropdown() {
+    document.getElementById('comp-dropdown').classList.add('hidden');
+    document.getElementById('comp-chevron').textContent = '▾';
+  }
+
+  function buildCompDropdown() {
+    const list = document.getElementById('comp-dropdown-list');
+    list.innerHTML = compList.map((comp, i) => `
+      <div class="px-4 py-3 cursor-pointer hover:bg-indigo-50 ${i === activeCompIdx ? 'bg-indigo-50 font-semibold text-indigo-700' : 'text-gray-800'}"
+           onclick="selectComp(${i})">
+        <div class="font-medium">${esc(comp.name)}</div>
+        <div class="text-xs text-gray-500">${esc(comp.date_range)}${comp.location ? ' · ' + esc(comp.location) : ''}</div>
+      </div>`).join('');
+  }
+
+  function selectComp(i) {
+    activeCompIdx = i;
+    closeCompDropdown();
+    loadComp(compList[i]);
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', e => {
+    const header = document.getElementById('comp-header');
+    if (header && !header.contains(e.target)) closeCompDropdown();
+  });
+
+  // ── Load index ─────────────────────────────────────────────────────────────
   fetch('data/index.json')
     .then(r => r.json())
     .then(index => {
-      compSelect.innerHTML = '';
-      if (!index.competitions.length) {
-        compSelect.innerHTML = '<option>No competitions available</option>';
-        return;
-      }
-      index.competitions.forEach((comp, i) => {
-        const opt = document.createElement('option');
-        opt.value = i;
-        opt.textContent = `${comp.name} — ${comp.date_range}`;
-        opt.dataset.heats = comp.heats_file;
-        opt.dataset.ranking = comp.ranking_file;
-        compSelect.appendChild(opt);
-      });
-      loadComp(index.competitions[0]);
+      compList = index.competitions;
+      if (!compList.length) { status.textContent = 'No competitions available.'; return; }
+      buildCompDropdown();
+      loadComp(compList[0]);
     })
     .catch(() => { status.textContent = 'Could not load competition index.'; });
-
-  compSelect.addEventListener('change', () => {
-    const opt = compSelect.selectedOptions[0];
-    if (!opt) return;
-    const idx = index_competitions[parseInt(opt.value)];
-    loadComp({ heats_file: opt.dataset.heats, ranking_file: opt.dataset.ranking });
-  });
 
   function loadComp(comp) {
     heatsData = null;
     rankingData = null;
-    heatsView.innerHTML = '';
+    heatsByKey = {};
+    studioCompetitors = {};
+    selectedCompetitor = null;
+    expandedHeats = new Set();
     rankingView.innerHTML = '';
+    scheduleContent.innerHTML = '<p class="text-gray-500 text-center">Select a competitor to view their schedule</p>';
     status.textContent = 'Loading…';
     status.classList.remove('hidden');
+    if (tagify) { tagify.destroy(); tagify = null; }
 
     Promise.all([fetch(comp.heats_file), fetch(comp.ranking_file)])
       .then(([hr, rr]) => Promise.all([hr.json(), rr.json()]))
       .then(([h, r]) => {
         heatsData = h;
         rankingData = r;
-        _populateSessionFilter(h);
+
+        heatsByKey = Object.fromEntries(h.heats.map(heat => [heat.key, heat]));
+        Object.entries(h.competitor_studios || {}).forEach(([name, studio]) => {
+          (studioCompetitors[studio] ??= []).push(name);
+        });
+
+        const meta = h.meta || {};
+        const icon = document.getElementById('comp-icon');
+        icon.style.visibility = '';
+        icon.src = `https://ndca.org/images/comp_logos/${meta.competition_id}.jpg`;
+        document.getElementById('comp-name-text').textContent = meta.name || '';
+        document.getElementById('comp-details').textContent =
+          [meta.date_range, meta.location].filter(Boolean).join(' · ');
+
+        buildCompDropdown();
+        initializeTagify();
         status.classList.add('hidden');
+        updateTabVisibility();
         renderActive();
       })
       .catch(e => { status.textContent = `Error loading data: ${e.message}`; });
   }
 
-  function _populateSessionFilter(h) {
-    sessionFilter.innerHTML = '<option value="">All sessions</option>';
-    Object.entries(h.sessions || {}).forEach(([id, name]) => {
-      const opt = document.createElement('option');
-      opt.value = id;
-      opt.textContent = name;
-      sessionFilter.appendChild(opt);
+  // ── Tagify ─────────────────────────────────────────────────────────────────
+  function initializeTagify() {
+    const input = document.getElementById('competitorSearch');
+    tagify = new Tagify(input, {
+      whitelist: [...(heatsData.competitors || []), ...(heatsData.studios || [])],
+      dropdown: { maxItems: 20, searchKeys: ['value'] },
+      enforceWhitelist: true,
+      maxTags: 1,
+    });
+    tagify.on('add', e => {
+      const val = e.detail.data.value;
+      selectedCompetitor = val;
+      document.getElementById('contestedStatsBox').classList.remove('hidden');
+      if (heatsData.studios?.includes(val)) generateStudioSchedule();
+      else generateSchedule();
+    });
+    tagify.on('remove', () => {
+      selectedCompetitor = null;
+      scheduleContent.innerHTML = '<p class="text-gray-500 text-center">Select a competitor to view their schedule</p>';
+      document.getElementById('participantName').textContent = 'Select Participant';
+      document.getElementById('heatCount').textContent = 'Heat Schedule • 0 heats';
+      document.getElementById('contestedStatsBox').classList.add('hidden');
     });
   }
 
-  searchInput.addEventListener('input', renderHeats);
-  sessionFilter.addEventListener('change', renderHeats);
+  // ── Studio view ────────────────────────────────────────────────────────────
+  function generateStudioSchedule() {
+    const studio = selectedCompetitor;
+    const members = (studioCompetitors[studio] || []).slice().sort();
+    document.getElementById('participantName').textContent = studio;
+    document.getElementById('heatCount').textContent = `${members.length} competitors`;
 
-  function renderActive() {
-    if (activeTab === 'heats') {
-      rankingView.classList.add('hidden');
-      heatsView.classList.remove('hidden');
-      renderHeats();
-    } else {
-      heatsView.classList.add('hidden');
-      rankingView.classList.remove('hidden');
-      renderRanking();
+    if (!members.length) {
+      scheduleContent.innerHTML = '<p class="text-gray-500 text-center">No competitors found for this studio</p>';
+      return;
     }
+
+    let html = '<div class="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">';
+    html += `<h3 class="font-semibold text-blue-900 mb-2">Studio Competitors (${members.length})</h3>`;
+    html += '<div class="grid grid-cols-1 gap-1 text-sm">';
+    members.forEach(name => {
+      const n = (heatsData.competitor_heats[name] || []).length;
+      html += `<div class="cursor-pointer hover:text-indigo-600 p-2 hover:bg-white rounded"
+                    onclick="selectCompetitorFromStudio(${JSON.stringify(name)})">
+                 ${esc(name)} <span class="text-gray-500">(${n} heats)</span>
+               </div>`;
+    });
+    html += '</div></div>';
+    scheduleContent.innerHTML = html;
   }
 
-  function renderHeats() {
-    if (!heatsData) return;
-    const query = searchInput.value.toLowerCase().trim();
-    const session = sessionFilter.value;
+  function selectCompetitorFromStudio(name) {
+    tagify.removeAllTags();
+    tagify.addTags(name);
+  }
 
-    const filtered = heatsData.heats.filter(h => {
-      if (session && h.session !== session) return false;
-      if (!query) return true;
-      return h.entries.some(e =>
-        e.couple.toLowerCase().includes(query) ||
-        e.studio.toLowerCase().includes(query)
-      );
+  // ── Competitor schedule ────────────────────────────────────────────────────
+  function generateSchedule() {
+    if (!selectedCompetitor || !heatsData) return;
+
+    document.getElementById('participantName').textContent = selectedCompetitor;
+
+    const myHeatKeys = heatsData.competitor_heats[selectedCompetitor] || [];
+    const myHeats = myHeatKeys.map(k => heatsByKey[k]).filter(Boolean);
+    myHeats.sort((a, b) => new Date(a.time) - new Date(b.time));
+
+    const studio = heatsData.competitor_studios[selectedCompetitor];
+    document.getElementById('heatCount').innerHTML = studio
+      ? `<span class="text-gray-500">${esc(studio)}</span> • ${myHeats.length} heats`
+      : `Heat Schedule • ${myHeats.length} heats`;
+
+    const nextIdx = findNextHeatPosition(myHeats);
+    const sessions = groupHeatsBySession(myHeats);
+
+    let html = '';
+    sessions.forEach((sessionHeats, si) => {
+      const first = sessionHeats[0];
+      const last  = sessionHeats[sessionHeats.length - 1];
+      const dayName = formatDate(first.time).split(' ')[0];
+      const sessionType = getSessionType(first.time);
+
+      const partners = new Set();
+      sessionHeats.forEach(h => { const p = getPartner(selectedCompetitor, h); if (p) partners.add(p); });
+      const partnerText = partners.size ? Array.from(partners).join(', ') : 'Solo';
+
+      html += `<div class="blue-box">
+        <div class="text-sm">${esc(dayName)} ${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
+        <div class="font-semibold">${esc(partnerText)}</div>
+      </div>`;
+
+      let lastTime = null, lastHeatNum = null, lastPartner = null;
+
+      sessionHeats.forEach(heat => {
+        const globalIdx = myHeats.indexOf(heat);
+        const myEntry = heat.entries.find(e => e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor);
+        const myEvent = myEntry?.event || '';
+        const currentPartner = getPartner(selectedCompetitor, heat);
+
+        // Break / partner-change markers
+        if (lastTime !== null) {
+          const numGap = parseInt(heat.heat_number) - parseInt(lastHeatNum);
+          const partnerChanged = currentPartner !== lastPartner;
+          if (numGap !== 1) {
+            const breakSec = (new Date(heat.time) - new Date(lastTime)) / 1000 - 90;
+            if (breakSec > 0) {
+              const fmt = formatBreakTime(Math.round(breakSec / 60));
+              html += partnerChanged && currentPartner
+                ? `<div class="partner-change-marker">🔄 ${esc(currentPartner)} · ${fmt} rest</div>`
+                : `<div class="break-marker">⏸️ Break · ${fmt} rest</div>`;
+            } else if (partnerChanged && currentPartner) {
+              html += `<div class="partner-change-marker">🔄 ${esc(currentPartner)}</div>`;
+            }
+          } else if (partnerChanged && currentPartner) {
+            html += `<div class="partner-change-marker">🔄 ${esc(currentPartner)}</div>`;
+          }
+        }
+
+        if (globalIdx === nextIdx)
+          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(heat.heat_number)}</div>`;
+
+        const isContested = heat.entries.some(e =>
+          e.event === myEvent &&
+          e.competitor1 !== selectedCompetitor &&
+          e.competitor2 !== selectedCompetitor
+        );
+        const contestedBadge = isContested
+          ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 ml-2">Contested</span>'
+          : '';
+        const n = heat.entries.length;
+        const couplesBadge = n === 1
+          ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 ml-2">Solo on floor</span>'
+          : `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 ml-2">${n} couples</span>`;
+
+        const byEvent = {};
+        heat.entries.forEach(e => { (byEvent[e.event] ??= []).push(e); });
+        const detailsHtml = Object.entries(byEvent).map(([evt, entries]) => {
+          entries.sort((a, b) => (parseInt(a.result) || 999) - (parseInt(b.result) || 999));
+          const rows = entries.map(e => {
+            const r = parseInt(e.result);
+            const rank = r === 1 ? '🥇 ' : r === 2 ? '🥈 ' : r === 3 ? '🥉 ' : r >= 4 ? `${r}. ` : '';
+            return `<div>${rank}${esc(e.bib)} ${esc(e.couple)}</div>`;
+          }).join('');
+          const contested = entries.length > 1 ? ' <span class="text-yellow-600">(Contested)</span>' : '';
+          return `<div class="mb-1"><strong>${esc(evt)}:</strong>${contested}<div class="ml-2">${rows}</div></div>`;
+        }).join('');
+
+        html += `<div class="heat-box" onclick="toggleHeatDetails('h-${heat.key}')">
+          <div class="text-base text-gray-900">
+            <strong>Heat ${esc(heat.heat_number)}</strong> · ${esc(formatTime(heat.time))} ${contestedBadge} ${couplesBadge}
+          </div>
+          <div class="text-sm text-gray-700 mt-1">${esc(myEvent)}</div>
+          <div id="h-${heat.key}" class="heat-details${expandedHeats.has(heat.key) ? ' expanded' : ''}">
+            <div class="text-xs text-gray-600 space-y-2">
+              <div><strong>Session:</strong> ${esc(heat.session_name)}</div>
+              <div><strong>Round:</strong> ${esc(heat.round)}</div>
+              <div class="mt-3"><strong>All Competitors:</strong><div class="ml-2 mt-1">${detailsHtml}</div></div>
+            </div>
+          </div>
+        </div>`;
+
+        lastTime = heat.time;
+        lastHeatNum = heat.heat_number;
+        lastPartner = currentPartner;
+      });
+
+      // Inter-session break (same day)
+      if (si < sessions.length - 1) {
+        const nextFirst = sessions[si + 1][0];
+        if (new Date(last.time).toDateString() === new Date(nextFirst.time).toDateString()) {
+          const breakSec = (new Date(nextFirst.time) - new Date(last.time)) / 1000 - 90;
+          if (breakSec > 0)
+            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
+        }
+      }
     });
 
-    heatsView.innerHTML = filtered.length
-      ? filtered.map(renderHeatCard).join('')
-      : '<p style="color:#888;padding:1rem">No heats match your search.</p>';
+    if (nextIdx === -1 && myHeats.length > 0)
+      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
 
-    heatsView.querySelectorAll('.heat-header').forEach(hdr => {
-      hdr.addEventListener('click', () => {
-        hdr.nextElementSibling.classList.toggle('open');
+    scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats found for this competitor</p>';
+  }
+
+  // ── Contested stats ────────────────────────────────────────────────────────
+  function toggleContestedStats() {
+    const details = document.getElementById('contestedStatsDetails');
+    if (!details) return;
+    details.classList.toggle('expanded');
+    if (details.classList.contains('expanded')) populateContestedStats();
+  }
+
+  function populateContestedStats() {
+    if (!selectedCompetitor || !heatsData) return;
+    const list = document.getElementById('contestedStatsList');
+    const opps = {};
+    (heatsData.competitor_heats[selectedCompetitor] || []).forEach(k => {
+      const heat = heatsByKey[k];
+      if (!heat) return;
+      const myEntry = heat.entries.find(e => e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor);
+      if (!myEntry) return;
+      const myResult = parseInt(myEntry.result);
+      heat.entries.forEach(e => {
+        if (e.event !== myEntry.event) return;
+        if (e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor) return;
+        opps[e.couple] ??= { couple: e.couple, count: 0, my_wins: 0, their_wins: 0, ties: 0 };
+        opps[e.couple].count++;
+        const r = parseInt(e.result);
+        if (!isNaN(myResult) && !isNaN(r)) {
+          if (myResult < r) opps[e.couple].my_wins++;
+          else if (myResult > r) opps[e.couple].their_wins++;
+          else opps[e.couple].ties++;
+        }
       });
     });
-  }
 
-  function renderHeatCard(h) {
-    const entries = h.entries.map(e => {
-      const placeClass = e.result === '1' ? 'p1' : e.result === '2' ? 'p2' : e.result === '3' ? 'p3' : '';
-      return `<div class="entry-row">
-        <span class="entry-place ${placeClass}">${e.result || '—'}</span>
-        <span class="entry-couple">${esc(e.couple)}</span>
-        <span class="entry-bib">#${esc(e.bib)}</span>
-        <span class="entry-studio">${esc(e.studio)}</span>
+    const stats = Object.values(opps).sort((a, b) => b.count - a.count).slice(0, 10);
+    if (!stats.length) {
+      list.innerHTML = '<p class="text-gray-500 italic">No contested heats found</p>';
+      return;
+    }
+    list.innerHTML = stats.map(s => {
+      const total = s.my_wins + s.their_wins + s.ties;
+      const record = total ? `${s.my_wins} vs ${s.their_wins}${s.ties ? ` (${s.ties} ties)` : ''}` : 'No results yet';
+      const cls = s.my_wins > s.their_wins ? 'text-green-600' : s.my_wins < s.their_wins ? 'text-red-600' : 'text-gray-500';
+      return `<div class="border border-gray-300 rounded-lg p-2 bg-gray-50">
+        <div class="flex items-center mb-2">
+          <span class="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full text-xs font-medium">${s.count} heats</span>
+        </div>
+        <div class="space-y-2">
+          <div class="bg-white border border-indigo-200 rounded p-2 text-sm">${esc(selectedCompetitor)}</div>
+          <div class="text-center text-xs font-semibold ${cls}">${record}</div>
+          <div class="bg-white border border-gray-200 rounded p-2 text-sm">${esc(s.couple)}</div>
+        </div>
       </div>`;
     }).join('');
-
-    return `<div class="heat-card">
-      <div class="heat-header">
-        <span class="heat-num">${esc(h.heat_number)}</span>
-        <span class="heat-info">${esc(h.entries[0]?.event || '')} · ${esc(h.round)}</span>
-        <span class="heat-session">${esc(h.session_name)}</span>
-      </div>
-      <div class="heat-entries">${entries}</div>
-    </div>`;
   }
+
+  // ── Ranking ────────────────────────────────────────────────────────────────
+  document.getElementById('search-ranking').addEventListener('input', renderRanking);
 
   function renderRanking() {
     if (!rankingData) return;
+    const query = document.getElementById('search-ranking').value.toLowerCase().trim();
     const sections = Object.values(rankingData.leaderboards)
       .filter(lb => lb.couples.length)
       .sort((a, b) => a.label.localeCompare(b.label));
 
     rankingView.innerHTML = sections.map(lb => {
-      const rows = lb.couples.map(c => {
-        const deltaClass = c.elo_delta.startsWith('+') ? 'delta-pos' : c.elo_delta.startsWith('-') ? 'delta-neg' : '';
+      const couples = query
+        ? lb.couples.filter(c =>
+            c.competitor.toLowerCase().includes(query) ||
+            (c.partner || '').toLowerCase().includes(query) ||
+            (c.studio || '').toLowerCase().includes(query))
+        : lb.couples;
+      if (!couples.length) return '';
+      const rows = couples.map(c => {
+        const dc = c.elo_delta.startsWith('+') ? 'delta-pos' : c.elo_delta.startsWith('-') ? 'delta-neg' : '';
         return `<tr>
           <td>${c.rank}</td>
           <td>${esc(c.competitor)}${c.partner ? ' &amp; ' + esc(c.partner) : ''}</td>
           <td>${esc(c.studio)}</td>
           <td>${c.elo.toFixed(1)}</td>
-          <td class="${deltaClass}">${esc(c.elo_delta)}</td>
+          <td class="${dc}">${esc(c.elo_delta)}</td>
           <td>${c.heats_processed}</td>
         </tr>`;
       }).join('');
-
       return `<div class="lb-section">
         <h2>Leaderboard ${esc(lb.label)} <small style="font-weight:normal;color:#888">(${lb.size} couples)</small></h2>
         <table class="lb-table">
@@ -242,9 +531,87 @@
     }).join('');
   }
 
+  function renderActive() {
+    if (activeTab === 'ranking') renderRanking();
+  }
+
+  // ── Helpers ────────────────────────────────────────────────────────────────
+  function getPartner(competitor, heat) {
+    const e = heat.entries.find(e => e.competitor1 === competitor || e.competitor2 === competitor);
+    if (!e) return null;
+    return e.competitor1 === competitor ? e.competitor2 : e.competitor1;
+  }
+
+  function findNextHeatPosition(heats) {
+    const now = new Date();
+    return heats.findIndex(h => new Date(h.time) > now);
+  }
+
+  function findMe() {
+    if (selectedCompetitor) generateSchedule();
+    const marker = document.getElementById('nextHeatMarker') || document.getElementById('allDoneMarker');
+    if (marker) marker.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function groupHeatsBySession(heats) {
+    const sessions = [];
+    let cur = [], curId = null;
+    heats.forEach(h => {
+      if (h.session !== curId) { if (cur.length) sessions.push(cur); cur = [h]; curId = h.session; }
+      else cur.push(h);
+    });
+    if (cur.length) sessions.push(cur);
+    return sessions;
+  }
+
+  function getSessionType(t) {
+    const h = new Date(t).getHours();
+    return h < 12 ? 'Morning' : h < 18 ? 'Afternoon' : 'Evening';
+  }
+
+  function toggleHeatDetails(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle('expanded');
+    const key = id.slice(2);
+    el.classList.contains('expanded') ? expandedHeats.add(key) : expandedHeats.delete(key);
+  }
+
+  function formatDate(s) {
+    const d = new Date(s);
+    const day = String(d.getDate()).padStart(2, '0');
+    const mon = String(d.getMonth() + 1).padStart(2, '0');
+    return `${ ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()] } ${mon}/${day}`;
+  }
+
+  function formatTime(s) {
+    const d = new Date(s);
+    let h = d.getHours();
+    const m = String(d.getMinutes()).padStart(2, '0');
+    const ap = h >= 12 ? 'pm' : 'am';
+    h = h % 12 || 12;
+    return `${h}:${m} ${ap}`;
+  }
+
+  function formatBreakTime(mins) {
+    if (mins >= 60) {
+      const h = Math.floor(mins / 60), q = Math.floor((mins % 60) / 15);
+      return h + ['', '¼', '½', '¾'][q] + ' hr';
+    }
+    if (mins >= 45) return '¾ hr';
+    if (mins > 15) return `${Math.floor(mins / 5) * 5} min`;
+    return `${mins} min`;
+  }
+
   function esc(s) {
     return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
+
+  // Auto-refresh during live competition
+  setInterval(() => {
+    if (selectedCompetitor && heatsData && !heatsData.studios?.includes(selectedCompetitor))
+      if (!tagify?.state?.dropdown?.visible) generateSchedule();
+  }, 10000);
 </script>
 </body>
 </html>

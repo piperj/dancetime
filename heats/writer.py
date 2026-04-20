@@ -52,10 +52,12 @@ def build_heats_json(
     ]
 
     name, date_range, location = comp_meta(competition_info)
+    competition_id = competition_info.get("Competition_ID") or competition_info.get("competition_id")
 
     return {
         "meta": {
             "cyi": cyi,
+            "competition_id": competition_id,
             "name": name,
             "date_range": date_range,
             "location": location,
