@@ -1,4 +1,6 @@
+import json
 from datetime import datetime
+from pathlib import Path
 
 import pytest
 
@@ -6,6 +8,8 @@ from heats.session_names import infer_session_names, parse_round_time
 from heats.parser import parse_heatlists, HeatInstance, HeatEntry
 from heats.matchups import compute_top_matchups
 from heats.writer import build_heats_json, write_heats_json
+
+HEATS_JSON = Path(__file__).parent.parent / "data" / "heats_373.json"
 
 
 def _make_heatlists(entries_per_competitor):
@@ -190,3 +194,108 @@ class TestWriter:
         path = write_heats_json(data, tmp_path)
         assert path.exists()
         assert path.name == "heats_999.json"
+
+
+def _couple_heatlists(pairs, time="1/30/2026 12:10:42 PM", session="01"):
+    """Build heatlists where each person in pairs has their own API entry."""
+    hl = []
+    for c1, c2, studio in pairs:
+        for name, partner in [(c1, c2), (c2, c1)]:
+            hl.append({
+                "_metadata": {"competitor_name": name, "studio": studio},
+                "Entries": [_entry(partner, [_round_entry(session, time)])],
+            })
+    return hl
+
+
+class TestCoupleDeduplication:
+    def test_mirrored_pair_produces_one_entry(self):
+        hl = _couple_heatlists([("Alice Smith", "Bob Jones", "Studio A")])
+        instances = parse_heatlists(hl, [], {})
+        assert len(instances) == 1
+        assert len(instances[0].entries) == 1
+
+    def test_two_couples_same_heat_produce_two_entries(self):
+        hl = _couple_heatlists([
+            ("Alice Smith", "Bob Jones", "Studio A"),
+            ("Carol Doe", "Dan Roe", "Studio B"),
+        ])
+        instances = parse_heatlists(hl, [], {})
+        assert len(instances) == 1
+        assert len(instances[0].entries) == 2
+
+    def test_both_partners_in_competitors_list(self):
+        hl = _couple_heatlists([("Alice Smith", "Bob Jones", "Studio A")])
+        instances = parse_heatlists(hl, [], {})
+        data = build_heats_json(999, {"Competition_Name": "T", "Date_Range": "", "Location": ""}, instances, {})
+        comps = set(data["competitors"])
+        assert "Alice Smith" in comps
+        assert "Bob Jones" in comps
+
+    def test_all_four_competitors_in_competitors_list(self):
+        hl = _couple_heatlists([
+            ("Alice Smith", "Bob Jones", "Studio A"),
+            ("Carol Doe", "Dan Roe", "Studio B"),
+        ])
+        instances = parse_heatlists(hl, [], {})
+        data = build_heats_json(999, {"Competition_Name": "T", "Date_Range": "", "Location": ""}, instances, {})
+        comps = set(data["competitors"])
+        for name in ("Alice Smith", "Bob Jones", "Carol Doe", "Dan Roe"):
+            assert name in comps
+
+    def test_both_partners_in_competitor_heats(self):
+        hl = _couple_heatlists([("Alice Smith", "Bob Jones", "Studio A")])
+        instances = parse_heatlists(hl, [], {})
+        data = build_heats_json(999, {"Competition_Name": "T", "Date_Range": "", "Location": ""}, instances, {})
+        assert "Alice Smith" in data["competitor_heats"]
+        assert "Bob Jones" in data["competitor_heats"]
+
+    def test_no_duplicate_couple_keys_in_heat(self):
+        hl = _couple_heatlists([
+            ("Alice Smith", "Bob Jones", "Studio A"),
+            ("Carol Doe", "Dan Roe", "Studio B"),
+        ])
+        instances = parse_heatlists(hl, [], {})
+        for inst in instances:
+            seen = set()
+            for e in inst.entries:
+                key = frozenset([e.competitor1, e.competitor2])
+                assert key not in seen
+                seen.add(key)
+
+
+@pytest.mark.skipif(not HEATS_JSON.exists(), reason="real data not present")
+class TestRealDataHeats:
+    @pytest.fixture(autouse=True)
+    def load(self):
+        self.data = json.loads(HEATS_JSON.read_text())
+
+    def test_no_mirrored_couples_in_any_heat(self):
+        for heat in self.data["heats"]:
+            seen = set()
+            for e in heat["entries"]:
+                key = frozenset([e["competitor1"], e["competitor2"]])
+                assert key not in seen, (
+                    f"Mirrored duplicate in heat {heat['key']}: "
+                    f"{e['competitor1']} & {e['competitor2']}"
+                )
+                seen.add(key)
+
+    def test_all_partners_in_competitors_list(self):
+        comps = set(self.data["competitors"])
+        missing = []
+        for heat in self.data["heats"]:
+            for e in heat["entries"]:
+                if e["competitor2"] and e["competitor2"] not in comps:
+                    missing.append(e["competitor2"])
+        assert not missing, f"Partners missing from competitors list: {missing[:5]}"
+
+    def test_johan_piper_in_competitors(self):
+        assert "Johan Piper" in self.data["competitors"]
+
+    def test_all_partners_in_competitor_heats(self):
+        ch = self.data["competitor_heats"]
+        for heat in self.data["heats"]:
+            for e in heat["entries"]:
+                if e["competitor2"]:
+                    assert e["competitor2"] in ch, f"{e['competitor2']} missing from competitor_heats"

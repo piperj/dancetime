@@ -22,10 +22,14 @@ def build_heats_json(
         sessions[instance.session] = instance.session_name
         for entry in instance.entries:
             competitors.add(entry.competitor1)
+            if entry.competitor2:
+                competitors.add(entry.competitor2)
             if entry.studio:
                 studios.add(entry.studio)
                 competitor_studios[entry.competitor1] = entry.studio
             competitor_heats.setdefault(entry.competitor1, []).append(instance.key)
+            if entry.competitor2:
+                competitor_heats.setdefault(entry.competitor2, []).append(instance.key)
 
     heats_list = [
         {

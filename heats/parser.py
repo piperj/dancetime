@@ -84,7 +84,7 @@ def parse_heatlists(
                         result=result_val,
                     )
 
-                    if not _entry_exists(instances[key], competitor_name):
+                    if not _entry_exists(instances[key], competitor_name, partner_name):
                         instances[key].entries.append(entry_obj)
 
     return sorted(instances.values(), key=lambda h: (h.session, h.heat_number, h.time))
@@ -113,5 +113,10 @@ def _result_key(event: str, round_name: str, competitor: str) -> str:
     return f"{event}|{round_name}|{competitor}"
 
 
-def _entry_exists(instance: HeatInstance, competitor_name: str) -> bool:
-    return any(e.competitor1 == competitor_name for e in instance.entries)
+def _entry_exists(instance: HeatInstance, competitor_name: str, partner_name: str) -> bool:
+    for e in instance.entries:
+        if e.competitor1 == competitor_name:
+            return True
+        if partner_name and e.competitor1 == partner_name and e.competitor2 == competitor_name:
+            return True
+    return False
