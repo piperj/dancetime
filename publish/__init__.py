@@ -13,6 +13,8 @@ def run(args):
 
     shutil.copy2(Path("static/index.html"), Path("index.html"))
     print("publish: copied static/index.html → index.html")
+    shutil.copy2(Path("static/favicon.ico"), Path("favicon.ico"))
+    print("publish: copied static/favicon.ico → favicon.ico")
 
     _validate_outputs(out_dir)
 
