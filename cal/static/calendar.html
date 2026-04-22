@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dancetime Calendar</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #0f0f13; color: #e5e7eb; }
+    .year-header { position: sticky; top: 56px; z-index: 10; }
+    .badge { display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; letter-spacing: .03em; }
+    .badge-green  { background: #14532d44; color: #86efac; border: 1px solid #16a34a55; }
+    .badge-blue   { background: #1e3a5f44; color: #93c5fd; border: 1px solid #3b82f655; }
+    .badge-purple { background: #3b0764aa; color: #d8b4fe; border: 1px solid #9333ea55; }
+    .badge-orange { background: #7c2d1244; color: #fdba74; border: 1px solid #ea580c55; }
+    .badge-red    { background: #7f1d1d44; color: #fca5a5; border: 1px solid #dc262655; }
+    .card { background: #1a1a24; border: 1px solid #2a2a3a; border-radius: 12px; transition: border-color .15s; }
+    .card:hover { border-color: #4a4a6a; }
+    .btn { padding: 5px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; transition: opacity .15s; border: 1px solid transparent; }
+    .btn:disabled { opacity: .4; cursor: not-allowed; }
+    .btn-indigo { background: #4f46e5; color: #fff; }
+    .btn-indigo:hover:not(:disabled) { background: #4338ca; }
+    .btn-slate  { background: #1e293b; color: #94a3b8; border-color: #334155; }
+    .btn-slate:hover:not(:disabled) { background: #263347; }
+    .btn-red    { background: #7f1d1d; color: #fca5a5; border-color: #991b1b; }
+    .btn-red:hover:not(:disabled) { background: #991b1b; }
+    .btn-amber  { background: #78350f; color: #fcd34d; border-color: #92400e; }
+    .btn-amber:hover:not(:disabled) { background: #92400e; }
+    .logo-box { width: 72px; height: 72px; flex-shrink: 0; border-radius: 8px; overflow: hidden; background: #12121a; border: 1px solid #2a2a3a; display: flex; align-items: center; justify-content: center; }
+    .logo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-placeholder { font-size: 20px; color: #4a4a6a; }
+    .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid #ffffff44; border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #log-panel { position: fixed; bottom: 0; left: 0; right: 0; background: #0d0d12; border-top: 1px solid #2a2a3a; font-family: monospace; font-size: 12px; max-height: 220px; display: none; flex-direction: column; z-index: 50; }
+    #log-panel.visible { display: flex; }
+    #log-header { display: flex; align-items: center; justify-content: space-between; padding: 6px 14px; border-bottom: 1px solid #1e1e2e; color: #6b7280; font-size: 11px; }
+    #log-body { overflow-y: auto; padding: 8px 14px; flex: 1; }
+    #log-body .step-label { color: #6366f1; font-weight: 600; margin-top: 6px; }
+    #log-body .log-line { color: #9ca3af; white-space: pre; }
+    #log-body .log-ok { color: #86efac; }
+    #log-body .log-err { color: #fca5a5; }
+    input[type=search] { background: #12121a; border: 1px solid #2a2a3a; color: #e5e7eb; border-radius: 8px; padding: 6px 12px; outline: none; width: 260px; }
+    input[type=search]:focus { border-color: #4f46e5; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+<!-- Header -->
+<header class="sticky top-0 z-20 flex items-center justify-between px-6 py-3"
+        style="background:#0f0f13cc; border-bottom:1px solid #2a2a3a; backdrop-filter:blur(8px);">
+  <div class="flex items-center gap-4">
+    <span class="font-bold text-white tracking-tight" style="font-size:18px;">Dancetime <span class="text-indigo-400">Calendar</span></span>
+    <input type="search" id="search" placeholder="Search competitions…" oninput="filterCards()" />
+    <button id="scraped-toggle" class="btn btn-slate" onclick="toggleScraped()" style="font-size:12px;">Scraped only</button>
+    <button class="btn btn-slate" onclick="goToToday()" style="font-size:12px;">Today</button>
+  </div>
+  <div class="flex items-center gap-3">
+    <div id="active-bar" class="flex items-center gap-2 text-sm" style="color:#94a3b8;"></div>
+    <button class="btn btn-slate" onclick="reload()">↻ Reload</button>
+    <button id="publish-btn" class="btn btn-indigo" onclick="doPublish(this)">Publish</button>
+  </div>
+</header>
+
+<!-- Content -->
+<main id="main" class="px-6 py-6 max-w-4xl mx-auto" style="padding-bottom: 40px;"></main>
+
+<div id="log-panel">
+  <div id="log-header">
+    <span id="log-title">Pipeline log</span>
+    <button onclick="closeLog()" style="background:none;border:none;color:#6b7280;cursor:pointer;font-size:14px;">✕</button>
+  </div>
+  <div id="log-body"></div>
+</div>
+
+<script>
+let allComps = [];
+let activeCyi = null;
+let scrapedOnly = false;
+
+async function init() {
+  const data = await fetch('/api/competitions').then(r => r.json());
+  allComps = data.competitions.sort((a, b) => (a.start_date || '').localeCompare(b.start_date || ''));
+  activeCyi = data.active_cyi;
+  renderAll();
+  scrollToNow();
+}
+
+function reload() { init(); }
+
+function renderAll() {
+  renderActiveBar();
+  const query = document.getElementById('search').value.toLowerCase();
+  let filtered = query ? allComps.filter(c => c.name.toLowerCase().includes(query)) : allComps;
+  if (scrapedOnly) filtered = filtered.filter(c => c.scraped);
+  renderComps(filtered);
+}
+
+function filterCards() { renderAll(); }
+
+function goToToday() {
+  scrollToNow();
+}
+
+function toggleScraped() {
+  scrapedOnly = !scrapedOnly;
+  const btn = document.getElementById('scraped-toggle');
+  btn.style.background = scrapedOnly ? '#166534' : '';
+  btn.style.color = scrapedOnly ? '#86efac' : '';
+  btn.style.borderColor = scrapedOnly ? '#16a34a' : '';
+  renderAll();
+}
+
+function renderActiveBar() {
+  const bar = document.getElementById('active-bar');
+  if (activeCyi) {
+    const comp = allComps.find(c => c.cyi === activeCyi);
+    const name = comp ? comp.name : `CYI ${activeCyi}`;
+    bar.innerHTML = `
+      <span class="badge badge-orange">📌 Pinned: ${name}</span>
+      <button class="btn btn-slate" onclick="clearActive()">Unpin</button>`;
+  } else {
+    bar.innerHTML = '';
+  }
+}
+
+function renderComps(comps) {
+  const main = document.getElementById('main');
+
+  const byYear = {};
+  for (const c of comps) {
+    const year = (c.start_date || '').slice(0, 4) || 'Unknown';
+    (byYear[year] = byYear[year] || []).push(c);
+  }
+  const years = Object.keys(byYear).sort((a, b) => a - b);  // oldest first, scroll finds today
+
+  main.innerHTML = years.map(year => `
+    <div class="year-section" data-year="${year}">
+      <div class="year-header py-2 mb-3">
+        <h2 class="text-xs font-bold tracking-widest uppercase" style="color:#555;">${year}</h2>
+      </div>
+      <div class="flex flex-col gap-3 mb-8">
+        ${byYear[year].map(c => cardHtml(c)).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function cardHtml(c) {
+  const logoUrl = c.competition_id
+    ? `https://ndca.org/images/comp_logos/${c.competition_id}.jpg`
+    : null;
+  const logoHtml = logoUrl
+    ? `<img src="${logoUrl}" alt="" onerror="this.parentElement.innerHTML='<span class=logo-placeholder>🏆</span>'" />`
+    : `<span class="logo-placeholder">🏆</span>`;
+
+  const badges = [
+    c.scraped   ? `<span class="badge badge-green">Scraped</span>` : '',
+    c.heats     ? `<span class="badge badge-blue">Heats</span>` : '',
+    c.ranking   ? `<span class="badge badge-purple">Ranking</span>` : '',
+    c.auto_scrape === 'live' ? `<span class="badge badge-red">● Live</span>` : '',
+    c.auto_scrape === 'soon' ? `<span class="badge badge-orange">⏰ Soon</span>` : '',
+    c.cyi === activeCyi ? `<span class="badge badge-orange">⚡ Active</span>` : '',
+  ].filter(Boolean).join(' ');
+
+  const dateRange = formatDateRange(c.start_date, c.end_date);
+  const loc = c.location ? `<span style="color:#6b7280;font-size:12px;">${c.location}</span>` : '';
+
+  const actionBtn = c.scraped
+    ? `<button class="btn btn-amber" onclick="doScrape(${c.cyi}, true, this)">↻ Refresh</button>`
+    : `<button class="btn btn-indigo" onclick="doScrape(${c.cyi}, false, this)">+ Add</button>`;
+
+  const removeBtn = c.scraped
+    ? `<button class="btn btn-red" onclick="doRemove(${c.cyi}, this)">Remove</button>`
+    : '';
+
+  const setActiveBtn = c.cyi !== activeCyi
+    ? `<button class="btn btn-slate" onclick="setActive(${c.cyi})">Set active</button>`
+    : `<button class="btn btn-slate" onclick="clearActive()">Unpin</button>`;
+
+  return `
+    <div class="card p-4" id="card-${c.cyi}">
+      <div class="flex items-center gap-4">
+        <div class="logo-box">${logoHtml}</div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="font-semibold text-white" style="font-size:15px;">${c.name}</div>
+              <div style="color:#9ca3af;font-size:13px;">${dateRange}${loc ? ' · ' + loc : ''}</div>
+              <div class="mt-2 flex flex-wrap gap-1">${badges || '<span style="color:#4a4a6a;font-size:11px;">No data</span>'}</div>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0">
+              ${setActiveBtn}
+              ${actionBtn}
+              ${removeBtn}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function formatDateRange(start, end) {
+  if (!start) return '';
+  const fmt = d => {
+    const [y, m, day] = d.split('-');
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return `${months[+m-1]} ${+day}`;
+  };
+  const s = fmt(start);
+  const e = end && end !== start ? ` – ${fmt(end)}, ${start.slice(0,4)}` : `, ${start.slice(0,4)}`;
+  return s + e;
+}
+
+function openLog(title) {
+  document.getElementById('log-title').textContent = title;
+  document.getElementById('log-body').innerHTML = '';
+  document.getElementById('log-panel').classList.add('visible');
+}
+
+function closeLog() {
+  document.getElementById('log-panel').classList.remove('visible');
+}
+
+function appendLog(html) {
+  const body = document.getElementById('log-body');
+  const frag = document.createRange().createContextualFragment(html);
+  body.appendChild(frag);
+  while (body.childElementCount > 500) body.removeChild(body.firstElementChild);
+  body.scrollTop = body.scrollHeight;
+}
+
+async function doScrape(cyi, force, btn) {
+  const comp = allComps.find(c => c.cyi === cyi);
+  const orig = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spinner"></span>`;
+  openLog(`${comp ? comp.name : 'CYI ' + cyi} — pipeline`);
+  try {
+    const res = await fetch(`/api/scrape/${cyi}`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: force ? 'force=true' : '',
+    });
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '';
+    let ok = true;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      const parts = buf.split('\n');
+      buf = parts.pop();
+      for (const part of parts) {
+        if (!part.trim()) continue;
+        const msg = JSON.parse(part);
+        if (msg.type === 'step') {
+          appendLog(`<div class="step-label">▶ ${msg.step}</div>`);
+        } else if (msg.type === 'line') {
+          appendLog(`<div class="log-line">${msg.text}</div>`);
+        } else if (msg.type === 'done') {
+          ok = msg.ok;
+          if (ok) appendLog(`<div class="log-ok">✓ Done</div>`);
+          else appendLog(`<div class="log-err">✗ ${msg.failed_step} failed</div>`);
+        }
+      }
+    }
+    await refreshAll();
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = orig;
+  }
+}
+
+async function doRemove(cyi, btn) {
+  const comp = allComps.find(c => c.cyi === cyi);
+  const name = comp ? comp.name : `CYI ${cyi}`;
+  if (!confirm(`Remove all data for "${name}" (CYI ${cyi})?\n\nThis deletes the zip, heats, and ranking files.`)) return;
+  btn.disabled = true;
+  await fetch(`/api/competitions/${cyi}`, { method: 'DELETE' });
+  await refreshAll();
+}
+
+async function setActive(cyi) {
+  const res = await fetch('/api/active', {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({active_cyi: cyi}),
+  });
+  if ((await res.json()).ok) { activeCyi = cyi; renderAll(); }
+}
+
+async function clearActive() {
+  const res = await fetch('/api/active', {
+    method: 'PUT',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({active_cyi: null}),
+  });
+  if ((await res.json()).ok) { activeCyi = null; renderAll(); }
+}
+
+async function refreshAll() {
+  const data = await fetch('/api/competitions').then(r => r.json());
+  allComps = data.competitions.sort((a, b) => (a.start_date || '').localeCompare(b.start_date || ''));
+  activeCyi = data.active_cyi;
+  renderAll();
+}
+
+async function doPublish(btn) {
+  const orig = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spinner"></span>`;
+  try {
+    const data = await fetch('/api/publish', { method: 'POST' }).then(r => r.json());
+    if (!data.ok) alert(`Publish failed:\n${data.output}`);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = orig;
+  }
+}
+
+function scrollToNow() {
+  const cutoff = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+  const cyiMap = new Map(allComps.map(c => [c.cyi, c]));
+  const cards = document.querySelectorAll('.card[id^="card-"]');
+  let target = null;
+  for (const card of cards) {
+    const comp = cyiMap.get(parseInt(card.id.replace('card-', '')));
+    if (comp && comp.start_date >= cutoff) { target = card; break; }
+  }
+  if (!target && cards.length) target = cards[cards.length - 1];
+  if (target) target.scrollIntoView({ block: 'center' });
+}
+
+init();
+</script>
+</body>
+</html>

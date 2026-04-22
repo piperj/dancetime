@@ -60,27 +60,9 @@ def fetch_all(cyi: int, data_dir: Path, force: bool, client: NDCAClient) -> Path
 
 
 def fetch_calendar(data_dir: Path, client: NDCAClient) -> Path:
-    import json
-    out_path = Path(data_dir) / "calendar.json"
-    data = client.fetch_calendar()
-    competitions = []
-    if isinstance(data, list):
-        for c in data:
-            competitions.append({
-                "cyi": c.get("Comp_Year_ID") or c.get("cyi"),
-                "name": c.get("Competition_Name") or c.get("name", ""),
-                "location": c.get("Location") or c.get("location", ""),
-                "start_date": _normalize_date(c.get("Start_Date") or c.get("start_date", "")),
-                "end_date": _normalize_date(c.get("End_Date") or c.get("end_date", "")),
-                "published": bool(c.get("Results_Published") or c.get("published", False)),
-            })
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(
-        {"downloaded_at": _now(), "competitions": competitions},
-        indent=2,
-        ensure_ascii=False,
-    ))
-    return out_path
+    from schedule.calendar import refresh_calendar
+    refresh_calendar(Path(data_dir), client)
+    return Path(data_dir) / "calendar.json"
 
 
 def _results_metadata(entry: dict, data: dict) -> dict:
@@ -104,18 +86,6 @@ def _heatlists_metadata(entry: dict, data: dict) -> dict:
         "studio": str(data.get("Keywords", "") or entry.get("Keywords", "")),
     }
 
-
-def _normalize_date(date_str: str) -> str:
-    """Convert MM/DD/YYYY to YYYY-MM-DD."""
-    if not date_str:
-        return ""
-    for fmt in ("%m/%d/%Y", "%Y-%m-%d"):
-        try:
-            from datetime import datetime as dt
-            return dt.strptime(date_str, fmt).strftime("%Y-%m-%d")
-        except ValueError:
-            pass
-    return date_str
 
 
 def _now() -> str:

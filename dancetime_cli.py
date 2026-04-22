@@ -6,6 +6,7 @@ import heats
 import ranking
 import publish
 import schedule
+import cal
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -38,6 +39,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_schedule = sub.add_parser("schedule", help="Check active competition status")
     p_schedule.add_argument("--data-dir", default="data")
 
+    p_cal = sub.add_parser("calendar", help="Local web UI to manage competition schedule")
+    p_cal.add_argument("--data-dir", default="data")
+    p_cal.add_argument("--port", type=int, default=7331)
+    p_cal.add_argument("--no-browser", action="store_true")
+
     return parser
 
 
@@ -51,6 +57,7 @@ def main():
         "ranking": ranking.run,
         "publish": publish.run,
         "schedule": schedule.run,
+        "calendar": cal.run,
     }
     dispatch[args.command](args)
 
