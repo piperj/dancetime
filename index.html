@@ -344,16 +344,24 @@
       });
       if (!myEntry) return;
       const myResult = parseInt(myEntry.result);
+      const peers = heat.entries.filter(e => e.event === myEntry.event);
+      const someHaveResult = peers.some(e => !isNaN(parseInt(e.result)));
       heat.entries.forEach(e => {
         if (e.event !== myEntry.event) return;
         if (e.competitor1 === myEntry.competitor1 && e.competitor2 === myEntry.competitor2) return;
         opps[e.couple] ??= { couple: e.couple, competitor1: e.competitor1, competitor2: e.competitor2, my_couple: myEntry.couple ?? competitor, count: 0, my_wins: 0, their_wins: 0, ties: 0 };
         opps[e.couple].count++;
         const r = parseInt(e.result);
+        const iAdvanced = isNaN(myResult) && someHaveResult;
+        const theyAdvanced = isNaN(r) && someHaveResult;
         if (!isNaN(myResult) && !isNaN(r)) {
           if (myResult < r) opps[e.couple].my_wins++;
           else if (myResult > r) opps[e.couple].their_wins++;
           else opps[e.couple].ties++;
+        } else if (theyAdvanced && !isNaN(myResult)) {
+          opps[e.couple].their_wins++;
+        } else if (iAdvanced && !isNaN(r)) {
+          opps[e.couple].my_wins++;
         }
       });
     });
