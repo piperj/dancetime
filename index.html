@@ -729,7 +729,12 @@
       if (marker) marker.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
       const el = document.getElementById(target);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (el) {
+        const header = document.getElementById('heats-controls');
+        const offset = header ? header.offsetHeight : 0;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
     }
   }
 
