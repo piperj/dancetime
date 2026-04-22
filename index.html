@@ -609,6 +609,7 @@
       html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
 
     scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats found for this competitor</p>';
+    populateContestedStats();
   }
 
   // ── Contested stats (heats tab) ────────────────────────────────────────────
