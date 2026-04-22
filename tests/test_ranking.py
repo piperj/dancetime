@@ -1,7 +1,7 @@
 import pytest
 
 from ranking.models import DanceResult
-from ranking.parser import parse_results, _join_name
+from ranking.parser import parse_results, _join_name, _extract_placement
 from ranking.skill_rating import parse_skill_category, parse_age_division, get_initial_ratings, SKILL_OFFSETS, AGE_OFFSETS
 from ranking.elo import EloCalculator
 from ranking.clusters import build_graph, assign_leaderboards
@@ -41,6 +41,30 @@ def _make_results_json(placements: list[tuple[str, str, int]]) -> dict:
             }
         ]
     }
+
+
+class TestExtractPlacement:
+    def test_plain_integer(self):
+        assert _extract_placement({"Result": 3}) == 3
+
+    def test_single_element_list(self):
+        assert _extract_placement({"Result": ["7"]}) == 7
+
+    def test_tie_result_list(self):
+        # NDCA encodes ties as ["TIE", "TIE", "11"] — last element is the placement
+        assert _extract_placement({"Result": ["TIE", "TIE", "11"]}) == 11
+
+    def test_two_element_tie(self):
+        assert _extract_placement({"Result": ["TIE", "4"]}) == 4
+
+    def test_none_result_returns_none(self):
+        assert _extract_placement({"Result": None}) is None
+
+    def test_empty_list_returns_none(self):
+        assert _extract_placement({"Result": []}) is None
+
+    def test_circuit_place_fallback(self):
+        assert _extract_placement({"Circuit": {"Place": "2"}}) == 2
 
 
 class TestJoinName:

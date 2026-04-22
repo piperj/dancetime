@@ -97,6 +97,7 @@ def _build_result_index(results: list[dict]) -> dict[str, str]:
             event_name = event.get("Name", "")
             for round_ in event.get("Rounds", []):
                 round_name = round_.get("Name", "")
+
                 for dance in round_.get("Dances", []):
                     for comp in dance.get("Competitors", []):
                         placement = comp.get("Result")
@@ -106,6 +107,23 @@ def _build_result_index(results: list[dict]) -> dict[str, str]:
                             name_parts = participant.get("Name", [])
                             name = " ".join(str(x) for x in name_parts)
                             index[_result_key(event_name, round_name, name)] = str(placement)
+
+                # Fall back to Summary Circuit.Place (multi-dance rounds like semi-finals
+                # leave individual Result=None and store the combined placement here).
+                # Place=0 means the couple advanced and has no elimination placement.
+                summary = round_.get("Summary") or {}
+                for comp in summary.get("Competitors", []):
+                    circuit = comp.get("Circuit") or {}
+                    place = circuit.get("Place")
+                    if not place:
+                        continue
+                    for participant in comp.get("Participants", []):
+                        name_parts = participant.get("Name", [])
+                        name = " ".join(str(x) for x in name_parts)
+                        key = _result_key(event_name, round_name, name)
+                        if key not in index:
+                            index[key] = str(place)
+
     return index
 
 

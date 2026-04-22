@@ -148,9 +148,10 @@ def _deduplicate(results: list[DanceResult]) -> list[DanceResult]:
 
 def _extract_placement(comp: dict) -> int | None:
     result = comp.get("Result")
-    if isinstance(result, list) and result and result[0]:
+    if isinstance(result, list) and result:
+        # Last element is always numeric: handles ["7"] and ["TIE", "TIE", "7"]
         try:
-            return int(result[0])
+            return int(result[-1])
         except (ValueError, TypeError):
             pass
     elif isinstance(result, (int, float)):

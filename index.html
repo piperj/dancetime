@@ -511,11 +511,20 @@
         const byEvent = {};
         heat.entries.forEach(e => { (byEvent[e.event] ??= []).push(e); });
         const detailsHtml = Object.entries(byEvent).map(([evt, entries]) => {
-          entries.sort((a, b) => (parseInt(a.result) || 999) - (parseInt(b.result) || 999));
+          const someHaveResult = entries.some(e => e.result !== '');
+          entries.sort((a, b) => {
+            const ra = parseInt(a.result), rb = parseInt(b.result);
+            const aAdv = isNaN(ra), bAdv = isNaN(rb);
+            if (aAdv && bAdv) return 0;
+            if (aAdv) return -1;
+            if (bAdv) return 1;
+            return ra - rb;
+          });
           const rows = entries.map(e => {
             const r = parseInt(e.result);
-            const medal = rankPrefix(r);
-            const rank = medal ? medal + ' ' : r >= 4 ? `${r}. ` : '';
+            const advanced = isNaN(r) && someHaveResult;
+            const medal = advanced ? '🥇' : rankPrefix(r);
+            const rank = medal ? medal + ' ' : !isNaN(r) ? `${ordinal(r)} ` : '';
             return `<div>${rank}${esc(e.bib)} ${esc(e.couple)}</div>`;
           }).join('');
           const contested = entries.length > 1 ? ' <span class="text-yellow-600">(Contested)</span>' : '';

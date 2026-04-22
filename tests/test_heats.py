@@ -299,3 +299,21 @@ class TestRealDataHeats:
             for e in heat["entries"]:
                 if e["competitor2"]:
                     assert e["competitor2"] in ch, f"{e['competitor2']} missing from competitor_heats"
+
+    def test_heat_628_results(self):
+        # Semi-final, 11 couples. Placements come from Circuit.Place in the Summary
+        # (individual-dance Result fields are all None for this multi-dance round).
+        heat = next(h for h in self.data["heats"] if h["heat_number"] == "628")
+
+        def result_for(name):
+            for e in heat["entries"]:
+                if name in (e["competitor1"], e["competitor2"]):
+                    return e["result"]
+            raise KeyError(name)
+
+        assert result_for("Oscar Adrian Rodriguez") == "7"
+        assert result_for("Chrystal Chen") == "7"
+        assert result_for("Lawrence Yen") == "11"   # contested last place
+        assert result_for("Cristian Jones") == "8"
+        # Advancing couples have Circuit.Place=0 → no placement shown
+        assert result_for("Jasher Kuehn") == ""
