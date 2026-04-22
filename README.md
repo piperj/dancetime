@@ -53,3 +53,11 @@ uv run pytest tests/test_ranking.py -v
 ```
 
 Raw competition data is cached in `data/raw/comp_{cyi}.zip`. ELO state persists across competitions in `data/elo_ratings.json`.
+
+To preview the app locally, serve the repo root over HTTP (browsers block local file fetches):
+
+```bash
+python -m http.server 8000
+```
+
+Then open http://localhost:8000 in your browser.
