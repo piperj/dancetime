@@ -24,6 +24,21 @@ def _auto_scrape(start_str: str, end_str: str, today: date) -> str | None:
     return None
 
 
+def _has_heats(path: Path) -> bool:
+    try:
+        return len(json.loads(path.read_text()).get("competitors", [])) > 0
+    except Exception:
+        return False
+
+
+def _has_ranking(path: Path) -> bool:
+    try:
+        lbs = json.loads(path.read_text()).get("leaderboards", {})
+        return any(len(lb.get("couples", [])) > 0 for lb in lbs.values())
+    except Exception:
+        return False
+
+
 def _build_competitions(data_dir: Path) -> dict:
     calendar = load_calendar(data_dir)
     today = datetime.now(timezone.utc).date()
@@ -46,8 +61,8 @@ def _build_competitions(data_dir: Path) -> dict:
             "end_date": c.get("end_date", ""),
             "published": c.get("published", False),
             "scraped": f"comp_{cyi}.zip" in raw_files,
-            "heats": f"heats_{cyi}.json" in data_files,
-            "ranking": f"ranking_{cyi}.json" in data_files,
+            "heats": _has_heats(data_dir / f"heats_{cyi}.json"),
+            "ranking": _has_ranking(data_dir / f"ranking_{cyi}.json"),
             "auto_scrape": _auto_scrape(c.get("start_date", ""), c.get("end_date", ""), today),
         })
     return {"competitions": comps, "active_cyi": calendar.get("active_cyi")}
