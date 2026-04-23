@@ -1,4 +1,5 @@
 import json
+import re
 import shutil
 import subprocess
 from datetime import datetime, timezone
@@ -22,6 +23,17 @@ def run(args):
         subprocess.run(["wrangler", "pages", "deploy", "public/"], check=True)
 
 
+def _parse_start_date(date_range: str) -> str:
+    """Parse 'Nov 28 to 30, 2025' → '2025-11-28'."""
+    m = re.match(r'^(\w+)\s+(\d+).*?(\d{4})$', date_range.strip())
+    if not m:
+        return ''
+    try:
+        return datetime.strptime(f"{m.group(1)} {m.group(2)} {m.group(3)}", "%b %d %Y").strftime("%Y-%m-%d")
+    except ValueError:
+        return ''
+
+
 def _update_index(out_dir: Path) -> None:
     competitions = []
     for heats_file in sorted(out_dir.glob("heats_*.json")):
@@ -34,14 +46,18 @@ def _update_index(out_dir: Path) -> None:
             ranking_file = out_dir / f"ranking_{cyi}.json"
             competitions.append({
                 "cyi": cyi,
+                "competition_id": meta.get("competition_id"),
                 "name": meta.get("name", ""),
                 "date_range": meta.get("date_range", ""),
+                "start_date": _parse_start_date(meta.get("date_range", "")),
                 "location": meta.get("location", ""),
                 "heats_file": f"{out_dir.name}/{heats_file.name}",
                 "ranking_file": f"{out_dir.name}/{ranking_file.name}",
             })
         except (json.JSONDecodeError, KeyError):
             pass
+
+    competitions.sort(key=lambda c: c.get("start_date", ""), reverse=True)
 
     index_path = out_dir / "index.json"
     index_path.write_text(json.dumps(

@@ -1,26 +1,32 @@
 {
-  "updated_at": "2026-04-23T02:58:59.323632+00:00",
+  "updated_at": "2026-04-23T05:07:35.642309+00:00",
   "competitions": [
     {
-      "cyi": 1030,
-      "name": "California Star Ball Dancesport Championships",
-      "date_range": "Nov 28 to 30, 2025",
-      "location": "",
-      "heats_file": "data/heats_1030.json",
-      "ranking_file": "data/ranking_1030.json"
-    },
-    {
       "cyi": 373,
+      "competition_id": 11,
       "name": "City Lights Open",
       "date_range": "Jan 22 to 25, 2026",
+      "start_date": "2026-01-22",
       "location": "",
       "heats_file": "data/heats_373.json",
       "ranking_file": "data/ranking_373.json"
     },
     {
+      "cyi": 1030,
+      "competition_id": 141,
+      "name": "California Star Ball Dancesport Championships",
+      "date_range": "Nov 28 to 30, 2025",
+      "start_date": "2025-11-28",
+      "location": "",
+      "heats_file": "data/heats_1030.json",
+      "ranking_file": "data/ranking_1030.json"
+    },
+    {
       "cyi": 421,
+      "competition_id": 35,
       "name": "International Grand Ball Dancesport Championships",
       "date_range": "Jul 24 to 27, 2025",
+      "start_date": "2025-07-24",
       "location": "",
       "heats_file": "data/heats_421.json",
       "ranking_file": "data/ranking_421.json"
