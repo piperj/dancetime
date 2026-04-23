@@ -14,14 +14,14 @@ def parse_results(results_json: dict) -> list[DanceResult]:
 
 def _parse_competitor_events(data: dict) -> list[DanceResult]:
     results = []
-    for event in data.get("Events", []):
+    for event in data.get("Events") or []:
         event_id = event.get("ID", 0)
         event_name = event.get("Name", "")
-        for round_ in event.get("Rounds", []):
+        for round_ in event.get("Rounds") or []:
             round_id = round_.get("ID", 0)
             round_name = round_.get("Name", "")
             session_id = round_.get("Session_ID", 0)
-            dances = round_.get("Dances", [])
+            dances = round_.get("Dances") or []
 
             if _has_individual_results(dances):
                 results.extend(_parse_individual_dances(event_id, event_name, round_id, round_name, session_id, dances))
@@ -34,7 +34,7 @@ def _parse_competitor_events(data: dict) -> list[DanceResult]:
 
 def _has_individual_results(dances: list[dict]) -> bool:
     for dance in dances:
-        for comp in dance.get("Competitors", []):
+        for comp in dance.get("Competitors") or []:
             if comp.get("Result") is not None or comp.get("Marks"):
                 return True
     return False
@@ -53,7 +53,7 @@ def _parse_individual_dances(
         dance_name = dance.get("Dance_Name", "")
         competitors, partners, placements = [], {}, {}
 
-        for comp in dance.get("Competitors", []):
+        for comp in dance.get("Competitors") or []:
             participants = comp.get("Participants", [])
             if not participants:
                 continue
