@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-04-23T05:07:35.642309+00:00",
+  "updated_at": "2026-04-23T14:46:54.272045+00:00",
   "competitions": [
+    {
+      "cyi": 755,
+      "competition_id": 55,
+      "name": "The Ball at the San Francisco Open Dancesport Championships",
+      "date_range": "Apr 2 to 5, 2026",
+      "start_date": "2026-04-02",
+      "location": "",
+      "heats_file": "data/heats_755.json",
+      "ranking_file": "data/ranking_755.json"
+    },
     {
       "cyi": 373,
       "competition_id": 11,

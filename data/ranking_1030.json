@@ -4,7 +4,7 @@
     "name": "California Star Ball Dancesport Championships",
     "date_range": "Nov 28 to 30, 2025",
     "location": "",
-    "generated_at": "2026-04-23T06:27:35.963491+00:00",
+    "generated_at": "2026-04-23T14:29:31.430003+00:00",
     "elo_params": {
       "k_factor": 32.0,
       "partner_weight": 0.3
@@ -28,8 +28,8 @@
           "rank": 1
         },
         {
-          "competitor": "Nikolay Voronovich",
-          "partner": "Hadas Fisher",
+          "competitor": "Hadas Fisher",
+          "partner": "Nikolay Voronovich",
           "studio": "Dance Street",
           "partner_studio": "Dance Street",
           "elo": 2061.9,
@@ -40,8 +40,8 @@
           "rank": 2
         },
         {
-          "competitor": "Danylo Dobrovolskyi",
-          "partner": "Anastasiia Malovana",
+          "competitor": "Anastasiia Malovana",
+          "partner": "Danylo Dobrovolskyi",
           "studio": "FADS-North Scottsdale",
           "partner_studio": "FADS-North Scottsdale",
           "elo": 2058.61,
@@ -64,8 +64,8 @@
           "rank": 4
         },
         {
-          "competitor": "Roxane Milotti",
-          "partner": "Igor Colac",
+          "competitor": "Igor Colac",
+          "partner": "Roxane Milotti",
           "studio": "South Bay Dance Center",
           "partner_studio": "South Bay Dance Center",
           "elo": 2045.37,
@@ -112,8 +112,8 @@
           "rank": 8
         },
         {
-          "competitor": "Ievgen Tkachenko",
-          "partner": "Elena Nesterova",
+          "competitor": "Elena Nesterova",
+          "partner": "Ievgen Tkachenko",
           "studio": "Infinite",
           "partner_studio": "Infinite",
           "elo": 2010.05,
@@ -124,8 +124,8 @@
           "rank": 9
         },
         {
-          "competitor": "Boris Basin",
-          "partner": "Natalie Shirota",
+          "competitor": "Natalie Shirota",
+          "partner": "Boris Basin",
           "studio": "FADS Diamond Bar-Boris Basin",
           "partner_studio": "FADS Diamond Bar-Boris Basin",
           "elo": 2001.25,
@@ -196,8 +196,8 @@
           "rank": 15
         },
         {
-          "competitor": "Parker Lynn",
-          "partner": "Stacey Chuang",
+          "competitor": "Stacey Chuang",
+          "partner": "Parker Lynn",
           "studio": "Parker Lynn",
           "partner_studio": "Parker Lynn",
           "elo": 1957.34,
@@ -208,8 +208,8 @@
           "rank": 16
         },
         {
-          "competitor": "Phillip Morehouse",
-          "partner": "Melsa Khodaei",
+          "competitor": "Melsa Khodaei",
+          "partner": "Phillip Morehouse",
           "studio": "Pinnacle Dance North",
           "partner_studio": "Pinnacle Dance North",
           "elo": 1954.44,
@@ -232,8 +232,8 @@
           "rank": 18
         },
         {
-          "competitor": "Hunter Doughty",
-          "partner": "Peter Jensen-Sabol",
+          "competitor": "Peter Jensen-Sabol",
+          "partner": "Hunter Doughty",
           "studio": "Dance Hub-Jensen-Sabol",
           "partner_studio": "Dance Hub-Jensen-Sabol",
           "elo": 1938.1,
@@ -280,8 +280,8 @@
           "rank": 22
         },
         {
-          "competitor": "Zsolt Katona",
-          "partner": "Timea Potys",
+          "competitor": "Timea Potys",
+          "partner": "Zsolt Katona",
           "studio": "Sizzling Latin",
           "partner_studio": "Sizzling Latin",
           "elo": 1855.96,
@@ -292,8 +292,8 @@
           "rank": 23
         },
         {
-          "competitor": "Oleksiy Pigotskyy",
-          "partner": "Luna Viva",
+          "competitor": "Luna Viva",
+          "partner": "Oleksiy Pigotskyy",
           "studio": "Oleksiy Pigotskyy",
           "partner_studio": "Oleksiy Pigotskyy",
           "elo": 1849.76,
@@ -484,8 +484,8 @@
           "rank": 39
         },
         {
-          "competitor": "Melbin De La Cruz",
-          "partner": "Emily Mak",
+          "competitor": "Emily Mak",
+          "partner": "Melbin De La Cruz",
           "studio": "Dance With Melbin",
           "partner_studio": "Dance With Melbin",
           "elo": 1745.64,
@@ -592,8 +592,8 @@
           "rank": 48
         },
         {
-          "competitor": "Dale DeWoskin",
-          "partner": "Nicole Wooding",
+          "competitor": "Nicole Wooding",
+          "partner": "Dale DeWoskin",
           "studio": "Chasse and Sway",
           "partner_studio": "Chasse and Sway",
           "elo": 1689.88,
@@ -604,8 +604,8 @@
           "rank": 49
         },
         {
-          "competitor": "Dawid Michalak",
-          "partner": "Dali Higa",
+          "competitor": "Dali Higa",
+          "partner": "Dawid Michalak",
           "studio": "South Bay  - Michalak",
           "partner_studio": "South Bay  - Michalak",
           "elo": 1683.69,
@@ -640,8 +640,8 @@
           "rank": 52
         },
         {
-          "competitor": "Kathleen Taggart",
-          "partner": "Artur Lago-Varjapetian",
+          "competitor": "Artur Lago-Varjapetian",
+          "partner": "Kathleen Taggart",
           "studio": "Cactu Studio",
           "partner_studio": "Cactu Studio",
           "elo": 1679.97,
@@ -1049,193 +1049,19 @@
         }
       ]
     },
-    "B": {
-      "label": "B",
-      "size": 14,
-      "couples": [
-        {
-          "competitor": "Joyce He",
-          "partner": "Jaxon Huang",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1849.08,
-          "elo_delta": "-30.3",
-          "initial_elo": 1879.36,
-          "heats_processed": 5,
-          "num_opponents": 1,
-          "rank": 1
-        },
-        {
-          "competitor": "Zhihai Li",
-          "partner": "Kirill Nikitin",
-          "studio": "Dance Code Ballroom",
-          "partner_studio": "Dance Code Ballroom",
-          "elo": 1729.07,
-          "elo_delta": "+79.1",
-          "initial_elo": 1650.0,
-          "heats_processed": 15,
-          "num_opponents": 3,
-          "rank": 2
-        },
-        {
-          "competitor": "Alan Wu",
-          "partner": "Jessica Yuan",
-          "studio": "Dance Code Ballroom",
-          "partner_studio": "Dance Code Ballroom",
-          "elo": 1652.06,
-          "elo_delta": "+2.1",
-          "initial_elo": 1650.0,
-          "heats_processed": 12,
-          "num_opponents": 3,
-          "rank": 3
-        },
-        {
-          "competitor": "Ethan Zhang",
-          "partner": "Yuhe Lu",
-          "studio": "Dance Code Ballroom",
-          "partner_studio": "Dance Code Ballroom",
-          "elo": 1647.61,
-          "elo_delta": "-2.4",
-          "initial_elo": 1650.0,
-          "heats_processed": 10,
-          "num_opponents": 3,
-          "rank": 4
-        },
-        {
-          "competitor": "Stefano Grassi",
-          "partner": "Zoey Zhang",
-          "studio": "Stefano Grassi",
-          "partner_studio": "Stefano Grassi",
-          "elo": 1559.3,
-          "elo_delta": "-84.0",
-          "initial_elo": 1643.34,
-          "heats_processed": 20,
-          "num_opponents": 3,
-          "rank": 5
-        },
-        {
-          "competitor": "Varvara Novikova",
-          "partner": "Leo Wu",
-          "studio": "Dance Code Ballroom",
-          "partner_studio": "Dance Code Ballroom",
-          "elo": 1526.72,
-          "elo_delta": "+26.7",
-          "initial_elo": 1500.0,
-          "heats_processed": 12,
-          "num_opponents": 4,
-          "rank": 6
-        },
-        {
-          "competitor": "Jaxon Huang",
-          "partner": "Yanzi Wu",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1513.69,
-          "elo_delta": "+13.7",
-          "initial_elo": 1500.0,
-          "heats_processed": 34,
-          "num_opponents": 8,
-          "rank": 7
-        },
-        {
-          "competitor": "Karica Chen",
-          "partner": "Jaxon Huang",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1476.17,
-          "elo_delta": "-23.8",
-          "initial_elo": 1500.0,
-          "heats_processed": 14,
-          "num_opponents": 3,
-          "rank": 8
-        },
-        {
-          "competitor": "Regina Huang",
-          "partner": "Jaxon Huang",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1369.32,
-          "elo_delta": "+69.3",
-          "initial_elo": 1300.0,
-          "heats_processed": 14,
-          "num_opponents": 5,
-          "rank": 9
-        },
-        {
-          "competitor": "Brad Ma",
-          "partner": "Luna Tian",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1300.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1300.0,
-          "heats_processed": 3,
-          "num_opponents": 1,
-          "rank": 10
-        },
-        {
-          "competitor": "Blake Ma",
-          "partner": "Luna Tian",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1300.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1300.0,
-          "heats_processed": 5,
-          "num_opponents": 1,
-          "rank": 11
-        },
-        {
-          "competitor": "Rex Chen",
-          "partner": "Regina Huang",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1300.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1300.0,
-          "heats_processed": 10,
-          "num_opponents": 2,
-          "rank": 12
-        },
-        {
-          "competitor": "Gabriel Zhang",
-          "partner": "Gia Khanh Dam",
-          "studio": "Dance Code Ballroom",
-          "partner_studio": "Dance Code Ballroom",
-          "elo": 1297.43,
-          "elo_delta": "-2.6",
-          "initial_elo": 1300.0,
-          "heats_processed": 6,
-          "num_opponents": 1,
-          "rank": 13
-        },
-        {
-          "competitor": "Elena Zheng",
-          "partner": "Jaxon Huang",
-          "studio": "Hong Yun Dance Studio",
-          "partner_studio": "Hong Yun Dance Studio",
-          "elo": 1297.41,
-          "elo_delta": "-2.6",
-          "initial_elo": 1300.0,
-          "heats_processed": 8,
-          "num_opponents": 2,
-          "rank": 14
-        }
-      ]
-    },
-    "F": {
-      "label": "F",
+    "L": {
+      "label": "L",
       "size": 1,
       "couples": [
         {
-          "competitor": "David Crowle",
-          "partner": "Marla Jones",
-          "studio": "Crowle-Jones",
-          "partner_studio": "Crowle-Jones",
-          "elo": 1800.0,
+          "competitor": "Mark Methven",
+          "partner": "Jenell Maranto",
+          "studio": "Academy Of Ballroom Dance",
+          "partner_studio": "Academy Of Ballroom Dance",
+          "elo": 1650.0,
           "elo_delta": "+0.0",
-          "initial_elo": 1800.0,
-          "heats_processed": 24,
+          "initial_elo": 1650.0,
+          "heats_processed": 25,
           "num_opponents": 1,
           "rank": 1
         }
@@ -1246,32 +1072,14 @@
       "size": 1,
       "couples": [
         {
-          "competitor": "Luis Magana",
-          "partner": "Abbi Bennitt",
+          "competitor": "Abbi Bennitt",
+          "partner": "Luis Magana",
           "studio": "Nexus SLO",
           "partner_studio": "Nexus SLO",
           "elo": 1300.0,
           "elo_delta": "+0.0",
           "initial_elo": 1300.0,
           "heats_processed": 10,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "G": {
-      "label": "G",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Alessandra Gonzalez",
-          "partner": "Don Crumrine",
-          "studio": "della Santina Dance",
-          "partner_studio": "della Santina Dance",
-          "elo": 1500.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1500.0,
-          "heats_processed": 23,
           "num_opponents": 1,
           "rank": 1
         }
@@ -1331,24 +1139,42 @@
         }
       ]
     },
+    "J": {
+      "label": "J",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Angin Karabidian",
+          "partner": "Edward Castro",
+          "studio": "Crown City Dance Pasadena",
+          "partner_studio": "Crown City Dance Pasadena",
+          "elo": 1300.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1300.0,
+          "heats_processed": 32,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
     "D": {
       "label": "D",
       "size": 2,
       "couples": [
         {
-          "competitor": "Israel Lagunas",
-          "partner": "Olga Agafonova",
+          "competitor": "Olga Agafonova",
+          "partner": "Rashaad Jones",
           "studio": "PG Dance",
           "partner_studio": "PG Dance",
           "elo": 1500.0,
           "elo_delta": "+0.0",
           "initial_elo": 1500.0,
-          "heats_processed": 13,
-          "num_opponents": 1,
+          "heats_processed": 26,
+          "num_opponents": 2,
           "rank": 1
         },
         {
-          "competitor": "Rashaad Jones",
+          "competitor": "Israel Lagunas",
           "partner": "Olga Agafonova",
           "studio": "PG Dance",
           "partner_studio": "PG Dance",
@@ -1361,21 +1187,177 @@
         }
       ]
     },
-    "J": {
-      "label": "J",
-      "size": 1,
+    "B": {
+      "label": "B",
+      "size": 14,
       "couples": [
         {
-          "competitor": "Edward Castro",
-          "partner": "Angin Karabidian",
-          "studio": "Crown City Dance Pasadena",
-          "partner_studio": "Crown City Dance Pasadena",
+          "competitor": "Joyce He",
+          "partner": "Jaxon Huang",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
+          "elo": 1849.08,
+          "elo_delta": "-30.3",
+          "initial_elo": 1879.36,
+          "heats_processed": 5,
+          "num_opponents": 1,
+          "rank": 1
+        },
+        {
+          "competitor": "Zhihai Li",
+          "partner": "Kirill Nikitin",
+          "studio": "Dance Code Ballroom",
+          "partner_studio": "Dance Code Ballroom",
+          "elo": 1729.07,
+          "elo_delta": "+79.1",
+          "initial_elo": 1650.0,
+          "heats_processed": 15,
+          "num_opponents": 3,
+          "rank": 2
+        },
+        {
+          "competitor": "Alan Wu",
+          "partner": "Jessica Yuan",
+          "studio": "Dance Code Ballroom",
+          "partner_studio": "Dance Code Ballroom",
+          "elo": 1652.06,
+          "elo_delta": "+2.1",
+          "initial_elo": 1650.0,
+          "heats_processed": 12,
+          "num_opponents": 3,
+          "rank": 3
+        },
+        {
+          "competitor": "Ethan Zhang",
+          "partner": "Yuhe Lu",
+          "studio": "Dance Code Ballroom",
+          "partner_studio": "Dance Code Ballroom",
+          "elo": 1647.61,
+          "elo_delta": "-2.4",
+          "initial_elo": 1650.0,
+          "heats_processed": 10,
+          "num_opponents": 3,
+          "rank": 4
+        },
+        {
+          "competitor": "Zoey Zhang",
+          "partner": "Stefano Grassi",
+          "studio": "Stefano Grassi",
+          "partner_studio": "Stefano Grassi",
+          "elo": 1559.3,
+          "elo_delta": "-84.0",
+          "initial_elo": 1643.34,
+          "heats_processed": 20,
+          "num_opponents": 3,
+          "rank": 5
+        },
+        {
+          "competitor": "Varvara Novikova",
+          "partner": "Leo Wu",
+          "studio": "Dance Code Ballroom",
+          "partner_studio": "Dance Code Ballroom",
+          "elo": 1526.72,
+          "elo_delta": "+26.7",
+          "initial_elo": 1500.0,
+          "heats_processed": 12,
+          "num_opponents": 4,
+          "rank": 6
+        },
+        {
+          "competitor": "Jaxon Huang",
+          "partner": "Yanzi Wu",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
+          "elo": 1513.69,
+          "elo_delta": "+13.7",
+          "initial_elo": 1500.0,
+          "heats_processed": 34,
+          "num_opponents": 8,
+          "rank": 7
+        },
+        {
+          "competitor": "Karica Chen",
+          "partner": "Jaxon Huang",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
+          "elo": 1476.17,
+          "elo_delta": "-23.8",
+          "initial_elo": 1500.0,
+          "heats_processed": 14,
+          "num_opponents": 3,
+          "rank": 8
+        },
+        {
+          "competitor": "Regina Huang",
+          "partner": "Jaxon Huang",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
+          "elo": 1369.32,
+          "elo_delta": "+69.3",
+          "initial_elo": 1300.0,
+          "heats_processed": 14,
+          "num_opponents": 5,
+          "rank": 9
+        },
+        {
+          "competitor": "Luna Tian",
+          "partner": "Brad Ma",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
           "elo": 1300.0,
           "elo_delta": "+0.0",
           "initial_elo": 1300.0,
-          "heats_processed": 32,
+          "heats_processed": 13,
+          "num_opponents": 3,
+          "rank": 10
+        },
+        {
+          "competitor": "Blake Ma",
+          "partner": "Luna Tian",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
+          "elo": 1300.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1300.0,
+          "heats_processed": 5,
           "num_opponents": 1,
-          "rank": 1
+          "rank": 11
+        },
+        {
+          "competitor": "Rex Chen",
+          "partner": "Regina Huang",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
+          "elo": 1300.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1300.0,
+          "heats_processed": 10,
+          "num_opponents": 2,
+          "rank": 12
+        },
+        {
+          "competitor": "Gabriel Zhang",
+          "partner": "Gia Khanh Dam",
+          "studio": "Dance Code Ballroom",
+          "partner_studio": "Dance Code Ballroom",
+          "elo": 1297.43,
+          "elo_delta": "-2.6",
+          "initial_elo": 1300.0,
+          "heats_processed": 6,
+          "num_opponents": 1,
+          "rank": 13
+        },
+        {
+          "competitor": "Elena Zheng",
+          "partner": "Jaxon Huang",
+          "studio": "Hong Yun Dance Studio",
+          "partner_studio": "Hong Yun Dance Studio",
+          "elo": 1297.41,
+          "elo_delta": "-2.6",
+          "initial_elo": 1300.0,
+          "heats_processed": 8,
+          "num_opponents": 2,
+          "rank": 14
         }
       ]
     },
@@ -1397,37 +1379,19 @@
         }
       ]
     },
-    "H": {
-      "label": "H",
+    "G": {
+      "label": "G",
       "size": 1,
       "couples": [
         {
-          "competitor": "Avery Nuckols",
-          "partner": "Robert Green",
-          "studio": "Robert Green Jr",
-          "partner_studio": "Robert Green Jr",
-          "elo": 1800.0,
+          "competitor": "Don Crumrine",
+          "partner": "Alessandra Gonzalez",
+          "studio": "della Santina Dance",
+          "partner_studio": "della Santina Dance",
+          "elo": 1500.0,
           "elo_delta": "+0.0",
-          "initial_elo": 1800.0,
-          "heats_processed": 44,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "L": {
-      "label": "L",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Mark Methven",
-          "partner": "Jenell Maranto",
-          "studio": "Academy Of Ballroom Dance",
-          "partner_studio": "Academy Of Ballroom Dance",
-          "elo": 1650.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1650.0,
-          "heats_processed": 25,
+          "initial_elo": 1500.0,
+          "heats_processed": 23,
           "num_opponents": 1,
           "rank": 1
         }
@@ -1451,19 +1415,37 @@
         }
       ]
     },
-    "M": {
-      "label": "M",
+    "H": {
+      "label": "H",
       "size": 1,
       "couples": [
         {
-          "competitor": "Amy Li",
-          "partner": "Matthew Boguslawski",
-          "studio": "Boguslawski-Li",
-          "partner_studio": "Boguslawski-Li",
+          "competitor": "Avery Nuckols",
+          "partner": "Robert Green",
+          "studio": "Robert Green Jr",
+          "partner_studio": "Robert Green Jr",
           "elo": 1800.0,
           "elo_delta": "+0.0",
           "initial_elo": 1800.0,
-          "heats_processed": 5,
+          "heats_processed": 44,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
+    "F": {
+      "label": "F",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "David Crowle",
+          "partner": "Marla Jones",
+          "studio": "Crowle-Jones",
+          "partner_studio": "Crowle-Jones",
+          "elo": 1800.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1800.0,
+          "heats_processed": 24,
           "num_opponents": 1,
           "rank": 1
         }
@@ -1474,7 +1456,7 @@
       "size": 2,
       "couples": [
         {
-          "competitor": "Jurassic Park",
+          "competitor": "Jailhouse Rock",
           "partner": "Formation Team",
           "studio": "Arete Dance Center",
           "partner_studio": "Arete Dance Center",
@@ -1486,16 +1468,34 @@
           "rank": 1
         },
         {
-          "competitor": "Formation Team",
-          "partner": "Jailhouse Rock",
+          "competitor": "Jurassic Park",
+          "partner": "Formation Team",
           "studio": "Arete Dance Center",
           "partner_studio": "Arete Dance Center",
           "elo": 1500.0,
           "elo_delta": "+0.0",
           "initial_elo": 1500.0,
-          "heats_processed": 2,
-          "num_opponents": 2,
+          "heats_processed": 1,
+          "num_opponents": 1,
           "rank": 2
+        }
+      ]
+    },
+    "M": {
+      "label": "M",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Matthew Boguslawski",
+          "partner": "Amy Li",
+          "studio": "Boguslawski-Li",
+          "partner_studio": "Boguslawski-Li",
+          "elo": 1800.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1800.0,
+          "heats_processed": 5,
+          "num_opponents": 1,
+          "rank": 1
         }
       ]
     }
