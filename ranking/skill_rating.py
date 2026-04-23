@@ -54,7 +54,7 @@ def parse_age_division(event_name: str) -> str | None:
 
 def get_initial_ratings(
     results: list[DanceResult],
-    prior_ratings: dict[str, dict],
+    prior_ratings: dict[str, float],
     base: float = 1500.0,
 ) -> dict[str, float]:
     ratings: dict[str, float] = {}
@@ -62,7 +62,7 @@ def get_initial_ratings(
 
     for competitor in competitors:
         if competitor in prior_ratings:
-            ratings[competitor] = prior_ratings[competitor]["elo"]
+            ratings[competitor] = prior_ratings[competitor]
         else:
             offset = _skill_offset(results, competitor) + _age_offset(results, competitor)
             ratings[competitor] = base + offset

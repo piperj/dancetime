@@ -26,13 +26,15 @@ class EloCalculator:
             return (1 - self.partner_weight) * r_comp + self.partner_weight * r_partner
         return r_comp
 
-    def process_heat(self, result: DanceResult) -> None:
+    def process_heat(self, result: DanceResult) -> dict[str, tuple[float, float]]:
         if not result.is_contested():
-            return
+            return {}
 
         competitors = [c for c in result.competitors if c in result.placements]
         if len(competitors) < 2:
-            return
+            return {}
+
+        before = {c: self.get_rating(c) for c in competitors}
 
         couple_ratings = {
             c: self._couple_rating_with_partner(c, result.partners.get(c))
@@ -64,3 +66,6 @@ class EloCalculator:
         n = len(competitors) - 1
         for c in competitors:
             self._ratings[c] = self.get_rating(c) + deltas[c] / max(n, 1)
+
+        return {c: (before[c], self.get_rating(c)) for c in competitors
+                if self.get_rating(c) != before[c]}

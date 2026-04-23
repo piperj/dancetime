@@ -1,3 +1,4 @@
+import json
 import pytest
 
 from ranking.models import DanceResult
@@ -5,7 +6,7 @@ from ranking.parser import parse_results, _join_name, _extract_placement
 from ranking.skill_rating import parse_skill_category, parse_age_division, get_initial_ratings, SKILL_OFFSETS, AGE_OFFSETS
 from ranking.elo import EloCalculator
 from ranking.clusters import build_graph, assign_leaderboards
-from ranking.elo_store import compute_deltas, load_ratings, save_ratings
+from ranking.elo_store import compute_deltas, load_history, load_ratings, save_ratings, write_history
 from ranking.writer import build_ranking_json, write_ranking_json
 
 
@@ -171,7 +172,7 @@ class TestSkillRating:
     def test_initial_rating_uses_prior(self):
         data = _make_results_json([("Alice Smith", "Bob Jones", 1), ("Carol Doe", "Dan Roe", 2)])
         results = parse_results(data)
-        prior = {"Alice Smith": {"elo": 1650.0, "num_comps": 3}}
+        prior = {"Alice Smith": 1650.0}
         ratings = get_initial_ratings(results, prior)
         assert ratings["Alice Smith"] == 1650.0
 
@@ -234,6 +235,27 @@ class TestEloCalculator:
         r1["A"] = 9999.0
         assert calc.get_rating("A") == 1500.0
 
+    def test_process_heat_returns_before_after(self):
+        calc = EloCalculator()
+        calc.initialize({"Alice": 1500.0, "Bob": 1500.0, "Carol": 1500.0, "Dan": 1500.0})
+        result = self._make_result([("Alice", "Bob", 1), ("Carol", "Dan", 2)])
+        changes = calc.process_heat(result)
+        assert set(changes.keys()) == {"Alice", "Bob", "Carol", "Dan"}
+        for competitor, (before, after) in changes.items():
+            assert before == 1500.0
+            assert after == calc.get_rating(competitor)
+            assert before != after
+
+    def test_process_heat_returns_empty_for_uncontested(self):
+        calc = EloCalculator()
+        calc.initialize({"Alice": 1600.0})
+        r = DanceResult(
+            event_id=1, event_name="T", round_id=1, round_name="F",
+            dance_id=1, dance_name="W", session_id=1, heat_number=1, time="",
+            competitors=["Alice"], partners={}, placements={"Alice": 1},
+        )
+        assert calc.process_heat(r) == {}
+
 
 class TestClusters:
     def _make_results(self, groups: list[list[str]]) -> list[DanceResult]:
@@ -272,28 +294,55 @@ class TestEloStore:
         assert load_ratings(tmp_path) == {}
 
     def test_save_and_load_roundtrip(self, tmp_path):
-        save_ratings({"Alice": 1620.5}, {}, 373, tmp_path)
+        save_ratings({"Alice": 1620.5}, {"Alice": 1}, 373, tmp_path)
         loaded = load_ratings(tmp_path)
-        assert loaded["Alice"]["elo"] == 1620.5
-        assert loaded["Alice"]["last_cyi"] == 373
+        assert loaded["Alice"] == 1620.5
 
-    def test_save_increments_num_comps(self, tmp_path):
-        prior = {"Alice": {"elo": 1600.0, "num_comps": 2, "last_cyi": 372}}
-        save_ratings({"Alice": 1620.5}, prior, 373, tmp_path)
-        loaded = load_ratings(tmp_path)
-        assert loaded["Alice"]["num_comps"] == 3
+    def test_save_stores_comp_counts(self, tmp_path):
+        save_ratings({"Alice": 1620.5}, {"Alice": 3}, 373, tmp_path)
+        raw = json.loads((tmp_path / "elo_ratings.json").read_text())
+        assert raw["ratings"]["Alice"]["num_comps"] == 3
+        assert raw["ratings"]["Alice"]["last_cyi"] == 373
 
     def test_compute_deltas_positive(self):
-        deltas = compute_deltas({"Alice": 1550.0}, {"Alice": {"elo": 1500.0}})
+        deltas = compute_deltas({"Alice": 1550.0}, {"Alice": 1500.0})
         assert deltas["Alice"] == "+50.0"
 
     def test_compute_deltas_negative(self):
-        deltas = compute_deltas({"Alice": 1450.0}, {"Alice": {"elo": 1500.0}})
+        deltas = compute_deltas({"Alice": 1450.0}, {"Alice": 1500.0})
         assert deltas["Alice"] == "-50.0"
 
     def test_compute_deltas_new_competitor(self):
         deltas = compute_deltas({"Alice": 1500.0}, {})
         assert deltas["Alice"] == "+0.0"
+
+    def test_load_history_returns_empty_when_no_file(self, tmp_path):
+        assert load_history(tmp_path) == {}
+
+    def test_write_and_load_history_roundtrip(self, tmp_path):
+        entries = [{"event_name": "Test", "round_name": "Final", "dance_name": "Waltz",
+                    "competitor": "Alice", "partner": "Bob",
+                    "elo_before": 1500.0, "elo_after": 1512.5}]
+        write_history({"422": entries}, tmp_path)
+        loaded = load_history(tmp_path)
+        assert "422" in loaded
+        assert loaded["422"][0]["competitor"] == "Alice"
+        assert loaded["422"][0]["elo_after"] == 1512.5
+
+    def test_write_history_overwrites_fully(self, tmp_path):
+        write_history({"422": [{"elo_after": 1510.0}]}, tmp_path)
+        write_history({"422": [{"elo_after": 1520.0}]}, tmp_path)
+        loaded = load_history(tmp_path)
+        assert loaded["422"][0]["elo_after"] == 1520.0
+
+    def test_write_history_preserves_all_cyis(self, tmp_path):
+        write_history({
+            "422": [{"competitor": "Alice"}],
+            "904": [{"competitor": "Bob"}],
+        }, tmp_path)
+        loaded = load_history(tmp_path)
+        assert "422" in loaded
+        assert "904" in loaded
 
 
 class TestRankingWriter:

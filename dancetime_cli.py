@@ -27,7 +27,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_heats.add_argument("--out-dir", default="data")
 
     p_ranking = sub.add_parser("ranking", help="Generate ELO ranking JSON")
-    p_ranking.add_argument("--cyi", type=int, required=True)
+    p_ranking.add_argument("--cyi", type=int, default=None, help="(ignored; all competitions are processed in date order)")
     p_ranking.add_argument("--data-dir", default="data/raw")
     p_ranking.add_argument("--out-dir", default="data")
     p_ranking.add_argument("--iterations", type=int, default=100, help="(reserved for future use)")
