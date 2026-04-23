@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-23T02:47:38.826355+00:00",
+  "updated_at": "2026-04-23T02:58:59.323632+00:00",
   "competitions": [
     {
       "cyi": 1030,
@@ -16,6 +16,14 @@
       "location": "",
       "heats_file": "data/heats_373.json",
       "ranking_file": "data/ranking_373.json"
+    },
+    {
+      "cyi": 421,
+      "name": "International Grand Ball Dancesport Championships",
+      "date_range": "Jul 24 to 27, 2025",
+      "location": "",
+      "heats_file": "data/heats_421.json",
+      "ranking_file": "data/ranking_421.json"
     }
   ]
 }
