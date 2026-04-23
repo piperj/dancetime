@@ -311,9 +311,31 @@ async function doPublish(btn) {
   const orig = btn.innerHTML;
   btn.disabled = true;
   btn.innerHTML = `<span class="spinner"></span>`;
+  openLog('Publish + commit + push');
   try {
-    const data = await fetch('/api/publish', { method: 'POST' }).then(r => r.json());
-    if (!data.ok) alert(`Publish failed:\n${data.output}`);
+    const res = await fetch('/api/publish', { method: 'POST' });
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '';
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      const parts = buf.split('\n');
+      buf = parts.pop();
+      for (const part of parts) {
+        if (!part.trim()) continue;
+        const msg = JSON.parse(part);
+        if (msg.type === 'step') {
+          appendLog(`<div class="step-label">▶ ${msg.step}</div>`);
+        } else if (msg.type === 'line') {
+          appendLog(`<div class="log-line">${msg.text}</div>`);
+        } else if (msg.type === 'done') {
+          if (msg.ok) appendLog(`<div class="log-ok">✓ Done</div>`);
+          else appendLog(`<div class="log-err">✗ ${msg.failed_step} failed</div>`);
+        }
+      }
+    }
   } finally {
     btn.disabled = false;
     btn.innerHTML = orig;

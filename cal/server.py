@@ -143,11 +143,22 @@ def make_handler(data_dir: Path):
 
         def do_POST(self):
             if self.path == "/api/publish":
-                result = subprocess.run(
-                    ["uv", "run", "python", "dancetime_cli.py", "publish"],
-                    capture_output=True, text=True,
-                )
-                _json_response(self, {"ok": result.returncode == 0, "output": result.stdout + result.stderr})
+                from datetime import datetime, timezone
+                ts = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+                steps = [
+                    ("publish", ["uv", "run", "python", "dancetime_cli.py", "publish"]),
+                    ("git add", ["git", "add", "data/", "index.html", "favicon.ico"]),
+                    ("git commit", ["bash", "-c",
+                        f"git diff --cached --quiet && echo '(nothing to commit)' "
+                        f"|| git commit -m 'publish: update data {ts}'"]),
+                    ("git push", ["git", "push"]),
+                ]
+                self.send_response(200)
+                self.send_header("Content-Type", "application/x-ndjson")
+                self.send_header("Transfer-Encoding", "chunked")
+                self.send_header("Cache-Control", "no-cache")
+                self.end_headers()
+                _stream_pipeline(self.wfile, steps)
             elif self.path.startswith("/api/scrape/"):
                 try:
                     cyi = int(self.path[len("/api/scrape/"):].split("?")[0])
