@@ -168,9 +168,9 @@
       const param = getCompetitorParam();
       if (activeTab === 'ranking') {
         const input = document.getElementById('search-ranking');
-        if (param && !input.value) { input.value = param; }
+        if (param !== (input.value || null)) { input.value = param || ''; }
         renderRanking();
-      } else if (activeTab === 'heats' && param && !selectedCompetitor) {
+      } else if (activeTab === 'heats' && param && param !== selectedCompetitor) {
         if (heatsData?.competitors?.includes(param) || heatsData?.studios?.includes(param)) {
           setHeatsSearch(param);
         }

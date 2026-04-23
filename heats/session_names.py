@@ -19,6 +19,13 @@ def parse_round_time(time_str: str) -> datetime | None:
     return None
 
 
+def normalize_sid(raw: str) -> str:
+    try:
+        return f"{int(raw):02d}"
+    except (ValueError, TypeError):
+        return raw.strip()
+
+
 def infer_session_names(heatlists: list[dict]) -> dict[str, str]:
     earliest: dict[str, datetime] = {}
 
@@ -26,7 +33,7 @@ def infer_session_names(heatlists: list[dict]) -> dict[str, str]:
         for entry in competitor_data.get("Entries", []):
             for event in entry.get("Events", []):
                 for round_ in event.get("Rounds", []):
-                    sid = str(round_.get("Session", "")).strip()
+                    sid = normalize_sid(str(round_.get("Session", "")))
                     raw_time = round_.get("Round_Time", "")
                     if not sid or not raw_time:
                         continue

@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from heats.session_names import parse_round_time
+from heats.session_names import normalize_sid, parse_round_time
 
 
 @dataclass
@@ -55,7 +55,7 @@ def parse_heatlists(
                 heat_num = str(event.get("Heat", ""))
 
                 for round_ in event.get("Rounds") or []:
-                    sid = str(round_.get("Session", "")).strip()
+                    sid = normalize_sid(str(round_.get("Session", "")))
                     time_str = round_.get("Round_Time", "")
                     round_name = round_.get("Round_Name", "")
 
@@ -172,7 +172,7 @@ def _synthesize_rounds_from_results(
     This happens when the NDCA API omits a round (e.g. a Final) from competitor
     heatlists even though the results are present in results.json.
     """
-    existing: set[tuple[str, str, str]] = {(h.session, h.heat_number, h.round_name) for h in instances.values()}
+    existing: set[tuple[str, str]] = {(h.heat_number, h.round_name) for h in instances.values()}
 
     for comp_data in results:
         for ev in comp_data.get("Events") or []:
@@ -185,7 +185,7 @@ def _synthesize_rounds_from_results(
                 round_name = round_.get("Name", "")
                 sid_int = round_.get("Session_ID")
                 sid = f"{int(sid_int):02d}" if sid_int is not None else "00"
-                pair = (sid, heat_num, round_name)
+                pair = (heat_num, round_name)
                 if pair in existing:
                     continue
 

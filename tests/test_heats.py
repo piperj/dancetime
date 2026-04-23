@@ -9,7 +9,8 @@ from heats.parser import parse_heatlists, HeatInstance, HeatEntry
 from heats.matchups import compute_top_matchups
 from heats.writer import build_heats_json, write_heats_json
 
-HEATS_JSON = Path(__file__).parent.parent / "data" / "heats_373.json"
+HEATS_JSON      = Path(__file__).parent.parent / "data" / "heats_373.json"
+HEATS_JSON_1030 = Path(__file__).parent.parent / "data" / "heats_1030.json"
 
 
 def _make_heatlists(entries_per_competitor):
@@ -41,6 +42,16 @@ def _entry(partner_name, events):
     }
 
 
+def _multi_participant_entry(partner_names, events):
+    """Entry with multiple participants — the scholarship-group pattern that produced triple couples."""
+    return {
+        "Type": "Partner",
+        "Couple_ID": 1,
+        "Participants": [{"Name": n.split()} for n in partner_names],
+        "Events": events,
+    }
+
+
 class TestParseRoundTime:
     def test_full_format(self):
         t = parse_round_time("1/23/2026 12:10:42 PM")
@@ -65,17 +76,17 @@ class TestSessionNames:
     def test_morning(self):
         hl = _make_heatlists([("Alice", "S", [_entry("Bob Jones", [_round_entry("1", "1/30/2026 9:00 AM")])])])
         names = infer_session_names(hl)
-        assert "Morning" in names["1"]
+        assert "Morning" in names["01"]
 
     def test_afternoon(self):
         hl = _make_heatlists([("Alice", "S", [_entry("Bob Jones", [_round_entry("2", "1/30/2026 2:00 PM")])])])
         names = infer_session_names(hl)
-        assert "Afternoon" in names["2"]
+        assert "Afternoon" in names["02"]
 
     def test_evening(self):
         hl = _make_heatlists([("Alice", "S", [_entry("Bob Jones", [_round_entry("3", "1/30/2026 7:30 PM")])])])
         names = infer_session_names(hl)
-        assert "Evening" in names["3"]
+        assert "Evening" in names["03"]
 
     def test_uses_earliest_time_in_session(self):
         hl = _make_heatlists([("Alice", "S", [
@@ -83,7 +94,7 @@ class TestSessionNames:
             _entry("Carol Doe", [_round_entry("1", "1/30/2026 9:00 AM")]),
         ])])
         names = infer_session_names(hl)
-        assert "Morning" in names["1"]
+        assert "Morning" in names["01"]
 
     def test_multiple_sessions(self):
         hl = _make_heatlists([("Alice", "S", [
@@ -143,6 +154,26 @@ class TestHeatParser:
         instances = parse_heatlists(hl, self._make_results(), {"02": "Thursday Evening"})
         alice = next(e for e in instances[0].entries if e.competitor1 == "Alice Smith")
         assert alice.couple == "Alice Smith & Bob Jones"
+
+    def test_multi_participant_entry_is_skipped(self):
+        # Scholarship-group entries list multiple partners for one competitor (e.g. a pro
+        # coaching two students in the same heat). These produce nonsense triple-couple
+        # strings and must be dropped — the real per-person entries cover the same heats.
+        events = [_round_entry("02", "1/30/2026 12:10:42 PM")]
+        hl = _make_heatlists([
+            ("Yuriy Kuvshynov", "Pro Studio", [
+                _multi_participant_entry(["Rasheed Aziz", "Sarah McClammy"], events),
+            ]),
+            ("Rasheed Aziz", "Arete", [_entry("Sarah McClammy", events)]),
+            ("Sarah McClammy", "Arete", [_entry("Rasheed Aziz", events)]),
+        ])
+        instances = parse_heatlists(hl, [], {})
+        assert len(instances) == 1
+        # Only the legitimate Am-Am entry should exist; no Yuriy triple entry
+        assert len(instances[0].entries) == 1
+        entry = instances[0].entries[0]
+        assert "&" not in entry.competitor2
+        assert entry.couple == "Rasheed Aziz & Sarah McClammy"
 
 
 class TestMatchups:
@@ -317,3 +348,51 @@ class TestRealDataHeats:
         assert result_for("Cristian Jones") == "8"
         # Advancing couples have Circuit.Place=0 → no placement shown
         assert result_for("Jasher Kuehn") == ""
+
+
+@pytest.mark.skipif(not HEATS_JSON_1030.exists(), reason="real data not present")
+class TestRealDataHeats1030:
+    """Regression tests for California Star Ball — catches bugs found in production data."""
+
+    @pytest.fixture(autouse=True)
+    def load(self):
+        self.data = json.loads(HEATS_JSON_1030.read_text())
+
+    def test_no_compound_couple_strings_in_competitors(self):
+        # Scholarship-group entries used to produce "A & B" strings in the competitors
+        # list via compound partner_name values from multi-participant heatlist entries.
+        compound = [c for c in self.data["competitors"] if " & " in c]
+        assert compound == [], f"Compound couple strings in competitors: {compound}"
+
+    def test_no_compound_partner_in_heat_entries(self):
+        # Every competitor2 field must be a single person's name.
+        compound = [
+            (h["key"], e["competitor2"])
+            for h in self.data["heats"]
+            for e in h["entries"]
+            if " & " in (e.get("competitor2") or "")
+        ]
+        assert compound == [], f"Compound competitor2 in entries: {compound[:3]}"
+
+    def test_sarah_mcclammy_not_own_opponent(self):
+        # Yuriy Kuvshynov's scholarship entries listed both Rasheed Aziz and Sarah McClammy
+        # as participants, creating a ghost "Yuriy & Rasheed & Sarah" entry in heats where
+        # Sarah already competed as "Rasheed & Sarah". That made Sarah appear as her own
+        # top contestant.
+        sarah_keys = set(self.data["competitor_heats"].get("Sarah McClammy", []))
+        for key in sarah_keys:
+            heat = next((h for h in self.data["heats"] if h["key"] == key), None)
+            if heat is None:
+                continue
+            sarah_entries = [
+                e for e in heat["entries"]
+                if e["competitor1"] == "Sarah McClammy" or e["competitor2"] == "Sarah McClammy"
+            ]
+            for e in sarah_entries:
+                assert "Sarah McClammy" not in e["competitor1"] or "Sarah McClammy" not in e["competitor2"], (
+                    f"Sarah appears on both sides of entry in heat {key}: {e}"
+                )
+                # The couple string must not contain Sarah's name twice
+                assert e["couple"].count("Sarah McClammy") == 1, (
+                    f"Sarah appears twice in couple string '{e['couple']}' in heat {key}"
+                )
