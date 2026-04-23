@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-22T21:49:24.491564+00:00",
+  "updated_at": "2026-04-23T00:46:33.540075+00:00",
   "competitions": [
     {
       "cyi": 1030,
@@ -16,6 +16,22 @@
       "location": "",
       "heats_file": "data/heats_373.json",
       "ranking_file": "data/ranking_373.json"
+    },
+    {
+      "cyi": 422,
+      "name": "International Grand Ball Dancesport Championships",
+      "date_range": "Jul 23 to 26, 2026",
+      "location": "",
+      "heats_file": "data/heats_422.json",
+      "ranking_file": "data/ranking_422.json"
+    },
+    {
+      "cyi": 904,
+      "name": "Manhattan Dance Championships",
+      "date_range": "Jul 1 to 5, 2026",
+      "location": "",
+      "heats_file": "data/heats_904.json",
+      "ranking_file": "data/ranking_904.json"
     }
   ]
 }

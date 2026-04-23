@@ -44,7 +44,9 @@ def parse_heatlists(
             for p in entry.get("Participants") or []:
                 name_parts = p.get("Name") or []
                 partner_parts.append(" ".join(str(x) for x in name_parts))
-            partner_name = " & ".join(partner_parts)
+            if len(partner_parts) > 1:
+                continue
+            partner_name = partner_parts[0] if partner_parts else ""
             couple = f"{competitor_name} & {partner_name}" if partner_name else competitor_name
 
             for event in entry.get("Events") or []:
