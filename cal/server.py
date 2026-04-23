@@ -114,6 +114,7 @@ def _stream_pipeline(wfile, steps: list[tuple[str, list[str]]]):
 
 def make_handler(data_dir: Path):
     calendar_html = (Path(__file__).parent / "static" / "calendar.html").read_bytes()
+    favicon_svg = (Path(__file__).parent / "static" / "favicon.svg").read_bytes()
 
     class Handler(BaseHTTPRequestHandler):
         protocol_version = "HTTP/1.1"
@@ -128,6 +129,13 @@ def make_handler(data_dir: Path):
                 self.send_header("Content-Length", str(len(calendar_html)))
                 self.end_headers()
                 self.wfile.write(calendar_html)
+            elif self.path == "/favicon.svg":
+                data = favicon_svg
+                self.send_response(200)
+                self.send_header("Content-Type", "image/svg+xml")
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                self.wfile.write(data)
             elif self.path == "/api/competitions":
                 _json_response(self, _build_competitions(data_dir))
             else:
