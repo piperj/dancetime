@@ -520,10 +520,13 @@
       sessionHeats.forEach(h => { const p = getPartner(selectedCompetitor, h); if (p) partners.add(p); });
       const partnerText = partners.size ? Array.from(partners).join(', ') : 'Solo';
 
+      const firstPartner = getPartner(selectedCompetitor, sessionHeats[0]);
       html += `<div id="session-${si}" class="blue-box">
         <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
         <div class="font-semibold">${esc(partnerText)}</div>
       </div>`;
+      if (partners.size > 1 && firstPartner)
+        html += `<div class="partner-change-marker">🔄 ${esc(firstPartner)}</div>`;
 
       let lastTime = null, lastHeatNum = null, lastPartner = null;
 

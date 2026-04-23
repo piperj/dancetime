@@ -29,6 +29,8 @@ def _update_index(out_dir: Path) -> None:
             data = json.loads(heats_file.read_text())
             meta = data.get("meta", {})
             cyi = meta.get("cyi")
+            if not data.get("heats") and not data.get("competitors"):
+                continue
             ranking_file = out_dir / f"ranking_{cyi}.json"
             competitions.append({
                 "cyi": cyi,
