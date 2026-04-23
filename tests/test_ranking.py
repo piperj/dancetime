@@ -3,7 +3,7 @@ import pytest
 
 from ranking.models import DanceResult
 from ranking.parser import parse_results, _join_name, _extract_placement
-from ranking.skill_rating import parse_skill_category, parse_age_division, get_initial_ratings, SKILL_OFFSETS, AGE_OFFSETS
+from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
 from ranking.clusters import build_graph, assign_leaderboards
 from ranking.elo_store import compute_deltas, load_history, load_ratings, save_ratings, write_history
@@ -154,21 +154,6 @@ class TestDanceResultParser:
 
 
 class TestSkillRating:
-    def test_parse_full_silver(self):
-        assert parse_skill_category("Adult Full Silver Standard") == "full silver"
-
-    def test_parse_open(self):
-        assert parse_skill_category("Open Professional Smooth") == "open"
-
-    def test_parse_returns_none_for_unknown(self):
-        assert parse_skill_category("Some Unknown Event") is None
-
-    def test_parse_age_adult(self):
-        assert parse_age_division("Adult B1 Full Silver") == "adult"
-
-    def test_parse_age_senior(self):
-        assert parse_age_division("Senior II Full Gold Standard") == "senior ii"
-
     def test_initial_rating_uses_prior(self):
         data = _make_results_json([("Alice Smith", "Bob Jones", 1), ("Carol Doe", "Dan Roe", 2)])
         results = parse_results(data)
@@ -177,10 +162,11 @@ class TestSkillRating:
         assert ratings["Alice Smith"] == 1650.0
 
     def test_initial_rating_uses_skill_offset_for_new(self):
+        # fixture event is "Adult Full Silver Standard" → silver bucket → offset 0
         data = _make_results_json([("Alice Smith", "Bob Jones", 1), ("Carol Doe", "Dan Roe", 2)])
         results = parse_results(data)
         ratings = get_initial_ratings(results, {})
-        assert ratings["Alice Smith"] == 1500.0 + SKILL_OFFSETS["full silver"]
+        assert ratings["Alice Smith"] == 1500.0
 
 
 class TestEloCalculator:
