@@ -167,11 +167,7 @@ def _synthesize_rounds_from_results(
     name_to_studio: dict[str, str],
     result_index: dict[str, str],
 ) -> None:
-    """Create HeatInstances for rounds present in results but absent from heatlists.
-
-    This happens when the NDCA API omits a round (e.g. a Final) from competitor
-    heatlists even though the results are present in results.json.
-    """
+    # NDCA API sometimes omits rounds from heatlists even when results.json has them.
     existing: set[tuple[str, str]] = {(h.heat_number, h.round_name) for h in instances.values()}
 
     for comp_data in results:

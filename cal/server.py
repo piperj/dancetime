@@ -26,7 +26,7 @@ def _auto_scrape(start_str: str, end_str: str, today: date) -> str | None:
 
 def _has_heats(path: Path) -> bool:
     try:
-        return len(json.loads(path.read_text()).get("competitors", [])) > 0
+        return bool(json.loads(path.read_text()).get("competitors"))
     except Exception:
         return False
 
@@ -34,7 +34,7 @@ def _has_heats(path: Path) -> bool:
 def _has_ranking(path: Path) -> bool:
     try:
         lbs = json.loads(path.read_text()).get("leaderboards", {})
-        return any(len(lb.get("couples", [])) > 0 for lb in lbs.values())
+        return any(lb.get("couples") for lb in lbs.values())
     except Exception:
         return False
 

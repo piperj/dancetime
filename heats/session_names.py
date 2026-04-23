@@ -30,9 +30,9 @@ def infer_session_names(heatlists: list[dict]) -> dict[str, str]:
     earliest: dict[str, datetime] = {}
 
     for competitor_data in heatlists:
-        for entry in competitor_data.get("Entries", []):
-            for event in entry.get("Events", []):
-                for round_ in event.get("Rounds", []):
+        for entry in competitor_data.get("Entries") or []:
+            for event in entry.get("Events") or []:
+                for round_ in event.get("Rounds") or []:
                     sid = normalize_sid(str(round_.get("Session", "")))
                     raw_time = round_.get("Round_Time", "")
                     if not sid or not raw_time:
