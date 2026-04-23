@@ -47,40 +47,25 @@ def _heat_key(cyi: str, entry: dict) -> tuple:
     return (cyi, entry["event_name"], entry["round_name"], entry["dance_name"])
 
 
-def _extract_entries(history: dict, name: str) -> dict[tuple, float]:
-    """Return {heat_key: elo_after} for this name/couple across all competitions."""
+def _extract_entries(history: dict, name: str) -> tuple[dict[tuple, float], float | None]:
     couple = _is_couple(name)
     result = {}
+    initial: float | None = None
     for cyi, heats in history.items():
         if couple:
             a, b = couple
-            entries = [
+            matched = [
                 e for e in heats
                 if (e["competitor"] == a and e.get("partner") == b)
                 or (e["competitor"] == b and e.get("partner") == a)
             ]
         else:
-            entries = [e for e in heats if e["competitor"] == name]
-        for e in entries:
+            matched = [e for e in heats if e["competitor"] == name]
+        for e in matched:
+            if initial is None:
+                initial = e["elo_before"]
             result[_heat_key(cyi, e)] = e["elo_after"]
-    return result
-
-
-def _initial_elo(history: dict, name: str) -> float | None:
-    """Return the first elo_before seen for this name across all competitions."""
-    couple = _is_couple(name)
-    for heats in history.values():
-        if couple:
-            a, b = couple
-            for e in heats:
-                if (e["competitor"] == a and e.get("partner") == b) or \
-                   (e["competitor"] == b and e.get("partner") == a):
-                    return e["elo_before"]
-        else:
-            for e in heats:
-                if e["competitor"] == name:
-                    return e["elo_before"]
-    return None
+    return result, initial
 
 
 def _build_global_timeline(history: dict, series_entries: list[dict[tuple, float]]) -> list[tuple]:
@@ -128,7 +113,9 @@ def plot_elo(
     history = _load_history(history_path)
     comp_names = _load_comp_names(data_dir)
 
-    series_entries = [_extract_entries(history, name) for name in names]
+    extracted = [_extract_entries(history, name) for name in names]
+    series_entries = [e for e, _ in extracted]
+    series_initial = [s for _, s in extracted]
     timeline = _build_global_timeline(history, series_entries)
 
     if not timeline:
@@ -148,18 +135,15 @@ def plot_elo(
 
     for i, name in enumerate(names):
         color = COLORS[i % len(COLORS)]
-        start = _initial_elo(history, name)
+        start = series_initial[i]
         if start is None:
             print(f"  no data for: {name}")
             continue
 
         elo = _align_to_timeline(timeline, series_entries[i], start)
         all_elos.extend(elo)
-        xs = range(len(elo))
-        heats_competed = sum(1 for k in timeline if k in series_entries[i])
-        ax.plot(xs, elo, linewidth=1.4, color=color,
-                label=f"{name} ({heats_competed} heats)")
-        ax.fill_between(xs, elo, min(elo) - 5, alpha=0.07, color=color)
+        ax.step(range(len(elo)), elo, linewidth=1.2, color=color, where="post",
+                label=f"{name} ({len(series_entries[i])} heats)")
 
     if not all_elos:
         print("No data found for any name.")
@@ -169,16 +153,16 @@ def plot_elo(
     pad = max(10, (max(all_elos) - min(all_elos)) * 0.05)
     ax.set_ylim(min(all_elos) - pad, max(all_elos) + pad * 3)
 
-    band_colors = ["#e8f0fb", "#fef3e2", "#e8f7ee", "#fce8e8"]
+    band_colors = ["#efefef", "#ffffff"]
     for j, (heat_idx, cyi) in enumerate(boundaries):
         next_idx = boundaries[j + 1][0] if j + 1 < len(boundaries) else len(timeline)
         color = band_colors[j % len(band_colors)]
         ax.axvspan(heat_idx, next_idx, color=color, alpha=0.5, zorder=0)
         label = comp_names.get(cyi, cyi)
         mid = (heat_idx + next_idx) / 2
-        ax.text(mid, ax.get_ylim()[1] * 0.995, label,
-                fontsize=8, color="#555555", ha="center", va="top",
-                fontweight="bold", wrap=True)
+        ax.text(mid, ax.get_ylim()[0] + 1, label,
+                fontsize=8, color="#555555", ha="center", va="bottom",
+                fontweight="bold")
 
     ax.set_title("ELO progression — " + ", ".join(names), fontsize=13)
     ax.set_xlabel(f"Shared heat index ({len(timeline)} total heats)")

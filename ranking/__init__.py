@@ -12,8 +12,7 @@ from ranking.writer import build_ranking_json, write_ranking_json
 ELO_PARAMS = {"k_factor": 32.0, "partner_weight": 0.3}
 
 
-def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str]]:
-    """Return (cyi, zip_path, start_date_iso) sorted chronologically."""
+def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
     comps = []
     for zip_path in data_dir.glob("comp_*.zip"):
         try:
@@ -26,7 +25,7 @@ def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str]]:
             start = datetime.strptime(raw_date, "%m/%d/%Y").date().isoformat()
         except ValueError:
             start = ""
-        comps.append((cyi, zip_path, start))
+        comps.append((cyi, zip_path, start, info))
     return sorted(comps, key=lambda x: x[2])
 
 
@@ -45,8 +44,7 @@ def run(args):
     comp_counts: dict[str, int] = {}
     last_cyi = sorted_comps[-1][0]
 
-    for cyi, zip_path, start_date in sorted_comps:
-        competition_info = load_json(zip_path, "competition_info.json")
+    for cyi, zip_path, start_date, competition_info in sorted_comps:
         results_data = load_json(zip_path, "results.json")
         dance_results = parse_results(results_data)
 
