@@ -1,5 +1,5 @@
 {
-  "downloaded_at": "2026-04-23T14:29:29.395296+00:00",
+  "downloaded_at": "2026-04-24T16:40:05.523482+00:00",
   "competitions": [
     {
       "cyi": 3,
@@ -18857,6 +18857,15 @@
       "published": false
     },
     {
+      "cyi": 9787,
+      "competition_id": 12,
+      "name": "California Open DanceSport Championships",
+      "location": "Costa Mesa, CA",
+      "start_date": "2035-02-14",
+      "end_date": "2035-02-18",
+      "published": false
+    },
+    {
       "cyi": 9768,
       "competition_id": 129,
       "name": "Florida Star Ball",
@@ -18998,6 +19007,15 @@
       "location": "Coral Springs, FL",
       "start_date": "2035-04-07",
       "end_date": "2035-04-07",
+      "published": false
+    },
+    {
+      "cyi": 9789,
+      "competition_id": 23,
+      "name": "San Diego Ballroom Beach Bash",
+      "location": "San Diego, CA",
+      "start_date": "2035-04-11",
+      "end_date": "2035-04-15",
       "published": false
     },
     {
@@ -19622,6 +19640,15 @@
       "published": false
     },
     {
+      "cyi": 9788,
+      "competition_id": 12,
+      "name": "California Open DanceSport Championships",
+      "location": "Costa Mesa, CA",
+      "start_date": "2036-02-13",
+      "end_date": "2036-02-17",
+      "published": false
+    },
+    {
       "cyi": 9769,
       "competition_id": 129,
       "name": "Florida Star Ball",
@@ -19745,6 +19772,15 @@
       "location": "Coral Springs, FL",
       "start_date": "2036-04-05",
       "end_date": "2036-04-05",
+      "published": false
+    },
+    {
+      "cyi": 9790,
+      "competition_id": 23,
+      "name": "San Diego Ballroom Beach Bash",
+      "location": "San Diego, CA",
+      "start_date": "2036-04-09",
+      "end_date": "2036-04-13",
       "published": false
     },
     {
