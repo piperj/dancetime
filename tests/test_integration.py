@@ -18,6 +18,7 @@ def pipeline_dirs(tmp_path):
     static_dir = tmp_path / "static"
     static_dir.mkdir()
     (static_dir / "index.html").write_text("<html>dancetime</html>")
+    (static_dir / "favicon.ico").write_bytes(b"")
     return tmp_path
 
 
