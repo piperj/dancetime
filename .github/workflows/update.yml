@@ -34,8 +34,11 @@ jobs:
         run: |
           OUTPUT=$(uv run python - <<'PYEOF'
           from pathlib import Path
-          from schedule.runner import should_run
-          print("true" if should_run(Path("data")) else "false")
+          from schedule.runner import run_status
+          run, cyi, name, reason = run_status(Path("data"))
+          import sys
+          print(f"{cyi} {name} {'run' if run else 'skip'} ({reason})", file=sys.stderr)
+          print("true" if run else "false")
           PYEOF
           )
           echo "run=$OUTPUT" >> $GITHUB_OUTPUT
@@ -47,21 +50,14 @@ jobs:
           CYI="${{ github.event.inputs.cyi }}"
           if [ -z "$CYI" ]; then
             CYI=$(uv run python - <<'EOF'
+          import sys
           from pathlib import Path
-          from schedule.active import is_comp_active
-          from schedule.calendar import refresh_calendar
+          from schedule.runner import detect_active_cyi
           from scrape.client import NDCAClient
-          import json, sys
-          cal = refresh_calendar(Path("data"), NDCAClient())
-          active, cyi = is_comp_active(cal)
-          if cyi:
-              print(cyi)
-          else:
-              comps = cal.get("competitions", [])
-              if comps:
-                  print(comps[-1]["cyi"])
-              else:
-                  sys.exit(1)
+          cyi = detect_active_cyi(Path("data"), NDCAClient())
+          if cyi is None:
+              sys.exit(1)
+          print(cyi)
           EOF
             )
           fi
