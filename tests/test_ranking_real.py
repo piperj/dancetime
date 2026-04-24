@@ -94,6 +94,8 @@ ZIP_FILE = Path(__file__).parent.parent / "data" / "raw" / "comp_373.zip"
 
 @pytest.fixture(scope="module")
 def parsed_results_373():
+    if not ZIP_FILE.exists():
+        pytest.skip(f"raw data not available: {ZIP_FILE}")
     results_data = load_json(ZIP_FILE, "results.json")
     return parse_results(results_data)
 

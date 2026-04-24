@@ -88,6 +88,7 @@ class TestPublishRun:
         static_dir = tmp_path / "static"
         static_dir.mkdir()
         (static_dir / "index.html").write_text("<html>test</html>")
+        (static_dir / "favicon.ico").write_bytes(b"")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -112,6 +113,7 @@ class TestPublishRun:
         static_dir = tmp_path / "static"
         static_dir.mkdir()
         (static_dir / "index.html").write_text("<html/>")
+        (static_dir / "favicon.ico").write_bytes(b"")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -136,6 +138,7 @@ class TestPublishRun:
         static_dir = tmp_path / "static"
         static_dir.mkdir()
         (static_dir / "index.html").write_text("<html/>")
+        (static_dir / "favicon.ico").write_bytes(b"")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()

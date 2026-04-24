@@ -22,10 +22,10 @@ def test_heats_requires_cyi():
         parser.parse_args(["heats"])
 
 
-def test_ranking_requires_cyi():
+def test_ranking_cyi_optional():
     parser = build_parser()
-    with pytest.raises(SystemExit):
-        parser.parse_args(["ranking"])
+    args = parser.parse_args(["ranking"])
+    assert args.cyi is None
 
 
 def test_scrape_force_flag():
