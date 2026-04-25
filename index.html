@@ -1044,12 +1044,18 @@
     ).join('');
   }
 
+  function eloSortedCyiPairs() {
+    const dates = {};
+    for (const c of compList) dates[String(c.cyi)] = c.start_date || '';
+    return Object.entries(eloHistory).sort(([a], [b]) => (dates[a] || '').localeCompare(dates[b] || ''));
+  }
+
   function eloExtractSeries(name) {
     const couple = name.includes(' & ') ? name.split(' & ', 2).map(s => s.trim()) : null;
     const [a, b] = couple || [name, null];
     const entries = new Map();
     let initial = null;
-    for (const [cyi, heats] of Object.entries(eloHistory)) {
+    for (const [cyi, heats] of eloSortedCyiPairs()) {
       for (const e of heats) {
         const match = couple
           ? (e.competitor === a && e.partner === b) || (e.competitor === b && e.partner === a)
@@ -1070,7 +1076,7 @@
     const timeline = [];
     const boundaries = [];
     let prevCyi = null;
-    for (const [cyi, heats] of Object.entries(eloHistory)) {
+    for (const [cyi, heats] of eloSortedCyiPairs()) {
       for (const e of heats) {
         const key = eloMakeKey(cyi, e);
         if (seen.has(key) || !participating.has(key)) continue;

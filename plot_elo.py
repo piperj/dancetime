@@ -23,6 +23,15 @@ def _load_history(history_path: str | Path = "data/elo_history.json") -> dict:
     return json.loads(Path(history_path).read_text()).get("history", {})
 
 
+def _sort_history(history: dict, index_path: str | Path = "data/index.json") -> dict:
+    try:
+        index = json.loads(Path(index_path).read_text())
+        dates = {str(c["cyi"]): c.get("start_date", "") for c in index.get("competitions", [])}
+    except Exception:
+        return history
+    return dict(sorted(history.items(), key=lambda kv: dates.get(kv[0], "")))
+
+
 def _load_comp_names(data_dir: str | Path = "data/raw") -> dict[str, str]:
     names = {}
     for p in Path(data_dir).glob("comp_*.zip"):
@@ -111,7 +120,7 @@ def plot_elo(
     output_path: str | Path | None = None,
     show: bool = True,
 ) -> None:
-    history = _load_history(history_path)
+    history = _sort_history(_load_history(history_path), Path(history_path).parent / "index.json")
     comp_names = _load_comp_names(data_dir)
 
     extracted = [_extract_entries(history, name) for name in names]
