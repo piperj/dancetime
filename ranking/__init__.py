@@ -77,7 +77,7 @@ def run(args):
 
         final_ratings = calc.ratings
         new_history[str(cyi)] = heat_history
-        current_elo = final_ratings
+        current_elo = {**current_elo, **final_ratings}
 
         graph = build_graph(dance_results)
         assignments = assign_leaderboards(graph)

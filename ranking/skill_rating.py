@@ -2,11 +2,11 @@ from ranking.models import DanceResult
 
 
 _BUCKETS: list[tuple[list[str], float]] = [
-    (["professional", "rising star"],                      +500),
-    (["championship", "pre-champ", "prechamp", "novice"], +300),
-    (["gold"],                                             +150),
+    (["professional", "rising star"],                      +250),
+    (["championship", "pre-champ", "prechamp", "novice"], +150),
+    (["gold"],                                              +75),
     (["silver"],                                              0),
-    (["bronze", "newcomer"],                               -200),
+    (["bronze", "newcomer"],                               -100),
 ]
 
 
