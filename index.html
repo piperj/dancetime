@@ -6,6 +6,7 @@
   <title>Dancetime</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #222; padding-bottom: 2rem; }
@@ -38,6 +39,16 @@
     .delta-pos { color: #2e7d32; }
     .delta-neg { color: #c62828; }
 
+    #elo-controls { padding: .75rem 1rem; background: #fff; border-bottom: 1px solid #eee; }
+    #elo-search-wrap { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+    #elo-search-wrap input[type=search] { flex: 1; min-width: 180px; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
+    #elo-series-list { margin-top: .5rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+    .elo-series-chip { display: inline-flex; align-items: center; gap: .3rem; padding: .2rem .6rem; border-radius: 999px; font-size: .82rem; color: #fff; }
+    .elo-series-chip button { background: none; border: none; color: inherit; cursor: pointer; font-size: .9rem; line-height: 1; padding: 0; opacity: .7; }
+    .elo-series-chip button:hover { opacity: 1; }
+    #elo-chart-wrap { padding: 1rem; }
+    #elo-status { text-align: center; padding: 2rem; color: #888; }
+
     .hidden { display: none; }
     #status { text-align: center; padding: 3rem; color: #888; font-size: 1.1rem; }
 
@@ -54,6 +65,7 @@
 <nav>
   <button class="active" data-tab="heats">Heats</button>
   <button data-tab="ranking">Ranking</button>
+  <button data-tab="elo">ELO</button>
 </nav>
 
 <!-- Competition header: thumbnail + name (clickable) + details -->
@@ -130,10 +142,29 @@
   <datalist id="ranking-suggestions"></datalist>
 </div>
 
+<!-- ELO tab controls -->
+<div id="elo-controls" class="hidden">
+  <div id="elo-search-wrap">
+    <input type="search" id="elo-search" placeholder='Competitor or "Alice &amp; Bob"'
+           list="elo-suggestions" autocomplete="off" />
+    <datalist id="elo-suggestions"></datalist>
+    <button onclick="eloAddSeries()"
+            class="bg-indigo-600 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-indigo-700">
+      Add to chart
+    </button>
+  </div>
+  <div id="elo-series-list"></div>
+</div>
 
 <main style="padding: 1rem 0">
   <div id="status" style="padding: 3rem 1rem">Loading…</div>
   <div id="ranking-view" class="hidden" style="padding: 0 0.75rem"></div>
+  <div id="elo-view" class="hidden" style="padding: 0 0.75rem">
+    <div id="elo-status"></div>
+    <div id="elo-chart-wrap" class="hidden" style="height:420px">
+      <canvas id="elo-canvas"></canvas>
+    </div>
+  </div>
 </main>
 
 <script>
@@ -146,6 +177,34 @@
 
   let activeTab = 'heats';
   let heatsData = null;
+  let eloHistory = null;
+  let eloSeries  = [];
+  let eloChart   = null;
+  let eloHistoryLoading = false;
+  let _eloBoundaries = [], _eloN = 0, _cyiNameMap = {};
+
+  const eloBandPlugin = {
+    id: 'eloBands',
+    beforeDraw(chart) {
+      const { ctx, chartArea, scales } = chart;
+      if (!chartArea || !_eloBoundaries.length) return;
+      ctx.save();
+      _eloBoundaries.forEach(({ idx, cyi }, j) => {
+        const nextIdx = j + 1 < _eloBoundaries.length ? _eloBoundaries[j+1].idx : _eloN;
+        const x0 = scales.x.getPixelForValue(idx);
+        const x1 = scales.x.getPixelForValue(nextIdx);
+        ctx.fillStyle = j % 2 === 0 ? 'rgba(0,0,0,0.04)' : 'rgba(0,0,0,0)';
+        ctx.fillRect(x0, chartArea.top, x1 - x0, chartArea.bottom - chartArea.top);
+        ctx.fillStyle = '#999';
+        ctx.font = 'bold 10px system-ui,sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText(_cyiNameMap[cyi] || cyi, (x0+x1)/2, chartArea.bottom - 2);
+      });
+      ctx.restore();
+    }
+  };
+  Chart.register(eloBandPlugin);
   let rankingData = null;
   let heatsByKey = {}, heatsByNumber = {};
   let studioCompetitors = {};
@@ -174,32 +233,39 @@
         if (heatsData?.competitors?.includes(param) || heatsData?.studios?.includes(param)) {
           setHeatsSearch(param);
         }
+      } else if (activeTab === 'elo') {
+        initEloTab();
       }
     });
   });
 
   function updateTabVisibility() {
-    const hasHeats = (heatsData?.competitors?.length ?? 0) > 0;
+    const hasHeats   = (heatsData?.competitors?.length ?? 0) > 0;
     const hasRanking = Object.values(rankingData?.leaderboards ?? {}).some(lb => lb.couples?.length > 0);
 
-    const heatsBtn = document.querySelector('nav button[data-tab="heats"]');
+    const heatsBtn   = document.querySelector('nav button[data-tab="heats"]');
     const rankingBtn = document.querySelector('nav button[data-tab="ranking"]');
     heatsBtn.classList.toggle('hidden', !hasHeats);
     rankingBtn.classList.toggle('hidden', !hasRanking);
 
-    if (activeTab === 'heats' && !hasHeats && hasRanking) activeTab = 'ranking';
-    if (activeTab === 'ranking' && !hasRanking && hasHeats) activeTab = 'heats';
+    if (activeTab === 'heats'   && !hasHeats   && hasRanking) activeTab = 'ranking';
+    if (activeTab === 'ranking' && !hasRanking && hasHeats)   activeTab = 'heats';
     document.querySelectorAll('nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
 
-    const isHeats = activeTab === 'heats';
-    compHeader.classList.toggle('hidden', !heatsData && !rankingData);
+    const isHeats   = activeTab === 'heats';
+    const isRanking = activeTab === 'ranking';
+    const isElo     = activeTab === 'elo';
+
+    compHeader.classList.toggle('hidden', isElo || (!heatsData && !rankingData));
     heatsControls.classList.toggle('hidden', !isHeats || !heatsData);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
     scheduleContent.classList.toggle('hidden', !isHeats || !heatsData);
-    rankingControls.classList.toggle('hidden', isHeats || !rankingData);
-
-    rankingView.classList.toggle('hidden', isHeats);
-    status.classList.toggle('hidden', (isHeats && !!heatsData) || (!isHeats && !!rankingData));
+    rankingControls.classList.toggle('hidden', !isRanking || !rankingData);
+    rankingView.classList.toggle('hidden', !isRanking);
+    document.getElementById('elo-controls').classList.toggle('hidden', !isElo);
+    document.getElementById('elo-view').classList.toggle('hidden', !isElo);
+    status.classList.toggle('hidden',
+      (isHeats && !!heatsData) || (isRanking && !!rankingData) || isElo);
   }
 
   // ── Competition dropdown ───────────────────────────────────────────────────
@@ -900,6 +966,223 @@
     const medal = rankPrefix(r);
     return medal ? `${medal} Contested` : `${ordinal(r)} Contested`;
   }
+
+  // ── ELO tab ────────────────────────────────────────────────────────────────
+  const ELO_COLORS = ['#6366f1','#ef4444','#22c55e','#f97316','#a855f7','#14b8a6'];
+
+  function eloMakeKey(cyi, e) {
+    return `${cyi}\x1f${e.event_name}\x1f${e.round_name}\x1f${e.dance_name}`;
+  }
+
+  function setEloStatus(msg) {
+    const st = document.getElementById('elo-status');
+    st.textContent = msg;
+    st.classList.toggle('hidden', !msg);
+  }
+
+  function initEloTab() {
+    if (eloHistory) { buildEloSuggestions(); return; }
+    if (eloHistoryLoading) return;
+    eloHistoryLoading = true;
+    setEloStatus('Loading ELO history…');
+    fetch('data/elo_history.json')
+      .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then(data => {
+        eloHistory = data.history;
+        eloHistoryLoading = false;
+        buildEloSuggestions();
+        if (eloSeries.length) { setEloStatus(''); renderEloChart(); }
+        else setEloStatus('Add a competitor to see their ELO progression.');
+      })
+      .catch(err => {
+        eloHistoryLoading = false;
+        setEloStatus(`Failed to load ELO history: ${err.message}`);
+      });
+  }
+
+  function buildEloSuggestions() {
+    if (!eloHistory) return;
+    const names = new Set();
+    for (const heats of Object.values(eloHistory))
+      for (const e of heats) names.add(e.competitor);
+    buildSuggestions('elo-suggestions', [...names].sort());
+  }
+
+  function eloAddSeries() {
+    const input = document.getElementById('elo-search');
+    const name = input.value.trim();
+    if (!name || !eloHistory || eloSeries.length >= 5) return;
+    if (eloSeries.some(s => s.name === name)) { input.value = ''; return; }
+    const series = eloExtractSeries(name);
+    if (!series) { setEloStatus(`"${esc(name)}" not found in ELO history.`); return; }
+    setEloStatus('');
+    series.color = ELO_COLORS[eloSeries.length % ELO_COLORS.length];
+    eloSeries.push(series);
+    input.value = '';
+    renderEloChips();
+    renderEloChart();
+  }
+
+  function eloRemoveSeries(name) {
+    eloSeries = eloSeries.filter(s => s.name !== name);
+    renderEloChips();
+    if (!eloSeries.length) {
+      if (eloChart) { eloChart.destroy(); eloChart = null; _eloBoundaries = []; _eloN = 0; }
+      document.getElementById('elo-chart-wrap').classList.add('hidden');
+      setEloStatus('Add a competitor to see their ELO progression.');
+    } else {
+      renderEloChart();
+    }
+  }
+
+  function renderEloChips() {
+    document.getElementById('elo-series-list').innerHTML = eloSeries.map(s =>
+      `<span class="elo-series-chip" style="background:${esc(s.color)}">
+         ${esc(s.name)}
+         <button onclick="eloRemoveSeries(${JSON.stringify(s.name)})" aria-label="Remove">×</button>
+       </span>`
+    ).join('');
+  }
+
+  function eloExtractSeries(name) {
+    const couple = name.includes(' & ') ? name.split(' & ', 2).map(s => s.trim()) : null;
+    const [a, b] = couple || [name, null];
+    const entries = new Map();
+    let initial = null;
+    for (const [cyi, heats] of Object.entries(eloHistory)) {
+      for (const e of heats) {
+        const match = couple
+          ? (e.competitor === a && e.partner === b) || (e.competitor === b && e.partner === a)
+          : e.competitor === name;
+        if (!match) continue;
+        if (initial === null) initial = e.elo_before;
+        entries.set(eloMakeKey(cyi, e), e);
+      }
+    }
+    if (initial === null) return null;
+    return { name, entries, initial };
+  }
+
+  function eloGlobalTimeline() {
+    const participating = new Set();
+    for (const s of eloSeries) for (const k of s.entries.keys()) participating.add(k);
+    const seen = new Set();
+    const timeline = [];
+    const boundaries = [];
+    let prevCyi = null;
+    for (const [cyi, heats] of Object.entries(eloHistory)) {
+      for (const e of heats) {
+        const key = eloMakeKey(cyi, e);
+        if (seen.has(key) || !participating.has(key)) continue;
+        seen.add(key);
+        if (cyi !== prevCyi) { boundaries.push({ idx: timeline.length, cyi }); prevCyi = cyi; }
+        timeline.push({ key, cyi, eventName: e.event_name, roundName: e.round_name, danceName: e.dance_name });
+      }
+    }
+    return { timeline, boundaries };
+  }
+
+  function eloAlignSeries(series, timeline) {
+    let elo = series.initial;
+    const yValues = [elo];
+    const tooltipData = [];
+    for (const { key } of timeline) {
+      const entry = series.entries.get(key);
+      if (entry) elo = entry.elo_after;
+      yValues.push(elo);
+      tooltipData.push(entry);
+    }
+    return { yValues, tooltipData };
+  }
+
+  function renderEloChart() {
+    if (!eloSeries.length || !eloHistory) return;
+    const { timeline, boundaries } = eloGlobalTimeline();
+    if (!timeline.length) return;
+
+    _cyiNameMap = {};
+    for (const c of compList) _cyiNameMap[String(c.cyi)] = c.short_name || c.name;
+
+    const N = timeline.length;
+    const aligned = eloSeries.map(s => eloAlignSeries(s, timeline));
+    const allY = aligned.flatMap(a => a.yValues);
+    const yMin = Math.min(...allY), yMax = Math.max(...allY);
+    const pad = Math.max(10, (yMax - yMin) * 0.05);
+
+    _eloBoundaries = boundaries;
+    _eloN = N;
+
+    const datasets = eloSeries.map((s, i) => ({
+      label: s.name,
+      data: aligned[i].yValues,
+      borderColor: s.color,
+      borderWidth: 2,
+      pointRadius: 0,
+      pointHoverRadius: 5,
+      stepped: 'after',
+      fill: false,
+    }));
+
+    const cfg = {
+      type: 'line',
+      data: { labels: Array.from({ length: N+1 }, (_, i) => i), datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        scales: {
+          x: { type: 'linear', min: 0, max: N,
+               ticks: { maxTicksLimit: 10, callback: v => Number.isInteger(v) ? v : '' } },
+          y: { min: yMin - pad, max: yMax + pad * 3,
+               title: { display: true, text: 'ELO rating' },
+               ticks: { callback: v => Math.round(v) } },
+        },
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            mode: 'index', intersect: false,
+            callbacks: {
+              title(items) {
+                const idx = items[0]?.dataIndex;
+                if (idx === 0) return 'Starting ELO';
+                const h = timeline[idx - 1];
+                return h ? `${h.danceName} — ${h.roundName}` : '';
+              },
+              label(item) {
+                const s     = eloSeries[item.datasetIndex];
+                const idx   = item.dataIndex;
+                const entry = idx > 0 ? aligned[item.datasetIndex].tooltipData[idx-1] : null;
+                const elo   = Math.round(item.raw);
+                if (!entry) return `${s.name}: ${elo}`;
+                const delta = entry.elo_after - entry.elo_before;
+                return `${s.name}: ${elo} (${delta >= 0 ? '+' : ''}${delta.toFixed(1)})`;
+              },
+              afterLabel(item) {
+                const idx = item.dataIndex;
+                if (idx === 0) return '';
+                const entry = aligned[item.datasetIndex].tooltipData[idx-1];
+                return entry ? entry.event_name : '';
+              },
+            },
+          },
+        },
+      },
+    };
+
+    document.getElementById('elo-chart-wrap').classList.remove('hidden');
+    const canvas = document.getElementById('elo-canvas');
+    if (eloChart) {
+      eloChart.data = cfg.data;
+      eloChart.options = cfg.options;
+      eloChart.update('none');
+    } else {
+      eloChart = new Chart(canvas, cfg);
+    }
+  }
+
+  document.getElementById('elo-search').addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); eloAddSeries(); }
+  });
 
   // Auto-refresh during live competition
   setInterval(() => {
