@@ -3,7 +3,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-from common import comp_meta
+from common import comp_meta, short_name
 from ranking.models import DanceResult
 
 
@@ -80,6 +80,7 @@ def build_ranking_json(
         "meta": {
             "cyi": cyi,
             "name": name,
+            "short_name": short_name(name),
             "date_range": date_range,
             "location": location,
             "generated_at": datetime.now(timezone.utc).isoformat(),

@@ -231,7 +231,7 @@
            onclick="selectComp(${i})">
         ${thumb}
         <div class="min-w-0">
-          <div class="font-medium ${active ? 'text-indigo-700' : 'text-gray-800'} truncate">${esc(comp.name)}</div>
+          <div class="font-medium ${active ? 'text-indigo-700' : 'text-gray-800'} truncate">${esc(comp.short_name || comp.name)}</div>
           <div class="text-xs text-gray-500">${esc(comp.date_range)}${comp.location ? ' · ' + esc(comp.location) : ''}</div>
         </div>
       </div>`;
@@ -293,6 +293,7 @@
     status.classList.remove('hidden');
     document.getElementById('competitorSearch').value = '';
     document.getElementById('search-ranking').value = '';
+    document.getElementById('comp-name-text').textContent = comp.short_name || comp.name || '';
 
     Promise.all([fetch(comp.heats_file), fetch(comp.ranking_file)])
       .then(([hr, rr]) => Promise.all([hr.json(), rr.json()]))
@@ -325,7 +326,7 @@
         const icon = document.getElementById('comp-icon');
         icon.style.visibility = '';
         icon.src = `https://ndca.org/images/comp_logos/${meta.competition_id}.jpg`;
-        document.getElementById('comp-name-text').textContent = meta.name || '';
+        document.getElementById('comp-name-text').textContent = comp.short_name || meta.short_name || meta.name || '';
         document.getElementById('comp-details').textContent =
           [meta.date_range, meta.location].filter(Boolean).join(' · ');
 

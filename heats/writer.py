@@ -2,7 +2,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from common import comp_meta
+from common import comp_meta, short_name
 from heats.parser import HeatInstance
 
 
@@ -63,6 +63,7 @@ def build_heats_json(
             "cyi": cyi,
             "competition_id": competition_id,
             "name": name,
+            "short_name": short_name(name),
             "date_range": date_range,
             "location": location,
             "generated_at": datetime.now(timezone.utc).isoformat(),

@@ -30,7 +30,8 @@ def _load_comp_names(data_dir: str | Path = "data/raw") -> dict[str, str]:
             from scrape.zip_store import load_json
             cyi = p.stem.split("_")[1]
             info = load_json(p, "competition_info.json")
-            names[cyi] = info.get("Comp_Year_Name") or info.get("Competition_Name") or cyi
+            from common import short_name
+            names[cyi] = short_name(info.get("Comp_Year_Name") or info.get("Competition_Name") or cyi)
         except Exception:
             pass
     return names

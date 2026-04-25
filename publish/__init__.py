@@ -5,6 +5,8 @@ import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
+from common import short_name as _short_name
+
 from publish.validator import validate_heats_json, validate_index_json, validate_ranking_json
 
 
@@ -44,10 +46,12 @@ def _update_index(out_dir: Path) -> None:
             if not data.get("heats") and not data.get("competitors"):
                 continue
             ranking_file = out_dir / f"ranking_{cyi}.json"
+            name = meta.get("name", "")
             competitions.append({
                 "cyi": cyi,
                 "competition_id": meta.get("competition_id"),
-                "name": meta.get("name", ""),
+                "name": name,
+                "short_name": meta.get("short_name") or _short_name(name),
                 "date_range": meta.get("date_range", ""),
                 "start_date": _parse_start_date(meta.get("date_range", "")),
                 "location": meta.get("location", ""),
