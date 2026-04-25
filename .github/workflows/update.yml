@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       cyi:
-        description: Competition Year ID (overrides auto-detection)
+        description: "Competition Year ID(s) to scrape, comma-separated (overrides schedule)"
         required: false
       force:
         description: Force re-download even if cached
@@ -29,58 +29,38 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Check if run is needed
+      - name: Check which competitions need updating
         id: check
         run: |
-          OUTPUT=$(uv run python - <<'PYEOF'
+          MANUAL="${{ github.event.inputs.cyi }}"
+          if [ -n "$MANUAL" ]; then
+            CYIS=$(python3 -c "import json; print(json.dumps([int(c.strip()) for c in '$MANUAL'.split(',')]))")
+          else
+            CYIS=$(uv run python - <<'PYEOF'
+          import json, sys
           from pathlib import Path
-          from schedule.runner import run_status
-          run, cyi, name, reason = run_status(Path("data"))
-          import sys
-          print(f"{cyi} {name} {'run' if run else 'skip'} ({reason})", file=sys.stderr)
-          print("true" if run else "false")
+          from schedule.runner import due_cyis
+          cyis = due_cyis(Path("data"))
+          print(f"Due CYIs: {cyis}", file=sys.stderr)
+          print(json.dumps(cyis))
           PYEOF
-          )
-          echo "run=$OUTPUT" >> $GITHUB_OUTPUT
-
-      - name: Detect active competition
-        id: detect
-        if: steps.check.outputs.run == 'true'
-        run: |
-          CYI="${{ github.event.inputs.cyi }}"
-          if [ -z "$CYI" ]; then
-            CYI=$(uv run python - <<'EOF'
-          import sys
-          from pathlib import Path
-          from schedule.runner import detect_active_cyi
-          from scrape.client import NDCAClient
-          cyi = detect_active_cyi(Path("data"), NDCAClient())
-          if cyi is None:
-              sys.exit(1)
-          print(cyi)
-          EOF
             )
           fi
-          echo "cyi=$CYI" >> $GITHUB_OUTPUT
+          echo "cyis=$CYIS" >> $GITHUB_OUTPUT
+          [ "$CYIS" = "[]" ] && echo "run=false" >> $GITHUB_OUTPUT || echo "run=true" >> $GITHUB_OUTPUT
 
-      - name: Scrape
+      - name: Scrape, process and publish
         if: steps.check.outputs.run == 'true'
         run: |
           FORCE=""
           [ "${{ github.event.inputs.force }}" = "true" ] && FORCE="--force"
-          uv run python dancetime_cli.py scrape --cyi ${{ steps.detect.outputs.cyi }} $FORCE
-
-      - name: Generate heats
-        if: steps.check.outputs.run == 'true'
-        run: uv run python dancetime_cli.py heats --cyi ${{ steps.detect.outputs.cyi }}
-
-      - name: Generate ranking
-        if: steps.check.outputs.run == 'true'
-        run: uv run python dancetime_cli.py ranking --cyi ${{ steps.detect.outputs.cyi }}
-
-      - name: Publish
-        if: steps.check.outputs.run == 'true'
-        run: uv run python dancetime_cli.py publish
+          CYIS=$(echo '${{ steps.check.outputs.cyis }}' | python3 -c "import sys, json; [print(c) for c in json.load(sys.stdin)]")
+          for CYI in $CYIS; do
+            uv run python dancetime_cli.py scrape --cyi $CYI $FORCE
+            uv run python dancetime_cli.py heats --cyi $CYI
+            uv run python dancetime_cli.py ranking --cyi $CYI
+          done
+          uv run python dancetime_cli.py publish
 
       - name: Commit and push if changed
         if: steps.check.outputs.run == 'true'

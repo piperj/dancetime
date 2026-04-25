@@ -1,5 +1,5 @@
 {
-  "downloaded_at": "2026-04-24T16:40:05.523482+00:00",
+  "downloaded_at": "2026-04-25T14:49:55.417346+00:00",
   "competitions": [
     {
       "cyi": 3,
@@ -1066,7 +1066,7 @@
     {
       "cyi": 1273,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "Lexington, KY",
       "start_date": "2017-09-16",
       "end_date": "2017-09-16",
@@ -3523,7 +3523,7 @@
     {
       "cyi": 1275,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "Lexington, KY",
       "start_date": "2020-02-02",
       "end_date": "2020-02-02",
@@ -5764,7 +5764,7 @@
     {
       "cyi": 1278,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "Lexington, KY",
       "start_date": "2023-02-04",
       "end_date": "2023-02-04",
@@ -6835,7 +6835,7 @@
     {
       "cyi": 1279,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "Chicago, IL",
       "start_date": "2024-02-03",
       "end_date": "2024-02-03",
@@ -7933,7 +7933,7 @@
     {
       "cyi": 1280,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "Chicago, IL",
       "start_date": "2025-02-01",
       "end_date": "2025-02-01",
@@ -9278,7 +9278,7 @@
       "location": "Boston, MA",
       "start_date": "2026-04-25",
       "end_date": "2026-04-25",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1167,
@@ -10120,7 +10120,7 @@
     {
       "cyi": 1282,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2027-02-06",
       "end_date": "2027-02-06",
@@ -11245,7 +11245,7 @@
     {
       "cyi": 1772,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2028-02-05",
       "end_date": "2028-02-05",
@@ -12370,7 +12370,7 @@
     {
       "cyi": 1773,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2029-02-03",
       "end_date": "2029-02-03",
@@ -13504,7 +13504,7 @@
     {
       "cyi": 2877,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2030-02-02",
       "end_date": "2030-02-02",
@@ -14620,7 +14620,7 @@
     {
       "cyi": 4091,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2031-02-01",
       "end_date": "2031-02-01",
@@ -15736,7 +15736,7 @@
     {
       "cyi": 6231,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2032-02-07",
       "end_date": "2032-02-07",
@@ -16852,7 +16852,7 @@
     {
       "cyi": 9377,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2033-02-05",
       "end_date": "2033-02-05",
@@ -17905,7 +17905,7 @@
     {
       "cyi": 9512,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2034-02-04",
       "end_date": "2034-02-04",
@@ -18841,7 +18841,7 @@
     {
       "cyi": 9707,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2035-02-03",
       "end_date": "2035-02-03",
@@ -18890,6 +18890,15 @@
       "location": "Chicago, IL",
       "start_date": "2035-02-22",
       "end_date": "2035-02-25",
+      "published": false
+    },
+    {
+      "cyi": 9791,
+      "competition_id": 51,
+      "name": "Desert Sol Dancesport",
+      "location": "Phoenix, AZ",
+      "start_date": "2035-02-24",
+      "end_date": "2035-02-24",
       "published": false
     },
     {
@@ -19624,7 +19633,7 @@
     {
       "cyi": 9708,
       "competition_id": 152,
-      "name": "Chicago AllStar DanceSport",
+      "name": "St. Louis DanceSport",
       "location": "St Louis, MO",
       "start_date": "2036-02-02",
       "end_date": "2036-02-02",
@@ -19673,6 +19682,15 @@
       "location": "Chicago, IL",
       "start_date": "2036-02-21",
       "end_date": "2036-02-24",
+      "published": false
+    },
+    {
+      "cyi": 9792,
+      "competition_id": 51,
+      "name": "Desert Sol Dancesport",
+      "location": "Phoenix, AZ",
+      "start_date": "2036-02-23",
+      "end_date": "2036-02-23",
       "published": false
     },
     {
