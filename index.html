@@ -68,8 +68,8 @@
 
 <nav>
   <button class="active" data-tab="heats">Heats</button>
-  <button data-tab="ranking">Ranking</button>
-  <button data-tab="elo">ELO</button>
+  <button data-tab="ranking">Ladder</button>
+  <button data-tab="elo">Ranking</button>
 </nav>
 
 <!-- Competition header: thumbnail + name (clickable) + details -->
@@ -1185,9 +1185,10 @@
         animation: false,
         scales: {
           x: { type: 'linear', min: 0, max: N,
+               title: { display: true, text: 'dance #' },
                ticks: { maxTicksLimit: 10, callback: v => Number.isInteger(v) ? v : '' } },
           y: { min: yMin - pad, max: yMax + pad * 3,
-               title: { display: true, text: 'ELO rating' },
+               title: { display: true, text: 'ELO Ranking' },
                ticks: { callback: v => Math.round(v) } },
         },
         plugins: {
