@@ -9,7 +9,7 @@ from ranking.clusters import assign_leaderboards, build_graph
 from ranking.elo_store import compute_deltas, load_history, save_ratings, write_history
 from ranking.writer import build_ranking_json, write_ranking_json
 
-ELO_PARAMS = {"k_factor": 32.0, "partner_weight": 0.3}
+ELO_PARAMS = {}
 
 
 def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
@@ -59,7 +59,7 @@ def run(args):
         for c in comp_competitors:
             comp_counts[c] = comp_counts.get(c, 0) + 1
 
-        calc = EloCalculator(**ELO_PARAMS)
+        calc = EloCalculator()
         calc.initialize(initial_ratings)
         heat_history = []
         for result in dance_results:

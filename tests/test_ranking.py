@@ -1,6 +1,7 @@
 import json
 import pytest
 
+import ranking.elo as elo_module
 from ranking.models import DanceResult
 from ranking.parser import parse_results, _join_name, _extract_placement
 from ranking.skill_rating import get_initial_ratings
@@ -133,6 +134,26 @@ class TestDanceResultParser:
         results = parse_results(data)
         assert len(results) == 0
 
+    def test_each_dance_processed_once(self):
+        # The NDCA API returns one result entry per registered competitor, so the
+        # same heat appears multiple times in the raw JSON. parse_results must
+        # deduplicate them into a single DanceResult — otherwise process_heat would
+        # be called twice for the same matchup and shift ELO ratings twice.
+        dance = {"Dance_ID": 1, "Dance_Name": "Waltz", "Competitors": [
+            {"Result": 1, "Participants": [{"Name": ["Johan"]}, {"Name": ["Kristina"]}]},
+            {"Result": 2, "Participants": [{"Name": ["Jennifer"]}, {"Name": ["Ivan"]}]},
+        ]}
+        round_ = {"ID": 1, "Name": "Final", "Session_ID": 1, "Dances": [dance]}
+        event = {"ID": 10, "Name": "Adult Full Silver Standard", "Rounds": [round_]}
+
+        def _entry(name):
+            return {"_metadata": {"competitor_name": name, "studio": ""}, "Events": [event]}
+
+        data = {"results": [_entry("Johan"), _entry("Kristina")]}
+        results = parse_results(data)
+        assert len(results) == 1
+        assert len(results[0].competitors) == 4
+
     def test_results_sorted_by_sort_key(self):
         data = {
             "results": [{
@@ -263,15 +284,40 @@ class TestEloCalculator:
         calc.initialize({"A": 1500.0, "B": 1500.0, "C": 1500.0, "D": 1500.0, "E": 1500.0, "F": 1500.0})
         result = self._make_result([("A", "B", 1), ("C", "D", 2), ("E", "F", 3)])
         calc.process_heat(result)
-        # A and B won — both gain; E and F lost — both lose; C and D are in the middle
+        # A and B won — both gain; E and F lost — both lose
         assert calc.get_rating("A") > 1500.0
         assert calc.get_rating("B") > 1500.0
         assert calc.get_rating("E") < 1500.0
         assert calc.get_rating("F") < 1500.0
-        # Partners within a couple must move identically (same delta applied to both)
-        assert abs(calc.get_rating("A") - calc.get_rating("B")) < 0.01
-        assert abs(calc.get_rating("C") - calc.get_rating("D")) < 0.01
-        assert abs(calc.get_rating("E") - calc.get_rating("F")) < 0.01
+
+    def test_weaker_partner_gets_larger_share(self):
+        # Alice (1600) is the stronger partner; Bob (1300) is weaker.
+        # Both win. Bob should receive more of the couple's delta than Alice.
+        calc = EloCalculator()
+        calc.initialize({"Alice": 1600.0, "Bob": 1300.0, "Carol": 1500.0, "Dan": 1500.0})
+        result = self._make_result([("Alice", "Bob", 1), ("Carol", "Dan", 2)])
+        calc.process_heat(result)
+        delta_alice = calc.get_rating("Alice") - 1600.0
+        delta_bob = calc.get_rating("Bob") - 1300.0
+        assert delta_alice > 0
+        assert delta_bob > 0
+        assert delta_bob > delta_alice
+
+    def test_base_50_gives_equal_shares(self):
+        # Setting PARTNER_WEIGHT_BASE=0.50 collapses the adaptive term to zero,
+        # giving every couple a 50/50 split regardless of rating gap.
+        original = elo_module.PARTNER_WEIGHT_BASE
+        elo_module.PARTNER_WEIGHT_BASE = 0.50
+        try:
+            calc = EloCalculator()
+            calc.initialize({"Alice": 1600.0, "Bob": 1300.0, "Carol": 1500.0, "Dan": 1500.0})
+            result = self._make_result([("Alice", "Bob", 1), ("Carol", "Dan", 2)])
+            calc.process_heat(result)
+            delta_alice = calc.get_rating("Alice") - 1600.0
+            delta_bob = calc.get_rating("Bob") - 1300.0
+            assert abs(delta_alice - delta_bob) < 0.01
+        finally:
+            elo_module.PARTNER_WEIGHT_BASE = original
 
 
 class TestClusters:
@@ -373,7 +419,7 @@ class TestRankingWriter:
             assignments={"Alice": "A", "Bob": "A"},
             competitor_studios={"Alice": "Fred Astaire"},
             elo_deltas={"Alice": "+50.0", "Bob": "-20.0"},
-            elo_params={"k_factor": 32.0, "partner_weight": 0.3},
+            elo_params={},
         )
 
     def test_top_level_keys(self):
