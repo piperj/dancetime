@@ -193,6 +193,7 @@
   const status         = document.getElementById('status');
 
   let activeTab = 'heats';
+  let allCompetitorNames = [];
   let heatsData = null;
   let eloHistory = null;
   let eloSeries  = [];
@@ -350,9 +351,10 @@
   }
 
   // ── Load index ─────────────────────────────────────────────────────────────
-  fetch('data/index.json')
-    .then(r => r.json())
-    .then(index => {
+  Promise.all([fetch('data/index.json'), fetch('data/elo_ratings.json')])
+    .then(([ir, er]) => Promise.all([ir.json(), er.json()]))
+    .then(([index, eloRatings]) => {
+      allCompetitorNames = Object.keys(eloRatings.ratings || {}).sort();
       compList = index.competitions.slice().sort((a, b) => (b.start_date || '') > (a.start_date || '') ? 1 : -1);
       if (!compList.length) { status.textContent = 'No competitions available.'; return; }
       buildCompDropdown();
@@ -424,7 +426,12 @@
           const inRanking = Object.values(r.leaderboards || {}).some(lb =>
             lb.couples?.some(c => c.competitor === prevCompetitor || c.partner === prevCompetitor)
           );
-          if (inHeats) setHeatsSearch(prevCompetitor);
+          if (inHeats) {
+            setHeatsSearch(prevCompetitor);
+          } else if (allCompetitorNames.includes(prevCompetitor)) {
+            document.getElementById('competitorSearch').value = prevCompetitor;
+            document.getElementById('competitorSearch').dispatchEvent(new Event('input'));
+          }
           if (inRanking) {
             document.getElementById('search-ranking').value = prevCompetitor;
           }
@@ -524,8 +531,10 @@
 
   function buildHeatsSuggestions() {
     if (!heatsData) return;
-    buildSuggestions('heats-suggestions',
-      [...(heatsData.competitors || []), ...(heatsData.studios || [])].sort());
+    const names = new Set(allCompetitorNames);
+    (heatsData.competitors || []).forEach(n => names.add(n));
+    (heatsData.studios || []).forEach(n => names.add(n));
+    buildSuggestions('heats-suggestions', [...names].sort());
   }
 
   function setHeatsSearch(val) {
@@ -555,8 +564,17 @@
   document.getElementById('competitorSearch').addEventListener('input', e => {
     const val = e.target.value.trim();
     if (!val) { selectHeatsCompetitor(null); return; }
-    if (heatsData?.competitors?.includes(val) || heatsData?.studios?.includes(val))
+    if (heatsData?.competitors?.includes(val) || heatsData?.studios?.includes(val)) {
       selectHeatsCompetitor(val);
+    } else if (allCompetitorNames.includes(val)) {
+      selectedCompetitor = null;
+      setCompetitorParam(val);
+      document.getElementById('participantName').textContent = val;
+      document.getElementById('heatCount').textContent = 'Heat Schedule • 0 heats';
+      document.getElementById('contestedStatsBox').classList.add('hidden');
+      const compName = compList[activeCompIdx]?.short_name || compList[activeCompIdx]?.name || 'this competition';
+      scheduleContent.innerHTML = `<p class="text-gray-500 text-center">${esc(val)} is not competing in ${esc(compName)}</p>`;
+    }
   });
 
   // ── Studio view ────────────────────────────────────────────────────────────
@@ -781,11 +799,9 @@
   // ── Ranking ────────────────────────────────────────────────────────────────
   function buildRankingSuggestions() {
     if (!rankingData) return;
-    const names = new Set();
+    const names = new Set(allCompetitorNames);
     Object.values(rankingData.leaderboards || {}).forEach(lb =>
       (lb.couples || []).forEach(c => {
-        if (c.competitor) names.add(c.competitor);
-        if (c.partner) names.add(c.partner);
         if (c.studio) names.add(c.studio);
       })
     );
