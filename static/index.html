@@ -44,6 +44,8 @@
     .elo-input-slot { display: flex; flex-direction: column; gap: .4rem; flex: 1; min-width: 160px; }
     .elo-input-slot input[type=search] { width: 100%; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; box-sizing: border-box; }
     #elo-couple-sep { font-weight: bold; color: #555; padding-top: .45rem; }
+    .btn-primary { background: #4f46e5; color: #fff; padding: .375rem .75rem; border-radius: .25rem; font-size: .875rem; font-weight: 500; border: none; cursor: pointer; }
+    .btn-primary:hover { background: #4338ca; }
     #elo-series-list { margin-top: .5rem; display: flex; flex-wrap: wrap; gap: .4rem; }
     .elo-series-chip { display: inline-flex; align-items: center; gap: .3rem; padding: .2rem .6rem; border-radius: 999px; font-size: .82rem; color: #fff; }
     .elo-series-chip button { background: none; border: none; color: inherit; cursor: pointer; font-size: .9rem; line-height: 1; padding: 0; opacity: .7; }
@@ -151,7 +153,7 @@
       <input type="search" id="elo-search-a" placeholder="Competitor name"
              list="elo-suggestions" autocomplete="off" />
       <button onclick="eloAddContestant()"
-              class="bg-indigo-600 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-indigo-700">
+              class="btn-primary">
         Add contestant
       </button>
     </div>
@@ -160,7 +162,7 @@
       <input type="search" id="elo-search-b" placeholder="Partner name"
              list="elo-partner-suggestions" autocomplete="off" />
       <button onclick="eloAddCouple()"
-              class="bg-indigo-600 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-indigo-700">
+              class="btn-primary">
         Add couple
       </button>
     </div>
@@ -996,7 +998,7 @@
   }
 
   function initEloTab() {
-    if (eloHistory) { buildEloSuggestions(); return; }
+    if (eloHistory) { if (!Object.keys(eloPartnerMap).length) buildEloSuggestions(); return; }
     if (eloHistoryLoading) return;
     eloHistoryLoading = true;
     setEloStatus('Loading ELO history…');
