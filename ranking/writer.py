@@ -29,7 +29,6 @@ def build_ranking_json(
     assignments: dict[str, str],
     competitor_studios: dict[str, str],
     elo_deltas: dict[str, str],
-    elo_params: dict,
 ) -> dict:
     opponent_counts: dict[str, set] = defaultdict(set)
     heats_per_competitor: dict[str, int] = defaultdict(int)
@@ -84,7 +83,6 @@ def build_ranking_json(
             "date_range": date_range,
             "location": location,
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "elo_params": elo_params,
         },
         "leaderboards": result_leaderboards,
         "competitors": all_competitors,

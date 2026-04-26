@@ -30,7 +30,7 @@ def validate_ranking_json(path: Path) -> list[str]:
     return _validate_json(
         path,
         ("meta", "leaderboards", "competitors", "studios", "competitor_studios"),
-        ("cyi", "name", "generated_at", "elo_params"),
+        ("cyi", "name", "generated_at"),
     )
 
 

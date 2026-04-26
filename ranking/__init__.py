@@ -9,8 +9,6 @@ from ranking.clusters import assign_leaderboards, build_graph
 from ranking.elo_store import compute_deltas, load_history, save_ratings, write_history
 from ranking.writer import build_ranking_json, write_ranking_json
 
-ELO_PARAMS = {}
-
 
 def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
     comps = []
@@ -101,7 +99,6 @@ def run(args):
             assignments=assignments,
             competitor_studios=competitor_studios,
             elo_deltas=elo_deltas,
-            elo_params=ELO_PARAMS,
         )
         path = write_ranking_json(data, out_dir)
         print(f"ranking: wrote {path} ({start_date})")

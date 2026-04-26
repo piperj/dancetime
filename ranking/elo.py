@@ -137,8 +137,6 @@ class EloCalculator:
 
         for i, (members_a, place_a, ra, shares_a) in enumerate(units):
             for members_b, place_b, rb, shares_b in units[i + 1:]:
-                # Expected score: probability that couple A beats couple B
-                # based on their blended ratings.
                 expected_a = 1.0 / (1.0 + math.pow(10, (rb - ra) / ELO_SCALE))
                 expected_b = 1.0 - expected_a
 
@@ -149,7 +147,6 @@ class EloCalculator:
                 else:
                     actual_a, actual_b = 0.5, 0.5
 
-                # Couple delta: positive if they outperformed expectations.
                 delta_a = K_FACTOR * (actual_a - expected_a)
                 delta_b = K_FACTOR * (actual_b - expected_b)
 
@@ -162,10 +159,9 @@ class EloCalculator:
         # Divide by opponents faced so a 10-couple heat doesn't move ratings 9× as much
         # as a head-to-head — each pairwise result carries equal weight regardless of field size.
         n = len(units) - 1
+        after: dict[str, float] = {}
         for c in all_members:
-            self._ratings[c] = self.get_rating(c) + deltas[c] / max(n, 1)
+            after[c] = self.get_rating(c) + deltas[c] / max(n, 1)
+            self._ratings[c] = after[c]
 
-        # Return before/after for every competitor whose rating moved.
-        # The caller logs these as the ELO history for the progression chart.
-        return {c: (before[c], self.get_rating(c)) for c in all_members
-                if self.get_rating(c) != before[c]}
+        return {c: (before[c], after[c]) for c in all_members if after[c] != before[c]}

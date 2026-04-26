@@ -419,7 +419,6 @@ class TestRankingWriter:
             assignments={"Alice": "A", "Bob": "A"},
             competitor_studios={"Alice": "Fred Astaire"},
             elo_deltas={"Alice": "+50.0", "Bob": "-20.0"},
-            elo_params={},
         )
 
     def test_top_level_keys(self):
