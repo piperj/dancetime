@@ -242,6 +242,37 @@ class TestEloCalculator:
         )
         assert calc.process_heat(r) == {}
 
+    def test_solo_couple_no_elo_change(self):
+        # Single couple with no opponent — partners must not be compared against each other
+        calc = EloCalculator()
+        calc.initialize({"Johan": 1650.0, "Kristina": 1500.0})
+        r = DanceResult(
+            event_id=1, event_name="T", round_id=1, round_name="Final",
+            dance_id=1, dance_name="Waltz", session_id=1, heat_number=1, time="",
+            competitors=["Johan", "Kristina"],
+            partners={"Johan": "Kristina", "Kristina": "Johan"},
+            placements={"Johan": 1, "Kristina": 1},
+        )
+        assert calc.process_heat(r) == {}
+        assert calc.get_rating("Johan") == 1650.0
+        assert calc.get_rating("Kristina") == 1500.0
+
+    def test_partners_not_compared_in_multi_couple_heat(self):
+        # Three couples: partners within each couple must not affect each other's ELO
+        calc = EloCalculator()
+        calc.initialize({"A": 1500.0, "B": 1500.0, "C": 1500.0, "D": 1500.0, "E": 1500.0, "F": 1500.0})
+        result = self._make_result([("A", "B", 1), ("C", "D", 2), ("E", "F", 3)])
+        calc.process_heat(result)
+        # A and B won — both gain; E and F lost — both lose; C and D are in the middle
+        assert calc.get_rating("A") > 1500.0
+        assert calc.get_rating("B") > 1500.0
+        assert calc.get_rating("E") < 1500.0
+        assert calc.get_rating("F") < 1500.0
+        # Partners within a couple must move identically (same delta applied to both)
+        assert abs(calc.get_rating("A") - calc.get_rating("B")) < 0.01
+        assert abs(calc.get_rating("C") - calc.get_rating("D")) < 0.01
+        assert abs(calc.get_rating("E") - calc.get_rating("F")) < 0.01
+
 
 class TestClusters:
     def _make_results(self, groups: list[list[str]]) -> list[DanceResult]:
