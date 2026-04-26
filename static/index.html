@@ -216,7 +216,8 @@
         ctx.font = 'bold 10px system-ui,sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'bottom';
-        ctx.fillText(_cyiNameMap[cyi] || cyi, (x0+x1)/2, chartArea.bottom - 2);
+        const labelY = chartArea.bottom - (j % 2 === 0 ? 18 : 2);
+        ctx.fillText(_cyiNameMap[cyi] || cyi, (x0+x1)/2, labelY);
       });
       ctx.restore();
     }
