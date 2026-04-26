@@ -180,6 +180,7 @@
     <div id="elo-chart-wrap" class="hidden" style="height:420px">
       <canvas id="elo-canvas"></canvas>
     </div>
+    <p style="margin-top:0.75rem;font-size:0.8rem;color:#888;text-align:center;font-style:italic">Rankings reflect competitive outcomes — how couples placed in actual heats — not individual skill or potential.</p>
   </div>
 </main>
 
@@ -986,7 +987,17 @@
   }
 
   // ── ELO tab ────────────────────────────────────────────────────────────────
+  const ELO_SCALE          = /*[[ELO_SCALE]]*/ 400.0;
+  const PARTNER_WEIGHT_BASE = /*[[PARTNER_WEIGHT_BASE]]*/ 0.2;
   const ELO_COLORS = ['#6366f1','#ef4444','#22c55e','#f97316','#a855f7','#14b8a6'];
+
+  function computeCoupleElo(r_a, r_b) {
+    // Mirror of ranking/elo.py _compute_shares + blended rating.
+    // logistic > 0.5 when r_b < r_a (b is weaker), giving b the larger share.
+    const logistic = 1 / (1 + Math.pow(10, (r_b - r_a) / ELO_SCALE));
+    const w_b = logistic * (1 - 2 * PARTNER_WEIGHT_BASE) + PARTNER_WEIGHT_BASE;
+    return (1 - w_b) * r_a + w_b * r_b;
+  }
 
   function eloMakeKey(cyi, e) {
     return `${cyi}\x1f${e.event_name}\x1f${e.round_name}\x1f${e.dance_name}`;
@@ -1100,15 +1111,36 @@
 
   function eloExtractSeries(name) {
     const couple = name.includes(' & ') ? name.split(' & ', 2).map(s => s.trim()) : null;
-    const [a, b] = couple || [name, null];
+
+    if (couple) {
+      const [a, b] = couple;
+      const entries_a = new Map(), entries_b = new Map();
+      let initial_a = null, initial_b = null;
+      for (const [cyi, heats] of eloSortedCyiPairs()) {
+        for (const e of heats) {
+          if (e.competitor === a) {
+            if (initial_a === null) initial_a = e.elo_before;
+            entries_a.set(eloMakeKey(cyi, e), e);
+          } else if (e.competitor === b) {
+            if (initial_b === null) initial_b = e.elo_before;
+            entries_b.set(eloMakeKey(cyi, e), e);
+          }
+        }
+      }
+      if (initial_a === null && initial_b === null) return null;
+      initial_a ??= 1500;
+      initial_b ??= 1500;
+      const entries = new Map([...entries_a, ...entries_b]);
+      return { name, isCouple: true, memberA: a, memberB: b,
+               entries, entries_a, entries_b, initial_a, initial_b,
+               initial: computeCoupleElo(initial_a, initial_b) };
+    }
+
     const entries = new Map();
     let initial = null;
     for (const [cyi, heats] of eloSortedCyiPairs()) {
       for (const e of heats) {
-        const match = couple
-          ? (e.competitor === a && e.partner === b) || (e.competitor === b && e.partner === a)
-          : e.competitor === name;
-        if (!match) continue;
+        if (e.competitor !== name) continue;
         if (initial === null) initial = e.elo_before;
         entries.set(eloMakeKey(cyi, e), e);
       }
@@ -1137,6 +1169,21 @@
   }
 
   function eloAlignSeries(series, timeline) {
+    if (series.isCouple) {
+      let r_a = series.initial_a, r_b = series.initial_b;
+      const yValues = [computeCoupleElo(r_a, r_b)];
+      const tooltipData = [];
+      for (const { key } of timeline) {
+        const ea = series.entries_a.get(key);
+        const eb = series.entries_b.get(key);
+        if (ea) r_a = ea.elo_after;
+        if (eb) r_b = eb.elo_after;
+        yValues.push(computeCoupleElo(r_a, r_b));
+        tooltipData.push(ea || eb || null);
+      }
+      return { yValues, tooltipData };
+    }
+
     let elo = series.initial;
     const yValues = [elo];
     const tooltipData = [];
@@ -1171,9 +1218,11 @@
       data: aligned[i].yValues,
       borderColor: s.color,
       borderWidth: 2,
+      borderDash: s.isCouple ? [5, 5] : [],
       pointRadius: 0,
       pointHoverRadius: 5,
-      stepped: 'after',
+      stepped: s.isCouple ? false : 'after',
+      tension: s.isCouple ? 0.3 : 0,
       fill: false,
     }));
 

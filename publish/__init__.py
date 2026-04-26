@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from common import short_name as _short_name
+from ranking.elo import ELO_SCALE, PARTNER_WEIGHT_BASE
 
 from publish.validator import validate_heats_json, validate_index_json, validate_ranking_json
 
@@ -14,7 +15,7 @@ def run(args):
     out_dir = Path(args.out_dir)
     _update_index(out_dir)
 
-    shutil.copy2(Path("static/index.html"), Path("index.html"))
+    _publish_html(Path("static/index.html"), Path("index.html"))
     print("publish: copied static/index.html → index.html")
     shutil.copy2(Path("static/favicon.ico"), Path("favicon.ico"))
     print("publish: copied static/favicon.ico → favicon.ico")
@@ -23,6 +24,13 @@ def run(args):
 
     if args.deploy:
         subprocess.run(["wrangler", "pages", "deploy", "public/"], check=True)
+
+
+def _publish_html(src: Path, dst: Path) -> None:
+    html = src.read_text()
+    html = re.sub(r'/\*\[\[ELO_SCALE\]\]\*/ [\d.]+', f'/*[[ELO_SCALE]]*/ {ELO_SCALE}', html)
+    html = re.sub(r'/\*\[\[PARTNER_WEIGHT_BASE\]\]\*/ [\d.]+', f'/*[[PARTNER_WEIGHT_BASE]]*/ {PARTNER_WEIGHT_BASE}', html)
+    dst.write_text(html)
 
 
 def _parse_start_date(date_range: str) -> str:
