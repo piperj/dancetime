@@ -40,8 +40,10 @@
     .delta-neg { color: #c62828; }
 
     #elo-controls { padding: .75rem 1rem; background: #fff; border-bottom: 1px solid #eee; }
-    #elo-search-wrap { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
-    #elo-search-wrap input[type=search] { flex: 1; min-width: 180px; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
+    #elo-search-wrap { display: flex; gap: .75rem; flex-wrap: wrap; align-items: flex-start; }
+    .elo-input-slot { display: flex; flex-direction: column; gap: .4rem; flex: 1; min-width: 160px; }
+    .elo-input-slot input[type=search] { width: 100%; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; box-sizing: border-box; }
+    #elo-couple-sep { font-weight: bold; color: #555; padding-top: .45rem; }
     #elo-series-list { margin-top: .5rem; display: flex; flex-wrap: wrap; gap: .4rem; }
     .elo-series-chip { display: inline-flex; align-items: center; gap: .3rem; padding: .2rem .6rem; border-radius: 999px; font-size: .82rem; color: #fff; }
     .elo-series-chip button { background: none; border: none; color: inherit; cursor: pointer; font-size: .9rem; line-height: 1; padding: 0; opacity: .7; }
@@ -145,13 +147,25 @@
 <!-- ELO tab controls -->
 <div id="elo-controls" class="hidden">
   <div id="elo-search-wrap">
-    <input type="search" id="elo-search" placeholder='Competitor or "Alice &amp; Bob"'
-           list="elo-suggestions" autocomplete="off" />
+    <div class="elo-input-slot">
+      <input type="search" id="elo-search-a" placeholder="Competitor name"
+             list="elo-suggestions" autocomplete="off" />
+      <button onclick="eloAddContestant()"
+              class="bg-indigo-600 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-indigo-700">
+        Add contestant
+      </button>
+    </div>
+    <span id="elo-couple-sep">&amp;</span>
+    <div class="elo-input-slot">
+      <input type="search" id="elo-search-b" placeholder="Partner name"
+             list="elo-partner-suggestions" autocomplete="off" />
+      <button onclick="eloAddCouple()"
+              class="bg-indigo-600 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-indigo-700">
+        Add couple
+      </button>
+    </div>
     <datalist id="elo-suggestions"></datalist>
-    <button onclick="eloAddSeries()"
-            class="bg-indigo-600 text-white px-3 py-1.5 rounded text-sm font-medium hover:bg-indigo-700">
-      Add to chart
-    </button>
+    <datalist id="elo-partner-suggestions"></datalist>
   </div>
   <div id="elo-series-list"></div>
 </div>
@@ -181,6 +195,7 @@
   let eloSeries  = [];
   let eloChart   = null;
   let eloHistoryLoading = false;
+  let eloPartnerMap = {};
   let _eloBoundaries = [], _eloN = 0, _cyiNameMap = {};
 
   const eloBandPlugin = {
@@ -1003,24 +1018,54 @@
   function buildEloSuggestions() {
     if (!eloHistory) return;
     const names = new Set();
-    for (const heats of Object.values(eloHistory))
-      for (const e of heats) names.add(e.competitor);
+    eloPartnerMap = {};
+    for (const heats of Object.values(eloHistory)) {
+      for (const e of heats) {
+        names.add(e.competitor);
+        if (e.partner) {
+          names.add(e.partner);
+          (eloPartnerMap[e.competitor] ??= new Set()).add(e.partner);
+          (eloPartnerMap[e.partner]    ??= new Set()).add(e.competitor);
+        }
+      }
+    }
     buildSuggestions('elo-suggestions', [...names].sort());
   }
 
-  function eloAddSeries() {
-    const input = document.getElementById('elo-search');
-    const name = input.value.trim();
+  function updatePartnerSuggestions() {
+    const a = document.getElementById('elo-search-a').value.trim();
+    const partners = a && eloPartnerMap[a] ? [...eloPartnerMap[a]].sort() : [];
+    buildSuggestions('elo-partner-suggestions', partners);
+  }
+
+  function eloAddByName(name) {
     if (!name || !eloHistory || eloSeries.length >= 5) return;
-    if (eloSeries.some(s => s.name === name)) { input.value = ''; return; }
+    if (eloSeries.some(s => s.name === name)) return;
     const series = eloExtractSeries(name);
-    if (!series) { setEloStatus(`"${esc(name)}" not found in ELO history.`); return; }
+    if (!series) { setEloStatus(`"${name}" not found in ELO history.`); return; }
     setEloStatus('');
     series.color = ELO_COLORS[eloSeries.length % ELO_COLORS.length];
     eloSeries.push(series);
-    input.value = '';
     renderEloChips();
     renderEloChart();
+  }
+
+  function eloAddContestant() {
+    const input = document.getElementById('elo-search-a');
+    const name = input.value.trim();
+    if (!name) return;
+    eloAddByName(name);
+    input.value = '';
+  }
+
+  function eloAddCouple() {
+    const inputA = document.getElementById('elo-search-a');
+    const inputB = document.getElementById('elo-search-b');
+    const a = inputA.value.trim();
+    const b = inputB.value.trim();
+    if (!a || !b) return;
+    eloAddByName(`${a} & ${b}`);
+    inputB.value = '';
   }
 
   function eloRemoveSeries(name) {
@@ -1039,7 +1084,7 @@
     document.getElementById('elo-series-list').innerHTML = eloSeries.map(s =>
       `<span class="elo-series-chip" style="background:${esc(s.color)}">
          ${esc(s.name)}
-         <button onclick="eloRemoveSeries(${JSON.stringify(s.name)})" aria-label="Remove">×</button>
+         <button onclick="eloRemoveSeries(${esc(JSON.stringify(s.name))})" aria-label="Remove">×</button>
        </span>`
     ).join('');
   }
@@ -1186,8 +1231,12 @@
     }
   }
 
-  document.getElementById('elo-search').addEventListener('keydown', e => {
-    if (e.key === 'Enter') { e.preventDefault(); eloAddSeries(); }
+  document.getElementById('elo-search-a').addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); eloAddContestant(); }
+  });
+  document.getElementById('elo-search-a').addEventListener('input', updatePartnerSuggestions);
+  document.getElementById('elo-search-b').addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); eloAddCouple(); }
   });
 
   // Auto-refresh during live competition
