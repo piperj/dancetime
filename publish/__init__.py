@@ -26,10 +26,13 @@ def run(args):
         subprocess.run(["wrangler", "pages", "deploy", "public/"], check=True)
 
 
+_ELO_CONSTANTS = {"ELO_SCALE": ELO_SCALE, "PARTNER_WEIGHT_BASE": PARTNER_WEIGHT_BASE}
+
+
 def _publish_html(src: Path, dst: Path) -> None:
     html = src.read_text()
-    html = re.sub(r'/\*\[\[ELO_SCALE\]\]\*/ [\d.]+', f'/*[[ELO_SCALE]]*/ {ELO_SCALE}', html)
-    html = re.sub(r'/\*\[\[PARTNER_WEIGHT_BASE\]\]\*/ [\d.]+', f'/*[[PARTNER_WEIGHT_BASE]]*/ {PARTNER_WEIGHT_BASE}', html)
+    for name, value in _ELO_CONSTANTS.items():
+        html = re.sub(rf'/\*\[\[{name}\]\]\*/ [\d.]+', f'/*[[{name}]]*/ {value}', html)
     dst.write_text(html)
 
 

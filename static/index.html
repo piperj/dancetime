@@ -1130,9 +1130,8 @@
       if (initial_a === null && initial_b === null) return null;
       initial_a ??= 1500;
       initial_b ??= 1500;
-      const entries = new Map([...entries_a, ...entries_b]);
       return { name, isCouple: true, memberA: a, memberB: b,
-               entries, entries_a, entries_b, initial_a, initial_b,
+               entries_a, entries_b, initial_a, initial_b,
                initial: computeCoupleElo(initial_a, initial_b) };
     }
 
@@ -1151,7 +1150,14 @@
 
   function eloGlobalTimeline() {
     const participating = new Set();
-    for (const s of eloSeries) for (const k of s.entries.keys()) participating.add(k);
+    for (const s of eloSeries) {
+      if (s.isCouple) {
+        for (const k of s.entries_a.keys()) participating.add(k);
+        for (const k of s.entries_b.keys()) participating.add(k);
+      } else {
+        for (const k of s.entries.keys()) participating.add(k);
+      }
+    }
     const seen = new Set();
     const timeline = [];
     const boundaries = [];
@@ -1213,17 +1219,17 @@
     _eloBoundaries = boundaries;
     _eloN = N;
 
+    const coupleStyle = { borderDash: [5, 5], stepped: false, tension: 0.3 };
+    const soloStyle   = { borderDash: [],     stepped: 'after', tension: 0 };
     const datasets = eloSeries.map((s, i) => ({
       label: s.name,
       data: aligned[i].yValues,
       borderColor: s.color,
       borderWidth: 2,
-      borderDash: s.isCouple ? [5, 5] : [],
       pointRadius: 0,
       pointHoverRadius: 5,
-      stepped: s.isCouple ? false : 'after',
-      tension: s.isCouple ? 0.3 : 0,
       fill: false,
+      ...(s.isCouple ? coupleStyle : soloStyle),
     }));
 
     const cfg = {
