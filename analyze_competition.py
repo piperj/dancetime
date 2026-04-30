@@ -1097,8 +1097,10 @@ def _serve(port: int = 7332):
             self.end_headers()
             self.wfile.write(html)
 
-    print(f"Serving at http://127.0.0.1:{port}/  (Ctrl-C to stop, refreshes on each request)")
-    HTTPServer(("127.0.0.1", port), Handler).serve_forever()
+    import socket
+    local_ip = socket.gethostbyname(socket.gethostname())
+    print(f"Serving at http://{local_ip}:{port}/  (Ctrl-C to stop, refreshes on each request)")
+    HTTPServer(("0.0.0.0", port), Handler).serve_forever()
 
 
 def main():
