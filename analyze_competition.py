@@ -5,6 +5,7 @@ within a competition (aggregated across age sub-groups). This is the real pool
 you'd face in Open categories — not floor traffic from mixed heat slots.
 """
 import json
+import re
 import statistics
 from collections import defaultdict
 from pathlib import Path
@@ -21,8 +22,10 @@ DANCES = [
     "Nightclub Two Step",
 ]
 
-_AM_SMOOTH  = {"Waltz", "Tango", "Foxtrot", "Viennese Waltz"}
-_AM_RHYTHM  = {"Cha Cha", "Rumba", "Swing", "Bolero", "Mambo", "West Coast Swing"}
+_AM_SMOOTH       = {"Waltz", "Tango", "Foxtrot", "Viennese Waltz"}
+_AM_RHYTHM       = {"Cha Cha", "Rumba", "Swing", "Bolero", "Mambo", "West Coast Swing"}
+_INTL_BALLROOM   = {"Waltz", "Tango", "Foxtrot", "Quickstep", "Viennese Waltz"}
+_INTL_LATIN      = {"Cha Cha", "Samba", "Rumba", "Jive", "Paso Doble"}
 
 BRONZE_LEVELS_ORDERED = [
     "Pre-Bronze", "Intermediate Bronze", "Bronze Challenge",
@@ -40,8 +43,6 @@ STYLES = ["Int'l Ballroom", "Int'l Latin", "Am. Smooth", "Am. Rhythm"]
 
 # Age-group prefix families — map raw prefixes to readable labels.
 # L = Leader, G = General, AC = Adult Closed, mL/mG = mixed Leader/Gender.
-# Sub-letters: A = youngest adults (~18-30), B = mid adults (~31-45),
-#              C = senior (~46+), S = Senior, P = Parent, TB = Teen-Bronze.
 _PREFIX_FAMILY: dict[str, str] = {}
 for _p, _lbl in [
     ("L-A",  "Leader A"), ("L-A1", "Leader A"), ("L-A2", "Leader A"), ("L-A3", "Leader A"),
@@ -66,7 +67,6 @@ for _p, _lbl in [
     ("AC-J1","AC Junior"), ("AC-J2","AC Junior"),
     ("G-P1", "General P"), ("G-P2","General P"),
     ("G-D1", "General D"), ("L-D1","Leader D"),
-    # BOB / B.O.B are the same event series
     ("BOB",   "B.O.B"), ("B.O.B", "B.O.B"),
 ]:
     _PREFIX_FAMILY[_p] = _lbl
@@ -104,9 +104,6 @@ PERSONS: dict[str, dict] = {
     },
 }
 
-# Back-compat aliases used by functions that haven't been refactored to take person arg
-ELIGIBLE_MULTI_AGES = {"B", "C"}
-
 
 def prefix_family(ev: str, family_labels=None) -> str:
     prefix = raw_prefix(ev)
@@ -119,9 +116,6 @@ def raw_prefix(ev: str) -> str:
     return ev.strip().split()[0] if ev.strip() else ""
 
 
-# Keywords that flag multi-dance, scholarship, or special-format events.
-# These are excluded from per-dance analysis and shown in a separate bucket.
-# B.O.B / BOB = "Best of the Best" scholarship/dance-off.
 _MULTI_KEYWORDS = (
     "Multidance", "Multi-Dance", "Scholarship", "Dance-Off",
     "2-Dance", "3-Dance", "4-Dance", "5-Dance", "10-Dance",
@@ -138,17 +132,14 @@ def parse_event(ev):
     dance = next((d for d in DANCES if d in ev), None)
 
     if "Int'l" in ev or "Int'" in ev:
-        if any(d in ev for d in ["Waltz", "Tango", "Foxtrot", "Quickstep", "Viennese"]):
+        if dance in _INTL_BALLROOM:
             style = "Int'l Ballroom"
-        elif any(d in ev for d in ["Cha Cha", "Samba", "Rumba", "Jive", "Paso Doble"]):
+        elif dance in _INTL_LATIN:
             style = "Int'l Latin"
         else:
             style = "Int'l Other"
     elif "Amer" in ev:
-        if dance in _AM_RHYTHM:
-            style = "Am. Rhythm"
-        else:
-            style = "Am. Smooth"
+        style = "Am. Rhythm" if dance in _AM_RHYTHM else "Am. Smooth"
     else:
         style = "Other"
 
@@ -164,7 +155,6 @@ def parse_event(ev):
         "Open Pre Silver", "Pre Silver", "Int Silver",
     ]:
         if lv in ev:
-            # Normalise to canonical hyphenated form
             level = {
                 "Open Pre Bronze": "Pre-Bronze",
                 "Pre Bronze":      "Pre-Bronze",
@@ -200,27 +190,48 @@ def load_entries(data_dir: Path = _DEFAULT_DATA_DIR):
     return entries, comp_names
 
 
-def direct_field_sizes(entries, person: dict, levels=None):
+def _build_per_comp(
+    entries,
+    person: dict,
+    levels=None,
+    styles=None,
+    dances=None,
+    single_only: bool = True,
+) -> dict:
     """
-    Count direct rivals = entries sharing the exact same age group + dance +
-    level + style within a competition, filtered to the person's eligible prefixes.
-    The age-group key is dropped when aggregating so charts compare across groups.
+    Returns {cyi: {(family, dance, level, style): count}} filtered to person's
+    eligible prefixes. Callers aggregate the family dimension as needed.
+    `styles` and `dances` are optional allow-sets for slicing.
     """
     if levels is None:
         levels = ALL_LEVELS
-    eligible  = person["prefixes"]
-    fam_lbls  = person["family_labels"]
-    per_comp  = defaultdict(lambda: defaultdict(int))
+    if styles is None:
+        styles = set(STYLES)
+    eligible = person["prefixes"]
+    fam_lbls = person["family_labels"]
+    per_comp: dict = defaultdict(lambda: defaultdict(int))
     for e in entries:
-        if is_multi_dance(e["event"]):
+        if single_only and is_multi_dance(e["event"]):
+            continue
+        if not single_only and not is_multi_dance(e["event"]):
             continue
         if raw_prefix(e["event"]) not in eligible:
             continue
         dance, level, style = parse_event(e["event"])
-        fam = prefix_family(e["event"], fam_lbls)
-        if dance and level in levels and style in STYLES and fam:
-            per_comp[e["cyi"]][(fam, dance, level, style)] += 1
+        family = prefix_family(e["event"], fam_lbls)
+        if not (dance and level in levels and style in styles and family):
+            continue
+        if dances is not None and dance not in dances:
+            continue
+        per_comp[e["cyi"]][(family, dance, level, style)] += 1
+    return per_comp
 
+
+def direct_field_sizes(entries, person: dict, levels=None, styles=None, dances=None):
+    """
+    Count direct rivals per (dance, level, style), aggregated across age sub-groups.
+    """
+    per_comp = _build_per_comp(entries, person, levels=levels, styles=styles, dances=dances)
     cat_counts: dict[tuple, list] = defaultdict(list)
     for cyi, cats in per_comp.items():
         for (fam, dance, lv, sty), cnt in cats.items():
@@ -229,24 +240,8 @@ def direct_field_sizes(entries, person: dict, levels=None):
 
 
 def age_group_field_sizes(entries, person: dict):
-    """
-    For each (cyi, age_family, dance, level, style) count direct entries,
-    filtered to the person's eligible prefixes.
-    """
-    eligible = person["prefixes"]
-    fam_lbls = person["family_labels"]
-    per_comp = defaultdict(lambda: defaultdict(int))
-    for e in entries:
-        if is_multi_dance(e["event"]):
-            continue
-        if raw_prefix(e["event"]) not in eligible:
-            continue
-        dance, level, style = parse_event(e["event"])
-        family = prefix_family(e["event"], fam_lbls)
-        if dance and level in ALL_LEVELS and style in STYLES and family:
-            per_comp[e["cyi"]][(family, dance, level, style)] += 1
-
-    # Flatten across comps
+    """Per-family (age-group) contested stats, filtered to person's eligible prefixes."""
+    per_comp = _build_per_comp(entries, person)
     cat_counts: dict[tuple, list] = defaultdict(list)
     family_total: dict[str, int] = defaultdict(int)
     for cyi, cats in per_comp.items():
@@ -254,23 +249,21 @@ def age_group_field_sizes(entries, person: dict):
             cat_counts[(fam, dance, lv, sty)].append(cnt)
             family_total[fam] += cnt
 
-    # Per family: avg direct rivals per category
     family_vals: dict[str, list] = defaultdict(list)
     for (fam, dance, lv, sty), vals in cat_counts.items():
         family_vals[fam].extend(vals)
-
     return family_vals, family_total
 
 
-def multi_dance_analysis(entries):
+def multi_dance_analysis(entries, person: dict):
     """
     For multi-dance / scholarship events, compute % contested per
-    (age_group, style, level) for Johan's eligible groups: B (36–50) and C (51–60).
+    (age_group, style, level) for the person's eligible multi_ages groups.
     Returns a list of dicts sorted by age_group then style then level.
     """
-    import re
     # Token pattern: standalone A/B/C with optional digit, not inside (CC,R,…)
     _AGE_TOKEN = re.compile(r'(?<![A-Z(,])([ABC][1-9]?)(?![A-Z1-9(,])')
+    eligible_ages = person["multi_ages"]
 
     per_comp: dict = defaultdict(lambda: defaultdict(int))
     for e in entries:
@@ -284,7 +277,7 @@ def multi_dance_analysis(entries):
         if not m:
             continue
         ag = m.group(1)
-        if ag not in ELIGIBLE_MULTI_AGES:
+        if ag not in eligible_ages:
             continue
         per_comp[e["cyi"]][(ag, style, level)] += 1
 
@@ -293,11 +286,12 @@ def multi_dance_analysis(entries):
         for key, cnt in cats.items():
             cat_counts[key].append(cnt)
 
+    age_labels = {"B": "B (36–50)", "C": "C (51–60)"}
     rows = []
     for (ag, style, level), vals in sorted(cat_counts.items()):
         s = stats(vals)
         rows.append({
-            "age_group": f"{'B (36–50)' if ag == 'B' else 'C (51–60)'}",
+            "age_group": age_labels.get(ag, ag),
             "style": style,
             "level": level,
             "count": s["count"],
@@ -325,35 +319,20 @@ def stats(vals):
 def analyze(entries, person: dict):
     cat_counts = direct_field_sizes(entries, person)
 
-    # --- by style ---
-    by_style = defaultdict(list)
+    by_style: dict = defaultdict(list)
+    by_level: dict = defaultdict(list)
+    by_dance: dict = defaultdict(list)
+    dance_level: dict = defaultdict(list)
+    style_level: dict = defaultdict(list)
+    intl = {"Int'l Ballroom", "Int'l Latin"}
     for (dance, level, style), vals in cat_counts.items():
         by_style[style].extend(vals)
-
-    # --- by level (bronze + silver, ordered) ---
-    by_level = defaultdict(list)
-    for (dance, level, style), vals in cat_counts.items():
         by_level[level].extend(vals)
-
-    # --- by dance (Int'l only, all levels) ---
-    by_dance = defaultdict(list)
-    for (dance, level, style), vals in cat_counts.items():
-        if style in ("Int'l Ballroom", "Int'l Latin"):
+        if style in intl:
             by_dance[dance].extend(vals)
-
-    # --- heatmap: dance × level (Int'l only) ---
-    dance_level = defaultdict(list)
-    for (dance, level, style), vals in cat_counts.items():
-        if style in ("Int'l Ballroom", "Int'l Latin"):
             dance_level[(dance, level)].extend(vals)
+        style_level[(style, level)].extend(vals)
 
-    # --- style × level ---
-    style_level = defaultdict(list)
-    for (dance, level, style), vals in cat_counts.items():
-        if style in STYLES:
-            style_level[(style, level)].extend(vals)
-
-    # --- age group family ---
     family_vals, family_total = age_group_field_sizes(entries, person)
 
     return {
@@ -385,12 +364,12 @@ def analyze(entries, person: dict):
 
 def person_event_stats(entries, person: dict):
     """Per-event contested stats for heats a specific person actually entered."""
-    person_heats: dict[str, list] = defaultdict(list)
-    per_comp_ev = defaultdict(lambda: defaultdict(int))
+    per_comp_ev: dict = defaultdict(lambda: defaultdict(int))
     for e in entries:
         per_comp_ev[e["cyi"]][e["event"]] += 1
 
     full_name = person["full_name"]
+    person_heats: dict[str, list] = defaultdict(list)
     seen: set = set()
     for e in entries:
         if full_name not in (e["c1"], e["c2"]):
@@ -399,13 +378,21 @@ def person_event_stats(entries, person: dict):
         if key in seen:
             continue
         seen.add(key)
-        cnt = per_comp_ev[e["cyi"]][e["event"]]
-        person_heats[e["event"]].append(cnt)
+        person_heats[e["event"]].append(per_comp_ev[e["cyi"]][e["event"]])
 
     return {ev: stats(vals) for ev, vals in person_heats.items()}
 
 
 # ── SVG chart helpers ─────────────────────────────────────────────────────────
+
+def _split_label(lbl: str) -> tuple[str, str]:
+    words = lbl.split()
+    if len(words) > 2:
+        return " ".join(words[:2]), " ".join(words[2:])
+    if len(words) == 2:
+        return words[0], words[1]
+    return lbl, ""
+
 
 def _svg_bar(labels, values, colors, width=560, height=240,
              pad_l=46, pad_r=16, pad_t=16, pad_b=64, y_label="", fmt=None):
@@ -440,7 +427,6 @@ def _svg_bar(labels, values, colors, width=560, height=240,
                      f'fill="#718096" font-size="11" font-family="Inter,system-ui,sans-serif" '
                      f'transform="rotate(-90,12,{height//2})">{y_label}</text>')
 
-    # bars
     gap = 0.25
     bar_w = plot_w / n * (1 - gap)
     for i, (lbl, val, col) in enumerate(zip(labels, values, colors)):
@@ -452,30 +438,19 @@ def _svg_bar(labels, values, colors, width=560, height=240,
             f'<rect x="{x:.1f}" y="{y:.1f}" width="{bar_w:.1f}" height="{bar_h:.1f}" '
             f'rx="{r}" fill="{col}"/>'
         )
-        # value label on bar
         lines.append(
             f'<text x="{x + bar_w/2:.1f}" y="{y - 5:.1f}" text-anchor="middle" '
             f'fill="#e2e8f0" font-size="11" font-weight="600" '
             f'font-family="Inter,system-ui,sans-serif">{fmt(val)}</text>'
         )
-        # x-axis label — wrap on spaces
-        words = lbl.split()
+        top_line, bot_line = _split_label(lbl)
         mid_x = x + bar_w / 2
-        line_h = 13
         start_y = height - pad_b + 16
-        # simple two-line wrap
-        if len(words) > 2:
-            top_line = " ".join(words[:2])
-            bot_line = " ".join(words[2:])
-        elif len(words) == 2:
-            top_line, bot_line = words[0], words[1]
-        else:
-            top_line, bot_line = lbl, ""
         lines.append(f'<text x="{mid_x:.1f}" y="{start_y}" text-anchor="middle" '
                      f'fill="#a0aec0" font-size="11" font-family="Inter,system-ui,sans-serif">'
                      f'{top_line}</text>')
         if bot_line:
-            lines.append(f'<text x="{mid_x:.1f}" y="{start_y+line_h}" text-anchor="middle" '
+            lines.append(f'<text x="{mid_x:.1f}" y="{start_y+13}" text-anchor="middle" '
                          f'fill="#a0aec0" font-size="11" font-family="Inter,system-ui,sans-serif">'
                          f'{bot_line}</text>')
 
@@ -590,23 +565,15 @@ def _svg_line(series, level_labels, width=720, height=280,
     # x-axis labels
     for i, lbl in enumerate(level_labels):
         x = gx(i)
-        words = lbl.split()
-        # wrap at two words
-        if len(words) > 2:
-            l1 = " ".join(words[:2])
-            l2 = " ".join(words[2:])
-        elif len(words) == 2:
-            l1, l2 = words[0], words[1]
-        else:
-            l1, l2 = lbl, ""
+        top_line, bot_line = _split_label(lbl)
         y0 = height - pad_b + 16
         lines.append(f'<text x="{x:.1f}" y="{y0}" text-anchor="middle" '
                      f'fill="#a0aec0" font-size="11" font-family="Inter,system-ui,sans-serif">'
-                     f'{l1}</text>')
-        if l2:
+                     f'{top_line}</text>')
+        if bot_line:
             lines.append(f'<text x="{x:.1f}" y="{y0+13}" text-anchor="middle" '
                          f'fill="#a0aec0" font-size="11" font-family="Inter,system-ui,sans-serif">'
-                         f'{l2}</text>')
+                         f'{bot_line}</text>')
 
     # legend
     leg_y = height - 16
@@ -625,13 +592,17 @@ def _svg_line(series, level_labels, width=720, height=280,
 
 def _render_person_body(results, comp_names, ev_stats, multi_rows, person: dict) -> str:
     """Returns the inner HTML body for one person — no <html>/<head> wrapper."""
-    BALLROOM = "#4299e1"
-    LATIN    = "#ed8936"
+    BALLROOM  = "#4299e1"
+    LATIN     = "#ed8936"
     AM_SMOOTH = "#9f7aea"
     AM_RHYTHM = "#f687b3"
-    GREEN    = "#48bb78"
-    YELLOW   = "#ecc94b"
-    RED      = "#fc8181"
+    GREEN     = "#48bb78"
+    YELLOW    = "#ecc94b"
+    RED       = "#fc8181"
+
+    pname = person["full_name"].split()[0]
+    age   = person["age"]
+    role  = person["role"]
 
     style_labels = list(results["by_style"].keys())
     style_pcts   = [results["by_style"][s]["pct"] for s in style_labels]
@@ -681,7 +652,7 @@ def _render_person_body(results, comp_names, ev_stats, multi_rows, person: dict)
         cells = "".join(hm_cell(dance, lv) for lv in hm_levels)
         hm_rows += f"<tr><td style='padding:8px 12px;white-space:nowrap;font-weight:500'>{dance}</td>{cells}</tr>"
 
-    # Johan table rows
+    # Person's own heats table rows
     person_rows_html = ""
     for ev, s in sorted(ev_stats.items(), key=lambda x: -(x[1]["pct"] if x[1] else 0)):
         dance, level, style = parse_event(ev)
@@ -738,7 +709,6 @@ def _render_person_body(results, comp_names, ev_stats, multi_rows, person: dict)
 
     # Age group table rows — sorted by total entries (participation volume)
     PERSON_GROUPS = set(person["family_labels"].values())
-    pname = person["full_name"].split()[0]  # first name
     ag_table_rows = ""
     for fam, total in results["age_group_total"].items():
         s = results["age_group"].get(fam, {})
@@ -780,9 +750,6 @@ def _render_person_body(results, comp_names, ev_stats, multi_rows, person: dict)
     best_dance = max(results["by_dance_intl"].items(), key=lambda x: x[1]["pct"])[0] if results["by_dance_intl"] else "—"
     best_pct   = max((v["pct"] for v in results["by_dance_intl"].values()), default=0)
 
-    pname = person["full_name"].split()[0]
-    age   = person["age"]
-    role  = person["role"]
     style_contested = {s: results["by_style"].get(s, {}).get("pct", 0) for s in STYLES}
     am_smooth_pct = style_contested.get("Am. Smooth", 0)
     am_rhythm_pct = style_contested.get("Am. Rhythm", 0)
@@ -1045,15 +1012,16 @@ def render_html(persons_data: dict, comp_names: dict) -> str:
         )
         for i, n in enumerate(names)
     )
-    js = """
-function showTab(name) {
-  """ + "\n  ".join(
+    hide_stmts = "\n  ".join(
         f'document.getElementById("content-{n}").style.display = name==="{n}" ? "block" : "none";'
         for n in names
-    ) + """
+    )
+    js = f"""
+function showTab(name) {{
+  {hide_stmts}
   document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
   document.getElementById("tab-" + name).classList.add("active");
-}
+}}
 """
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -1073,11 +1041,11 @@ function showTab(name) {
 
 def build_report(data_dir: Path = _DEFAULT_DATA_DIR) -> str:
     entries, comp_names = load_entries(data_dir)
-    multi_rows = multi_dance_analysis(entries)
     persons_html = {}
     for name, person in PERSONS.items():
-        results  = analyze(entries, person)
-        ev_stats = person_event_stats(entries, person)
+        results    = analyze(entries, person)
+        ev_stats   = person_event_stats(entries, person)
+        multi_rows = multi_dance_analysis(entries, person)
         persons_html[name] = _render_person_body(results, comp_names, ev_stats, multi_rows, person)
     return render_html(persons_html, comp_names)
 
