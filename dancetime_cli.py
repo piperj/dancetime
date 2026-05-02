@@ -7,6 +7,7 @@ import ranking
 import publish
 import schedule
 import cal
+import serve
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -44,6 +45,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_cal.add_argument("--port", type=int, default=7331)
     p_cal.add_argument("--no-browser", action="store_true")
 
+    p_serve = sub.add_parser("serve", help="Serve the SPA locally")
+    p_serve.add_argument("--root", default=".", help="Directory to serve (default: repo root)")
+    p_serve.add_argument("--port", type=int, default=8080)
+    p_serve.add_argument("--no-browser", action="store_true")
+
     return parser
 
 
@@ -58,6 +64,7 @@ def main():
         "publish": publish.run,
         "schedule": schedule.run,
         "calendar": cal.run,
+        "serve": serve.run,
     }
     dispatch[args.command](args)
 
