@@ -90,8 +90,13 @@ function reload() { init(); }
 
 function renderAll() {
   renderActiveBar();
-  const query = document.getElementById('search').value.toLowerCase();
-  let filtered = query ? allComps.filter(c => c.name.toLowerCase().includes(query)) : allComps;
+  const raw = document.getElementById('search').value;
+  const query = raw.toLowerCase();
+  const stateCode = /^[A-Z]{2}$/.test(raw);
+  const compMatches = stateCode
+    ? c => (c.name + ' ' + (c.location || '')).toLowerCase().split(/[\s,]+/).includes(query.toLowerCase())
+    : c => c.name.toLowerCase().includes(query) || (c.location || '').toLowerCase().includes(query);
+  let filtered = query ? allComps.filter(compMatches) : allComps;
   if (scrapedOnly) filtered = filtered.filter(c => c.scraped);
   renderComps(filtered);
 }
