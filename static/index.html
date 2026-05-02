@@ -442,6 +442,8 @@
           if (inRanking) {
             document.getElementById('search-ranking').value = prevCompetitor;
           }
+        } else {
+          generateAllHeatsSchedule();
         }
 
         status.classList.add('hidden');
@@ -554,6 +556,7 @@
     if (!val) {
       selectedCompetitor = null;
       setCompetitorParam(null);
+      if (heatsData) { generateAllHeatsSchedule(); return; }
       currentSessions = [];
       scheduleContent.innerHTML = '<p class="text-gray-500 text-center">Select a competitor to view their schedule</p>';
       document.getElementById('participantName').textContent = 'Select Participant';
@@ -614,6 +617,112 @@
     setHeatsSearch(name);
   }
 
+  // ── Shared heat rendering ──────────────────────────────────────────────────
+  function renderRoundEntries(heat) {
+    const byEvent = {};
+    heat.entries.forEach(e => { (byEvent[e.event] ??= []).push(e); });
+    return Object.entries(byEvent).map(([evt, entries]) => {
+      const someHaveResult = entries.some(e => e.result !== '');
+      entries.sort((a, b) => {
+        const ra = parseInt(a.result), rb = parseInt(b.result);
+        const aAdv = isNaN(ra), bAdv = isNaN(rb);
+        if (aAdv && bAdv) return 0;
+        if (aAdv) return -1;
+        if (bAdv) return 1;
+        return ra - rb;
+      });
+      const rows = entries.map(e => {
+        const r = parseInt(e.result);
+        const advanced = isNaN(r) && someHaveResult;
+        const medal = advanced ? '🥇' : rankPrefix(r);
+        const rank = medal ? medal + ' ' : !isNaN(r) ? `${ordinal(r)} ` : '';
+        return `<div>${rank}${esc(e.bib)} ${esc(e.couple)}</div>`;
+      }).join('');
+      const contested = entries.length > 1 ? ' <span class="text-yellow-600">(Contested)</span>' : '';
+      return `<div class="mb-1"><strong>${esc(evt)}:</strong>${contested}<div class="ml-2">${rows}</div></div>`;
+    }).join('');
+  }
+
+  // ── All-heats view (no competitor selected) ────────────────────────────────
+  function generateAllHeatsSchedule() {
+    if (!heatsData) return;
+
+    const seen = new Set();
+    const uniqueHeats = Object.values(heatsByKey)
+      .filter(h => {
+        const k = `${h.heat_number}|${h.session}`;
+        if (seen.has(k)) return false;
+        seen.add(k);
+        return true;
+      })
+      .sort((a, b) => new Date(a.time) - new Date(b.time));
+
+    document.getElementById('participantName').textContent = 'All Heats';
+    document.getElementById('heatCount').textContent = `Heat Schedule • ${uniqueHeats.length} heats`;
+    document.getElementById('contestedStatsBox').classList.add('hidden');
+    currentSessions = [];
+
+    const sessions = groupHeatsBySession(uniqueHeats);
+    currentSessions = sessions;
+    const nextHeatKey = uniqueHeats.find(h => new Date(h.time) > new Date())?.key;
+
+    let html = '';
+    sessions.forEach((sessionHeats, si) => {
+      const first = sessionHeats[0];
+      const last  = sessionHeats[sessionHeats.length - 1];
+      const sessionType = first.session_name || getSessionType(first.time);
+
+      html += `<div id="session-${si}" class="blue-box">
+        <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
+        <div class="font-semibold">${sessionHeats.length} heats</div>
+      </div>`;
+
+      sessionHeats.forEach(primary => {
+        const allRounds = (heatsByNumber[primary.heat_number] || [primary])
+          .filter(h => h.session === primary.session)
+          .sort((a, b) => new Date(a.time) - new Date(b.time));
+        const main = allRounds[allRounds.length - 1];
+        const eventName = primary.entries[0]?.event || '';
+        const n = main.entries.length;
+        const couplesBadge = n === 1
+          ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 ml-2">Solo on floor</span>'
+          : `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 ml-2">${n} couples</span>`;
+
+        const groupKey = allRounds.map(h => h.key).join('-');
+        const isExpanded = allRounds.some(h => expandedHeats.has(h.key)) || expandedHeats.has(groupKey);
+
+        if (primary.key === nextHeatKey)
+          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
+
+        const detailsHtml = allRounds.map((heat, gi) => {
+          const roundHeader = allRounds.length > 1
+            ? `<div class="font-semibold text-gray-600 mb-1">${esc(heat.round)}</div>`
+            : '';
+          return (gi > 0 ? '<hr class="my-2 border-gray-200">' : '') + roundHeader + renderRoundEntries(heat);
+        }).join('');
+
+        html += `<div class="heat-box" onclick="toggleHeatDetails('h-${groupKey}')">
+          <div class="text-base text-gray-900">
+            <strong>${esc(primary.heat_number)}</strong> · ${esc(formatTime(primary.time))} ${couplesBadge}
+          </div>
+          <div class="text-sm text-gray-700 mt-1">${esc(eventName)}</div>
+          <div id="h-${groupKey}" class="heat-details${isExpanded ? ' expanded' : ''}">
+            <div class="text-xs text-gray-600 space-y-2">
+              <div><strong>Session:</strong> ${esc(primary.session_name)}</div>
+              ${allRounds.length === 1 ? `<div><strong>Round:</strong> ${esc(primary.round)}</div>` : ''}
+              <div class="mt-3"><strong>All Competitors:</strong><div class="ml-2 mt-1">${detailsHtml}</div></div>
+            </div>
+          </div>
+        </div>`;
+      });
+    });
+
+    if (!nextHeatKey && uniqueHeats.length > 0)
+      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
+
+    scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats in this competition</p>';
+  }
+
   // ── Competitor schedule ────────────────────────────────────────────────────
   function generateSchedule() {
     if (!selectedCompetitor || !heatsData) return;
@@ -659,31 +768,6 @@
         if (last && last[0].heat_number === heat.heat_number) last.push(heat);
         else heatGroups.push([heat]);
       });
-
-      const renderRoundEntries = (heat) => {
-        const byEvent = {};
-        heat.entries.forEach(e => { (byEvent[e.event] ??= []).push(e); });
-        return Object.entries(byEvent).map(([evt, entries]) => {
-          const someHaveResult = entries.some(e => e.result !== '');
-          entries.sort((a, b) => {
-            const ra = parseInt(a.result), rb = parseInt(b.result);
-            const aAdv = isNaN(ra), bAdv = isNaN(rb);
-            if (aAdv && bAdv) return 0;
-            if (aAdv) return -1;
-            if (bAdv) return 1;
-            return ra - rb;
-          });
-          const rows = entries.map(e => {
-            const r = parseInt(e.result);
-            const advanced = isNaN(r) && someHaveResult;
-            const medal = advanced ? '🥇' : rankPrefix(r);
-            const rank = medal ? medal + ' ' : !isNaN(r) ? `${ordinal(r)} ` : '';
-            return `<div>${rank}${esc(e.bib)} ${esc(e.couple)}</div>`;
-          }).join('');
-          const contested = entries.length > 1 ? ' <span class="text-yellow-600">(Contested)</span>' : '';
-          return `<div class="mb-1"><strong>${esc(evt)}:</strong>${contested}<div class="ml-2">${rows}</div></div>`;
-        }).join('');
-      };
 
       heatGroups.forEach(group => {
         // Include all rounds for this heat (e.g. Final even if competitor didn't advance)
