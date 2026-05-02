@@ -12,10 +12,16 @@ def refresh_calendar(data_dir: Path, client: NDCAClient) -> dict:
 
     raw = client.fetch_calendar()
     competitions = raw if isinstance(raw, list) else []
+    normalized = [_normalize(c) for c in competitions]
+
+    if path.exists():
+        existing = json.loads(path.read_text())
+        if existing.get("competitions") == normalized:
+            return existing
 
     calendar = {
         "downloaded_at": datetime.now(timezone.utc).isoformat(),
-        "competitions": [_normalize(c) for c in competitions],
+        "competitions": normalized,
     }
     path.write_text(json.dumps(calendar, indent=2, ensure_ascii=False))
     return calendar

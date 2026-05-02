@@ -115,11 +115,25 @@ class TestFetcher:
     def test_skips_download_when_cached(self, tmp_data_dir, sample_competition_info, sample_results_raw, sample_heatlists_raw):
         client = self._make_mock_client(sample_competition_info, sample_results_raw, sample_heatlists_raw)
         raw_dir = tmp_data_dir / "raw"
-        zip_path = fetch_all(373, raw_dir, force=False, client=client)
-        call_count = client.fetch_competition_info.call_count
+        fetch_all(373, raw_dir, force=False, client=client)
+        list_call_count = client.fetch_competitor_list.call_count
 
         fetch_all(373, raw_dir, force=False, client=client)
-        assert client.fetch_competition_info.call_count == call_count  # no new call
+        # fetch_competition_info is called (cheap Publish_Dates check), but not the expensive list fetch
+        assert client.fetch_competitor_list.call_count == list_call_count
+
+    def test_redownloads_when_publish_dates_changed(self, tmp_data_dir, sample_competition_info, sample_results_raw, sample_heatlists_raw):
+        client = self._make_mock_client(sample_competition_info, sample_results_raw, sample_heatlists_raw)
+        old_info = {**sample_competition_info["Result"], "Publish_Dates": {"Results": "2026-01-01"}}
+        client.fetch_competition_info.return_value = old_info
+        raw_dir = tmp_data_dir / "raw"
+        fetch_all(373, raw_dir, force=False, client=client)
+
+        new_info = {**sample_competition_info["Result"], "Publish_Dates": {"Results": "2026-01-02"}}
+        client.fetch_competition_info.return_value = new_info
+        list_call_count = client.fetch_competitor_list.call_count
+        fetch_all(373, raw_dir, force=False, client=client)
+        assert client.fetch_competitor_list.call_count > list_call_count
 
     def test_force_redownloads(self, tmp_data_dir, sample_competition_info, sample_results_raw, sample_heatlists_raw):
         client = self._make_mock_client(sample_competition_info, sample_results_raw, sample_heatlists_raw)

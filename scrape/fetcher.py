@@ -10,11 +10,14 @@ from scrape.zip_store import list_files, load_json, save_json
 def fetch_all(cyi: int, data_dir: Path, force: bool, client: NDCAClient) -> Path:
     zip_path = Path(data_dir) / f"comp_{cyi}.zip"
 
-    if zip_path.exists() and not force:
+    if not force and zip_path.exists():
         existing = list_files(zip_path)
         if all(f in existing for f in ("competition_info.json", "results.json", "heatlists.json")):
-            print(f"scrape: using cached {zip_path}")
-            return zip_path
+            fresh_info = client.fetch_competition_info(cyi)
+            cached_info = load_json(zip_path, "competition_info.json")
+            if fresh_info is not None and _publish_dates(fresh_info) == _publish_dates(cached_info):
+                print(f"scrape: no new data for {cyi}")
+                return zip_path
 
     print(f"scrape: downloading competition {cyi}")
 
@@ -86,6 +89,10 @@ def _heatlists_metadata(entry: dict, data: dict) -> dict:
         "studio": str(data.get("Keywords", "") or entry.get("Keywords", "")),
     }
 
+
+
+def _publish_dates(info: dict) -> dict:
+    return info.get("Publish_Dates") or {}
 
 
 def _now() -> str:

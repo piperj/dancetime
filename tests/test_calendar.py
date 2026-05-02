@@ -96,6 +96,24 @@ def test_refresh_calendar_handles_api_failure(tmp_path):
     cal = refresh_calendar(tmp_path, mock_client)
     assert cal["competitions"] == []
 
+def test_refresh_calendar_skips_write_when_unchanged(tmp_path):
+    mock_client = type("C", (), {"fetch_calendar": lambda self: [NDCA_RAW]})()
+    refresh_calendar(tmp_path, mock_client)
+    mtime_before = (tmp_path / "calendar.json").stat().st_mtime
+    import time; time.sleep(0.01)
+    refresh_calendar(tmp_path, mock_client)
+    assert (tmp_path / "calendar.json").stat().st_mtime == mtime_before
+
+def test_refresh_calendar_writes_when_data_changed(tmp_path):
+    mock_client = type("C", (), {"fetch_calendar": lambda self: [NDCA_RAW]})()
+    refresh_calendar(tmp_path, mock_client)
+    mtime_before = (tmp_path / "calendar.json").stat().st_mtime
+    import time; time.sleep(0.01)
+    updated_raw = {**NDCA_RAW, "Comp_Year_Name": "Updated Name"}
+    mock_client2 = type("C", (), {"fetch_calendar": lambda self: [updated_raw]})()
+    refresh_calendar(tmp_path, mock_client2)
+    assert (tmp_path / "calendar.json").stat().st_mtime > mtime_before
+
 
 # --- load_calendar ---
 
