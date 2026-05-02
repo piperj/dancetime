@@ -1,294 +1,29 @@
 {
-  "updated_at": "2026-04-30T00:09:07.657756+00:00",
+  "updated_at": "2026-05-02T00:06:45.837276+00:00",
   "last_cyi": 755,
   "ratings": {
-    "Isabel Eslava": {
-      "elo": 1390.62,
+    "Reimar Leike": {
+      "elo": 1602.46,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Kaiwen Lin": {
-      "elo": 1595.33,
+    "Maxine Mai": {
+      "elo": 1530.64,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Lynn Johnson": {
-      "elo": 1184.03,
+    "Citabria Phillips": {
+      "elo": 1680.42,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Janet Maddux": {
-      "elo": 1295.36,
+    "Lisa Shapiro": {
+      "elo": 1443.55,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Jakub Zeglen": {
-      "elo": 1550.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alyssa Xie": {
-      "elo": 1555.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Roxane Milotti": {
-      "elo": 1803.67,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Adrianna Rubino": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dmytro Lanin": {
-      "elo": 1491.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alice White": {
-      "elo": 1435.21,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Oleksandra Fedorova": {
-      "elo": 1829.28,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anna Blagodyreva": {
-      "elo": 1718.39,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mia Wang": {
-      "elo": 1693.64,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Charlotte Liu": {
-      "elo": 1404.79,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kirsty Kalkhoven": {
-      "elo": 1594.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Raquel Bryant": {
-      "elo": 1451.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mark Baker": {
-      "elo": 1428.61,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lada Bakirova": {
-      "elo": 1505.06,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ariana Yang": {
-      "elo": 1689.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bernard Peacock": {
-      "elo": 1351.03,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elsa Wang": {
-      "elo": 1503.35,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jeremiah Mckinnis": {
-      "elo": 1386.64,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Andrey Tarasov": {
-      "elo": 1823.9,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sally Bard": {
-      "elo": 1595.94,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lily Yee": {
-      "elo": 1755.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Melissa Jensik": {
-      "elo": 1465.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Aaron Pierce": {
-      "elo": 1795.69,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Karlie Marotz": {
-      "elo": 1378.07,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Evelyn Peterson": {
-      "elo": 1386.64,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mila Dragunov": {
-      "elo": 1660.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Igor Ilminskii": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Courtney Veyrasset": {
-      "elo": 1535.33,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marian Siu": {
-      "elo": 1525.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Valerie Walter": {
-      "elo": 1521.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Rathna Rao": {
-      "elo": 1447.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Julius Seniauskas": {
-      "elo": 1701.51,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dante Camacho": {
-      "elo": 1576.49,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Veronika Rozenberg": {
-      "elo": 1509.06,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yuriko Shimamoto": {
-      "elo": 1732.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anatolie Vacaru": {
-      "elo": 1037.37,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Katerina Lu": {
-      "elo": 1659.17,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "April Burge": {
-      "elo": 1421.56,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alexander Donaghe": {
-      "elo": 1096.4,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nikolay Kralev": {
-      "elo": 1554.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Amanda Billett": {
-      "elo": 1402.87,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nicole Prosser": {
-      "elo": 1706.59,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Benjamin Yakubov": {
-      "elo": 1740.36,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Cynthia Thacker": {
-      "elo": 1694.11,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Whitney Myers": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Karen Cosby": {
-      "elo": 1313.14,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marilyn Rainville": {
-      "elo": 1510.15,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Adriana Torres Rivera": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Claire Groom": {
-      "elo": 1597.38,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ina Graves": {
-      "elo": 1267.76,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alexandra Golikova": {
-      "elo": 1298.98,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tabish Romario": {
-      "elo": 1730.16,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ibis Wu": {
-      "elo": 1376.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tarique Mustafa": {
-      "elo": 1750.0,
+    "Elvia Chen": {
+      "elo": 1270.72,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -297,133 +32,43 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Kristina Kuvshynov": {
-      "elo": 1689.98,
+    "Lilian Isabel Flores": {
+      "elo": 1509.77,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Thomas Hwang": {
+    "Barbara Renick": {
+      "elo": 1649.8,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Phuong Lien Nguyen": {
+      "elo": 1244.07,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yana Kandybae": {
       "elo": 1575.0,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "William Manning": {
-      "elo": 1701.58,
+    "Esben Denham": {
+      "elo": 1400.0,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Stanislav Mullens": {
-      "elo": 1646.71,
+    "Natasha Efimchik": {
+      "elo": 1400.0,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Serhiy Averkov": {
-      "elo": 1756.75,
+    "Dennis Sy": {
+      "elo": 1390.62,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Oleksiy Pigotskyy": {
-      "elo": 1668.56,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mireille Gineste": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Julia Vikingstad": {
-      "elo": 1704.23,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maksim Berenshteyn": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kelly Kuhl": {
-      "elo": 1661.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alena Moriakova": {
-      "elo": 1602.28,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ans Stork": {
-      "elo": 1734.61,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alyssa James": {
-      "elo": 1346.52,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Claire Widman": {
-      "elo": 1766.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Olivia Pang": {
-      "elo": 1641.83,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jeremy Perini": {
-      "elo": 1350.36,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Oleksandr Kamniev": {
-      "elo": 1571.33,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Eddie Alba": {
-      "elo": 1712.23,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vanessa Thomson": {
-      "elo": 1540.41,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Wenjing Zheng": {
-      "elo": 1583.59,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Patrik Blom": {
-      "elo": 1704.23,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Matilda Khuu-Fiorino": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ricardo Marques": {
-      "elo": 1604.51,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Victoria Ursatiy": {
-      "elo": 1703.98,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Florin Vlad": {
-      "elo": 1738.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ashley Mattingly": {
-      "elo": 1831.0,
+    "Mirko Spano": {
+      "elo": 1605.7,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -437,958 +82,13 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Aiwan Zeng": {
-      "elo": 1523.41,
+    "Zhihai Li": {
+      "elo": 1808.3,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Daniela Malkhasyan": {
-      "elo": 1364.58,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Leonardo Chiriboga": {
-      "elo": 1403.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nora Hernandez": {
-      "elo": 1733.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Milana Gertsen": {
-      "elo": 1614.96,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Avra Pirkle": {
-      "elo": 1590.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Billy King": {
-      "elo": 1629.41,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Katherine Kuan": {
-      "elo": 1550.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alexander Novikov": {
-      "elo": 1962.78,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Brooklyn Rosario": {
-      "elo": 1562.81,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Aliki Karanasiou": {
-      "elo": 1679.75,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Aahrone Bakhvala": {
-      "elo": 1583.48,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Seth Ward": {
-      "elo": 1676.47,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Phuong Lien Nguyen": {
-      "elo": 1244.07,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sarah Wentling": {
-      "elo": 1688.78,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Stefano Grassi": {
-      "elo": 1607.62,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Esben Denham": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jacques Ouziel": {
-      "elo": 1680.07,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lukas Alisauskas": {
-      "elo": 1625.61,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Pavlo Barsuk": {
-      "elo": 1746.12,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mary Wong": {
-      "elo": 1624.52,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alex Olivares": {
-      "elo": 1379.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Adam Whitehouse": {
-      "elo": 1692.09,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Thomas Rudd": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alina Churchun": {
-      "elo": 1488.11,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Zsolt Katona": {
-      "elo": 1659.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alissa Luo": {
-      "elo": 1481.73,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vladyslava Vursalova": {
-      "elo": 1843.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "David Slutskiy": {
-      "elo": 1415.13,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dan Pillai": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Natalie Jacobs": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Caroline Amaya": {
-      "elo": 1775.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Don Bockenfeld": {
-      "elo": 1219.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Wojciech Wojtyniak": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nikko Khuu-Fiorino": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sergei Panchenko": {
-      "elo": 1466.71,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lilia Tumansky": {
-      "elo": 1354.09,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Omri Mishael": {
-      "elo": 1374.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Heidi Schweickert": {
-      "elo": 1526.82,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maria Tuazon": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Milana Andreyeva": {
-      "elo": 1605.83,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anna Sergeenko": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alon Gilin": {
-      "elo": 1781.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bianca Espinoza": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Leyna Nguyen": {
-      "elo": 1550.79,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Cynthia Baringer": {
-      "elo": 1650.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Olena Barna": {
-      "elo": 1823.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Wiktor Frydrych": {
-      "elo": 1857.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marina Anisimova": {
-      "elo": 1557.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Annika Johnson": {
-      "elo": 1641.96,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marla Diamond": {
-      "elo": 1365.26,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anne Schauerman": {
-      "elo": 1571.33,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maria Alice Dos Santos": {
-      "elo": 1666.09,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tanie Hotan": {
-      "elo": 1535.19,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tashi Lama": {
-      "elo": 1594.58,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bumchin Tegshjargal": {
-      "elo": 1751.33,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michelle Itkin": {
-      "elo": 1583.07,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vedana Bazhenova": {
-      "elo": 1646.71,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Daniel Novikov": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alla Bell": {
-      "elo": 1474.74,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dasha Dragunov": {
-      "elo": 1791.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Niki Sanieenia Moghaddam": {
-      "elo": 1566.32,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Claire Tao": {
-      "elo": 1720.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marcus Johnson": {
-      "elo": 1773.13,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sylvia Agin": {
-      "elo": 1426.33,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Peter Parra": {
-      "elo": 1720.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Paul Cloud": {
-      "elo": 1632.86,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "David Getchell": {
-      "elo": 1816.11,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Duke Khuu": {
-      "elo": 1688.78,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Torri Campbell": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Karence Chan": {
-      "elo": 1632.86,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tracey Cutler": {
-      "elo": 1709.09,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Claire Wei Yi": {
-      "elo": 1532.41,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bennett Cullison": {
-      "elo": 1391.11,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jemma Haley": {
-      "elo": 1373.22,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Walter Piche": {
-      "elo": 1408.83,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "David Blood": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Joseph McDonnell": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marco Vriens": {
-      "elo": 1431.62,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alexander Romanov": {
-      "elo": 1718.39,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivan Spasov": {
-      "elo": 1537.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nora Ravelo": {
-      "elo": 1739.92,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Emily Wang": {
-      "elo": 1659.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Deniz Uzalp": {
-      "elo": 1557.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lilly Chow": {
-      "elo": 1603.24,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lydia Fong": {
-      "elo": 1689.73,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Scott Chan": {
-      "elo": 1572.39,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sofia Solis": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Janet Hagedorn": {
-      "elo": 1286.89,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jhondarr Lopez": {
-      "elo": 1831.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivan Romanov": {
-      "elo": 1706.59,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Damir Karaman": {
-      "elo": 1490.28,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Moon Xie": {
-      "elo": 1720.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Monica Santana": {
-      "elo": 1909.94,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tina Zhang Reed": {
-      "elo": 1554.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Cole Ornelas": {
-      "elo": 1641.96,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Arsenii Moroz": {
-      "elo": 1582.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jacqueline Hachey": {
-      "elo": 1784.21,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Felipe Telona Jr.": {
-      "elo": 1595.94,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elvia Chen": {
-      "elo": 1270.72,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Adelaida Chibukhchyan": {
-      "elo": 1659.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sunny Hsu": {
-      "elo": 1550.14,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Evgeniy Mayorov": {
-      "elo": 1792.58,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Matthew Frank": {
-      "elo": 1750.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Roman Italyankin": {
-      "elo": 1825.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yuan-Yuan Liu": {
-      "elo": 1594.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nikolay Georgiev": {
-      "elo": 1286.89,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lorrie Mae Chun": {
-      "elo": 1650.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jennifer Hoffman": {
-      "elo": 1638.21,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nicky Lin": {
-      "elo": 1732.93,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elenita Pascua": {
-      "elo": 1403.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Hannah Reed": {
-      "elo": 1646.24,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Joanna Cheung": {
-      "elo": 1537.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Amelia Slutskiy": {
-      "elo": 1484.35,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michael Patland": {
-      "elo": 1699.17,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lindsay Delaney": {
-      "elo": 1641.95,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vincent Ang": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Chung You Liu": {
-      "elo": 1594.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Laura Sirott": {
-      "elo": 1671.53,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Oscar Rodriguez": {
-      "elo": 1427.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Deborah Lallier": {
-      "elo": 1825.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Troy Cunningham": {
-      "elo": 1379.68,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anna Zhang": {
-      "elo": 1369.1,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Addie Kragelund": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Boris Basin": {
-      "elo": 1708.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Natasha Efimchik": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Joan Giampaolo": {
-      "elo": 1711.6,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mariia Fedotova": {
-      "elo": 1703.98,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Viacheslav Kostianets": {
-      "elo": 1847.03,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "John Ross": {
-      "elo": 1378.07,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mona Wang": {
-      "elo": 1595.33,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Christina Akhanova": {
-      "elo": 1512.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lydia Miner-Voigt": {
-      "elo": 1496.49,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sarah Taylor": {
-      "elo": 1478.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maria Li": {
-      "elo": 1558.8,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Parker Lynn": {
-      "elo": 1646.24,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Leon Fernandez": {
-      "elo": 1683.9,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Joyce Liao": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jane Chtchemelinine": {
-      "elo": 1500.26,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivan Doubianski": {
-      "elo": 1423.94,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Iveta Pauryte Faraci": {
-      "elo": 1661.37,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Desiree McFee": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Victoria Akhanova": {
-      "elo": 1532.38,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Eddy Kerr": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alexey Karaulov": {
-      "elo": 1785.88,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elizabeth Boey": {
-      "elo": 1471.52,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sue Eldred": {
-      "elo": 1509.12,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Natalia O'Connor": {
-      "elo": 1787.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kegan Call": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sam Ryshakov": {
-      "elo": 1562.81,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Razmik Papian": {
-      "elo": 1577.12,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Natalie Shirota": {
-      "elo": 1708.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Salvatore Dalle Ore": {
-      "elo": 1433.15,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yegor Zhukov": {
-      "elo": 1350.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Misha Radiush": {
-      "elo": 1548.4,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Celina Paoria": {
-      "elo": 1605.71,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Audrey Denham": {
-      "elo": 1528.38,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ronnie Nielsen": {
-      "elo": 1365.26,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "David  Donoho": {
-      "elo": 1488.11,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Chris Smith": {
-      "elo": 1593.31,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Louise Trujillo": {
-      "elo": 1467.12,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Oleg Teleha": {
-      "elo": 1786.96,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Karen Taylor": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Isabella Tan": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kim Huncharek": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Cynthia Lavin": {
-      "elo": 1759.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sara Fan": {
-      "elo": 1602.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Hristo Minev": {
-      "elo": 1447.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Olga Agafonova": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mirko Spano": {
-      "elo": 1605.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dylan Chi": {
-      "elo": 1643.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Oleg Zugan": {
-      "elo": 1790.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivan Paulovich": {
-      "elo": 1607.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Melisandra Russell": {
-      "elo": 1431.25,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ann Solarczyk": {
-      "elo": 1495.32,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Peggy Yiwen Fang": {
-      "elo": 1639.5,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sally  He ": {
-      "elo": 1775.45,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jenya Tkachenko": {
-      "elo": 1758.37,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Troels Bager": {
-      "elo": 1662.28,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michelle Klets": {
-      "elo": 1628.82,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Amelia Maj": {
-      "elo": 1560.52,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Genevieve Paz": {
-      "elo": 1404.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Hanna Pierce": {
-      "elo": 1631.63,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tanzy Stine": {
-      "elo": 1637.61,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jennifer Newell": {
-      "elo": 1780.12,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bronwen Healy": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ella Ye": {
-      "elo": 1549.91,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Milada Myronenko": {
-      "elo": 1688.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Stella Valiano": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Evan Sivenkov": {
-      "elo": 1605.83,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Diana Bizjak": {
-      "elo": 1396.41,
+    "Serhiy Averkov": {
+      "elo": 1756.75,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -1397,88 +97,28 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Vivian Robinson": {
-      "elo": 1661.22,
+    "Veronika Rozenberg": {
+      "elo": 1509.06,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Nikki Huang": {
-      "elo": 1470.03,
+    "Claire Wei Yi": {
+      "elo": 1532.41,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Gloria Brown": {
-      "elo": 1209.49,
+    "Ronnie Nielsen": {
+      "elo": 1365.26,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Denis Filonenko": {
-      "elo": 1325.2,
+    "Alla Bell": {
+      "elo": 1474.74,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Tomoko Seki": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yehor Khrapal": {
-      "elo": 1845.22,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ariel Austria": {
-      "elo": 1745.88,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maia Gorea-Duong": {
-      "elo": 1662.72,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Raya Ilieva": {
-      "elo": 1572.12,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Pamela Romano": {
-      "elo": 1701.58,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michelle Yiu-Aleksieieva": {
-      "elo": 1730.68,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kirsten Covec": {
-      "elo": 1447.16,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maksym Bondarenko": {
-      "elo": 1453.09,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Zhihai Li": {
-      "elo": 1808.3,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alexander Chernositov": {
-      "elo": 1878.47,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elaine Crisostomo": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Diane Young": {
-      "elo": 1417.21,
+    "Judy Pedersen": {
+      "elo": 1491.35,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -1487,168 +127,13 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Marco David": {
-      "elo": 1659.55,
+    "Michelle Yiu-Aleksieieva": {
+      "elo": 1730.68,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Yun Hwa Park": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bailey Tucker": {
-      "elo": 1388.48,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Carrie Chanson": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Rene Rivera": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Oleksii Fedorov": {
-      "elo": 1727.57,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Rui Li": {
-      "elo": 1525.79,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marcia Lavey": {
-      "elo": 1310.47,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michelle Lynne Groleau": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Xingmin Lu": {
-      "elo": 1659.17,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jurga Skimelas": {
-      "elo": 1750.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Drew Innis": {
-      "elo": 1263.78,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Daniil Tymoshenko": {
-      "elo": 1914.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sandra Ouziel": {
-      "elo": 1569.79,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Adi Rangarajan": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elaine Hwa": {
-      "elo": 1603.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Teresa Joeckel": {
-      "elo": 1576.93,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ikaika Dowsett": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Cesar Rojo": {
-      "elo": 1717.63,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tadas Jonyla": {
-      "elo": 1767.15,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jay Kim": {
-      "elo": 1525.79,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dmitry Dmitriev": {
-      "elo": 1515.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jeff Ahlquist": {
-      "elo": 1427.02,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mishka Teleha": {
-      "elo": 1811.9,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "William Sharp": {
-      "elo": 1505.45,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jonathan Vasquez": {
-      "elo": 1688.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Hunter Stephens": {
-      "elo": 1579.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lori Gallagher": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nathan Murstein": {
-      "elo": 1732.93,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Aleksandr Ivanov": {
-      "elo": 1733.93,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Victoria Shavlik": {
-      "elo": 1624.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ashley Campos": {
-      "elo": 1640.9,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Emily Tatoosi": {
-      "elo": 1582.34,
+    "Alyssa James": {
+      "elo": 1346.52,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -1657,438 +142,13 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Shirley Lien": {
-      "elo": 1630.91,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lisa Radionova": {
+    "Natalie Jacobs": {
       "elo": 1575.0,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Steve Batory": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Damian Skimelis": {
-      "elo": 1785.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Steven Myers": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Natalia Zakrevskaia": {
-      "elo": 1403.04,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anna Chiu": {
-      "elo": 1662.28,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Eva Kaplanova": {
-      "elo": 1423.94,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nancy Werner": {
-      "elo": 1482.47,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Stefano Di Brino": {
-      "elo": 1782.86,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Veronica Flint": {
-      "elo": 1515.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Colette Marotto": {
-      "elo": 1727.71,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Matt Falkner": {
-      "elo": 1456.87,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sarah McClammy": {
-      "elo": 1696.36,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Young Lee": {
-      "elo": 1490.88,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Amy Linn": {
-      "elo": 1592.86,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Stella Chan": {
-      "elo": 1572.39,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Diana Kovalenko": {
-      "elo": 1435.22,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Umario Diallo": {
-      "elo": 1808.3,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Citabria Phillips": {
-      "elo": 1680.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Trey Shawn Hoskins": {
-      "elo": 1763.14,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Denis Generalov": {
-      "elo": 1461.53,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dylan Chu": {
-      "elo": 1512.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sylvia Imbens": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Artjom Shmigeljuk": {
-      "elo": 1608.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Danya Rubashevsky": {
-      "elo": 1410.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jennifer Kam": {
-      "elo": 1750.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Fedosey Nefedov": {
-      "elo": 1586.62,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Stefania Nefedova": {
-      "elo": 1408.11,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Simona Alisauskas": {
-      "elo": 1815.94,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Debbie Babcock": {
-      "elo": 1417.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Serena Dalle Ore": {
-      "elo": 1382.25,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mari Sterling": {
-      "elo": 1428.38,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maxine Mai": {
-      "elo": 1530.64,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dominique Leopold": {
-      "elo": 1402.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sofia Tumansky": {
-      "elo": 1406.43,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maria Sivura": {
-      "elo": 1367.3,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Irene Caredis": {
-      "elo": 1795.69,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Aurora Bacchet": {
-      "elo": 1371.44,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sierra Burr": {
-      "elo": 1379.68,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lisa Shawver": {
-      "elo": 1476.59,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Wendy Barnes": {
-      "elo": 1424.2,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lev Kozhanov": {
-      "elo": 1614.96,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mirai Takahashi": {
-      "elo": 1680.13,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lori Ebinger": {
-      "elo": 1730.16,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Phabian Parra": {
-      "elo": 1688.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tina Lu": {
-      "elo": 1402.62,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michelle Tousignant": {
-      "elo": 1340.49,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kirsten King": {
-      "elo": 1474.94,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Emily Coles": {
-      "elo": 1680.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Justin Gomez": {
-      "elo": 1661.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ayako Kitade": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Iris Tam": {
-      "elo": 1535.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vitalina Bunina": {
-      "elo": 1733.93,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jill Bueno": {
-      "elo": 1452.8,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tamara Carver": {
-      "elo": 1218.69,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mateusz Dorot": {
-      "elo": 1877.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Oleksandr Skorniakov": {
-      "elo": 1830.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yana Kandybae": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anna Oblakova": {
-      "elo": 1781.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Patti Connors": {
-      "elo": 1615.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Leo Yang": {
-      "elo": 1530.64,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Carolyn Combi": {
-      "elo": 1183.21,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Betty Lin": {
-      "elo": 1642.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alina Semenenko": {
-      "elo": 1845.22,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Winnie Au": {
-      "elo": 1586.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dylan Soo Hoo": {
-      "elo": 1583.25,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mytia McNeal": {
-      "elo": 1490.28,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mykhailo Bilopukhov": {
-      "elo": 1547.04,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Malinda Li": {
-      "elo": 1564.07,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "MacKenzie Soldan": {
-      "elo": 1532.59,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Chrystal Chen": {
-      "elo": 1468.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Stella Chu": {
-      "elo": 1650.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Emilly Chen": {
-      "elo": 1431.44,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kyrylo Dovzhyk": {
-      "elo": 1532.74,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nicolas Zapata": {
-      "elo": 1180.3,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jenny Thompson": {
-      "elo": 1607.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Emily Chen": {
-      "elo": 1465.41,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Alexander Whyatt": {
-      "elo": 1638.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Astrid Zhou": {
-      "elo": 1469.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Polina Beloedova": {
-      "elo": 1830.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Donna Antraccoli": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Giulio Ferrante": {
-      "elo": 1537.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elianna Stivi": {
-      "elo": 1374.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Joseph Newcomer": {
-      "elo": 1346.73,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nicolas Gastelum": {
-      "elo": 1631.63,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Artem Syzdykov": {
-      "elo": 1596.53,
+    "Vedana Bazhenova": {
+      "elo": 1646.71,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -2097,23 +157,1053 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Hans Stork": {
-      "elo": 1661.37,
+    "Scott Chan": {
+      "elo": 1572.39,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Reimar Leike": {
+    "Janeen Schreiber": {
+      "elo": 1237.73,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jacques Ouziel": {
+      "elo": 1680.07,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Leyna Nguyen": {
+      "elo": 1550.79,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Karlie Marotz": {
+      "elo": 1378.07,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alyssa Xie": {
+      "elo": 1555.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nicolas Gastelum": {
+      "elo": 1631.63,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Eva Kaplanova": {
+      "elo": 1423.94,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Moon Xie": {
+      "elo": 1720.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stefan Ilies": {
+      "elo": 1620.52,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Brian Kettler": {
+      "elo": 1303.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Chrystal Chen": {
+      "elo": 1468.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sarah Wentling": {
+      "elo": 1688.78,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alexander Whyatt": {
+      "elo": 1638.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jemma Haley": {
+      "elo": 1373.22,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marcus Woods": {
+      "elo": 1218.69,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Matthew Frank": {
+      "elo": 1750.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lilia Tumansky": {
+      "elo": 1354.09,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yuan-Yuan Liu": {
+      "elo": 1594.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mari Sterling": {
+      "elo": 1428.38,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jenny Thompson": {
+      "elo": 1607.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oleksandra Fedorova": {
+      "elo": 1829.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Steve Batory": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sue Gannon": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Hristo Minev": {
+      "elo": 1447.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vita Hanley": {
+      "elo": 1750.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vladimir Timofeev": {
+      "elo": 1459.79,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Arina Grishanina": {
+      "elo": 1878.47,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lydia Miner-Voigt": {
+      "elo": 1496.49,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vanessa Thomson": {
+      "elo": 1540.41,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Astrid Zhou": {
+      "elo": 1469.7,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivan Statkevich": {
+      "elo": 1713.16,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Melissa Jensik": {
+      "elo": 1465.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Courtney Veyrasset": {
+      "elo": 1535.33,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Rathna Rao": {
+      "elo": 1447.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Shirley Lien": {
+      "elo": 1630.91,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kristina Kuvshynov": {
+      "elo": 1689.98,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Keith Michael": {
+      "elo": 1597.38,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anna Oblakova": {
+      "elo": 1781.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Don Bockenfeld": {
+      "elo": 1219.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tina Lu": {
+      "elo": 1402.62,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yinchieh Wang": {
+      "elo": 1610.89,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anatolie Vacaru": {
+      "elo": 1037.37,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Hunter Stephens": {
+      "elo": 1579.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Celina Paoria": {
+      "elo": 1605.71,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dasha Dragunov": {
+      "elo": 1791.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anthony Marek": {
+      "elo": 1624.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sara Fan": {
       "elo": 1602.46,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Steve Vasco": {
-      "elo": 1857.6,
+    "Oleksandr Kamniev": {
+      "elo": 1571.33,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Eseniia Ivanitskaia": {
-      "elo": 1620.4,
+    "Adelaida Chibukhchyan": {
+      "elo": 1659.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Karen Cosby": {
+      "elo": 1313.14,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dave Hannigan": {
+      "elo": 1572.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Wendy Barnes": {
+      "elo": 1424.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jennifer Hoffman": {
+      "elo": 1638.21,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Victoria Akhanova": {
+      "elo": 1532.38,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mytia McNeal": {
+      "elo": 1490.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kirsten Covec": {
+      "elo": 1447.16,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Emily Evans": {
+      "elo": 1615.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Fedosey Nefedov": {
+      "elo": 1586.62,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sarah McClammy": {
+      "elo": 1696.36,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Patti Connors": {
+      "elo": 1615.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alexander Romanov": {
+      "elo": 1718.39,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Thomas Rudd": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Michelle Itkin": {
+      "elo": 1583.07,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Charlotte Liu": {
+      "elo": 1404.79,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Joseph McDonnell": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tykhon Marinesku": {
+      "elo": 1660.7,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Evelyn Peterson": {
+      "elo": 1386.64,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Troels Bager": {
+      "elo": 1662.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maggie Sheng": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alexander Novikov": {
+      "elo": 1962.78,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Leon Fernandez": {
+      "elo": 1683.9,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Danylo Afonin": {
+      "elo": 1509.06,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marina Anisimova": {
+      "elo": 1557.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sally Bard": {
+      "elo": 1595.94,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mary Wong": {
+      "elo": 1624.52,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nina Kukui": {
+      "elo": 1379.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maksym Bondarenko": {
+      "elo": 1453.09,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tais Zhukova": {
+      "elo": 1491.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Joanna Cheung": {
+      "elo": 1537.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dante Camacho": {
+      "elo": 1576.49,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Patrik Blom": {
+      "elo": 1704.23,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aleeza Kinder": {
+      "elo": 1785.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nicole Prosser": {
+      "elo": 1706.59,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sofia Pylypenko": {
+      "elo": 1740.36,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nora Hernandez": {
+      "elo": 1733.7,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "David Getchell": {
+      "elo": 1816.11,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Victoria Ursatiy": {
+      "elo": 1703.98,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ayako Kitade": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stefania Nefedova": {
+      "elo": 1408.11,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Teresa Joeckel": {
+      "elo": 1576.93,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Pavlo Barsuk": {
+      "elo": 1746.12,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ikaika Dowsett": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maksim Berenshteyn": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kyrylo Dovzhyk": {
+      "elo": 1532.74,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Debbie Babcock": {
+      "elo": 1417.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jane Chtchemelinine": {
+      "elo": 1500.26,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ashley Mattingly": {
+      "elo": 1831.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "David Slutskiy": {
+      "elo": 1415.13,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Raymond Skorniak": {
+      "elo": 1402.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Natalia O'Connor": {
+      "elo": 1787.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ilona Karolina Szabo": {
+      "elo": 1453.09,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alina Semenenko": {
+      "elo": 1845.22,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ricardo Marques": {
+      "elo": 1604.51,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stanislav Mullens": {
+      "elo": 1646.71,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Emilly Chen": {
+      "elo": 1431.44,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Samantha Larrick": {
+      "elo": 1699.17,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Emma Saucedo - Castillo": {
+      "elo": 1495.47,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Olga Lisovskaya": {
+      "elo": 1737.56,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Igor Colac": {
+      "elo": 1803.67,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dylan Soo Hoo": {
+      "elo": 1583.25,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Milo Gonzales": {
+      "elo": 1615.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dascha Wright": {
+      "elo": 1538.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kirsty Kalkhoven": {
+      "elo": 1594.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Peter Parra": {
+      "elo": 1720.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aaron Pierce": {
+      "elo": 1795.69,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Rostislav Liduch": {
+      "elo": 1649.8,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Elenita Pascua": {
+      "elo": 1403.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lukas Alisauskas": {
+      "elo": 1625.61,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lisa Shawver": {
+      "elo": 1476.59,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Florin Vlad": {
+      "elo": 1738.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Grace Nukida": {
+      "elo": 1464.19,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Peggy Yiwen Fang": {
+      "elo": 1639.5,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Claire Widman": {
+      "elo": 1766.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Michael Patland": {
+      "elo": 1699.17,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tadas Jonyla": {
+      "elo": 1767.15,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Amy Linn": {
+      "elo": 1592.86,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Leonardo Chiriboga": {
+      "elo": 1403.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "John Ross": {
+      "elo": 1378.07,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Brooklyn Rosario": {
+      "elo": 1562.81,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jazmin Ward": {
+      "elo": 1733.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alice White": {
+      "elo": 1435.21,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "William Manning": {
+      "elo": 1701.58,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Troy Cunningham": {
+      "elo": 1379.68,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marilyn Rainville": {
+      "elo": 1510.15,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sandra Ouziel": {
+      "elo": 1569.79,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vladyslava Vursalova": {
+      "elo": 1843.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lydia Fong": {
+      "elo": 1689.73,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Damir Karaman": {
+      "elo": 1490.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Niki Sanieenia Moghaddam": {
+      "elo": 1566.32,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Xingmin Lu": {
+      "elo": 1659.17,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stefano Grassi": {
+      "elo": 1607.62,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Emily Wang": {
+      "elo": 1659.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anggela Dhein": {
+      "elo": 1360.8,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oleksii Fedorov": {
+      "elo": 1727.57,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Natalie Chu": {
+      "elo": 1591.89,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Victoria Shavlik": {
+      "elo": 1624.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lindsay Delaney": {
+      "elo": 1641.95,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Katerina Lu": {
+      "elo": 1659.17,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Daniil Tymoshenko": {
+      "elo": 1914.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vladyslav Ursatiy": {
+      "elo": 1703.98,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Duke Khuu": {
+      "elo": 1688.78,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nikolay Kralev": {
+      "elo": 1554.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lori Gallagher": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marsha McKay": {
+      "elo": 1528.48,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alena Moriakova": {
+      "elo": 1602.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anne Schauerman": {
+      "elo": 1571.33,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nora Ravelo": {
+      "elo": 1739.92,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Milana Gertsen": {
+      "elo": 1614.96,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maria Li": {
+      "elo": 1558.8,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jacqueline Hachey": {
+      "elo": 1784.21,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stella Chu": {
+      "elo": 1650.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Amelia Drace": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Elaine Hwa": {
+      "elo": 1603.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Razmik Papian": {
+      "elo": 1577.12,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bernard Peacock": {
+      "elo": 1351.03,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Colette Marotto": {
+      "elo": 1727.71,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Evan Sivenkov": {
+      "elo": 1605.83,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Amanda Billett": {
+      "elo": 1402.87,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivan Paulovich": {
+      "elo": 1607.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Joseph Newcomer": {
+      "elo": 1346.73,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jhondarr Lopez": {
+      "elo": 1831.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Li Liu": {
+      "elo": 1633.32,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivan Nikitin": {
+      "elo": 1532.41,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Roxane Milotti": {
+      "elo": 1803.67,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Karen Taylor": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alexey Karaulov": {
+      "elo": 1785.88,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Eddie Alba": {
+      "elo": 1712.23,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maria Alice Dos Santos": {
+      "elo": 1666.09,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nancy Werner": {
+      "elo": 1482.47,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "David Ng": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Monika Errett": {
+      "elo": 1666.27,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Audrey Denham": {
+      "elo": 1528.38,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Olga Agafonova": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kelly Kuhl": {
+      "elo": 1661.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mila Bakirova": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sarah Taylor": {
+      "elo": 1478.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Omri Mishael": {
+      "elo": 1374.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Olivia Clayton": {
+      "elo": 1546.36,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oleksii Ihnatov": {
+      "elo": 1829.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Julius Seniauskas": {
+      "elo": 1701.51,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Julia Vikingstad": {
+      "elo": 1704.23,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Phabian Parra": {
+      "elo": 1688.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anna Chiu": {
+      "elo": 1662.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Geetha Narayan": {
+      "elo": 1392.96,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mona Wang": {
+      "elo": 1595.33,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dylan Chi": {
+      "elo": 1643.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Eva Gao": {
+      "elo": 1517.48,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Heidy Kellison": {
+      "elo": 1656.35,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nicky Lin": {
+      "elo": 1732.93,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nathan Murstein": {
+      "elo": 1732.93,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Iveta Pauryte Faraci": {
+      "elo": 1661.37,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Daniel Novikov": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Hannah Cole": {
+      "elo": 1372.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maria Sivura": {
+      "elo": 1367.3,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Seth Ward": {
+      "elo": 1676.47,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Artjom Shmigeljuk": {
+      "elo": 1608.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jonathan Vasquez": {
+      "elo": 1688.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mia Wang": {
+      "elo": 1693.64,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Eddy Kerr": {
+      "elo": 1400.0,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -2127,573 +1217,23 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Jacklyn Braylovskiy": {
-      "elo": 1658.57,
+    "Viacheslav Kostianets": {
+      "elo": 1847.03,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "David Ng": {
-      "elo": 1500.0,
+    "Emily Tatoosi": {
+      "elo": 1582.34,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Vladyslav Ursatiy": {
-      "elo": 1703.98,
+    "Leo Yang": {
+      "elo": 1530.64,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Amy Whyatt": {
-      "elo": 1638.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Eddie Lewis": {
-      "elo": 1495.32,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Keith Michael": {
-      "elo": 1597.38,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sofia Pylypenko": {
-      "elo": 1740.36,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "George Moscona": {
-      "elo": 1327.67,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anggela Dhein": {
-      "elo": 1360.8,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Shannon Mitchel": {
-      "elo": 1428.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ilona Karolina Szabo": {
-      "elo": 1453.09,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Natalie Chu": {
-      "elo": 1591.89,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Emma Saucedo - Castillo": {
-      "elo": 1495.47,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Milo Gonzales": {
-      "elo": 1615.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Kathy Myers": {
-      "elo": 1773.13,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivan Statkevich": {
-      "elo": 1713.16,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anastasiia Marochkanych": {
-      "elo": 1857.08,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Olga Lisovskaya": {
-      "elo": 1737.56,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Cecilia Che": {
-      "elo": 1624.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mila Bakirova": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Raymond Skorniak": {
-      "elo": 1402.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nick Miller": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jane Fernandez": {
-      "elo": 1719.5,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Timea Potys": {
-      "elo": 1659.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bruce McGovert": {
-      "elo": 1472.14,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Evangeline Co": {
-      "elo": 1393.91,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Isabella Moudry": {
-      "elo": 1643.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Grace Nukida": {
-      "elo": 1464.19,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vaidas Skimelis": {
-      "elo": 1610.44,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Izzy Luong": {
-      "elo": 1287.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Amelia Drace": {
-      "elo": 1575.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Keltie Morris": {
-      "elo": 1644.72,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dascha Wright": {
-      "elo": 1538.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yuriy Kuvshynov": {
-      "elo": 1660.88,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tymur Novytskyi": {
-      "elo": 1602.28,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anastasiia Ananieva": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Olivia Clayton": {
-      "elo": 1546.36,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bella Yan": {
-      "elo": 1527.63,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anderson Zhou": {
-      "elo": 1413.65,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Justin Hurcombe": {
-      "elo": 1451.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Josh Yu": {
-      "elo": 1452.65,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nina Kukui": {
-      "elo": 1379.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Earl Shimaoka": {
-      "elo": 1666.27,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivan Nikitin": {
-      "elo": 1532.41,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michelle Popper": {
-      "elo": 1664.73,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Aanand Gupta": {
-      "elo": 1466.86,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Sheryl Mullin": {
-      "elo": 1234.13,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Zoey Zhang": {
-      "elo": 1607.62,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tatiana Saengkeo": {
-      "elo": 1466.71,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yali Mu": {
-      "elo": 1575.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maggie Sheng": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Erwin Montalvo": {
-      "elo": 1404.42,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Li Liu": {
-      "elo": 1633.32,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lisa Shapiro": {
-      "elo": 1443.55,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Iris Bakhvala": {
-      "elo": 1573.91,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vin Graves": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jazmin Ward": {
-      "elo": 1733.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Samantha Larrick": {
-      "elo": 1699.17,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Elena Nesterova": {
-      "elo": 1798.63,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Polina Sviridova": {
-      "elo": 1532.74,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Daniil Marinesku": {
-      "elo": 1791.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Jolie Pollard": {
-      "elo": 1366.09,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tais Zhukova": {
-      "elo": 1491.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Hannah Cole": {
-      "elo": 1372.46,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Matthew Townend": {
-      "elo": 1679.75,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vita Hanley": {
-      "elo": 1750.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Zorik Moldavsky": {
-      "elo": 1535.33,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Vladimir Timofeev": {
-      "elo": 1459.79,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Judy Pedersen": {
-      "elo": 1491.35,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marilyn Hovan": {
-      "elo": 1461.53,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yuzhu Zhang": {
-      "elo": 1452.65,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Dmitry Lazo": {
-      "elo": 1379.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Nataliya Panivska": {
-      "elo": 1625.37,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lelie Takahashi": {
-      "elo": 1351.18,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Israel Lagunas": {
-      "elo": 1500.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Paul Richardson": {
-      "elo": 1775.45,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Eva Gao": {
-      "elo": 1517.48,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Rostislav Liduch": {
-      "elo": 1649.8,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Andrea Faraci": {
-      "elo": 1819.89,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Tykhon Marinesku": {
-      "elo": 1660.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Aleeza Kinder": {
-      "elo": 1785.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Peter Kidder": {
-      "elo": 1381.86,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anthony Marek": {
-      "elo": 1624.29,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Janeen Schreiber": {
-      "elo": 1237.73,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Frank Qin": {
-      "elo": 1403.04,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivy Miles": {
-      "elo": 1446.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Anastasiia Konieva": {
-      "elo": 1727.57,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Danylo Afonin": {
-      "elo": 1509.06,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Irene Lee": {
-      "elo": 1669.84,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Brian Kettler": {
-      "elo": 1303.99,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Judy Zhu": {
-      "elo": 1610.89,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Monika Errett": {
-      "elo": 1666.27,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Bohdan Aleksieiev": {
-      "elo": 1539.96,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marnie Perini": {
-      "elo": 1512.05,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Heidy Kellison": {
-      "elo": 1656.35,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Barbara Renick": {
-      "elo": 1649.8,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Stefan Ilies": {
-      "elo": 1620.52,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Igor Colac": {
-      "elo": 1803.67,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Karen Robinson": {
-      "elo": 1292.34,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Daniel Lee Tran": {
-      "elo": 1625.37,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Geetha Narayan": {
-      "elo": 1392.96,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Mai Vue": {
-      "elo": 1608.85,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Lilian Isabel Flores": {
-      "elo": 1509.77,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Michael Chun": {
-      "elo": 1650.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Emily Evans": {
-      "elo": 1615.54,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ariel Wang": {
-      "elo": 1548.4,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marcus Woods": {
-      "elo": 1218.69,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Natalie Kelly": {
-      "elo": 1481.47,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Maysen Wilder": {
-      "elo": 1877.7,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Arina Grishanina": {
-      "elo": 1878.47,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Ivan Filippov": {
-      "elo": 1604.88,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Randeep Arora": {
-      "elo": 1400.0,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Marsha McKay": {
-      "elo": 1528.48,
-      "num_comps": 1,
-      "last_cyi": 755
-    },
-    "Yinchieh Wang": {
-      "elo": 1610.89,
+    "Steve Vasco": {
+      "elo": 1857.6,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -2702,28 +1242,43 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Dennis Sy": {
-      "elo": 1390.62,
+    "Alexander Chernositov": {
+      "elo": 1878.47,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Sue Gannon": {
-      "elo": 1500.0,
+    "David Blood": {
+      "elo": 1575.0,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Dave Hannigan": {
-      "elo": 1572.42,
+    "Cecilia Che": {
+      "elo": 1624.55,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Oleksii Ihnatov": {
-      "elo": 1829.28,
+    "Marcia Lavey": {
+      "elo": 1310.47,
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Danylo Yanchyshyn": {
-      "elo": 1538.42,
+    "Denis Filonenko": {
+      "elo": 1325.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tina Zhang Reed": {
+      "elo": 1554.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ella Ye": {
+      "elo": 1549.91,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Betty Lin": {
+      "elo": 1642.85,
       "num_comps": 1,
       "last_cyi": 755
     },
@@ -2732,13 +1287,1458 @@
       "num_comps": 1,
       "last_cyi": 755
     },
-    "Rafael Candelas": {
-      "elo": 1528.61,
+    "Evangeline Co": {
+      "elo": 1393.91,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Whitney Myers": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ina Graves": {
+      "elo": 1267.76,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stefano Di Brino": {
+      "elo": 1782.86,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Adam Whitehouse": {
+      "elo": 1692.09,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marnie Perini": {
+      "elo": 1512.05,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Olivia Pang": {
+      "elo": 1641.83,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Monica Santana": {
+      "elo": 1909.94,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Rui Li": {
+      "elo": 1525.79,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Diane Young": {
+      "elo": 1417.21,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Winnie Au": {
+      "elo": 1586.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ariel Austria": {
+      "elo": 1745.88,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mishka Teleha": {
+      "elo": 1811.9,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yali Mu": {
+      "elo": 1575.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Milana Andreyeva": {
+      "elo": 1605.83,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stella Valiano": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Matt Falkner": {
+      "elo": 1456.87,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Eddie Lewis": {
+      "elo": 1495.32,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Cynthia Thacker": {
+      "elo": 1694.11,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marcus Johnson": {
+      "elo": 1773.13,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Elizabeth Boey": {
+      "elo": 1471.52,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Felipe Telona Jr.": {
+      "elo": 1595.94,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kim Huncharek": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sergei Panchenko": {
+      "elo": 1466.71,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ans Stork": {
+      "elo": 1734.61,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dan Pillai": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Israel Lagunas": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nikolay Georgiev": {
+      "elo": 1286.89,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Boris Basin": {
+      "elo": 1708.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivan Filippov": {
+      "elo": 1604.88,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Avra Pirkle": {
+      "elo": 1590.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Elsa Wang": {
+      "elo": 1503.35,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Natalie Kelly": {
+      "elo": 1481.47,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Malinda Li": {
+      "elo": 1564.07,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jay Kim": {
+      "elo": 1525.79,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Elianna Stivi": {
+      "elo": 1374.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alon Gilin": {
+      "elo": 1781.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Chris Smith": {
+      "elo": 1593.31,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Christina Akhanova": {
+      "elo": 1512.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Steven Myers": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marilyn Hovan": {
+      "elo": 1461.53,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Isabel Eslava": {
+      "elo": 1390.62,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Matilda Khuu-Fiorino": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alissa Luo": {
+      "elo": 1481.73,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oleg Zugan": {
+      "elo": 1790.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Matthew Townend": {
+      "elo": 1679.75,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Justin Gomez": {
+      "elo": 1661.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sylvia Imbens": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Zorik Moldavsky": {
+      "elo": 1535.33,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tarique Mustafa": {
+      "elo": 1750.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Olena Barna": {
+      "elo": 1823.7,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Louise Trujillo": {
+      "elo": 1467.12,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tomoko Seki": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mykhailo Bilopukhov": {
+      "elo": 1547.04,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anna Zhang": {
+      "elo": 1369.1,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Frank Qin": {
+      "elo": 1403.04,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sam Ryshakov": {
+      "elo": 1562.81,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tabish Romario": {
+      "elo": 1730.16,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yuriko Shimamoto": {
+      "elo": 1732.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yun Hwa Park": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Katherine Kuan": {
+      "elo": 1550.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mateusz Dorot": {
+      "elo": 1877.7,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anna Sergeenko": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Milada Myronenko": {
+      "elo": 1688.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Cesar Rojo": {
+      "elo": 1717.63,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Paul Cloud": {
+      "elo": 1632.86,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Shannon Mitchel": {
+      "elo": 1428.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jane Fernandez": {
+      "elo": 1719.5,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "David  Donoho": {
+      "elo": 1488.11,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bruce McGovert": {
+      "elo": 1472.14,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Valerie Walter": {
+      "elo": 1521.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Stella Chan": {
+      "elo": 1572.39,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Desiree McFee": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tymur Novytskyi": {
+      "elo": 1602.28,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mila Dragunov": {
+      "elo": 1660.7,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "George Moscona": {
+      "elo": 1327.67,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Diana Kovalenko": {
+      "elo": 1435.22,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Deborah Lallier": {
+      "elo": 1825.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nikko Khuu-Fiorino": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nikki Huang": {
+      "elo": 1470.03,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Irene Lee": {
+      "elo": 1669.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Claire Tao": {
+      "elo": 1720.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Natalie Shirota": {
+      "elo": 1708.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Genevieve Paz": {
+      "elo": 1404.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aliki Karanasiou": {
+      "elo": 1679.75,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tanie Hotan": {
+      "elo": 1535.19,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maria Tuazon": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Adi Rangarajan": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Joyce Liao": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Judy Zhu": {
+      "elo": 1610.89,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lelie Takahashi": {
+      "elo": 1351.18,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Igor Ilminskii": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Justin Hurcombe": {
+      "elo": 1451.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dominique Leopold": {
+      "elo": 1402.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Misha Radiush": {
+      "elo": 1548.4,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Evgeniy Mayorov": {
+      "elo": 1792.58,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jenya Tkachenko": {
+      "elo": 1758.37,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dmytro Lanin": {
+      "elo": 1491.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maysen Wilder": {
+      "elo": 1877.7,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Paul Richardson": {
+      "elo": 1775.45,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alexander Donaghe": {
+      "elo": 1096.4,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Artem Syzdykov": {
+      "elo": 1596.53,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Amelia Slutskiy": {
+      "elo": 1484.35,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Daniil Marinesku": {
+      "elo": 1791.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Addie Kragelund": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Eseniia Ivanitskaia": {
+      "elo": 1620.4,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jill Bueno": {
+      "elo": 1452.8,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Wiktor Frydrych": {
+      "elo": 1857.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Maia Gorea-Duong": {
+      "elo": 1662.72,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Zsolt Katona": {
+      "elo": 1659.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aurora Bacchet": {
+      "elo": 1371.44,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivan Doubianski": {
+      "elo": 1423.94,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vitalina Bunina": {
+      "elo": 1733.93,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Melisandra Russell": {
+      "elo": 1431.25,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Izzy Luong": {
+      "elo": 1287.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Umario Diallo": {
+      "elo": 1808.3,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vivian Robinson": {
+      "elo": 1661.22,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jacklyn Braylovskiy": {
+      "elo": 1658.57,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Benjamin Yakubov": {
+      "elo": 1740.36,
       "num_comps": 1,
       "last_cyi": 755
     },
     "Sabine Blyth": {
       "elo": 1404.79,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lisa Radionova": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jolie Pollard": {
+      "elo": 1366.09,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aleksandr Ivanov": {
+      "elo": 1733.93,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Gloria Brown": {
+      "elo": 1209.49,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bailey Tucker": {
+      "elo": 1388.48,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tatiana Saengkeo": {
+      "elo": 1466.71,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Michael Chun": {
+      "elo": 1650.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "April Burge": {
+      "elo": 1421.56,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Drew Innis": {
+      "elo": 1263.78,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nataliya Panivska": {
+      "elo": 1625.37,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Claire Groom": {
+      "elo": 1597.38,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bohdan Aleksieiev": {
+      "elo": 1539.96,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lori Ebinger": {
+      "elo": 1730.16,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Denis Generalov": {
+      "elo": 1461.53,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Irene Caredis": {
+      "elo": 1795.69,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Janet Hagedorn": {
+      "elo": 1286.89,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Deniz Uzalp": {
+      "elo": 1557.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Michelle Tousignant": {
+      "elo": 1340.49,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Caroline Amaya": {
+      "elo": 1775.84,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tamara Carver": {
+      "elo": 1218.69,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Donna Antraccoli": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Hanna Pierce": {
+      "elo": 1631.63,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Danya Rubashevsky": {
+      "elo": 1410.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Walter Piche": {
+      "elo": 1408.83,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jennifer Kam": {
+      "elo": 1750.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oleksandr Skorniakov": {
+      "elo": 1830.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sierra Burr": {
+      "elo": 1379.68,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Emily Coles": {
+      "elo": 1680.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lorrie Mae Chun": {
+      "elo": 1650.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mirai Takahashi": {
+      "elo": 1680.13,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Chung You Liu": {
+      "elo": 1594.99,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mai Vue": {
+      "elo": 1608.85,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jakub Zeglen": {
+      "elo": 1550.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tashi Lama": {
+      "elo": 1594.58,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yuriy Kuvshynov": {
+      "elo": 1660.88,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Simona Alisauskas": {
+      "elo": 1815.94,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Polina Sviridova": {
+      "elo": 1532.74,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mariia Fedotova": {
+      "elo": 1703.98,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Arsenii Moroz": {
+      "elo": 1582.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Joan Giampaolo": {
+      "elo": 1711.6,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Daniela Malkhasyan": {
+      "elo": 1364.58,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Carolyn Combi": {
+      "elo": 1183.21,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Timea Potys": {
+      "elo": 1659.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marco David": {
+      "elo": 1659.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Hannah Reed": {
+      "elo": 1646.24,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anastasiia Ananieva": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Giulio Ferrante": {
+      "elo": 1537.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yuzhu Zhang": {
+      "elo": 1452.65,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oleksiy Pigotskyy": {
+      "elo": 1668.56,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Michelle Popper": {
+      "elo": 1664.73,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dmitry Dmitriev": {
+      "elo": 1515.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kathy Myers": {
+      "elo": 1773.13,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sheryl Mullin": {
+      "elo": 1234.13,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kirsten King": {
+      "elo": 1474.94,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bella Yan": {
+      "elo": 1527.63,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Wenjing Zheng": {
+      "elo": 1583.59,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marian Siu": {
+      "elo": 1525.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Polina Beloedova": {
+      "elo": 1830.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Karence Chan": {
+      "elo": 1632.86,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bianca Espinoza": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Heidi Schweickert": {
+      "elo": 1526.82,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Serena Dalle Ore": {
+      "elo": 1382.25,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sofia Tumansky": {
+      "elo": 1406.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Pamela Romano": {
+      "elo": 1701.58,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ibis Wu": {
+      "elo": 1376.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Josh Yu": {
+      "elo": 1452.65,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Janet Maddux": {
+      "elo": 1295.36,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Karen Robinson": {
+      "elo": 1292.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sue Eldred": {
+      "elo": 1509.12,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anna Blagodyreva": {
+      "elo": 1718.39,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vin Graves": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Cole Ornelas": {
+      "elo": 1641.96,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aanand Gupta": {
+      "elo": 1466.86,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Peter Kidder": {
+      "elo": 1381.86,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Randeep Arora": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Amy Whyatt": {
+      "elo": 1638.46,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oleg Teleha": {
+      "elo": 1786.96,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Billy King": {
+      "elo": 1629.41,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bumchin Tegshjargal": {
+      "elo": 1751.33,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Torri Campbell": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dmitry Lazo": {
+      "elo": 1379.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ashley Campos": {
+      "elo": 1640.9,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Wojciech Wojtyniak": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mark Baker": {
+      "elo": 1428.61,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Trey Shawn Hoskins": {
+      "elo": 1763.14,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Rene Rivera": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Annika Johnson": {
+      "elo": 1641.96,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jennifer Newell": {
+      "elo": 1780.12,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jeremiah Mckinnis": {
+      "elo": 1386.64,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kaiwen Lin": {
+      "elo": 1595.33,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nick Miller": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bronwen Healy": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marla Diamond": {
+      "elo": 1365.26,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Marco Vriens": {
+      "elo": 1431.62,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Andrea Faraci": {
+      "elo": 1819.89,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Cynthia Baringer": {
+      "elo": 1650.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Michelle Klets": {
+      "elo": 1628.82,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Iris Bakhvala": {
+      "elo": 1573.91,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tanzy Stine": {
+      "elo": 1637.61,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Salvatore Dalle Ore": {
+      "elo": 1433.15,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Mireille Gineste": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Raquel Bryant": {
+      "elo": 1451.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Keltie Morris": {
+      "elo": 1644.72,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Dylan Chu": {
+      "elo": 1512.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aiwan Zeng": {
+      "elo": 1523.41,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "MacKenzie Soldan": {
+      "elo": 1532.59,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jeff Ahlquist": {
+      "elo": 1427.02,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ann Solarczyk": {
+      "elo": 1495.32,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Carrie Chanson": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Parker Lynn": {
+      "elo": 1646.24,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Adrianna Rubino": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ariel Wang": {
+      "elo": 1548.4,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Danylo Yanchyshyn": {
+      "elo": 1538.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vincent Ang": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sally  He ": {
+      "elo": 1775.45,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "William Sharp": {
+      "elo": 1505.45,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Thomas Hwang": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Natalia Zakrevskaia": {
+      "elo": 1403.04,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Raya Ilieva": {
+      "elo": 1572.12,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Rafael Candelas": {
+      "elo": 1528.61,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yehor Khrapal": {
+      "elo": 1845.22,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Michelle Lynne Groleau": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ariana Yang": {
+      "elo": 1689.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Amelia Maj": {
+      "elo": 1560.52,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Erwin Montalvo": {
+      "elo": 1404.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Isabella Moudry": {
+      "elo": 1643.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Young Lee": {
+      "elo": 1490.88,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Nicolas Zapata": {
+      "elo": 1180.3,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Bennett Cullison": {
+      "elo": 1391.11,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Earl Shimaoka": {
+      "elo": 1666.27,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivy Miles": {
+      "elo": 1446.34,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jurga Skimelas": {
+      "elo": 1750.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Elaine Crisostomo": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Cynthia Lavin": {
+      "elo": 1759.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lily Yee": {
+      "elo": 1755.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lev Kozhanov": {
+      "elo": 1614.96,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alex Olivares": {
+      "elo": 1379.54,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Oscar Rodriguez": {
+      "elo": 1427.2,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Kegan Call": {
+      "elo": 1400.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sunny Hsu": {
+      "elo": 1550.14,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lynn Johnson": {
+      "elo": 1184.03,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Vaidas Skimelis": {
+      "elo": 1610.44,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Isabella Tan": {
+      "elo": 1500.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anderson Zhou": {
+      "elo": 1413.65,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Veronica Flint": {
+      "elo": 1515.55,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Diana Bizjak": {
+      "elo": 1396.41,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Emily Chen": {
+      "elo": 1465.41,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Andrey Tarasov": {
+      "elo": 1823.9,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anastasiia Marochkanych": {
+      "elo": 1857.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Tracey Cutler": {
+      "elo": 1709.09,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Hans Stork": {
+      "elo": 1661.37,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Adriana Torres Rivera": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Anastasiia Konieva": {
+      "elo": 1727.57,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Jeremy Perini": {
+      "elo": 1350.36,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alexandra Golikova": {
+      "elo": 1298.98,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivan Spasov": {
+      "elo": 1537.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Elena Nesterova": {
+      "elo": 1798.63,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Yegor Zhukov": {
+      "elo": 1350.43,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Daniel Lee Tran": {
+      "elo": 1625.37,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Laura Sirott": {
+      "elo": 1671.53,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sofia Solis": {
+      "elo": 1575.0,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Alina Churchun": {
+      "elo": 1488.11,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Iris Tam": {
+      "elo": 1535.08,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Sylvia Agin": {
+      "elo": 1426.33,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Zoey Zhang": {
+      "elo": 1607.62,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Ivan Romanov": {
+      "elo": 1706.59,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lada Bakirova": {
+      "elo": 1505.06,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Lilly Chow": {
+      "elo": 1603.24,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Roman Italyankin": {
+      "elo": 1825.42,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Damian Skimelis": {
+      "elo": 1785.29,
+      "num_comps": 1,
+      "last_cyi": 755
+    },
+    "Aahrone Bakhvala": {
+      "elo": 1583.48,
       "num_comps": 1,
       "last_cyi": 755
     }
