@@ -12,14 +12,14 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #222; padding-bottom: 2rem; }
+    html { background: #f5f5f5; overscroll-behavior-y: none; }
+    body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #222; padding-bottom: 2rem; overscroll-behavior-y: none; }
 
     nav { display: flex; gap: 0; border-bottom: 2px solid #ddd; background: #fff; }
     nav button { padding: .6rem 1.4rem; border: none; background: none; cursor: pointer; font-size: 1rem; color: #555; border-bottom: 3px solid transparent; margin-bottom: -2px; }
     nav button.active { color: #6366f1; border-bottom-color: #6366f1; font-weight: 600; }
 
     .sticky-header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
-    .controls-hidden { max-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
     .blue-box { background: #6366f1; color: white; padding: 0.75rem 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-bottom: 0.5rem; }
     .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; }
     .heat-box:active { transform: scale(0.98); }
@@ -31,8 +31,6 @@
     .partner-change-marker { color: #1e40af; margin: 0.375rem 0; text-align: center; font-style: italic; }
 
     .search-bar { padding: .75rem 1rem; background: #fff; border-bottom: 1px solid #eee; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
-    #heats-search-bar, #ranking-controls { overflow: hidden; max-height: 80px; transition: max-height 0.2s ease-out, padding-top 0.2s ease-out, padding-bottom 0.2s ease-out; }
-    #ranking-controls { position: sticky; top: 0; z-index: 10; }
     .search-bar input[type=search] { flex: 1; min-width: 180px; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
 
     .lb-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; border: 1px solid #e0e0e0; }
@@ -78,6 +76,16 @@
   <button data-tab="elo">Ranking</button>
 </nav>
 
+<!-- Search bars scroll away with the page; sticky header below contains only Name + Navigate -->
+<div id="heats-search-bar" class="search-bar hidden">
+  <input type="search" id="competitorSearch" placeholder="Search competitors…" list="heats-suggestions" autocomplete="off" />
+  <datalist id="heats-suggestions"></datalist>
+</div>
+<div id="ranking-controls" class="search-bar hidden">
+  <input type="search" id="search-ranking" placeholder="Search competitor or studio…" list="ranking-suggestions" autocomplete="off" />
+  <datalist id="ranking-suggestions"></datalist>
+</div>
+
 <!-- Competition header: thumbnail + name (clickable) + details -->
 <div id="comp-header" class="hidden bg-white border-b border-gray-200" style="position:relative">
   <div class="px-4 py-3 flex items-center gap-4">
@@ -103,7 +111,7 @@
   </div>
 </div>
 
-<!-- Sticky participant header + search (heats tab) -->
+<!-- Sticky participant header (heats tab) — search bar above scrolls away -->
 <div id="heats-controls" class="sticky-header hidden">
   <div class="px-4 py-3 flex items-center justify-between">
     <div class="flex-1 min-w-0">
@@ -121,10 +129,6 @@
         <div id="navigator-items"></div>
       </div>
     </div>
-  </div>
-  <div id="heats-search-bar" class="px-4 pb-3 border-t border-gray-200 pt-3 search-bar">
-    <input type="search" id="competitorSearch" placeholder="Search competitors…" list="heats-suggestions" autocomplete="off" />
-    <datalist id="heats-suggestions"></datalist>
   </div>
 </div>
 
@@ -144,12 +148,6 @@
 <!-- Schedule content (heats tab) -->
 <div id="scheduleContent" class="hidden px-4 py-4">
   <p class="text-gray-500 text-center">Select a competitor to view their schedule</p>
-</div>
-
-<!-- Ranking search bar -->
-<div id="ranking-controls" class="search-bar hidden">
-  <input type="search" id="search-ranking" placeholder="Search competitor or studio…" list="ranking-suggestions" autocomplete="off" />
-  <datalist id="ranking-suggestions"></datalist>
 </div>
 
 <!-- ELO tab controls -->
@@ -201,8 +199,6 @@
 
   let activeTab = 'heats';
   let allCompetitorNames = [];
-  let scrollHideLastY = 0;
-  let scrollHideTicking = false;
   let heatsData = null;
   let eloHistory = null;
   let eloSeries  = [];
@@ -251,9 +247,6 @@
       document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeTab = btn.dataset.tab;
-      heatsSearchBar.classList.remove('controls-hidden');
-      rankingControls.classList.remove('controls-hidden');
-      scrollHideLastY = window.scrollY;
       updateTabVisibility();
       // Sync visible inputs from URL param when switching tabs
       const param = getCompetitorParam();
@@ -289,6 +282,7 @@
     const isElo     = activeTab === 'elo';
 
     compHeader.classList.toggle('hidden', isElo || (!heatsData && !rankingData));
+    heatsSearchBar.classList.toggle('hidden', !isHeats || !heatsData);
     heatsControls.classList.toggle('hidden', !isHeats || !heatsData);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
     scheduleContent.classList.toggle('hidden', !isHeats || !heatsData);
@@ -1325,22 +1319,6 @@
   document.getElementById('elo-search-b').addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); eloAddCouple(); }
   });
-
-  // Hide search bar when scrolling down, reveal when scrolling up
-  window.addEventListener('scroll', () => {
-    if (!scrollHideTicking) {
-      scrollHideTicking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        const hide = y > scrollHideLastY && y > 80;
-        const el = activeTab === 'heats'   ? heatsSearchBar :
-                   activeTab === 'ranking' ? rankingControls : null;
-        if (el) el.classList.toggle('controls-hidden', hide);
-        scrollHideLastY = y;
-        scrollHideTicking = false;
-      });
-    }
-  }, { passive: true });
 
   // Auto-refresh during live competition
   setInterval(() => {
