@@ -27,6 +27,8 @@ def build_heats_json(
             if entry.studio:
                 studios.add(entry.studio)
                 competitor_studios[entry.competitor1] = entry.studio
+                if entry.competitor2:
+                    competitor_studios[entry.competitor2] = entry.studio
             competitor_heats.setdefault(entry.competitor1, []).append(instance.key)
             if entry.competitor2:
                 competitor_heats.setdefault(entry.competitor2, []).append(instance.key)

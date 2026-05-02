@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-02T00:06:46.279521+00:00",
+  "updated_at": "2026-05-02T16:49:28.120747+00:00",
   "competitions": [
     {
       "cyi": 755,
@@ -44,6 +44,17 @@
       "location": "",
       "heats_file": "data/heats_421.json",
       "ranking_file": "data/ranking_421.json"
+    },
+    {
+      "cyi": 1049,
+      "competition_id": 84,
+      "name": "Hawaii Star Ball",
+      "short_name": "Hawaii Star Ball",
+      "date_range": "Sep 25 to 28, 2024",
+      "start_date": "2024-09-25",
+      "location": "",
+      "heats_file": "data/heats_1049.json",
+      "ranking_file": "data/ranking_1049.json"
     }
   ]
 }

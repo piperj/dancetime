@@ -281,6 +281,27 @@ class TestCoupleDeduplication:
         assert "Alice Smith" in data["competitor_heats"]
         assert "Bob Jones" in data["competitor_heats"]
 
+    def test_both_partners_in_competitor_studios(self):
+        # Regression: competitor2 was omitted from competitor_studios, so studio search
+        # would find the leader but not their partner.
+        hl = _couple_heatlists([("Alice Smith", "Bob Jones", "Studio A")])
+        instances = parse_heatlists(hl, [], {})
+        data = build_heats_json(999, {"Competition_Name": "T", "Date_Range": "", "Location": ""}, instances, {})
+        cs = data["competitor_studios"]
+        assert cs.get("Alice Smith") == "Studio A"
+        assert cs.get("Bob Jones") == "Studio A"
+
+    def test_competitor_studios_across_two_couples_same_studio(self):
+        hl = _couple_heatlists([
+            ("Alice Smith", "Bob Jones", "Studio A"),
+            ("Carol Doe", "Dan Roe", "Studio A"),
+        ])
+        instances = parse_heatlists(hl, [], {})
+        data = build_heats_json(999, {"Competition_Name": "T", "Date_Range": "", "Location": ""}, instances, {})
+        cs = data["competitor_studios"]
+        for name in ("Alice Smith", "Bob Jones", "Carol Doe", "Dan Roe"):
+            assert cs.get(name) == "Studio A", f"{name} missing from competitor_studios"
+
     def test_no_duplicate_couple_keys_in_heat(self):
         hl = _couple_heatlists([
             ("Alice Smith", "Bob Jones", "Studio A"),
@@ -330,6 +351,23 @@ class TestRealDataHeats:
             for e in heat["entries"]:
                 if e["competitor2"]:
                     assert e["competitor2"] in ch, f"{e['competitor2']} missing from competitor_heats"
+
+    def test_all_partners_in_competitor_studios(self):
+        # Regression: competitor2 was omitted from competitor_studios.
+        # Any competitor who has a studio in at least one heat entry must appear in the map.
+        cs = self.data["competitor_studios"]
+        missing = []
+        for heat in self.data["heats"]:
+            for e in heat["entries"]:
+                if e.get("studio") and e.get("competitor2") and e["competitor2"] not in cs:
+                    missing.append(e["competitor2"])
+        assert not missing, f"Partners missing from competitor_studios: {missing[:5]}"
+
+    def test_johan_piper_in_competitor_studios(self):
+        # CYI 373: Johan Piper dances as competitor2 with Arete Dance Center studio.
+        cs = self.data["competitor_studios"]
+        assert "Johan Piper" in cs, "Johan Piper missing from competitor_studios"
+        assert cs["Johan Piper"] == "Arete Dance Center"
 
     def test_heat_628_results(self):
         # Semi-final, 11 couples. Placements come from Circuit.Place in the Summary
