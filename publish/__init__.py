@@ -49,6 +49,7 @@ def _parse_start_date(date_range: str) -> str:
 
 def _update_index(out_dir: Path) -> None:
     competitions = []
+    all_competitors: set[str] = set()
     for heats_file in sorted(out_dir.glob("heats_*.json")):
         try:
             data = json.loads(heats_file.read_text())
@@ -56,6 +57,8 @@ def _update_index(out_dir: Path) -> None:
             cyi = meta.get("cyi")
             if not data.get("heats") and not data.get("competitors"):
                 continue
+            comp_competitors = sorted(data.get("competitors", []))
+            all_competitors.update(comp_competitors)
             ranking_file = out_dir / f"ranking_{cyi}.json"
             name = meta.get("name", "")
             competitions.append({
@@ -68,6 +71,7 @@ def _update_index(out_dir: Path) -> None:
                 "location": meta.get("location", ""),
                 "heats_file": f"{out_dir.name}/{heats_file.name}",
                 "ranking_file": f"{out_dir.name}/{ranking_file.name}",
+                "competitors": comp_competitors,
             })
         except (json.JSONDecodeError, KeyError):
             pass
@@ -76,11 +80,15 @@ def _update_index(out_dir: Path) -> None:
 
     index_path = out_dir / "index.json"
     index_path.write_text(json.dumps(
-        {"updated_at": datetime.now(timezone.utc).isoformat(), "competitions": competitions},
+        {
+            "updated_at": datetime.now(timezone.utc).isoformat(),
+            "competitions": competitions,
+            "all_competitors": sorted(all_competitors),
+        },
         indent=2,
         ensure_ascii=False,
     ))
-    print(f"publish: wrote {index_path} ({len(competitions)} competition(s))")
+    print(f"publish: wrote {index_path} ({len(competitions)} competition(s), {len(all_competitors)} competitor(s))")
 
 
 def _validate_outputs(out_dir: Path) -> None:

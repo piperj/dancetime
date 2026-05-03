@@ -361,7 +361,7 @@
   Promise.all([fetch('data/index.json'), fetch('data/elo_ratings.json')])
     .then(([ir, er]) => Promise.all([ir.json(), er.json()]))
     .then(([index, eloRatings]) => {
-      allCompetitorNames = Object.keys(eloRatings.ratings || {}).sort();
+      allCompetitorNames = index.all_competitors || Object.keys(eloRatings.ratings || {}).sort();
       compList = index.competitions.slice().sort((a, b) => (b.start_date || '') > (a.start_date || '') ? 1 : -1);
       if (!compList.length) { status.textContent = 'No competitions available.'; return; }
       buildCompDropdown();
@@ -541,7 +541,6 @@
   function buildHeatsSuggestions() {
     if (!heatsData) return;
     const names = new Set(allCompetitorNames);
-    (heatsData.competitors || []).forEach(n => names.add(n));
     (heatsData.studios || []).forEach(n => names.add(n));
     buildSuggestions('heats-suggestions', [...names].sort());
   }
@@ -565,6 +564,7 @@
       return;
     }
     selectedCompetitor = val;
+    expandedHeats.clear();
     setCompetitorParam(val);
     document.getElementById('contestedStatsBox').classList.remove('hidden');
     if (heatsData.studios?.includes(val)) generateStudioSchedule();
@@ -583,34 +583,104 @@
       document.getElementById('heatCount').textContent = 'Heat Schedule • 0 heats';
       document.getElementById('contestedStatsBox').classList.add('hidden');
       const compName = compList[activeCompIdx]?.short_name || compList[activeCompIdx]?.name || 'this competition';
-      scheduleContent.innerHTML = `<p class="text-gray-500 text-center">${esc(val)} is not competing in ${esc(compName)}</p>`;
+      const otherComps = compList
+        .map((c, i) => ({ comp: c, i }))
+        .filter(({ comp, i }) => i !== activeCompIdx && comp.competitors?.includes(val));
+      let html = `<p class="text-gray-500 text-center">${esc(val)} is not competing in ${esc(compName)}</p>`;
+      if (otherComps.length) {
+        html += `<p class="text-gray-400 text-center text-sm mt-2">Competed at: ${
+          otherComps.map(({ comp, i }) =>
+            `<span class="cursor-pointer text-indigo-500 hover:underline" onclick="selectComp(${i})">${esc(comp.short_name || comp.name)}</span>`
+          ).join(', ')
+        }</p>`;
+      }
+      scheduleContent.innerHTML = html;
     }
   });
 
   // ── Studio view ────────────────────────────────────────────────────────────
   function generateStudioSchedule() {
     const studio = selectedCompetitor;
-    const members = (studioCompetitors[studio] || []).slice().sort();
+    const memberSet = new Set(studioCompetitors[studio] || []);
     document.getElementById('participantName').textContent = studio;
-    document.getElementById('heatCount').textContent = `${members.length} competitors`;
 
-    if (!members.length) {
+    if (!memberSet.size) {
+      document.getElementById('heatCount').textContent = '0 competitors';
       scheduleContent.innerHTML = '<p class="text-gray-500 text-center">No competitors found for this studio</p>';
       return;
     }
 
-    let html = '<div class="mb-4 p-4 bg-blue-50 rounded-lg border border-blue-200">';
-    html += `<h3 class="font-semibold text-blue-900 mb-2">Studio Competitors (${members.length})</h3>`;
-    html += '<div class="grid grid-cols-1 gap-1 text-sm">';
-    members.forEach(name => {
-      const n = (heatsData.competitor_heats[name] || []).length;
-      html += `<div class="cursor-pointer hover:text-indigo-600 p-2 hover:bg-white rounded"
-                    onclick='selectCompetitorFromStudio(${JSON.stringify(name)})'>
-                 ${esc(name)} <span class="text-gray-500">(${n} heats)</span>
-               </div>`;
+    const seenKeys = new Set();
+    const allHeats = [];
+    memberSet.forEach(name => {
+      (heatsData.competitor_heats[name] || []).forEach(k => {
+        const heat = heatsByKey[k];
+        if (!heat) return;
+        const dedupKey = `${heat.heat_number}|${heat.session}`;
+        if (seenKeys.has(dedupKey)) return;
+        seenKeys.add(dedupKey);
+        allHeats.push(heat);
+      });
     });
-    html += '</div></div>';
-    scheduleContent.innerHTML = html;
+    allHeats.sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
+
+    document.getElementById('heatCount').textContent = `${memberSet.size} competitors · ${allHeats.length} heats`;
+    document.getElementById('contestedStatsBox')?.classList.add('hidden');
+
+    const sessions = groupHeatsBySession(allHeats);
+    currentSessions = sessions;
+    const nowIso = new Date().toISOString();
+    const nextHeatKey = allHeats.find(h => h.time > nowIso)?.key;
+
+    let html = '';
+    sessions.forEach((sessionHeats, si) => {
+      const first = sessionHeats[0];
+      const last  = sessionHeats[sessionHeats.length - 1];
+      const sessionType = first.session_name || getSessionType(first.time);
+
+      const activeNames = new Set();
+      sessionHeats.forEach(heat => {
+        heat.entries.forEach(e => {
+          if (memberSet.has(e.competitor1)) activeNames.add(e.competitor1);
+          if (memberSet.has(e.competitor2)) activeNames.add(e.competitor2);
+        });
+      });
+
+      html += `<div id="session-${si}" class="blue-box">
+        <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
+        <div class="font-semibold">${esc(Array.from(activeNames).sort().join(', '))}</div>
+      </div>`;
+
+      let lastTime = null, lastHeatNum = 0;
+      groupHeatsByHeatNumber(sessionHeats).forEach(group => {
+        const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
+        const primary = allRounds[0];
+        const main = allRounds[allRounds.length - 1];
+
+        if (lastTime !== null) {
+          const numGap = parseInt(primary.heat_number) - lastHeatNum;
+          if (numGap !== 1) {
+            const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
+            if (breakSec > 0)
+              html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
+          }
+        }
+
+        if (group.some(h => h.key === nextHeatKey))
+          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
+
+        const studioEntry = main.entries.find(e => memberSet.has(e.competitor1) || memberSet.has(e.competitor2));
+        html += renderHeatCard(primary, allRounds, studioEntry?.event || group[0].entries[0]?.event || '');
+
+        lastTime = main.time;
+        lastHeatNum = parseInt(primary.heat_number);
+      });
+    });
+
+    if (!nextHeatKey && allHeats.length > 0)
+      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
+
+    scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats found for this studio</p>';
   }
 
   function selectCompetitorFromStudio(name) {
@@ -718,11 +788,27 @@
         <div class="font-semibold">${sessionHeats.length} heats</div>
       </div>`;
 
-      sessionHeats.forEach(primary => {
-        const allRounds = getHeatRounds(primary.heat_number, primary.session, [primary]);
-        if (primary.key === nextHeatKey)
+      let lastTime = null, lastHeatNum = 0;
+      groupHeatsByHeatNumber(sessionHeats).forEach(group => {
+        const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
+        const primary = allRounds[0];
+        const main = allRounds[allRounds.length - 1];
+
+        if (lastTime !== null) {
+          const numGap = parseInt(primary.heat_number) - lastHeatNum;
+          if (numGap !== 1) {
+            const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
+            if (breakSec > 0)
+              html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
+          }
+        }
+
+        if (group.some(h => h.key === nextHeatKey))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
-        html += renderHeatCard(primary, allRounds, primary.entries[0]?.event || '');
+        html += renderHeatCard(primary, allRounds, group[0].entries[0]?.event || '');
+
+        lastTime = main.time;
+        lastHeatNum = parseInt(primary.heat_number);
       });
     });
 
@@ -769,16 +855,9 @@
       if (partners.size > 1 && firstPartner)
         html += `<div class="partner-change-marker">🔄 ${esc(firstPartner)}</div>`;
 
-      let lastTime = null, lastHeatNum = null, lastPartner = null;
+      let lastTime = null, lastHeatNum = 0, lastPartner = null;
 
-      const heatGroups = [];
-      sessionHeats.forEach(heat => {
-        const last = heatGroups[heatGroups.length - 1];
-        if (last && last[0].heat_number === heat.heat_number) last.push(heat);
-        else heatGroups.push([heat]);
-      });
-
-      heatGroups.forEach(group => {
+      groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
         const primary = allRounds[0];
         const main = allRounds[allRounds.length - 1];
@@ -791,7 +870,7 @@
         const currentPartner = group.reduce((found, h) => found || getPartner(selectedCompetitor, h), null);
 
         if (lastTime !== null) {
-          const numGap = parseInt(primary.heat_number) - parseInt(lastHeatNum);
+          const numGap = parseInt(primary.heat_number) - lastHeatNum;
           const partnerChanged = currentPartner !== lastPartner;
           if (numGap !== 1) {
             const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
@@ -824,7 +903,7 @@
         html += renderHeatCard(primary, allRounds, myEvent, contestedBadge);
 
         lastTime = main.time;
-        lastHeatNum = primary.heat_number;
+        lastHeatNum = parseInt(primary.heat_number);
         lastPartner = currentPartner;
       });
 
@@ -999,6 +1078,16 @@
   function findNextHeatPosition(heats) {
     const now = new Date();
     return heats.findIndex(h => new Date(h.time) > now);
+  }
+
+  function groupHeatsByHeatNumber(sessionHeats) {
+    const groups = [];
+    sessionHeats.forEach(heat => {
+      const prev = groups[groups.length - 1];
+      if (prev && prev[0].heat_number === heat.heat_number) prev.push(heat);
+      else groups.push([heat]);
+    });
+    return groups;
   }
 
   function groupHeatsBySession(heats) {
