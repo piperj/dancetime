@@ -254,6 +254,7 @@
   let rankingData = null;
   let heatsByKey = {}, heatsByNumber = {};
   let studioCompetitors = {};
+  let bibHeats = {};
   let selectedCompetitor = null;
   let expandedHeats = new Set();
   let compList = [];
@@ -276,7 +277,7 @@
         if (param !== (input.value || null)) { input.value = param || ''; }
         renderRanking();
       } else if (activeTab === 'heats' && param && param !== selectedCompetitor) {
-        if (heatsData?.competitors?.includes(param) || heatsData?.studios?.includes(param)) {
+        if (heatsData?.competitors?.includes(param) || heatsData?.studios?.includes(param) || bibHeats[param]) {
           setHeatsSearch(param);
         }
       } else if (activeTab === 'elo') {
@@ -396,6 +397,7 @@
     rankingData = null;
     heatsByKey = {}; heatsByNumber = {};
     studioCompetitors = {};
+    bibHeats = {};
     selectedCompetitor = null;
     expandedHeats = new Set();
     avgScores = {};
@@ -432,6 +434,13 @@
         Object.entries(h.competitor_studios || {}).forEach(([name, studio]) => {
           (studioCompetitors[studio] ??= []).push(name);
         });
+        bibHeats = {};
+        h.heats.forEach(heat => {
+          heat.entries.forEach(e => {
+            if (!e.bib) return;
+            (bibHeats[e.bib] ??= new Set()).add(heat.key);
+          });
+        });
 
         avgScores = computeAvgScores();
         coupleMap = buildCoupleMap();
@@ -449,7 +458,7 @@
         buildRankingSuggestions();
 
         if (prevCompetitor) {
-          const inHeats = h.competitors?.includes(prevCompetitor) || h.studios?.includes(prevCompetitor);
+          const inHeats = h.competitors?.includes(prevCompetitor) || h.studios?.includes(prevCompetitor) || !!bibHeats[prevCompetitor];
           const inRanking = Object.values(r.leaderboards || {}).some(lb =>
             lb.couples?.some(c => c.competitor === prevCompetitor || c.partner === prevCompetitor)
           );
@@ -586,15 +595,16 @@
     selectedCompetitor = val;
     expandedHeats.clear();
     setCompetitorParam(val);
-    document.getElementById('contestedStatsBox').classList.remove('hidden');
+    document.getElementById('contestedStatsBox').classList.toggle('hidden', !!bibHeats[val]);
     if (heatsData.studios?.includes(val)) generateStudioSchedule();
+    else if (bibHeats[val]) generateBibSchedule(val);
     else generateSchedule();
   }
 
   document.getElementById('competitorSearch').addEventListener('input', e => {
     const val = e.target.value.trim();
     if (!val) { selectHeatsCompetitor(null); return; }
-    if (heatsData?.competitors?.includes(val) || heatsData?.studios?.includes(val)) {
+    if (heatsData?.competitors?.includes(val) || heatsData?.studios?.includes(val) || bibHeats[val]) {
       selectHeatsCompetitor(val);
     } else if (allCompetitorNames.includes(val)) {
       selectedCompetitor = null;
@@ -630,19 +640,8 @@
       return;
     }
 
-    const seenKeys = new Set();
-    const allHeats = [];
-    memberSet.forEach(name => {
-      (heatsData.competitor_heats[name] || []).forEach(k => {
-        const heat = heatsByKey[k];
-        if (!heat) return;
-        const dedupKey = `${heat.heat_number}|${heat.session}`;
-        if (seenKeys.has(dedupKey)) return;
-        seenKeys.add(dedupKey);
-        allHeats.push(heat);
-      });
-    });
-    allHeats.sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
+    const allKeys = [...memberSet].flatMap(name => heatsData.competitor_heats[name] || []);
+    const allHeats = collectUniqueHeats(allKeys);
 
     document.getElementById('heatCount').textContent = `${memberSet.size} competitors · ${allHeats.length} heats`;
     document.getElementById('contestedStatsBox')?.classList.add('hidden');
@@ -701,6 +700,80 @@
       html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
 
     scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats found for this studio</p>';
+  }
+
+  function generateBibSchedule(bib) {
+    document.getElementById('participantName').textContent = `Bib ${bib}`;
+
+    const heatKeySet = bibHeats[bib];
+    if (!heatKeySet || !heatKeySet.size) {
+      const compName = compList[activeCompIdx]?.short_name || compList[activeCompIdx]?.name || 'this competition';
+      document.getElementById('heatCount').textContent = '0 heats';
+      scheduleContent.innerHTML = `<p class="text-gray-500 text-center">Bib ${esc(bib)} is not competing in ${esc(compName)}</p>`;
+      return;
+    }
+
+    const allHeats = collectUniqueHeats(heatKeySet);
+
+    document.getElementById('heatCount').textContent = `Bib ${bib} · ${allHeats.length} heats`;
+
+    const sessions = groupHeatsBySession(allHeats);
+    currentSessions = sessions;
+    const nowIso = new Date().toISOString();
+    const nextHeatKey = allHeats.find(h => h.time > nowIso)?.key;
+
+    let html = '';
+    sessions.forEach((sessionHeats, si) => {
+      const first = sessionHeats[0];
+      const last  = sessionHeats[sessionHeats.length - 1];
+      const sessionType = first.session_name || getSessionType(first.time);
+
+      const activeNames = new Set();
+      sessionHeats.forEach(heat => {
+        heat.entries.forEach(e => {
+          if (e.bib === bib) {
+            if (e.competitor1) activeNames.add(e.competitor1);
+            if (e.competitor2) activeNames.add(e.competitor2);
+          }
+        });
+      });
+      const subtitle = activeNames.size ? Array.from(activeNames).sort().join(', ') : `Bib ${bib}`;
+
+      html += `<div id="session-${si}" class="blue-box">
+        <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
+        <div class="font-semibold">${esc(subtitle)}</div>
+      </div>`;
+
+      let lastTime = null, lastHeatNum = 0;
+      groupHeatsByHeatNumber(sessionHeats).forEach(group => {
+        const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
+        const primary = allRounds[0];
+        const main = allRounds[allRounds.length - 1];
+
+        if (lastTime !== null) {
+          const numGap = parseInt(primary.heat_number) - lastHeatNum;
+          if (numGap !== 1) {
+            const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
+            if (breakSec > 0)
+              html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
+          }
+        }
+
+        if (group.some(h => h.key === nextHeatKey))
+          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
+
+        const bibEntry = main.entries.find(e => e.bib === bib) || group[0].entries.find(e => e.bib === bib);
+        html += renderHeatCard(primary, allRounds, bibEntry?.event || group[0].entries[0]?.event || '');
+
+        lastTime = main.time;
+        lastHeatNum = parseInt(primary.heat_number);
+      });
+    });
+
+    if (!nextHeatKey && allHeats.length > 0)
+      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
+
+    scheduleContent.innerHTML = html || `<p class="text-gray-500 text-center">No heats found for bib ${esc(bib)}</p>`;
   }
 
   function selectCompetitorFromStudio(name) {
@@ -1121,6 +1194,21 @@
     return sessions;
   }
 
+  function collectUniqueHeats(keys) {
+    const seen = new Set();
+    const heats = [];
+    for (const k of keys) {
+      const heat = heatsByKey[k];
+      if (!heat) continue;
+      const dk = `${heat.heat_number}|${heat.session}`;
+      if (seen.has(dk)) continue;
+      seen.add(dk);
+      heats.push(heat);
+    }
+    heats.sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
+    return heats;
+  }
+
   function getSessionType(t) {
     const h = new Date(t).getHours();
     return h < 12 ? 'Morning' : h < 18 ? 'Afternoon' : 'Evening';
@@ -1506,7 +1594,7 @@
 
   // Auto-refresh during live competition
   setInterval(() => {
-    if (selectedCompetitor && heatsData && !heatsData.studios?.includes(selectedCompetitor))
+    if (selectedCompetitor && heatsData && !heatsData.studios?.includes(selectedCompetitor) && !bibHeats[selectedCompetitor])
       if (document.activeElement?.id !== 'competitorSearch') generateSchedule();
   }, 10000);
 </script>
