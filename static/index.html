@@ -31,7 +31,15 @@
     .partner-change-marker { color: #1e40af; margin: 0.375rem 0; text-align: center; font-style: italic; }
 
     .search-bar { padding: .75rem 1rem; background: #fff; border-bottom: 1px solid #eee; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
-    .search-bar input[type=search] { flex: 1; min-width: 180px; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
+    .search-bar input[type=search] { padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
+
+    /* custom clear button — suppresses native webkit cancel button so there's only one */
+    input[type=search]::-webkit-search-cancel-button { -webkit-appearance: none; }
+    .search-wrap { position: relative; flex: 1; min-width: 180px; display: flex; align-items: center; }
+    .elo-input-slot .search-wrap { flex: none; width: 100%; min-width: unset; }
+    .search-wrap input[type=search] { flex: 1; padding-right: 1.8rem; box-sizing: border-box; }
+    .search-clear { position: absolute; right: .35rem; background: none; border: none; cursor: pointer; color: #aaa; font-size: 1.15rem; line-height: 1; padding: 0 .15rem; display: none; touch-action: manipulation; }
+    .search-clear:hover { color: #555; }
 
     .lb-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; border: 1px solid #e0e0e0; }
     .lb-table th { text-align: left; padding: .6rem .75rem; background: #6366f1; color: #fff; font-size: .85rem; }
@@ -46,7 +54,7 @@
     #elo-controls { padding: .75rem 1rem; background: #fff; border-bottom: 1px solid #eee; }
     #elo-search-wrap { display: flex; gap: .75rem; flex-wrap: wrap; align-items: flex-start; }
     .elo-input-slot { display: flex; flex-direction: column; gap: .4rem; flex: 1; min-width: 160px; }
-    .elo-input-slot input[type=search] { width: 100%; padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; box-sizing: border-box; }
+    .elo-input-slot input[type=search] { padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
     #elo-couple-sep { font-weight: bold; color: #555; padding-top: .45rem; }
     .btn-primary { background: #4f46e5; color: #fff; padding: .375rem .75rem; border-radius: .25rem; font-size: .875rem; font-weight: 500; border: none; cursor: pointer; }
     .btn-primary:hover { background: #4338ca; }
@@ -78,11 +86,17 @@
 
 <!-- Search bars scroll away with the page; sticky header below contains only Name + Navigate -->
 <div id="heats-search-bar" class="search-bar hidden">
-  <input type="search" id="competitorSearch" placeholder="Search competitors…" list="heats-suggestions" autocomplete="off" />
+  <div class="search-wrap">
+    <input type="search" id="competitorSearch" placeholder="Search competitors…" list="heats-suggestions" autocomplete="off" />
+    <button class="search-clear" aria-label="Clear search">×</button>
+  </div>
   <datalist id="heats-suggestions"></datalist>
 </div>
 <div id="ranking-controls" class="search-bar hidden">
-  <input type="search" id="search-ranking" placeholder="Search competitor or studio…" list="ranking-suggestions" autocomplete="off" />
+  <div class="search-wrap">
+    <input type="search" id="search-ranking" placeholder="Search competitor or studio…" list="ranking-suggestions" autocomplete="off" />
+    <button class="search-clear" aria-label="Clear search">×</button>
+  </div>
   <datalist id="ranking-suggestions"></datalist>
 </div>
 
@@ -155,8 +169,11 @@
 <div id="elo-controls" class="hidden">
   <div id="elo-search-wrap">
     <div class="elo-input-slot">
-      <input type="search" id="elo-search-a" placeholder="Competitor name"
-             list="elo-suggestions" autocomplete="off" />
+      <div class="search-wrap">
+        <input type="search" id="elo-search-a" placeholder="Competitor name"
+               list="elo-suggestions" autocomplete="off" />
+        <button class="search-clear" aria-label="Clear search">×</button>
+      </div>
       <button onclick="eloAddContestant()"
               class="btn-primary">
         Add contestant
@@ -164,8 +181,11 @@
     </div>
     <span id="elo-couple-sep">&amp;</span>
     <div class="elo-input-slot">
-      <input type="search" id="elo-search-b" placeholder="Partner name"
-             list="elo-partner-suggestions" autocomplete="off" />
+      <div class="search-wrap">
+        <input type="search" id="elo-search-b" placeholder="Partner name"
+               list="elo-partner-suggestions" autocomplete="off" />
+        <button class="search-clear" aria-label="Clear search">×</button>
+      </div>
       <button onclick="eloAddCouple()"
               class="btn-primary">
         Add couple
@@ -1471,6 +1491,17 @@
   document.getElementById('elo-search-a').addEventListener('input', updatePartnerSuggestions);
   document.getElementById('elo-search-b').addEventListener('keydown', e => {
     if (e.key === 'Enter') { e.preventDefault(); eloAddCouple(); }
+  });
+
+  // Custom clear buttons: show × when input has content, hide when empty
+  document.querySelectorAll('.search-wrap').forEach(wrap => {
+    const input = wrap.querySelector('input[type=search]');
+    const btn   = wrap.querySelector('.search-clear');
+    if (!input || !btn) return;
+    const sync = () => { btn.style.display = input.value ? 'block' : 'none'; };
+    input.addEventListener('input', sync);
+    btn.addEventListener('click', () => { input.value = ''; input.dispatchEvent(new Event('input')); input.focus(); });
+    sync();
   });
 
   // Auto-refresh during live competition
