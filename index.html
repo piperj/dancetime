@@ -38,7 +38,7 @@
     .search-wrap { position: relative; flex: 1; min-width: 180px; display: flex; align-items: center; }
     .elo-input-slot .search-wrap { flex: none; width: 100%; min-width: unset; }
     .search-wrap input[type=search] { flex: 1; padding-right: 1.8rem; box-sizing: border-box; }
-    .search-clear { position: absolute; right: .35rem; background: none; border: none; cursor: pointer; color: #aaa; font-size: 1.15rem; line-height: 1; padding: 0 .15rem; display: none; touch-action: manipulation; }
+    .search-clear { position: absolute; right: .35rem; background: none; border: none; cursor: pointer; color: #aaa; font-size: 1.15rem; line-height: 1; padding: 0 .15rem; touch-action: manipulation; }
     .search-clear:hover { color: #555; }
 
     .lb-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 6px; overflow: hidden; border: 1px solid #e0e0e0; }
@@ -94,7 +94,7 @@
 </div>
 <div id="ranking-controls" class="search-bar hidden">
   <div class="search-wrap">
-    <input type="search" id="search-ranking" placeholder="Search competitor or studio…" list="ranking-suggestions" autocomplete="off" />
+    <input type="search" id="search-ranking" placeholder="Search competitor, studio, or bib…" list="ranking-suggestions" autocomplete="off" />
     <button class="search-clear" aria-label="Clear search">×</button>
   </div>
   <datalist id="ranking-suggestions"></datalist>
@@ -255,6 +255,7 @@
   let heatsByKey = {}, heatsByNumber = {};
   let studioCompetitors = {};
   let bibHeats = {};
+  let bibToNames = {};
   let selectedCompetitor = null;
   let expandedHeats = new Set();
   let compList = [];
@@ -303,7 +304,7 @@
     const isRanking = activeTab === 'ranking';
     const isElo     = activeTab === 'elo';
 
-    compHeader.classList.toggle('hidden', isElo || (!heatsData && !rankingData));
+    compHeader.classList.toggle('hidden', !heatsData && !rankingData);
     heatsSearchBar.classList.toggle('hidden', !isHeats || !heatsData);
     heatsControls.classList.toggle('hidden', !isHeats || !heatsData);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
@@ -440,6 +441,21 @@
             if (!e.bib) return;
             (bibHeats[e.bib] ??= new Set()).add(heat.key);
           });
+        });
+        bibToNames = {};
+        Object.entries(bibHeats).forEach(([bib, keys]) => {
+          const names = new Set();
+          keys.forEach(k => {
+            const heat = heatsByKey[k];
+            if (!heat) return;
+            heat.entries.forEach(e => {
+              if (e.bib === bib) {
+                if (e.competitor1) names.add(e.competitor1);
+                if (e.competitor2) names.add(e.competitor2);
+              }
+            });
+          });
+          bibToNames[bib] = names;
         });
 
         avgScores = computeAvgScores();
@@ -1078,19 +1094,24 @@
 
   function renderRanking() {
     if (!rankingData) return;
-    const query = document.getElementById('search-ranking').value.toLowerCase().trim();
+    const raw = document.getElementById('search-ranking').value.trim();
+    const query = raw.toLowerCase();
+    const bibNames = /^\d+$/.test(raw) ? (bibToNames[raw] ?? null) : null;
+
+    const predicate = bibNames
+      ? c => bibNames.has(c.competitor) || bibNames.has(c.partner)
+      : query
+        ? c => c.competitor.toLowerCase().includes(query) ||
+               (c.partner || '').toLowerCase().includes(query) ||
+               (c.studio || '').toLowerCase().includes(query)
+        : () => true;
 
     const sections = Object.values(rankingData.leaderboards)
       .filter(lb => lb.couples.length)
       .sort((a, b) => a.label.localeCompare(b.label));
 
-    rankingView.innerHTML = sections.map(lb => {
-      const couples = query
-        ? lb.couples.filter(c =>
-            c.competitor.toLowerCase().includes(query) ||
-            (c.partner || '').toLowerCase().includes(query) ||
-            (c.studio || '').toLowerCase().includes(query))
-        : lb.couples;
+    let html = sections.map(lb => {
+      const couples = lb.couples.filter(predicate);
       if (!couples.length) return '';
 
       const displayMap = new Map();
@@ -1119,6 +1140,23 @@
         </div>
       </div>`;
     }).join('');
+
+    if (!html && raw && !bibNames && allCompetitorNames.includes(raw)) {
+      const compName = compList[activeCompIdx]?.short_name || compList[activeCompIdx]?.name || 'this competition';
+      const otherComps = compList
+        .map((c, i) => ({ comp: c, i }))
+        .filter(({ comp, i }) => i !== activeCompIdx && comp.competitors?.includes(raw));
+      html = `<p class="text-gray-500 text-center">${esc(raw)} is not competing in ${esc(compName)}</p>`;
+      if (otherComps.length) {
+        html += `<p class="text-gray-400 text-center text-sm mt-2">Competed at: ${
+          otherComps.map(({ comp, i }) =>
+            `<span class="cursor-pointer text-indigo-500 hover:underline" onclick="selectComp(${i})">${esc(comp.short_name || comp.name)}</span>`
+          ).join(', ')
+        }</p>`;
+      }
+    }
+
+    rankingView.innerHTML = html;
   }
 
   function renderActive() {
@@ -1581,15 +1619,11 @@
     if (e.key === 'Enter') { e.preventDefault(); eloAddCouple(); }
   });
 
-  // Custom clear buttons: show × when input has content, hide when empty
   document.querySelectorAll('.search-wrap').forEach(wrap => {
     const input = wrap.querySelector('input[type=search]');
     const btn   = wrap.querySelector('.search-clear');
     if (!input || !btn) return;
-    const sync = () => { btn.style.display = input.value ? 'block' : 'none'; };
-    input.addEventListener('input', sync);
     btn.addEventListener('click', () => { input.value = ''; input.dispatchEvent(new Event('input')); input.focus(); });
-    sync();
   });
 
   // Auto-refresh during live competition
