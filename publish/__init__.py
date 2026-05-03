@@ -79,11 +79,21 @@ def _update_index(out_dir: Path) -> None:
     competitions.sort(key=lambda c: c.get("start_date", ""), reverse=True)
 
     index_path = out_dir / "index.json"
+    all_competitors_sorted = sorted(all_competitors)
+    existing = {}
+    if index_path.exists():
+        try:
+            existing = json.loads(index_path.read_text())
+        except json.JSONDecodeError:
+            pass
+    if existing.get("competitions") == competitions and existing.get("all_competitors") == all_competitors_sorted:
+        print(f"publish: {index_path} unchanged, skipping write")
+        return
     index_path.write_text(json.dumps(
         {
             "updated_at": datetime.now(timezone.utc).isoformat(),
             "competitions": competitions,
-            "all_competitors": sorted(all_competitors),
+            "all_competitors": all_competitors_sorted,
         },
         indent=2,
         ensure_ascii=False,

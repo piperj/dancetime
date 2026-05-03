@@ -27,6 +27,14 @@ def save_ratings(
         }
         for competitor, elo in final_ratings.items()
     }
+    existing = {}
+    if path.exists():
+        try:
+            existing = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            pass
+    if existing.get("last_cyi") == last_cyi and existing.get("ratings") == ratings:
+        return
     path.write_text(json.dumps(
         {
             "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -49,6 +57,14 @@ def load_history(out_dir: Path) -> dict:
 def write_history(history: dict, out_dir: Path) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / "elo_history.json"
+    existing = {}
+    if path.exists():
+        try:
+            existing = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            pass
+    if existing.get("history") == history:
+        return
     path.write_text(json.dumps(
         {
             "updated_at": datetime.now(timezone.utc).isoformat(),
