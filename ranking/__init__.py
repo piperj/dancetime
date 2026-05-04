@@ -108,5 +108,8 @@ def run(args):
         if old_cyi not in new_history:
             new_history[old_cyi] = old_hist
 
-    save_ratings(current_elo, comp_counts, last_cyi, out_dir)
-    write_history(new_history, out_dir)
+    ratings_path = save_ratings(current_elo, comp_counts, last_cyi, out_dir)
+    print(f"ranking: wrote {ratings_path} ({len(current_elo)} competitors)")
+    history_path = write_history(new_history, out_dir)
+    cyis = sorted(new_history.keys())
+    print(f"ranking: wrote {history_path} (CYIs: {', '.join(cyis)})")

@@ -35,4 +35,4 @@ def validate_ranking_json(path: Path) -> list[str]:
 
 
 def validate_index_json(path: Path) -> list[str]:
-    return _validate_json(path, ("updated_at", "competitions"))
+    return _validate_json(path, ("competitions",))

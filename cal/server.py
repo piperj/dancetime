@@ -6,6 +6,7 @@ from socketserver import ThreadingMixIn
 from pathlib import Path
 
 from schedule.calendar import load_calendar, parse_date
+from schedule.phases import comp_phase, interval_label
 
 
 class ThreadingHTTPServer(ThreadingMixIn, HTTPServer):
@@ -17,11 +18,7 @@ def _auto_scrape(start_str: str, end_str: str, today: date) -> str | None:
     end = parse_date(end_str)
     if start is None or end is None:
         return None
-    if start <= today <= end + timedelta(days=1):
-        return "live"
-    if timedelta(0) <= (start - today) <= timedelta(days=10):
-        return "soon"
-    return None
+    return comp_phase(start, end, today)
 
 
 def _has_heats(path: Path) -> bool:
@@ -39,6 +36,16 @@ def _has_ranking(path: Path) -> bool:
         return False
 
 
+def _set_tracked(data_dir: Path, cyi: int, tracked: bool = True) -> None:
+    cal_path = data_dir / "calendar.json"
+    cal = load_calendar(data_dir)
+    for c in cal.get("competitions", []):
+        if c.get("cyi") == cyi:
+            c["tracked"] = tracked
+            break
+    cal_path.write_text(json.dumps(cal, indent=2, ensure_ascii=False))
+
+
 def _build_competitions(data_dir: Path) -> dict:
     calendar = load_calendar(data_dir)
     today = datetime.now(timezone.utc).date()
@@ -52,20 +59,25 @@ def _build_competitions(data_dir: Path) -> dict:
         cyi = c.get("cyi")
         if not cyi:
             continue
+        scraped = f"comp_{cyi}.zip" in raw_files
+        has_heats = _has_heats(data_dir / f"heats_{cyi}.json")
+        phase = _auto_scrape(c.get("start_date", ""), c.get("end_date", ""), today)
+        end_date = c.get("end_date", "")
         comps.append({
             "cyi": cyi,
             "competition_id": c.get("competition_id"),
             "name": c.get("name", ""),
             "location": c.get("location", ""),
             "start_date": c.get("start_date", ""),
-            "end_date": c.get("end_date", ""),
-            "published": c.get("published", False),
-            "scraped": f"comp_{cyi}.zip" in raw_files,
-            "heats": _has_heats(data_dir / f"heats_{cyi}.json"),
+            "end_date": end_date,
+            "scraped": scraped,
+            "heats": has_heats,
             "ranking": _has_ranking(data_dir / f"ranking_{cyi}.json"),
-            "auto_scrape": _auto_scrape(c.get("start_date", ""), c.get("end_date", ""), today),
+            "needs_publish": scraped and not has_heats and bool(end_date) and end_date < today.isoformat(),
+            "auto_scrape": phase,
+            "interval_label": interval_label(phase or "none"),
         })
-    return {"competitions": comps, "active_cyi": calendar.get("active_cyi")}
+    return {"competitions": comps}
 
 
 def _json_response(handler, data, status=200):
@@ -167,6 +179,9 @@ def make_handler(data_dir: Path):
                 body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
                 force = b"force=true" in body
 
+                # Mark comp as tracked in calendar.json so CI scheduler sees it.
+                _set_tracked(data_dir, cyi)
+
                 steps = [
                     ("scrape", ["uv", "run", "python", "dancetime_cli.py", "scrape",
                      "--cyi", str(cyi), "--data-dir", str(data_dir / "raw")]
@@ -175,6 +190,8 @@ def make_handler(data_dir: Path):
                      "--cyi", str(cyi), "--data-dir", str(data_dir / "raw"), "--out-dir", str(data_dir)]),
                     ("ranking", ["uv", "run", "python", "dancetime_cli.py", "ranking",
                      "--cyi", str(cyi), "--data-dir", str(data_dir / "raw"), "--out-dir", str(data_dir)]),
+                    ("publish", ["uv", "run", "python", "dancetime_cli.py", "publish",
+                     "--data-dir", str(data_dir), "--out-dir", "."]),
                 ]
 
                 self.send_response(200)
@@ -183,22 +200,6 @@ def make_handler(data_dir: Path):
                 self.send_header("Cache-Control", "no-cache")
                 self.end_headers()
                 _stream_pipeline(self.wfile, steps)
-            else:
-                self.send_error(404)
-
-        def do_PUT(self):
-            if self.path == "/api/active":
-                length = int(self.headers.get("Content-Length", 0))
-                body = json.loads(self.rfile.read(length) or b"{}")
-                cal_path = data_dir / "calendar.json"
-                cal = load_calendar(data_dir)
-                cyi = body.get("active_cyi")
-                if cyi is None:
-                    cal.pop("active_cyi", None)
-                else:
-                    cal["active_cyi"] = int(cyi)
-                cal_path.write_text(json.dumps(cal, indent=2, ensure_ascii=False))
-                _json_response(self, {"ok": True, "active_cyi": cal.get("active_cyi")})
             else:
                 self.send_error(404)
 
@@ -219,6 +220,7 @@ def make_handler(data_dir: Path):
                         deleted.append(p.name)
                     except FileNotFoundError:
                         pass
+                _set_tracked(data_dir, cyi, tracked=False)
                 _json_response(self, {"ok": True, "deleted": deleted})
             else:
                 self.send_error(404)

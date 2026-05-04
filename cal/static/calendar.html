@@ -56,7 +56,6 @@
     <button class="btn btn-slate" onclick="goToToday()" style="font-size:12px;">Today</button>
   </div>
   <div class="flex items-center gap-3">
-    <div id="active-bar" class="flex items-center gap-2 text-sm" style="color:#94a3b8;"></div>
     <button class="btn btn-slate" onclick="reload()">↻ Reload</button>
     <button id="publish-btn" class="btn btn-indigo" onclick="doPublish(this)">Publish</button>
   </div>
@@ -75,13 +74,11 @@
 
 <script>
 let allComps = [];
-let activeCyi = null;
 let scrapedOnly = false;
 
 async function init() {
   const data = await fetch('/api/competitions').then(r => r.json());
   allComps = data.competitions.sort((a, b) => (a.start_date || '').localeCompare(b.start_date || ''));
-  activeCyi = data.active_cyi;
   renderAll();
   scrollToNow();
 }
@@ -89,7 +86,6 @@ async function init() {
 function reload() { init(); }
 
 function renderAll() {
-  renderActiveBar();
   const raw = document.getElementById('search').value;
   const query = raw.toLowerCase();
   const stateCode = /^[A-Z]{2}$/.test(raw);
@@ -114,19 +110,6 @@ function toggleScraped() {
   btn.style.color = scrapedOnly ? '#86efac' : '';
   btn.style.borderColor = scrapedOnly ? '#16a34a' : '';
   renderAll();
-}
-
-function renderActiveBar() {
-  const bar = document.getElementById('active-bar');
-  if (activeCyi) {
-    const comp = allComps.find(c => c.cyi === activeCyi);
-    const name = comp ? comp.name : `CYI ${activeCyi}`;
-    bar.innerHTML = `
-      <span class="badge badge-orange">📌 Pinned: ${name}</span>
-      <button class="btn btn-slate" onclick="clearActive()">Unpin</button>`;
-  } else {
-    bar.innerHTML = '';
-  }
 }
 
 function renderComps(comps) {
@@ -159,13 +142,15 @@ function cardHtml(c) {
     ? `<img src="${logoUrl}" alt="" onerror="this.parentElement.innerHTML='<span class=logo-placeholder>🏆</span>'" />`
     : `<span class="logo-placeholder">🏆</span>`;
 
+  const phasePrefix = { live: '● Live', soon: '⏰ Starting soon', upcoming: 'Upcoming', distant: 'Upcoming', recent: null }[c.auto_scrape] ?? null;
+  const intervalLabel = c.interval_label ? `${phasePrefix ? phasePrefix + ' · ' : ''}${c.interval_label}` : null;
+
   const badges = [
     c.scraped   ? `<span class="badge badge-green">Scraped</span>` : '',
-    c.heats     ? `<span class="badge badge-blue">Heats</span>` : '',
+    c.needs_publish ? `<span class="badge badge-red" title="Click Refresh to publish this competition to the website">⚠ Not published</span>` : '',
+    c.heats     ? `<span class="badge badge-blue">Published</span>` : '',
     c.ranking   ? `<span class="badge badge-purple">Ranking</span>` : '',
-    c.auto_scrape === 'live' ? `<span class="badge badge-red">● Live</span>` : '',
-    c.auto_scrape === 'soon' ? `<span class="badge badge-orange">⏰ Soon</span>` : '',
-    c.cyi === activeCyi ? `<span class="badge badge-orange">⚡ Active</span>` : '',
+    c.scraped && intervalLabel ? `<span class="badge badge-orange">${intervalLabel}</span>` : '',
   ].filter(Boolean).join(' ');
 
   const dateRange = formatDateRange(c.start_date, c.end_date);
@@ -179,10 +164,6 @@ function cardHtml(c) {
     ? `<button class="btn btn-red" onclick="doRemove(${c.cyi}, this)">Remove</button>`
     : '';
 
-  const setActiveBtn = c.cyi !== activeCyi
-    ? `<button class="btn btn-slate" onclick="setActive(${c.cyi})">Set active</button>`
-    : `<button class="btn btn-slate" onclick="clearActive()">Unpin</button>`;
-
   return `
     <div class="card p-4" id="card-${c.cyi}">
       <div class="flex items-center gap-4">
@@ -195,7 +176,6 @@ function cardHtml(c) {
               <div class="mt-2 flex flex-wrap gap-1">${badges || '<span style="color:#4a4a6a;font-size:11px;">No data</span>'}</div>
             </div>
             <div class="flex items-center gap-2 flex-shrink-0">
-              ${setActiveBtn}
               ${actionBtn}
               ${removeBtn}
             </div>
@@ -287,28 +267,9 @@ async function doRemove(cyi, btn) {
   await refreshAll();
 }
 
-async function setActive(cyi) {
-  const res = await fetch('/api/active', {
-    method: 'PUT',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({active_cyi: cyi}),
-  });
-  if ((await res.json()).ok) { activeCyi = cyi; renderAll(); }
-}
-
-async function clearActive() {
-  const res = await fetch('/api/active', {
-    method: 'PUT',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({active_cyi: null}),
-  });
-  if ((await res.json()).ok) { activeCyi = null; renderAll(); }
-}
-
 async function refreshAll() {
   const data = await fetch('/api/competitions').then(r => r.json());
   allComps = data.competitions.sort((a, b) => (a.start_date || '').localeCompare(b.start_date || ''));
-  activeCyi = data.active_cyi;
   renderAll();
 }
 

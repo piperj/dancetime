@@ -2,7 +2,7 @@ import json
 import re
 import shutil
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 from common import short_name as _short_name
@@ -80,18 +80,8 @@ def _update_index(out_dir: Path) -> None:
 
     index_path = out_dir / "index.json"
     all_competitors_sorted = sorted(all_competitors)
-    existing = {}
-    if index_path.exists():
-        try:
-            existing = json.loads(index_path.read_text())
-        except json.JSONDecodeError:
-            pass
-    if existing.get("competitions") == competitions and existing.get("all_competitors") == all_competitors_sorted:
-        print(f"publish: {index_path} unchanged, skipping write")
-        return
     index_path.write_text(json.dumps(
         {
-            "updated_at": datetime.now(timezone.utc).isoformat(),
             "competitions": competitions,
             "all_competitors": all_competitors_sorted,
         },

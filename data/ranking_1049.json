@@ -5,7 +5,7 @@
     "short_name": "Hawaii Star Ball",
     "date_range": "Sep 25 to 28, 2024",
     "location": "",
-    "generated_at": "2026-05-04T05:23:01.496945+00:00"
+    "generated_at": "2026-05-04T06:21:53.716797+00:00"
   },
   "leaderboards": {
     "A": {
@@ -37,8 +37,8 @@
           "rank": 2
         },
         {
-          "competitor": "Jaren Hopkin",
-          "partner": "Enxhi Fundo",
+          "competitor": "Enxhi Fundo",
+          "partner": "Jaren Hopkin",
           "studio": "Rogers Dance Center",
           "partner_studio": "Rogers Dance Center",
           "elo": 1862.59,
@@ -49,8 +49,8 @@
           "rank": 3
         },
         {
-          "competitor": "Audrey Schwarzbein",
-          "partner": "Auris Petrulevicius",
+          "competitor": "Auris Petrulevicius",
+          "partner": "Audrey Schwarzbein",
           "studio": "Century Dancesport-Auris",
           "partner_studio": "Century Dancesport-Auris",
           "elo": 1831.88,
@@ -61,8 +61,8 @@
           "rank": 4
         },
         {
-          "competitor": "Leonid Burlo",
-          "partner": "Mariia Usan",
+          "competitor": "Mariia Usan",
+          "partner": "Leonid Burlo",
           "studio": "Ballroom Pages",
           "partner_studio": "Ballroom Pages",
           "elo": 1816.81,
@@ -85,8 +85,8 @@
           "rank": 6
         },
         {
-          "competitor": "Eddie Stutts",
-          "partner": "Amy Law",
+          "competitor": "Amy Law",
+          "partner": "Eddie Stutts",
           "studio": "Memorial Dancesport",
           "partner_studio": "Memorial Dancesport",
           "elo": 1810.21,
@@ -97,8 +97,8 @@
           "rank": 7
         },
         {
-          "competitor": "Mishka Teleha",
-          "partner": "Oleg Teleha",
+          "competitor": "Oleg Teleha",
+          "partner": "Mishka Teleha",
           "studio": "Teleha Dance",
           "partner_studio": "Teleha Dance",
           "elo": 1805.79,
@@ -157,18 +157,6 @@
           "rank": 12
         },
         {
-          "competitor": "Sid Souvannavong",
-          "partner": "Prita Narayan",
-          "studio": "Divino Ritmo Dance",
-          "partner_studio": "Divino Ritmo Dance",
-          "elo": 1758.59,
-          "elo_delta": "+108.6",
-          "initial_elo": 1650.0,
-          "heats_processed": 16,
-          "num_opponents": 19,
-          "rank": 13
-        },
-        {
           "competitor": "Prita Narayan",
           "partner": "Ravi Narayan",
           "studio": "Divino Ritmo Dance",
@@ -178,6 +166,18 @@
           "initial_elo": 1650.0,
           "heats_processed": 25,
           "num_opponents": 20,
+          "rank": 13
+        },
+        {
+          "competitor": "Sid Souvannavong",
+          "partner": "Prita Narayan",
+          "studio": "Divino Ritmo Dance",
+          "partner_studio": "Divino Ritmo Dance",
+          "elo": 1758.59,
+          "elo_delta": "+108.6",
+          "initial_elo": 1650.0,
+          "heats_processed": 16,
+          "num_opponents": 19,
           "rank": 14
         },
         {
@@ -277,15 +277,15 @@
           "rank": 22
         },
         {
-          "competitor": "Vladislav Ogurtsov",
-          "partner": "Courtney Veyrasset",
+          "competitor": "Courtney Veyrasset",
+          "partner": "Vladislav Ogurtsov",
           "studio": "Lai Lai Ballroom-Ogurtsov",
           "partner_studio": "Lai Lai Ballroom-Ogurtsov",
           "elo": 1717.57,
           "elo_delta": "+67.6",
           "initial_elo": 1650.0,
-          "heats_processed": 14,
-          "num_opponents": 6,
+          "heats_processed": 5,
+          "num_opponents": 5,
           "rank": 23
         },
         {
@@ -301,8 +301,8 @@
           "rank": 24
         },
         {
-          "competitor": "Krista Hughes",
-          "partner": "Tykhon Zhyvkov",
+          "competitor": "Tykhon Zhyvkov",
+          "partner": "Krista Hughes",
           "studio": "Zhyvkov",
           "partner_studio": "Zhyvkov",
           "elo": 1714.81,
@@ -313,8 +313,8 @@
           "rank": 25
         },
         {
-          "competitor": "Zsolt Katona",
-          "partner": "Timea Potys",
+          "competitor": "Timea Potys",
+          "partner": "Zsolt Katona",
           "studio": "Sizzling Latin",
           "partner_studio": "Sizzling Latin",
           "elo": 1711.32,
@@ -421,8 +421,8 @@
           "rank": 34
         },
         {
-          "competitor": "Jacqueline Luciano",
-          "partner": "Sarwat Kaluby",
+          "competitor": "Sarwat Kaluby",
+          "partner": "Jacqueline Luciano",
           "studio": "Kaluby's Dance Club",
           "partner_studio": "Kaluby's Dance Club",
           "elo": 1667.19,
@@ -505,8 +505,8 @@
           "rank": 41
         },
         {
-          "competitor": "Nini Aldrete",
-          "partner": "Aaron Pierce",
+          "competitor": "Aaron Pierce",
+          "partner": "Nini Aldrete",
           "studio": "FADS Artesia",
           "partner_studio": "FADS Artesia",
           "elo": 1652.88,
@@ -661,8 +661,8 @@
           "rank": 54
         },
         {
-          "competitor": "Tamas Kardos",
-          "partner": "Karen Ibara",
+          "competitor": "Karen Ibara",
+          "partner": "Tamas Kardos",
           "studio": "Sway With Me Dance",
           "partner_studio": "Sway With Me Dance",
           "elo": 1618.34,
@@ -685,8 +685,8 @@
           "rank": 56
         },
         {
-          "competitor": "Muying Dow",
-          "partner": "David Estrada",
+          "competitor": "David Estrada",
+          "partner": "Muying Dow",
           "studio": "FADS Laguna Hills",
           "partner_studio": "FADS Laguna Hills",
           "elo": 1611.75,
@@ -913,8 +913,8 @@
           "rank": 75
         },
         {
-          "competitor": "Tatjana Bilich",
-          "partner": "Thomas Bilich",
+          "competitor": "Thomas Bilich",
+          "partner": "Tatjana Bilich",
           "studio": "Team 106 Bilich",
           "partner_studio": "Team 106 Bilich",
           "elo": 1560.98,
@@ -937,8 +937,8 @@
           "rank": 77
         },
         {
-          "competitor": "Lilly Chow",
-          "partner": "Winston Chow",
+          "competitor": "Winston Chow",
+          "partner": "Lilly Chow",
           "studio": "Chow, Winston",
           "partner_studio": "Chow, Winston",
           "elo": 1555.8,
@@ -949,8 +949,8 @@
           "rank": 78
         },
         {
-          "competitor": "Cara Rohe",
-          "partner": "David Outevsky",
+          "competitor": "David Outevsky",
+          "partner": "Cara Rohe",
           "studio": "Dance With Me Soho",
           "partner_studio": "Dance With Me Soho",
           "elo": 1551.22,
@@ -1141,8 +1141,8 @@
           "rank": 94
         },
         {
-          "competitor": "Paul Dallman",
-          "partner": "Deborah Perez",
+          "competitor": "Deborah Perez",
+          "partner": "Paul Dallman",
           "studio": "By Your Side Dance Studio",
           "partner_studio": "By Your Side Dance Studio",
           "elo": 1502.16,
@@ -1165,52 +1165,16 @@
           "rank": 96
         },
         {
-          "competitor": "Thomas Sutton",
-          "partner": "Noreen Ho",
-          "studio": "Divino Ritmo Dance",
-          "partner_studio": "Divino Ritmo Dance",
-          "elo": 1500.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1500.0,
-          "heats_processed": 8,
-          "num_opponents": 1,
-          "rank": 97
-        },
-        {
-          "competitor": "Janie Nordberg",
-          "partner": "Jerry Bursh",
-          "studio": "Heart And Soul Dance",
-          "partner_studio": "Ballroom By Amy",
-          "elo": 1500.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1500.0,
-          "heats_processed": 69,
-          "num_opponents": 1,
-          "rank": 98
-        },
-        {
-          "competitor": "Haley Fukumoto",
-          "partner": "Lucas Jaime",
-          "studio": "Divino Ritmo Dance",
-          "partner_studio": "Divino Ritmo Dance",
-          "elo": 1500.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1500.0,
-          "heats_processed": 41,
-          "num_opponents": 1,
-          "rank": 99
-        },
-        {
-          "competitor": "Olivia Kellar",
-          "partner": "Matthew Kellar",
+          "competitor": "Alexander Kellar",
+          "partner": "Olivia Kellar",
           "studio": "Dream Dance",
           "partner_studio": "Dream Dance",
           "elo": 1500.0,
           "elo_delta": "+0.0",
           "initial_elo": 1500.0,
-          "heats_processed": 13,
+          "heats_processed": 14,
           "num_opponents": 2,
-          "rank": 100
+          "rank": 97
         },
         {
           "competitor": "David Brown",
@@ -1222,7 +1186,19 @@
           "initial_elo": 1500.0,
           "heats_processed": 15,
           "num_opponents": 1,
-          "rank": 101
+          "rank": 98
+        },
+        {
+          "competitor": "Thomas Sutton",
+          "partner": "Noreen Ho",
+          "studio": "Divino Ritmo Dance",
+          "partner_studio": "Divino Ritmo Dance",
+          "elo": 1500.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1500.0,
+          "heats_processed": 8,
+          "num_opponents": 1,
+          "rank": 99
         },
         {
           "competitor": "Sabrina Cooper",
@@ -1234,18 +1210,42 @@
           "initial_elo": 1500.0,
           "heats_processed": 9,
           "num_opponents": 1,
-          "rank": 102
+          "rank": 100
         },
         {
-          "competitor": "Alexander Kellar",
-          "partner": "Olivia Kellar",
+          "competitor": "Janie Nordberg",
+          "partner": "Jerry Bursh",
+          "studio": "Heart And Soul Dance",
+          "partner_studio": "Ballroom By Amy",
+          "elo": 1500.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1500.0,
+          "heats_processed": 69,
+          "num_opponents": 1,
+          "rank": 101
+        },
+        {
+          "competitor": "Olivia Kellar",
+          "partner": "Matthew Kellar",
           "studio": "Dream Dance",
           "partner_studio": "Dream Dance",
           "elo": 1500.0,
           "elo_delta": "+0.0",
           "initial_elo": 1500.0,
-          "heats_processed": 14,
+          "heats_processed": 13,
           "num_opponents": 2,
+          "rank": 102
+        },
+        {
+          "competitor": "Haley Fukumoto",
+          "partner": "Lucas Jaime",
+          "studio": "Divino Ritmo Dance",
+          "partner_studio": "Divino Ritmo Dance",
+          "elo": 1500.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1500.0,
+          "heats_processed": 41,
+          "num_opponents": 1,
           "rank": 103
         },
         {
@@ -1585,8 +1585,8 @@
           "rank": 131
         },
         {
-          "competitor": "Debra Ota",
-          "partner": "Calvin Ota",
+          "competitor": "Calvin Ota",
+          "partner": "Debra Ota",
           "studio": "Ota",
           "partner_studio": "Ota",
           "elo": 1425.04,
@@ -1681,30 +1681,6 @@
           "rank": 139
         },
         {
-          "competitor": "Riyo Abfalter",
-          "partner": "Lucas Jaime",
-          "studio": "Divino Ritmo Dance",
-          "partner_studio": "Divino Ritmo Dance",
-          "elo": 1400.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1400.0,
-          "heats_processed": 14,
-          "num_opponents": 1,
-          "rank": 140
-        },
-        {
-          "competitor": "Bella Bretschneider",
-          "partner": "Lucas Jaime",
-          "studio": "Divino Ritmo Dance",
-          "partner_studio": "Divino Ritmo Dance",
-          "elo": 1400.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1400.0,
-          "heats_processed": 14,
-          "num_opponents": 1,
-          "rank": 141
-        },
-        {
           "competitor": "Lehua Cates",
           "partner": "Lucas Jaime",
           "studio": "Divino Ritmo Dance",
@@ -1714,31 +1690,19 @@
           "initial_elo": 1400.0,
           "heats_processed": 24,
           "num_opponents": 1,
-          "rank": 142
+          "rank": 140
         },
         {
-          "competitor": "Michael Gold",
-          "partner": "Yuki Haraguchi",
-          "studio": "Aloha Ballroom Co",
-          "partner_studio": "Aloha Ballroom Co",
+          "competitor": "Joseph McDonnell",
+          "partner": "Chrystal Chen",
+          "studio": "Arete Dance Center",
+          "partner_studio": "Arete Dance Center",
           "elo": 1400.0,
           "elo_delta": "+0.0",
           "initial_elo": 1400.0,
-          "heats_processed": 15,
+          "heats_processed": 42,
           "num_opponents": 1,
-          "rank": 143
-        },
-        {
-          "competitor": "Sky Valentina Jaime",
-          "partner": "Lucas Jaime",
-          "studio": "Divino Ritmo Dance",
-          "partner_studio": "Divino Ritmo Dance",
-          "elo": 1400.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1400.0,
-          "heats_processed": 15,
-          "num_opponents": 1,
-          "rank": 144
+          "rank": 141
         },
         {
           "competitor": "Luca Marcus Besson",
@@ -1750,17 +1714,53 @@
           "initial_elo": 1400.0,
           "heats_processed": 3,
           "num_opponents": 1,
-          "rank": 145
+          "rank": 142
         },
         {
-          "competitor": "Joseph McDonnell",
-          "partner": "Chrystal Chen",
-          "studio": "Arete Dance Center",
-          "partner_studio": "Arete Dance Center",
+          "competitor": "Riyo Abfalter",
+          "partner": "Lucas Jaime",
+          "studio": "Divino Ritmo Dance",
+          "partner_studio": "Divino Ritmo Dance",
           "elo": 1400.0,
           "elo_delta": "+0.0",
           "initial_elo": 1400.0,
-          "heats_processed": 42,
+          "heats_processed": 14,
+          "num_opponents": 1,
+          "rank": 143
+        },
+        {
+          "competitor": "Michael Gold",
+          "partner": "Yuki Haraguchi",
+          "studio": "Aloha Ballroom Co",
+          "partner_studio": "Aloha Ballroom Co",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 15,
+          "num_opponents": 1,
+          "rank": 144
+        },
+        {
+          "competitor": "Bella Bretschneider",
+          "partner": "Lucas Jaime",
+          "studio": "Divino Ritmo Dance",
+          "partner_studio": "Divino Ritmo Dance",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 14,
+          "num_opponents": 1,
+          "rank": 145
+        },
+        {
+          "competitor": "Sky Valentina Jaime",
+          "partner": "Lucas Jaime",
+          "studio": "Divino Ritmo Dance",
+          "partner_studio": "Divino Ritmo Dance",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 15,
           "num_opponents": 1,
           "rank": 146
         },
@@ -1777,8 +1777,8 @@
           "rank": 147
         },
         {
-          "competitor": "Betsy Trovato",
-          "partner": "Pavel Reshetnikov",
+          "competitor": "Pavel Reshetnikov",
+          "partner": "Betsy Trovato",
           "studio": "Arthur Murray Jacksonville",
           "partner_studio": "Arthur Murray Jacksonville",
           "elo": 1385.73,
@@ -1825,8 +1825,8 @@
           "rank": 151
         },
         {
-          "competitor": "Spencer Belnap",
-          "partner": "Tess Ramilo  MD",
+          "competitor": "Tess Ramilo  MD",
+          "partner": "Spencer Belnap",
           "studio": "FADS Greenwood",
           "partner_studio": "FADS Greenwood",
           "elo": 1364.14,
@@ -1837,8 +1837,8 @@
           "rank": 152
         },
         {
-          "competitor": "Melinda Moore",
-          "partner": "Arman Sahakyan",
+          "competitor": "Arman Sahakyan",
+          "partner": "Melinda Moore",
           "studio": "Dancing With Arman",
           "partner_studio": "Dancing With Arman",
           "elo": 1362.3,
@@ -1849,8 +1849,8 @@
           "rank": 153
         },
         {
-          "competitor": "Esperanza Chavez",
-          "partner": "Pavlo Barsuk",
+          "competitor": "Pavlo Barsuk",
+          "partner": "Esperanza Chavez",
           "studio": "Ballroom Edge",
           "partner_studio": "Ballroom Edge",
           "elo": 1349.45,
@@ -2078,37 +2078,19 @@
         }
       ]
     },
-    "D": {
-      "label": "D",
+    "C": {
+      "label": "C",
       "size": 1,
       "couples": [
         {
-          "competitor": "Rebecca Oreilly",
-          "partner": "Jonell Diocares",
-          "studio": "Diocares-Oreilly",
-          "partner_studio": "Diocares-Oreilly",
-          "elo": 1650.0,
+          "competitor": "Ramona Daniel",
+          "partner": "Clark Bright",
+          "studio": "Dream Dance",
+          "partner_studio": "Dream Dance",
+          "elo": 1400.0,
           "elo_delta": "+0.0",
-          "initial_elo": 1650.0,
-          "heats_processed": 27,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "F": {
-      "label": "F",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Motomitsa Shimizu",
-          "partner": "Yukari Hirose",
-          "studio": "Shimizu Dance Studio",
-          "partner_studio": "Shimizu Dance Studio",
-          "elo": 1500.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1500.0,
-          "heats_processed": 6,
+          "initial_elo": 1400.0,
+          "heats_processed": 20,
           "num_opponents": 1,
           "rank": 1
         }
@@ -2132,13 +2114,31 @@
         }
       ]
     },
+    "F": {
+      "label": "F",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Yukari Hirose",
+          "partner": "Motomitsa Shimizu",
+          "studio": "Shimizu Dance Studio",
+          "partner_studio": "Shimizu Dance Studio",
+          "elo": 1500.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1500.0,
+          "heats_processed": 6,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
     "E": {
       "label": "E",
       "size": 1,
       "couples": [
         {
-          "competitor": "Reynaldo Julian",
-          "partner": "Marian Julian",
+          "competitor": "Marian Julian",
+          "partner": "Reynaldo Julian",
           "studio": "Champion Ballroom Academy - Reynaldo",
           "partner_studio": "Champion Ballroom Academy - Reynaldo",
           "elo": 1650.0,
@@ -2150,19 +2150,19 @@
         }
       ]
     },
-    "C": {
-      "label": "C",
+    "D": {
+      "label": "D",
       "size": 1,
       "couples": [
         {
-          "competitor": "Clark Bright",
-          "partner": "Ramona Daniel",
-          "studio": "Dream Dance",
-          "partner_studio": "Dream Dance",
-          "elo": 1400.0,
+          "competitor": "Jonell Diocares",
+          "partner": "Rebecca Oreilly",
+          "studio": "Diocares-Oreilly",
+          "partner_studio": "Diocares-Oreilly",
+          "elo": 1650.0,
           "elo_delta": "+0.0",
-          "initial_elo": 1400.0,
-          "heats_processed": 20,
+          "initial_elo": 1650.0,
+          "heats_processed": 27,
           "num_opponents": 1,
           "rank": 1
         }
@@ -2173,8 +2173,8 @@
       "size": 1,
       "couples": [
         {
-          "competitor": "Julio Stefaniai",
-          "partner": "Diana Garin",
+          "competitor": "Diana Garin",
+          "partner": "Julio Stefaniai",
           "studio": "The Dance Place",
           "partner_studio": "The Dance Place",
           "elo": 1575.0,

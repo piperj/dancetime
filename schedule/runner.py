@@ -4,17 +4,7 @@ from pathlib import Path
 
 from schedule.active import is_comp_active
 from schedule.calendar import load_calendar, parse_date, refresh_calendar
-
-_PHASE_INTERVALS: dict[str, timedelta | None] = {
-    "live":     timedelta(minutes=15),
-    "soon":     timedelta(hours=1),
-    "upcoming": timedelta(hours=24),
-    "recent":   timedelta(hours=24),
-    "distant":  None,
-    "none":     None,
-}
-
-_PHASE_URGENCY = {"live": 0, "soon": 1, "upcoming": 2, "recent": 2, "distant": 3, "none": 4}
+from schedule.phases import PHASE_INTERVALS, PHASE_URGENCY, comp_phase
 
 
 def due_cyis(data_dir: Path, now: datetime | None = None) -> list[int]:
@@ -45,9 +35,9 @@ def _due_from_calendar(calendar: dict, now: datetime) -> list[int]:
             end = parse_date(comp.get("end_date", ""))
             if start is None or end is None:
                 continue
-            phase = _comp_phase(start, end, now_date)
+            phase = comp_phase(start, end, now_date)
 
-        interval = _PHASE_INTERVALS.get(phase)
+        interval = PHASE_INTERVALS.get(phase)
         if interval is None:
             continue
 
@@ -86,21 +76,6 @@ def run_status(data_dir: Path, now: datetime | None = None) -> tuple[bool, int |
     return True, cyis[0], name, f"due{suffix}"
 
 
-def _comp_phase(start: date, end: date, now_date: date) -> str:
-    if start <= now_date <= end + timedelta(days=1):
-        return "live"
-    if now_date < start:
-        days = (start - now_date).days
-        if days <= 10:
-            return "soon"
-        if days <= 30:
-            return "upcoming"
-        return "distant"
-    days = (now_date - end).days
-    if days <= 30:
-        return "recent"
-    return "distant"
-
 
 def _nearest_comp(calendar: dict, now: datetime) -> tuple[dict, str]:
     """Return the most urgent competition and its phase (urgency > proximity)."""
@@ -120,14 +95,14 @@ def _nearest_comp(calendar: dict, now: datetime) -> tuple[dict, str]:
         if start is None or end is None:
             continue
 
-        phase = _comp_phase(start, end, now_date)
+        phase = comp_phase(start, end, now_date)
         if phase == "live":
             return comp, "live"
 
         days = (start - now_date).days if now_date < start else (now_date - end).days
-        more_urgent = _PHASE_URGENCY[phase] < _PHASE_URGENCY[best_phase]
+        more_urgent = PHASE_URGENCY[phase] < PHASE_URGENCY[best_phase]
         same_urgency_and_closer = (
-            _PHASE_URGENCY[phase] == _PHASE_URGENCY[best_phase] and (best_days is None or days < best_days)
+            PHASE_URGENCY[phase] == PHASE_URGENCY[best_phase] and (best_days is None or days < best_days)
         )
         if more_urgent or same_urgency_and_closer:
             best_days = days
@@ -136,14 +111,6 @@ def _nearest_comp(calendar: dict, now: datetime) -> tuple[dict, str]:
 
     return best_comp or {}, best_phase
 
-
-def _interval_label(iv: timedelta) -> str:
-    total = int(iv.total_seconds())
-    if total < 3600:
-        return f"{total // 60}m"
-    if total < 86400:
-        return f"{total // 3600}h"
-    return f"{total // 86400}d"
 
 
 def detect_active_cyi(data_dir: Path, client) -> int | None:
@@ -161,18 +128,23 @@ def detect_active_cyi(data_dir: Path, client) -> int | None:
 
 def _known_calendar(data_dir: Path) -> dict:
     calendar = load_calendar(data_dir)
-    known = _known_cyis(data_dir)
+    known = _known_cyis(data_dir, calendar)
     if not known:
         return calendar
     return {**calendar, "competitions": [c for c in calendar.get("competitions", []) if c.get("cyi") in known]}
 
 
-def _known_cyis(data_dir: Path) -> set:
+def _known_cyis(data_dir: Path, calendar: dict | None = None) -> set[int]:
+    known: set[int] = set()
     index_path = Path(data_dir) / "index.json"
-    if not index_path.exists():
-        return set()
-    try:
-        data = json.loads(index_path.read_text())
-        return {c["cyi"] for c in data.get("competitions", [])}
-    except (ValueError, KeyError, json.JSONDecodeError):
-        return set()
+    if index_path.exists():
+        try:
+            data = json.loads(index_path.read_text())
+            known.update(c["cyi"] for c in data.get("competitions", []))
+        except (ValueError, KeyError):
+            pass
+    cal = calendar if calendar is not None else load_calendar(data_dir)
+    for c in cal.get("competitions", []):
+        if c.get("tracked") and c.get("cyi"):
+            known.add(c["cyi"])
+    return known

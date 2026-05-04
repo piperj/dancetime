@@ -141,13 +141,13 @@ def test_auto_scrape_soon():
     today = date(2026, 1, 12)
     assert _auto_scrape("2026-01-22", "2026-01-25", today) == "soon"
 
-def test_auto_scrape_none_far_future():
+def test_auto_scrape_distant_far_future():
     today = date(2026, 1, 1)
-    assert _auto_scrape("2026-06-01", "2026-06-05", today) is None
+    assert _auto_scrape("2026-06-01", "2026-06-05", today) == "distant"
 
-def test_auto_scrape_none_past():
-    today = date(2026, 3, 1)
-    assert _auto_scrape("2026-01-22", "2026-01-25", today) is None
+def test_auto_scrape_recent_past():
+    today = date(2026, 2, 10)  # 16 days after end — within UPCOMING_DAYS
+    assert _auto_scrape("2026-01-22", "2026-01-25", today) == "recent"
 
 def test_auto_scrape_bad_dates():
     assert _auto_scrape("", "", date.today()) is None
@@ -190,8 +190,3 @@ def test_build_auto_scrape_soon(tmp_path):
     _make_calendar(tmp_path, [{"cyi": 1, "competition_id": 99, "name": "X", "start_date": start, "end_date": end}])
     result = _build_competitions(tmp_path)["competitions"]
     assert result[0]["auto_scrape"] == "soon"
-
-
-def test_build_includes_active_cyi(tmp_path):
-    _make_calendar(tmp_path, [{"cyi": 1, "competition_id": 99, "name": "X", "start_date": "2024-01-01", "end_date": "2024-01-03"}], extra={"active_cyi": 1})
-    assert _build_competitions(tmp_path)["active_cyi"] == 1

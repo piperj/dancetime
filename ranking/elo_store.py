@@ -1,5 +1,4 @@
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -16,7 +15,7 @@ def save_ratings(
     comp_counts: dict[str, int],
     last_cyi: int,
     out_dir: Path,
-) -> None:
+) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / "elo_ratings.json"
     ratings = {
@@ -27,23 +26,15 @@ def save_ratings(
         }
         for competitor, elo in final_ratings.items()
     }
-    existing = {}
-    if path.exists():
-        try:
-            existing = json.loads(path.read_text())
-        except json.JSONDecodeError:
-            pass
-    if existing.get("last_cyi") == last_cyi and existing.get("ratings") == ratings:
-        return
     path.write_text(json.dumps(
         {
-            "updated_at": datetime.now(timezone.utc).isoformat(),
             "last_cyi": last_cyi,
             "ratings": ratings,
         },
         indent=2,
         ensure_ascii=False,
     ))
+    return path
 
 
 def load_history(out_dir: Path) -> dict:
@@ -54,25 +45,17 @@ def load_history(out_dir: Path) -> dict:
     return data.get("history", {})
 
 
-def write_history(history: dict, out_dir: Path) -> None:
+def write_history(history: dict, out_dir: Path) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / "elo_history.json"
-    existing = {}
-    if path.exists():
-        try:
-            existing = json.loads(path.read_text())
-        except json.JSONDecodeError:
-            pass
-    if existing.get("history") == history:
-        return
     path.write_text(json.dumps(
         {
-            "updated_at": datetime.now(timezone.utc).isoformat(),
             "history": history,
         },
         indent=2,
         ensure_ascii=False,
     ))
+    return path
 
 
 def compute_deltas(

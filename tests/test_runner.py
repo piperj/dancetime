@@ -2,7 +2,7 @@ import json
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-from schedule.runner import _interval_label, _nearest_comp, _slot_due, due_cyis
+from schedule.runner import _nearest_comp, _slot_due, due_cyis
 
 
 # --- helpers ---
@@ -194,15 +194,3 @@ def test_due_multiple_both_due(tmp_path):
     assert 2 in result
 
 
-# --- _interval_label ---
-
-def test_interval_label_minutes():
-    assert _interval_label(timedelta(minutes=15)) == "15m"
-
-def test_interval_label_hours():
-    assert _interval_label(timedelta(hours=1)) == "1h"
-    assert _interval_label(timedelta(hours=23)) == "23h"
-
-def test_interval_label_days():
-    assert _interval_label(timedelta(days=1)) == "1d"
-    assert _interval_label(timedelta(days=2)) == "2d"
