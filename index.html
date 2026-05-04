@@ -492,6 +492,9 @@
         }
 
         status.classList.add('hidden');
+        // test hook — lets Playwright introspect internal state without var-scope issues
+        window.__spa = { get heatsData() { return heatsData; }, get bibHeats() { return bibHeats; },
+                         get bibToNames() { return bibToNames; }, get allCompetitorNames() { return allCompetitorNames; } };
         updateTabVisibility();
         renderActive();
       })
