@@ -103,5 +103,10 @@ def run(args):
         path = write_ranking_json(data, out_dir)
         print(f"ranking: wrote {path} ({start_date})")
 
+    # Preserve history and ratings for CYIs not present in data/raw/ this run.
+    for old_cyi, old_hist in prior_history.items():
+        if old_cyi not in new_history:
+            new_history[old_cyi] = old_hist
+
     save_ratings(current_elo, comp_counts, last_cyi, out_dir)
     write_history(new_history, out_dir)

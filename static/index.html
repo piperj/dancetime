@@ -304,7 +304,7 @@
     const isRanking = activeTab === 'ranking';
     const isElo     = activeTab === 'elo';
 
-    compHeader.classList.toggle('hidden', !heatsData && !rankingData);
+    compHeader.classList.toggle('hidden', isElo || (!heatsData && !rankingData));
     heatsSearchBar.classList.toggle('hidden', !isHeats || !heatsData);
     heatsControls.classList.toggle('hidden', !isHeats || !heatsData);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
