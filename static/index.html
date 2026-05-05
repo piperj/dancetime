@@ -493,7 +493,7 @@
 
         status.classList.add('hidden');
         window.__spa = { get heatsData() { return heatsData; }, get bibHeats() { return bibHeats; },
-                         get bibToNames() { return (typeof bibToNames !== 'undefined') ? bibToNames : {}; },
+                         get bibToNames() { return bibToNames; },
                          get allCompetitorNames() { return allCompetitorNames; } };
         updateTabVisibility();
         renderActive();
