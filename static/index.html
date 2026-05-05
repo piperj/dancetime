@@ -476,6 +476,9 @@
         }
 
         status.classList.add('hidden');
+        window.__spa = { get heatsData() { return heatsData; }, get bibHeats() { return bibHeats; },
+                         get bibToNames() { return (typeof bibToNames !== 'undefined') ? bibToNames : {}; },
+                         get allCompetitorNames() { return allCompetitorNames; } };
         updateTabVisibility();
         renderActive();
       })
@@ -1571,6 +1574,7 @@
     } else {
       eloChart = new Chart(canvas, cfg);
     }
+    window.__eloChart = eloChart;
   }
 
   document.getElementById('elo-search-a').addEventListener('keydown', e => {
