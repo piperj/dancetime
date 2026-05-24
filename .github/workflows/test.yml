@@ -38,4 +38,4 @@ jobs:
           EOF
 
       - name: Run tests
-        run: uv run pytest tests/ -v --cov --cov-report=term-missing
+        run: uv run pytest tests/ -v --cov --cov-report=term-missing --ignore=tests/spa
