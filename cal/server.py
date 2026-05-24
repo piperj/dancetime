@@ -191,7 +191,7 @@ def make_handler(data_dir: Path):
                     ("ranking", ["uv", "run", "python", "dancetime_cli.py", "ranking",
                      "--cyi", str(cyi), "--data-dir", str(data_dir / "raw"), "--out-dir", str(data_dir)]),
                     ("publish", ["uv", "run", "python", "dancetime_cli.py", "publish",
-                     "--data-dir", str(data_dir), "--out-dir", "."]),
+                     "--out-dir", "."]),
                 ]
 
                 self.send_response(200)
