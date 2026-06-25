@@ -55,8 +55,7 @@ def test_phase_distant_past():
 # ── interval_label ────────────────────────────────────────────────────────────
 
 def test_interval_label_live():
-    iv = PHASE_INTERVALS["live"]
-    assert interval_label("live") == f"every {int(iv.total_seconds()) // 60} min"
+    assert interval_label("live") == "every 1h"
 
 def test_interval_label_soon():
     iv = PHASE_INTERVALS["soon"]

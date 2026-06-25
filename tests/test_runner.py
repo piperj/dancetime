@@ -2,7 +2,7 @@ import json
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-from schedule.runner import _nearest_comp, _slot_due, due_cyis
+from schedule.runner import _is_due, _nearest_comp, due_cyis, mark_run
 
 
 # --- helpers ---
@@ -15,12 +15,6 @@ def _now(date_str, hour=12, minute=0):
         hour, minute, tzinfo=timezone.utc,
     )
 
-def _on_slot(base: datetime, interval: timedelta) -> datetime:
-    """Snap base down to the nearest slot boundary (floor to interval)."""
-    secs = int(interval.total_seconds())
-    ts = int(base.timestamp())
-    return datetime.fromtimestamp(ts - ts % secs, tz=timezone.utc)
-
 def _calendar(*comps, active_cyi=None):
     cal = {"competitions": list(comps)}
     if active_cyi is not None:
@@ -31,33 +25,27 @@ def _comp(cyi, start, end, name="Test"):
     return {"cyi": cyi, "name": name, "start_date": start, "end_date": end}
 
 
-# --- _slot_due ---
+# --- _is_due ---
 
-def test_slot_due_15min_always_due():
-    # 15-min interval: any value mod 900 is in [0, 899] which is always < 900
-    interval = timedelta(minutes=15)
-    assert _slot_due(_now("2026-01-23"), interval) is True
-    assert _slot_due(_now("2026-01-23", minute=7), interval) is True
+def test_is_due_never_run():
+    assert _is_due(_now("2026-01-23"), None, timedelta(hours=1)) is True
 
-def test_slot_due_1h_at_top_of_hour():
-    interval = timedelta(hours=1)
-    t = _on_slot(_now("2026-01-22", hour=14), interval)   # 14:00 UTC
-    assert _slot_due(t, interval) is True
+def test_is_due_just_ran():
+    t = _now("2026-01-23", hour=14)
+    assert _is_due(t, t, timedelta(hours=1)) is False
 
-def test_slot_due_1h_at_15min_past():
-    interval = timedelta(hours=1)
-    t = _on_slot(_now("2026-01-22", hour=14), interval) + timedelta(minutes=15)
-    assert _slot_due(t, interval) is False
+def test_is_due_interval_elapsed():
+    t = _now("2026-01-23", hour=14)
+    assert _is_due(t, t - timedelta(hours=1), timedelta(hours=1)) is True
 
-def test_slot_due_24h_at_midnight():
-    interval = timedelta(hours=24)
-    t = _on_slot(_now("2026-01-22", hour=0), interval)    # UTC midnight
-    assert _slot_due(t, interval) is True
+def test_is_due_within_tolerance():
+    # 10 min tolerance: 51 min after last run still counts as due for a 1h interval
+    t = _now("2026-01-23", hour=14)
+    assert _is_due(t, t - timedelta(minutes=51), timedelta(hours=1)) is True
 
-def test_slot_due_24h_at_noon():
-    interval = timedelta(hours=24)
-    t = _on_slot(_now("2026-01-22", hour=0), interval) + timedelta(hours=12)
-    assert _slot_due(t, interval) is False
+def test_is_due_outside_tolerance():
+    t = _now("2026-01-23", hour=14)
+    assert _is_due(t, t - timedelta(minutes=49), timedelta(hours=1)) is False
 
 
 # --- _nearest_comp ---
@@ -135,7 +123,7 @@ def test_nearest_no_comps():
 
 # --- due_cyis (integration via tmp_path) ---
 
-def _setup(tmp_path, cyis, comps, active_cyi=None):
+def _setup(tmp_path, cyis, comps, active_cyi=None, last_runs=None):
     (tmp_path / "index.json").write_text(json.dumps({
         "competitions": [{"cyi": c} for c in cyis]
     }))
@@ -143,54 +131,76 @@ def _setup(tmp_path, cyis, comps, active_cyi=None):
     if active_cyi is not None:
         data["active_cyi"] = active_cyi
     (tmp_path / "calendar.json").write_text(json.dumps(data))
+    if last_runs:
+        (tmp_path / "last_run.json").write_text(json.dumps({
+            str(k): v.isoformat() for k, v in last_runs.items()
+        }))
 
 
-def test_due_live_always_due(tmp_path):
-    # 15-min interval: every slot is in-slot, so live comps are always due
+def test_due_bootstrap_no_last_run(tmp_path):
+    # No last_run.json → every comp with a defined interval is due on first run.
     _setup(tmp_path, [1], [_comp(1, "2026-01-22", "2026-01-25")])
     assert due_cyis(tmp_path, _now("2026-01-23")) == [1]
-    assert due_cyis(tmp_path, _now("2026-01-23", minute=7)) == [1]
 
-def test_due_soon_at_top_of_hour(tmp_path):
-    base = _now("2026-01-22", hour=14)
-    t = _on_slot(base, timedelta(hours=1))   # exactly 14:00 UTC
-    start = (t.date() + timedelta(days=5)).isoformat()
-    end = (t.date() + timedelta(days=8)).isoformat()
-    _setup(tmp_path, [1], [_comp(1, start, end)])
+
+def test_due_live_interval_elapsed(tmp_path):
+    t = _now("2026-01-23", hour=14)
+    _setup(tmp_path, [1], [_comp(1, "2026-01-22", "2026-01-25")],
+           last_runs={1: t - timedelta(minutes=55)})
     assert due_cyis(tmp_path, t) == [1]
 
-def test_due_soon_not_at_top_of_hour(tmp_path):
-    base = _now("2026-01-22", hour=14)
-    t = _on_slot(base, timedelta(hours=1)) + timedelta(minutes=15)  # 14:15
+
+def test_due_live_too_soon(tmp_path):
+    t = _now("2026-01-23", hour=14)
+    _setup(tmp_path, [1], [_comp(1, "2026-01-22", "2026-01-25")],
+           last_runs={1: t - timedelta(minutes=2)})
+    assert due_cyis(tmp_path, t) == []
+
+
+def test_due_soon_interval_elapsed(tmp_path):
+    t = _now("2026-01-22", hour=14)
     start = (t.date() + timedelta(days=5)).isoformat()
     end = (t.date() + timedelta(days=8)).isoformat()
-    _setup(tmp_path, [1], [_comp(1, start, end)])
+    _setup(tmp_path, [1], [_comp(1, start, end)],
+           last_runs={1: t - timedelta(hours=6)})
+    assert due_cyis(tmp_path, t) == [1]
+
+
+def test_due_soon_too_soon(tmp_path):
+    t = _now("2026-01-22", hour=14)
+    start = (t.date() + timedelta(days=5)).isoformat()
+    end = (t.date() + timedelta(days=8)).isoformat()
+    _setup(tmp_path, [1], [_comp(1, start, end)],
+           last_runs={1: t - timedelta(hours=2)})
     assert due_cyis(tmp_path, t) == []
+
 
 def test_due_distant_never_due(tmp_path):
     _setup(tmp_path, [1], [_comp(1, "2026-06-01", "2026-06-05")])
     assert due_cyis(tmp_path, _now("2026-01-22")) == []
 
-def test_due_multiple_independent(tmp_path):
-    """Live (15 min) and soon (1 h) comps checked independently — only live due at :15."""
-    t = _on_slot(_now("2026-01-23", hour=14), timedelta(hours=1)) + timedelta(minutes=15)
-    _setup(tmp_path, [1, 2], [
-        _comp(1, "2026-01-22", "2026-01-25"),   # live → always due
-        _comp(2, "2026-01-28", "2026-01-31"),   # soon → only due at top of hour
-    ])
-    result = due_cyis(tmp_path, t)
-    assert 1 in result
-    assert 2 not in result
 
-def test_due_multiple_both_due(tmp_path):
-    """At the top of an hour, both a live and a soon comp are due."""
-    t = _on_slot(_now("2026-01-23", hour=14), timedelta(hours=1))  # 14:00 UTC
+def test_due_per_cyi_independence(tmp_path):
+    """Each CYI tracks its own last_run; one due, one not."""
+    t = _now("2026-01-23", hour=14)
     _setup(tmp_path, [1, 2], [
-        _comp(1, "2026-01-22", "2026-01-25"),   # live → always due
-        _comp(2, "2026-01-28", "2026-01-31"),   # soon → due at top of hour
-    ])
+        _comp(1, "2026-01-22", "2026-01-25"),   # live (1h)
+        _comp(2, "2026-01-22", "2026-01-25"),   # live (1h)
+    ], last_runs={1: t - timedelta(minutes=55), 2: t - timedelta(minutes=2)})
     result = due_cyis(tmp_path, t)
-    assert 1 in result
-    assert 2 in result
+    assert result == [1]
+
+
+def test_mark_run_round_trip(tmp_path):
+    t = _now("2026-01-23", hour=14)
+    _setup(tmp_path, [1, 2], [
+        _comp(1, "2026-01-22", "2026-01-25"),
+        _comp(2, "2026-01-22", "2026-01-25"),
+    ])
+    mark_run(tmp_path, [1], now=t)
+    # CYI 1 just ran → not due; CYI 2 has no entry → still due
+    assert due_cyis(tmp_path, t) == [2]
+    mark_run(tmp_path, [2], now=t)
+    assert due_cyis(tmp_path, t) == []
 
 

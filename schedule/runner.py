@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -6,19 +7,21 @@ from schedule.active import is_comp_active
 from schedule.calendar import load_calendar, parse_date, refresh_calendar
 from schedule.phases import PHASE_INTERVALS, PHASE_URGENCY, comp_phase
 
+# GitHub Actions cron is best-effort and routinely skips ticks under load. We track
+# last-run per CYI and fire whenever the interval has elapsed (with slack so a run
+# that lands a few minutes early still counts).
+TOLERANCE = timedelta(minutes=10)
+
 
 def due_cyis(data_dir: Path, now: datetime | None = None) -> list[int]:
-    """Return CYIs due for an update this 15-minute slot.
-
-    Uses modular arithmetic: a comp is due whenever now falls in the first 15-minute
-    window of its interval cycle (top of each hour for 1h, midnight UTC for 24h).
-    """
+    """Return CYIs whose interval has elapsed since their last recorded run."""
     if now is None:
         now = datetime.now(timezone.utc)
-    return _due_from_calendar(_known_calendar(data_dir), now)
+    last_runs = _load_last_runs(data_dir)
+    return _due_from_calendar(_known_calendar(data_dir), now, last_runs)
 
 
-def _due_from_calendar(calendar: dict, now: datetime) -> list[int]:
+def _due_from_calendar(calendar: dict, now: datetime, last_runs: dict[int, datetime]) -> list[int]:
     now_date = now.date()
     override = calendar.get("active_cyi")
     result = []
@@ -41,15 +44,57 @@ def _due_from_calendar(calendar: dict, now: datetime) -> list[int]:
         if interval is None:
             continue
 
-        if _slot_due(now, interval):
+        if _is_due(now, last_runs.get(cyi), interval):
             result.append(cyi)
 
     return result
 
 
-def _slot_due(now: datetime, interval: timedelta) -> bool:
-    """True if now falls in the first 15-minute slot of the interval cycle."""
-    return int(now.timestamp()) % int(interval.total_seconds()) < 15 * 60
+def _is_due(now: datetime, last_run: datetime | None, interval: timedelta) -> bool:
+    """True if interval (minus tolerance) has elapsed since last_run, or never run."""
+    if last_run is None:
+        return True
+    return (now - last_run) >= (interval - TOLERANCE)
+
+
+def _last_run_path(data_dir: Path) -> Path:
+    return Path(data_dir) / "last_run.json"
+
+
+def _load_last_runs(data_dir: Path) -> dict[int, datetime]:
+    path = _last_run_path(data_dir)
+    if not path.exists():
+        return {}
+    try:
+        raw = json.loads(path.read_text())
+        if not isinstance(raw, dict):
+            return {}
+        return {int(k): datetime.fromisoformat(v) for k, v in raw.items()}
+    except (ValueError, KeyError, TypeError):
+        return {}
+
+
+def mark_run(data_dir: Path, cyis: list[int], now: datetime | None = None) -> None:
+    """Record that the given CYIs were scraped at `now` (defaults to now UTC)."""
+    if now is None:
+        now = datetime.now(timezone.utc)
+    else:
+        now = now.astimezone(timezone.utc) if now.tzinfo else now.replace(tzinfo=timezone.utc)
+    path = _last_run_path(data_dir)
+    existing: dict[str, str] = {}
+    if path.exists():
+        try:
+            loaded = json.loads(path.read_text())
+            if isinstance(loaded, dict):
+                existing = loaded
+        except ValueError:
+            existing = {}
+    stamp = now.isoformat()
+    for cyi in cyis:
+        existing[str(cyi)] = stamp
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(existing, indent=2, sort_keys=True) + "\n")
+    os.replace(tmp, path)
 
 
 def should_run(data_dir: Path, now: datetime | None = None) -> bool:
@@ -62,7 +107,7 @@ def run_status(data_dir: Path, now: datetime | None = None) -> tuple[bool, int |
         now = datetime.now(timezone.utc)
 
     calendar = _known_calendar(data_dir)
-    cyis = _due_from_calendar(calendar, now)
+    cyis = _due_from_calendar(calendar, now, _load_last_runs(data_dir))
 
     if not cyis:
         comp, _ = _nearest_comp(calendar, now)

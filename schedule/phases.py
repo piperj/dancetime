@@ -5,8 +5,8 @@ UPCOMING_DAYS = 30
 GRACE_DAYS = 1  # days after end_date still considered live
 
 PHASE_INTERVALS: dict[str, timedelta | None] = {
-    "live":     timedelta(minutes=15),
-    "soon":     timedelta(hours=1),
+    "live":     timedelta(hours=1),
+    "soon":     timedelta(hours=6),
     "upcoming": timedelta(hours=24),
     "recent":   timedelta(hours=24),
     "distant":  None,
