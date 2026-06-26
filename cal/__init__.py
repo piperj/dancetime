@@ -19,7 +19,7 @@ def run(args):
     except Exception as e:
         print(f"calendar: warning — could not refresh calendar: {e}", flush=True)
 
-    handler = make_handler(data_dir)
+    handler = make_handler(data_dir, port)
     httpd = ThreadingHTTPServer(("127.0.0.1", port), handler)
 
     url = f"http://127.0.0.1:{port}/"

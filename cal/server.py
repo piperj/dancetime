@@ -128,9 +128,11 @@ def _stream_pipeline(wfile, steps: list[tuple[str, list[str]]]):
         pass
 
 
-def make_handler(data_dir: Path):
+def make_handler(data_dir: Path, port: int):
     calendar_html = (Path(__file__).parent / "static" / "calendar.html").read_bytes()
     favicon_svg = (Path(__file__).parent / "static" / "favicon.svg").read_bytes()
+    allowed_hosts = {f"127.0.0.1:{port}", f"localhost:{port}"}
+    allowed_origins = {f"http://127.0.0.1:{port}", f"http://localhost:{port}"}
 
     class Handler(BaseHTTPRequestHandler):
         protocol_version = "HTTP/1.1"
@@ -138,7 +140,30 @@ def make_handler(data_dir: Path):
         def log_message(self, fmt, *args):
             pass
 
+        # Block DNS rebinding: a malicious site whose DNS resolves to 127.0.0.1
+        # would still send its own hostname in Host. Reject anything that isn't
+        # an exact localhost match.
+        def _host_ok(self) -> bool:
+            return self.headers.get("Host", "") in allowed_hosts
+
+        # Block CSRF: browsers always send Origin on cross-origin POSTs (and on
+        # same-origin POSTs in modern browsers). If Origin is present it must
+        # match; same-origin form posts without Origin can still fall back to
+        # Referer. Requests with neither header are non-browser callers (curl)
+        # which can't be weaponized via a victim's session.
+        def _origin_ok(self) -> bool:
+            origin = self.headers.get("Origin")
+            if origin is not None:
+                return origin in allowed_origins
+            referer = self.headers.get("Referer", "")
+            if referer:
+                return any(referer.startswith(o + "/") or referer == o
+                           for o in allowed_origins)
+            return True
+
         def do_GET(self):
+            if not self._host_ok():
+                return self.send_error(403)
             if self.path in ("/", "/calendar.html"):
                 self.send_response(200)
                 self.send_header("Content-Type", "text/html")
@@ -158,6 +183,8 @@ def make_handler(data_dir: Path):
                 self.send_error(404)
 
         def do_POST(self):
+            if not self._host_ok() or not self._origin_ok():
+                return self.send_error(403)
             if self.path == "/api/publish":
                 from datetime import datetime, timezone
                 ts = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -208,6 +235,8 @@ def make_handler(data_dir: Path):
                 self.send_error(404)
 
         def do_DELETE(self):
+            if not self._host_ok() or not self._origin_ok():
+                return self.send_error(403)
             if self.path.startswith("/api/competitions/"):
                 try:
                     cyi = int(self.path[len("/api/competitions/"):])
