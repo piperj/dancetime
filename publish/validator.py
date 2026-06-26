@@ -22,7 +22,7 @@ def validate_heats_json(path: Path) -> list[str]:
     return _validate_json(
         path,
         ("meta", "sessions", "heats", "competitors", "studios", "competitor_studios", "competitor_heats", "top_matchups"),
-        ("cyi", "name", "generated_at"),
+        ("cyi", "name"),
     )
 
 
@@ -30,7 +30,7 @@ def validate_ranking_json(path: Path) -> list[str]:
     return _validate_json(
         path,
         ("meta", "leaderboards", "competitors", "studios", "competitor_studios"),
-        ("cyi", "name", "generated_at"),
+        ("cyi", "name"),
     )
 
 

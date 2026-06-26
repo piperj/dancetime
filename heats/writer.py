@@ -1,5 +1,4 @@
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 
 from common import comp_meta, short_name
@@ -68,7 +67,6 @@ def build_heats_json(
             "short_name": short_name(name),
             "date_range": date_range,
             "location": location,
-            "generated_at": datetime.now(timezone.utc).isoformat(),
         },
         "sessions": sessions,
         "heats": heats_list,

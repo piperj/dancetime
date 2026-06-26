@@ -1,6 +1,5 @@
 import json
 from collections import defaultdict
-from datetime import datetime, timezone
 from pathlib import Path
 
 from common import comp_meta, short_name
@@ -82,7 +81,6 @@ def build_ranking_json(
             "short_name": short_name(name),
             "date_range": date_range,
             "location": location,
-            "generated_at": datetime.now(timezone.utc).isoformat(),
         },
         "leaderboards": result_leaderboards,
         "competitors": all_competitors,

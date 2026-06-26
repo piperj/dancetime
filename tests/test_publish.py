@@ -8,7 +8,7 @@ from publish.validator import validate_heats_json, validate_index_json, validate
 
 
 VALID_HEATS = {
-    "meta": {"cyi": 373, "name": "Test Ball", "date_range": "Jan 29", "location": "Columbus", "generated_at": "2026-01-30T00:00:00Z"},
+    "meta": {"cyi": 373, "name": "Test Ball", "date_range": "Jan 29", "location": "Columbus"},
     "sessions": {"3": "Thursday Evening"},
     "heats": [],
     "competitors": [],
@@ -19,7 +19,7 @@ VALID_HEATS = {
 }
 
 VALID_RANKING = {
-    "meta": {"cyi": 373, "name": "Test Ball", "date_range": "Jan 29", "location": "Columbus", "generated_at": "2026-01-30T00:00:00Z", "elo_params": {}},
+    "meta": {"cyi": 373, "name": "Test Ball", "date_range": "Jan 29", "location": "Columbus", "elo_params": {}},
     "leaderboards": {},
     "competitors": [],
     "studios": [],
