@@ -7,7 +7,7 @@ from ranking.parser import parse_results, _join_name, _extract_placement
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
 from ranking.clusters import build_graph, assign_leaderboards
-from ranking.elo_store import compute_deltas, load_history, load_ratings, save_ratings, write_history
+from ranking.elo_store import compute_deltas, load_history, load_ratings, load_ratings_full, save_ratings, write_history
 from ranking.writer import build_ranking_json, write_ranking_json
 
 
@@ -391,6 +391,23 @@ class TestEloStore:
         assert "422" in loaded
         assert loaded["422"][0]["competitor"] == "Alice"
         assert loaded["422"][0]["elo_after"] == 1512.5
+
+    def test_load_ratings_full_returns_empty_when_no_file(self, tmp_path):
+        result = load_ratings_full(tmp_path)
+        assert result == {"last_cyi": None, "ratings": {}}
+
+    def test_save_ratings_refuses_truncate_to_empty(self, tmp_path):
+        save_ratings({"Alice": 1620.5}, {"Alice": 3}, 373, tmp_path)
+        with pytest.raises(RuntimeError, match="refused to truncate"):
+            save_ratings({}, {}, 422, tmp_path)
+        # original file untouched
+        raw = json.loads((tmp_path / "elo_ratings.json").read_text())
+        assert raw["ratings"]["Alice"]["elo"] == 1620.5
+
+    def test_save_ratings_allows_empty_when_no_prior_file(self, tmp_path):
+        # First-ever run with zero competitors is legitimate; no file to clobber.
+        save_ratings({}, {}, 0, tmp_path)
+        assert (tmp_path / "elo_ratings.json").exists()
 
     def test_write_history_overwrites_fully(self, tmp_path):
         write_history({"422": [{"elo_after": 1510.0}]}, tmp_path)

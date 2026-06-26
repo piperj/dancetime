@@ -136,3 +136,75 @@ class TestFullPipeline:
             assert index["competitions"][0]["cyi"] == 999
         finally:
             os.chdir(orig)
+
+
+class TestRankingIncremental:
+    """Regression tests for the production bug where ranking --cyi X wiped elo_ratings.json
+    when X had no results, or when prior CYIs' zips were absent (data/raw/ is gitignored)."""
+
+    def test_skips_when_cyi_has_no_results(self, tmp_path):
+        """A future comp with empty results.json must not clobber cumulative ratings."""
+        import ranking
+        from ranking.elo_store import save_ratings
+        import zipfile
+
+        raw_dir = tmp_path / "data" / "raw"
+        raw_dir.mkdir(parents=True)
+        out_dir = tmp_path / "data"
+        # Seed an existing ratings file
+        save_ratings({"Alice": 1600.0, "Bob": 1500.0}, {"Alice": 3, "Bob": 2}, 373, out_dir)
+        prior_bytes = (out_dir / "elo_ratings.json").read_bytes()
+        # Create a zip for CYI 904 with empty results
+        empty_zip = raw_dir / "comp_904.zip"
+        with zipfile.ZipFile(empty_zip, "w") as z:
+            z.writestr("competition_info.json", json.dumps({"Start_Date": "07/01/2026"}))
+            z.writestr("results.json", json.dumps({"results": []}))
+
+        ranking.run(_args(cyi=904, data_dir=raw_dir, out_dir=out_dir))
+
+        # Ratings file untouched, byte-for-byte
+        assert (out_dir / "elo_ratings.json").read_bytes() == prior_bytes
+
+    def test_preserves_prior_competitors_when_only_subset_on_disk(self, pipeline_dirs):
+        """The CI invariant: data/raw/ only has the just-scraped zip, but elo_ratings.json
+        must retain competitors from prior CYIs that aren't on disk anymore."""
+        import ranking
+        from ranking.elo_store import save_ratings, load_ratings
+
+        raw_dir = pipeline_dirs / "data" / "raw"
+        out_dir = pipeline_dirs / "data"
+        # Seed prior ratings from comps whose zips are no longer on disk
+        save_ratings(
+            {"Charlie": 1700.0, "Dana": 1450.0},
+            {"Charlie": 5, "Dana": 4},
+            755,
+            out_dir,
+        )
+
+        ranking.run(_args(cyi=999, data_dir=raw_dir, out_dir=out_dir))
+
+        loaded = load_ratings(out_dir)
+        assert loaded["Charlie"] == 1700.0
+        assert loaded["Dana"] == 1450.0
+        # And the fixture's competitors should also be present
+        assert len(loaded) > 2
+
+    def test_rerank_same_cyi_is_idempotent(self, pipeline_dirs):
+        """Polling a comp twice (e.g. an hourly cron after no upstream change) must produce
+        the same elo and comp_counts as a single rank — no double-counting."""
+        import ranking
+        from ranking.elo_store import load_ratings
+
+        raw_dir = pipeline_dirs / "data" / "raw"
+        out_dir = pipeline_dirs / "data"
+
+        ranking.run(_args(cyi=999, data_dir=raw_dir, out_dir=out_dir))
+        first = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+        ranking.run(_args(cyi=999, data_dir=raw_dir, out_dir=out_dir))
+        second = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+
+        # Same competitors, same elo, same num_comps after re-rank
+        assert set(first.keys()) == set(second.keys())
+        for name in first:
+            assert first[name]["elo"] == second[name]["elo"]
+            assert first[name]["num_comps"] == second[name]["num_comps"]

@@ -10,6 +10,15 @@ def load_ratings(out_dir: Path) -> dict[str, float]:
     return {k: v["elo"] for k, v in data.get("ratings", {}).items()}
 
 
+def load_ratings_full(out_dir: Path) -> dict:
+    """Return the full elo_ratings.json (last_cyi + per-competitor elo/num_comps/last_cyi)."""
+    path = Path(out_dir) / "elo_ratings.json"
+    if not path.exists():
+        return {"last_cyi": None, "ratings": {}}
+    data = json.loads(path.read_text())
+    return {"last_cyi": data.get("last_cyi"), "ratings": data.get("ratings", {})}
+
+
 def save_ratings(
     final_ratings: dict[str, float],
     comp_counts: dict[str, int],
@@ -18,6 +27,19 @@ def save_ratings(
 ) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / "elo_ratings.json"
+    # Refuse to truncate a populated ratings file to empty — that's never a
+    # legitimate state once the system has run once, and silently allowing it
+    # has already cost us cumulative data in production.
+    if not final_ratings and path.exists():
+        try:
+            existing = json.loads(path.read_text()).get("ratings", {})
+        except ValueError:
+            existing = {}
+        if existing:
+            raise RuntimeError(
+                f"save_ratings refused to truncate {path} "
+                f"({len(existing)} competitors → 0); preserving prior data."
+            )
     ratings = {
         competitor: {
             "elo": round(elo, 2),
