@@ -115,6 +115,19 @@ def test_refresh_calendar_writes_when_data_changed(tmp_path):
     assert (tmp_path / "calendar.json").stat().st_mtime > mtime_before
 
 
+def test_refresh_calendar_preserves_tracked(tmp_path):
+    """Tracked flags set by the UI must survive subsequent calendar refreshes."""
+    mock_client = type("C", (), {"fetch_calendar": lambda self: [NDCA_RAW]})()
+    refresh_calendar(tmp_path, mock_client)
+    cal_path = tmp_path / "calendar.json"
+    cal = json.loads(cal_path.read_text())
+    cal["competitions"][0]["tracked"] = True
+    cal_path.write_text(json.dumps(cal))
+    refresh_calendar(tmp_path, mock_client)
+    refreshed = json.loads(cal_path.read_text())
+    assert refreshed["competitions"][0].get("tracked") is True
+
+
 # --- load_calendar ---
 
 def test_load_calendar_missing_file(tmp_path):

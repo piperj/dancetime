@@ -61,6 +61,10 @@ def _build_competitions(data_dir: Path) -> dict:
             continue
         scraped = f"comp_{cyi}.zip" in raw_files
         has_heats = _has_heats(data_dir / f"heats_{cyi}.json")
+        has_ranking = _has_ranking(data_dir / f"ranking_{cyi}.json")
+        # data/raw/ is gitignored, so the raw zip alone misses comps whose
+        # processed outputs survived a raw-cleanup or fresh checkout.
+        scraped = scraped or has_heats or has_ranking
         phase = _auto_scrape(c.get("start_date", ""), c.get("end_date", ""), today)
         end_date = c.get("end_date", "")
         comps.append({
@@ -72,7 +76,7 @@ def _build_competitions(data_dir: Path) -> dict:
             "end_date": end_date,
             "scraped": scraped,
             "heats": has_heats,
-            "ranking": _has_ranking(data_dir / f"ranking_{cyi}.json"),
+            "ranking": has_ranking,
             "needs_publish": scraped and not has_heats and bool(end_date) and end_date < today.isoformat(),
             "auto_scrape": phase,
             "interval_label": interval_label(phase or "none"),
