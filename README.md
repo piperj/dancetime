@@ -19,8 +19,10 @@ Requires Python 3.11+ and [uv](https://github.com/astral-sh/uv).
 ```bash
 git clone https://github.com/piperj/dancetime.git
 cd dancetime
-uv sync
+uv sync --frozen
 ```
+
+`--frozen` installs exactly what's pinned in `uv.lock` without re-resolving. Prefer it: a plain `uv sync` re-resolves against your machine's configured package index, which can rewrite the registry URLs in `uv.lock` (churning the file and, if committed, breaking CI). Only run a plain `uv sync` / `uv lock` when you intentionally change dependencies in `pyproject.toml`.
 
 ## Usage
 
@@ -43,7 +45,7 @@ uv run python dancetime_cli.py schedule
 
 ```bash
 # Install dev dependencies
-uv sync
+uv sync --frozen
 
 # Run all tests with coverage
 uv run pytest tests/ -v --cov --cov-report=term-missing
