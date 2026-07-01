@@ -68,8 +68,15 @@ class TestHeatsTab:
     def test_competitor_search_shows_heat_details(self, page, spa_server):
         """Heat cards contain heat number, time separator '·', and break markers."""
         wait_for_spa(page, spa_server)
-        data = _spa_data(page)
-        name = next((n for n in data["competitors"] if n), None) or "Johan Piper"
+        # Pick the competitor with the most heats: a break marker only appears when
+        # floor heats are skipped between two of their heats, so a competitor with
+        # one heat per session (or heats on different days) legitimately has none.
+        name = page.evaluate("""() => {
+            const ch = window.__spa?.heatsData?.competitor_heats ?? {};
+            let best = null, n = -1;
+            for (const [k, v] of Object.entries(ch)) if (v.length > n) { n = v.length; best = k; }
+            return best;
+        }""") or "Johan Piper"
 
         _type_search(page, "competitorSearch", name)
 
@@ -203,6 +210,155 @@ class TestSplitHeatRounds:
         assert keys == ["09_1297_semi", "09_1297_final"], (
             f"distinct-named rounds must stay grouped, got {keys}"
         )
+
+
+# ---------------------------------------------------------------------------
+# Physical-heat partitioning (one card per real heat)
+# ---------------------------------------------------------------------------
+
+class TestPartitionRounds:
+    """partitionRounds() splits a (heat_number, session) bucket into physical
+    heats on a repeated round name."""
+
+    def _partition(self, page, rounds):
+        return page.evaluate(
+            "(r) => window.__spa.partitionRounds(r).map(p => p.map(h => h.key))", rounds
+        )
+
+    def test_repeated_round_name_splits(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        a = {"key": "a", "round": "Final", "time": "2026-07-01T08:00:00"}
+        b = {"key": "b", "round": "Final", "time": "2026-07-01T14:00:00"}
+        assert self._partition(page, [a, b]) == [["a"], ["b"]]
+
+    def test_distinct_rounds_stay_one_heat(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        q = {"key": "q", "round": "Quarter-Final", "time": "2026-07-01T08:00:00"}
+        s = {"key": "s", "round": "Semi-Final", "time": "2026-07-01T08:20:00"}
+        f = {"key": "f", "round": "Final", "time": "2026-07-01T08:40:00"}
+        assert self._partition(page, [q, s, f]) == [["q", "s", "f"]]
+
+
+class TestDedupePhysicalHeats:
+    """dedupePhysicalHeats() yields one anchor per physical heat, so a solo that
+    reuses a regular heat number is not deduped away."""
+
+    def _dedupe(self, page, heats):
+        return page.evaluate(
+            "(h) => window.__spa.dedupePhysicalHeats(h).map(x => x.key)", heats
+        )
+
+    def test_solo_collision_yields_two_cards(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        regular = {"key": "reg", "heat_number": "1", "session": "01",
+                   "round": "Final", "time": "2026-07-01T08:00:00"}
+        solo = {"key": "solo", "heat_number": "1", "session": "01",
+                "round": "Final", "time": "2026-07-01T14:01:00"}
+        keys = self._dedupe(page, [solo, regular])
+        assert keys == ["reg", "solo"], f"both physical heats expected, got {keys}"
+
+    def test_multiround_heat_yields_one_card(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        q = {"key": "q", "heat_number": "1", "session": "04",
+             "round": "Quarter-Final", "time": "2026-07-02T20:30:00"}
+        s = {"key": "s", "heat_number": "1", "session": "04",
+             "round": "Semi-Final", "time": "2026-07-02T21:12:00"}
+        f = {"key": "f", "heat_number": "1", "session": "04",
+             "round": "Final", "time": "2026-07-02T21:46:00"}
+        keys = self._dedupe(page, [q, s, f])
+        assert keys == ["q"], f"multi-round heat should collapse to one anchor, got {keys}"
+
+    def test_formation_collision_yields_two_cards(self, page, spa_server):
+        """A formation reusing a regular heat number is its own card.
+
+        cyi 1030 heat 9 / session 03: 'Solo Rumba Formation' shares (9, 03) with
+        a 'Pro Cabaret-Theater Arts' final. Both are Finals, so the repeated round
+        name splits them — no dependence on the event name.
+        """
+        wait_for_spa(page, spa_server)
+        cabaret = {"key": "cab", "heat_number": "9", "session": "03",
+                   "round": "Final", "time": "2025-11-28T20:10:00"}
+        formation = {"key": "form", "heat_number": "9", "session": "03",
+                     "round": "Final", "time": "2025-11-28T22:40:00"}
+        keys = self._dedupe(page, [cabaret, formation])
+        assert keys == ["cab", "form"], f"formation must not be deduped away, got {keys}"
+
+    def test_keywordless_collision_yields_two_cards(self, page, spa_server):
+        """Two ordinary heats reusing a number split with no keyword to classify on.
+
+        cyi 1030 heats 2 & 3 / session 01: a social 'Pre Silver' final and a
+        'Professional Rising Star' final share the number hours apart. This is why
+        grouping keys on round-partition, not event-name classification.
+        """
+        wait_for_spa(page, spa_server)
+        social = {"key": "soc", "heat_number": "2", "session": "01",
+                  "round": "Final", "time": "2025-11-28T18:01:15"}
+        pro = {"key": "pro", "heat_number": "2", "session": "01",
+               "round": "Final", "time": "2025-11-28T21:38:03"}
+        keys = self._dedupe(page, [social, pro])
+        assert keys == ["soc", "pro"], f"keyword-less collision must split, got {keys}"
+
+
+class TestRestMinutes:
+    """restMinutes() = clock gap minus the assumed heat length (90s)."""
+
+    def _rest(self, page, a, b):
+        return page.evaluate("([a, b]) => window.__spa.restMinutes(a, b)", [a, b])
+
+    def test_subtracts_heat_length(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        rest = self._rest(page, "2026-07-01T14:00:00", "2026-07-01T14:10:00")
+        assert rest == pytest.approx(8.5), f"expected 8.5 min, got {rest}"
+
+    def test_back_to_back_is_near_zero(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        rest = self._rest(page, "2026-07-01T14:00:00", "2026-07-01T14:01:30")
+        assert rest == pytest.approx(0.0), f"expected 0 min, got {rest}"
+
+
+class TestHeatsSkipped:
+    """heatsSkipped() reports a break when floor heats ran between two heats,
+    using the global floor-position index built from the loaded competition."""
+
+    def _positions(self, page):
+        return page.evaluate("() => ({...window.__spa.floorPositionByKey})")
+
+    def test_positions_built(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        assert len(self._positions(page)) > 0, "floor positions not built on load"
+
+    def test_adjacent_no_skip_gap_skips(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        pos = self._positions(page)
+        # key at each floor index, so we can pick adjacent vs gapped pairs.
+        by_index = {}
+        for k, i in pos.items():
+            by_index.setdefault(i, k)
+        indices = sorted(by_index)
+        # Find an adjacent pair (i, i+1) and a gapped pair (i, i+2).
+        adj = next(((by_index[i], by_index[i + 1]) for i in indices if i + 1 in by_index), None)
+        gap = next(((by_index[i], by_index[i + 2]) for i in indices if i + 2 in by_index), None)
+        assert adj and gap, "need both an adjacent and a gapped pair in test data"
+
+        def skipped(a, b):
+            return page.evaluate("([a, b]) => window.__spa.heatsSkipped(a, b)", [a, b])
+
+        assert skipped(*adj) is False, "adjacent floor heats must not be a break"
+        assert skipped(*gap) is True, "a skipped floor heat must register as a break"
+
+    def test_same_heat_is_not_a_skip(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        pos = self._positions(page)
+        # Two round keys of the same physical heat share a floor index.
+        from collections import Counter
+        counts = Counter(pos.values())
+        shared_index = next((i for i, c in counts.items() if c >= 2), None)
+        if shared_index is None:
+            pytest.skip("no multi-round heat in loaded data")
+        keys = [k for k, i in pos.items() if i == shared_index][:2]
+        skipped = page.evaluate("([a, b]) => window.__spa.heatsSkipped(a, b)", keys)
+        assert skipped is False, "rounds of one heat must not register as a break"
+
 
 
 # ---------------------------------------------------------------------------

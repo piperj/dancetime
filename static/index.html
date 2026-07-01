@@ -253,6 +253,7 @@
   Chart.register(eloBandPlugin);
   let rankingData = null;
   let heatsByKey = {}, heatsByNumber = {};
+  let floorPositionByKey = {};
   let studioCompetitors = {};
   let bibHeats = {};
   let bibToNames = {};
@@ -432,6 +433,7 @@
           heatsByKey[heat.key] = heat;
           (heatsByNumber[heat.heat_number] ??= []).push(heat);
         });
+        buildFloorPositions();
         Object.entries(h.competitor_studios || {}).forEach(([name, studio]) => {
           (studioCompetitors[studio] ??= []).push(name);
         });
@@ -495,7 +497,9 @@
         window.__spa = { get heatsData() { return heatsData; }, get bibHeats() { return bibHeats; },
                          get bibToNames() { return bibToNames; },
                          get allCompetitorNames() { return allCompetitorNames; },
-                         splitHeatRounds };
+                         get floorPositionByKey() { return floorPositionByKey; },
+                         splitHeatRounds, partitionRounds, partitionPhysical,
+                         dedupePhysicalHeats, heatsSkipped, restMinutes };
         updateTabVisibility();
         renderActive();
       })
@@ -690,19 +694,16 @@
         <div class="font-semibold">${esc(Array.from(activeNames).sort().join(', '))}</div>
       </div>`;
 
-      let lastTime = null, lastHeatNum = 0;
+      let lastTime = null, lastKey = null;
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
         const primary = allRounds[0];
         const main = allRounds[allRounds.length - 1];
 
-        if (lastTime !== null) {
-          const numGap = parseInt(primary.heat_number) - lastHeatNum;
-          if (numGap !== 1) {
-            const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
-            if (breakSec > 0)
-              html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
-          }
+        if (lastTime !== null && heatsSkipped(lastKey, primary.key)) {
+          const rest = restMinutes(lastTime, primary.time);
+          if (rest > 0)
+            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(rest))} rest</div>`;
         }
 
         if (group.some(h => h.key === nextHeatKey))
@@ -712,7 +713,7 @@
         html += renderHeatCard(primary, allRounds, studioEntry?.event || group[0].entries[0]?.event || '');
 
         lastTime = main.time;
-        lastHeatNum = parseInt(primary.heat_number);
+        lastKey = primary.key;
       });
     });
 
@@ -764,19 +765,16 @@
         <div class="font-semibold">${esc(subtitle)}</div>
       </div>`;
 
-      let lastTime = null, lastHeatNum = 0;
+      let lastTime = null, lastKey = null;
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
         const primary = allRounds[0];
         const main = allRounds[allRounds.length - 1];
 
-        if (lastTime !== null) {
-          const numGap = parseInt(primary.heat_number) - lastHeatNum;
-          if (numGap !== 1) {
-            const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
-            if (breakSec > 0)
-              html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
-          }
+        if (lastTime !== null && heatsSkipped(lastKey, primary.key)) {
+          const rest = restMinutes(lastTime, primary.time);
+          if (rest > 0)
+            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(rest))} rest</div>`;
         }
 
         if (group.some(h => h.key === nextHeatKey))
@@ -786,7 +784,7 @@
         html += renderHeatCard(primary, allRounds, bibEntry?.event || group[0].entries[0]?.event || '');
 
         lastTime = main.time;
-        lastHeatNum = parseInt(primary.heat_number);
+        lastKey = primary.key;
       });
     });
 
@@ -839,13 +837,32 @@
     return splitHeatRounds(sorted, fallback?.[0]?.key);
   }
 
+  // Assumed length of a heat (s); the estimated times are start times, so we
+  // subtract this to turn a start-to-start gap into actual rest between heats.
+  const HEAT_DURATION_SEC = 90;
+
+  // Rest (in minutes) between the end of one heat and the start of the next.
+  function restMinutes(prevMainTime, nextStartTime) {
+    return ((new Date(nextStartTime) - new Date(prevMainTime)) / 1000 - HEAT_DURATION_SEC) / 60;
+  }
+
+  // A break means the couple left the floor: one or more floor heats ran between
+  // their two shown heats. Detected by a gap in global floor position — robust to
+  // solos and other tracks that reuse or skip heat numbers.
+  function heatsSkipped(prevKey, nextKey) {
+    const a = floorPositionByKey[prevKey], b = floorPositionByKey[nextKey];
+    return a != null && b != null && b - a > 1;
+  }
+
   // Solos are numbered independently and reuse regular heat numbers, so
   // (heat_number, session) can collide with an unrelated heat later in the day.
   // Real rounds of one physical heat always carry distinct round names
   // (Quarterfinal → Semifinal → Final); a repeated round name means a separate
-  // heat. Partition on repeated round names and keep only the partition holding
-  // the anchor heat, so the collision doesn't leak into its couple count or break.
-  function splitHeatRounds(sorted, anchorKey) {
+  // heat. Partition on repeated round names so each physical heat is isolated.
+  // Known gap: two same-kind heats that share a number (or an empty number) AND
+  // the same single round name — e.g. cyi 1049's two "Best Of Best Dance Off"
+  // finals — can't be told apart here and still collapse into one card.
+  function partitionRounds(sorted) {
     const partitions = [];
     let cur = [], names = new Set();
     for (const h of sorted) {
@@ -854,7 +871,47 @@
       names.add(h.round);
     }
     if (cur.length) partitions.push(cur);
+    return partitions;
+  }
+
+  // Keep only the partition holding the anchor heat, so a colliding heat that
+  // reuses this (heat_number, session) doesn't leak into its couple count or break.
+  function splitHeatRounds(sorted, anchorKey) {
+    const partitions = partitionRounds(sorted);
     return partitions.find(p => p.some(h => h.key === anchorKey)) || partitions[0] || sorted;
+  }
+
+  // All physical heats in `heats`, each as its time-sorted rounds, ordered by
+  // start time. Records sharing (heat_number, session) are split by
+  // partitionRounds so a solo heat reusing a regular number is its own heat.
+  function partitionPhysical(heats) {
+    const byNumSess = new Map();
+    for (const h of heats) {
+      const k = `${h.heat_number}|${h.session}`;
+      let arr = byNumSess.get(k);
+      if (!arr) byNumSess.set(k, arr = []);
+      arr.push(h);
+    }
+    const physical = [];
+    for (const group of byNumSess.values()) {
+      const sorted = group.slice().sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
+      for (const part of partitionRounds(sorted)) physical.push(part);
+    }
+    return physical.sort((a, b) => a[0].time < b[0].time ? -1 : a[0].time > b[0].time ? 1 : 0);
+  }
+
+  // One representative (earliest round) per physical heat, so a solo heat reusing
+  // a regular heat number gets its own card instead of being deduped away.
+  function dedupePhysicalHeats(heats) {
+    return partitionPhysical(heats).map(part => part[0]);
+  }
+
+  // Assign every round key the global floor index of its physical heat, so views
+  // can tell when heats were skipped between a couple's two shown heats.
+  function buildFloorPositions() {
+    floorPositionByKey = {};
+    partitionPhysical(Object.values(heatsByKey)).forEach((part, i) =>
+      part.forEach(h => { floorPositionByKey[h.key] = i; }));
   }
 
   function renderHeatDetails(allRounds) {
@@ -890,15 +947,7 @@
   function generateAllHeatsSchedule() {
     if (!heatsData) return;
 
-    const seen = new Set();
-    const uniqueHeats = Object.values(heatsByKey)
-      .filter(h => {
-        const k = `${h.heat_number}|${h.session}`;
-        if (seen.has(k)) return false;
-        seen.add(k);
-        return true;
-      })
-      .sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
+    const uniqueHeats = dedupePhysicalHeats(Object.values(heatsByKey));
 
     document.getElementById('participantName').textContent = 'All Heats';
     document.getElementById('heatCount').textContent = `Heat Schedule • ${uniqueHeats.length} heats`;
@@ -920,27 +969,13 @@
         <div class="font-semibold">${sessionHeats.length} heats</div>
       </div>`;
 
-      let lastTime = null, lastHeatNum = 0;
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
         const primary = allRounds[0];
-        const main = allRounds[allRounds.length - 1];
-
-        if (lastTime !== null) {
-          const numGap = parseInt(primary.heat_number) - lastHeatNum;
-          if (numGap !== 1) {
-            const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
-            if (breakSec > 0)
-              html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
-          }
-        }
 
         if (group.some(h => h.key === nextHeatKey))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
         html += renderHeatCard(primary, allRounds, group[0].entries[0]?.event || '');
-
-        lastTime = main.time;
-        lastHeatNum = parseInt(primary.heat_number);
       });
     });
 
@@ -987,7 +1022,7 @@
       if (partners.size > 1 && firstPartner)
         html += `<div class="partner-change-marker">🔄 ${esc(firstPartner)}</div>`;
 
-      let lastTime = null, lastHeatNum = 0, lastPartner = null;
+      let lastTime = null, lastKey = null, lastPartner = null;
 
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
@@ -1002,18 +1037,13 @@
         const currentPartner = group.reduce((found, h) => found || getPartner(selectedCompetitor, h), null);
 
         if (lastTime !== null) {
-          const numGap = parseInt(primary.heat_number) - lastHeatNum;
           const partnerChanged = currentPartner !== lastPartner;
-          if (numGap !== 1) {
-            const breakSec = (new Date(primary.time) - new Date(lastTime)) / 1000 - 90;
-            if (breakSec > 0) {
-              const fmt = formatBreakTime(Math.round(breakSec / 60));
-              html += partnerChanged && currentPartner
-                ? `<div class="partner-change-marker">🔄 ${esc(currentPartner)} · ${fmt} rest</div>`
-                : `<div class="break-marker">⏸️ Break · ${fmt} rest</div>`;
-            } else if (partnerChanged && currentPartner) {
-              html += `<div class="partner-change-marker">🔄 ${esc(currentPartner)}</div>`;
-            }
+          const rest = restMinutes(lastTime, primary.time);
+          if (heatsSkipped(lastKey, primary.key) && rest > 0) {
+            const fmt = formatBreakTime(Math.round(rest));
+            html += partnerChanged && currentPartner
+              ? `<div class="partner-change-marker">🔄 ${esc(currentPartner)} · ${fmt} rest</div>`
+              : `<div class="break-marker">⏸️ Break · ${fmt} rest</div>`;
           } else if (partnerChanged && currentPartner) {
             html += `<div class="partner-change-marker">🔄 ${esc(currentPartner)}</div>`;
           }
@@ -1035,16 +1065,16 @@
         html += renderHeatCard(primary, allRounds, myEvent, contestedBadge);
 
         lastTime = main.time;
-        lastHeatNum = parseInt(primary.heat_number);
+        lastKey = primary.key;
         lastPartner = currentPartner;
       });
 
       if (si < sessions.length - 1) {
         const nextFirst = sessions[si + 1][0];
         if (new Date(last.time).toDateString() === new Date(nextFirst.time).toDateString()) {
-          const breakSec = (new Date(nextFirst.time) - new Date(last.time)) / 1000 - 90;
-          if (breakSec > 0)
-            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(breakSec / 60))} rest</div>`;
+          const rest = restMinutes(last.time, nextFirst.time);
+          if (rest > 0)
+            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(rest))} rest</div>`;
         }
       }
     });
@@ -1256,18 +1286,12 @@
   }
 
   function collectUniqueHeats(keys) {
-    const seen = new Set();
     const heats = [];
     for (const k of keys) {
       const heat = heatsByKey[k];
-      if (!heat) continue;
-      const dk = `${heat.heat_number}|${heat.session}`;
-      if (seen.has(dk)) continue;
-      seen.add(dk);
-      heats.push(heat);
+      if (heat) heats.push(heat);
     }
-    heats.sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
-    return heats;
+    return dedupePhysicalHeats(heats);
   }
 
   function getSessionType(t) {
