@@ -299,6 +299,23 @@ class TestDedupePhysicalHeats:
         assert keys == ["soc", "pro"], f"keyword-less collision must split, got {keys}"
 
 
+class TestCollectUniqueHeats:
+    """collectUniqueHeats() must collapse a key that appears more than once.
+
+    Regression: the studio view flatMaps every member's heat keys, so two
+    studio-mates in the same heat feed the identical key twice. Without a
+    key-level dedup, partitionRounds splits the repeated round name into two
+    partitions and the heat renders (and is counted) twice.
+    """
+
+    def test_duplicate_key_yields_one_heat(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        key = page.evaluate("() => window.__spa.heatsData?.heats?.[0]?.key ?? null")
+        assert key, "no heats loaded to exercise collectUniqueHeats"
+        n = page.evaluate("(k) => window.__spa.collectUniqueHeats([k, k, k]).length", key)
+        assert n == 1, f"a repeated key must collapse to one heat, got {n}"
+
+
 class TestRestMinutes:
     """restMinutes() = clock gap minus the assumed heat length (90s)."""
 

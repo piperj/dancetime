@@ -254,6 +254,9 @@
   let rankingData = null;
   let heatsByKey = {}, heatsByNumber = {};
   let floorPositionByKey = {};
+  let allPhysicalHeats = [];
+  let showingAllHeats = false;     // true only while the All-Heats view is the active render
+  let lastAllHeatsNextKey = null;  // next-heat key last rendered by generateAllHeatsSchedule
   let studioCompetitors = {};
   let bibHeats = {};
   let bibToNames = {};
@@ -499,7 +502,7 @@
                          get allCompetitorNames() { return allCompetitorNames; },
                          get floorPositionByKey() { return floorPositionByKey; },
                          splitHeatRounds, partitionRounds, partitionPhysical,
-                         dedupePhysicalHeats, heatsSkipped, restMinutes };
+                         dedupePhysicalHeats, heatsSkipped, restMinutes, collectUniqueHeats };
         updateTabVisibility();
         renderActive();
       })
@@ -632,6 +635,7 @@
       selectHeatsCompetitor(val);
     } else if (allCompetitorNames.includes(val)) {
       selectedCompetitor = null;
+      showingAllHeats = false;   // a placeholder message, not the All-Heats view; keep the refresh off it
       setCompetitorParam(val);
       document.getElementById('participantName').textContent = val;
       document.getElementById('heatCount').textContent = 'Heat Schedule • 0 heats';
@@ -700,11 +704,8 @@
         const primary = allRounds[0];
         const main = allRounds[allRounds.length - 1];
 
-        if (lastTime !== null && heatsSkipped(lastKey, primary.key)) {
-          const rest = restMinutes(lastTime, primary.time);
-          if (rest > 0)
-            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(rest))} rest</div>`;
-        }
+        if (lastTime !== null)
+          html += transitionMarker(lastKey, lastTime, primary, null, false);
 
         if (group.some(h => h.key === nextHeatKey))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
@@ -771,11 +772,8 @@
         const primary = allRounds[0];
         const main = allRounds[allRounds.length - 1];
 
-        if (lastTime !== null && heatsSkipped(lastKey, primary.key)) {
-          const rest = restMinutes(lastTime, primary.time);
-          if (rest > 0)
-            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(rest))} rest</div>`;
-        }
+        if (lastTime !== null)
+          html += transitionMarker(lastKey, lastTime, primary, null, false);
 
         if (group.some(h => h.key === nextHeatKey))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
@@ -854,6 +852,25 @@
     return a != null && b != null && b - a > 1;
   }
 
+  // Marker HTML to show before a heat when the couple has left the floor (a heat
+  // was skipped, with a positive rest gap) and/or switched partner since their
+  // previous shown heat. `partner`/`partnerChanged` are null/false for views that
+  // don't track a partner (studio, bib, all-heats).
+  function transitionMarker(prevKey, prevMainTime, next, partner, partnerChanged) {
+    if (heatsSkipped(prevKey, next.key)) {
+      const rest = restMinutes(prevMainTime, next.time);
+      if (rest > 0) {
+        const fmt = formatBreakTime(Math.round(rest));
+        return partnerChanged && partner
+          ? `<div class="partner-change-marker">🔄 ${esc(partner)} · ${fmt} rest</div>`
+          : `<div class="break-marker">⏸️ Break · ${fmt} rest</div>`;
+      }
+    }
+    if (partnerChanged && partner)
+      return `<div class="partner-change-marker">🔄 ${esc(partner)}</div>`;
+    return '';
+  }
+
   // Solos are numbered independently and reuse regular heat numbers, so
   // (heat_number, session) can collide with an unrelated heat later in the day.
   // Real rounds of one physical heat always carry distinct round names
@@ -907,10 +924,13 @@
   }
 
   // Assign every round key the global floor index of its physical heat, so views
-  // can tell when heats were skipped between a couple's two shown heats.
+  // can tell when heats were skipped between a couple's two shown heats. Caches
+  // the full partition (heatsByKey is immutable after load) so renders can reuse
+  // it instead of re-partitioning.
   function buildFloorPositions() {
     floorPositionByKey = {};
-    partitionPhysical(Object.values(heatsByKey)).forEach((part, i) =>
+    allPhysicalHeats = partitionPhysical(Object.values(heatsByKey));
+    allPhysicalHeats.forEach((part, i) =>
       part.forEach(h => { floorPositionByKey[h.key] = i; }));
   }
 
@@ -944,10 +964,22 @@
   }
 
   // ── All-heats view (no competitor selected) ────────────────────────────────
+  // The next upcoming physical heat's key, or null once they're all done. Cheap
+  // enough to call on the refresh tick to decide whether a re-render is needed.
+  function allHeatsNextKey() {
+    const now = new Date();
+    for (const part of allPhysicalHeats)
+      if (new Date(part[0].time) > now) return part[0].key;
+    return null;
+  }
+
   function generateAllHeatsSchedule() {
     if (!heatsData) return;
+    showingAllHeats = true;
 
-    const uniqueHeats = dedupePhysicalHeats(Object.values(heatsByKey));
+    // Reuse the partition already computed at load, rather than re-partitioning
+    // the full heat set on every (10s-polled) render.
+    const uniqueHeats = allPhysicalHeats.map(part => part[0]);
 
     document.getElementById('participantName').textContent = 'All Heats';
     document.getElementById('heatCount').textContent = `Heat Schedule • ${uniqueHeats.length} heats`;
@@ -955,8 +987,8 @@
 
     const sessions = groupHeatsBySession(uniqueHeats);
     currentSessions = sessions;
-    const now = new Date();
-    const nextHeatKey = uniqueHeats.find(h => new Date(h.time) > now)?.key;
+    const nextHeatKey = allHeatsNextKey();
+    lastAllHeatsNextKey = nextHeatKey;
 
     let html = '';
     sessions.forEach((sessionHeats, si) => {
@@ -1036,18 +1068,8 @@
         const myEvent = myEntry?.event || '';
         const currentPartner = group.reduce((found, h) => found || getPartner(selectedCompetitor, h), null);
 
-        if (lastTime !== null) {
-          const partnerChanged = currentPartner !== lastPartner;
-          const rest = restMinutes(lastTime, primary.time);
-          if (heatsSkipped(lastKey, primary.key) && rest > 0) {
-            const fmt = formatBreakTime(Math.round(rest));
-            html += partnerChanged && currentPartner
-              ? `<div class="partner-change-marker">🔄 ${esc(currentPartner)} · ${fmt} rest</div>`
-              : `<div class="break-marker">⏸️ Break · ${fmt} rest</div>`;
-          } else if (partnerChanged && currentPartner) {
-            html += `<div class="partner-change-marker">🔄 ${esc(currentPartner)}</div>`;
-          }
-        }
+        if (lastTime !== null)
+          html += transitionMarker(lastKey, lastTime, primary, currentPartner, currentPartner !== lastPartner);
 
         if (group.some(h => myHeats.indexOf(h) === nextIdx))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
@@ -1287,7 +1309,10 @@
 
   function collectUniqueHeats(keys) {
     const heats = [];
+    const seen = new Set();
     for (const k of keys) {
+      if (seen.has(k)) continue;   // studio members can share a heat → same key twice
+      seen.add(k);
       const heat = heatsByKey[k];
       if (heat) heats.push(heat);
     }
@@ -1678,7 +1703,11 @@
   setInterval(() => {
     if (!heatsData) return;
     if (document.activeElement?.id === 'competitorSearch') return;
-    if (!selectedCompetitor) generateAllHeatsSchedule();
+    if (!selectedCompetitor) {
+      // Only refresh the actual All-Heats view — not the "not competing" placeholder —
+      // and only when the next heat has actually advanced (avoids a full DOM rebuild each tick).
+      if (showingAllHeats && allHeatsNextKey() !== lastAllHeatsNextKey) generateAllHeatsSchedule();
+    }
     else if (heatsData.studios?.includes(selectedCompetitor)) generateStudioSchedule();
     else if (bibHeats[selectedCompetitor]) generateBibSchedule(selectedCompetitor);
     else generateSchedule();
