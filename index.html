@@ -1650,10 +1650,14 @@
     btn.addEventListener('click', () => { input.value = ''; input.dispatchEvent(new Event('input')); input.focus(); });
   });
 
-  // Auto-refresh during live competition
+  // Auto-refresh during live competition — advances the "next heat" marker as heats finish
   setInterval(() => {
-    if (selectedCompetitor && heatsData && !heatsData.studios?.includes(selectedCompetitor) && !bibHeats[selectedCompetitor])
-      if (document.activeElement?.id !== 'competitorSearch') generateSchedule();
+    if (!heatsData) return;
+    if (document.activeElement?.id === 'competitorSearch') return;
+    if (!selectedCompetitor) generateAllHeatsSchedule();
+    else if (heatsData.studios?.includes(selectedCompetitor)) generateStudioSchedule();
+    else if (bibHeats[selectedCompetitor]) generateBibSchedule(selectedCompetitor);
+    else generateSchedule();
   }, 10000);
 </script>
 </body>
