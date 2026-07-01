@@ -494,7 +494,8 @@
         status.classList.add('hidden');
         window.__spa = { get heatsData() { return heatsData; }, get bibHeats() { return bibHeats; },
                          get bibToNames() { return bibToNames; },
-                         get allCompetitorNames() { return allCompetitorNames; } };
+                         get allCompetitorNames() { return allCompetitorNames; },
+                         splitHeatRounds };
         updateTabVisibility();
         renderActive();
       })
@@ -832,9 +833,28 @@
   }
 
   function getHeatRounds(heatNumber, session, fallback) {
-    return (heatsByNumber[heatNumber] || fallback)
+    const sorted = (heatsByNumber[heatNumber] || fallback)
       .filter(h => h.session === session)
       .sort((a, b) => a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
+    return splitHeatRounds(sorted, fallback?.[0]?.key);
+  }
+
+  // Solos are numbered independently and reuse regular heat numbers, so
+  // (heat_number, session) can collide with an unrelated heat later in the day.
+  // Real rounds of one physical heat always carry distinct round names
+  // (Quarterfinal → Semifinal → Final); a repeated round name means a separate
+  // heat. Partition on repeated round names and keep only the partition holding
+  // the anchor heat, so the collision doesn't leak into its couple count or break.
+  function splitHeatRounds(sorted, anchorKey) {
+    const partitions = [];
+    let cur = [], names = new Set();
+    for (const h of sorted) {
+      if (names.has(h.round)) { partitions.push(cur); cur = []; names = new Set(); }
+      cur.push(h);
+      names.add(h.round);
+    }
+    if (cur.length) partitions.push(cur);
+    return partitions.find(p => p.some(h => h.key === anchorKey)) || partitions[0] || sorted;
   }
 
   function renderHeatDetails(allRounds) {

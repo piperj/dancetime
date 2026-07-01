@@ -163,6 +163,49 @@ class TestHeatsTab:
 
 
 # ---------------------------------------------------------------------------
+# Heat-round grouping (solo numbering collisions)
+# ---------------------------------------------------------------------------
+
+class TestSplitHeatRounds:
+    """splitHeatRounds() must not merge a solo that reuses a regular heat number.
+
+    Solos are numbered independently, so (heat_number, session) can collide with
+    an unrelated heat later in the day. Real rounds of one physical heat carry
+    distinct round names, so a repeated round name marks a separate heat.
+    Regression for Manhattan Dance (cyi 904) heat 23: an 8-couple 8:29am final
+    was rendered as "Solo on floor" because a 3:48pm solo shared its number.
+    """
+
+    def _split(self, page, sorted_heats, anchor_key):
+        return page.evaluate(
+            "([s, k]) => window.__spa.splitHeatRounds(s, k)",
+            [sorted_heats, anchor_key],
+        )
+
+    def test_solo_collision_is_excluded(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        real = {"key": "01_23_am", "heat_number": "23", "session": "01",
+                "round": "Final", "time": "2026-07-01T08:29:42"}
+        solo = {"key": "01_23_pm", "heat_number": "23", "session": "01",
+                "round": "Final", "time": "2026-07-01T15:48:00"}
+        rounds = self._split(page, [real, solo], real["key"])
+        keys = [h["key"] for h in rounds]
+        assert keys == ["01_23_am"], f"solo should be excluded, got {keys}"
+
+    def test_genuine_rounds_are_kept_together(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        semi = {"key": "09_1297_semi", "heat_number": "1297", "session": "09",
+                "round": "Semi-Final", "time": "2026-07-03T11:25:00"}
+        final = {"key": "09_1297_final", "heat_number": "1297", "session": "09",
+                 "round": "Final", "time": "2026-07-03T11:31:00"}
+        rounds = self._split(page, [semi, final], semi["key"])
+        keys = [h["key"] for h in rounds]
+        assert keys == ["09_1297_semi", "09_1297_final"], (
+            f"distinct-named rounds must stay grouped, got {keys}"
+        )
+
+
+# ---------------------------------------------------------------------------
 # Ladder tab
 # ---------------------------------------------------------------------------
 
