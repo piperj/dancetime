@@ -7,6 +7,24 @@
     "location": ""
   },
   "leaderboards": {
+    "H": {
+      "label": "H",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Nimal de Lanerolle",
+          "partner": "Stephanie Falciano",
+          "studio": "Dance with Us",
+          "partner_studio": "Dance with Us",
+          "elo": 1575.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1575.0,
+          "heats_processed": 9,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
     "A": {
       "label": "A",
       "size": 73,
@@ -132,8 +150,8 @@
           "rank": 10
         },
         {
-          "competitor": "Kateryna Stytsenko",
-          "partner": "David Barrow",
+          "competitor": "David Barrow",
+          "partner": "Kateryna Stytsenko",
           "studio": "Dance Vitality",
           "partner_studio": "Dance Vitality",
           "elo": 1675.39,
@@ -168,8 +186,8 @@
           "rank": 13
         },
         {
-          "competitor": "LeAnn Brown",
-          "partner": "Serhiy Titarenko",
+          "competitor": "Serhiy Titarenko",
+          "partner": "LeAnn Brown",
           "studio": "FADS Durham",
           "partner_studio": "FADS Durham",
           "elo": 1663.4,
@@ -204,8 +222,8 @@
           "rank": 16
         },
         {
-          "competitor": "Denys Koloda",
-          "partner": "Kristina Quirolgico",
+          "competitor": "Kristina Quirolgico",
+          "partner": "Denys Koloda",
           "studio": "Ultimate Ballroom",
           "partner_studio": "Ultimate Ballroom",
           "elo": 1652.53,
@@ -252,8 +270,8 @@
           "rank": 20
         },
         {
-          "competitor": "Stephanie Arel",
-          "partner": "Giovanni D`Arpino",
+          "competitor": "Giovanni D`Arpino",
+          "partner": "Stephanie Arel",
           "studio": "Metropolitan Dance Center",
           "partner_studio": "Metropolitan Dance Center",
           "elo": 1629.38,
@@ -288,8 +306,8 @@
           "rank": 23
         },
         {
-          "competitor": "Sarah Cooper",
-          "partner": "Andrei Padlivakhin",
+          "competitor": "Andrei Padlivakhin",
+          "partner": "Sarah Cooper",
           "studio": "Pivot Ballroom",
           "partner_studio": "Pivot Ballroom",
           "elo": 1613.26,
@@ -324,8 +342,8 @@
           "rank": 26
         },
         {
-          "competitor": "Yury Stefanskiy",
-          "partner": "Adele Morrissette",
+          "competitor": "Adele Morrissette",
+          "partner": "Yury Stefanskiy",
           "studio": "Stefanskiy, Yury",
           "partner_studio": "Stefanskiy, Yury",
           "elo": 1587.01,
@@ -444,8 +462,8 @@
           "rank": 36
         },
         {
-          "competitor": "Biwill Calixte",
-          "partner": "Joanne Rossiter",
+          "competitor": "Joanne Rossiter",
+          "partner": "Biwill Calixte",
           "studio": "BDS Dance Studio",
           "partner_studio": "BDS Dance Studio",
           "elo": 1522.98,
@@ -456,8 +474,8 @@
           "rank": 37
         },
         {
-          "competitor": "Anton Tregubov",
-          "partner": "Elaine Krieger",
+          "competitor": "Elaine Krieger",
+          "partner": "Anton Tregubov",
           "studio": "Tregubov, Anton",
           "partner_studio": "Tregubov, Anton",
           "elo": 1519.12,
@@ -492,8 +510,8 @@
           "rank": 40
         },
         {
-          "competitor": "Natalie Armstrong",
-          "partner": "Maksym Lototskyy",
+          "competitor": "Maksym Lototskyy",
+          "partner": "Natalie Armstrong",
           "studio": "Dynasty Dance Clubs",
           "partner_studio": "Dynasty Dance Clubs",
           "elo": 1497.32,
@@ -540,8 +558,8 @@
           "rank": 44
         },
         {
-          "competitor": "Maggie Toth",
-          "partner": "Tim King",
+          "competitor": "Tim King",
+          "partner": "Maggie Toth",
           "studio": "Tothalissimo",
           "partner_studio": "Tothalissimo",
           "elo": 1484.46,
@@ -588,8 +606,8 @@
           "rank": 48
         },
         {
-          "competitor": "Igor Mikushov",
-          "partner": "Kim Bors",
+          "competitor": "Kim Bors",
+          "partner": "Igor Mikushov",
           "studio": "MBM Dancesport Center",
           "partner_studio": "MBM Dancesport Center",
           "elo": 1458.01,
@@ -600,8 +618,8 @@
           "rank": 49
         },
         {
-          "competitor": "Aleksandra Kozlowska",
-          "partner": "Joseph Piscitello",
+          "competitor": "Joseph Piscitello",
+          "partner": "Aleksandra Kozlowska",
           "studio": "Kozlowska, Aleksandra",
           "partner_studio": "Kozlowska, Aleksandra",
           "elo": 1455.21,
@@ -612,10 +630,10 @@
           "rank": 50
         },
         {
-          "competitor": "Kate Wirth",
-          "partner": "Riccardo Papi",
-          "studio": "Papi, Riccardo",
-          "partner_studio": "Brooklyn Dancesport Club",
+          "competitor": "Riccardo Papi",
+          "partner": "Kate Wirth",
+          "studio": "Brooklyn Dancesport Club",
+          "partner_studio": "Papi, Riccardo",
           "elo": 1448.85,
           "elo_delta": "+48.8",
           "initial_elo": 1400.0,
@@ -660,10 +678,10 @@
           "rank": 54
         },
         {
-          "competitor": "Ed Jinks",
-          "partner": "Ksenia Kudashev",
-          "studio": "Rogers Dance Center",
-          "partner_studio": "The Ballroom Dance House",
+          "competitor": "Ksenia Kudashev",
+          "partner": "Ed Jinks",
+          "studio": "The Ballroom Dance House",
+          "partner_studio": "Rogers Dance Center",
           "elo": 1420.56,
           "elo_delta": "+20.6",
           "initial_elo": 1400.0,
@@ -732,8 +750,8 @@
           "rank": 60
         },
         {
-          "competitor": "Domenico Boccanfuso",
-          "partner": "Izabela Orlowska",
+          "competitor": "Izabela Orlowska",
+          "partner": "Domenico Boccanfuso",
           "studio": "Patriot Ballroom/ Orlowska",
           "partner_studio": "Patriot Ballroom/ Orlowska",
           "elo": 1388.1,
@@ -756,8 +774,8 @@
           "rank": 62
         },
         {
-          "competitor": "Volodymyr Andriushchenko",
-          "partner": "Katherine Cross",
+          "competitor": "Katherine Cross",
+          "partner": "Volodymyr Andriushchenko",
           "studio": "Carolina Ballroom",
           "partner_studio": "Carolina Ballroom",
           "elo": 1373.07,
@@ -780,8 +798,8 @@
           "rank": 64
         },
         {
-          "competitor": "Gary Tessitore",
-          "partner": "Vanda Polakova",
+          "competitor": "Vanda Polakova",
+          "partner": "Gary Tessitore",
           "studio": "Tessitore, Gary",
           "partner_studio": "Tessitore, Gary",
           "elo": 1353.83,
@@ -792,8 +810,8 @@
           "rank": 65
         },
         {
-          "competitor": "Susan Green",
-          "partner": "Kamil Belverio",
+          "competitor": "Kamil Belverio",
+          "partner": "Susan Green",
           "studio": "Classic Ballroom Dance Studio",
           "partner_studio": "Classic Ballroom Dance Studio",
           "elo": 1345.79,
@@ -889,13 +907,31 @@
         }
       ]
     },
+    "J": {
+      "label": "J",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Andrea Farr",
+          "partner": "Graeme Farr",
+          "studio": "Memorial Dancesport",
+          "partner_studio": "Memorial Dancesport",
+          "elo": 1650.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1650.0,
+          "heats_processed": 30,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
     "B": {
       "label": "B",
       "size": 3,
       "couples": [
         {
-          "competitor": "Adriana Borg",
-          "partner": "Stanislav Kochergin",
+          "competitor": "Stanislav Kochergin",
+          "partner": "Adriana Borg",
           "studio": "Kochergin, Stanislav",
           "partner_studio": "Kochergin, Stanislav",
           "elo": 1644.85,
@@ -931,19 +967,55 @@
         }
       ]
     },
-    "L": {
-      "label": "L",
+    "I": {
+      "label": "I",
       "size": 1,
       "couples": [
         {
-          "competitor": "Miji Jeng",
-          "partner": "Marius Malinovschi",
-          "studio": "Queens Ballroom Dance",
-          "partner_studio": "Queens Ballroom Dance",
+          "competitor": "Yana Miekhova",
+          "partner": "Jeremie Estepp",
+          "studio": "Ultimate Ballroom",
+          "partner_studio": "Ultimate Ballroom",
           "elo": 1500.0,
           "elo_delta": "+0.0",
           "initial_elo": 1500.0,
-          "heats_processed": 5,
+          "heats_processed": 45,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
+    "G": {
+      "label": "G",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Igor Puzhevich",
+          "partner": "Quin Bommelje",
+          "studio": "FADS Doctor Phillips",
+          "partner_studio": "FADS Doctor Phillips",
+          "elo": 1500.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1500.0,
+          "heats_processed": 1,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
+    "K": {
+      "label": "K",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Ihor Horobchenko",
+          "partner": "Valentina Redondo",
+          "studio": "Dynasty Dance Clubs",
+          "partner_studio": "Dynasty Dance Clubs",
+          "elo": 1511.64,
+          "elo_delta": "+0.0",
+          "initial_elo": 1511.64,
+          "heats_processed": 15,
           "num_opponents": 1,
           "rank": 1
         }
@@ -967,19 +1039,37 @@
         }
       ]
     },
-    "I": {
-      "label": "I",
+    "L": {
+      "label": "L",
       "size": 1,
       "couples": [
         {
-          "competitor": "Yana Miekhova",
-          "partner": "Jeremie Estepp",
-          "studio": "Ultimate Ballroom",
-          "partner_studio": "Ultimate Ballroom",
+          "competitor": "Miji Jeng",
+          "partner": "Marius Malinovschi",
+          "studio": "Queens Ballroom Dance",
+          "partner_studio": "Queens Ballroom Dance",
           "elo": 1500.0,
           "elo_delta": "+0.0",
           "initial_elo": 1500.0,
-          "heats_processed": 45,
+          "heats_processed": 5,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
+    "M": {
+      "label": "M",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Johan Piper",
+          "partner": "Helen Piper",
+          "studio": "Arete Dance Center",
+          "partner_studio": "Arete Dance Center",
+          "elo": 1435.67,
+          "elo_delta": "+0.0",
+          "initial_elo": 1435.67,
+          "heats_processed": 6,
           "num_opponents": 1,
           "rank": 1
         }
@@ -1015,121 +1105,13 @@
         }
       ]
     },
-    "J": {
-      "label": "J",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Andrea Farr",
-          "partner": "Graeme Farr",
-          "studio": "Memorial Dancesport",
-          "partner_studio": "Memorial Dancesport",
-          "elo": 1650.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1650.0,
-          "heats_processed": 30,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "F": {
-      "label": "F",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Tiffany Moraes",
-          "partner": "Alan Belinky",
-          "studio": "Moraes Dance Academy",
-          "partner_studio": "Moraes Dance Academy",
-          "elo": 1500.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1500.0,
-          "heats_processed": 6,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "H": {
-      "label": "H",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Stephanie Falciano",
-          "partner": "Nimal de Lanerolle",
-          "studio": "Dance with Us",
-          "partner_studio": "Dance with Us",
-          "elo": 1575.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1575.0,
-          "heats_processed": 9,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "K": {
-      "label": "K",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Ihor Horobchenko",
-          "partner": "Valentina Redondo",
-          "studio": "Dynasty Dance Clubs",
-          "partner_studio": "Dynasty Dance Clubs",
-          "elo": 1511.64,
-          "elo_delta": "+0.0",
-          "initial_elo": 1511.64,
-          "heats_processed": 15,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "G": {
-      "label": "G",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Igor Puzhevich",
-          "partner": "Quin Bommelje",
-          "studio": "FADS Doctor Phillips",
-          "partner_studio": "FADS Doctor Phillips",
-          "elo": 1500.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1500.0,
-          "heats_processed": 1,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
-    "M": {
-      "label": "M",
-      "size": 1,
-      "couples": [
-        {
-          "competitor": "Johan Piper",
-          "partner": "Helen Piper",
-          "studio": "Arete Dance Center",
-          "partner_studio": "Arete Dance Center",
-          "elo": 1435.67,
-          "elo_delta": "+0.0",
-          "initial_elo": 1435.67,
-          "heats_processed": 6,
-          "num_opponents": 1,
-          "rank": 1
-        }
-      ]
-    },
     "N": {
       "label": "N",
       "size": 1,
       "couples": [
         {
-          "competitor": "Lloyd Steinberg",
-          "partner": "Sheena Zamora",
+          "competitor": "Sheena Zamora",
+          "partner": "Lloyd Steinberg",
           "studio": "Jam Street",
           "partner_studio": "Jam Street",
           "elo": 1500.0,
@@ -1154,6 +1136,24 @@
           "elo_delta": "+0.0",
           "initial_elo": 1575.0,
           "heats_processed": 3,
+          "num_opponents": 1,
+          "rank": 1
+        }
+      ]
+    },
+    "F": {
+      "label": "F",
+      "size": 1,
+      "couples": [
+        {
+          "competitor": "Tiffany Moraes",
+          "partner": "Alan Belinky",
+          "studio": "Moraes Dance Academy",
+          "partner_studio": "Moraes Dance Academy",
+          "elo": 1500.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1500.0,
+          "heats_processed": 6,
           "num_opponents": 1,
           "rank": 1
         }
