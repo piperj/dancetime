@@ -44,6 +44,8 @@ def _rewind_cyi(current_elo: dict, comp_counts: dict, prior_history: dict, cyi: 
         if c in comp_counts:
             comp_counts[c] -= 1
             if comp_counts[c] <= 0:
+                # This was their only contributing comp — drop them entirely rather
+                # than leaving an orphaned rating with nothing behind it.
                 comp_counts.pop(c, None)
                 current_elo.pop(c, None)
                 continue

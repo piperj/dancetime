@@ -43,6 +43,11 @@ def save_ratings(
     ratings = {
         competitor: {
             "elo": round(elo, 2),
+            # Count of comps that have actually contributed a contested (2+ couple)
+            # heat to this competitor's elo. Not surfaced anywhere else — it exists
+            # so _rewind_cyi (ranking/__init__.py) knows when a rewound comp was the
+            # competitor's only one and their rating entry should be dropped rather
+            # than left as an orphaned/never-contested phantom.
             "num_comps": comp_counts.get(competitor, 1),
             "last_cyi": last_cyi,
         }
