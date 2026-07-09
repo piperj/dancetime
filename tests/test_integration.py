@@ -208,3 +208,50 @@ class TestRankingIncremental:
         for name in first:
             assert first[name]["elo"] == second[name]["elo"]
             assert first[name]["num_comps"] == second[name]["num_comps"]
+
+    def test_rerank_uncontested_comp_does_not_inflate_num_comps(self, tmp_path):
+        """A comp whose only heat so far has a single couple (no opponent to compare
+        against) produces no heat_history for anyone. Re-ranking it hourly while it's
+        still in progress must not keep bumping num_comps — there's nothing to rewind."""
+        import ranking
+        import zipfile
+
+        raw_dir = tmp_path / "data" / "raw"
+        raw_dir.mkdir(parents=True)
+        out_dir = tmp_path / "data"
+        zip_path = raw_dir / "comp_777.zip"
+        results = {
+            "results": [{
+                "_metadata": {"competitor_name": "Alice Smith", "studio": "Fred Astaire"},
+                "Events": [{
+                    "ID": 10,
+                    "Name": "Adult Full Silver Standard",
+                    "Rounds": [{
+                        "ID": 1,
+                        "Name": "Final",
+                        "Session_ID": 3,
+                        "Dances": [{
+                            "Dance_ID": 1,
+                            "Dance_Name": "Waltz",
+                            "Competitors": [{
+                                "Result": 1,
+                                "Participants": [
+                                    {"Name": ["Alice", "Smith"]},
+                                    {"Name": ["Bob", "Jones"]},
+                                ],
+                            }],
+                        }],
+                    }],
+                }],
+            }],
+        }
+        with zipfile.ZipFile(zip_path, "w") as z:
+            z.writestr("competition_info.json", json.dumps({"Start_Date": "07/01/2026"}))
+            z.writestr("results.json", json.dumps(results))
+
+        ranking.run(_args(cyi=777, data_dir=raw_dir, out_dir=out_dir))
+        first = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+        ranking.run(_args(cyi=777, data_dir=raw_dir, out_dir=out_dir))
+        second = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+
+        assert first == second

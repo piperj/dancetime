@@ -105,13 +105,10 @@ def run(args):
 
         initial_ratings = get_initial_ratings(dance_results, current_elo)
 
-        comp_competitors = {c for r in dance_results for c in r.competitors}
-        for c in comp_competitors:
-            comp_counts[c] = comp_counts.get(c, 0) + 1
-
         calc = EloCalculator()
         calc.initialize(initial_ratings)
         heat_history = []
+        contested_competitors: set = set()
         for result in dance_results:
             changes = calc.process_heat(result)
             for competitor, (elo_before, elo_after) in changes.items():
@@ -124,6 +121,14 @@ def run(args):
                     "elo_before": round(elo_before, 2),
                     "elo_after": round(elo_after, 2),
                 })
+                contested_competitors.add(competitor)
+
+        # comp_counts must only credit competitors whose elo actually moved here:
+        # _rewind_cyi can only undo what's recorded in heat_history, so crediting
+        # someone whose only heats were uncontested/walkovers would double-count
+        # them on every re-rank of a still-in-progress comp (nothing to rewind).
+        for c in contested_competitors:
+            comp_counts[c] = comp_counts.get(c, 0) + 1
 
         final_ratings = calc.ratings
         new_history[str(cyi)] = heat_history
