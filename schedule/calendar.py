@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 from scrape.client import NDCAClient
@@ -18,17 +18,15 @@ def refresh_calendar(data_dir: Path, client: NDCAClient) -> dict:
     if path.exists():
         existing = json.loads(path.read_text())
         tracked_cyis = {c.get("cyi") for c in existing.get("competitions", []) if c.get("tracked")}
-        if existing.get("competitions") == normalized and not tracked_cyis:
-            return existing
 
     for c in normalized:
         if c.get("cyi") in tracked_cyis:
             c["tracked"] = True
 
-    calendar = {
-        "downloaded_at": datetime.now(timezone.utc).isoformat(),
-        "competitions": normalized,
-    }
+    if path.exists() and existing.get("competitions") == normalized:
+        return existing
+
+    calendar = {"competitions": normalized}
     path.write_text(json.dumps(calendar, indent=2, ensure_ascii=False))
     return calendar
 
