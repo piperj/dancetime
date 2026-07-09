@@ -63,7 +63,9 @@ def build_ranking_json(
 
     result_leaderboards = {}
     for label, couples in leaderboards.items():
-        couples.sort(key=lambda x: x["elo"], reverse=True)
+        # Tie-break by name so elo ties resolve the same way every run, regardless
+        # of upstream dict/set iteration order.
+        couples.sort(key=lambda x: (-x["elo"], x["competitor"]))
         couples = dedup_couples(couples)
         for rank, couple in enumerate(couples, start=1):
             couple["rank"] = rank

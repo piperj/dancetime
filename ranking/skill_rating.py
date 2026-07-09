@@ -37,7 +37,10 @@ def get_initial_ratings(
     base: float = 1500.0,
 ) -> dict[str, float]:
     offsets = _best_offsets(results)
-    competitors = {c for r in results for c in r.competitors}
+    # Sorted, not just deduped: a plain set's iteration order is randomized per
+    # process (PYTHONHASHSEED), which would flow through to non-deterministic
+    # key ordering in elo_ratings.json and tie-breaking in ranking_<cyi>.json.
+    competitors = sorted({c for r in results for c in r.competitors})
     return {
         c: prior_ratings[c] if c in prior_ratings else base + offsets.get(c, 0.0)
         for c in competitors
