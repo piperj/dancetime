@@ -15,6 +15,7 @@ def refresh_calendar(data_dir: Path, client: NDCAClient) -> dict:
     normalized = [_normalize(c) for c in competitions]
 
     tracked_cyis: set = set()
+    existing: dict = {}
     if path.exists():
         existing = json.loads(path.read_text())
         tracked_cyis = {c.get("cyi") for c in existing.get("competitions", []) if c.get("tracked")}
@@ -23,7 +24,7 @@ def refresh_calendar(data_dir: Path, client: NDCAClient) -> dict:
         if c.get("cyi") in tracked_cyis:
             c["tracked"] = True
 
-    if path.exists() and existing.get("competitions") == normalized:
+    if existing.get("competitions") == normalized:
         return existing
 
     calendar = {"competitions": normalized}
