@@ -10116,15 +10116,6 @@
       "published": false
     },
     {
-      "cyi": 1229,
-      "competition_id": 149,
-      "name": "Memphis DanceSport Spectacular",
-      "location": "Memphis, TN",
-      "start_date": "2026-11-07",
-      "end_date": "2026-11-07",
-      "published": false
-    },
-    {
       "cyi": 765,
       "competition_id": 127,
       "name": "North American Imperial Star Ball",
@@ -10233,19 +10224,19 @@
       "published": false
     },
     {
-      "cyi": 1209,
-      "competition_id": 38,
-      "name": "Colorado Winter Classic",
-      "location": "Denver, CO",
+      "cyi": 1334,
+      "competition_id": 155,
+      "name": "California Chic Classic",
+      "location": "Garden Grove, CA",
       "start_date": "2027-01-16",
       "end_date": "2027-01-16",
       "published": false
     },
     {
-      "cyi": 1334,
-      "competition_id": 155,
-      "name": "California Chic Classic",
-      "location": "Garden Grove, CA",
+      "cyi": 1209,
+      "competition_id": 38,
+      "name": "Colorado Winter Classic",
+      "location": "Denver, CO",
       "start_date": "2027-01-16",
       "end_date": "2027-01-16",
       "published": false
@@ -11619,15 +11610,6 @@
       "published": false
     },
     {
-      "cyi": 917,
-      "competition_id": 134,
-      "name": "Legacy DanceSport Festival",
-      "location": "Colorado Springs, CO",
-      "start_date": "2028-03-23",
-      "end_date": "2028-03-25",
-      "published": false
-    },
-    {
       "cyi": 1272,
       "competition_id": 61,
       "name": "Chattahoochee Challenge",
@@ -11643,6 +11625,15 @@
       "location": "Sarasota, FL",
       "start_date": "2028-03-26",
       "end_date": "2028-03-26",
+      "published": false
+    },
+    {
+      "cyi": 917,
+      "competition_id": 134,
+      "name": "Legacy DanceSport Festival",
+      "location": "Colorado Springs, CO",
+      "start_date": "2028-03-29",
+      "end_date": "2028-04-01",
       "published": false
     },
     {
@@ -20196,6 +20187,15 @@
       "published": false
     },
     {
+      "cyi": 9889,
+      "competition_id": 149,
+      "name": "Memphis DanceSport Spectacular",
+      "location": "Memphis, TN",
+      "start_date": "2035-11-03",
+      "end_date": "2035-11-03",
+      "published": false
+    },
+    {
       "cyi": 9688,
       "competition_id": 127,
       "name": "North American Imperial Star Ball",
@@ -20841,6 +20841,15 @@
       "location": "Doral, FL",
       "start_date": "2036-10-22",
       "end_date": "2036-10-26",
+      "published": false
+    },
+    {
+      "cyi": 9890,
+      "competition_id": 149,
+      "name": "Memphis DanceSport Spectacular",
+      "location": "Memphis, TN",
+      "start_date": "2036-11-01",
+      "end_date": "2036-11-01",
       "published": false
     },
     {
