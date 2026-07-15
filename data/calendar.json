@@ -9724,7 +9724,7 @@
       "location": "Reston, VA",
       "start_date": "2026-07-15",
       "end_date": "2026-07-19",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1300,
@@ -10724,7 +10724,7 @@
       "name": "Sapphire Dancesport",
       "location": "Austin, TX",
       "start_date": "2027-06-04",
-      "end_date": "2027-06-06",
+      "end_date": "2027-06-05",
       "published": false
     },
     {
@@ -18711,6 +18711,15 @@
       "published": false
     },
     {
+      "cyi": 9891,
+      "competition_id": 110,
+      "name": "Sapphire Dancesport",
+      "location": "Austin, TX",
+      "start_date": "2034-06-02",
+      "end_date": "2034-06-04",
+      "published": false
+    },
+    {
       "cyi": 9459,
       "competition_id": 168,
       "name": "All Star Dance Challenge",
@@ -19755,6 +19764,15 @@
       "published": false
     },
     {
+      "cyi": 9892,
+      "competition_id": 110,
+      "name": "Sapphire Dancesport",
+      "location": "Austin, TX",
+      "start_date": "2035-06-01",
+      "end_date": "2035-06-03",
+      "published": false
+    },
+    {
       "cyi": 9765,
       "competition_id": 168,
       "name": "All Star Dance Challenge",
@@ -20742,6 +20760,15 @@
       "location": "Oklahoma City, OK",
       "start_date": "2036-05-31",
       "end_date": "2036-05-31",
+      "published": false
+    },
+    {
+      "cyi": 9893,
+      "competition_id": 110,
+      "name": "Sapphire Dancesport",
+      "location": "Austin, TX",
+      "start_date": "2036-06-06",
+      "end_date": "2036-06-08",
       "published": false
     },
     {
