@@ -71,3 +71,33 @@ def wait_for_spa(page, spa_server, path=""):
         }""",
         timeout=15_000,
     )
+
+
+# Hawaii Star Ball 2024 (finished long ago, so its results never change) — the
+# smallest ranking dataset that reliably has non-empty leaderboards, for tests
+# that need the Ladder tab. The SPA's default competition is whichever has the
+# latest start_date, which for a not-yet-started comp has zero ranking data
+# and hides the Ladder tab entirely.
+RANKING_FIXTURE_CYI = 1049
+
+
+def ensure_ranking_tab_visible(page):
+    """Switch to a competition with non-empty ranking data, if the active one has none.
+
+    `compList`, `rankingData`, and `selectComp` are top-level bindings in
+    index.html's classic (non-module) <script>, so they're reachable by name
+    from page.evaluate even though they aren't attached to `window`.
+    """
+    has_ranking = page.evaluate(
+        "() => Object.values(rankingData?.leaderboards ?? {}).some(lb => lb.couples?.length > 0)"
+    )
+    if has_ranking:
+        return
+    idx = page.evaluate(f"() => compList.findIndex(c => c.cyi === {RANKING_FIXTURE_CYI})")
+    if idx == -1:
+        pytest.skip(f"ranking fixture competition (cyi {RANKING_FIXTURE_CYI}) not present in data/index.json")
+    page.evaluate(f"() => selectComp({idx})")
+    page.wait_for_function(
+        "() => Object.values(rankingData?.leaderboards ?? {}).some(lb => lb.couples?.length > 0)",
+        timeout=15_000,
+    )

@@ -5,7 +5,7 @@ Data is discovered from window.__spa (populated by the SPA after load) and
 falls back to known-good values provided by the user.
 """
 import pytest
-from .conftest import wait_for_spa
+from .conftest import ensure_ranking_tab_visible, wait_for_spa
 
 pytest.importorskip("playwright.sync_api", reason="playwright not installed")
 
@@ -386,6 +386,7 @@ class TestLadderTab:
     def test_competitor_search_filters_rows(self, page, spa_server):
         """Typing a known ranking competitor in Ladder filters leaderboard rows."""
         wait_for_spa(page, spa_server)
+        ensure_ranking_tab_visible(page)
         _click_tab(page, "ranking")
         page.wait_for_timeout(400)
 
@@ -408,6 +409,7 @@ class TestLadderTab:
     def test_bib_search_filters_rows(self, page, spa_server):
         """Typing a bib in Ladder filters to that competitor via bibToNames."""
         wait_for_spa(page, spa_server)
+        ensure_ranking_tab_visible(page)
         data = _spa_data(page)
         if not data["bibToNames"]:
             pytest.skip("bibToNames not available (pre-2e3cb26 SPA)")
@@ -435,6 +437,7 @@ class TestLadderTab:
     def test_not_competing_shows_message(self, page, spa_server):
         """A name not in the current comp shows a not-competing message in Ladder."""
         wait_for_spa(page, spa_server)
+        ensure_ranking_tab_visible(page)
         data = _spa_data(page)
         comp_set = set(data["compNames"])
         name = next((n for n in data["allNames"] if n not in comp_set), None)
@@ -467,6 +470,7 @@ class TestLadderTab:
         heats_val = page.locator("#competitorSearch").input_value()
         assert name in heats_val, f"Heats input expected '{name}', got '{heats_val}'"
 
+        ensure_ranking_tab_visible(page)
         _click_tab(page, "ranking")
         ladder_val = page.locator("#search-ranking").input_value()
         assert name in ladder_val, f"Ladder input expected '{name}', got '{ladder_val}'"
