@@ -854,13 +854,17 @@
     }).join('');
   }
 
-  // Builds the panel's inner content from judgesDataCache. Single source of
-  // truth — used both by the full-page render (renderJudgesPanel) and by
-  // toggleJudgesPanel's direct DOM update after a fetch, so the two never
-  // drift out of sync.
+  // Builds the panel's inner content from judgesDataCache, memoizing the
+  // rendered HTML alongside the raw data so the 10s auto-refresh (which calls
+  // this on every open panel every tick) doesn't re-render unchanged data.
+  // Single source of truth — used both by the full-page render
+  // (renderJudgesPanel) and by toggleJudgesPanel's direct DOM update after a
+  // fetch, so the two never drift out of sync.
   function buildJudgesPanelContent(key) {
     const cached = judgesDataCache[key];
-    return cached ? JudgesScores.renderPanel(cached) : '';
+    if (!cached) return '';
+    if (!cached.html) cached.html = JudgesScores.renderPanel(cached.data);
+    return cached.html;
   }
 
   // Renders the (possibly-open) judges-scores panel slot for a Contested pill.
@@ -1406,7 +1410,7 @@
     try {
       const cyi = heatsData.meta.cyi;
       const eventData = await JudgesScores.fetchJudgesData(cyi, competitorName, heatNumber);
-      judgesDataCache[key] = eventData;
+      judgesDataCache[key] = { data: eventData };
       el.innerHTML = buildJudgesPanelContent(key);
     } catch (err) {
       el.innerHTML = `<div class="text-xs text-red-600 p-2">Couldn't load judges scores: ${esc(err.message)}</div>`;
