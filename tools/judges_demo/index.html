@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Judges Scores Demo — Phase 1 (raw fetch)</title>
+</head>
+<body>
+  <h1>Judges Scores Demo — Phase 1</h1>
+  <p>
+    Hardcoded fixture: CYI <strong>904</strong>, competitor
+    <strong>Johan Piper</strong>, heat <strong>853</strong>.
+    Fetches live from ndcapremier.com — no local/cached data used.
+  </p>
+  <h2>Summary (plain text, for eyeballing correctness)</h2>
+  <pre id="summary">Loading…</pre>
+
+  <h2>Raw NDCA response</h2>
+  <pre id="output">Loading…</pre>
+
+  <script src="/static/judges-scores.js"></script>
+  <script>
+    const CYI = 904;
+    const COMPETITOR_NAME = 'Johan Piper';
+    const HEAT_NUMBER = '853';
+
+    function summarize(event) {
+      const lines = [`Event: ${event.Name}  (Heat ${event.Heat})`];
+      event.Rounds.forEach(round => {
+        lines.push(`Round: ${round.Name}  [${round.Scoring_Method}]`);
+        round.Dances.forEach(dance => {
+          lines.push(`  Dance: ${dance.Dance_Name} — ${dance.Judges.length} judges`);
+          dance.Competitors.forEach(c => {
+            const names = c.Participants.map(p => p.Name.join(' ')).join(' & ');
+            lines.push(`    Bib ${c.Bib}  ${names}  Result: ${c.Result}  Marks: [${c.Marks.join(', ')}]`);
+          });
+        });
+      });
+      return lines.join('\n');
+    }
+
+    JudgesScores.fetchJudgesData(CYI, COMPETITOR_NAME, HEAT_NUMBER)
+      .then(event => {
+        document.getElementById('summary').textContent = summarize(event);
+        document.getElementById('output').textContent = JSON.stringify(event, null, 2);
+      })
+      .catch(err => {
+        document.getElementById('summary').textContent = `Error: ${err.message}`;
+        document.getElementById('output').textContent = '';
+      });
+  </script>
+</body>
+</html>
