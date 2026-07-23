@@ -85,7 +85,7 @@ def _remove_chip(page, label):
 class TestRankingTab:
     def test_single_competitor_series(self, page, spa_server):
         """Adding one competitor renders a single solid step-line dataset with >1 points."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         _click_tab(page, "elo")
         _add_competitor(page, COMPETITOR_A)
 
@@ -97,7 +97,7 @@ class TestRankingTab:
 
     def test_couple_series_is_dashed(self, page, spa_server):
         """Adding a couple renders a dotted/dashed curve dataset."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         _click_tab(page, "elo")
         _add_couple(page, COUPLE_A, COUPLE_B)
 
@@ -109,7 +109,7 @@ class TestRankingTab:
 
     def test_multiple_series(self, page, spa_server):
         """Adding 2 competitors + 1 couple gives 3 datasets with distinct labels."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         _click_tab(page, "elo")
         _add_competitor(page, COMPETITOR_A)
         _add_competitor(page, COMPETITOR_B)
@@ -123,7 +123,7 @@ class TestRankingTab:
 
     def test_series_removal(self, page, spa_server):
         """Clicking × on a chip removes that dataset."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         _click_tab(page, "elo")
         _add_competitor(page, COMPETITOR_A)
         _add_competitor(page, COMPETITOR_B)
@@ -136,7 +136,7 @@ class TestRankingTab:
 
     def test_cross_competition_spans(self, page, spa_server):
         """A multi-comp competitor's series spans data from ≥2 competitions."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         _click_tab(page, "elo")
         _add_competitor(page, COMPETITOR_A)  # 5 competitions in history
 
@@ -150,7 +150,7 @@ class TestRankingTab:
 
     def test_comp_header_hidden_on_ranking_tab(self, page, spa_server):
         """The per-competition dropdown (comp-header) is hidden on the Ranking tab."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         _click_tab(page, "elo")
         is_hidden = page.evaluate(
             "() => document.getElementById('comp-header').classList.contains('hidden')"
@@ -159,7 +159,7 @@ class TestRankingTab:
 
     def test_canvas_visible_after_add(self, page, spa_server):
         """The chart canvas is visible after adding a competitor."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         _click_tab(page, "elo")
         _add_competitor(page, COMPETITOR_A)
 

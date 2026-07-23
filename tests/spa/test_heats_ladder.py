@@ -385,7 +385,7 @@ class TestHeatsSkipped:
 class TestLadderTab:
     def test_competitor_search_filters_rows(self, page, spa_server):
         """Typing a known ranking competitor in Ladder filters leaderboard rows."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         ensure_ranking_tab_visible(page)
         _click_tab(page, "ranking")
         page.wait_for_timeout(400)
@@ -408,7 +408,7 @@ class TestLadderTab:
 
     def test_bib_search_filters_rows(self, page, spa_server):
         """Typing a bib in Ladder filters to that competitor via bibToNames."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         ensure_ranking_tab_visible(page)
         data = _spa_data(page)
         if not data["bibToNames"]:
@@ -436,7 +436,7 @@ class TestLadderTab:
 
     def test_not_competing_shows_message(self, page, spa_server):
         """A name not in the current comp shows a not-competing message in Ladder."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         ensure_ranking_tab_visible(page)
         data = _spa_data(page)
         comp_set = set(data["compNames"])
@@ -453,11 +453,11 @@ class TestLadderTab:
 
     def test_url_competitor_param_persists_across_tabs(self, page, spa_server):
         """?competitor=Name populates both Heats and Ladder search inputs."""
-        wait_for_spa(page, spa_server)
+        wait_for_spa(page, spa_server, query="?show_elo=1")
         data = _spa_data(page)
         name = next((n for n in data["competitors"] if n), None) or "Johan Piper"
 
-        page.goto(f"{spa_server}/index.html?competitor={name.replace(' ', '%20')}")
+        page.goto(f"{spa_server}/index.html?competitor={name.replace(' ', '%20')}&show_elo=1")
         page.wait_for_function(
             """() => {
                 const s = document.getElementById('status');

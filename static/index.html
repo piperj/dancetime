@@ -314,17 +314,25 @@
     });
   });
 
+  function eloVisible() {
+    return new URLSearchParams(location.search).get('show_elo') === '1';
+  }
+
   function updateTabVisibility() {
     const hasHeats   = (heatsData?.competitors?.length ?? 0) > 0;
     const hasRanking = Object.values(rankingData?.leaderboards ?? {}).some(lb => lb.couples?.length > 0);
+    const showElo    = eloVisible();
 
     const heatsBtn   = document.querySelector('nav button[data-tab="heats"]');
     const rankingBtn = document.querySelector('nav button[data-tab="ranking"]');
+    const eloBtn     = document.querySelector('nav button[data-tab="elo"]');
     heatsBtn.classList.toggle('hidden', !hasHeats);
-    rankingBtn.classList.toggle('hidden', !hasRanking);
+    rankingBtn.classList.toggle('hidden', !hasRanking || !showElo);
+    eloBtn.classList.toggle('hidden', !showElo);
 
-    if (activeTab === 'heats'   && !hasHeats   && hasRanking) activeTab = 'ranking';
-    if (activeTab === 'ranking' && !hasRanking && hasHeats)   activeTab = 'heats';
+    if (activeTab === 'heats'   && !hasHeats   && hasRanking && showElo) activeTab = 'ranking';
+    if (activeTab === 'ranking' && (!hasRanking || !showElo) && hasHeats) activeTab = 'heats';
+    if (activeTab === 'elo'     && !showElo) activeTab = 'heats';
     document.querySelectorAll('nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
 
     const isHeats   = activeTab === 'heats';

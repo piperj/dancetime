@@ -59,9 +59,9 @@ def page(browser, spa_server):
     ctx.close()
 
 
-def wait_for_spa(page, spa_server, path=""):
+def wait_for_spa(page, spa_server, path="", query=""):
     """Navigate to index.html and wait for the SPA data to load."""
-    page.goto(f"{spa_server}/{path}index.html")
+    page.goto(f"{spa_server}/{path}index.html{query}")
     # Status div gets class 'hidden' on success; text changes on error.
     # Either way, 'Loading' as the only content means we're still waiting.
     page.wait_for_function(
