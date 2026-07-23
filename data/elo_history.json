@@ -1,5 +1,4075 @@
 {
   "history": {
+    "422": [
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1723.03,
+        "elo_after": 1726.42
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1466.37,
+        "elo_after": 1473.87
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1164.74,
+        "elo_after": 1156.53
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1597.12,
+        "elo_after": 1594.44
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1726.42,
+        "elo_after": 1729.61
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1473.87,
+        "elo_after": 1480.85
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1156.53,
+        "elo_after": 1148.84
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1594.44,
+        "elo_after": 1591.95
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1729.61,
+        "elo_after": 1732.62
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1480.85,
+        "elo_after": 1487.38
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1148.84,
+        "elo_after": 1141.63
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1591.95,
+        "elo_after": 1589.63
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1732.62,
+        "elo_after": 1735.47
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1487.38,
+        "elo_after": 1493.5
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1141.63,
+        "elo_after": 1134.83
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Waltz",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1589.63,
+        "elo_after": 1587.46
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1735.47,
+        "elo_after": 1738.18
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1493.5,
+        "elo_after": 1499.26
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1134.83,
+        "elo_after": 1128.41
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Cha Cha",
+        "round_name": "Final",
+        "dance_name": "C/W Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1587.46,
+        "elo_after": 1585.41
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1738.18,
+        "elo_after": 1740.75
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1499.26,
+        "elo_after": 1504.7
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1128.41,
+        "elo_after": 1122.32
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W West Coast Swing",
+        "round_name": "Final",
+        "dance_name": "C/W West Coast Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1585.41,
+        "elo_after": 1583.49
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1740.75,
+        "elo_after": 1743.2
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1504.7,
+        "elo_after": 1509.85
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1122.32,
+        "elo_after": 1116.54
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1583.49,
+        "elo_after": 1581.67
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1743.2,
+        "elo_after": 1745.55
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1509.85,
+        "elo_after": 1514.74
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1116.54,
+        "elo_after": 1111.03
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver C/W Two Step",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1581.67,
+        "elo_after": 1579.94
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1745.55,
+        "elo_after": 1747.79
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1514.74,
+        "elo_after": 1519.39
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1111.03,
+        "elo_after": 1105.78
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Two Step",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1579.94,
+        "elo_after": 1578.3
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1747.79,
+        "elo_after": 1749.94
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1519.39,
+        "elo_after": 1523.82
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1105.78,
+        "elo_after": 1100.76
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W Waltz",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1578.3,
+        "elo_after": 1576.74
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W East Coast Swing",
+        "competitor": "Jacqueline Hachey",
+        "partner": "Pavlo Barsuk",
+        "elo_before": 1749.94,
+        "elo_after": 1752.01
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W East Coast Swing",
+        "competitor": "Pavlo Barsuk",
+        "partner": "Jacqueline Hachey",
+        "elo_before": 1523.82,
+        "elo_after": 1528.05
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W East Coast Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1100.76,
+        "elo_after": 1095.95
+      },
+      {
+        "event_name": "CW 2S-W-ECS Challenge Closed Silver S2 M/F Country Western (TS,W,ECS)",
+        "round_name": "Final",
+        "dance_name": "C/W East Coast Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1576.74,
+        "elo_after": 1575.26
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1333.85,
+        "elo_after": 1313.48
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1748.01,
+        "elo_after": 1741.2
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1426.5,
+        "elo_after": 1443.94
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1604.74,
+        "elo_after": 1614.48
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1313.48,
+        "elo_after": 1343.47
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1741.2,
+        "elo_after": 1751.04
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1443.94,
+        "elo_after": 1418.59
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1614.48,
+        "elo_after": 1600.0
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1343.47,
+        "elo_after": 1322.07
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1751.04,
+        "elo_after": 1743.82
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1418.59,
+        "elo_after": 1437.02
+      },
+      {
+        "event_name": " L-A3 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1600.0,
+        "elo_after": 1610.19
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1322.07,
+        "elo_after": 1302.99
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1743.82,
+        "elo_after": 1737.5
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1437.02,
+        "elo_after": 1453.23
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1610.19,
+        "elo_after": 1619.38
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1302.99,
+        "elo_after": 1285.89
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1737.5,
+        "elo_after": 1731.94
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1453.23,
+        "elo_after": 1467.58
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1619.38,
+        "elo_after": 1627.69
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1285.89,
+        "elo_after": 1270.5
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1731.94,
+        "elo_after": 1727.0
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1467.58,
+        "elo_after": 1480.37
+      },
+      {
+        "event_name": " L-A3 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1627.69,
+        "elo_after": 1635.23
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1270.5,
+        "elo_after": 1305.16
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1727.0,
+        "elo_after": 1737.98
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1480.37,
+        "elo_after": 1451.83
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1635.23,
+        "elo_after": 1618.14
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1305.16,
+        "elo_after": 1336.13
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1737.98,
+        "elo_after": 1748.07
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1451.83,
+        "elo_after": 1425.81
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1618.14,
+        "elo_after": 1603.09
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1336.13,
+        "elo_after": 1315.58
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1748.07,
+        "elo_after": 1741.18
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1425.81,
+        "elo_after": 1443.4
+      },
+      {
+        "event_name": "Championship Closed Bronze B M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1603.09,
+        "elo_after": 1612.94
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1315.58,
+        "elo_after": 1345.38
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1741.18,
+        "elo_after": 1750.99
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1443.4,
+        "elo_after": 1418.22
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1612.94,
+        "elo_after": 1598.51
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1345.38,
+        "elo_after": 1371.65
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1750.99,
+        "elo_after": 1759.88
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1418.22,
+        "elo_after": 1395.6
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1598.51,
+        "elo_after": 1585.96
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1371.65,
+        "elo_after": 1347.26
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1759.88,
+        "elo_after": 1751.4
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rachel Becker",
+        "partner": "Christian Solares",
+        "elo_before": 1395.6,
+        "elo_after": 1416.96
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze B Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christian Solares",
+        "partner": "Rachel Becker",
+        "elo_before": 1585.96,
+        "elo_after": 1597.48
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1443.86,
+        "elo_after": 1423.06
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1476.7,
+        "elo_after": 1458.13
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1400.0,
+        "elo_after": 1418.29
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1358.58,
+        "elo_after": 1379.67
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1423.06,
+        "elo_after": 1404.06
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1458.13,
+        "elo_after": 1441.29
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1418.29,
+        "elo_after": 1435.01
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1379.67,
+        "elo_after": 1398.78
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1404.06,
+        "elo_after": 1386.76
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1441.29,
+        "elo_after": 1426.07
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1435.01,
+        "elo_after": 1450.26
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1398.78,
+        "elo_after": 1416.05
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1386.76,
+        "elo_after": 1371.0
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1426.07,
+        "elo_after": 1412.31
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1450.26,
+        "elo_after": 1464.15
+      },
+      {
+        "event_name": " L-B2 Cl. Newcomer Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1416.05,
+        "elo_after": 1431.68
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1371.0,
+        "elo_after": 1355.93
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1412.31,
+        "elo_after": 1399.24
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Helen Piper",
+        "partner": "Yuriy Kuvshynov",
+        "elo_before": 1355.54,
+        "elo_after": 1374.65
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuriy Kuvshynov",
+        "partner": "Helen Piper",
+        "elo_before": 1594.81,
+        "elo_after": 1603.84
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1355.93,
+        "elo_after": 1376.71
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1399.24,
+        "elo_after": 1417.14
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Helen Piper",
+        "partner": "Yuriy Kuvshynov",
+        "elo_before": 1374.65,
+        "elo_after": 1348.61
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuriy Kuvshynov",
+        "partner": "Helen Piper",
+        "elo_before": 1603.84,
+        "elo_after": 1591.21
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1376.71,
+        "elo_after": 1395.32
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1417.14,
+        "elo_after": 1433.33
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Helen Piper",
+        "partner": "Yuriy Kuvshynov",
+        "elo_before": 1348.61,
+        "elo_after": 1324.91
+      },
+      {
+        "event_name": " L-B1 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuriy Kuvshynov",
+        "partner": "Helen Piper",
+        "elo_before": 1591.21,
+        "elo_after": 1580.11
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1395.32,
+        "elo_after": 1379.93
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1433.33,
+        "elo_after": 1419.83
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1464.15,
+        "elo_after": 1477.78
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1431.68,
+        "elo_after": 1446.93
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1379.93,
+        "elo_after": 1365.9
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1419.83,
+        "elo_after": 1407.6
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1477.78,
+        "elo_after": 1490.22
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1446.93,
+        "elo_after": 1460.76
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1365.9,
+        "elo_after": 1353.08
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1407.6,
+        "elo_after": 1396.49
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1490.22,
+        "elo_after": 1501.58
+      },
+      {
+        "event_name": " L-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1460.76,
+        "elo_after": 1473.33
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1353.08,
+        "elo_after": 1337.43
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1396.49,
+        "elo_after": 1383.02
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Helen Piper",
+        "partner": "Yuriy Kuvshynov",
+        "elo_before": 1324.91,
+        "elo_after": 1344.93
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuriy Kuvshynov",
+        "partner": "Helen Piper",
+        "elo_before": 1580.11,
+        "elo_after": 1589.2
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1337.43,
+        "elo_after": 1323.33
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1383.02,
+        "elo_after": 1370.97
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Helen Piper",
+        "partner": "Yuriy Kuvshynov",
+        "elo_before": 1344.93,
+        "elo_after": 1362.77
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuriy Kuvshynov",
+        "partner": "Helen Piper",
+        "elo_before": 1589.2,
+        "elo_after": 1597.52
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1323.33,
+        "elo_after": 1310.57
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1370.97,
+        "elo_after": 1360.13
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Helen Piper",
+        "partner": "Yuriy Kuvshynov",
+        "elo_before": 1362.77,
+        "elo_after": 1378.73
+      },
+      {
+        "event_name": " L-B1 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuriy Kuvshynov",
+        "partner": "Helen Piper",
+        "elo_before": 1597.52,
+        "elo_after": 1605.15
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1310.57,
+        "elo_after": 1300.42
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1360.13,
+        "elo_after": 1351.57
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1501.58,
+        "elo_after": 1510.48
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1473.33,
+        "elo_after": 1483.14
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1300.42,
+        "elo_after": 1291.01
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1351.57,
+        "elo_after": 1343.68
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1510.48,
+        "elo_after": 1518.72
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1483.14,
+        "elo_after": 1492.2
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Maria Montenegro",
+        "partner": "Rafael Candelas",
+        "elo_before": 1291.01,
+        "elo_after": 1282.25
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Rafael Candelas",
+        "partner": "Maria Montenegro",
+        "elo_before": 1343.68,
+        "elo_after": 1336.37
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1518.72,
+        "elo_after": 1526.39
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1492.2,
+        "elo_after": 1500.6
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1095.95,
+        "elo_after": 1135.65
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1575.26,
+        "elo_after": 1587.5
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1500.0,
+        "elo_after": 1476.98
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1433.3,
+        "elo_after": 1404.37
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1135.65,
+        "elo_after": 1123.55
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1587.5,
+        "elo_after": 1583.65
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1476.98,
+        "elo_after": 1483.97
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1404.37,
+        "elo_after": 1413.33
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1123.55,
+        "elo_after": 1112.39
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1583.65,
+        "elo_after": 1580.13
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1483.97,
+        "elo_after": 1490.43
+      },
+      {
+        "event_name": " L-C1 Cl. Pre-Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1413.33,
+        "elo_after": 1421.55
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1112.39,
+        "elo_after": 1102.06
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1580.13,
+        "elo_after": 1576.9
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1490.43,
+        "elo_after": 1496.41
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1421.55,
+        "elo_after": 1429.13
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1102.06,
+        "elo_after": 1092.45
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1576.9,
+        "elo_after": 1573.93
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1496.41,
+        "elo_after": 1501.98
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1429.13,
+        "elo_after": 1436.14
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1092.45,
+        "elo_after": 1083.48
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1573.93,
+        "elo_after": 1571.17
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1501.98,
+        "elo_after": 1507.19
+      },
+      {
+        "event_name": " L-C1 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1436.14,
+        "elo_after": 1442.67
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1083.48,
+        "elo_after": 1075.08
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1571.17,
+        "elo_after": 1568.6
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1507.19,
+        "elo_after": 1512.07
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1442.67,
+        "elo_after": 1448.76
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1075.08,
+        "elo_after": 1067.18
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1568.6,
+        "elo_after": 1566.2
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1512.07,
+        "elo_after": 1516.66
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1448.76,
+        "elo_after": 1454.46
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1067.18,
+        "elo_after": 1059.73
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1566.2,
+        "elo_after": 1563.95
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1516.66,
+        "elo_after": 1520.99
+      },
+      {
+        "event_name": " L-C1 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1454.46,
+        "elo_after": 1459.83
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1059.73,
+        "elo_after": 1078.0
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1563.95,
+        "elo_after": 1569.44
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1520.99,
+        "elo_after": 1531.12
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1459.83,
+        "elo_after": 1472.32
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1531.75,
+        "elo_after": 1508.56
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1531.75,
+        "elo_after": 1508.56
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1078.0,
+        "elo_after": 1095.51
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1569.44,
+        "elo_after": 1574.77
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1531.12,
+        "elo_after": 1540.63
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1472.32,
+        "elo_after": 1483.95
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1508.56,
+        "elo_after": 1486.57
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1508.56,
+        "elo_after": 1486.57
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1095.51,
+        "elo_after": 1112.18
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1574.77,
+        "elo_after": 1579.92
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Joanne Cuthbertson",
+        "partner": "Vanessa Thomson",
+        "elo_before": 1540.63,
+        "elo_after": 1549.55
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Vanessa Thomson",
+        "partner": "Joanne Cuthbertson",
+        "elo_before": 1483.95,
+        "elo_after": 1494.79
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1486.57,
+        "elo_after": 1465.78
+      },
+      {
+        "event_name": "SR Closed Silver S2 M/F Amer. Rhythm Championship (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1486.57,
+        "elo_after": 1465.78
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1372.97,
+        "elo_after": 1377.81
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1379.55,
+        "elo_after": 1384.28
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1500.0,
+        "elo_after": 1510.52
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1336.33,
+        "elo_after": 1354.37
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1112.18,
+        "elo_after": 1116.06
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1579.92,
+        "elo_after": 1581.13
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1465.78,
+        "elo_after": 1444.18
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1465.78,
+        "elo_after": 1444.18
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1377.81,
+        "elo_after": 1382.42
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1384.28,
+        "elo_after": 1388.79
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1510.52,
+        "elo_after": 1520.52
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1354.37,
+        "elo_after": 1371.15
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1116.06,
+        "elo_after": 1119.79
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1581.13,
+        "elo_after": 1582.3
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1444.18,
+        "elo_after": 1423.78
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1444.18,
+        "elo_after": 1423.78
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1382.42,
+        "elo_after": 1386.79
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1388.79,
+        "elo_after": 1393.07
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1520.52,
+        "elo_after": 1530.02
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1371.15,
+        "elo_after": 1386.76
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1119.79,
+        "elo_after": 1123.35
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1582.3,
+        "elo_after": 1583.41
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1423.78,
+        "elo_after": 1404.56
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1423.78,
+        "elo_after": 1404.56
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1386.79,
+        "elo_after": 1390.93
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1393.07,
+        "elo_after": 1397.12
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1530.02,
+        "elo_after": 1539.05
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1386.76,
+        "elo_after": 1401.3
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1123.35,
+        "elo_after": 1126.7
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1583.41,
+        "elo_after": 1584.47
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1404.56,
+        "elo_after": 1386.47
+      },
+      {
+        "event_name": "WDSS 4-Dance Closed Silver SR Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1404.56,
+        "elo_after": 1386.47
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1126.7,
+        "elo_after": 1160.9
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1584.47,
+        "elo_after": 1595.28
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1386.47,
+        "elo_after": 1363.97
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1386.47,
+        "elo_after": 1363.97
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1160.9,
+        "elo_after": 1191.58
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1595.28,
+        "elo_after": 1605.26
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1363.97,
+        "elo_after": 1343.64
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1363.97,
+        "elo_after": 1343.64
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1191.58,
+        "elo_after": 1218.87
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1605.26,
+        "elo_after": 1614.39
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1343.64,
+        "elo_after": 1325.43
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1343.64,
+        "elo_after": 1325.43
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Christina Lau",
+        "partner": "Cesar Rojo",
+        "elo_before": 1218.87,
+        "elo_after": 1243.05
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Cesar Rojo",
+        "partner": "Christina Lau",
+        "elo_before": 1614.39,
+        "elo_after": 1622.71
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Jon Ericksen",
+        "partner": "Alla Novikova",
+        "elo_before": 1325.43,
+        "elo_after": 1309.18
+      },
+      {
+        "event_name": "Scholarship Closed Silver S2 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Alla Novikova",
+        "partner": "Jon Ericksen",
+        "elo_before": 1325.43,
+        "elo_after": 1309.18
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1390.93,
+        "elo_after": 1377.56
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1397.12,
+        "elo_after": 1384.02
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1539.05,
+        "elo_after": 1549.29
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1401.3,
+        "elo_after": 1417.53
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1377.56,
+        "elo_after": 1365.4
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1384.02,
+        "elo_after": 1372.14
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1549.29,
+        "elo_after": 1558.7
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1417.53,
+        "elo_after": 1432.16
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1365.4,
+        "elo_after": 1354.32
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1372.14,
+        "elo_after": 1361.32
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1558.7,
+        "elo_after": 1567.36
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1432.16,
+        "elo_after": 1445.41
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1354.32,
+        "elo_after": 1344.17
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1361.32,
+        "elo_after": 1351.41
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1567.36,
+        "elo_after": 1575.36
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1445.41,
+        "elo_after": 1457.47
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1344.17,
+        "elo_after": 1334.84
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1351.41,
+        "elo_after": 1342.3
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1575.36,
+        "elo_after": 1582.77
+      },
+      {
+        "event_name": " L-B2 Cl. Full Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1457.47,
+        "elo_after": 1468.49
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1334.84,
+        "elo_after": 1326.21
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1342.3,
+        "elo_after": 1333.9
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1582.77,
+        "elo_after": 1589.66
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1468.49,
+        "elo_after": 1478.63
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1326.21,
+        "elo_after": 1318.21
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1333.9,
+        "elo_after": 1326.1
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1589.66,
+        "elo_after": 1596.1
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1478.63,
+        "elo_after": 1487.99
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1318.21,
+        "elo_after": 1310.76
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1326.1,
+        "elo_after": 1318.85
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1596.1,
+        "elo_after": 1602.12
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1487.99,
+        "elo_after": 1496.68
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1310.76,
+        "elo_after": 1303.8
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1318.85,
+        "elo_after": 1312.08
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1602.12,
+        "elo_after": 1607.77
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1496.68,
+        "elo_after": 1504.76
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1303.8,
+        "elo_after": 1297.26
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1312.08,
+        "elo_after": 1305.73
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1607.77,
+        "elo_after": 1613.1
+      },
+      {
+        "event_name": " L-B2 Cl. Silver Challenge Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1504.76,
+        "elo_after": 1512.31
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1297.26,
+        "elo_after": 1291.12
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1305.73,
+        "elo_after": 1299.77
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1613.1,
+        "elo_after": 1618.13
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1512.31,
+        "elo_after": 1519.39
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1291.12,
+        "elo_after": 1285.32
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1299.77,
+        "elo_after": 1294.14
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1618.13,
+        "elo_after": 1622.89
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1519.39,
+        "elo_after": 1526.05
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1285.32,
+        "elo_after": 1279.84
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1294.14,
+        "elo_after": 1288.82
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1622.89,
+        "elo_after": 1627.42
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1526.05,
+        "elo_after": 1532.34
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1279.84,
+        "elo_after": 1274.64
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1288.82,
+        "elo_after": 1283.78
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1627.42,
+        "elo_after": 1631.72
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Bolero",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1532.34,
+        "elo_after": 1538.28
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1274.64,
+        "elo_after": 1269.69
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1283.78,
+        "elo_after": 1278.99
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1631.72,
+        "elo_after": 1635.82
+      },
+      {
+        "event_name": " L-B2 Cl. Intermediate Silver Amer. Mambo",
+        "round_name": "Final",
+        "dance_name": "Amer. Mambo",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1538.28,
+        "elo_after": 1543.91
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1269.69,
+        "elo_after": 1264.98
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1278.99,
+        "elo_after": 1274.43
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1635.82,
+        "elo_after": 1639.73
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1543.91,
+        "elo_after": 1549.27
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1264.98,
+        "elo_after": 1260.49
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1274.43,
+        "elo_after": 1270.08
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1639.73,
+        "elo_after": 1643.48
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1549.27,
+        "elo_after": 1554.36
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1260.49,
+        "elo_after": 1256.19
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1270.08,
+        "elo_after": 1265.92
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1643.48,
+        "elo_after": 1647.07
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1554.36,
+        "elo_after": 1559.23
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1256.19,
+        "elo_after": 1252.07
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1265.92,
+        "elo_after": 1261.94
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1647.07,
+        "elo_after": 1650.52
+      },
+      {
+        "event_name": "Championship Closed Silver S1 M/F Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1559.23,
+        "elo_after": 1563.88
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1252.07,
+        "elo_after": 1248.13
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1261.94,
+        "elo_after": 1258.12
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1650.52,
+        "elo_after": 1653.83
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1563.88,
+        "elo_after": 1568.33
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1248.13,
+        "elo_after": 1244.33
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1258.12,
+        "elo_after": 1254.46
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1653.83,
+        "elo_after": 1657.02
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1568.33,
+        "elo_after": 1572.6
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1244.33,
+        "elo_after": 1240.68
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1254.46,
+        "elo_after": 1250.93
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1657.02,
+        "elo_after": 1660.09
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1572.6,
+        "elo_after": 1576.7
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Lillian Young",
+        "partner": "David Estrada",
+        "elo_before": 1240.68,
+        "elo_after": 1237.16
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "David Estrada",
+        "partner": "Lillian Young",
+        "elo_before": 1250.93,
+        "elo_after": 1247.54
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1660.09,
+        "elo_after": 1663.06
+      },
+      {
+        "event_name": "BOB Scholarship Closed Silver S1 Amer. Rhythm (CC,R,SW,B)",
+        "round_name": "Final",
+        "dance_name": "Amer. Bolero",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1576.7,
+        "elo_after": 1580.64
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Suzanne Wilcox",
+        "partner": "David Estrada",
+        "elo_before": 1311.93,
+        "elo_after": 1308.4
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "David Estrada",
+        "partner": "Suzanne Wilcox",
+        "elo_before": 1247.54,
+        "elo_after": 1243.14
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Evelyn Kheo",
+        "partner": "Yuki Haraguchi",
+        "elo_before": 1663.06,
+        "elo_after": 1666.47
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Silver Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuki Haraguchi",
+        "partner": "Evelyn Kheo",
+        "elo_before": 1580.64,
+        "elo_after": 1585.16
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Helen Piper",
+        "partner": "Yuriy Kuvshynov",
+        "elo_before": 1378.73,
+        "elo_after": 1361.17
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Yuriy Kuvshynov",
+        "partner": "Helen Piper",
+        "elo_before": 1605.15,
+        "elo_after": 1596.57
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Niki Sanieenia Moghaddam",
+        "partner": "Cesar Rojo",
+        "elo_before": 1573.29,
+        "elo_after": 1584.74
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Cesar Rojo",
+        "partner": "Niki Sanieenia Moghaddam",
+        "elo_before": 1622.71,
+        "elo_after": 1632.36
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Karen Robinson",
+        "partner": "Dominic Seigler",
+        "elo_before": 1347.26,
+        "elo_after": 1359.9
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Dominic Seigler",
+        "partner": "Karen Robinson",
+        "elo_before": 1751.4,
+        "elo_after": 1755.69
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1526.39,
+        "elo_after": 1520.7
+      },
+      {
+        "event_name": "BOB Dance-Off LG-OP Closed Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1500.6,
+        "elo_after": 1494.39
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1520.7,
+        "elo_after": 1534.53
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1494.39,
+        "elo_after": 1509.53
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1400.0,
+        "elo_after": 1380.57
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1624.61,
+        "elo_after": 1615.07
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1534.53,
+        "elo_after": 1547.0
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1509.53,
+        "elo_after": 1523.13
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1380.57,
+        "elo_after": 1362.93
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1615.07,
+        "elo_after": 1606.64
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1547.0,
+        "elo_after": 1558.29
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1523.13,
+        "elo_after": 1535.38
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1362.93,
+        "elo_after": 1346.88
+      },
+      {
+        "event_name": "Championship Closed Bronze S1 M/F Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1606.64,
+        "elo_after": 1599.14
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1558.29,
+        "elo_after": 1573.21
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1535.38,
+        "elo_after": 1551.53
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1556.26,
+        "elo_after": 1546.79
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1861.59,
+        "elo_after": 1857.76
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1346.88,
+        "elo_after": 1334.69
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1599.14,
+        "elo_after": 1593.57
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1573.21,
+        "elo_after": 1587.15
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1551.53,
+        "elo_after": 1566.55
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1546.79,
+        "elo_after": 1537.99
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1857.76,
+        "elo_after": 1854.23
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1334.69,
+        "elo_after": 1323.23
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1593.57,
+        "elo_after": 1588.41
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Sara Luvisi",
+        "partner": "Krisztian Timar",
+        "elo_before": 1587.15,
+        "elo_after": 1600.17
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Krisztian Timar",
+        "partner": "Sara Luvisi",
+        "elo_before": 1566.55,
+        "elo_after": 1580.54
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1537.99,
+        "elo_after": 1529.82
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1854.23,
+        "elo_after": 1851.0
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1323.23,
+        "elo_after": 1312.41
+      },
+      {
+        "event_name": "BOB Scholarship Closed Bronze S1 Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1588.41,
+        "elo_after": 1583.61
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1529.82,
+        "elo_after": 1539.69
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1851.0,
+        "elo_after": 1854.87
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1312.41,
+        "elo_after": 1302.85
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1583.61,
+        "elo_after": 1579.43
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1539.69,
+        "elo_after": 1548.76
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1854.87,
+        "elo_after": 1858.47
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1302.85,
+        "elo_after": 1294.0
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1579.43,
+        "elo_after": 1575.61
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1548.76,
+        "elo_after": 1557.14
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1858.47,
+        "elo_after": 1861.83
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1294.0,
+        "elo_after": 1285.76
+      },
+      {
+        "event_name": " G-B2 Cl. Pre-Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1575.61,
+        "elo_after": 1572.1
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1557.14,
+        "elo_after": 1564.93
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1861.83,
+        "elo_after": 1864.99
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1285.76,
+        "elo_after": 1278.07
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1572.1,
+        "elo_after": 1568.85
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1564.93,
+        "elo_after": 1572.18
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1864.99,
+        "elo_after": 1867.96
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1278.07,
+        "elo_after": 1270.86
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1568.85,
+        "elo_after": 1565.84
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1572.18,
+        "elo_after": 1578.97
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1867.96,
+        "elo_after": 1870.76
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1270.86,
+        "elo_after": 1264.07
+      },
+      {
+        "event_name": " G-B2 Cl. Intermediate Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1565.84,
+        "elo_after": 1563.03
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1578.97,
+        "elo_after": 1540.18
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1870.76,
+        "elo_after": 1854.59
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1264.07,
+        "elo_after": 1303.04
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Cha Cha",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1563.03,
+        "elo_after": 1579.03
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1540.18,
+        "elo_after": 1549.24
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1854.59,
+        "elo_after": 1858.19
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1303.04,
+        "elo_after": 1294.2
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Rumba",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1579.03,
+        "elo_after": 1575.21
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1549.24,
+        "elo_after": 1557.61
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1858.19,
+        "elo_after": 1861.55
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1294.2,
+        "elo_after": 1285.98
+      },
+      {
+        "event_name": " G-B2 Cl. Full Bronze Amer. Swing",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1575.21,
+        "elo_after": 1571.7
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1557.61,
+        "elo_after": 1565.38
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1861.55,
+        "elo_after": 1864.71
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1285.98,
+        "elo_after": 1278.3
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1571.7,
+        "elo_after": 1568.45
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1565.38,
+        "elo_after": 1572.62
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1864.71,
+        "elo_after": 1867.68
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1278.3,
+        "elo_after": 1271.1
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1568.45,
+        "elo_after": 1565.44
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1572.62,
+        "elo_after": 1579.4
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1867.68,
+        "elo_after": 1870.49
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1271.1,
+        "elo_after": 1264.32
+      },
+      {
+        "event_name": "Student Lead Champ Closed Bronze S1 Men Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1565.44,
+        "elo_after": 1562.63
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1579.4,
+        "elo_after": 1585.77
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1870.49,
+        "elo_after": 1873.14
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1264.32,
+        "elo_after": 1257.93
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Cha Cha",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1562.63,
+        "elo_after": 1560.0
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1585.77,
+        "elo_after": 1591.76
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1873.14,
+        "elo_after": 1875.67
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1257.93,
+        "elo_after": 1251.88
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Rumba",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1560.0,
+        "elo_after": 1557.53
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "William Sharp",
+        "partner": "Monica Santana",
+        "elo_before": 1591.76,
+        "elo_after": 1597.42
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Monica Santana",
+        "partner": "William Sharp",
+        "elo_before": 1875.67,
+        "elo_after": 1878.07
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Robert Walzer",
+        "partner": "Eva Tibenska",
+        "elo_before": 1251.88,
+        "elo_after": 1246.13
+      },
+      {
+        "event_name": "WDSS 3-Dance Closed Bronze SR Amer. Rhythm (CC,R,SW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Swing",
+        "competitor": "Eva Tibenska",
+        "partner": "Robert Walzer",
+        "elo_before": 1557.53,
+        "elo_after": 1555.21
+      }
+    ],
     "904": [
       {
         "event_name": "L-A1 Inter. Silver Amer. Cha Cha",
