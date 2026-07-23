@@ -27,29 +27,47 @@ COUPLE_B = "Yuriy Kuvshynov"
 
 def _click_tab(page, tab):
     page.click(f"nav button[data-tab='{tab}']")
-    page.wait_for_timeout(400)
+    page.wait_for_function(
+        "(tab) => document.querySelector(`nav button[data-tab='${tab}']`).classList.contains('active')",
+        arg=tab,
+    )
+
+
+def _wait_for_dataset_label(page, label):
+    """Wait until Chart.js actually has a dataset with this label, instead of
+    a fixed sleep — eloAddByName/renderEloChart run synchronously, so this
+    resolves as soon as the click's handler has finished."""
+    page.wait_for_function(
+        "(label) => (window.__eloChart?.data?.datasets ?? []).some(d => d.label === label)",
+        arg=label,
+    )
+
+
+def _wait_for_dataset_absent(page, label):
+    """Wait until no Chart.js dataset carries this label anymore (removal)."""
+    page.wait_for_function(
+        "(label) => !(window.__eloChart?.data?.datasets ?? []).some(d => d.label === label)",
+        arg=label,
+    )
 
 
 def _add_competitor(page, name):
     inp = page.locator("#elo-search-a")
     inp.fill(name)
     inp.dispatch_event("input")
-    page.wait_for_timeout(300)
     # "Add contestant" button — onclick="eloAddContestant()"
     page.locator("button[onclick*='eloAddContestant'], button:text('Add contestant')").first.click()
-    page.wait_for_timeout(600)
+    _wait_for_dataset_label(page, name)
 
 
 def _add_couple(page, name_a, name_b):
     page.locator("#elo-search-a").fill(name_a)
     page.locator("#elo-search-a").dispatch_event("input")
-    page.wait_for_timeout(200)
     page.locator("#elo-search-b").fill(name_b)
     page.locator("#elo-search-b").dispatch_event("input")
-    page.wait_for_timeout(200)
     # "Add couple" button — onclick="eloAddCouple()"
     page.locator("button[onclick*='eloAddCouple'], button:text('Add couple')").first.click()
-    page.wait_for_timeout(600)
+    _wait_for_dataset_label(page, f"{name_a} & {name_b}")
 
 
 def _dataset_count(page):
@@ -71,11 +89,10 @@ def _remove_chip(page, label):
         chip = chips.nth(i)
         if label.split()[0] in chip.inner_text():
             chip.locator("button, .chip-x, [aria-label='Remove']").first.click()
-            page.wait_for_timeout(400)
+            _wait_for_dataset_absent(page, label)
             return
     # Fallback: click first × button in the chip list
-    page.locator("#elo-series-list").locator("button").first.click()
-    page.wait_for_timeout(400)
+    page.locator("#elo-series-list .elo-series-chip").first.locator("button").first.click()
 
 
 # ---------------------------------------------------------------------------
@@ -131,7 +148,7 @@ class TestRankingTab:
 
         # Click the × button on the first chip (.elo-series-chip button)
         page.locator("#elo-series-list .elo-series-chip button").first.click()
-        page.wait_for_timeout(500)
+        page.wait_for_function("() => (window.__eloChart?.data?.datasets ?? []).length === 1")
         assert _dataset_count(page) == 1, "expected 1 dataset after removing one chip"
 
     def test_cross_competition_spans(self, page, spa_server):

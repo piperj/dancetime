@@ -40,7 +40,7 @@ class TestShowEloGate:
         wait_for_spa(page, spa_server, query="?show_elo=1")
         ensure_ranking_tab_visible(page)
         page.click("nav button[data-tab='ranking']")
-        page.wait_for_timeout(300)
+        page.wait_for_function("() => activeTab === 'ranking'")
         assert page.evaluate("() => activeTab") == "ranking"
 
         # Strip show_elo from the URL without navigating, then re-run the same
@@ -69,7 +69,7 @@ class TestShowEloGate:
         assert not elo_hidden, "Ranking nav button should be visible with ?show_elo=1"
 
         page.click("nav button[data-tab='ranking']")
-        page.wait_for_timeout(300)
+        page.wait_for_function("() => document.querySelector('nav button.active')?.dataset.tab === 'ranking'")
         active_tab = page.evaluate("() => document.querySelector('nav button.active').dataset.tab")
         assert active_tab == "ranking"
 

@@ -16,14 +16,28 @@ pytest.importorskip("playwright.sync_api", reason="playwright not installed")
 
 def _click_tab(page, tab):
     page.click(f"nav button[data-tab='{tab}']")
-    page.wait_for_timeout(400)
+    page.wait_for_function(
+        "(tab) => document.querySelector(`nav button[data-tab='${tab}']`).classList.contains('active')",
+        arg=tab,
+    )
 
 
 def _type_search(page, input_id, text):
+    """Fill the search box and fire its 'input' handler.
+
+    No trailing sleep needed: both #competitorSearch and #search-ranking
+    handlers (selectHeatsCompetitor/renderRanking) run synchronously and
+    dispatch_event() doesn't return until they've finished, so the DOM is
+    already updated by the time this call returns.
+    """
     inp = page.locator(f"#{input_id}")
     inp.fill(text)
     inp.dispatch_event("input")
-    page.wait_for_timeout(500)
+    # Both inputs are native <input list=datalist>; WebKit can leave the
+    # autocomplete popup open over the content below and silently swallow
+    # the next click there (see test_judges_scores.py's _search_competitor
+    # for the confirmed repro). Blur before any click below the search box.
+    inp.press("Escape")
 
 
 def _clear_search(page, input_id):
@@ -98,7 +112,6 @@ class TestHeatsTab:
         heat_boxes = page.locator("#scheduleContent .heat-box")
         assert heat_boxes.count() >= 1, "expected at least one .heat-box"
         heat_boxes.first.click()
-        page.wait_for_timeout(300)
         details = page.locator("#scheduleContent .heat-details.expanded")
         assert details.count() >= 1, "expected at least one expanded heat-details after click"
 
@@ -143,7 +156,6 @@ class TestHeatsTab:
         """Clearing the search input shows all-heats view (not the 'select a competitor' placeholder)."""
         wait_for_spa(page, spa_server)
         _clear_search(page, "competitorSearch")
-        page.wait_for_timeout(300)
 
         content = page.locator("#scheduleContent")
         text = content.inner_text()
@@ -388,7 +400,6 @@ class TestLadderTab:
         wait_for_spa(page, spa_server, query="?show_elo=1")
         ensure_ranking_tab_visible(page)
         _click_tab(page, "ranking")
-        page.wait_for_timeout(400)
 
         # Pick a name directly from a visible row — guaranteed to be in ranking data.
         row_names = _ranking_row_names(page)
@@ -416,7 +427,6 @@ class TestLadderTab:
 
         # Get all names visible in the unfiltered ladder.
         _click_tab(page, "ranking")
-        page.wait_for_timeout(400)
         row_names = _ranking_row_names(page)
         all_row_names = {r.split(" & ")[0].strip() for r in row_names}
         all_row_names |= {r.split(" & ")[1].strip() for r in row_names if " & " in r}
@@ -465,7 +475,6 @@ class TestLadderTab:
             }""",
             timeout=15_000,
         )
-        page.wait_for_timeout(500)
 
         heats_val = page.locator("#competitorSearch").input_value()
         assert name in heats_val, f"Heats input expected '{name}', got '{heats_val}'"

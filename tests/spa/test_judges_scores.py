@@ -122,32 +122,68 @@ def install_ndca_mocks(page, fetch_log=None):
 
 def _select_comp(page, cyi):
     page.evaluate(f"selectComp(compList.findIndex(c => c.cyi === {cyi}))")
-    page.wait_for_timeout(500)
+    # loadComp() re-shows #status while its fetch is in flight, same as the
+    # initial page load — wait for the real signal instead of guessing.
+    page.wait_for_function(
+        """() => {
+            const s = document.getElementById('status');
+            return s.classList.contains('hidden') || !s.textContent.includes('Loading');
+        }""",
+        timeout=15_000,
+    )
 
 
 def _search_competitor(page, name):
     inp = page.locator("#competitorSearch")
     inp.fill(name)
     inp.dispatch_event("input")
-    page.wait_for_timeout(400)
+    # #competitorSearch is a native <input list=datalist>; WebKit can leave its
+    # autocomplete popup open over the schedule below, silently swallowing the
+    # next click (observed as a ~4% flake: the "open panel" click landed on the
+    # popup instead of the pill, and only the *second* click actually toggled
+    # the panel). Blur before anything below the search box gets clicked.
+    inp.press("Escape")
 
 
 def _click_contested_pill(page):
     page.locator("span:text-is('7th Contested')").click()
-    page.wait_for_timeout(500)
+    panel_id = _panel_id(page)
+    # toggleJudgesPanel() closes synchronously; opening lazy-fetches (mocked,
+    # but still a real async round trip) and shows a placeholder meanwhile.
+    page.wait_for_function(
+        """(id) => {
+            const el = document.getElementById(id);
+            if (!el || !el.classList.contains('expanded')) return true;
+            return !el.textContent.includes('Loading judges scores');
+        }""",
+        arg=panel_id,
+    )
+
+
+def _panel_id(page):
+    return page.evaluate("""() => {
+        const pill = Array.from(document.querySelectorAll('span'))
+            .find(s => s.textContent.trim() === '7th Contested');
+        const m = pill.getAttribute('onclick').match(/toggleJudgesPanel\\(event, '([^']+)'/);
+        return 'jp-' + m[1];
+    }""")
 
 
 def _panel(page):
     """The judges-panel belonging to the '7th Contested' pill specifically —
     every contested heat on the page has its own (mostly collapsed) panel,
     so a bare '.judges-panel' selector matches many elements."""
-    panel_id = page.evaluate("""() => {
-        const pill = Array.from(document.querySelectorAll('span'))
-            .find(s => s.textContent.trim() === '7th Contested');
-        const m = pill.getAttribute('onclick').match(/toggleJudgesPanel\\(event, '([^']+)'/);
-        return 'jp-' + m[1];
-    }""")
-    return page.locator(f"#{panel_id}")
+    return page.locator(f"#{_panel_id(page)}")
+
+
+def _assert_panel_expanded(page, expanded):
+    """Locator.get_attribute() is a single unretried read; wrap it in a poll
+    so a same-tick DOM update (e.g. WebKit finishing the click's synchronous
+    handler a beat late) can't read a stale class list."""
+    page.wait_for_function(
+        "([id, expanded]) => document.getElementById(id)?.classList.contains('expanded') === expanded",
+        arg=[_panel_id(page), expanded],
+    )
 
 
 def _setup(page, spa_server, fetch_log=None):
@@ -213,10 +249,10 @@ class TestJudgesScoresPanel:
         """Clicking the pill again toggles the panel closed."""
         _setup(page, spa_server)
         _click_contested_pill(page)
-        assert "expanded" in _panel(page).get_attribute("class")
+        _assert_panel_expanded(page, True)
 
         _click_contested_pill(page)
-        assert "expanded" not in _panel(page).get_attribute("class")
+        _assert_panel_expanded(page, False)
 
     def test_reopen_uses_cache_not_refetch(self, page, spa_server):
         """A second open of the same panel reuses judgesDataCache instead of
@@ -244,7 +280,6 @@ class TestJudgesScoresPanel:
         assert "Heat 628" in _panel(page).inner_text()
 
         page.evaluate("generateSchedule()")
-        page.wait_for_timeout(300)
 
         panel = _panel(page)
         assert "expanded" in panel.get_attribute("class")
@@ -261,7 +296,6 @@ class TestJudgesScoresPanel:
         page.evaluate("window.scrollTo(0, 200)")
         scroll_before = page.evaluate("window.scrollY")
         page.evaluate("generateSchedule()")
-        page.wait_for_timeout(300)
         scroll_after = page.evaluate("window.scrollY")
 
         assert scroll_after == scroll_before, "scroll position must survive a full re-render"
