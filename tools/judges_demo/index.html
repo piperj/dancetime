@@ -17,26 +17,33 @@
 <body>
   <h1 class="text-xl font-semibold mb-2">Judges Scores Demo — Phase 3</h1>
   <p class="text-sm text-gray-600 mb-4">
-    Hardcoded fixture: CYI <strong>904</strong>, competitor
-    <strong>Johan Piper</strong>, heat <strong>853</strong>.
     Fetches live from ndcapremier.com — no local/cached data used.
   </p>
 
-  <div id="card">Loading…</div>
+  <h2 class="text-sm font-semibold text-gray-500 mb-1">CYI 904 · Johan Piper · Heat 853 (Skated, single round)</h2>
+  <div id="card1">Loading…</div>
+
+  <h2 class="text-sm font-semibold text-gray-500 mb-1 mt-4">CYI 373 (City Lights Open) · Oscar Adrian Rodriguez · Heat 628 (Prelims semi-final + Skated final)</h2>
+  <div id="card2">Loading…</div>
+
+  <h2 class="text-sm font-semibold text-gray-500 mb-1 mt-4">CYI 904 (Manhattan Dance) · Alisa Bankova · Heat 990 (Prelims semi-final)</h2>
+  <div id="card3">Loading…</div>
 
   <script src="/static/judges-scores.js"></script>
   <script>
-    const CYI = 904;
-    const COMPETITOR_NAME = 'Johan Piper';
-    const HEAT_NUMBER = '853';
+    function loadInto(elId, cyi, name, heat) {
+      JudgesScores.fetchJudgesData(cyi, name, heat)
+        .then(event => {
+          document.getElementById(elId).innerHTML = JudgesScores.renderPanel(event);
+        })
+        .catch(err => {
+          document.getElementById(elId).textContent = `Error: ${err.message}`;
+        });
+    }
 
-    JudgesScores.fetchJudgesData(CYI, COMPETITOR_NAME, HEAT_NUMBER)
-      .then(event => {
-        document.getElementById('card').innerHTML = JudgesScores.renderPanel(event);
-      })
-      .catch(err => {
-        document.getElementById('card').textContent = `Error: ${err.message}`;
-      });
+    loadInto('card1', 904, 'Johan Piper', '853');
+    loadInto('card2', 373, 'Oscar Adrian Rodriguez', '628');
+    loadInto('card3', 904, 'Alisa Bankova', '990');
   </script>
 </body>
 </html>
