@@ -2,26 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Judges Scores Demo — Phase 2 (single-heat filter)</title>
+<title>Judges Scores Demo — Phase 3 (SPA card)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f5f5f5; color: #222; padding: 1.5rem; }
+  .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; max-width: 40rem; }
+  .judges-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 0.25rem; }
+  .judges-table th, .judges-table td { padding: 0.25rem 0.5rem; text-align: center; border-bottom: 1px solid #f0f0f0; }
+  .judges-table th:nth-child(2), .judges-table td:nth-child(2) { text-align: left; }
+  .judges-table th { color: #6b7280; font-weight: 600; }
+</style>
 </head>
 <body>
-  <h1>Judges Scores Demo — Phase 2</h1>
-  <p>
+  <h1 class="text-xl font-semibold mb-2">Judges Scores Demo — Phase 3</h1>
+  <p class="text-sm text-gray-600 mb-4">
     Hardcoded fixture: CYI <strong>904</strong>, competitor
     <strong>Johan Piper</strong>, heat <strong>853</strong>.
     Fetches live from ndcapremier.com — no local/cached data used.
   </p>
 
-  <h2>Before filtering: every heat number this competitor has results for</h2>
-  <pre id="allHeats">Loading…</pre>
-
-  <h2>After filtering: isolated to heat 853 only</h2>
-  <p>This is exactly what <code>JudgesScores.fetchJudgesData()</code> returns — proves the
-     client-side filter picks the one requested heat and excludes all others above.</p>
-  <pre id="summary">Loading…</pre>
-
-  <h2>Raw NDCA response for heat 853</h2>
-  <pre id="output">Loading…</pre>
+  <div id="card">Loading…</div>
 
   <script src="/static/judges-scores.js"></script>
   <script>
@@ -29,55 +30,12 @@
     const COMPETITOR_NAME = 'Johan Piper';
     const HEAT_NUMBER = '853';
 
-    function summarize(event) {
-      const lines = [`Event: ${event.Name}  (Heat ${event.Heat})`];
-      event.Rounds.forEach(round => {
-        lines.push(`Round: ${round.Name}  [${round.Scoring_Method}]`);
-        round.Dances.forEach(dance => {
-          lines.push(`  Dance: ${dance.Dance_Name} — ${dance.Judges.length} judges`);
-          const judgeLabels = dance.Judges.map(j => `${j.Judge_Letter} ${j.Name.join(' ')}`);
-          judgeLabels.forEach(label => lines.push(`    Judge ${label}`));
-          dance.Competitors.forEach(c => {
-            const names = c.Participants.map(p => p.Name.join(' ')).join(' & ');
-            const marks = c.Marks.map((m, i) => `${dance.Judges[i].Judge_Letter}:${m}`).join(', ');
-            lines.push(`    Bib ${c.Bib}  ${names}  Result: ${c.Result}  Marks: [${marks}]`);
-          });
-        });
-      });
-      return lines.join('\n');
-    }
-
-    // Debug-only: re-does the same two NDCA calls fetchJudgesData makes
-    // internally, but keeps every heat instead of filtering to one, purely
-    // to demonstrate the filter is doing real work. Not part of the shipped
-    // judges-scores.js API.
-    async function fetchAllHeatNumbers(cyi, competitorName) {
-      const listRes = await fetch(`https://ndcapremier.com/feed/results/?cyi=${cyi}&date=${Date.now()}`);
-      const listData = await listRes.json();
-      const match = (listData.Result || []).find(c => (c.Name || []).join(' ') === competitorName);
-      if (!match) throw new Error(`No published NDCA results found for "${competitorName}"`);
-      const eventsRes = await fetch(`https://ndcapremier.com/feed/results/?cyi=${cyi}&id=${match.ID}`);
-      const eventsData = await eventsRes.json();
-      const events = (eventsData.Result && eventsData.Result.Events) || [];
-      return events.map(e => `Heat ${e.Heat}: ${e.Name}`);
-    }
-
-    fetchAllHeatNumbers(CYI, COMPETITOR_NAME)
-      .then(lines => {
-        document.getElementById('allHeats').textContent = lines.join('\n');
-      })
-      .catch(err => {
-        document.getElementById('allHeats').textContent = `Error: ${err.message}`;
-      });
-
     JudgesScores.fetchJudgesData(CYI, COMPETITOR_NAME, HEAT_NUMBER)
       .then(event => {
-        document.getElementById('summary').textContent = summarize(event);
-        document.getElementById('output').textContent = JSON.stringify(event, null, 2);
+        document.getElementById('card').innerHTML = JudgesScores.renderPanel(event);
       })
       .catch(err => {
-        document.getElementById('summary').textContent = `Error: ${err.message}`;
-        document.getElementById('output').textContent = '';
+        document.getElementById('card').textContent = `Error: ${err.message}`;
       });
   </script>
 </body>
