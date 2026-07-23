@@ -63,3 +63,5 @@ python -m http.server 8000
 ```
 
 Then open http://localhost:8000 in your browser.
+
+The app reads options from URL query parameters, e.g. `?show_elo=1&competitor=Jane%20Doe`. Only the *first* one gets a `?` — every parameter after that is joined with `&`, not another `?`. A stray second `?` (`?show_elo=1?competitor=Jane`) doesn't start a new parameter; it just gets folded into the value of the first one, silently breaking it.
