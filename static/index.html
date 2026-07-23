@@ -21,7 +21,7 @@
 
     .sticky-header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
     .blue-box { background: #6366f1; color: white; padding: 0.75rem 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-bottom: 0.5rem; }
-    .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; }
+    .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; transform-origin: top; }
     .heat-box:active { transform: scale(0.98); }
     .heat-details { display: none; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e5e7eb; }
     .heat-details.expanded { display: block; }
@@ -222,6 +222,17 @@
   const rankingControls = document.getElementById('ranking-controls');
   const heatsSearchBar  = document.getElementById('heats-search-bar');
   const scheduleContent = document.getElementById('scheduleContent');
+
+  // Replaces the schedule content while preserving window scroll position.
+  // The periodic auto-refresh (every 10s) rebuilds this whole subtree from
+  // scratch; without this, an open judges panel (which adds a lot of height)
+  // can shift everything below it, so a click a moment later lands on
+  // whatever now happens to sit at the old scroll offset instead.
+  function setScheduleHTML(html) {
+    const scrollY = window.scrollY;
+    scheduleContent.innerHTML = html;
+    window.scrollTo(0, scrollY);
+  }
   const rankingView    = document.getElementById('ranking-view');
   const status         = document.getElementById('status');
 
@@ -270,6 +281,7 @@
   let selectedCompetitor = null;
   let expandedHeats = new Set();
   let expandedJudgesPanels = new Set();
+  let judgesDataCache = {};
   let compList = [];
   let activeCompIdx = 0;
   let avgScores = {};
@@ -414,6 +426,7 @@
     selectedCompetitor = null;
     expandedHeats = new Set();
     expandedJudgesPanels = new Set();
+    judgesDataCache = {};
     avgScores = {};
     coupleMap = {};
     currentSessions = [];
@@ -662,7 +675,7 @@
           ).join(', ')
         }</p>`;
       }
-      scheduleContent.innerHTML = html;
+      setScheduleHTML(html);
     }
   });
 
@@ -731,7 +744,7 @@
     if (!nextHeatKey && allHeats.length > 0)
       html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
 
-    scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats found for this studio</p>';
+    setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats found for this studio</p>');
   }
 
   function generateBibSchedule(bib) {
@@ -799,7 +812,7 @@
     if (!nextHeatKey && allHeats.length > 0)
       html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
 
-    scheduleContent.innerHTML = html || `<p class="text-gray-500 text-center">No heats found for bib ${esc(bib)}</p>`;
+    setScheduleHTML(html || `<p class="text-gray-500 text-center">No heats found for bib ${esc(bib)}</p>`);
   }
 
   function selectCompetitorFromStudio(name) {
@@ -832,10 +845,28 @@
         const panelKey = `${heat.key}__${idx}`;
         const anchorName = entries[0].competitor1;
         contested = ` <span class="text-yellow-600 cursor-pointer hover:underline" onclick="toggleJudgesPanel(event, '${esc(panelKey)}', '${esc(anchorName)}', '${esc(heat.heat_number)}')">(Contested)</span>`;
-        judgesPanel = `<div id="jp-${esc(panelKey)}" class="judges-panel" onclick="event.stopPropagation()"></div>`;
+        judgesPanel = renderJudgesPanel(panelKey);
       }
       return `<div class="mb-1"><strong>${esc(evt)}:</strong>${contested}<div class="ml-2">${rows}</div>${judgesPanel}</div>`;
     }).join('');
+  }
+
+  // Builds the panel's inner content from judgesDataCache. Single source of
+  // truth — used both by the full-page render (renderJudgesPanel) and by
+  // toggleJudgesPanel's direct DOM update after a fetch, so the two never
+  // drift out of sync.
+  function buildJudgesPanelContent(key) {
+    const cached = judgesDataCache[key];
+    return cached ? JudgesScores.renderPanel(cached) : '';
+  }
+
+  // Renders the (possibly-open) judges-scores panel slot for a Contested pill.
+  // Re-run on every render (including the 10s auto-refresh), so it must restore
+  // from judgesDataCache rather than relying on DOM state, which gets rebuilt.
+  function renderJudgesPanel(key) {
+    const isExpanded = expandedJudgesPanels.has(key);
+    const content = isExpanded ? buildJudgesPanelContent(key) : '';
+    return `<div id="jp-${esc(key)}" class="judges-panel${isExpanded ? ' expanded' : ''}" onclick="event.stopPropagation()">${content}</div>`;
   }
 
   function buildCouplesBadge(n) {
@@ -1031,7 +1062,7 @@
     if (!nextHeatKey && uniqueHeats.length > 0)
       html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
 
-    scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats in this competition</p>';
+    setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats in this competition</p>');
   }
 
   // ── Competitor schedule ────────────────────────────────────────────────────
@@ -1101,9 +1132,7 @@
         const contestedBadge = isContested
           ? `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 ml-2 cursor-pointer hover:underline" onclick="toggleJudgesPanel(event, '${esc(groupKey)}', '${esc(selectedCompetitor)}', '${esc(primary.heat_number)}')">${contestedLabel(mainMyEntry?.result)}</span>`
           : '';
-        const judgesPanel = isContested
-          ? `<div id="jp-${esc(groupKey)}" class="judges-panel" onclick="event.stopPropagation()"></div>`
-          : '';
+        const judgesPanel = isContested ? renderJudgesPanel(groupKey) : '';
 
         html += renderHeatCard(primary, allRounds, myEvent, contestedBadge, judgesPanel);
 
@@ -1125,7 +1154,7 @@
     if (nextIdx === -1 && myHeats.length > 0)
       html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
 
-    scheduleContent.innerHTML = html || '<p class="text-gray-500 text-center">No heats found for this competitor</p>';
+    setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats found for this competitor</p>');
     populateContestedStats();
   }
 
@@ -1354,21 +1383,28 @@
   }
 
   // Lazy-loads and toggles the live judges-scores panel under a Contested pill.
-  // Always fetched live (never cached to disk) via judges-scores.js.
+  // Always fetched live (never cached to disk) via judges-scores.js — but the
+  // resolved data IS kept in judgesDataCache (in memory only) for the rest of
+  // the session, since the 10s auto-refresh rebuilds this DOM node from scratch
+  // and would otherwise silently collapse/re-fetch an open panel every tick.
   async function toggleJudgesPanel(event, key, competitorName, heatNumber) {
     event.stopPropagation();
     const el = document.getElementById('jp-' + key);
     if (!el) return;
     const isOpen = el.classList.toggle('expanded');
     isOpen ? expandedJudgesPanels.add(key) : expandedJudgesPanels.delete(key);
-    if (!isOpen || el.dataset.loaded) return;
+    if (!isOpen) return;
+    if (judgesDataCache[key]) {
+      el.innerHTML = buildJudgesPanelContent(key);
+      return;
+    }
 
     el.innerHTML = '<div class="text-xs text-gray-500 p-2">Loading judges scores…</div>';
     try {
       const cyi = heatsData.meta.cyi;
       const eventData = await JudgesScores.fetchJudgesData(cyi, competitorName, heatNumber);
-      el.innerHTML = JudgesScores.renderPanel(eventData);
-      el.dataset.loaded = '1';
+      judgesDataCache[key] = eventData;
+      el.innerHTML = buildJudgesPanelContent(key);
     } catch (err) {
       el.innerHTML = `<div class="text-xs text-red-600 p-2">Couldn't load judges scores: ${esc(err.message)}</div>`;
     }
