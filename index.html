@@ -21,7 +21,7 @@
 
     .sticky-header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
     .blue-box { background: #6366f1; color: white; padding: 0.75rem 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-bottom: 0.5rem; }
-    .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; transform-origin: top; }
+    .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; transform-origin: top; width: fit-content; min-width: 100%; }
     .heat-box:active { transform: scale(0.98); }
     .heat-details { display: none; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e5e7eb; }
     .heat-details.expanded { display: block; }
@@ -223,15 +223,18 @@
   const heatsSearchBar  = document.getElementById('heats-search-bar');
   const scheduleContent = document.getElementById('scheduleContent');
 
-  // Replaces the schedule content while preserving window scroll position.
-  // The periodic auto-refresh (every 10s) rebuilds this whole subtree from
-  // scratch; without this, an open judges panel (which adds a lot of height)
-  // can shift everything below it, so a click a moment later lands on
-  // whatever now happens to sit at the old scroll offset instead.
+  // Replaces the schedule content while preserving scroll position (both
+  // axes — a wide judges table makes the page (and its .heat-box card) grow
+  // past the viewport width on narrow/mobile screens, by design: a sideways
+  // swipe or landscape rotation brings the rest into view). The periodic
+  // auto-refresh (every 10s) rebuilds this whole subtree from scratch;
+  // without this, an open judges panel (which adds a lot of height/width)
+  // can shift everything below/right of it, so a click or scroll a moment
+  // later lands somewhere else entirely.
   function setScheduleHTML(html) {
-    const scrollY = window.scrollY;
+    const scrollX = window.scrollX, scrollY = window.scrollY;
     scheduleContent.innerHTML = html;
-    window.scrollTo(0, scrollY);
+    window.scrollTo(scrollX, scrollY);
   }
   const rankingView    = document.getElementById('ranking-view');
   const status         = document.getElementById('status');
@@ -1777,9 +1780,18 @@
     btn.addEventListener('click', () => { input.value = ''; input.dispatchEvent(new Event('input')); input.focus(); });
   });
 
+  // Tracks whether a touch/scroll gesture is in progress, so the periodic
+  // rebuild below can skip a tick rather than yank a rebuilt DOM out from
+  // under an in-flight scroll (which aborts momentum scrolling on mobile and
+  // resets any element mid-gesture, e.g. a horizontally-scrolled table).
+  let touchInProgress = false;
+  document.addEventListener('touchstart', () => { touchInProgress = true; }, { passive: true });
+  document.addEventListener('touchend', () => { touchInProgress = false; }, { passive: true });
+
   // Auto-refresh during live competition — advances the "next heat" marker as heats finish
   setInterval(() => {
     if (!heatsData) return;
+    if (touchInProgress) return;
     if (document.activeElement?.id === 'competitorSearch') return;
     if (!selectedCompetitor) {
       // Only refresh the actual All-Heats view — not the "not competing" placeholder —
