@@ -19,6 +19,7 @@ def pipeline_dirs(tmp_path):
     static_dir.mkdir()
     (static_dir / "index.html").write_text("<html>dancetime</html>")
     (static_dir / "favicon.ico").write_bytes(b"")
+    (static_dir / "judges-scores.js").write_text("")
     return tmp_path
 
 
