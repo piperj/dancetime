@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Judges Scores Demo — Phase 1 (raw fetch)</title>
+<title>Judges Scores Demo — Phase 2 (single-heat filter)</title>
 </head>
 <body>
-  <h1>Judges Scores Demo — Phase 1</h1>
+  <h1>Judges Scores Demo — Phase 2</h1>
   <p>
     Hardcoded fixture: CYI <strong>904</strong>, competitor
     <strong>Johan Piper</strong>, heat <strong>853</strong>.
     Fetches live from ndcapremier.com — no local/cached data used.
   </p>
-  <h2>Summary (plain text, for eyeballing correctness)</h2>
+
+  <h2>Before filtering: every heat number this competitor has results for</h2>
+  <pre id="allHeats">Loading…</pre>
+
+  <h2>After filtering: isolated to heat 853 only</h2>
+  <p>This is exactly what <code>JudgesScores.fetchJudgesData()</code> returns — proves the
+     client-side filter picks the one requested heat and excludes all others above.</p>
   <pre id="summary">Loading…</pre>
 
-  <h2>Raw NDCA response</h2>
+  <h2>Raw NDCA response for heat 853</h2>
   <pre id="output">Loading…</pre>
 
   <script src="/static/judges-scores.js"></script>
@@ -29,14 +35,40 @@
         lines.push(`Round: ${round.Name}  [${round.Scoring_Method}]`);
         round.Dances.forEach(dance => {
           lines.push(`  Dance: ${dance.Dance_Name} — ${dance.Judges.length} judges`);
+          const judgeLabels = dance.Judges.map(j => `${j.Judge_Letter} ${j.Name.join(' ')}`);
+          judgeLabels.forEach(label => lines.push(`    Judge ${label}`));
           dance.Competitors.forEach(c => {
             const names = c.Participants.map(p => p.Name.join(' ')).join(' & ');
-            lines.push(`    Bib ${c.Bib}  ${names}  Result: ${c.Result}  Marks: [${c.Marks.join(', ')}]`);
+            const marks = c.Marks.map((m, i) => `${dance.Judges[i].Judge_Letter}:${m}`).join(', ');
+            lines.push(`    Bib ${c.Bib}  ${names}  Result: ${c.Result}  Marks: [${marks}]`);
           });
         });
       });
       return lines.join('\n');
     }
+
+    // Debug-only: re-does the same two NDCA calls fetchJudgesData makes
+    // internally, but keeps every heat instead of filtering to one, purely
+    // to demonstrate the filter is doing real work. Not part of the shipped
+    // judges-scores.js API.
+    async function fetchAllHeatNumbers(cyi, competitorName) {
+      const listRes = await fetch(`https://ndcapremier.com/feed/results/?cyi=${cyi}&date=${Date.now()}`);
+      const listData = await listRes.json();
+      const match = (listData.Result || []).find(c => (c.Name || []).join(' ') === competitorName);
+      if (!match) throw new Error(`No published NDCA results found for "${competitorName}"`);
+      const eventsRes = await fetch(`https://ndcapremier.com/feed/results/?cyi=${cyi}&id=${match.ID}`);
+      const eventsData = await eventsRes.json();
+      const events = (eventsData.Result && eventsData.Result.Events) || [];
+      return events.map(e => `Heat ${e.Heat}: ${e.Name}`);
+    }
+
+    fetchAllHeatNumbers(CYI, COMPETITOR_NAME)
+      .then(lines => {
+        document.getElementById('allHeats').textContent = lines.join('\n');
+      })
+      .catch(err => {
+        document.getElementById('allHeats').textContent = `Error: ${err.message}`;
+      });
 
     JudgesScores.fetchJudgesData(CYI, COMPETITOR_NAME, HEAT_NUMBER)
       .then(event => {
