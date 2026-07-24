@@ -7,49 +7,19 @@
     "location": ""
   },
   "leaderboards": {
-    "D": {
-      "label": "D",
-      "size": 2,
-      "couples": [
-        {
-          "competitor": "Anthony Marek",
-          "partner": "Alex Walder",
-          "studio": "Slow Fox Dance Hall",
-          "partner_studio": "Slow Fox Dance Hall",
-          "elo": 1626.82,
-          "elo_delta": "+0.0",
-          "initial_elo": 1626.82,
-          "heats_processed": 4,
-          "num_opponents": 1,
-          "rank": 1
-        },
-        {
-          "competitor": "Michael Lanning",
-          "partner": "Alex Walder",
-          "studio": "Slow Fox Dance Hall",
-          "partner_studio": "Slow Fox Dance Hall",
-          "elo": 1400.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1400.0,
-          "heats_processed": 26,
-          "num_opponents": 1,
-          "rank": 2
-        }
-      ]
-    },
     "A": {
       "label": "A",
-      "size": 18,
+      "size": 43,
       "couples": [
         {
-          "competitor": "Monica Santana",
-          "partner": "William Sharp",
-          "studio": "Rhythm N' Flo",
-          "partner_studio": "Rhythm N' Flo",
-          "elo": 1878.07,
-          "elo_delta": "+16.5",
-          "initial_elo": 1861.59,
-          "heats_processed": 35,
+          "competitor": "Anna Morales",
+          "partner": "Rafael Candelas",
+          "studio": "Candela Dance Studio",
+          "partner_studio": "Candela Dance Studio",
+          "elo": 1777.91,
+          "elo_delta": "+27.9",
+          "initial_elo": 1750.0,
+          "heats_processed": 3,
           "num_opponents": 5,
           "rank": 1
         },
@@ -78,6 +48,54 @@
           "rank": 3
         },
         {
+          "competitor": "Monica Santana",
+          "partner": "William Sharp",
+          "studio": "Rhythm N' Flo",
+          "partner_studio": "Rhythm N' Flo",
+          "elo": 1733.75,
+          "elo_delta": "-127.8",
+          "initial_elo": 1861.59,
+          "heats_processed": 172,
+          "num_opponents": 18,
+          "rank": 4
+        },
+        {
+          "competitor": "Natalie Kelly",
+          "partner": "Bernard Peacock",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1708.66,
+          "elo_delta": "-5.1",
+          "initial_elo": 1713.76,
+          "heats_processed": 24,
+          "num_opponents": 5,
+          "rank": 5
+        },
+        {
+          "competitor": "Justin Gomez",
+          "partner": "Veronique Thurston",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1688.25,
+          "elo_delta": "+0.0",
+          "initial_elo": 1688.25,
+          "heats_processed": 60,
+          "num_opponents": 6,
+          "rank": 6
+        },
+        {
+          "competitor": "Michael Patland",
+          "partner": "Nancy Michaud",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1681.94,
+          "elo_delta": "+0.0",
+          "initial_elo": 1681.94,
+          "heats_processed": 38,
+          "num_opponents": 4,
+          "rank": 7
+        },
+        {
           "competitor": "Evelyn Kheo",
           "partner": "Yuki Haraguchi",
           "studio": "Champion Ballroom - Haraguchi",
@@ -87,19 +105,43 @@
           "initial_elo": 1500.0,
           "heats_processed": 28,
           "num_opponents": 8,
-          "rank": 4
+          "rank": 8
         },
         {
-          "competitor": "Cesar Rojo",
-          "partner": "Niki Sanieenia Moghaddam",
-          "studio": "Rhythm N' Flo",
-          "partner_studio": "Rhythm N' Flo",
-          "elo": 1632.36,
-          "elo_delta": "+35.2",
-          "initial_elo": 1597.12,
-          "heats_processed": 91,
-          "num_opponents": 18,
-          "rank": 5
+          "competitor": "Samantha Larrick",
+          "partner": "Bernard Peacock",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1662.12,
+          "elo_delta": "+9.1",
+          "initial_elo": 1653.06,
+          "heats_processed": 46,
+          "num_opponents": 5,
+          "rank": 9
+        },
+        {
+          "competitor": "Anthony Marek",
+          "partner": "Alex Walder",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1626.82,
+          "elo_delta": "+0.0",
+          "initial_elo": 1626.82,
+          "heats_processed": 4,
+          "num_opponents": 1,
+          "rank": 10
+        },
+        {
+          "competitor": "Barbara Renick",
+          "partner": "Rostislav Liduch",
+          "studio": "OC Dance Studio",
+          "partner_studio": "OC Dance Studio",
+          "elo": 1616.52,
+          "elo_delta": "-3.8",
+          "initial_elo": 1620.33,
+          "heats_processed": 32,
+          "num_opponents": 3,
+          "rank": 11
         },
         {
           "competitor": "Sara Luvisi",
@@ -111,7 +153,7 @@
           "initial_elo": 1400.0,
           "heats_processed": 22,
           "num_opponents": 13,
-          "rank": 6
+          "rank": 12
         },
         {
           "competitor": "Christian Solares",
@@ -123,7 +165,7 @@
           "initial_elo": 1604.74,
           "heats_processed": 12,
           "num_opponents": 3,
-          "rank": 7
+          "rank": 13
         },
         {
           "competitor": "Yuriy Kuvshynov",
@@ -135,7 +177,19 @@
           "initial_elo": 1594.81,
           "heats_processed": 16,
           "num_opponents": 9,
-          "rank": 8
+          "rank": 14
+        },
+        {
+          "competitor": "Emily Evans",
+          "partner": "Veronique Thurston",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1592.48,
+          "elo_delta": "-16.1",
+          "initial_elo": 1608.55,
+          "heats_processed": 23,
+          "num_opponents": 8,
+          "rank": 15
         },
         {
           "competitor": "Yuki Haraguchi",
@@ -147,7 +201,7 @@
           "initial_elo": 1336.33,
           "heats_processed": 42,
           "num_opponents": 9,
-          "rank": 9
+          "rank": 16
         },
         {
           "competitor": "Felipe Telona Jr.",
@@ -159,19 +213,91 @@
           "initial_elo": 1585.1,
           "heats_processed": 14,
           "num_opponents": 1,
-          "rank": 10
+          "rank": 17
+        },
+        {
+          "competitor": "Niki Sanieenia Moghaddam",
+          "partner": "Cesar Rojo",
+          "studio": "Rhythm N' Flo",
+          "partner_studio": "Rhythm N' Flo",
+          "elo": 1584.74,
+          "elo_delta": "+11.4",
+          "initial_elo": 1573.29,
+          "heats_processed": 50,
+          "num_opponents": 7,
+          "rank": 18
         },
         {
           "competitor": "Eva Tibenska",
-          "partner": "Robert Walzer",
+          "partner": "Lukas Spisak",
           "studio": "Briora Ballroom",
           "partner_studio": "Briora Ballroom",
-          "elo": 1555.21,
-          "elo_delta": "-69.4",
+          "elo": 1569.91,
+          "elo_delta": "-54.7",
           "initial_elo": 1624.61,
-          "heats_processed": 21,
-          "num_opponents": 5,
-          "rank": 11
+          "heats_processed": 24,
+          "num_opponents": 9,
+          "rank": 19
+        },
+        {
+          "competitor": "Jacques Ouziel",
+          "partner": "Monica Santana",
+          "studio": "Rhythm N' Flo",
+          "partner_studio": "Rhythm N' Flo",
+          "elo": 1557.03,
+          "elo_delta": "-171.8",
+          "initial_elo": 1728.81,
+          "heats_processed": 62,
+          "num_opponents": 3,
+          "rank": 20
+        },
+        {
+          "competitor": "Donna Antraccoli",
+          "partner": "Kelly Kuhl",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1542.38,
+          "elo_delta": "+39.1",
+          "initial_elo": 1503.27,
+          "heats_processed": 50,
+          "num_opponents": 6,
+          "rank": 21
+        },
+        {
+          "competitor": "Kelly Kuhl",
+          "partner": "Veronique Thurston",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1539.55,
+          "elo_delta": "+24.5",
+          "initial_elo": 1515.08,
+          "heats_processed": 46,
+          "num_opponents": 7,
+          "rank": 22
+        },
+        {
+          "competitor": "Cesar Rojo",
+          "partner": "Christina Lau",
+          "studio": "Rhythm N' Flo",
+          "partner_studio": "Rhythm N' Flo",
+          "elo": 1532.47,
+          "elo_delta": "-64.7",
+          "initial_elo": 1597.12,
+          "heats_processed": 119,
+          "num_opponents": 26,
+          "rank": 23
+        },
+        {
+          "competitor": "Ryan Rodgers",
+          "partner": "Sierra Burr",
+          "studio": "Candela Dance Studio",
+          "partner_studio": "Candela Dance Studio",
+          "elo": 1500.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1500.0,
+          "heats_processed": 14,
+          "num_opponents": 1,
+          "rank": 24
         },
         {
           "competitor": "Vanessa Thomson",
@@ -183,7 +309,151 @@
           "initial_elo": 1433.3,
           "heats_processed": 12,
           "num_opponents": 5,
-          "rank": 12
+          "rank": 25
+        },
+        {
+          "competitor": "Alex Walder",
+          "partner": "Michael Lanning",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1490.21,
+          "elo_delta": "-9.8",
+          "initial_elo": 1500.0,
+          "heats_processed": 47,
+          "num_opponents": 6,
+          "rank": 26
+        },
+        {
+          "competitor": "Matthew Frank",
+          "partner": "Monica Santana",
+          "studio": "Rhythm N' Flo",
+          "partner_studio": "Rhythm N' Flo",
+          "elo": 1448.79,
+          "elo_delta": "+0.0",
+          "initial_elo": 1448.79,
+          "heats_processed": 33,
+          "num_opponents": 1,
+          "rank": 27
+        },
+        {
+          "competitor": "Rick DiRicco",
+          "partner": "Monica Santana",
+          "studio": "Rhythm N' Flo",
+          "partner_studio": "Rhythm N' Flo",
+          "elo": 1411.41,
+          "elo_delta": "+11.4",
+          "initial_elo": 1400.0,
+          "heats_processed": 11,
+          "num_opponents": 3,
+          "rank": 28
+        },
+        {
+          "competitor": "Don Battaglia",
+          "partner": "Sierra Burr",
+          "studio": "Candela Dance Studio",
+          "partner_studio": "Candela Dance Studio",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 14,
+          "num_opponents": 1,
+          "rank": 29
+        },
+        {
+          "competitor": "Gerald Bush",
+          "partner": "Samantha Larrick",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 18,
+          "num_opponents": 1,
+          "rank": 30
+        },
+        {
+          "competitor": "Hannah Encarnacion",
+          "partner": "Justin Gomez",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 18,
+          "num_opponents": 2,
+          "rank": 31
+        },
+        {
+          "competitor": "Justine  Favata",
+          "partner": "Cesar Rojo",
+          "studio": "Rhythm N' Flo",
+          "partner_studio": "Rhythm N' Flo",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 1,
+          "num_opponents": 1,
+          "rank": 32
+        },
+        {
+          "competitor": "Roxanne Minott",
+          "partner": "Rafael Candelas",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Candela Dance Studio",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 9,
+          "num_opponents": 1,
+          "rank": 33
+        },
+        {
+          "competitor": "Shannon Cochran",
+          "partner": "Justin Gomez",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 36,
+          "num_opponents": 3,
+          "rank": 34
+        },
+        {
+          "competitor": "David Estrada",
+          "partner": "Suzanne Wilcox",
+          "studio": "Team Pineapple",
+          "partner_studio": "Team Pineapple",
+          "elo": 1379.19,
+          "elo_delta": "-0.4",
+          "initial_elo": 1379.55,
+          "heats_processed": 125,
+          "num_opponents": 12,
+          "rank": 35
+        },
+        {
+          "competitor": "Lillian Young",
+          "partner": "David Estrada",
+          "studio": "Briora Ballroom",
+          "partner_studio": "Team Pineapple",
+          "elo": 1378.82,
+          "elo_delta": "+5.8",
+          "initial_elo": 1372.97,
+          "heats_processed": 62,
+          "num_opponents": 9,
+          "rank": 36
+        },
+        {
+          "competitor": "Kristina Kuvshynov",
+          "partner": "Jeff Ahlquist",
+          "studio": "Arete Dance Center",
+          "partner_studio": "Arete Dance Center",
+          "elo": 1377.36,
+          "elo_delta": "+45.3",
+          "initial_elo": 1332.07,
+          "heats_processed": 24,
+          "num_opponents": 7,
+          "rank": 37
         },
         {
           "competitor": "Carroll Yandell",
@@ -193,9 +463,33 @@
           "elo": 1358.07,
           "elo_delta": "+0.0",
           "initial_elo": 1358.07,
-          "heats_processed": 15,
+          "heats_processed": 40,
           "num_opponents": 1,
-          "rank": 13
+          "rank": 38
+        },
+        {
+          "competitor": "Kapil Mehra",
+          "partner": "Sierra Burr",
+          "studio": "Candela Dance Studio",
+          "partner_studio": "Candela Dance Studio",
+          "elo": 1354.41,
+          "elo_delta": "-45.6",
+          "initial_elo": 1400.0,
+          "heats_processed": 23,
+          "num_opponents": 3,
+          "rank": 39
+        },
+        {
+          "competitor": "Steve Batory",
+          "partner": "Samantha Larrick",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1353.22,
+          "elo_delta": "-46.8",
+          "initial_elo": 1400.0,
+          "heats_processed": 38,
+          "num_opponents": 6,
+          "rank": 40
         },
         {
           "competitor": "Alla Novikova",
@@ -207,19 +501,7 @@
           "initial_elo": 1531.75,
           "heats_processed": 35,
           "num_opponents": 9,
-          "rank": 14
-        },
-        {
-          "competitor": "Suzanne Wilcox",
-          "partner": "David Estrada",
-          "studio": "Team Pineapple",
-          "partner_studio": "Team Pineapple",
-          "elo": 1308.4,
-          "elo_delta": "-3.5",
-          "initial_elo": 1311.93,
-          "heats_processed": 33,
-          "num_opponents": 3,
-          "rank": 15
+          "rank": 41
         },
         {
           "competitor": "Maria Montenegro",
@@ -229,38 +511,26 @@
           "elo": 1282.25,
           "elo_delta": "-161.6",
           "initial_elo": 1443.86,
-          "heats_processed": 20,
+          "heats_processed": 40,
           "num_opponents": 5,
-          "rank": 16
+          "rank": 42
         },
         {
-          "competitor": "Christina Lau",
-          "partner": "Cesar Rojo",
-          "studio": "Rhythm N' Flo",
-          "partner_studio": "Rhythm N' Flo",
-          "elo": 1243.05,
-          "elo_delta": "+78.3",
-          "initial_elo": 1164.74,
-          "heats_processed": 41,
-          "num_opponents": 11,
-          "rank": 17
-        },
-        {
-          "competitor": "Lillian Young",
-          "partner": "David Estrada",
+          "competitor": "Robert Walzer",
+          "partner": "Eva Tibenska",
           "studio": "Briora Ballroom",
-          "partner_studio": "Team Pineapple",
-          "elo": 1237.16,
-          "elo_delta": "-135.8",
-          "initial_elo": 1372.97,
-          "heats_processed": 32,
-          "num_opponents": 7,
-          "rank": 18
+          "partner_studio": "Briora Ballroom",
+          "elo": 1246.13,
+          "elo_delta": "-153.9",
+          "initial_elo": 1400.0,
+          "heats_processed": 21,
+          "num_opponents": 5,
+          "rank": 43
         }
       ]
     },
-    "G": {
-      "label": "G",
+    "F": {
+      "label": "F",
       "size": 1,
       "couples": [
         {
@@ -277,74 +547,68 @@
         }
       ]
     },
-    "B": {
-      "label": "B",
-      "size": 5,
+    "I": {
+      "label": "I",
+      "size": 1,
       "couples": [
         {
-          "competitor": "Natalie Kelly",
-          "partner": "Bernard Peacock",
-          "studio": "Slow Fox Dance Hall",
-          "partner_studio": "Slow Fox Dance Hall",
-          "elo": 1713.76,
+          "competitor": "Asya Pereltsvaig",
+          "partner": "Karlis Treijs",
+          "studio": "Motion Art Dream",
+          "partner_studio": "Motion Art Dream",
+          "elo": 1395.4,
           "elo_delta": "+0.0",
-          "initial_elo": 1713.76,
-          "heats_processed": 17,
-          "num_opponents": 2,
+          "initial_elo": 1395.4,
+          "heats_processed": 1,
+          "num_opponents": 1,
           "rank": 1
-        },
-        {
-          "competitor": "Michael Patland",
-          "partner": "Natalie Kelly",
-          "studio": "Slow Fox Dance Hall",
-          "partner_studio": "Slow Fox Dance Hall",
-          "elo": 1681.94,
-          "elo_delta": "+0.0",
-          "initial_elo": 1681.94,
-          "heats_processed": 28,
-          "num_opponents": 2,
-          "rank": 2
-        },
-        {
-          "competitor": "Samantha Larrick",
-          "partner": "Bernard Peacock",
-          "studio": "Slow Fox Dance Hall",
-          "partner_studio": "Slow Fox Dance Hall",
-          "elo": 1653.06,
-          "elo_delta": "+0.0",
-          "initial_elo": 1653.06,
-          "heats_processed": 21,
-          "num_opponents": 2,
-          "rank": 3
-        },
-        {
-          "competitor": "Donna Antraccoli",
-          "partner": "Michael Patland",
-          "studio": "Slow Fox Dance Hall",
-          "partner_studio": "Slow Fox Dance Hall",
-          "elo": 1503.27,
-          "elo_delta": "+0.0",
-          "initial_elo": 1503.27,
-          "heats_processed": 26,
-          "num_opponents": 1,
-          "rank": 4
-        },
-        {
-          "competitor": "Gerald Bush",
-          "partner": "Samantha Larrick",
-          "studio": "Slow Fox Dance Hall",
-          "partner_studio": "Slow Fox Dance Hall",
-          "elo": 1400.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1400.0,
-          "heats_processed": 18,
-          "num_opponents": 1,
-          "rank": 5
         }
       ]
     },
-    "F": {
-      "label": "F",
+    "C": {
+      "label": "C",
+      "size": 3,
+      "couples": [
+        {
+          "competitor": "Jonathan Vasquez",
+          "partner": "Raquel Lochhead",
+          "studio": "Tip Top Ballroom - Vasquez",
+          "partner_studio": "Tip Top Ballroom - Vasquez",
+          "elo": 1696.11,
+          "elo_delta": "+39.6",
+          "initial_elo": 1656.56,
+          "heats_processed": 53,
+          "num_opponents": 3,
+          "rank": 1
+        },
+        {
+          "competitor": "Sue Gannon",
+          "partner": "Jonathan Vasquez",
+          "studio": "Tip Top Ballroom - Vasquez",
+          "partner_studio": "Tip Top Ballroom - Vasquez",
+          "elo": 1451.95,
+          "elo_delta": "-48.1",
+          "initial_elo": 1500.0,
+          "heats_processed": 25,
+          "num_opponents": 3,
+          "rank": 2
+        },
+        {
+          "competitor": "Celina Paoria",
+          "partner": "Sue Gannon",
+          "studio": "Tip Top Ballroom - Vasquez",
+          "partner_studio": "Tip Top Ballroom - Vasquez",
+          "elo": 1403.45,
+          "elo_delta": "-55.9",
+          "initial_elo": 1459.3,
+          "heats_processed": 10,
+          "num_opponents": 3,
+          "rank": 3
+        }
+      ]
+    },
+    "E": {
+      "label": "E",
       "size": 1,
       "couples": [
         {
@@ -355,14 +619,68 @@
           "elo": 1417.92,
           "elo_delta": "+0.0",
           "initial_elo": 1417.92,
-          "heats_processed": 9,
+          "heats_processed": 18,
           "num_opponents": 1,
           "rank": 1
         }
       ]
     },
-    "E": {
-      "label": "E",
+    "B": {
+      "label": "B",
+      "size": 4,
+      "couples": [
+        {
+          "competitor": "Mercy Kuriyan",
+          "partner": "George Kuriyan",
+          "studio": "Aloha Dancesport Center",
+          "partner_studio": "Aloha Dancesport Center",
+          "elo": 1598.87,
+          "elo_delta": "+0.0",
+          "initial_elo": 1598.87,
+          "heats_processed": 38,
+          "num_opponents": 2,
+          "rank": 1
+        },
+        {
+          "competitor": "Lucas Jaime",
+          "partner": "Mercy Kuriyan",
+          "studio": "Aloha Dancesport Center",
+          "partner_studio": "Aloha Dancesport Center",
+          "elo": 1568.46,
+          "elo_delta": "+0.0",
+          "initial_elo": 1568.46,
+          "heats_processed": 49,
+          "num_opponents": 2,
+          "rank": 2
+        },
+        {
+          "competitor": "George Kuriyan",
+          "partner": "Yanna Samkova",
+          "studio": "Aloha Dancesport Center",
+          "partner_studio": "Aloha Dancesport Center",
+          "elo": 1404.89,
+          "elo_delta": "+0.0",
+          "initial_elo": 1404.89,
+          "heats_processed": 13,
+          "num_opponents": 2,
+          "rank": 3
+        },
+        {
+          "competitor": "Nancy Olson",
+          "partner": "Lucas Jaime",
+          "studio": "Aloha Dancesport Center",
+          "partner_studio": "Aloha Dancesport Center",
+          "elo": 1400.0,
+          "elo_delta": "+0.0",
+          "initial_elo": 1400.0,
+          "heats_processed": 15,
+          "num_opponents": 1,
+          "rank": 4
+        }
+      ]
+    },
+    "D": {
+      "label": "D",
       "size": 1,
       "couples": [
         {
@@ -384,46 +702,34 @@
       "size": 1,
       "couples": [
         {
-          "competitor": "Jonathan Vasquez",
-          "partner": "Raquel Lochhead",
-          "studio": "Tip Top Ballroom - Vasquez",
-          "partner_studio": "Tip Top Ballroom - Vasquez",
-          "elo": 1656.56,
+          "competitor": "Linda Lane-Bortell",
+          "partner": "Tim Lane-Bortell",
+          "studio": "Slow Fox Dance Hall",
+          "partner_studio": "Slow Fox Dance Hall",
+          "elo": 1400.0,
           "elo_delta": "+0.0",
-          "initial_elo": 1656.56,
-          "heats_processed": 20,
+          "initial_elo": 1400.0,
+          "heats_processed": 12,
           "num_opponents": 1,
           "rank": 1
         }
       ]
     },
-    "C": {
-      "label": "C",
-      "size": 2,
+    "G": {
+      "label": "G",
+      "size": 1,
       "couples": [
         {
-          "competitor": "Mercy Kuriyan",
-          "partner": "Lucas Jaime",
-          "studio": "Aloha Dancesport Center",
-          "partner_studio": "Aloha Dancesport Center",
-          "elo": 1598.87,
+          "competitor": "Rashaad Jones",
+          "partner": "Natalia Zakrevskaia",
+          "studio": "N Space Dance Studio",
+          "partner_studio": "N Space Dance Studio",
+          "elo": 1500.0,
           "elo_delta": "+0.0",
-          "initial_elo": 1598.87,
-          "heats_processed": 20,
+          "initial_elo": 1500.0,
+          "heats_processed": 13,
           "num_opponents": 1,
           "rank": 1
-        },
-        {
-          "competitor": "Nancy Olson",
-          "partner": "Lucas Jaime",
-          "studio": "Aloha Dancesport Center",
-          "partner_studio": "Aloha Dancesport Center",
-          "elo": 1400.0,
-          "elo_delta": "+0.0",
-          "initial_elo": 1400.0,
-          "heats_processed": 6,
-          "num_opponents": 1,
-          "rank": 2
         }
       ]
     }
@@ -432,22 +738,32 @@
     "Alex Walder",
     "Alla Novikova",
     "Andrey Tarasov",
+    "Anna Morales",
     "Anthony Marek",
+    "Asya Pereltsvaig",
+    "Barbara Renick",
     "Bernard Peacock",
     "Carroll Yandell",
+    "Celina Paoria",
     "Cesar Rojo",
     "Christian Solares",
     "Christina Lau",
     "Chrystal Chen",
     "David Estrada",
     "Dominic Seigler",
+    "Don Battaglia",
     "Donna Antraccoli",
+    "Emily Evans",
     "Eva Tibenska",
     "Evelyn Kheo",
     "Felipe Telona Jr.",
+    "George Kuriyan",
     "Gerald Bush",
+    "Hannah Encarnacion",
     "Helen Piper",
     "Jacqueline Hachey",
+    "Jacques Ouziel",
+    "Jeff Ahlquist",
     "Jeff Hudson",
     "Jeremy Pilling",
     "Joanne Cuthbertson",
@@ -455,29 +771,52 @@
     "Jonathan Vasquez",
     "Joseph McDonnell",
     "Josephine Farmer",
+    "Justin Gomez",
+    "Justine  Favata",
+    "Kapil Mehra",
     "Karen Robinson",
+    "Karlis Treijs",
     "Kelly Akol",
+    "Kelly Kuhl",
+    "Kristina Kuvshynov",
     "Krisztian Timar",
     "Lillian Young",
+    "Linda Lane-Bortell",
     "Lucas Jaime",
+    "Lukas Spisak",
     "Maria Montenegro",
+    "Matthew Frank",
     "Mercy Kuriyan",
     "Michael Lanning",
     "Michael Patland",
     "Monica Santana",
+    "Nancy Michaud",
     "Nancy Olson",
+    "Natalia Zakrevskaia",
     "Natalie Kelly",
     "Niki Sanieenia Moghaddam",
     "Pavlo Barsuk",
     "Rachel Becker",
     "Rafael Candelas",
     "Raquel Lochhead",
+    "Rashaad Jones",
+    "Rick DiRicco",
     "Robert Walzer",
+    "Rostislav Liduch",
+    "Roxanne Minott",
+    "Ryan Rodgers",
     "Samantha Larrick",
     "Sara Luvisi",
+    "Shannon Cochran",
+    "Sierra Burr",
+    "Steve Batory",
+    "Sue Gannon",
     "Suzanne Wilcox",
+    "Tim Lane-Bortell",
     "Vanessa Thomson",
+    "Veronique Thurston",
     "William Sharp",
+    "Yanna Samkova",
     "Yuki Haraguchi",
     "Yuriy Kuvshynov"
   ],
@@ -492,6 +831,9 @@
     "Champion Ballroom - Haraguchi",
     "Edelweiss Premier Ballroom",
     "Hidden City Ballroom",
+    "Motion Art Dream",
+    "N Space Dance Studio",
+    "OC Dance Studio",
     "Palomar Ballroom",
     "Rhythm N' Flo",
     "Slow Fox Dance Hall",
@@ -504,56 +846,90 @@
     "Tip Top Ballroom - Vasquez"
   ],
   "competitor_studios": {
+    "Jeff Ahlquist": "Arete Dance Center",
     "Kelly Akol": "Palomar Ballroom",
     "Donna Antraccoli": "Slow Fox Dance Hall",
     "Pavlo Barsuk": "Ballroom Edge",
+    "Steve Batory": "Slow Fox Dance Hall",
+    "Don Battaglia": "Candela Dance Studio",
     "Rachel Becker": "CS Ballroom",
+    "Sierra Burr": "Candela Dance Studio",
     "Gerald Bush": "Slow Fox Dance Hall",
     "Rafael Candelas": "Candela Dance Studio",
     "Chrystal Chen": "Hidden City Ballroom",
+    "Shannon Cochran": "Slow Fox Dance Hall",
     "Joanne Cuthbertson": "Telona, Felipe",
+    "Rick DiRicco": "Rhythm N' Flo",
+    "Hannah Encarnacion": "Slow Fox Dance Hall",
     "Jon Ericksen": "Edelweiss Premier Ballroom",
     "David Estrada": "Team Pineapple",
+    "Emily Evans": "Slow Fox Dance Hall",
     "Josephine Farmer": "Step2Dance",
+    "Justine  Favata": "Rhythm N' Flo",
+    "Matthew Frank": "Rhythm N' Flo",
+    "Sue Gannon": "Tip Top Ballroom - Vasquez",
+    "Justin Gomez": "Slow Fox Dance Hall",
     "Jacqueline Hachey": "Ballroom Edge",
     "Yuki Haraguchi": "Champion Ballroom - Haraguchi",
     "Jeff Hudson": "Champion Ballroom - Haraguchi",
     "Lucas Jaime": "Aloha Dancesport Center",
+    "Rashaad Jones": "N Space Dance Studio",
     "Natalie Kelly": "Slow Fox Dance Hall",
     "Evelyn Kheo": "Champion Ballroom - Haraguchi",
+    "Kelly Kuhl": "Slow Fox Dance Hall",
+    "George Kuriyan": "Aloha Dancesport Center",
     "Mercy Kuriyan": "Aloha Dancesport Center",
+    "Kristina Kuvshynov": "Arete Dance Center",
     "Yuriy Kuvshynov": "Arete Dance Center",
+    "Linda Lane-Bortell": "Slow Fox Dance Hall",
+    "Tim Lane-Bortell": "Slow Fox Dance Hall",
     "Michael Lanning": "Slow Fox Dance Hall",
     "Samantha Larrick": "Slow Fox Dance Hall",
     "Christina Lau": "Rhythm N' Flo",
+    "Rostislav Liduch": "OC Dance Studio",
     "Raquel Lochhead": "Tip Top Ballroom - Vasquez",
     "Sara Luvisi": "Timar Dance",
     "Anthony Marek": "Slow Fox Dance Hall",
     "Joseph McDonnell": "Hidden City Ballroom",
+    "Kapil Mehra": "Candela Dance Studio",
+    "Nancy Michaud": "Slow Fox Dance Hall",
+    "Roxanne Minott": "Slow Fox Dance Hall",
     "Maria Montenegro": "Candela Dance Studio",
+    "Anna Morales": "Candela Dance Studio",
     "Alla Novikova": "Edelweiss Premier Ballroom",
     "Nancy Olson": "Aloha Dancesport Center",
+    "Jacques Ouziel": "Rhythm N' Flo",
+    "Celina Paoria": "Tip Top Ballroom - Vasquez",
     "Michael Patland": "Slow Fox Dance Hall",
     "Bernard Peacock": "Slow Fox Dance Hall",
+    "Asya Pereltsvaig": "Motion Art Dream",
     "Jeremy Pilling": "Palomar Ballroom",
     "Helen Piper": "Arete Dance Center",
+    "Barbara Renick": "OC Dance Studio",
     "Karen Robinson": "Sway Ballroom Dance",
+    "Ryan Rodgers": "Candela Dance Studio",
     "Cesar Rojo": "Rhythm N' Flo",
+    "Yanna Samkova": "Aloha Dancesport Center",
     "Niki Sanieenia Moghaddam": "Rhythm N' Flo",
     "Monica Santana": "Rhythm N' Flo",
     "Dominic Seigler": "Sway Ballroom Dance",
     "William Sharp": "Rhythm N' Flo",
     "Christian Solares": "CS Ballroom",
+    "Lukas Spisak": "Briora Ballroom",
     "Andrey Tarasov": "Tarasov,Andrey",
     "Felipe Telona Jr.": "Telona, Felipe",
+    "The Flo Ladies": "Rhythm N' Flo",
     "Vanessa Thomson": "Breakaway Ballroom",
+    "Veronique Thurston": "Slow Fox Dance Hall",
     "Eva Tibenska": "Briora Ballroom",
     "Krisztian Timar": "Timar Dance",
+    "Karlis Treijs": "Motion Art Dream",
     "Jonathan Vasquez": "Tip Top Ballroom - Vasquez",
     "Alex Walder": "Slow Fox Dance Hall",
     "Robert Walzer": "Briora Ballroom",
     "Suzanne Wilcox": "Team Pineapple",
     "Carroll Yandell": "Candela Dance Studio",
-    "Lillian Young": "Briora Ballroom"
+    "Lillian Young": "Briora Ballroom",
+    "Natalia Zakrevskaia": "N Space Dance Studio"
   }
 }
