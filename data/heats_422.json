@@ -30299,6 +30299,62 @@
       ]
     },
     {
+      "key": "07_1FORD_726202610371",
+      "heat_number": "1FORD",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T10:37:12",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Veronika Aristov & Bruce Kobylyanskyy",
+          "competitor1": "Veronika Aristov",
+          "competitor2": "Bruce Kobylyanskyy",
+          "bib": "825",
+          "studio": "Brilliant Dancesport Studio",
+          "event": "BOB Dance-Off AC-PT Closed Int'l Waltz",
+          "result": "1"
+        },
+        {
+          "couple": "Daniel Ischenko & Aleksandra Kim",
+          "competitor1": "Daniel Ischenko",
+          "competitor2": "Aleksandra Kim",
+          "bib": "820",
+          "studio": "NIKA",
+          "event": "BOB Dance-Off AC-PT Closed Int'l Waltz",
+          "result": "2"
+        }
+      ]
+    },
+    {
+      "key": "07_2FORD_726202610384",
+      "heat_number": "2FORD",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T10:38:42",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Dasha Dragunov & Michael Novikov",
+          "competitor1": "Dasha Dragunov",
+          "competitor2": "Michael Novikov",
+          "bib": "832",
+          "studio": "LA Dancesport Club",
+          "event": "BOB Dance-Off AC-JR Open Int'l Waltz",
+          "result": "1"
+        },
+        {
+          "couple": "Kristina Dudka & Daniil Marinesku",
+          "competitor1": "Kristina Dudka",
+          "competitor2": "Daniil Marinesku",
+          "bib": "829",
+          "studio": "Imperial Dance Academy",
+          "event": "BOB Dance-Off AC-JR Open Int'l Waltz",
+          "result": "2"
+        }
+      ]
+    },
+    {
       "key": "07_560_726202680000",
       "heat_number": "560",
       "session": "07",
@@ -31902,7 +31958,7 @@
           "bib": "806",
           "studio": "Feel Dance Team",
           "event": "Solo Star Closed Bronze P1 Int'l Ballroom Championship (W,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Alice Guo",
@@ -31911,7 +31967,7 @@
           "bib": "817",
           "studio": "NIKA",
           "event": "Solo Star Closed Bronze TB Int'l Ballroom Championship (W,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Eseniia Ivanitskaia",
@@ -31920,7 +31976,7 @@
           "bib": "821",
           "studio": "Feel Dance Team",
           "event": "Solo Star Closed Silver P1 Int'l Ballroom Championship (W,T,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Elena Lin",
@@ -31929,7 +31985,7 @@
           "bib": "826",
           "studio": "NIKA",
           "event": "Solo Star Closed Bronze P1 Int'l Ballroom Championship (W,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Ivan Statkevich",
@@ -31938,7 +31994,7 @@
           "bib": "849",
           "studio": "Feel Dance Team",
           "event": "Solo Star Closed Silver P1 Int'l Ballroom Championship (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Aleksandra Temple",
@@ -31947,7 +32003,7 @@
           "bib": "851",
           "studio": "NIKA",
           "event": "Solo Star Closed Bronze P1 Int'l Ballroom Championship (W,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -31966,7 +32022,7 @@
           "bib": "701",
           "studio": "FADS - San Mateo",
           "event": "Championship Pre-Champ J1 MxAm Int'l Ballroom (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Jane Chtchemelinine",
@@ -31975,7 +32031,7 @@
           "bib": "811",
           "studio": "FADS - San Mateo",
           "event": "Solo Star Closed Gold P2 M/F Int'l Ballroom Championship (W,T,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Denis Filonenko & Sophia Statkevich",
@@ -31984,7 +32040,7 @@
           "bib": "516",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze TB Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -31993,7 +32049,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Daniel Ischenko & Aleksandra Kim",
@@ -32002,7 +32058,7 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "Championship Closed Gold P2 AM/AM Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Nikko Khuu-Fiorino & Michelle Yiu-Aleksieieva",
@@ -32011,7 +32067,7 @@
           "bib": "824",
           "studio": "FADS - San Mateo",
           "event": "Championship Closed Silver P2 MxAm Int'l Ballroom (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Maxine Mai",
@@ -32020,7 +32076,7 @@
           "bib": "828",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Open J1 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Adele Prozorova",
@@ -32029,7 +32085,7 @@
           "bib": "838",
           "studio": "Brilliant Dancesport Studio",
           "event": "Solo Star Closed Gold P2 M/F Int'l Ballroom Championship (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32048,7 +32104,7 @@
           "bib": "701",
           "studio": "FADS - San Mateo",
           "event": " mL-J1 Pre-Champ Int'l Viennese Waltz",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32067,7 +32123,7 @@
           "bib": "833",
           "studio": "Dance Boulevard - Afanaseva",
           "event": "Championship Closed Bronze J2 Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Iris Bakhvala & Denis Filonenko",
@@ -32076,7 +32132,7 @@
           "bib": "516",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze P1 Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Sophia Cremarosa & Michael Levenkov",
@@ -32085,7 +32141,7 @@
           "bib": "538",
           "studio": "NIKA",
           "event": "Championship Closed Bronze P2 Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -32094,7 +32150,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB Int'l Ballroom (W,T)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Athena Mai",
@@ -32103,7 +32159,7 @@
           "bib": "827",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Closed Gold TB M/F Int'l Ballroom Championship (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Ivan Statkevich & Ariana Yang",
@@ -32112,7 +32168,7 @@
           "bib": "849",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Silver P1 AM/AM Int'l Ballroom (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32131,7 +32187,7 @@
           "bib": "805",
           "studio": "Peak Dance Center - Baker/Fowler",
           "event": "Fordney AM/AM Open J2 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Brynnley Bath & Zayn Vehikite",
@@ -32140,7 +32196,7 @@
           "bib": "853",
           "studio": "Peak Dance Center - Lamph/Vehikite/Bath",
           "event": "Fordney AM/AM Closed P2 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Brandon Chen & Abbie Yeung",
@@ -32149,7 +32205,7 @@
           "bib": "809",
           "studio": "Tip Top Ballroom - Chen/Yeung",
           "event": "Fordney AM/AM Open J2 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Dasha Dragunov & Michael Novikov",
@@ -32158,7 +32214,7 @@
           "bib": "832",
           "studio": "LA Dancesport Club",
           "event": "Fordney AM/AM Open J2 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -32167,7 +32223,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver TB Int'l Ballroom (W,T)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Daniel Ischenko & Aleksandra Kim",
@@ -32176,7 +32232,7 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "Fordney AM/AM Closed P2 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Maxine Mai",
@@ -32185,7 +32241,7 @@
           "bib": "828",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Open J2 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Adele Prozorova",
@@ -32194,7 +32250,7 @@
           "bib": "838",
           "studio": "Brilliant Dancesport Studio",
           "event": "Solo Star Open P2 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32213,7 +32269,7 @@
           "bib": "701",
           "studio": "FADS - San Mateo",
           "event": "Championship Novice J1 MxAm Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Aahrone Bakhvala & Iris Bakhvala",
@@ -32222,7 +32278,7 @@
           "bib": "806",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze P1 AM/AM Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Jane Chtchemelinine",
@@ -32231,7 +32287,7 @@
           "bib": "811",
           "studio": "FADS - San Mateo",
           "event": "Solo Star Closed Gold P1 M/F Int'l Ballroom Championship (W,T,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Denis Filonenko & Ariana Yang",
@@ -32240,7 +32296,7 @@
           "bib": "516",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Silver P1 Int'l Ballroom (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -32249,7 +32305,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver TB Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Eseniia Ivanitskaia & Mirai Takahashi",
@@ -32258,7 +32314,7 @@
           "bib": "850",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze P1 AM/AM Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Athena Mai",
@@ -32267,7 +32323,7 @@
           "bib": "827",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Closed Gold P1 M/F Int'l Ballroom Championship (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Adele Sklarsky & Jordan Sklarsky",
@@ -32276,7 +32332,7 @@
           "bib": "870",
           "studio": "LA Dancesport Club",
           "event": "Championship Closed Bronze P1 AM/AM Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32295,7 +32351,7 @@
           "bib": "800",
           "studio": "Peak Dance Center - Ackley/Vehikite",
           "event": "Fordney AM/AM Open J1 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Brandon Chen & Abbie Yeung",
@@ -32304,7 +32360,7 @@
           "bib": "809",
           "studio": "Tip Top Ballroom - Chen/Yeung",
           "event": "Fordney AM/AM Open Y Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Kristina Dudka & Daniil Marinesku",
@@ -32313,7 +32369,7 @@
           "bib": "829",
           "studio": "Imperial Dance Academy",
           "event": "Fordney AM/AM Open J1 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Wiktor Frydrych & Maya Sinelnikov",
@@ -32322,7 +32378,7 @@
           "bib": "813",
           "studio": "RDA - Frydrych",
           "event": "Fordney AM/AM Open Y Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
@@ -32331,7 +32387,7 @@
           "bib": "830",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney AM/AM Open J1 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Izzy Luong & Yegor Zhukov",
@@ -32340,7 +32396,7 @@
           "bib": "861",
           "studio": "SDA, Sukachov Dance Academy",
           "event": "Fordney AM/AM Open Y Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32433,7 +32489,7 @@
           "bib": "701",
           "studio": "FADS - San Mateo",
           "event": "Championship Closed Gold J1 MxAm Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Veronika Aristov & Bruce Kobylyanskyy",
@@ -32442,7 +32498,7 @@
           "bib": "825",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney AM/AM Closed P1 Int'l Ballroom Championship (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Sophia Grigorovitch & Dmytro Lanin",
@@ -32451,7 +32507,7 @@
           "bib": "741",
           "studio": "Luna Del Soul",
           "event": "Championship Open J1 MxAm Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32470,7 +32526,7 @@
           "bib": "800",
           "studio": "Peak Dance Center - Ackley/Vehikite",
           "event": "Fordney Scholarships AM/AM Open J1 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Katya Afanaseva & Mason Ortiz",
@@ -32479,7 +32535,7 @@
           "bib": "833",
           "studio": "Dance Boulevard - Afanaseva",
           "event": "Scholarship Closed Bronze JR Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Garrison Baker & Aniston Fowler",
@@ -32488,7 +32544,7 @@
           "bib": "805",
           "studio": "Peak Dance Center - Baker/Fowler",
           "event": "Fordney Scholarships AM/AM Open J2 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Brandon Chen & Abbie Yeung",
@@ -32497,7 +32553,7 @@
           "bib": "809",
           "studio": "Tip Top Ballroom - Chen/Yeung",
           "event": "Fordney Scholarships AM/AM Open J2 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Dasha Dragunov & Michael Novikov",
@@ -32506,7 +32562,7 @@
           "bib": "832",
           "studio": "LA Dancesport Club",
           "event": "Fordney Scholarships AM/AM Open J2 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Kristina Dudka & Daniil Marinesku",
@@ -32515,7 +32571,7 @@
           "bib": "829",
           "studio": "Imperial Dance Academy",
           "event": "Fordney Scholarships AM/AM Open J1 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
@@ -32524,7 +32580,7 @@
           "bib": "830",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney Scholarships AM/AM Open J1 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         }
       ]
     },
@@ -32543,7 +32599,7 @@
           "bib": "825",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney Scholarships AM/AM Closed P1 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Brynnley Bath & Zayn Vehikite",
@@ -32552,7 +32608,7 @@
           "bib": "853",
           "studio": "Peak Dance Center - Lamph/Vehikite/Bath",
           "event": "Fordney Scholarships AM/AM Closed P2 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Sabine Blyth & Charlotte Liu",
@@ -32561,7 +32617,7 @@
           "bib": "507",
           "studio": "West Valley Dance Company - Blyth",
           "event": "Scholarship Closed Bronze PT Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Daniel Ischenko & Aleksandra Kim",
@@ -32570,7 +32626,7 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "Fordney Scholarships AM/AM Closed P2 Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Michael Levenkov & Aleksandra Temple",
@@ -32579,7 +32635,7 @@
           "bib": "538",
           "studio": "NIKA",
           "event": "Scholarship Closed Bronze PT Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -32598,7 +32654,7 @@
           "bib": "833",
           "studio": "Dance Boulevard - Afanaseva",
           "event": "Scholarship Closed Silver JR Int'l Ballroom (W,T,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Brandon Chen & Abbie Yeung",
@@ -32607,7 +32663,7 @@
           "bib": "809",
           "studio": "Tip Top Ballroom - Chen/Yeung",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Dylan Chi & Isabella Moudry",
@@ -32616,7 +32672,7 @@
           "bib": "810",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Ikaika Dowsett & Sylvia Imbens",
@@ -32625,7 +32681,7 @@
           "bib": "513",
           "studio": "Dowsett, Ikaika",
           "event": "Scholarship Closed Silver JR Int'l Ballroom (W,T,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Wiktor Frydrych & Maya Sinelnikov",
@@ -32634,7 +32690,7 @@
           "bib": "813",
           "studio": "RDA - Frydrych",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Izzy Luong & Yegor Zhukov",
@@ -32643,16 +32699,16 @@
           "bib": "861",
           "studio": "SDA, Sukachov Dance Academy",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_604_726202610421",
+      "key": "07_604_726202610451",
       "heat_number": "604",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T10:42:12",
+      "time": "2026-07-26T10:45:12",
       "round": "Final",
       "entries": [
         {
@@ -32712,11 +32768,11 @@
       ]
     },
     {
-      "key": "07_605_726202610462",
+      "key": "07_605_726202610492",
       "heat_number": "605",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T10:46:24",
+      "time": "2026-07-26T10:49:24",
       "round": "Final",
       "entries": [
         {
@@ -32740,11 +32796,11 @@
       ]
     },
     {
-      "key": "07_606_726202610474",
+      "key": "07_606_726202610504",
       "heat_number": "606",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T10:47:45",
+      "time": "2026-07-26T10:50:45",
       "round": "Final",
       "entries": [
         {
@@ -32777,11 +32833,11 @@
       ]
     },
     {
-      "key": "07_607_726202610490",
+      "key": "07_607_726202610520",
       "heat_number": "607",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T10:49:06",
+      "time": "2026-07-26T10:52:06",
       "round": "Final",
       "entries": [
         {
@@ -32805,11 +32861,11 @@
       ]
     },
     {
-      "key": "07_608_726202610544",
+      "key": "07_608_726202610574",
       "heat_number": "608",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T10:54:42",
+      "time": "2026-07-26T10:57:42",
       "round": "Final",
       "entries": [
         {
@@ -32878,11 +32934,11 @@
       ]
     },
     {
-      "key": "07_609_726202611001",
+      "key": "07_609_726202611031",
       "heat_number": "609",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:00:18",
+      "time": "2026-07-26T11:03:18",
       "round": "Final",
       "entries": [
         {
@@ -32906,11 +32962,11 @@
       ]
     },
     {
-      "key": "07_610_726202611013",
+      "key": "07_610_726202611043",
       "heat_number": "610",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:01:39",
+      "time": "2026-07-26T11:04:39",
       "round": "Final",
       "entries": [
         {
@@ -32943,11 +32999,11 @@
       ]
     },
     {
-      "key": "07_611_726202611055",
+      "key": "07_611_726202611085",
       "heat_number": "611",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:05:51",
+      "time": "2026-07-26T11:08:51",
       "round": "Final",
       "entries": [
         {
@@ -32962,11 +33018,11 @@
       ]
     },
     {
-      "key": "07_612_726202611071",
+      "key": "07_612_726202611101",
       "heat_number": "612",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:07:12",
+      "time": "2026-07-26T11:10:12",
       "round": "Final",
       "entries": [
         {
@@ -33008,11 +33064,11 @@
       ]
     },
     {
-      "key": "07_613_726202611241",
+      "key": "07_613_726202611271",
       "heat_number": "613",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:24:12",
+      "time": "2026-07-26T11:27:12",
       "round": "Final",
       "entries": [
         {
@@ -33081,11 +33137,11 @@
       ]
     },
     {
-      "key": "07_614_726202611253",
+      "key": "07_614_726202611283",
       "heat_number": "614",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:25:39",
+      "time": "2026-07-26T11:28:39",
       "round": "Final",
       "entries": [
         {
@@ -33154,11 +33210,11 @@
       ]
     },
     {
-      "key": "07_615_726202611270",
+      "key": "07_615_726202611300",
       "heat_number": "615",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:27:06",
+      "time": "2026-07-26T11:30:06",
       "round": "Final",
       "entries": [
         {
@@ -33209,11 +33265,11 @@
       ]
     },
     {
-      "key": "07_616_726202611283",
+      "key": "07_616_726202611313",
       "heat_number": "616",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:28:33",
+      "time": "2026-07-26T11:31:33",
       "round": "Final",
       "entries": [
         {
@@ -33264,11 +33320,11 @@
       ]
     },
     {
-      "key": "07_617_726202611300",
+      "key": "07_617_726202611330",
       "heat_number": "617",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:30:00",
+      "time": "2026-07-26T11:33:00",
       "round": "Final",
       "entries": [
         {
@@ -33346,11 +33402,11 @@
       ]
     },
     {
-      "key": "07_618_726202611312",
+      "key": "07_618_726202611342",
       "heat_number": "618",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:31:27",
+      "time": "2026-07-26T11:34:27",
       "round": "Final",
       "entries": [
         {
@@ -33428,11 +33484,11 @@
       ]
     },
     {
-      "key": "07_619_726202611325",
+      "key": "07_619_726202611355",
       "heat_number": "619",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:32:54",
+      "time": "2026-07-26T11:35:54",
       "round": "Final",
       "entries": [
         {
@@ -33510,11 +33566,11 @@
       ]
     },
     {
-      "key": "07_620_726202611342",
+      "key": "07_620_726202611372",
       "heat_number": "620",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:34:21",
+      "time": "2026-07-26T11:37:21",
       "round": "Final",
       "entries": [
         {
@@ -33565,11 +33621,11 @@
       ]
     },
     {
-      "key": "07_621_726202611354",
+      "key": "07_621_726202611384",
       "heat_number": "621",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:35:48",
+      "time": "2026-07-26T11:38:48",
       "round": "Final",
       "entries": [
         {
@@ -33647,11 +33703,11 @@
       ]
     },
     {
-      "key": "07_622_726202611371",
+      "key": "07_622_726202611401",
       "heat_number": "622",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:37:15",
+      "time": "2026-07-26T11:40:15",
       "round": "Final",
       "entries": [
         {
@@ -33729,11 +33785,11 @@
       ]
     },
     {
-      "key": "07_623_726202611384",
+      "key": "07_623_726202611414",
       "heat_number": "623",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:38:42",
+      "time": "2026-07-26T11:41:42",
       "round": "Final",
       "entries": [
         {
@@ -33793,11 +33849,11 @@
       ]
     },
     {
-      "key": "07_624_726202611400",
+      "key": "07_624_726202611430",
       "heat_number": "624",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:40:09",
+      "time": "2026-07-26T11:43:09",
       "round": "Final",
       "entries": [
         {
@@ -33857,11 +33913,11 @@
       ]
     },
     {
-      "key": "07_625_726202611413",
+      "key": "07_625_726202611443",
       "heat_number": "625",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:41:36",
+      "time": "2026-07-26T11:44:36",
       "round": "Final",
       "entries": [
         {
@@ -33939,11 +33995,11 @@
       ]
     },
     {
-      "key": "07_626_726202611430",
+      "key": "07_626_726202611460",
       "heat_number": "626",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:43:03",
+      "time": "2026-07-26T11:46:03",
       "round": "Final",
       "entries": [
         {
@@ -34012,11 +34068,11 @@
       ]
     },
     {
-      "key": "07_627_726202611443",
+      "key": "07_627_726202611473",
       "heat_number": "627",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:44:30",
+      "time": "2026-07-26T11:47:30",
       "round": "Final",
       "entries": [
         {
@@ -34067,11 +34123,11 @@
       ]
     },
     {
-      "key": "07_628_726202611455",
+      "key": "07_628_726202611485",
       "heat_number": "628",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:45:57",
+      "time": "2026-07-26T11:48:57",
       "round": "Final",
       "entries": [
         {
@@ -34131,11 +34187,11 @@
       ]
     },
     {
-      "key": "07_629_726202611472",
+      "key": "07_629_726202611502",
       "heat_number": "629",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:47:24",
+      "time": "2026-07-26T11:50:24",
       "round": "Final",
       "entries": [
         {
@@ -34195,11 +34251,11 @@
       ]
     },
     {
-      "key": "07_630_726202611485",
+      "key": "07_630_726202611515",
       "heat_number": "630",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:48:51",
+      "time": "2026-07-26T11:51:51",
       "round": "Final",
       "entries": [
         {
@@ -34259,11 +34315,11 @@
       ]
     },
     {
-      "key": "07_631_726202611501",
+      "key": "07_631_726202611531",
       "heat_number": "631",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:50:18",
+      "time": "2026-07-26T11:53:18",
       "round": "Final",
       "entries": [
         {
@@ -34332,11 +34388,11 @@
       ]
     },
     {
-      "key": "07_632_726202611514",
+      "key": "07_632_726202611544",
       "heat_number": "632",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:51:45",
+      "time": "2026-07-26T11:54:45",
       "round": "Final",
       "entries": [
         {
@@ -34414,11 +34470,11 @@
       ]
     },
     {
-      "key": "07_633_726202611531",
+      "key": "07_633_726202611561",
       "heat_number": "633",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:53:12",
+      "time": "2026-07-26T11:56:12",
       "round": "Final",
       "entries": [
         {
@@ -34487,11 +34543,11 @@
       ]
     },
     {
-      "key": "07_634_726202611543",
+      "key": "07_634_726202611573",
       "heat_number": "634",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:54:39",
+      "time": "2026-07-26T11:57:39",
       "round": "Final",
       "entries": [
         {
@@ -34569,11 +34625,11 @@
       ]
     },
     {
-      "key": "07_635_726202611560",
+      "key": "07_635_726202611590",
       "heat_number": "635",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:56:06",
+      "time": "2026-07-26T11:59:06",
       "round": "Final",
       "entries": [
         {
@@ -34651,11 +34707,11 @@
       ]
     },
     {
-      "key": "07_636_726202611573",
+      "key": "07_636_726202612003",
       "heat_number": "636",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:57:33",
+      "time": "2026-07-26T12:00:33",
       "round": "Final",
       "entries": [
         {
@@ -34733,11 +34789,11 @@
       ]
     },
     {
-      "key": "07_637_726202611590",
+      "key": "07_637_726202612020",
       "heat_number": "637",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T11:59:00",
+      "time": "2026-07-26T12:02:00",
       "round": "Final",
       "entries": [
         {
@@ -34806,11 +34862,11 @@
       ]
     },
     {
-      "key": "07_638_726202612002",
+      "key": "07_638_726202612032",
       "heat_number": "638",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:00:27",
+      "time": "2026-07-26T12:03:27",
       "round": "Final",
       "entries": [
         {
@@ -34870,11 +34926,11 @@
       ]
     },
     {
-      "key": "07_639_726202612015",
+      "key": "07_639_726202612045",
       "heat_number": "639",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:01:54",
+      "time": "2026-07-26T12:04:54",
       "round": "Final",
       "entries": [
         {
@@ -34916,11 +34972,11 @@
       ]
     },
     {
-      "key": "07_640_726202612032",
+      "key": "07_640_726202612062",
       "heat_number": "640",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:03:21",
+      "time": "2026-07-26T12:06:21",
       "round": "Final",
       "entries": [
         {
@@ -34998,11 +35054,11 @@
       ]
     },
     {
-      "key": "07_641_726202612044",
+      "key": "07_641_726202612074",
       "heat_number": "641",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:04:48",
+      "time": "2026-07-26T12:07:48",
       "round": "Final",
       "entries": [
         {
@@ -35071,11 +35127,11 @@
       ]
     },
     {
-      "key": "07_642_726202612061",
+      "key": "07_642_726202612091",
       "heat_number": "642",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:06:15",
+      "time": "2026-07-26T12:09:15",
       "round": "Final",
       "entries": [
         {
@@ -35126,11 +35182,11 @@
       ]
     },
     {
-      "key": "07_643_726202612074",
+      "key": "07_643_726202612104",
       "heat_number": "643",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:07:42",
+      "time": "2026-07-26T12:10:42",
       "round": "Final",
       "entries": [
         {
@@ -35190,11 +35246,11 @@
       ]
     },
     {
-      "key": "07_644_726202612090",
+      "key": "07_644_726202612120",
       "heat_number": "644",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:09:09",
+      "time": "2026-07-26T12:12:09",
       "round": "Final",
       "entries": [
         {
@@ -35281,11 +35337,11 @@
       ]
     },
     {
-      "key": "07_645_726202612103",
+      "key": "07_645_726202612133",
       "heat_number": "645",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:10:36",
+      "time": "2026-07-26T12:13:36",
       "round": "Final",
       "entries": [
         {
@@ -35354,11 +35410,11 @@
       ]
     },
     {
-      "key": "07_646_726202612120",
+      "key": "07_646_726202612150",
       "heat_number": "646",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:12:03",
+      "time": "2026-07-26T12:15:03",
       "round": "Final",
       "entries": [
         {
@@ -35418,11 +35474,11 @@
       ]
     },
     {
-      "key": "07_647_726202612133",
+      "key": "07_647_726202612163",
       "heat_number": "647",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:13:30",
+      "time": "2026-07-26T12:16:30",
       "round": "Final",
       "entries": [
         {
@@ -35491,11 +35547,11 @@
       ]
     },
     {
-      "key": "07_648_726202612145",
+      "key": "07_648_726202612175",
       "heat_number": "648",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:14:57",
+      "time": "2026-07-26T12:17:57",
       "round": "Final",
       "entries": [
         {
@@ -35555,11 +35611,11 @@
       ]
     },
     {
-      "key": "07_649_726202612162",
+      "key": "07_649_726202612192",
       "heat_number": "649",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:16:24",
+      "time": "2026-07-26T12:19:24",
       "round": "Final",
       "entries": [
         {
@@ -35628,11 +35684,11 @@
       ]
     },
     {
-      "key": "07_650_726202612325",
+      "key": "07_650_726202612355",
       "heat_number": "650",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:32:51",
+      "time": "2026-07-26T12:35:51",
       "round": "Final",
       "entries": [
         {
@@ -35701,11 +35757,11 @@
       ]
     },
     {
-      "key": "07_651_726202612353",
+      "key": "07_651_726202612383",
       "heat_number": "651",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:35:39",
+      "time": "2026-07-26T12:38:39",
       "round": "Final",
       "entries": [
         {
@@ -35774,11 +35830,11 @@
       ]
     },
     {
-      "key": "07_652_726202612423",
+      "key": "07_652_726202612453",
       "heat_number": "652",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:42:39",
+      "time": "2026-07-26T12:45:39",
       "round": "Final",
       "entries": [
         {
@@ -35820,11 +35876,11 @@
       ]
     },
     {
-      "key": "07_652IL_726202612423",
+      "key": "07_652IL_726202612453",
       "heat_number": "652IL",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:42:39",
+      "time": "2026-07-26T12:45:39",
       "round": "Final",
       "entries": [
         {
@@ -35839,11 +35895,11 @@
       ]
     },
     {
-      "key": "07_653_726202612481",
+      "key": "07_653_726202612511",
       "heat_number": "653",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:48:15",
+      "time": "2026-07-26T12:51:15",
       "round": "Final",
       "entries": [
         {
@@ -35903,11 +35959,11 @@
       ]
     },
     {
-      "key": "07_654_726202612510",
+      "key": "07_654_726202612540",
       "heat_number": "654",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:51:03",
+      "time": "2026-07-26T12:54:03",
       "round": "Final",
       "entries": [
         {
@@ -35976,11 +36032,11 @@
       ]
     },
     {
-      "key": "07_655_726202612551",
+      "key": "07_655_726202612581",
       "heat_number": "655",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:55:15",
+      "time": "2026-07-26T12:58:15",
       "round": "Final",
       "entries": [
         {
@@ -36031,11 +36087,11 @@
       ]
     },
     {
-      "key": "07_656_726202612592",
+      "key": "07_656_726202610227",
       "heat_number": "656",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:59:27",
+      "time": "2026-07-26T13:02:27",
       "round": "Final",
       "entries": [
         {
@@ -36104,11 +36160,11 @@
       ]
     },
     {
-      "key": "07_657_726202610627",
+      "key": "07_657_726202610927",
       "heat_number": "657",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:06:27",
+      "time": "2026-07-26T13:09:27",
       "round": "Final",
       "entries": [
         {
@@ -36177,11 +36233,11 @@
       ]
     },
     {
-      "key": "07_658_726202611327",
+      "key": "07_658_726202611627",
       "heat_number": "658",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:13:27",
+      "time": "2026-07-26T13:16:27",
       "round": "Final",
       "entries": [
         {
@@ -36232,11 +36288,11 @@
       ]
     },
     {
-      "key": "07_659_726202611739",
+      "key": "07_659_726202612039",
       "heat_number": "659",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:17:39",
+      "time": "2026-07-26T13:20:39",
       "round": "Final",
       "entries": [
         {
@@ -36305,11 +36361,11 @@
       ]
     },
     {
-      "key": "07_660_726202612151",
+      "key": "07_660_726202612451",
       "heat_number": "660",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:21:51",
+      "time": "2026-07-26T13:24:51",
       "round": "Final",
       "entries": [
         {
@@ -36360,11 +36416,11 @@
       ]
     },
     {
-      "key": "07_661_726202612727",
+      "key": "07_661_726202613027",
       "heat_number": "661",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:27:27",
+      "time": "2026-07-26T13:30:27",
       "round": "Final",
       "entries": [
         {
@@ -36424,11 +36480,11 @@
       ]
     },
     {
-      "key": "07_662_726202613139",
+      "key": "07_662_726202613439",
       "heat_number": "662",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:31:39",
+      "time": "2026-07-26T13:34:39",
       "round": "Final",
       "entries": [
         {
@@ -36497,11 +36553,11 @@
       ]
     },
     {
-      "key": "07_663_726202613551",
+      "key": "07_663_726202613851",
       "heat_number": "663",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:35:51",
+      "time": "2026-07-26T13:38:51",
       "round": "Final",
       "entries": [
         {
@@ -36552,11 +36608,11 @@
       ]
     },
     {
-      "key": "07_664_726202614127",
+      "key": "07_664_726202614427",
       "heat_number": "664",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:41:27",
+      "time": "2026-07-26T13:44:27",
       "round": "Final",
       "entries": [
         {
@@ -36616,11 +36672,11 @@
       ]
     },
     {
-      "key": "07_665_726202614827",
+      "key": "07_665_726202615127",
       "heat_number": "665",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:48:27",
+      "time": "2026-07-26T13:51:27",
       "round": "Final",
       "entries": [
         {
@@ -36635,11 +36691,11 @@
       ]
     },
     {
-      "key": "07_666_726202614827",
+      "key": "07_666_726202615127",
       "heat_number": "666",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:48:27",
+      "time": "2026-07-26T13:51:27",
       "round": "Final",
       "entries": [
         {
@@ -36654,11 +36710,11 @@
       ]
     },
     {
-      "key": "07_667_726202614827",
+      "key": "07_667_726202615127",
       "heat_number": "667",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:48:27",
+      "time": "2026-07-26T13:51:27",
       "round": "Final",
       "entries": [
         {
@@ -36691,11 +36747,11 @@
       ]
     },
     {
-      "key": "07_667IL_726202614827",
+      "key": "07_667IL_726202615127",
       "heat_number": "667IL",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:48:27",
+      "time": "2026-07-26T13:51:27",
       "round": "Final",
       "entries": [
         {
@@ -36710,11 +36766,11 @@
       ]
     },
     {
-      "key": "07_668_726202621527",
+      "key": "07_668_726202621827",
       "heat_number": "668",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:15:27",
+      "time": "2026-07-26T14:18:27",
       "round": "Final",
       "entries": [
         {
@@ -36774,11 +36830,11 @@
       ]
     },
     {
-      "key": "07_669_726202622227",
+      "key": "07_669_726202622527",
       "heat_number": "669",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:22:27",
+      "time": "2026-07-26T14:25:27",
       "round": "Final",
       "entries": [
         {
@@ -36793,11 +36849,11 @@
       ]
     },
     {
-      "key": "07_670_726202622227",
+      "key": "07_670_726202622527",
       "heat_number": "670",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:22:27",
+      "time": "2026-07-26T14:25:27",
       "round": "Final",
       "entries": [
         {
@@ -36857,11 +36913,11 @@
       ]
     },
     {
-      "key": "07_671_726202622927",
+      "key": "07_671_726202623227",
       "heat_number": "671",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:29:27",
+      "time": "2026-07-26T14:32:27",
       "round": "Final",
       "entries": [
         {
@@ -36921,11 +36977,11 @@
       ]
     },
     {
-      "key": "07_672_726202623627",
+      "key": "07_672_726202623927",
       "heat_number": "672",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:36:27",
+      "time": "2026-07-26T14:39:27",
       "round": "Final",
       "entries": [
         {
@@ -36940,11 +36996,11 @@
       ]
     },
     {
-      "key": "07_673_726202623627",
+      "key": "07_673_726202623927",
       "heat_number": "673",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:36:27",
+      "time": "2026-07-26T14:39:27",
       "round": "Final",
       "entries": [
         {
@@ -37004,11 +37060,11 @@
       ]
     },
     {
-      "key": "07_674_726202624327",
+      "key": "07_674_726202624627",
       "heat_number": "674",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:43:27",
+      "time": "2026-07-26T14:46:27",
       "round": "Final",
       "entries": [
         {
@@ -37023,11 +37079,11 @@
       ]
     },
     {
-      "key": "07_675_726202624327",
+      "key": "07_675_726202624627",
       "heat_number": "675",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:43:27",
+      "time": "2026-07-26T14:46:27",
       "round": "Final",
       "entries": [
         {
@@ -37042,11 +37098,11 @@
       ]
     },
     {
-      "key": "07_676_726202624327",
+      "key": "07_676_726202624627",
       "heat_number": "676",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:43:27",
+      "time": "2026-07-26T14:46:27",
       "round": "Final",
       "entries": [
         {
@@ -37133,11 +37189,11 @@
       ]
     },
     {
-      "key": "07_677_726202625027",
+      "key": "07_677_726202625327",
       "heat_number": "677",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:50:27",
+      "time": "2026-07-26T14:53:27",
       "round": "Final",
       "entries": [
         {
@@ -37206,11 +37262,11 @@
       ]
     },
     {
-      "key": "07_678_726202625727",
+      "key": "07_678_726202630027",
       "heat_number": "678",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:57:27",
+      "time": "2026-07-26T15:00:27",
       "round": "Final",
       "entries": [
         {
@@ -37225,11 +37281,11 @@
       ]
     },
     {
-      "key": "07_679_726202625727",
+      "key": "07_679_726202630027",
       "heat_number": "679",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:57:27",
+      "time": "2026-07-26T15:00:27",
       "round": "Final",
       "entries": [
         {
@@ -37280,11 +37336,11 @@
       ]
     },
     {
-      "key": "07_679IL_726202625727",
+      "key": "07_679IL_726202630027",
       "heat_number": "679IL",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:57:27",
+      "time": "2026-07-26T15:00:27",
       "round": "Final",
       "entries": [
         {
@@ -37299,11 +37355,11 @@
       ]
     },
     {
-      "key": "07_680_726202630327",
+      "key": "07_680_726202630627",
       "heat_number": "680",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:03:27",
+      "time": "2026-07-26T15:06:27",
       "round": "Final",
       "entries": [
         {
@@ -37381,11 +37437,11 @@
       ]
     },
     {
-      "key": "07_681_726202631027",
+      "key": "07_681_726202631327",
       "heat_number": "681",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:10:27",
+      "time": "2026-07-26T15:13:27",
       "round": "Final",
       "entries": [
         {
@@ -37463,11 +37519,11 @@
       ]
     },
     {
-      "key": "07_682_726202631727",
+      "key": "07_682_726202632027",
       "heat_number": "682",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:17:27",
+      "time": "2026-07-26T15:20:27",
       "round": "Final",
       "entries": [
         {
@@ -38465,6 +38521,14 @@
     "Jasher Kuehn": "Kuehn/Johnson",
     "Vincent Shieh": "Genesis Dance Studio - Shieh/Wong",
     "Grace Wong": "Genesis Dance Studio - Shieh/Wong",
+    "Veronika Aristov": "Brilliant Dancesport Studio",
+    "Bruce Kobylyanskyy": "Brilliant Dancesport Studio",
+    "Daniel Ischenko": "NIKA",
+    "Aleksandra Kim": "NIKA",
+    "Dasha Dragunov": "LA Dancesport Club",
+    "Michael Novikov": "LA Dancesport Club",
+    "Kristina Dudka": "Imperial Dance Academy",
+    "Daniil Marinesku": "Imperial Dance Academy",
     "Shakira Al-Shamari": "Feel Dance Team",
     "Jacqueline Brener-Dubois": "FADS - San Mateo",
     "Mikhael Brener-Dubois": "FADS - San Mateo",
@@ -38498,8 +38562,6 @@
     "Sophia Statkevich": "DNA Dance Ballroom",
     "Alexandra Golikova": "DNA Dance Ballroom",
     "Danya Rubashevsky": "DNA Dance Ballroom",
-    "Daniel Ischenko": "NIKA",
-    "Aleksandra Kim": "NIKA",
     "Maxine Mai": "Mai, Athena & Maxine",
     "Adele Prozorova": "Brilliant Dancesport Studio",
     "Athena Mai": "Mai, Athena & Maxine",
@@ -38510,18 +38572,12 @@
     "Zayn Vehikite": "Peak Dance Center - Lamph/Vehikite/Bath",
     "Brandon Chen": "Tip Top Ballroom - Chen/Yeung",
     "Abbie Yeung": "Tip Top Ballroom - Chen/Yeung",
-    "Dasha Dragunov": "LA Dancesport Club",
-    "Michael Novikov": "LA Dancesport Club",
     "Cole Ackley": "Peak Dance Center - Ackley/Vehikite",
     "Zamira Vehikite": "Peak Dance Center - Ackley/Vehikite",
-    "Kristina Dudka": "Imperial Dance Academy",
-    "Daniil Marinesku": "Imperial Dance Academy",
     "Wiktor Frydrych": "RDA - Frydrych",
     "Maya Sinelnikov": "RDA - Frydrych",
     "Lucy Kobylyanskyy": "Brilliant Dancesport Studio",
     "Maksim Mkrtchian": "Brilliant Dancesport Studio",
-    "Veronika Aristov": "Brilliant Dancesport Studio",
-    "Bruce Kobylyanskyy": "Brilliant Dancesport Studio",
     "Duke Khuu": "FADS - San Mateo",
     "Sarah Wentling": "FADS - San Mateo",
     "Natasha Avanesov": "Halim/Avanesov",
@@ -39121,8 +39177,8 @@
       "03_337_724202611012",
       "03_338_724202611024",
       "03_397_724202612483",
-      "07_607_726202610490",
-      "07_610_726202611013"
+      "07_607_726202610520",
+      "07_610_726202611043"
     ],
     "Raquel Lochhead": [
       "01_1_723202610000",
@@ -39228,7 +39284,7 @@
       "05_535_725202620442",
       "05_542_725202622409",
       "05_546_725202624057",
-      "07_604_726202610421"
+      "07_604_726202610451"
     ],
     "Cesar Rojo": [
       "01_1_723202610000",
@@ -40359,8 +40415,8 @@
       "07_586_726202683906",
       "07_587_726202684318",
       "07_590_726202685136",
-      "07_607_726202610490",
-      "07_610_726202611013"
+      "07_607_726202610520",
+      "07_610_726202611043"
     ],
     "Natalie Kelly": [
       "01_107_723202622427",
@@ -40479,9 +40535,9 @@
       "07_586_726202683906",
       "07_587_726202684318",
       "07_590_726202685136",
-      "07_607_726202610490",
-      "07_610_726202611013",
-      "07_611_726202611055"
+      "07_607_726202610520",
+      "07_610_726202611043",
+      "07_611_726202611085"
     ],
     "Jon Ericksen": [
       "01_16_723202610201",
@@ -41582,7 +41638,7 @@
       "05_535_725202620442",
       "05_546_725202624057",
       "05_549_725202625209",
-      "07_604_726202610421"
+      "07_604_726202610451"
     ],
     "Sierra Burr": [
       "02_135_723202663648",
@@ -41765,9 +41821,9 @@
       "07_586_726202683906",
       "07_587_726202684318",
       "07_590_726202685136",
-      "07_607_726202610490",
-      "07_610_726202611013",
-      "07_611_726202611055"
+      "07_607_726202610520",
+      "07_610_726202611043",
+      "07_611_726202611085"
     ],
     "Hannah Encarnacion": [
       "02_142_723202664512",
@@ -42170,10 +42226,10 @@
       "05_491_725202610506",
       "05_545_725202623357",
       "05_549_725202625209",
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_616_726202611283",
-      "07_663_726202613551"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_616_726202611313",
+      "07_663_726202613851"
     ],
     "Asya Pereltsvaig": [
       "02_4_723202680500"
@@ -42216,13 +42272,13 @@
       "05_499_725202611606",
       "05_546_725202624057",
       "06_12_725202684000",
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_622_726202611371",
-      "07_624_726202611400",
-      "07_662_726202613139",
-      "07_679_726202625727"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_622_726202611401",
+      "07_624_726202611430",
+      "07_662_726202613439",
+      "07_679_726202630027"
     ],
     "Amy Linn": [
       "03_292_724202610000",
@@ -42370,7 +42426,7 @@
       "07_586_726202683906",
       "07_587_726202684318",
       "07_590_726202685136",
-      "07_610_726202611013"
+      "07_610_726202611043"
     ],
     "Sharon Meyer": [
       "03_295_724202610040",
@@ -43031,17 +43087,17 @@
       "03_407_724202614421",
       "04_412_724202691500",
       "07_588_726202684439",
-      "07_604_726202610421",
-      "07_608_726202610544",
-      "07_612_726202611071"
+      "07_604_726202610451",
+      "07_608_726202610574",
+      "07_612_726202611101"
     ],
     "Michael Lockwood": [
       "03_407_724202614421",
       "04_412_724202691500",
       "07_588_726202684439",
-      "07_604_726202610421",
-      "07_608_726202610544",
-      "07_612_726202611071"
+      "07_604_726202610451",
+      "07_608_726202610574",
+      "07_612_726202611101"
     ],
     "Grayson Crossley": [
       "03_407_724202614421",
@@ -43159,13 +43215,13 @@
       "04_409_724202674400",
       "04_412_724202691500",
       "07_588_726202684439",
-      "07_608_726202610544"
+      "07_608_726202610574"
     ],
     "Veronika Pedchenko": [
       "04_409_724202674400",
       "04_412_724202691500",
       "07_588_726202684439",
-      "07_608_726202610544"
+      "07_608_726202610574"
     ],
     "Chung You Liu": [
       "04_409_724202674400",
@@ -43185,8 +43241,8 @@
       "06_559_725202611190",
       "07_598_726202694712",
       "07_603_726202610151",
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Yegor Zhukov": [
       "04_410_724202675400",
@@ -43200,8 +43256,8 @@
       "06_559_725202611190",
       "07_598_726202694712",
       "07_603_726202610151",
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Elaine Chow": [
       "04_411_724202682600"
@@ -43250,14 +43306,14 @@
       "04_413_724202610210",
       "06_559_725202610300",
       "06_559_725202611190",
-      "07_612_726202611071"
+      "07_612_726202611101"
     ],
     "Cristian Jones": [
       "04_413_724202694900",
       "04_413_724202610210",
       "06_559_725202610300",
       "06_559_725202611190",
-      "07_612_726202611071"
+      "07_612_726202611101"
     ],
     "Bohdan Dovhalov": [
       "04_413_724202694900",
@@ -43374,12 +43430,12 @@
     ],
     "Ivan Nikitin": [
       "04_9_724202695900",
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_664_726202614127",
-      "07_679_726202625727"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_664_726202614427",
+      "07_679_726202630027"
     ],
     "Maggie Sheng": [
       "04_9_724202695900"
@@ -43621,10 +43677,10 @@
       "07_593_726202692200",
       "07_595_726202692900",
       "07_597_726202694136",
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_636_726202611573",
-      "07_637_726202611590"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_636_726202612003",
+      "07_637_726202612020"
     ],
     "Yana Kandybae": [
       "05_419_725202690645",
@@ -43765,9 +43821,9 @@
       "05_543_725202622821",
       "06_559_725202610300",
       "06_559_725202611190",
-      "07_648_726202612145",
-      "07_649_726202612162",
-      "07_655_726202612551"
+      "07_648_726202612175",
+      "07_649_726202612192",
+      "07_655_726202612581"
     ],
     "Karen Taylor": [
       "05_432_725202692418",
@@ -44548,11 +44604,11 @@
       "05_541_725202621248",
       "05_545_725202623357",
       "05_555_725202633151",
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_662_726202613139"
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_662_726202613439"
     ],
     "Joyce He": [
       "05_537_725202620724",
@@ -44567,10 +44623,10 @@
       "05_542_725202622409",
       "05_543_725202622821",
       "05_546_725202624057",
-      "07_664_726202614127",
-      "07_668_726202621527",
-      "07_671_726202622927",
-      "07_672_726202623627"
+      "07_664_726202614427",
+      "07_668_726202621827",
+      "07_671_726202623227",
+      "07_672_726202623927"
     ],
     "Jia Xu": [
       "05_542_725202622409",
@@ -44602,27 +44658,27 @@
     ],
     "Lukas Alisauskas": [
       "06_13_725202611340",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_648_726202612145",
-      "07_649_726202612162",
-      "07_663_726202613551",
-      "07_668_726202621527",
-      "07_671_726202622927",
-      "07_679_726202625727",
-      "07_680_726202630327",
-      "07_682_726202631727"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_648_726202612175",
+      "07_649_726202612192",
+      "07_663_726202613851",
+      "07_668_726202621827",
+      "07_671_726202623227",
+      "07_679_726202630027",
+      "07_680_726202630627",
+      "07_682_726202632027"
     ],
     "Simona Alisauskas": [
       "06_13_725202611340"
@@ -44678,14 +44734,14 @@
     "Marina Anisimova": [
       "06_557_725202680000",
       "06_557_725202683000",
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Deniz Uzalp": [
       "06_557_725202680000",
       "06_557_725202683000",
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Max Bersie": [
       "06_557_725202680000",
@@ -44711,24 +44767,24 @@
       "06_557_725202680000",
       "06_557_725202683000",
       "07_603_726202610151",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_621_726202611354",
-      "07_630_726202611485",
-      "07_652_726202612423",
-      "07_658_726202611327",
-      "07_662_726202613139",
-      "07_671_726202622927",
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_621_726202611384",
+      "07_630_726202611515",
+      "07_652_726202612453",
+      "07_658_726202611627",
+      "07_662_726202613439",
+      "07_671_726202623227",
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Isabella Moudry": [
       "06_557_725202680000",
       "06_557_725202683000",
       "07_603_726202610151",
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Sofia Chubay": [
       "06_557_725202680000",
@@ -44745,12 +44801,12 @@
     "Lucas Lamph": [
       "06_557_725202680000",
       "06_557_725202683000",
-      "07_612_726202611071"
+      "07_612_726202611101"
     ],
     "Zuleyka Vehikite": [
       "06_557_725202680000",
       "06_557_725202683000",
-      "07_612_726202611071"
+      "07_612_726202611101"
     ],
     "Simone Mishuris": [
       "06_557_725202680000",
@@ -44803,16 +44859,76 @@
     "Vincent Shieh": [
       "06_559_725202610300",
       "06_559_725202611190",
-      "07_604_726202610421",
-      "07_608_726202610544",
-      "07_612_726202611071"
+      "07_604_726202610451",
+      "07_608_726202610574",
+      "07_612_726202611101"
     ],
     "Grace Wong": [
       "06_559_725202610300",
       "06_559_725202611190",
-      "07_604_726202610421",
-      "07_608_726202610544",
-      "07_612_726202611071"
+      "07_604_726202610451",
+      "07_608_726202610574",
+      "07_612_726202611101"
+    ],
+    "Veronika Aristov": [
+      "07_1FORD_726202610371",
+      "07_600_726202695412",
+      "07_602_726202610081",
+      "07_676_726202624627",
+      "07_680_726202630627"
+    ],
+    "Bruce Kobylyanskyy": [
+      "07_1FORD_726202610371",
+      "07_600_726202695412",
+      "07_602_726202610081",
+      "07_676_726202624627",
+      "07_680_726202630627"
+    ],
+    "Daniel Ischenko": [
+      "07_1FORD_726202610371",
+      "07_593_726202692200",
+      "07_596_726202693436",
+      "07_599_726202695412",
+      "07_599IB_726202695412",
+      "07_602_726202610081",
+      "07_667IL_726202615127",
+      "07_670_726202622527",
+      "07_673_726202623927",
+      "07_681_726202631327"
+    ],
+    "Aleksandra Kim": [
+      "07_1FORD_726202610371",
+      "07_593_726202692200",
+      "07_596_726202693436",
+      "07_599_726202695412",
+      "07_599IB_726202695412",
+      "07_602_726202610081",
+      "07_667IL_726202615127",
+      "07_670_726202622527",
+      "07_673_726202623927",
+      "07_681_726202631327"
+    ],
+    "Dasha Dragunov": [
+      "07_2FORD_726202610384",
+      "07_596_726202693436",
+      "07_601_726202610011"
+    ],
+    "Michael Novikov": [
+      "07_2FORD_726202610384",
+      "07_596_726202693436",
+      "07_601_726202610011",
+      "07_671_726202623227",
+      "07_681_726202631327"
+    ],
+    "Kristina Dudka": [
+      "07_2FORD_726202610384",
+      "07_598_726202694712",
+      "07_601_726202610011"
+    ],
+    "Daniil Marinesku": [
+      "07_2FORD_726202610384",
+      "07_598_726202694712",
+      "07_601_726202610011"
     ],
     "Shakira Al-Shamari": [
       "07_560_726202680000",
@@ -44824,16 +44940,16 @@
       "07_578_726202682512",
       "07_579_726202682636",
       "07_580_726202682800",
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015",
-      "07_649_726202612162",
-      "07_662_726202613139"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045",
+      "07_649_726202612192",
+      "07_662_726202613439"
     ],
     "Jacqueline Brener-Dubois": [
       "07_560_726202680000",
@@ -44842,15 +44958,15 @@
       "07_571_726202681524",
       "07_578_726202682512",
       "07_580_726202682800",
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_630_726202611485",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_649_726202612162",
-      "07_661_726202612727"
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_630_726202611515",
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_649_726202612192",
+      "07_661_726202613027"
     ],
     "Mikhael Brener-Dubois": [
       "07_560_726202680000",
@@ -44859,15 +44975,15 @@
       "07_571_726202681524",
       "07_578_726202682512",
       "07_580_726202682800",
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_630_726202611485",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_649_726202612162",
-      "07_661_726202612727"
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_630_726202611515",
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_649_726202612192",
+      "07_661_726202613027"
     ],
     "Sophia Cremarosa": [
       "07_560_726202680000",
@@ -44880,17 +44996,17 @@
       "07_579_726202682636",
       "07_580_726202682800",
       "07_595_726202692900",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_655_726202612551"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_655_726202612581"
     ],
     "Michael Levenkov": [
       "07_560_726202680000",
@@ -44911,13 +45027,13 @@
       "07_599_726202695412",
       "07_599IB_726202695412",
       "07_602_726202610081",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_652IL_726202612423",
-      "07_679_726202625727"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_652IL_726202612453",
+      "07_679_726202630027"
     ],
     "Nikko Khuu-Fiorino": [
       "07_560_726202680000",
@@ -44955,17 +45071,17 @@
       "07_575_726202682100",
       "07_577_726202682348",
       "07_592_726202691748",
-      "07_631_726202611501",
-      "07_632_726202611514",
-      "07_633_726202611531",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_640_726202612032",
-      "07_641_726202612044",
-      "07_642_726202612061",
-      "07_643_726202612074",
-      "07_644_726202612090",
-      "07_653_726202612481"
+      "07_631_726202611531",
+      "07_632_726202611544",
+      "07_633_726202611561",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_640_726202612062",
+      "07_641_726202612074",
+      "07_642_726202612091",
+      "07_643_726202612104",
+      "07_644_726202612120",
+      "07_653_726202612511"
     ],
     "Aleksandra Temple": [
       "07_560_726202680000",
@@ -44985,24 +45101,24 @@
       "07_599_726202695412",
       "07_599IB_726202695412",
       "07_602_726202610081",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_631_726202611501",
-      "07_632_726202611514",
-      "07_633_726202611531",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_640_726202612032",
-      "07_641_726202612044",
-      "07_642_726202612061",
-      "07_643_726202612074",
-      "07_644_726202612090",
-      "07_652IL_726202612423",
-      "07_653_726202612481",
-      "07_679_726202625727"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_631_726202611531",
+      "07_632_726202611544",
+      "07_633_726202611561",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_640_726202612062",
+      "07_641_726202612074",
+      "07_642_726202612091",
+      "07_643_726202612104",
+      "07_644_726202612120",
+      "07_652IL_726202612453",
+      "07_653_726202612511",
+      "07_679_726202630027"
     ],
     "Jane Chtchemelinine": [
       "07_563_726202680412",
@@ -45012,14 +45128,14 @@
       "07_582_726202683048",
       "07_593_726202692200",
       "07_597_726202694136",
-      "07_629_726202611472",
-      "07_643_726202612074",
-      "07_644_726202612090",
-      "07_648_726202612145",
-      "07_649_726202612162",
-      "07_651_726202612353",
-      "07_654_726202612510",
-      "07_659_726202611739"
+      "07_629_726202611502",
+      "07_643_726202612104",
+      "07_644_726202612120",
+      "07_648_726202612175",
+      "07_649_726202612192",
+      "07_651_726202612383",
+      "07_654_726202612540",
+      "07_659_726202612039"
     ],
     "Aahrone Bakhvala": [
       "07_564_726202680536",
@@ -45028,9 +45144,9 @@
       "07_568_726202681112",
       "07_592_726202691748",
       "07_597_726202694136",
-      "07_659_726202611739",
-      "07_661_726202612727",
-      "07_676_726202624327"
+      "07_659_726202612039",
+      "07_661_726202613027",
+      "07_676_726202624627"
     ],
     "Iris Bakhvala": [
       "07_564_726202680536",
@@ -45039,9 +45155,9 @@
       "07_568_726202681112",
       "07_595_726202692900",
       "07_597_726202694136",
-      "07_661_726202612727",
-      "07_662_726202613139",
-      "07_676_726202624327"
+      "07_661_726202613027",
+      "07_662_726202613439",
+      "07_676_726202624627"
     ],
     "Sabine Blyth": [
       "07_565_726202680700",
@@ -45053,14 +45169,14 @@
       "07_576_726202682224",
       "07_577_726202682348",
       "07_602_726202610081",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_621_726202611354",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_621_726202611384",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045"
     ],
     "Charlotte Liu": [
       "07_565_726202680700",
@@ -45078,10 +45194,10 @@
       "07_568_726202681112",
       "07_574_726202681936",
       "07_577_726202682348",
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_636_726202611573",
-      "07_637_726202611590"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_636_726202612003",
+      "07_637_726202612020"
     ],
     "Alice Guo": [
       "07_565_726202680700",
@@ -45093,17 +45209,17 @@
       "07_576_726202682224",
       "07_577_726202682348",
       "07_592_726202691748",
-      "07_631_726202611501",
-      "07_632_726202611514",
-      "07_633_726202611531",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_640_726202612032",
-      "07_641_726202612044",
-      "07_642_726202612061",
-      "07_643_726202612074",
-      "07_644_726202612090",
-      "07_650_726202612325"
+      "07_631_726202611531",
+      "07_632_726202611544",
+      "07_633_726202611561",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_640_726202612062",
+      "07_641_726202612074",
+      "07_642_726202612091",
+      "07_643_726202612104",
+      "07_644_726202612120",
+      "07_650_726202612355"
     ],
     "Adele Sklarsky": [
       "07_565_726202680700",
@@ -45113,8 +45229,8 @@
       "07_579_726202682636",
       "07_580_726202682800",
       "07_597_726202694136",
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Jordan Sklarsky": [
       "07_565_726202680700",
@@ -45124,8 +45240,8 @@
       "07_579_726202682636",
       "07_580_726202682800",
       "07_597_726202694136",
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Katya Afanaseva": [
       "07_569_726202681236",
@@ -45163,16 +45279,16 @@
       "07_580_726202682800",
       "07_581_726202682924",
       "07_603_726202610151",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_655_726202612551",
-      "07_663_726202613551"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_655_726202612581",
+      "07_663_726202613851"
     ],
     "Eseniia Ivanitskaia": [
       "07_569_726202681236",
@@ -45180,21 +45296,21 @@
       "07_571_726202681524",
       "07_592_726202691748",
       "07_597_726202694136",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_651_726202612353",
-      "07_661_726202612727"
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_651_726202612383",
+      "07_661_726202613027"
     ],
     "Mirai Takahashi": [
       "07_569_726202681236",
       "07_570_726202681400",
       "07_571_726202681524",
       "07_597_726202694136",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_661_726202612727"
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_661_726202613027"
     ],
     "Sophia Grigorovitch": [
       "07_578_726202682512",
@@ -45203,13 +45319,13 @@
       "07_581_726202682924",
       "07_582_726202683048",
       "07_600_726202695412",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_668_726202621527",
-      "07_682_726202631727"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_668_726202621827",
+      "07_682_726202632027"
     ],
     "Matilda Khuu-Fiorino": [
       "07_581_726202682924",
@@ -45223,17 +45339,17 @@
       "07_583_726202683212",
       "07_585_726202683745",
       "07_588_726202684439",
-      "07_604_726202610421",
-      "07_606_726202610474",
-      "07_608_726202610544"
+      "07_604_726202610451",
+      "07_606_726202610504",
+      "07_608_726202610574"
     ],
     "Reimar Leike": [
       "07_583_726202683212",
       "07_585_726202683745",
       "07_588_726202684439",
-      "07_604_726202610421",
-      "07_606_726202610474",
-      "07_608_726202610544"
+      "07_604_726202610451",
+      "07_606_726202610504",
+      "07_608_726202610574"
     ],
     "Uditi Guha": [
       "07_583_726202683212",
@@ -45241,11 +45357,11 @@
       "07_585_726202683745",
       "07_588_726202684439",
       "07_589_726202685015",
-      "07_604_726202610421",
-      "07_605_726202610462",
-      "07_606_726202610474",
-      "07_608_726202610544",
-      "07_609_726202611001"
+      "07_604_726202610451",
+      "07_605_726202610492",
+      "07_606_726202610504",
+      "07_608_726202610574",
+      "07_609_726202611031"
     ],
     "Catherine Kuntoro": [
       "07_583_726202683212",
@@ -45253,22 +45369,22 @@
       "07_585_726202683745",
       "07_588_726202684439",
       "07_589_726202685015",
-      "07_604_726202610421",
-      "07_605_726202610462",
-      "07_606_726202610474",
-      "07_608_726202610544",
-      "07_609_726202611001"
+      "07_604_726202610451",
+      "07_605_726202610492",
+      "07_606_726202610504",
+      "07_608_726202610574",
+      "07_609_726202611031"
     ],
     "Ivan Statkevich": [
       "07_592_726202691748",
       "07_595_726202692900",
-      "07_659_726202611739",
-      "07_667_726202614827"
+      "07_659_726202612039",
+      "07_667_726202615127"
     ],
     "Sophia Statkevich": [
       "07_593_726202692200",
-      "07_630_726202611485",
-      "07_658_726202611327"
+      "07_630_726202611515",
+      "07_658_726202611627"
     ],
     "Alexandra Golikova": [
       "07_593_726202692200",
@@ -45277,16 +45393,16 @@
       "07_597_726202694136",
       "07_599_726202695412",
       "07_599IB_726202695412",
-      "07_650_726202612325",
-      "07_652_726202612423",
-      "07_654_726202612510",
-      "07_655_726202612551",
-      "07_658_726202611327",
-      "07_661_726202612727",
-      "07_663_726202613551",
-      "07_667_726202614827",
-      "07_670_726202622227",
-      "07_679IL_726202625727"
+      "07_650_726202612355",
+      "07_652_726202612453",
+      "07_654_726202612540",
+      "07_655_726202612581",
+      "07_658_726202611627",
+      "07_661_726202613027",
+      "07_663_726202613851",
+      "07_667_726202615127",
+      "07_670_726202622527",
+      "07_679IL_726202630027"
     ],
     "Danya Rubashevsky": [
       "07_593_726202692200",
@@ -45295,65 +45411,43 @@
       "07_597_726202694136",
       "07_599_726202695412",
       "07_599IB_726202695412",
-      "07_655_726202612551",
-      "07_658_726202611327",
-      "07_661_726202612727",
-      "07_662_726202613139",
-      "07_663_726202613551",
-      "07_664_726202614127",
-      "07_667_726202614827",
-      "07_668_726202621527",
-      "07_670_726202622227",
-      "07_673_726202623627",
-      "07_676_726202624327",
-      "07_677_726202625027",
-      "07_679IL_726202625727"
-    ],
-    "Daniel Ischenko": [
-      "07_593_726202692200",
-      "07_596_726202693436",
-      "07_599_726202695412",
-      "07_599IB_726202695412",
-      "07_602_726202610081",
-      "07_667IL_726202614827",
-      "07_670_726202622227",
-      "07_673_726202623627",
-      "07_681_726202631027"
-    ],
-    "Aleksandra Kim": [
-      "07_593_726202692200",
-      "07_596_726202693436",
-      "07_599_726202695412",
-      "07_599IB_726202695412",
-      "07_602_726202610081",
-      "07_667IL_726202614827",
-      "07_670_726202622227",
-      "07_673_726202623627",
-      "07_681_726202631027"
+      "07_655_726202612581",
+      "07_658_726202611627",
+      "07_661_726202613027",
+      "07_662_726202613439",
+      "07_663_726202613851",
+      "07_664_726202614427",
+      "07_667_726202615127",
+      "07_668_726202621827",
+      "07_670_726202622527",
+      "07_673_726202623927",
+      "07_676_726202624627",
+      "07_677_726202625327",
+      "07_679IL_726202630027"
     ],
     "Maxine Mai": [
       "07_593_726202692200",
       "07_596_726202693436",
-      "07_651_726202612353",
-      "07_657_726202610627"
+      "07_651_726202612383",
+      "07_657_726202610927"
     ],
     "Adele Prozorova": [
       "07_593_726202692200",
       "07_596_726202693436",
-      "07_656_726202612592",
-      "07_660_726202612151"
+      "07_656_726202610227",
+      "07_660_726202612451"
     ],
     "Athena Mai": [
       "07_595_726202692900",
       "07_597_726202694136",
-      "07_651_726202612353",
-      "07_656_726202612592"
+      "07_651_726202612383",
+      "07_656_726202610227"
     ],
     "Ariana Yang": [
       "07_595_726202692900",
       "07_597_726202694136",
-      "07_652_726202612423",
-      "07_667_726202614827"
+      "07_652_726202612453",
+      "07_667_726202615127"
     ],
     "Garrison Baker": [
       "07_596_726202693436",
@@ -45366,60 +45460,42 @@
     "Brynnley Bath": [
       "07_596_726202693436",
       "07_602_726202610081",
-      "07_670_726202622227",
-      "07_681_726202631027"
+      "07_670_726202622527",
+      "07_681_726202631327"
     ],
     "Zayn Vehikite": [
       "07_596_726202693436",
       "07_602_726202610081",
-      "07_670_726202622227",
-      "07_681_726202631027"
+      "07_670_726202622527",
+      "07_681_726202631327"
     ],
     "Brandon Chen": [
       "07_596_726202693436",
       "07_598_726202694712",
       "07_601_726202610011",
       "07_603_726202610151",
-      "07_671_726202622927",
-      "07_681_726202631027"
+      "07_671_726202623227",
+      "07_681_726202631327"
     ],
     "Abbie Yeung": [
       "07_596_726202693436",
       "07_598_726202694712",
       "07_601_726202610011",
       "07_603_726202610151",
-      "07_671_726202622927",
-      "07_681_726202631027"
-    ],
-    "Dasha Dragunov": [
-      "07_596_726202693436",
-      "07_601_726202610011"
-    ],
-    "Michael Novikov": [
-      "07_596_726202693436",
-      "07_601_726202610011",
-      "07_671_726202622927",
-      "07_681_726202631027"
+      "07_671_726202623227",
+      "07_681_726202631327"
     ],
     "Cole Ackley": [
       "07_598_726202694712",
       "07_601_726202610011",
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Zamira Vehikite": [
       "07_598_726202694712",
       "07_601_726202610011",
-      "07_676_726202624327",
-      "07_680_726202630327"
-    ],
-    "Kristina Dudka": [
-      "07_598_726202694712",
-      "07_601_726202610011"
-    ],
-    "Daniil Marinesku": [
-      "07_598_726202694712",
-      "07_601_726202610011"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Wiktor Frydrych": [
       "07_598_726202694712",
@@ -45432,586 +45508,574 @@
     "Lucy Kobylyanskyy": [
       "07_598_726202694712",
       "07_601_726202610011",
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Maksim Mkrtchian": [
       "07_598_726202694712",
       "07_601_726202610011",
-      "07_676_726202624327",
-      "07_680_726202630327"
-    ],
-    "Veronika Aristov": [
-      "07_600_726202695412",
-      "07_602_726202610081",
-      "07_676_726202624327",
-      "07_680_726202630327"
-    ],
-    "Bruce Kobylyanskyy": [
-      "07_600_726202695412",
-      "07_602_726202610081",
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Duke Khuu": [
-      "07_604_726202610421",
-      "07_605_726202610462",
-      "07_606_726202610474",
-      "07_608_726202610544",
-      "07_609_726202611001"
+      "07_604_726202610451",
+      "07_605_726202610492",
+      "07_606_726202610504",
+      "07_608_726202610574",
+      "07_609_726202611031"
     ],
     "Sarah Wentling": [
-      "07_604_726202610421",
-      "07_605_726202610462",
-      "07_606_726202610474",
-      "07_608_726202610544",
-      "07_609_726202611001"
+      "07_604_726202610451",
+      "07_605_726202610492",
+      "07_606_726202610504",
+      "07_608_726202610574",
+      "07_609_726202611031"
     ],
     "Natasha Avanesov": [
-      "07_608_726202610544"
+      "07_608_726202610574"
     ],
     "Andrego Halim": [
-      "07_608_726202610544"
+      "07_608_726202610574"
     ],
     "Kelly Crouse": [
-      "07_610_726202611013"
+      "07_610_726202611043"
     ],
     "Razmik Papian": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015",
-      "07_649_726202612162",
-      "07_655_726202612551",
-      "07_662_726202613139",
-      "07_663_726202613551"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045",
+      "07_649_726202612192",
+      "07_655_726202612581",
+      "07_662_726202613439",
+      "07_663_726202613851"
     ],
     "Aurora Generalova": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_626_726202611430",
-      "07_628_726202611455",
-      "07_636_726202611573",
-      "07_638_726202612002",
-      "07_645_726202612103",
-      "07_647_726202612133",
-      "07_663_726202613551"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_626_726202611460",
+      "07_628_726202611485",
+      "07_636_726202612003",
+      "07_638_726202612032",
+      "07_645_726202612133",
+      "07_647_726202612163",
+      "07_663_726202613851"
     ],
     "Anastasiya Rubashevsky": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_621_726202611354",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015",
-      "07_652_726202612423",
-      "07_655_726202612551",
-      "07_658_726202611327",
-      "07_661_726202612727",
-      "07_662_726202613139",
-      "07_663_726202613551",
-      "07_664_726202614127",
-      "07_668_726202621527",
-      "07_670_726202622227",
-      "07_673_726202623627",
-      "07_676_726202624327"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_621_726202611384",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045",
+      "07_652_726202612453",
+      "07_655_726202612581",
+      "07_658_726202611627",
+      "07_661_726202613027",
+      "07_662_726202613439",
+      "07_663_726202613851",
+      "07_664_726202614427",
+      "07_668_726202621827",
+      "07_670_726202622527",
+      "07_673_726202623927",
+      "07_676_726202624627"
     ],
     "Ryan Khersonsky": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015",
-      "07_662_726202613139",
-      "07_679_726202625727"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045",
+      "07_662_726202613439",
+      "07_679_726202630027"
     ],
     "Elena Krifuks": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015",
-      "07_662_726202613139",
-      "07_679_726202625727"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045",
+      "07_662_726202613439",
+      "07_679_726202630027"
     ],
     "Ashlynn Mallamace": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_622_726202611371",
-      "07_624_726202611400",
-      "07_662_726202613139",
-      "07_679_726202625727"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_622_726202611401",
+      "07_624_726202611430",
+      "07_662_726202613439",
+      "07_679_726202630027"
     ],
     "Claire Wei Yi": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_615_726202611270",
-      "07_616_726202611283",
-      "07_625_726202611413",
-      "07_640_726202612032",
-      "07_644_726202612090",
-      "07_659_726202611739",
-      "07_664_726202614127",
-      "07_679_726202625727"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_615_726202611300",
+      "07_616_726202611313",
+      "07_625_726202611443",
+      "07_640_726202612062",
+      "07_644_726202612120",
+      "07_659_726202612039",
+      "07_664_726202614427",
+      "07_679_726202630027"
     ],
     "Dahlia Yim": [
-      "07_613_726202611241",
-      "07_614_726202611253",
-      "07_616_726202611283",
-      "07_622_726202611371",
-      "07_623_726202611384",
-      "07_625_726202611413",
-      "07_640_726202612032",
-      "07_641_726202612044",
-      "07_644_726202612090",
-      "07_663_726202613551"
+      "07_613_726202611271",
+      "07_614_726202611283",
+      "07_616_726202611313",
+      "07_622_726202611401",
+      "07_623_726202611414",
+      "07_625_726202611443",
+      "07_640_726202612062",
+      "07_641_726202612074",
+      "07_644_726202612120",
+      "07_663_726202613851"
     ],
     "Parker Ahern": [
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_648_726202612145",
-      "07_649_726202612162"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_648_726202612175",
+      "07_649_726202612192"
     ],
     "Nataliya Kravets": [
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_648_726202612145",
-      "07_649_726202612162"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_648_726202612175",
+      "07_649_726202612192"
     ],
     "Chloe  Lee": [
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_621_726202611354",
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_621_726202611384",
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045"
     ],
     "Annie Lee": [
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_621_726202611354",
-      "07_671_726202622927"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_621_726202611384",
+      "07_671_726202623227"
     ],
     "Felix Sindora": [
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_620_726202611342",
-      "07_621_726202611354",
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_655_726202612551",
-      "07_664_726202614127",
-      "07_665_726202614827",
-      "07_666_726202614827",
-      "07_668_726202621527",
-      "07_669_726202622227",
-      "07_673_726202623627",
-      "07_674_726202624327",
-      "07_675_726202624327",
-      "07_677_726202625027",
-      "07_678_726202625727",
-      "07_681_726202631027"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_620_726202611372",
+      "07_621_726202611384",
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_655_726202612581",
+      "07_664_726202614427",
+      "07_665_726202615127",
+      "07_666_726202615127",
+      "07_668_726202621827",
+      "07_669_726202622527",
+      "07_673_726202623927",
+      "07_674_726202624627",
+      "07_675_726202624627",
+      "07_677_726202625327",
+      "07_678_726202630027",
+      "07_681_726202631327"
     ],
     "Leonid Generalov": [
-      "07_617_726202611300",
-      "07_618_726202611312",
-      "07_619_726202611325",
-      "07_621_726202611354",
-      "07_626_726202611430",
-      "07_628_726202611455",
-      "07_636_726202611573",
-      "07_638_726202612002",
-      "07_645_726202612103",
-      "07_647_726202612133",
-      "07_652_726202612423",
-      "07_658_726202611327"
+      "07_617_726202611330",
+      "07_618_726202611342",
+      "07_619_726202611355",
+      "07_621_726202611384",
+      "07_626_726202611460",
+      "07_628_726202611485",
+      "07_636_726202612003",
+      "07_638_726202612032",
+      "07_645_726202612133",
+      "07_647_726202612163",
+      "07_652_726202612453",
+      "07_658_726202611627"
     ],
     "Anastasiia Ananieva": [
-      "07_622_726202611371",
-      "07_623_726202611384",
-      "07_624_726202611400",
-      "07_625_726202611413",
-      "07_650_726202612325",
-      "07_654_726202612510"
+      "07_622_726202611401",
+      "07_623_726202611414",
+      "07_624_726202611430",
+      "07_625_726202611443",
+      "07_650_726202612355",
+      "07_654_726202612540"
     ],
     "Kuzma Kalachev": [
-      "07_622_726202611371",
-      "07_625_726202611413",
-      "07_640_726202612032",
-      "07_644_726202612090",
-      "07_650_726202612325"
+      "07_622_726202611401",
+      "07_625_726202611443",
+      "07_640_726202612062",
+      "07_644_726202612120",
+      "07_650_726202612355"
     ],
     "Lily Murvanidze": [
-      "07_622_726202611371",
-      "07_623_726202611384",
-      "07_624_726202611400",
-      "07_625_726202611413",
-      "07_654_726202612510",
-      "07_660_726202612151"
+      "07_622_726202611401",
+      "07_623_726202611414",
+      "07_624_726202611430",
+      "07_625_726202611443",
+      "07_654_726202612540",
+      "07_660_726202612451"
     ],
     "Alena Sivura": [
-      "07_622_726202611371",
-      "07_623_726202611384",
-      "07_624_726202611400",
-      "07_625_726202611413",
-      "07_650_726202612325",
-      "07_659_726202611739"
+      "07_622_726202611401",
+      "07_623_726202611414",
+      "07_624_726202611430",
+      "07_625_726202611443",
+      "07_650_726202612355",
+      "07_659_726202612039"
     ],
     "Maria Sivura": [
-      "07_622_726202611371",
-      "07_623_726202611384",
-      "07_624_726202611400",
-      "07_625_726202611413",
-      "07_653_726202612481",
-      "07_659_726202611739"
+      "07_622_726202611401",
+      "07_623_726202611414",
+      "07_624_726202611430",
+      "07_625_726202611443",
+      "07_653_726202612511",
+      "07_659_726202612039"
     ],
     "Anderson Zhou": [
-      "07_622_726202611371",
-      "07_623_726202611384",
-      "07_624_726202611400",
-      "07_625_726202611413",
-      "07_641_726202612044",
-      "07_653_726202612481",
-      "07_654_726202612510"
+      "07_622_726202611401",
+      "07_623_726202611414",
+      "07_624_726202611430",
+      "07_625_726202611443",
+      "07_641_726202612074",
+      "07_653_726202612511",
+      "07_654_726202612540"
     ],
     "Preston Ahern": [
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_636_726202611573",
-      "07_637_726202611590"
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_636_726202612003",
+      "07_637_726202612020"
     ],
     "Lisa Shapiro": [
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_654_726202612510",
-      "07_663_726202613551",
-      "07_679_726202625727"
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_654_726202612540",
+      "07_663_726202613851",
+      "07_679_726202630027"
     ],
     "Eva Sullivan": [
-      "07_626_726202611430",
-      "07_627_726202611443",
-      "07_628_726202611455",
-      "07_629_726202611472",
-      "07_662_726202613139"
+      "07_626_726202611460",
+      "07_627_726202611473",
+      "07_628_726202611485",
+      "07_629_726202611502",
+      "07_662_726202613439"
     ],
     "Amelia Slutskiy": [
-      "07_626_726202611430",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_640_726202612032",
-      "07_641_726202612044",
-      "07_642_726202612061",
-      "07_643_726202612074",
-      "07_644_726202612090",
-      "07_648_726202612145",
-      "07_653_726202612481",
-      "07_659_726202611739",
-      "07_661_726202612727",
-      "07_667_726202614827"
+      "07_626_726202611460",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_640_726202612062",
+      "07_641_726202612074",
+      "07_642_726202612091",
+      "07_643_726202612104",
+      "07_644_726202612120",
+      "07_648_726202612175",
+      "07_653_726202612511",
+      "07_659_726202612039",
+      "07_661_726202613027",
+      "07_667_726202615127"
     ],
     "David Slutskiy": [
-      "07_626_726202611430",
-      "07_629_726202611472",
-      "07_630_726202611485",
-      "07_648_726202612145",
-      "07_661_726202612727",
-      "07_667_726202614827"
+      "07_626_726202611460",
+      "07_629_726202611502",
+      "07_630_726202611515",
+      "07_648_726202612175",
+      "07_661_726202613027",
+      "07_667_726202615127"
     ],
     "Victoria Akhanova": [
-      "07_631_726202611501",
-      "07_632_726202611514",
-      "07_633_726202611531",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_640_726202612032",
-      "07_641_726202612044",
-      "07_642_726202612061",
-      "07_643_726202612074",
-      "07_644_726202612090",
-      "07_651_726202612353",
-      "07_657_726202610627"
+      "07_631_726202611531",
+      "07_632_726202611544",
+      "07_633_726202611561",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_640_726202612062",
+      "07_641_726202612074",
+      "07_642_726202612091",
+      "07_643_726202612104",
+      "07_644_726202612120",
+      "07_651_726202612383",
+      "07_657_726202610927"
     ],
     "Tymeya Asandei": [
-      "07_631_726202611501",
-      "07_632_726202611514",
-      "07_633_726202611531",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_657_726202610627",
-      "07_660_726202612151"
+      "07_631_726202611531",
+      "07_632_726202611544",
+      "07_633_726202611561",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_657_726202610927",
+      "07_660_726202612451"
     ],
     "Jessica Ferber": [
-      "07_631_726202611501",
-      "07_632_726202611514",
-      "07_633_726202611531",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_657_726202610627"
+      "07_631_726202611531",
+      "07_632_726202611544",
+      "07_633_726202611561",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_657_726202610927"
     ],
     "Milan Huynh": [
-      "07_631_726202611501",
-      "07_632_726202611514",
-      "07_633_726202611531",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_657_726202610627"
+      "07_631_726202611531",
+      "07_632_726202611544",
+      "07_633_726202611561",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_657_726202610927"
     ],
     "Alice Wu": [
-      "07_632_726202611514",
-      "07_634_726202611543",
-      "07_635_726202611560",
-      "07_648_726202612145",
-      "07_649_726202612162",
-      "07_653_726202612481",
-      "07_655_726202612551"
+      "07_632_726202611544",
+      "07_634_726202611573",
+      "07_635_726202611590",
+      "07_648_726202612175",
+      "07_649_726202612192",
+      "07_653_726202612511",
+      "07_655_726202612581"
     ],
     "Yuliia Berezhna": [
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_673_726202623627"
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_673_726202623927"
     ],
     "Dmitry Dmitriev": [
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_673_726202623627"
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_673_726202623927"
     ],
     "Steven Pilberg": [
-      "07_636_726202611573",
-      "07_637_726202611590",
-      "07_638_726202612002",
-      "07_639_726202612015",
-      "07_650_726202612325",
-      "07_652_726202612423",
-      "07_656_726202612592",
-      "07_658_726202611327"
+      "07_636_726202612003",
+      "07_637_726202612020",
+      "07_638_726202612032",
+      "07_639_726202612045",
+      "07_650_726202612355",
+      "07_652_726202612453",
+      "07_656_726202610227",
+      "07_658_726202611627"
     ],
     "Brooklyn Rosario": [
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_648_726202612145",
-      "07_649_726202612162",
-      "07_671_726202622927",
-      "07_680_726202630327"
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_648_726202612175",
+      "07_649_726202612192",
+      "07_671_726202623227",
+      "07_680_726202630627"
     ],
     "Chloe Nguyen": [
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_648_726202612145",
-      "07_649_726202612162",
-      "07_673_726202623627"
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_648_726202612175",
+      "07_649_726202612192",
+      "07_673_726202623927"
     ],
     "Tyler Nguyen": [
-      "07_645_726202612103",
-      "07_646_726202612120",
-      "07_647_726202612133",
-      "07_648_726202612145",
-      "07_649_726202612162",
-      "07_673_726202623627"
+      "07_645_726202612133",
+      "07_646_726202612150",
+      "07_647_726202612163",
+      "07_648_726202612175",
+      "07_649_726202612192",
+      "07_673_726202623927"
     ],
     "Alex Chen": [
-      "07_650_726202612325",
-      "07_652_726202612423",
-      "07_655_726202612551",
-      "07_656_726202612592",
-      "07_658_726202611327",
-      "07_661_726202612727",
-      "07_670_726202622227",
-      "07_680_726202630327"
+      "07_650_726202612355",
+      "07_652_726202612453",
+      "07_655_726202612581",
+      "07_656_726202610227",
+      "07_658_726202611627",
+      "07_661_726202613027",
+      "07_670_726202622527",
+      "07_680_726202630627"
     ],
     "Maria Kimlyk": [
-      "07_651_726202612353"
+      "07_651_726202612383"
     ],
     "Adam Whitehouse": [
-      "07_651_726202612353",
-      "07_656_726202612592",
-      "07_660_726202612151"
+      "07_651_726202612383",
+      "07_656_726202610227",
+      "07_660_726202612451"
     ],
     "Medina Serik": [
-      "07_652_726202612423",
-      "07_656_726202612592",
-      "07_658_726202611327",
-      "07_680_726202630327"
+      "07_652_726202612453",
+      "07_656_726202610227",
+      "07_658_726202611627",
+      "07_680_726202630627"
     ],
     "Ryan Rowe": [
-      "07_654_726202612510",
-      "07_656_726202612592",
-      "07_660_726202612151"
+      "07_654_726202612540",
+      "07_656_726202610227",
+      "07_660_726202612451"
     ],
     "Alice Cherenshchikova": [
-      "07_657_726202610627"
+      "07_657_726202610927"
     ],
     "Sophia Dymo": [
-      "07_657_726202610627"
+      "07_657_726202610927"
     ],
     "Aria Lucia Reyes-Villa": [
-      "07_658_726202611327",
-      "07_664_726202614127",
-      "07_676_726202624327"
+      "07_658_726202611627",
+      "07_664_726202614427",
+      "07_676_726202624627"
     ],
     "Bella Chatman": [
-      "07_662_726202613139",
-      "07_668_726202621527",
-      "07_673_726202623627",
-      "07_677_726202625027"
+      "07_662_726202613439",
+      "07_668_726202621827",
+      "07_673_726202623927",
+      "07_677_726202625327"
     ],
     "Natalie Pavlovsky": [
-      "07_662_726202613139",
-      "07_668_726202621527",
-      "07_673_726202623627"
+      "07_662_726202613439",
+      "07_668_726202621827",
+      "07_673_726202623927"
     ],
     "Yvanna Abadia": [
-      "07_664_726202614127",
-      "07_676_726202624327"
+      "07_664_726202614427",
+      "07_676_726202624627"
     ],
     "Daniil Kukuevskii": [
-      "07_664_726202614127",
-      "07_668_726202621527"
+      "07_664_726202614427",
+      "07_668_726202621827"
     ],
     "Daniela Podolska": [
-      "07_664_726202614127",
-      "07_668_726202621527"
+      "07_664_726202614427",
+      "07_668_726202621827"
     ],
     "Alina Lyukshin": [
-      "07_664_726202614127",
-      "07_665_726202614827",
-      "07_666_726202614827",
-      "07_668_726202621527",
-      "07_669_726202622227",
-      "07_673_726202623627",
-      "07_674_726202624327",
-      "07_675_726202624327",
-      "07_677_726202625027",
-      "07_678_726202625727",
-      "07_681_726202631027"
+      "07_664_726202614427",
+      "07_665_726202615127",
+      "07_666_726202615127",
+      "07_668_726202621827",
+      "07_669_726202622527",
+      "07_673_726202623927",
+      "07_674_726202624627",
+      "07_675_726202624627",
+      "07_677_726202625327",
+      "07_678_726202630027",
+      "07_681_726202631327"
     ],
     "Michelle Popper": [
-      "07_664_726202614127",
-      "07_668_726202621527",
-      "07_671_726202622927",
-      "07_672_726202623627"
+      "07_664_726202614427",
+      "07_668_726202621827",
+      "07_671_726202623227",
+      "07_672_726202623927"
     ],
     "Mila Dragunov": [
-      "07_670_726202622227",
-      "07_681_726202631027"
+      "07_670_726202622527",
+      "07_681_726202631327"
     ],
     "Abraham Parmenov": [
-      "07_670_726202622227",
-      "07_681_726202631027"
+      "07_670_726202622527",
+      "07_681_726202631327"
     ],
     "Thea Rowe": [
-      "07_670_726202622227",
-      "07_681_726202631027"
+      "07_670_726202622527",
+      "07_681_726202631327"
     ],
     "Benjamin Sklovskiy": [
-      "07_670_726202622227",
-      "07_681_726202631027"
+      "07_670_726202622527",
+      "07_681_726202631327"
     ],
     "Angelina  Novikova": [
-      "07_671_726202622927",
-      "07_681_726202631027"
+      "07_671_726202623227",
+      "07_681_726202631327"
     ],
     "Oleksandr Polyvka": [
-      "07_671_726202622927",
-      "07_681_726202631027"
+      "07_671_726202623227",
+      "07_681_726202631327"
     ],
     "Laila Rubashevsky": [
-      "07_671_726202622927",
-      "07_681_726202631027"
+      "07_671_726202623227",
+      "07_681_726202631327"
     ],
     "Mariia Fedotova": [
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Nicolas Rastvortsev": [
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Milada Myronenko": [
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Phabian Parra": [
-      "07_676_726202624327",
-      "07_680_726202630327"
+      "07_676_726202624627",
+      "07_680_726202630627"
     ],
     "Sean Ginko": [
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Adela Yanev": [
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Sofia Pylypenko": [
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ],
     "Benjamin Yakubov": [
-      "07_677_726202625027",
-      "07_682_726202631727"
+      "07_677_726202625327",
+      "07_682_726202632027"
     ]
   },
   "top_matchups": {
@@ -51743,6 +51807,134 @@
         "their_bib": "774"
       }
     ],
+    "Veronika Aristov": [
+      {
+        "opponent_couple": "Daniel Ischenko & Aleksandra Kim",
+        "count": 2,
+        "my_bib": "825",
+        "their_bib": "820"
+      },
+      {
+        "opponent_couple": "Cole Ackley & Zamira Vehikite",
+        "count": 2,
+        "my_bib": "825",
+        "their_bib": "800"
+      },
+      {
+        "opponent_couple": "Mariia Fedotova & Nicolas Rastvortsev",
+        "count": 2,
+        "my_bib": "825",
+        "their_bib": "839"
+      },
+      {
+        "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
+        "count": 2,
+        "my_bib": "825",
+        "their_bib": "830"
+      },
+      {
+        "opponent_couple": "Milada Myronenko & Phabian Parra",
+        "count": 2,
+        "my_bib": "825",
+        "their_bib": "835"
+      }
+    ],
+    "Daniel Ischenko": [
+      {
+        "opponent_couple": "Alexandra Golikova & Danya Rubashevsky",
+        "count": 5,
+        "my_bib": "820",
+        "their_bib": "561"
+      },
+      {
+        "opponent_couple": "Brynnley Bath & Zayn Vehikite",
+        "count": 4,
+        "my_bib": "820",
+        "their_bib": "853"
+      },
+      {
+        "opponent_couple": "Michael Levenkov & Aleksandra Temple",
+        "count": 3,
+        "my_bib": "820",
+        "their_bib": "538"
+      },
+      {
+        "opponent_couple": "Veronika Aristov & Bruce Kobylyanskyy",
+        "count": 2,
+        "my_bib": "820",
+        "their_bib": "825"
+      },
+      {
+        "opponent_couple": "Maxine Mai",
+        "count": 2,
+        "my_bib": "820",
+        "their_bib": "828"
+      }
+    ],
+    "Dasha Dragunov": [
+      {
+        "opponent_couple": "Kristina Dudka & Daniil Marinesku",
+        "count": 2,
+        "my_bib": "832",
+        "their_bib": "829"
+      },
+      {
+        "opponent_couple": "Garrison Baker & Aniston Fowler",
+        "count": 2,
+        "my_bib": "832",
+        "their_bib": "805"
+      },
+      {
+        "opponent_couple": "Brandon Chen & Abbie Yeung",
+        "count": 2,
+        "my_bib": "832",
+        "their_bib": "809"
+      },
+      {
+        "opponent_couple": "Brynnley Bath & Zayn Vehikite",
+        "count": 1,
+        "my_bib": "832",
+        "their_bib": "853"
+      },
+      {
+        "opponent_couple": "Alexandra Golikova & Danya Rubashevsky",
+        "count": 1,
+        "my_bib": "832",
+        "their_bib": "561"
+      }
+    ],
+    "Kristina Dudka": [
+      {
+        "opponent_couple": "Dasha Dragunov & Michael Novikov",
+        "count": 2,
+        "my_bib": "829",
+        "their_bib": "832"
+      },
+      {
+        "opponent_couple": "Cole Ackley & Zamira Vehikite",
+        "count": 2,
+        "my_bib": "829",
+        "their_bib": "800"
+      },
+      {
+        "opponent_couple": "Brandon Chen & Abbie Yeung",
+        "count": 2,
+        "my_bib": "829",
+        "their_bib": "809"
+      },
+      {
+        "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
+        "count": 2,
+        "my_bib": "829",
+        "their_bib": "830"
+      },
+      {
+        "opponent_couple": "Wiktor Frydrych & Maya Sinelnikov",
+        "count": 1,
+        "my_bib": "829",
+        "their_bib": "813"
+      }
+    ],
     "Shakira Al-Shamari": [
       {
         "opponent_couple": "Sophia Cremarosa & Michael Levenkov",
@@ -52351,38 +52543,6 @@
         "their_bib": "828"
       }
     ],
-    "Daniel Ischenko": [
-      {
-        "opponent_couple": "Alexandra Golikova & Danya Rubashevsky",
-        "count": 5,
-        "my_bib": "820",
-        "their_bib": "561"
-      },
-      {
-        "opponent_couple": "Brynnley Bath & Zayn Vehikite",
-        "count": 4,
-        "my_bib": "820",
-        "their_bib": "853"
-      },
-      {
-        "opponent_couple": "Michael Levenkov & Aleksandra Temple",
-        "count": 3,
-        "my_bib": "820",
-        "their_bib": "538"
-      },
-      {
-        "opponent_couple": "Maxine Mai",
-        "count": 2,
-        "my_bib": "820",
-        "their_bib": "828"
-      },
-      {
-        "opponent_couple": "Adele Prozorova",
-        "count": 2,
-        "my_bib": "820",
-        "their_bib": "838"
-      }
-    ],
     "Maxine Mai": [
       {
         "opponent_couple": "Jane Chtchemelinine",
@@ -52607,38 +52767,6 @@
         "their_bib": "800"
       }
     ],
-    "Dasha Dragunov": [
-      {
-        "opponent_couple": "Garrison Baker & Aniston Fowler",
-        "count": 2,
-        "my_bib": "832",
-        "their_bib": "805"
-      },
-      {
-        "opponent_couple": "Brandon Chen & Abbie Yeung",
-        "count": 2,
-        "my_bib": "832",
-        "their_bib": "809"
-      },
-      {
-        "opponent_couple": "Brynnley Bath & Zayn Vehikite",
-        "count": 1,
-        "my_bib": "832",
-        "their_bib": "853"
-      },
-      {
-        "opponent_couple": "Alexandra Golikova & Danya Rubashevsky",
-        "count": 1,
-        "my_bib": "832",
-        "their_bib": "561"
-      },
-      {
-        "opponent_couple": "Daniel Ischenko & Aleksandra Kim",
-        "count": 1,
-        "my_bib": "832",
-        "their_bib": "820"
-      }
-    ],
     "Cole Ackley": [
       {
         "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
@@ -52669,38 +52797,6 @@
         "count": 2,
         "my_bib": "800",
         "their_bib": "839"
-      }
-    ],
-    "Kristina Dudka": [
-      {
-        "opponent_couple": "Cole Ackley & Zamira Vehikite",
-        "count": 2,
-        "my_bib": "829",
-        "their_bib": "800"
-      },
-      {
-        "opponent_couple": "Brandon Chen & Abbie Yeung",
-        "count": 2,
-        "my_bib": "829",
-        "their_bib": "809"
-      },
-      {
-        "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
-        "count": 2,
-        "my_bib": "829",
-        "their_bib": "830"
-      },
-      {
-        "opponent_couple": "Wiktor Frydrych & Maya Sinelnikov",
-        "count": 1,
-        "my_bib": "829",
-        "their_bib": "813"
-      },
-      {
-        "opponent_couple": "Izzy Luong & Yegor Zhukov",
-        "count": 1,
-        "my_bib": "829",
-        "their_bib": "861"
       }
     ],
     "Wiktor Frydrych": [
@@ -52765,38 +52861,6 @@
         "count": 2,
         "my_bib": "830",
         "their_bib": "839"
-      }
-    ],
-    "Veronika Aristov": [
-      {
-        "opponent_couple": "Cole Ackley & Zamira Vehikite",
-        "count": 2,
-        "my_bib": "825",
-        "their_bib": "800"
-      },
-      {
-        "opponent_couple": "Mariia Fedotova & Nicolas Rastvortsev",
-        "count": 2,
-        "my_bib": "825",
-        "their_bib": "839"
-      },
-      {
-        "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
-        "count": 2,
-        "my_bib": "825",
-        "their_bib": "830"
-      },
-      {
-        "opponent_couple": "Milada Myronenko & Phabian Parra",
-        "count": 2,
-        "my_bib": "825",
-        "their_bib": "835"
-      },
-      {
-        "opponent_couple": "Adele Sklarsky & Jordan Sklarsky",
-        "count": 2,
-        "my_bib": "825",
-        "their_bib": "870"
       }
     ],
     "Duke Khuu": [
