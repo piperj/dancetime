@@ -21,6 +21,8 @@ def run(args):
     print("publish: copied static/favicon.ico → favicon.ico")
     shutil.copy2(Path("static/judges-scores.js"), Path("judges-scores.js"))
     print("publish: copied static/judges-scores.js → judges-scores.js")
+    shutil.copy2(Path("static/program.js"), Path("program.js"))
+    print("publish: copied static/program.js → program.js")
 
     _validate_outputs(out_dir)
 

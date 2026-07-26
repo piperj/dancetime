@@ -36,6 +36,8 @@
     .done-marker  { color: #065f46; margin: 0.375rem 0; text-align: center; font-style: italic; }
     .break-marker { color: #6b7280; margin: 0.375rem 0; text-align: center; font-style: italic; }
     .partner-change-marker { color: #1e40af; margin: 0.375rem 0; text-align: center; font-style: italic; }
+    .award-marker { background: #fff; border: 2px solid #d4af37; color: #7a5c00; margin: 0.6rem 0; padding: 0.65rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 700; box-shadow: 0 2px 8px rgba(212,175,55,0.35); }
+    .costume-marker { color: #6b21a8; margin: 0.375rem 0; text-align: center; font-style: italic; }
 
     .search-bar { padding: .75rem 1rem; background: #fff; border-bottom: 1px solid #eee; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
     .search-bar input[type=search] { padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
@@ -242,6 +244,8 @@
   let activeTab = 'heats';
   let allCompetitorNames = [];
   let heatsData = null;
+  let programMarkers = null;
+  let sessionFirstHeatTime = {};
   let eloHistory = null;
   let eloSeries  = [];
   let eloChart   = null;
@@ -454,6 +458,15 @@
       .then(([h, r]) => {
         heatsData = h;
         rankingData = r;
+        programMarkers = null;
+        const programCyi = h.meta?.cyi;
+        if (programCyi) {
+          loadProgramMarkers(programCyi).then(data => {
+            if (heatsData !== h) return; // a different competition was selected meanwhile
+            programMarkers = data;
+            renderCurrentHeatsView();
+          });
+        }
         Object.values(rankingData.leaderboards || {}).forEach(lb => {
           const seen = new Set();
           lb.couples = lb.couples.filter(c => {
@@ -465,9 +478,12 @@
         });
 
         heatsByKey = {}; heatsByNumber = {};
+        sessionFirstHeatTime = {};
         h.heats.forEach(heat => {
           heatsByKey[heat.key] = heat;
           (heatsByNumber[heat.heat_number] ??= []).push(heat);
+          if (heat.session && (!sessionFirstHeatTime[heat.session] || heat.time < sessionFirstHeatTime[heat.session]))
+            sessionFirstHeatTime[heat.session] = heat.time;
         });
         buildFloorPositions();
         Object.entries(h.competitor_studios || {}).forEach(([name, studio]) => {
@@ -918,6 +934,14 @@
   // was skipped, with a positive rest gap) and/or switched partner since their
   // previous shown heat. `partner`/`partnerChanged` are null/false for views that
   // don't track a partner (studio, bib, all-heats).
+  // 'top' ceremonies (top student/teacher/studio, etc.) share the award styling
+  // per product decision — only costume/floor breaks get the subtler treatment.
+  function renderProgramActivity(a) {
+    if (a.category === 'break')
+      return `<div class="costume-marker">👗 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
+    return `<div class="award-marker">🏆 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
+  }
+
   function transitionMarker(prevKey, prevMainTime, next, partner, partnerChanged) {
     if (heatsSkipped(prevKey, next.key)) {
       const rest = restMinutes(prevMainTime, next.time);
@@ -1099,8 +1123,31 @@
     const sessions = groupHeatsBySession(myHeats);
     currentSessions = sessions;
 
+    // Chronological blocks covering every session in the competition: sessions
+    // this competitor dances in render heats as usual; sessions they sit out
+    // still render if the program has a "top" ceremony (top student/teacher/
+    // studio, etc.) — those are always shown regardless of who's searched.
+    const blocks = Object.keys(heatsData.sessions || {}).map(code => {
+      const attended = sessions.find(s => s[0].session === code);
+      if (attended) return { kind: 'session', heats: attended };
+      const tops = (programMarkers?.bySession?.[code]?.activities || []).filter(a => a.category === 'top');
+      return tops.length ? { kind: 'topOnly', code, activities: tops } : null;
+    }).filter(Boolean);
+
     let html = '';
-    sessions.forEach((sessionHeats, si) => {
+    let si = 0;
+    blocks.forEach((block, bi) => {
+      if (block.kind === 'topOnly') {
+        html += `<div class="blue-box"><div class="text-sm">${esc(heatsData.sessions[block.code])}</div></div>`;
+        block.activities.forEach(a => { html += renderProgramActivity(a); });
+        return;
+      }
+
+      const sessionHeats = block.heats;
+      const code = sessionHeats[0].session;
+      const acts = programMarkers?.bySession?.[code]?.activities || [];
+      let actIdx = 0;
+
       const first = sessionHeats[0];
       const last  = sessionHeats[sessionHeats.length - 1];
       const sessionType = first.session_name || getSessionType(first.time);
@@ -1114,15 +1161,44 @@
         <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
         <div class="font-semibold">${esc(partnerText)}</div>
       </div>`;
+      si++;
+
       if (partners.size > 1 && firstPartner)
         html += `<div class="partner-change-marker">🔄 ${esc(firstPartner)}</div>`;
 
-      let lastTime = null, lastKey = null, lastPartner = null;
+      let lastTime = null, lastKey = null, lastPartner = null, isFirstGroup = true;
 
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
         const primary = allRounds[0];
         const main = allRounds[allRounds.length - 1];
+
+        const pending = [];
+        while (actIdx < acts.length && acts[actIdx].time <= primary.time) {
+          pending.push(acts[actIdx]);
+          actIdx++;
+        }
+        if (isFirstGroup) {
+          // Same backlog problem as the trailing case, mirrored: this
+          // competitor's block can start well after the session's actual
+          // first heat, so `pending` may hold hours of other people's award
+          // notices. Keep only what follows the last one — typically just an
+          // immediately-preceding costume break.
+          let lastAwardIdx = -1;
+          pending.forEach((a, i) => { if (a.category === 'award' || a.category === 'top') lastAwardIdx = i; });
+          pending.slice(lastAwardIdx + 1).forEach(a => { html += renderProgramActivity(a); });
+          // "First heat" is normally the session's actual first heat (useful
+          // for grabbing a table before the floor gets busy). But if this
+          // competitor's own block starts well after a break/award — i.e.
+          // `pending` wasn't empty — that session-wide time is stale/unrelated
+          // noise, so fall back to their own first heat instead, which is the
+          // heat right after whatever just happened.
+          const firstHeatTime = pending.length === 0 ? (sessionFirstHeatTime[code] || primary.time) : primary.time;
+          html += `<div class="break-marker">▶️ First heat ${esc(formatTime(firstHeatTime))}</div>`;
+          isFirstGroup = false;
+        } else {
+          pending.forEach(a => { html += renderProgramActivity(a); });
+        }
 
         const myEntry = group.reduce(
           (found, h) => found || h.entries.find(e => e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor),
@@ -1156,8 +1232,20 @@
         lastPartner = currentPartner;
       });
 
-      if (si < sessions.length - 1) {
-        const nextFirst = sessions[si + 1][0];
+      // Past this competitor's last heat of the session, only the notice
+      // covering *that* heat is relevant (typically a costume break followed
+      // by the award for it) — later activities belong to other heats this
+      // competitor has no stake in, so stop at the first award/top entry.
+      while (actIdx < acts.length) {
+        const a = acts[actIdx];
+        html += renderProgramActivity(a);
+        actIdx++;
+        if (a.category === 'award' || a.category === 'top') break;
+      }
+
+      const nextBlock = blocks[bi + 1];
+      if (nextBlock && nextBlock.kind === 'session') {
+        const nextFirst = nextBlock.heats[0];
         if (new Date(last.time).toDateString() === new Date(nextFirst.time).toDateString()) {
           const rest = restMinutes(last.time, nextFirst.time);
           if (rest > 0)
@@ -1801,10 +1889,8 @@
   document.addEventListener('touchend', () => { touchInProgress = false; }, { passive: true });
 
   // Auto-refresh during live competition — advances the "next heat" marker as heats finish
-  setInterval(() => {
+  function renderCurrentHeatsView() {
     if (!heatsData) return;
-    if (touchInProgress) return;
-    if (document.activeElement?.id === 'competitorSearch') return;
     if (!selectedCompetitor) {
       // Only refresh the actual All-Heats view — not the "not competing" placeholder —
       // and only when the next heat has actually advanced (avoids a full DOM rebuild each tick).
@@ -1813,8 +1899,15 @@
     else if (heatsData.studios?.includes(selectedCompetitor)) generateStudioSchedule();
     else if (bibHeats[selectedCompetitor]) generateBibSchedule(selectedCompetitor);
     else generateSchedule();
+  }
+  setInterval(() => {
+    if (!heatsData) return;
+    if (touchInProgress) return;
+    if (document.activeElement?.id === 'competitorSearch') return;
+    renderCurrentHeatsView();
   }, 10000);
 </script>
 <script src="judges-scores.js"></script>
+<script src="program.js"></script>
 </body>
 </html>
