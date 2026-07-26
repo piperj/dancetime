@@ -31509,6 +31509,2094 @@
         "partner": "Daniel Lee Tran",
         "elo_before": 1705.37,
         "elo_after": 1704.03
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1461.64,
+        "elo_after": 1439.09
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1653.82,
+        "elo_after": 1641.72
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1500.0,
+        "elo_after": 1517.32
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1500.0,
+        "elo_after": 1517.32
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1439.09,
+        "elo_after": 1418.59
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1641.72,
+        "elo_after": 1631.04
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1517.32,
+        "elo_after": 1532.91
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1517.32,
+        "elo_after": 1532.91
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1418.59,
+        "elo_after": 1399.96
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1631.04,
+        "elo_after": 1621.59
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1532.91,
+        "elo_after": 1546.95
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1532.91,
+        "elo_after": 1546.95
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1399.96,
+        "elo_after": 1383.02
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1621.59,
+        "elo_after": 1613.21
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1546.95,
+        "elo_after": 1559.61
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Pre-Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1546.95,
+        "elo_after": 1559.61
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1383.02,
+        "elo_after": 1367.58
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1613.21,
+        "elo_after": 1605.75
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1559.61,
+        "elo_after": 1571.06
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1559.61,
+        "elo_after": 1571.06
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1367.58,
+        "elo_after": 1353.47
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1605.75,
+        "elo_after": 1599.06
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1571.06,
+        "elo_after": 1581.46
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1571.06,
+        "elo_after": 1581.46
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1353.47,
+        "elo_after": 1340.51
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1599.06,
+        "elo_after": 1593.04
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1581.46,
+        "elo_after": 1590.95
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1581.46,
+        "elo_after": 1590.95
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Sylvia Imbens",
+        "partner": "Ikaika Dowsett",
+        "elo_before": 1340.51,
+        "elo_after": 1372.5
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Ikaika Dowsett",
+        "partner": "Sylvia Imbens",
+        "elo_before": 1593.04,
+        "elo_after": 1607.66
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Mason Ortiz",
+        "partner": "Katya Afanaseva",
+        "elo_before": 1590.95,
+        "elo_after": 1567.65
+      },
+      {
+        "event_name": "{PA PT-JR-Y Single Dance} MF-J2  Cl. Full Silver  Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Katya Afanaseva",
+        "partner": "Mason Ortiz",
+        "elo_before": 1590.95,
+        "elo_after": 1567.65
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Shakira Al-Shamari",
+        "partner": "Denis Filonenko",
+        "elo_before": 1400.0,
+        "elo_after": 1389.45
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Denis Filonenko",
+        "partner": "Shakira Al-Shamari",
+        "elo_before": 1288.06,
+        "elo_after": 1272.66
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sophia Cremarosa",
+        "partner": "Michael Levenkov",
+        "elo_before": 1400.0,
+        "elo_after": 1412.98
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Michael Levenkov",
+        "partner": "Sophia Cremarosa",
+        "elo_before": 1400.0,
+        "elo_after": 1412.98
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Shakira Al-Shamari",
+        "partner": "Denis Filonenko",
+        "elo_before": 1389.45,
+        "elo_after": 1379.94
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Denis Filonenko",
+        "partner": "Shakira Al-Shamari",
+        "elo_before": 1272.66,
+        "elo_after": 1258.56
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sophia Cremarosa",
+        "partner": "Michael Levenkov",
+        "elo_before": 1412.98,
+        "elo_after": 1424.78
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Michael Levenkov",
+        "partner": "Sophia Cremarosa",
+        "elo_before": 1412.98,
+        "elo_after": 1424.78
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Shakira Al-Shamari",
+        "partner": "Denis Filonenko",
+        "elo_before": 1379.94,
+        "elo_after": 1371.33
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Denis Filonenko",
+        "partner": "Shakira Al-Shamari",
+        "elo_before": 1258.56,
+        "elo_after": 1245.61
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sophia Cremarosa",
+        "partner": "Michael Levenkov",
+        "elo_before": 1424.78,
+        "elo_after": 1435.56
+      },
+      {
+        "event_name": " L-P2 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Michael Levenkov",
+        "partner": "Sophia Cremarosa",
+        "elo_before": 1424.78,
+        "elo_after": 1435.56
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Shakira Al-Shamari",
+        "partner": "Denis Filonenko",
+        "elo_before": 1371.33,
+        "elo_after": 1363.51
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Denis Filonenko",
+        "partner": "Shakira Al-Shamari",
+        "elo_before": 1245.61,
+        "elo_after": 1233.68
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sophia Cremarosa",
+        "partner": "Michael Levenkov",
+        "elo_before": 1435.56,
+        "elo_after": 1445.43
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Michael Levenkov",
+        "partner": "Sophia Cremarosa",
+        "elo_before": 1435.56,
+        "elo_after": 1445.43
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Shakira Al-Shamari",
+        "partner": "Denis Filonenko",
+        "elo_before": 1363.51,
+        "elo_after": 1356.38
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Denis Filonenko",
+        "partner": "Shakira Al-Shamari",
+        "elo_before": 1233.68,
+        "elo_after": 1222.65
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sophia Cremarosa",
+        "partner": "Michael Levenkov",
+        "elo_before": 1445.43,
+        "elo_after": 1454.52
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Michael Levenkov",
+        "partner": "Sophia Cremarosa",
+        "elo_before": 1445.43,
+        "elo_after": 1454.52
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Shakira Al-Shamari",
+        "partner": "Denis Filonenko",
+        "elo_before": 1356.38,
+        "elo_after": 1349.83
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Denis Filonenko",
+        "partner": "Shakira Al-Shamari",
+        "elo_before": 1222.65,
+        "elo_after": 1212.41
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sophia Cremarosa",
+        "partner": "Michael Levenkov",
+        "elo_before": 1454.52,
+        "elo_after": 1462.91
+      },
+      {
+        "event_name": " L-P2 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Michael Levenkov",
+        "partner": "Sophia Cremarosa",
+        "elo_before": 1454.52,
+        "elo_after": 1462.91
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Aahrone Bakhvala",
+        "partner": "Iris Bakhvala",
+        "elo_before": 1426.43,
+        "elo_after": 1416.63
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Iris Bakhvala",
+        "partner": "Aahrone Bakhvala",
+        "elo_before": 1359.45,
+        "elo_after": 1347.13
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Jordan Sklarsky",
+        "partner": "Adele Sklarsky",
+        "elo_before": 1500.0,
+        "elo_after": 1511.06
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Adele Sklarsky",
+        "partner": "Jordan Sklarsky",
+        "elo_before": 1500.0,
+        "elo_after": 1511.06
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Aahrone Bakhvala",
+        "partner": "Iris Bakhvala",
+        "elo_before": 1416.63,
+        "elo_after": 1435.9
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Iris Bakhvala",
+        "partner": "Aahrone Bakhvala",
+        "elo_before": 1347.13,
+        "elo_after": 1371.57
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Jordan Sklarsky",
+        "partner": "Adele Sklarsky",
+        "elo_before": 1511.06,
+        "elo_after": 1489.21
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Adele Sklarsky",
+        "partner": "Jordan Sklarsky",
+        "elo_before": 1511.06,
+        "elo_after": 1489.21
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Aahrone Bakhvala",
+        "partner": "Iris Bakhvala",
+        "elo_before": 1435.9,
+        "elo_after": 1425.23
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Iris Bakhvala",
+        "partner": "Aahrone Bakhvala",
+        "elo_before": 1371.57,
+        "elo_after": 1358.26
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Jordan Sklarsky",
+        "partner": "Adele Sklarsky",
+        "elo_before": 1489.21,
+        "elo_after": 1501.19
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Adele Sklarsky",
+        "partner": "Jordan Sklarsky",
+        "elo_before": 1489.21,
+        "elo_after": 1501.19
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Charlotte Liu",
+        "partner": "Sabine Blyth",
+        "elo_before": 1400.82,
+        "elo_after": 1386.07
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sabine Blyth",
+        "partner": "Charlotte Liu",
+        "elo_before": 1400.82,
+        "elo_after": 1386.07
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Aleksandra Temple",
+        "partner": "Michael Levenkov",
+        "elo_before": 1400.0,
+        "elo_after": 1416.33
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Michael Levenkov",
+        "partner": "Aleksandra Temple",
+        "elo_before": 1462.91,
+        "elo_after": 1476.07
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Charlotte Liu",
+        "partner": "Sabine Blyth",
+        "elo_before": 1386.07,
+        "elo_after": 1372.68
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sabine Blyth",
+        "partner": "Charlotte Liu",
+        "elo_before": 1386.07,
+        "elo_after": 1372.68
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Aleksandra Temple",
+        "partner": "Michael Levenkov",
+        "elo_before": 1416.33,
+        "elo_after": 1431.1
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Michael Levenkov",
+        "partner": "Aleksandra Temple",
+        "elo_before": 1476.07,
+        "elo_after": 1488.1
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Charlotte Liu",
+        "partner": "Sabine Blyth",
+        "elo_before": 1372.68,
+        "elo_after": 1360.48
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Sabine Blyth",
+        "partner": "Charlotte Liu",
+        "elo_before": 1372.68,
+        "elo_after": 1360.48
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Aleksandra Temple",
+        "partner": "Michael Levenkov",
+        "elo_before": 1431.1,
+        "elo_after": 1444.49
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Michael Levenkov",
+        "partner": "Aleksandra Temple",
+        "elo_before": 1488.1,
+        "elo_after": 1499.1
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Charlotte Liu",
+        "partner": "Sabine Blyth",
+        "elo_before": 1360.48,
+        "elo_after": 1349.33
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sabine Blyth",
+        "partner": "Charlotte Liu",
+        "elo_before": 1360.48,
+        "elo_after": 1349.33
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Aleksandra Temple",
+        "partner": "Michael Levenkov",
+        "elo_before": 1444.49,
+        "elo_after": 1456.68
+      },
+      {
+        "event_name": " L-P1 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Michael Levenkov",
+        "partner": "Aleksandra Temple",
+        "elo_before": 1499.1,
+        "elo_after": 1509.21
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Mikhael Brener-Dubois",
+        "partner": "Jacqueline Brener-Dubois",
+        "elo_before": 1248.97,
+        "elo_after": 1240.0
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Jacqueline Brener-Dubois",
+        "partner": "Mikhael Brener-Dubois",
+        "elo_before": 1248.97,
+        "elo_after": 1240.0
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Mirai Takahashi",
+        "partner": "Eseniia Ivanitskaia",
+        "elo_before": 1440.1,
+        "elo_after": 1448.3
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Eseniia Ivanitskaia",
+        "partner": "Mirai Takahashi",
+        "elo_before": 1389.84,
+        "elo_after": 1399.58
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Mikhael Brener-Dubois",
+        "partner": "Jacqueline Brener-Dubois",
+        "elo_before": 1240.0,
+        "elo_after": 1231.69
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Jacqueline Brener-Dubois",
+        "partner": "Mikhael Brener-Dubois",
+        "elo_before": 1240.0,
+        "elo_after": 1231.69
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Mirai Takahashi",
+        "partner": "Eseniia Ivanitskaia",
+        "elo_before": 1448.3,
+        "elo_after": 1455.91
+      },
+      {
+        "event_name": " AC-P1 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Eseniia Ivanitskaia",
+        "partner": "Mirai Takahashi",
+        "elo_before": 1399.58,
+        "elo_after": 1408.59
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Mikhael Brener-Dubois",
+        "partner": "Jacqueline Brener-Dubois",
+        "elo_before": 1231.69,
+        "elo_after": 1226.09
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Jacqueline Brener-Dubois",
+        "partner": "Mikhael Brener-Dubois",
+        "elo_before": 1231.69,
+        "elo_after": 1226.09
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Jordan Sklarsky",
+        "partner": "Adele Sklarsky",
+        "elo_before": 1501.19,
+        "elo_after": 1506.79
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Adele Sklarsky",
+        "partner": "Jordan Sklarsky",
+        "elo_before": 1501.19,
+        "elo_after": 1506.79
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Mikhael Brener-Dubois",
+        "partner": "Jacqueline Brener-Dubois",
+        "elo_before": 1226.09,
+        "elo_after": 1220.79
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Jacqueline Brener-Dubois",
+        "partner": "Mikhael Brener-Dubois",
+        "elo_before": 1226.09,
+        "elo_after": 1220.79
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Jordan Sklarsky",
+        "partner": "Adele Sklarsky",
+        "elo_before": 1506.79,
+        "elo_after": 1512.1
+      },
+      {
+        "event_name": " AC-P1 Cl. Pre-Silver Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Adele Sklarsky",
+        "partner": "Jordan Sklarsky",
+        "elo_before": 1506.79,
+        "elo_after": 1512.1
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1678.54,
+        "elo_after": 1682.17
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1678.54,
+        "elo_after": 1682.17
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sean Lee",
+        "partner": "Veronika Pedchenko",
+        "elo_before": 1629.4,
+        "elo_after": 1627.73
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Veronika Pedchenko",
+        "partner": "Sean Lee",
+        "elo_before": 1629.4,
+        "elo_after": 1627.73
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1538.16,
+        "elo_after": 1524.97
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1550.76,
+        "elo_after": 1538.13
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Michael Lockwood",
+        "partner": "Yingying Chen",
+        "elo_before": 1539.16,
+        "elo_after": 1534.54
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Yingying Chen",
+        "partner": "Michael Lockwood",
+        "elo_before": 1539.16,
+        "elo_after": 1534.54
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Yuliy Sannikov",
+        "partner": "Lyla Dong",
+        "elo_before": 1554.57,
+        "elo_after": 1573.62
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Lyla Dong",
+        "partner": "Yuliy Sannikov",
+        "elo_before": 1690.19,
+        "elo_after": 1702.29
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1682.17,
+        "elo_after": 1677.65
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1682.17,
+        "elo_after": 1677.65
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sean Lee",
+        "partner": "Veronika Pedchenko",
+        "elo_before": 1627.73,
+        "elo_after": 1634.18
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Veronika Pedchenko",
+        "partner": "Sean Lee",
+        "elo_before": 1627.73,
+        "elo_after": 1634.18
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1524.97,
+        "elo_after": 1512.49
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1538.13,
+        "elo_after": 1526.21
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Michael Lockwood",
+        "partner": "Yingying Chen",
+        "elo_before": 1534.54,
+        "elo_after": 1530.16
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Yingying Chen",
+        "partner": "Michael Lockwood",
+        "elo_before": 1534.54,
+        "elo_after": 1530.16
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Yuliy Sannikov",
+        "partner": "Lyla Dong",
+        "elo_before": 1573.62,
+        "elo_after": 1591.38
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Lyla Dong",
+        "partner": "Yuliy Sannikov",
+        "elo_before": 1702.29,
+        "elo_after": 1713.82
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1677.65,
+        "elo_after": 1681.41
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1677.65,
+        "elo_after": 1681.41
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Sean Lee",
+        "partner": "Veronika Pedchenko",
+        "elo_before": 1634.18,
+        "elo_after": 1632.31
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Veronika Pedchenko",
+        "partner": "Sean Lee",
+        "elo_before": 1634.18,
+        "elo_after": 1632.31
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1512.49,
+        "elo_after": 1500.67
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1526.21,
+        "elo_after": 1514.93
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Michael Lockwood",
+        "partner": "Yingying Chen",
+        "elo_before": 1530.16,
+        "elo_after": 1526.03
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Yingying Chen",
+        "partner": "Michael Lockwood",
+        "elo_before": 1530.16,
+        "elo_after": 1526.03
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Yuliy Sannikov",
+        "partner": "Lyla Dong",
+        "elo_before": 1591.38,
+        "elo_after": 1607.98
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Lyla Dong",
+        "partner": "Yuliy Sannikov",
+        "elo_before": 1713.82,
+        "elo_after": 1724.82
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1681.41,
+        "elo_after": 1685.02
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1681.41,
+        "elo_after": 1685.02
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sean Lee",
+        "partner": "Veronika Pedchenko",
+        "elo_before": 1632.31,
+        "elo_after": 1630.57
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Veronika Pedchenko",
+        "partner": "Sean Lee",
+        "elo_before": 1632.31,
+        "elo_after": 1630.57
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1500.67,
+        "elo_after": 1489.44
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1514.93,
+        "elo_after": 1504.24
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Michael Lockwood",
+        "partner": "Yingying Chen",
+        "elo_before": 1526.03,
+        "elo_after": 1522.1
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Yingying Chen",
+        "partner": "Michael Lockwood",
+        "elo_before": 1526.03,
+        "elo_after": 1522.1
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Yuliy Sannikov",
+        "partner": "Lyla Dong",
+        "elo_before": 1607.98,
+        "elo_after": 1623.53
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Int'l Ballroom (W,T,F,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Lyla Dong",
+        "partner": "Yuliy Sannikov",
+        "elo_before": 1724.82,
+        "elo_after": 1735.3
+      },
+      {
+        "event_name": " AC-A Pre-Champ Int'l Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Viennese Waltz",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1685.02,
+        "elo_after": 1668.28
+      },
+      {
+        "event_name": " AC-A Pre-Champ Int'l Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Viennese Waltz",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1685.02,
+        "elo_after": 1668.28
+      },
+      {
+        "event_name": " AC-A Pre-Champ Int'l Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Viennese Waltz",
+        "competitor": "Yuliy Sannikov",
+        "partner": "Lyla Dong",
+        "elo_before": 1623.53,
+        "elo_after": 1643.39
+      },
+      {
+        "event_name": " AC-A Pre-Champ Int'l Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Viennese Waltz",
+        "competitor": "Lyla Dong",
+        "partner": "Yuliy Sannikov",
+        "elo_before": 1735.3,
+        "elo_after": 1748.92
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1668.28,
+        "elo_after": 1676.96
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1668.28,
+        "elo_after": 1676.96
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1489.44,
+        "elo_after": 1480.53
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1504.24,
+        "elo_after": 1495.78
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1676.96,
+        "elo_after": 1685.03
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1676.96,
+        "elo_after": 1685.03
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1480.53,
+        "elo_after": 1472.26
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1495.78,
+        "elo_after": 1487.93
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1685.03,
+        "elo_after": 1692.54
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1685.03,
+        "elo_after": 1692.54
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1472.26,
+        "elo_after": 1464.54
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1487.93,
+        "elo_after": 1480.61
+      },
+      {
+        "event_name": " AC-A Novice Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Catherine Kuntoro",
+        "partner": "Uditi Guha",
+        "elo_before": 1692.54,
+        "elo_after": 1699.57
+      },
+      {
+        "event_name": " AC-A Novice Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Uditi Guha",
+        "partner": "Catherine Kuntoro",
+        "elo_before": 1692.54,
+        "elo_after": 1699.57
+      },
+      {
+        "event_name": " AC-A Novice Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Reimar Leike",
+        "partner": "Sara Fan",
+        "elo_before": 1464.54,
+        "elo_after": 1457.31
+      },
+      {
+        "event_name": " AC-A Novice Int'l Foxtrot",
+        "round_name": "Final",
+        "dance_name": "Int'l Foxtrot",
+        "competitor": "Sara Fan",
+        "partner": "Reimar Leike",
+        "elo_before": 1480.61,
+        "elo_after": 1473.78
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1688.25,
+        "elo_after": 1689.4
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1539.55,
+        "elo_after": 1541.43
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1631.02,
+        "elo_after": 1618.96
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1553.54,
+        "elo_after": 1537.82
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1681.94,
+        "elo_after": 1693.89
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1662.12,
+        "elo_after": 1674.91
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1689.4,
+        "elo_after": 1702.59
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1541.43,
+        "elo_after": 1563.01
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1618.96,
+        "elo_after": 1607.79
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1537.82,
+        "elo_after": 1523.09
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1693.89,
+        "elo_after": 1689.61
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1674.91,
+        "elo_after": 1670.34
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1702.59,
+        "elo_after": 1702.68
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1563.01,
+        "elo_after": 1563.15
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1607.79,
+        "elo_after": 1597.49
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1523.09,
+        "elo_after": 1509.34
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1689.61,
+        "elo_after": 1701.11
+      },
+      {
+        "event_name": "Championship AM/AM Novice A Amer. Smooth (W,T,F)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1670.34,
+        "elo_after": 1682.64
+      },
+      {
+        "event_name": " AC-A Novice Amer. Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1702.68,
+        "elo_after": 1690.42
+      },
+      {
+        "event_name": " AC-A Novice Amer. Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1563.15,
+        "elo_after": 1543.62
+      },
+      {
+        "event_name": " AC-A Novice Amer. Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1597.49,
+        "elo_after": 1601.52
+      },
+      {
+        "event_name": " AC-A Novice Amer. Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1509.34,
+        "elo_after": 1514.79
+      },
+      {
+        "event_name": " AC-A Novice Amer. Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1701.11,
+        "elo_after": 1711.91
+      },
+      {
+        "event_name": " AC-A Novice Amer. Viennese Waltz",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1682.64,
+        "elo_after": 1694.15
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1690.42,
+        "elo_after": 1691.35
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1543.62,
+        "elo_after": 1545.13
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1601.52,
+        "elo_after": 1591.6
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1514.79,
+        "elo_after": 1501.44
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1711.91,
+        "elo_after": 1722.01
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Waltz",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1694.15,
+        "elo_after": 1704.89
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1691.35,
+        "elo_after": 1692.19
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1545.13,
+        "elo_after": 1546.5
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1591.6,
+        "elo_after": 1582.34
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1501.44,
+        "elo_after": 1488.87
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1722.01,
+        "elo_after": 1731.53
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Tango",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1704.89,
+        "elo_after": 1714.98
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1692.19,
+        "elo_after": 1692.96
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1546.5,
+        "elo_after": 1547.74
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1582.34,
+        "elo_after": 1573.7
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1488.87,
+        "elo_after": 1476.99
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1731.53,
+        "elo_after": 1740.52
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Foxtrot",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1714.98,
+        "elo_after": 1724.5
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Justin Gomez",
+        "partner": "Kelly Kuhl",
+        "elo_before": 1692.96,
+        "elo_after": 1693.65
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Kelly Kuhl",
+        "partner": "Justin Gomez",
+        "elo_before": 1547.74,
+        "elo_after": 1548.87
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Anthony Marek",
+        "partner": "Victoria Shavlik",
+        "elo_before": 1573.7,
+        "elo_after": 1565.61
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Victoria Shavlik",
+        "partner": "Anthony Marek",
+        "elo_before": 1476.99,
+        "elo_after": 1465.75
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Michael Patland",
+        "partner": "Samantha Larrick",
+        "elo_before": 1740.52,
+        "elo_after": 1749.03
+      },
+      {
+        "event_name": "Championship AM/AM Pre-Champ A Amer. Smooth (W,T,F,VW)",
+        "round_name": "Final",
+        "dance_name": "Amer. Viennese Waltz",
+        "competitor": "Samantha Larrick",
+        "partner": "Michael Patland",
+        "elo_before": 1724.5,
+        "elo_after": 1733.5
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Rui Li",
+        "partner": "Hyun Joo Kim",
+        "elo_before": 1526.08,
+        "elo_after": 1533.13
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Hyun Joo Kim",
+        "partner": "Rui Li",
+        "elo_before": 1500.0,
+        "elo_after": 1507.72
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Johan Piper",
+        "partner": "Helen Piper",
+        "elo_before": 1315.85,
+        "elo_after": 1308.78
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Helen Piper",
+        "partner": "Johan Piper",
+        "elo_before": 1291.78,
+        "elo_after": 1284.09
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Rui Li",
+        "partner": "Hyun Joo Kim",
+        "elo_before": 1533.13,
+        "elo_after": 1539.74
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Hyun Joo Kim",
+        "partner": "Rui Li",
+        "elo_before": 1507.72,
+        "elo_after": 1514.93
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Johan Piper",
+        "partner": "Helen Piper",
+        "elo_before": 1308.78,
+        "elo_after": 1302.16
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Helen Piper",
+        "partner": "Johan Piper",
+        "elo_before": 1284.09,
+        "elo_after": 1276.89
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Rui Li",
+        "partner": "Hyun Joo Kim",
+        "elo_before": 1539.74,
+        "elo_after": 1545.95
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Hyun Joo Kim",
+        "partner": "Rui Li",
+        "elo_before": 1514.93,
+        "elo_after": 1521.7
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Johan Piper",
+        "partner": "Helen Piper",
+        "elo_before": 1302.16,
+        "elo_after": 1295.95
+      },
+      {
+        "event_name": "Championship AM/AM Closed Bronze A Int'l Ballroom (W,T,Q)",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Helen Piper",
+        "partner": "Johan Piper",
+        "elo_before": 1276.89,
+        "elo_after": 1270.11
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Elena Lin",
+        "partner": "",
+        "elo_before": 1462.7,
+        "elo_after": 1478.42
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Pre-Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Aleksandra Temple",
+        "partner": "",
+        "elo_before": 1456.68,
+        "elo_after": 1440.95
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Elena Lin",
+        "partner": "",
+        "elo_before": 1478.42,
+        "elo_after": 1460.7
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Pre-Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Aleksandra Temple",
+        "partner": "",
+        "elo_before": 1440.95,
+        "elo_after": 1458.67
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Elena Lin",
+        "partner": "",
+        "elo_before": 1460.7,
+        "elo_after": 1476.61
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Pre-Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Aleksandra Temple",
+        "partner": "",
+        "elo_before": 1458.67,
+        "elo_after": 1442.77
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Elena Lin",
+        "partner": "",
+        "elo_before": 1476.61,
+        "elo_after": 1491.06
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Full Bronze Int'l Waltz",
+        "round_name": "Final",
+        "dance_name": "Int'l Waltz",
+        "competitor": "Aleksandra Temple",
+        "partner": "",
+        "elo_before": 1442.77,
+        "elo_after": 1428.32
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Full Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Elena Lin",
+        "partner": "",
+        "elo_before": 1491.06,
+        "elo_after": 1472.2
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Full Bronze Int'l Tango",
+        "round_name": "Final",
+        "dance_name": "Int'l Tango",
+        "competitor": "Aleksandra Temple",
+        "partner": "",
+        "elo_before": 1428.32,
+        "elo_after": 1447.18
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Elena Lin",
+        "partner": "",
+        "elo_before": 1472.2,
+        "elo_after": 1487.05
+      },
+      {
+        "event_name": "Solo Star L-P1 Cl. Full Bronze Int'l Quickstep",
+        "round_name": "Final",
+        "dance_name": "Int'l Quickstep",
+        "competitor": "Aleksandra Temple",
+        "partner": "",
+        "elo_before": 1447.18,
+        "elo_after": 1432.33
       }
     ],
     "904": [
