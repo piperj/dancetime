@@ -37,12 +37,16 @@ CYI = 373
 COMPETITOR = "Helen Piper"
 
 
-def install_program_mock(page, activities_by_code, cyi=CYI):
+def install_program_mock(page, activities_by_code, cyi=CYI, name_has_prefix=True):
     """Intercepts every ndcapremier.com /feed/program/ call. `activities_by_code`
     maps a session code ("02", "04", ...) to a list of {title, date_time,
     duration} dicts rendered as that session's Activity items. Session IDs are
-    just the code string — program.js only cares about the "NN-" prefix on
-    Session.Name to recover the code, not the ID's real-world meaning.
+    just the code string — program.js only cares about recovering the code
+    from Session.Name's "NN-" prefix or, failing that, Session.Abbreviation.
+
+    `name_has_prefix=False` mimics competitions (e.g. Manhattan Dance
+    Championships) whose Session.Name has no numeric prefix at all — only
+    Abbreviation carries the code, zero-padded the same way heats_*.json is.
     """
     def handle(route):
         params = urllib.parse.parse_qs(urllib.parse.urlparse(route.request.url).query)
@@ -51,8 +55,9 @@ def install_program_mock(page, activities_by_code, cyi=CYI):
             return
         session_id = params.get("session", [None])[0]
         if session_id is None:
+            name_fn = (lambda code: f"{code}-Session {code}") if name_has_prefix else (lambda code: f"Session {code}")
             sessions = [
-                {"ID": code, "Name": f"{code}-Session {code}", "Abbreviation": code, "Date_Time": "1/1/2026 12:00 AM"}
+                {"ID": code, "Name": name_fn(code), "Abbreviation": code, "Date_Time": "1/1/2026 12:00 AM"}
                 for code in activities_by_code
             ]
             route.fulfill(json={"Status": 1, "Result": {"Ballrooms": [{"ID": 1, "Name": None, "Sessions": sessions}]}})
@@ -146,6 +151,45 @@ class TestProgramMarkers:
         assert "12:46" in text
         assert "1:15" not in text
         assert "2:00" not in text
+
+    def test_trailing_top_ceremony_survives_after_the_stopping_award(self, page, spa_server):
+        # Regression: California Star Ball's Sunday session ends with
+        # "Awards and Best Of The Best Dance Off" immediately followed by
+        # "Ca Star Ball Top Awards" — the top ceremony must not be swallowed
+        # by the same truncation that (correctly) drops later unrelated
+        # awards after a competitor's last heat.
+        install_program_mock(page, {
+            "02": [
+                {"title": "Awards", "date_time": "1/23/2026 12:46 PM"},
+                {"title": "Top Awards", "date_time": "1/23/2026 12:50 PM"},
+                {"title": "Awards", "date_time": "1/23/2026 1:15 PM"},
+            ],
+        })
+        text = _search_and_wait_for_markers(page, spa_server)
+        assert "12:46" in text
+        assert "12:50" in text
+        assert "1:15" not in text
+
+    def test_leading_top_ceremony_survives_the_backlog_trim(self, page, spa_server):
+        # Same regression, mirrored on the leading side: a 'top' entry buried
+        # in the backlog before this competitor's own first heat must not be
+        # discarded along with the unrelated 'award' noise around it.
+        install_program_mock(page, {
+            "02": [
+                {"title": "Top Awards", "date_time": "1/23/2026 9:00 AM"},
+                {"title": "Awards", "date_time": "1/23/2026 9:45 AM"},
+            ],
+        })
+        text = _search_and_wait_for_markers(page, spa_server)
+        assert "Top Awards" in text
+        assert "9:45" not in text
+
+    def test_session_code_falls_back_to_abbreviation_without_name_prefix(self, page, spa_server):
+        install_program_mock(page, {
+            "02": [{"title": "Awards", "date_time": "1/23/2026 12:46 PM"}],
+        }, name_has_prefix=False)
+        text = _search_and_wait_for_markers(page, spa_server)
+        assert "12:46" in text
 
     def test_top_ceremony_shown_for_session_competitor_does_not_dance(self, page, spa_server):
         install_program_mock(page, {

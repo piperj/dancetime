@@ -1184,9 +1184,14 @@
           // first heat, so `pending` may hold hours of other people's award
           // notices. Keep only what follows the last one — typically just an
           // immediately-preceding costume break.
+          // 'top' ceremonies are always relevant regardless of position, so
+          // they're never trimmed — only stale 'award'/'break' noise before
+          // the most recent 'award' gets dropped.
           let lastAwardIdx = -1;
-          pending.forEach((a, i) => { if (a.category === 'award' || a.category === 'top') lastAwardIdx = i; });
-          pending.slice(lastAwardIdx + 1).forEach(a => { html += renderProgramActivity(a); });
+          pending.forEach((a, i) => { if (a.category === 'award') lastAwardIdx = i; });
+          pending.forEach((a, i) => {
+            if (a.category === 'top' || i > lastAwardIdx) html += renderProgramActivity(a);
+          });
           // "First heat" is normally the session's actual first heat (useful
           // for grabbing a table before the floor gets busy). But if this
           // competitor's own block starts well after a break/award — i.e.
@@ -1235,12 +1240,17 @@
       // Past this competitor's last heat of the session, only the notice
       // covering *that* heat is relevant (typically a costume break followed
       // by the award for it) — later activities belong to other heats this
-      // competitor has no stake in, so stop at the first award/top entry.
+      // competitor has no stake in, so stop after the first award. 'top'
+      // ceremonies are always relevant, though, so they never stop the flush
+      // and keep showing even when they land right after that award (e.g.
+      // "Awards" then "Ca Star Ball Top Awards" back to back).
+      let sawAward = false;
       while (actIdx < acts.length) {
         const a = acts[actIdx];
-        html += renderProgramActivity(a);
         actIdx++;
-        if (a.category === 'award' || a.category === 'top') break;
+        if (a.category !== 'top' && sawAward) continue;
+        html += renderProgramActivity(a);
+        if (a.category === 'award') sawAward = true;
       }
 
       const nextBlock = blocks[bi + 1];

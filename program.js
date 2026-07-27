@@ -29,9 +29,17 @@
     return `${yr}-${pad(mo)}-${pad(da)}T${pad(hh)}:${pad(mi)}:${pad(se || 0)}`;
   }
 
-  function sessionCode(name) {
-    const m = /^(\d+)-/.exec(name || '');
-    return m ? m[1] : null;
+  // Session.Name usually carries the code as a "NN-" prefix (e.g. IGB's
+  // "01-Thursday Matinee"), matching heats_*.json's zero-padded session
+  // codes directly. Some competitions (e.g. Manhattan Dance Championships)
+  // omit that prefix entirely — Name is just "Wednesday Matinee" — so fall
+  // back to the separate Abbreviation field, zero-padded to match.
+  function sessionCode(session) {
+    const fromName = /^(\d+)-/.exec(session.Name || '');
+    if (fromName) return fromName[1];
+    if (session.Abbreviation != null && session.Abbreviation !== '')
+      return String(session.Abbreviation).padStart(2, '0');
+    return null;
   }
 
   async function fetchJson(url) {
@@ -50,7 +58,7 @@
         const ballrooms = list.Result.Ballrooms || [];
         await Promise.all(ballrooms.flatMap(ballroom =>
           (ballroom.Sessions || []).map(async session => {
-            const code = sessionCode(session.Name);
+            const code = sessionCode(session);
             if (!code) return;
             const sessionStart = parseNdcaTime(session.Date_Time);
             let activities = [];
