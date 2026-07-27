@@ -454,3 +454,51 @@ class TestRankingWriter:
         path = write_ranking_json(data, tmp_path)
         assert path.exists()
         assert path.name == "ranking_373.json"
+
+    def test_competitor_with_multiple_partners_gets_a_row_per_partnership(self):
+        # Regression test: a competitor who dances with more than one partner in
+        # the same competition (e.g. different divisions) used to collapse to a
+        # single leaderboard row keyed by whichever partner was processed last,
+        # silently dropping the other partnership (and its contested-opponent
+        # stats) from the Ladder entirely.
+        heat_with_yuriy = DanceResult(
+            event_id=1, event_name="Silver Standard", round_id=1, round_name="Final",
+            dance_id=1, dance_name="Waltz", session_id=1, heat_number=1, time="",
+            competitors=["Helen", "Yuriy", "Ann", "Bob"],
+            partners={"Helen": "Yuriy", "Yuriy": "Helen", "Ann": "Bob", "Bob": "Ann"},
+            placements={"Helen": 1, "Yuriy": 1, "Ann": 2, "Bob": 2},
+        )
+        heat_with_johan = DanceResult(
+            event_id=2, event_name="Bronze Standard", round_id=1, round_name="Final",
+            dance_id=2, dance_name="Tango", session_id=1, heat_number=2, time="",
+            competitors=["Helen", "Johan", "Cara", "Dan"],
+            partners={"Helen": "Johan", "Johan": "Helen", "Cara": "Dan", "Dan": "Cara"},
+            placements={"Helen": 2, "Johan": 2, "Cara": 1, "Dan": 1},
+        )
+
+        data = build_ranking_json(
+            cyi=422,
+            competition_info={"Name": "IGB", "StartDate": "2026-07-23", "EndDate": "2026-07-26", "Location": "NYC"},
+            dance_results=[heat_with_yuriy, heat_with_johan],
+            final_ratings={"Helen": 1300.0, "Yuriy": 1600.0, "Johan": 1290.0,
+                            "Ann": 1400.0, "Bob": 1400.0, "Cara": 1500.0, "Dan": 1500.0},
+            initial_ratings={},
+            assignments={n: "A" for n in ("Helen", "Yuriy", "Johan", "Ann", "Bob", "Cara", "Dan")},
+            competitor_studios={},
+            elo_deltas={},
+        )
+
+        # dedup_couples collapses the mirrored A&B/B&A rows down to one
+        # representative per *partnership*, so "Helen" may show up as either
+        # the "competitor" or the "partner" field depending on elo tie-break —
+        # look up by unordered pair, the same way the frontend's coupleKey does.
+        couples = data["leaderboards"]["A"]["couples"]
+        helen_rows = {
+            frozenset((c["competitor"], c["partner"])): c
+            for c in couples if "Helen" in (c["competitor"], c["partner"])
+        }
+
+        assert set(helen_rows) == {frozenset({"Helen", "Yuriy"}), frozenset({"Helen", "Johan"})}
+        for pair, row in helen_rows.items():
+            assert row["heats_processed"] == 1, pair
+            assert row["num_opponents"] == 2, pair

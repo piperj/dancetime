@@ -461,6 +461,80 @@ class TestLadderTab:
             f"expected 'not competing' in Ladder for '{name}', got: {content[:200]}"
         )
 
+    def test_wins_percent_is_scoped_to_the_couple_not_the_person(self, page, spa_server):
+        """A competitor with multiple partners in the same comp must show a
+        distinct, partner-specific Wins% per couple row — not one partner's
+        blended-across-all-their-partners average reused for every row they
+        appear in (regression: Ladder rows were keyed by avgScores[c.competitor],
+        which is a per-person average, not per-couple)."""
+        wait_for_spa(page, spa_server, query="?show_elo=1")
+        ensure_ranking_tab_visible(page)
+
+        # Find a real competitor who danced with 2+ distinct partners in the
+        # loaded competition, straight from heatsData — no synthetic fixture needed.
+        # Collect every candidate (not just the first) since some partnerships
+        # have too few results for a computable win rate.
+        candidates = page.evaluate("""() => {
+            const heatsData = window.__spa.heatsData;
+            const byKey = {};
+            (heatsData.heats || []).forEach(h => byKey[h.key] = h);
+            const results = [];
+            for (const [name, keys] of Object.entries(heatsData.competitor_heats || {})) {
+                const partners = new Set();
+                for (const k of keys) {
+                    const heat = byKey[k];
+                    if (!heat) continue;
+                    const e = heat.entries.find(e => e.competitor1 === name || e.competitor2 === name);
+                    if (!e) continue;
+                    const partner = e.competitor1 === name ? e.competitor2 : e.competitor1;
+                    if (partner) partners.add(partner);
+                }
+                if (partners.size >= 2) results.push({ name, partners: [...partners] });
+            }
+            return results;
+        }""")
+        if not candidates:
+            pytest.skip("no competitor with multiple partners in this competition's data")
+
+        name, partners, expected = None, None, None
+        for cand in candidates:
+            vals = page.evaluate(
+                """([name, partners]) => partners.map(p => {
+                    const key = window.__spa.coupleKey(name, p);
+                    const v = window.__spa.avgScoresByCouple[key];
+                    return v == null ? null : Math.round(v * 100);
+                })""",
+                [cand["name"], cand["partners"]],
+            )
+            # Pick two of this person's partnerships whose win rates actually differ.
+            pairs = [(p, v) for p, v in zip(cand["partners"], vals) if v is not None]
+            first = next(((p, v) for p, v in pairs), None)
+            second = next((pv for pv in pairs if first and pv[1] != first[1]), None)
+            if first and second:
+                name = cand["name"]
+                partners = [first[0], second[0]]
+                expected = [first[1], second[1]]
+                break
+        if name is None:
+            pytest.skip("no competitor found with 2+ partnerships that have distinct computable win rates")
+
+        _click_tab(page, "ranking")
+        _type_search(page, "search-ranking", name)
+
+        rows = page.evaluate("""() =>
+            Array.from(document.querySelectorAll('#ranking-view .lb-table tbody tr')).map(tr => {
+                const tds = tr.querySelectorAll('td');
+                return { couple: tds[1].textContent.trim(), wins: tds[5].textContent.trim() };
+            })
+        """)
+
+        for partner, want_pct in zip(partners, expected):
+            row = next((r for r in rows if partner in r["couple"] and name in r["couple"]), None)
+            assert row is not None, f"no rendered row found for {name} & {partner}: {rows}"
+            assert row["wins"] == f"{want_pct}%", (
+                f"{name} & {partner}: rendered Wins {row['wins']!r}, expected {want_pct}%"
+            )
+
     def test_url_competitor_param_persists_across_tabs(self, page, spa_server):
         """?competitor=Name populates both Heats and Ladder search inputs."""
         wait_for_spa(page, spa_server, query="?show_elo=1")

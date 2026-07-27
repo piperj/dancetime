@@ -29,37 +29,47 @@ def build_ranking_json(
     competitor_studios: dict[str, str],
     elo_deltas: dict[str, str],
 ) -> dict:
-    opponent_counts: dict[str, set] = defaultdict(set)
-    heats_per_competitor: dict[str, int] = defaultdict(int)
+    # Keyed by (competitor, partner) rather than just competitor: a competitor
+    # can have more than one partner within the same competition (different
+    # divisions, pro-am students, etc), and each such partnership needs its
+    # own heats/opponents tally rather than one blended per-person total.
+    partnership_heats: dict[tuple[str, str], int] = defaultdict(int)
+    partnership_opponents: dict[tuple[str, str], set] = defaultdict(set)
     for r in dance_results:
         for c in r.competitors:
-            heats_per_competitor[c] += 1
+            partner = r.partners.get(c, "")
+            key = (c, partner)
+            partnership_heats[key] += 1
             for other in r.competitors:
-                if other != c:
-                    opponent_counts[c].add(other)
+                if other != c and other != partner:
+                    partnership_opponents[key].add(other)
 
-    partners: dict[str, str] = {}
+    partners_seen: dict[str, set[str]] = defaultdict(set)
     for r in dance_results:
-        partners.update(r.partners)
+        for c, p in r.partners.items():
+            partners_seen[c].add(p)
 
     leaderboards: dict[str, list] = defaultdict(list)
     for competitor, elo in final_ratings.items():
         label = assignments.get(competitor, "Not Rated")
-        partner = partners.get(competitor, "")
         studio = competitor_studios.get(competitor, "")
-        partner_studio = competitor_studios.get(partner, "") if partner else ""
+        # Competitors with no couple heats this competition (solo entries only,
+        # or no dance_results at all) get a single partner-less row.
+        for partner in sorted(partners_seen.get(competitor) or {""}):
+            key = (competitor, partner)
+            partner_studio = competitor_studios.get(partner, "") if partner else ""
 
-        leaderboards[label].append({
-            "competitor": competitor,
-            "partner": partner,
-            "studio": studio,
-            "partner_studio": partner_studio,
-            "elo": round(elo, 2),
-            "elo_delta": elo_deltas.get(competitor, "+0.0"),
-            "initial_elo": round(initial_ratings.get(competitor, elo), 2),
-            "heats_processed": heats_per_competitor.get(competitor, 0),
-            "num_opponents": len(opponent_counts.get(competitor, set())),
-        })
+            leaderboards[label].append({
+                "competitor": competitor,
+                "partner": partner,
+                "studio": studio,
+                "partner_studio": partner_studio,
+                "elo": round(elo, 2),
+                "elo_delta": elo_deltas.get(competitor, "+0.0"),
+                "initial_elo": round(initial_ratings.get(competitor, elo), 2),
+                "heats_processed": partnership_heats.get(key, 0),
+                "num_opponents": len(partnership_opponents.get(key, set())),
+            })
 
     result_leaderboards = {}
     for label, couples in leaderboards.items():

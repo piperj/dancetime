@@ -292,6 +292,7 @@
   let compList = [];
   let activeCompIdx = 0;
   let avgScores = {};
+  let avgScoresByCouple = {};
   let coupleMap = {};
   let currentSessions = [];
 
@@ -449,6 +450,7 @@
     expandedJudgesPanels = new Set();
     judgesDataCache = {};
     avgScores = {};
+    avgScoresByCouple = {};
     coupleMap = {};
     currentSessions = [];
     rankingView.innerHTML = '';
@@ -518,7 +520,7 @@
           bibToNames[bib] = names;
         });
 
-        avgScores = computeAvgScores();
+        ({ byName: avgScores, byCouple: avgScoresByCouple } = computeAvgScores());
         coupleMap = buildCoupleMap();
 
         const meta = h.meta || {};
@@ -556,6 +558,9 @@
                          get bibToNames() { return bibToNames; },
                          get allCompetitorNames() { return allCompetitorNames; },
                          get floorPositionByKey() { return floorPositionByKey; },
+                         get avgScores() { return avgScores; },
+                         get avgScoresByCouple() { return avgScoresByCouple; },
+                         coupleKey,
                          splitHeatRounds, partitionRounds, partitionPhysical,
                          dedupePhysicalHeats, heatsSkipped, restMinutes, collectUniqueHeats };
         updateTabVisibility();
@@ -565,10 +570,17 @@
   }
 
   // ── Avg score computation ──────────────────────────────────────────────────
+  // Returns two maps: `byName` blends all of a competitor's heats regardless
+  // of partner (used for the person-level "Top contestants" summary), and
+  // `byCouple` (keyed by coupleKey) scopes the average to one partnership —
+  // needed because a competitor can dance with more than one partner in the
+  // same competition, and each partnership's win rate can differ wildly.
   function computeAvgScores() {
-    const map = {};
+    const byName = {};
+    const byCouple = {};
     for (const [name, keys] of Object.entries(heatsData.competitor_heats || {})) {
       let sumW = 0, T = 0;
+      const perPartner = {};
       for (const k of keys) {
         const heat = heatsByKey[k];
         if (!heat) continue;
@@ -578,12 +590,20 @@
         if (peers.length < 2) continue;
         const rank = parseInt(myEntry.result);
         if (isNaN(rank)) continue;
-        sumW += (peers.length - rank) / (peers.length - 1);
+        const weight = (peers.length - rank) / (peers.length - 1);
+        sumW += weight;
         T++;
+        const partner = myEntry.competitor1 === name ? myEntry.competitor2 : myEntry.competitor1;
+        const bucket = (perPartner[partner] ??= { sumW: 0, T: 0 });
+        bucket.sumW += weight;
+        bucket.T++;
       }
-      map[name] = T > 0 ? sumW / T : null;
+      byName[name] = T > 0 ? sumW / T : null;
+      for (const [partner, b] of Object.entries(perPartner)) {
+        byCouple[coupleKey(name, partner)] = b.T > 0 ? b.sumW / b.T : null;
+      }
     }
-    return map;
+    return { byName, byCouple };
   }
 
   function computeContestedStats(competitor, partner = null) {
@@ -1323,7 +1343,7 @@
 
   function renderCoupleRow(c) {
     const dc = c.elo_delta.startsWith('+') ? 'delta-pos' : c.elo_delta.startsWith('-') ? 'delta-neg' : '';
-    const avg = avgScores[c.competitor];
+    const avg = avgScoresByCouple[coupleKey(c.competitor, c.partner)];
     const avgStr = avg != null ? Math.round(avg * 100) + '%' : '—';
     const delta = c.elo_delta.replace(/\.\d+$/, '');
     return `<tr>

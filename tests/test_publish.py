@@ -90,6 +90,7 @@ class TestPublishRun:
         (static_dir / "index.html").write_text("<html>test</html>")
         (static_dir / "favicon.ico").write_bytes(b"")
         (static_dir / "judges-scores.js").write_text("")
+        (static_dir / "program.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -116,6 +117,7 @@ class TestPublishRun:
         (static_dir / "index.html").write_text("<html/>")
         (static_dir / "favicon.ico").write_bytes(b"")
         (static_dir / "judges-scores.js").write_text("")
+        (static_dir / "program.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -142,6 +144,7 @@ class TestPublishRun:
         (static_dir / "index.html").write_text("<html/>")
         (static_dir / "favicon.ico").write_bytes(b"")
         (static_dir / "judges-scores.js").write_text("")
+        (static_dir / "program.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
