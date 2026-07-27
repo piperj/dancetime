@@ -35,19 +35,17 @@ def build_ranking_json(
     # own heats/opponents tally rather than one blended per-person total.
     partnership_heats: dict[tuple[str, str], int] = defaultdict(int)
     partnership_opponents: dict[tuple[str, str], set] = defaultdict(set)
+    partners_seen: dict[str, set[str]] = defaultdict(set)
     for r in dance_results:
         for c in r.competitors:
             partner = r.partners.get(c, "")
             key = (c, partner)
             partnership_heats[key] += 1
+            if partner:
+                partners_seen[c].add(partner)
             for other in r.competitors:
                 if other != c and other != partner:
                     partnership_opponents[key].add(other)
-
-    partners_seen: dict[str, set[str]] = defaultdict(set)
-    for r in dance_results:
-        for c, p in r.partners.items():
-            partners_seen[c].add(p)
 
     leaderboards: dict[str, list] = defaultdict(list)
     for competitor, elo in final_ratings.items():

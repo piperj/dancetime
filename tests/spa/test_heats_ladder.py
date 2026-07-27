@@ -55,12 +55,26 @@ def _spa_data(page):
     })""")
 
 
-def _ranking_row_names(page):
-    """Return text from the 'Couple' column (2nd td) of all visible ranking rows."""
+def _ranking_rows(page, *, wins=False):
+    """Return the 'Couple' column (2nd td) of all visible ranking rows.
+
+    With wins=True, return {couple, wins} dicts instead (6th td is Wins%).
+    """
+    if wins:
+        return page.evaluate("""() =>
+            Array.from(document.querySelectorAll('#ranking-view .lb-table tbody tr')).map(tr => {
+                const tds = tr.querySelectorAll('td');
+                return { couple: tds[1].textContent.trim(), wins: tds[5].textContent.trim() };
+            })
+        """)
     return page.evaluate("""() =>
         Array.from(document.querySelectorAll('#ranking-view .lb-table tbody tr td:nth-child(2)'))
              .map(td => td.textContent.trim())
     """)
+
+
+def _ranking_row_names(page):
+    return _ranking_rows(page)
 
 
 # ---------------------------------------------------------------------------
@@ -472,8 +486,9 @@ class TestLadderTab:
 
         # Find a real competitor who danced with 2+ distinct partners in the
         # loaded competition, straight from heatsData — no synthetic fixture needed.
-        # Collect every candidate (not just the first) since some partnerships
-        # have too few results for a computable win rate.
+        # Compute each candidate's per-partner win rates in the same pass so this
+        # needs exactly one browser round trip regardless of how many candidates
+        # there are (rather than one evaluate() per candidate afterwards).
         candidates = page.evaluate("""() => {
             const heatsData = window.__spa.heatsData;
             const byKey = {};
@@ -489,26 +504,23 @@ class TestLadderTab:
                     const partner = e.competitor1 === name ? e.competitor2 : e.competitor1;
                     if (partner) partners.add(partner);
                 }
-                if (partners.size >= 2) results.push({ name, partners: [...partners] });
+                if (partners.size < 2) continue;
+                const pairs = [...partners].map(p => {
+                    const v = window.__spa.avgScoresByCouple[window.__spa.coupleKey(name, p)];
+                    return [p, v == null ? null : Math.round(v * 100)];
+                }).filter(([, v]) => v !== null);
+                results.push({ name, pairs });
             }
             return results;
         }""")
         if not candidates:
             pytest.skip("no competitor with multiple partners in this competition's data")
 
+        # Pick the first candidate with two partnerships whose win rates actually differ.
         name, partners, expected = None, None, None
         for cand in candidates:
-            vals = page.evaluate(
-                """([name, partners]) => partners.map(p => {
-                    const key = window.__spa.coupleKey(name, p);
-                    const v = window.__spa.avgScoresByCouple[key];
-                    return v == null ? null : Math.round(v * 100);
-                })""",
-                [cand["name"], cand["partners"]],
-            )
-            # Pick two of this person's partnerships whose win rates actually differ.
-            pairs = [(p, v) for p, v in zip(cand["partners"], vals) if v is not None]
-            first = next(((p, v) for p, v in pairs), None)
+            pairs = cand["pairs"]
+            first = pairs[0] if pairs else None
             second = next((pv for pv in pairs if first and pv[1] != first[1]), None)
             if first and second:
                 name = cand["name"]
@@ -521,12 +533,7 @@ class TestLadderTab:
         _click_tab(page, "ranking")
         _type_search(page, "search-ranking", name)
 
-        rows = page.evaluate("""() =>
-            Array.from(document.querySelectorAll('#ranking-view .lb-table tbody tr')).map(tr => {
-                const tds = tr.querySelectorAll('td');
-                return { couple: tds[1].textContent.trim(), wins: tds[5].textContent.trim() };
-            })
-        """)
+        rows = _ranking_rows(page, wins=True)
 
         for partner, want_pct in zip(partners, expected):
             row = next((r for r in rows if partner in r["couple"] and name in r["couple"]), None)
