@@ -30355,6 +30355,62 @@
       ]
     },
     {
+      "key": "07_3FORD_726202641439",
+      "heat_number": "3FORD",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T16:14:39",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Mila Dragunov & Abraham Parmenov",
+          "competitor1": "Mila Dragunov",
+          "competitor2": "Abraham Parmenov",
+          "bib": "834",
+          "studio": "LA Dancesport Club",
+          "event": "BOB Dance-Off AC-PT Closed Int'l Cha Cha",
+          "result": "1"
+        },
+        {
+          "couple": "Mariia Fedotova & Nicolas Rastvortsev",
+          "competitor1": "Mariia Fedotova",
+          "competitor2": "Nicolas Rastvortsev",
+          "bib": "839",
+          "studio": "My Way Dance Studio",
+          "event": "BOB Dance-Off AC-PT Closed Int'l Cha Cha",
+          "result": "2"
+        }
+      ]
+    },
+    {
+      "key": "07_4FORD_726202641609",
+      "heat_number": "4FORD",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T16:16:09",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
+          "competitor1": "Lucy Kobylyanskyy",
+          "competitor2": "Maksim Mkrtchian",
+          "bib": "830",
+          "studio": "Brilliant Dancesport Studio",
+          "event": "BOB Dance-Off AC-JR Open Int'l Cha Cha",
+          "result": "2"
+        },
+        {
+          "couple": "Michael Novikov & Angelina  Novikova",
+          "competitor1": "Michael Novikov",
+          "competitor2": "Angelina  Novikova",
+          "bib": "832",
+          "studio": "LA Dancesport Club",
+          "event": "BOB Dance-Off AC-JR Open Int'l Cha Cha",
+          "result": "1"
+        }
+      ]
+    },
+    {
       "key": "07_560_726202680000",
       "heat_number": "560",
       "session": "07",
@@ -32452,7 +32508,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Int'l 6-Dance Closed Bronze TB Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Daniel Ischenko & Aleksandra Kim",
@@ -32461,7 +32517,7 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "10-Dance Scholarship Closed PT Int'l Ballroom (W,T,VW,F,Q)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Michael Levenkov & Aleksandra Temple",
@@ -32470,7 +32526,7 @@
           "bib": "538",
           "studio": "NIKA",
           "event": "Int'l 6-Dance Closed Bronze PT Int'l Ballroom (W,T,Q)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -35698,7 +35754,7 @@
           "bib": "804",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Bronze TB Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Alex Chen",
@@ -35707,7 +35763,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Bronze TB Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova",
@@ -35716,7 +35772,7 @@
           "bib": "816",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Bronze TB Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "5"
         },
         {
           "couple": "Alice Guo",
@@ -35725,7 +35781,7 @@
           "bib": "817",
           "studio": "NIKA",
           "event": "Solo Star Closed Bronze TB Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Kuzma Kalachev",
@@ -35734,7 +35790,7 @@
           "bib": "822",
           "studio": "Luna Del Soul",
           "event": "Solo Star Closed Bronze TB Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "6"
         },
         {
           "couple": "Steven Pilberg",
@@ -35743,7 +35799,7 @@
           "bib": "836",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Bronze TB Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Alena Sivura",
@@ -35752,7 +35808,7 @@
           "bib": "844",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Bronze J2 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -35771,7 +35827,7 @@
           "bib": "803",
           "studio": "BAM Dance Team",
           "event": "Solo Star Open J2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Jane Chtchemelinine",
@@ -35780,7 +35836,7 @@
           "bib": "811",
           "studio": "FADS - San Mateo",
           "event": "Solo Star Closed Gold P1 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Eseniia Ivanitskaia",
@@ -35789,7 +35845,7 @@
           "bib": "821",
           "studio": "Feel Dance Team",
           "event": "Solo Star Closed Gold P1 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Maria Kimlyk",
@@ -35798,7 +35854,7 @@
           "bib": "871",
           "studio": "BAM Dance Team",
           "event": "Solo Star Open J2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Athena Mai",
@@ -35807,7 +35863,7 @@
           "bib": "827",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Closed Gold P1 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Maxine Mai",
@@ -35816,7 +35872,7 @@
           "bib": "828",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Open J2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Adam Whitehouse",
@@ -35825,7 +35881,7 @@
           "bib": "855",
           "studio": "Timofeev, Vladimir",
           "event": "Solo Star Closed Gold P1 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -35844,7 +35900,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB AM/AM Int'l Latin (CC,S)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Dylan Chi & Ariana Yang",
@@ -35853,7 +35909,7 @@
           "bib": "810",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver P1 MxAm Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Leonid Generalov & Anastasiya Rubashevsky",
@@ -35862,7 +35918,7 @@
           "bib": "814",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze P1 Int'l Latin (CC,S)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Steven Pilberg",
@@ -35871,7 +35927,44 @@
           "bib": "836",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB AM/AM Int'l Latin (CC,S)",
-          "result": ""
+          "result": "2"
+        }
+      ]
+    },
+    {
+      "key": "07_652A_726202612511",
+      "heat_number": "652A",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T12:51:15",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Alex Chen & Medina Serik",
+          "competitor1": "Alex Chen",
+          "competitor2": "Medina Serik",
+          "bib": "808",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Closed Bronze TB AM/AM Int'l Latin (R,J)",
+          "result": "1"
+        },
+        {
+          "couple": "Leonid Generalov & Anastasiya Rubashevsky",
+          "competitor1": "Leonid Generalov",
+          "competitor2": "Anastasiya Rubashevsky",
+          "bib": "814",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Closed Bronze P1 Int'l Latin (R,J)",
+          "result": "1"
+        },
+        {
+          "couple": "Alexandra Golikova & Steven Pilberg",
+          "competitor1": "Alexandra Golikova",
+          "competitor2": "Steven Pilberg",
+          "bib": "836",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Closed Bronze TB AM/AM Int'l Latin (R,J)",
+          "result": "2"
         }
       ]
     },
@@ -35890,16 +35983,16 @@
           "bib": "538",
           "studio": "NIKA",
           "event": "Int'l 6-Dance Closed Bronze PT Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_653_726202612511",
+      "key": "07_653_726202612565",
       "heat_number": "653",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:51:15",
+      "time": "2026-07-26T12:56:51",
       "round": "Final",
       "entries": [
         {
@@ -35909,7 +36002,7 @@
           "bib": "826",
           "studio": "NIKA",
           "event": "Solo Star Closed Bronze P1 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "5"
         },
         {
           "couple": "Maria Sivura",
@@ -35918,7 +36011,7 @@
           "bib": "845",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Bronze P1 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Amelia Slutskiy",
@@ -35927,7 +36020,7 @@
           "bib": "847",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Bronze P1 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Aleksandra Temple",
@@ -35936,7 +36029,7 @@
           "bib": "851",
           "studio": "NIKA",
           "event": "Solo Star Closed Bronze P1 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Alice Wu",
@@ -35945,7 +36038,7 @@
           "bib": "856",
           "studio": "Hidden City Ballroom",
           "event": "Solo Star Closed Bronze Y Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Anderson Zhou",
@@ -35954,16 +36047,16 @@
           "bib": "860",
           "studio": "SDA, Sukachov Dance Academy",
           "event": "Solo Star Closed Bronze P1 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "2"
         }
       ]
     },
     {
-      "key": "07_654_726202612540",
+      "key": "07_654_726202612593",
       "heat_number": "654",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:54:03",
+      "time": "2026-07-26T12:59:39",
       "round": "Final",
       "entries": [
         {
@@ -35973,7 +36066,7 @@
           "bib": "804",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Silver TB Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Jane Chtchemelinine",
@@ -35982,7 +36075,7 @@
           "bib": "811",
           "studio": "FADS - San Mateo",
           "event": "Solo Star Closed Silver P2 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova",
@@ -35991,7 +36084,7 @@
           "bib": "816",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Silver TB Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Lily Murvanidze",
@@ -35999,8 +36092,8 @@
           "competitor2": "",
           "bib": "865",
           "studio": "Luna Del Soul - Murvanidze",
-          "event": "Solo Star Closed Silver P2 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "event": "Solo Star Closed Silver P2 Int'l Latin Championship (CC,S,R) /J",
+          "result": "1"
         },
         {
           "couple": "Ryan Rowe",
@@ -36009,7 +36102,7 @@
           "bib": "840",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Bronze P2 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Lisa Shapiro",
@@ -36018,7 +36111,7 @@
           "bib": "842",
           "studio": "Luna Del Soul",
           "event": "Solo Star Closed Silver P2 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Anderson Zhou",
@@ -36027,16 +36120,16 @@
           "bib": "860",
           "studio": "SDA, Sukachov Dance Academy",
           "event": "Solo Star Closed Bronze P2 Int'l Latin Championship (CC,R)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_655_726202612581",
+      "key": "07_655_726202610351",
       "heat_number": "655",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T12:58:15",
+      "time": "2026-07-26T13:03:51",
       "round": "Final",
       "entries": [
         {
@@ -36046,7 +36139,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Sophia Cremarosa & Felix Sindora",
@@ -36055,7 +36148,7 @@
           "bib": "843",
           "studio": "NIKA",
           "event": "Championship Closed Bronze P2 MxAm Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -36064,7 +36157,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Sylvia Imbens & Razmik Papian",
@@ -36073,7 +36166,7 @@
           "bib": "552",
           "studio": "FADS - San Mateo",
           "event": "Championship Open Bronze J2 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Oscar Rodriguez & Alice Wu",
@@ -36082,16 +36175,16 @@
           "bib": "762",
           "studio": "Hidden City Ballroom",
           "event": "Championship Closed Bronze Y MxAm Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_656_726202610227",
+      "key": "07_656_726202610803",
       "heat_number": "656",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:02:27",
+      "time": "2026-07-26T13:08:03",
       "round": "Final",
       "entries": [
         {
@@ -36101,7 +36194,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Gold TB M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Athena Mai",
@@ -36110,7 +36203,7 @@
           "bib": "827",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Closed Gold TB M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Steven Pilberg",
@@ -36119,7 +36212,7 @@
           "bib": "836",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Gold TB M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Adele Prozorova",
@@ -36128,7 +36221,7 @@
           "bib": "838",
           "studio": "Brilliant Dancesport Studio",
           "event": "Solo Star Open P2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Ryan Rowe",
@@ -36137,7 +36230,7 @@
           "bib": "840",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Open P2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Medina Serik",
@@ -36146,7 +36239,7 @@
           "bib": "841",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Gold TB M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Adam Whitehouse",
@@ -36155,16 +36248,16 @@
           "bib": "855",
           "studio": "Timofeev, Vladimir",
           "event": "Solo Star Open P2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         }
       ]
     },
     {
-      "key": "07_657_726202610927",
+      "key": "07_657_726202611503",
       "heat_number": "657",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:09:27",
+      "time": "2026-07-26T13:15:03",
       "round": "Final",
       "entries": [
         {
@@ -36174,7 +36267,7 @@
           "bib": "803",
           "studio": "BAM Dance Team",
           "event": "Solo Star Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "6"
         },
         {
           "couple": "Tymeya Asandei",
@@ -36183,7 +36276,7 @@
           "bib": "868",
           "studio": "Tip Top Ballroom - Skimelis",
           "event": "Solo Star Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "5"
         },
         {
           "couple": "Alice Cherenshchikova",
@@ -36192,7 +36285,7 @@
           "bib": "864",
           "studio": "BAM Dance Team - Cherenhchikova",
           "event": "Solo Star Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Sophia Dymo",
@@ -36201,7 +36294,7 @@
           "bib": "869",
           "studio": "Tip Top Ballroom - Skimelis",
           "event": "Solo Star Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "7"
         },
         {
           "couple": "Jessica Ferber",
@@ -36210,7 +36303,7 @@
           "bib": "867",
           "studio": "Tip Top Ballroom - Skimelis",
           "event": "Solo Star Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Milan Huynh",
@@ -36219,7 +36312,7 @@
           "bib": "866",
           "studio": "Tip Top Ballroom - Skimelis",
           "event": "Solo Star Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Maxine Mai",
@@ -36228,16 +36321,16 @@
           "bib": "828",
           "studio": "Mai, Athena & Maxine",
           "event": "Solo Star Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         }
       ]
     },
     {
-      "key": "07_658_726202611627",
+      "key": "07_658_726202612203",
       "heat_number": "658",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:16:27",
+      "time": "2026-07-26T13:22:03",
       "round": "Final",
       "entries": [
         {
@@ -36247,7 +36340,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Dylan Chi & Sophia Statkevich",
@@ -36256,7 +36349,7 @@
           "bib": "810",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB MxAm Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Leonid Generalov & Anastasiya Rubashevsky",
@@ -36265,7 +36358,7 @@
           "bib": "814",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze P1 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Steven Pilberg",
@@ -36274,7 +36367,7 @@
           "bib": "836",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Aria Lucia Reyes-Villa & Danya Rubashevsky",
@@ -36283,16 +36376,16 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Silver J1 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_659_726202612039",
+      "key": "07_659_726202612615",
       "heat_number": "659",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:20:39",
+      "time": "2026-07-26T13:26:15",
       "round": "Final",
       "entries": [
         {
@@ -36302,7 +36395,7 @@
           "bib": "806",
           "studio": "Feel Dance Team",
           "event": "Solo Star Closed Silver P1 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "5"
         },
         {
           "couple": "Jane Chtchemelinine",
@@ -36311,7 +36404,7 @@
           "bib": "811",
           "studio": "FADS - San Mateo",
           "event": "Solo Star Closed Silver P1 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alena Sivura",
@@ -36320,7 +36413,7 @@
           "bib": "844",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Silver J2 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Maria Sivura",
@@ -36329,7 +36422,7 @@
           "bib": "845",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Silver P1 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Amelia Slutskiy",
@@ -36338,7 +36431,7 @@
           "bib": "847",
           "studio": "My Way Dance Studio",
           "event": "Solo Star Closed Silver P1 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Ivan Statkevich",
@@ -36347,7 +36440,7 @@
           "bib": "849",
           "studio": "Feel Dance Team",
           "event": "Solo Star Closed Silver P1 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "6"
         },
         {
           "couple": "Claire Wei Yi",
@@ -36356,16 +36449,16 @@
           "bib": "854",
           "studio": "Prestige Ballroom",
           "event": "Solo Star Closed Silver P1 Int'l Latin Championship (CC,S,R)",
-          "result": ""
+          "result": "2"
         }
       ]
     },
     {
-      "key": "07_660_726202612451",
+      "key": "07_660_726202613027",
       "heat_number": "660",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:24:51",
+      "time": "2026-07-26T13:30:27",
       "round": "Final",
       "entries": [
         {
@@ -36375,7 +36468,7 @@
           "bib": "868",
           "studio": "Tip Top Ballroom - Skimelis",
           "event": "Solo Star Closed Gold P2 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Lily Murvanidze",
@@ -36384,7 +36477,7 @@
           "bib": "865",
           "studio": "Luna Del Soul - Murvanidze",
           "event": "Solo Star Closed Gold P2 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "5"
         },
         {
           "couple": "Adele Prozorova",
@@ -36393,7 +36486,7 @@
           "bib": "838",
           "studio": "Brilliant Dancesport Studio",
           "event": "Solo Star Closed Gold P2 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Ryan Rowe",
@@ -36402,7 +36495,7 @@
           "bib": "840",
           "studio": "DNA Dance Ballroom",
           "event": "Solo Star Closed Gold P2 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Adam Whitehouse",
@@ -36411,16 +36504,16 @@
           "bib": "855",
           "studio": "Timofeev, Vladimir",
           "event": "Solo Star Closed Gold P2 M/F Int'l Latin Championship (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_661_726202613027",
+      "key": "07_661_726202613603",
       "heat_number": "661",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:30:27",
+      "time": "2026-07-26T13:36:03",
       "round": "Final",
       "entries": [
         {
@@ -36430,7 +36523,7 @@
           "bib": "806",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze P1 AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Jacqueline Brener-Dubois & Mikhael Brener-Dubois",
@@ -36439,7 +36532,7 @@
           "bib": "807",
           "studio": "FADS - San Mateo",
           "event": "Championship Closed Bronze P1 AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Alex Chen & Anastasiya Rubashevsky",
@@ -36448,7 +36541,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver TB Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -36457,7 +36550,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver TB Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Eseniia Ivanitskaia & Mirai Takahashi",
@@ -36466,7 +36559,7 @@
           "bib": "850",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze P1 AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Amelia Slutskiy & David Slutskiy",
@@ -36475,16 +36568,16 @@
           "bib": "848",
           "studio": "My Way Dance Studio",
           "event": "Championship Closed Bronze P1 AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "3"
         }
       ]
     },
     {
-      "key": "07_662_726202613439",
+      "key": "07_662_726202614015",
       "heat_number": "662",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:34:39",
+      "time": "2026-07-26T13:40:15",
       "round": "Final",
       "entries": [
         {
@@ -36494,7 +36587,7 @@
           "bib": "552",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze P2 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Iris Bakhvala & Dylan Chi",
@@ -36503,7 +36596,7 @@
           "bib": "810",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Bronze P1 MxAm Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Bella Chatman & Danya Rubashevsky",
@@ -36512,7 +36605,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Rhett Grant & Eva Sullivan",
@@ -36521,7 +36614,7 @@
           "bib": "589",
           "studio": "Luna Del Soul - Grant",
           "event": "Championship Open Silver Y Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Ryan Khersonsky & Elena Krifuks",
@@ -36530,7 +36623,7 @@
           "bib": "823",
           "studio": "Aesthetic Studios",
           "event": "Championship Closed Bronze J2 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Ashlynn Mallamace & Daniel Lee Tran",
@@ -36539,7 +36632,7 @@
           "bib": "590",
           "studio": "Tran, Daniel Lee",
           "event": "Championship Closed Bronze J2 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Natalie Pavlovsky & Anastasiya Rubashevsky",
@@ -36548,16 +36641,16 @@
           "bib": "560",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_663_726202613851",
+      "key": "07_663_726202614427",
       "heat_number": "663",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:38:51",
+      "time": "2026-07-26T13:44:27",
       "round": "Final",
       "entries": [
         {
@@ -36567,7 +36660,7 @@
           "bib": "501",
           "studio": "Luna Del Soul",
           "event": "Championship Closed Silver P2 Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Aurora Generalova & Anastasiya Rubashevsky",
@@ -36576,7 +36669,7 @@
           "bib": "560",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB Int'l Latin (CC,S)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -36585,7 +36678,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Bronze TB Int'l Latin (CC,S)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Sylvia Imbens & Razmik Papian",
@@ -36594,7 +36687,7 @@
           "bib": "552",
           "studio": "FADS - San Mateo",
           "event": "Championship Open Silver J2 Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Dahlia Yim & Natalia Zakrevskaia",
@@ -36603,16 +36696,44 @@
           "bib": "583",
           "studio": "N Space Dance Studio",
           "event": "Championship Closed Bronze TB Int'l Latin (CC,S)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_664_726202614427",
+      "key": "07_663A_726202615003",
+      "heat_number": "663A",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T13:50:03",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Aurora Generalova & Anastasiya Rubashevsky",
+          "competitor1": "Aurora Generalova",
+          "competitor2": "Anastasiya Rubashevsky",
+          "bib": "560",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Closed Bronze TB Int'l Latin (R,J)",
+          "result": "2"
+        },
+        {
+          "couple": "Alexandra Golikova & Danya Rubashevsky",
+          "competitor1": "Alexandra Golikova",
+          "competitor2": "Danya Rubashevsky",
+          "bib": "561",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Closed Bronze TB Int'l Latin (R,J)",
+          "result": "1"
+        }
+      ]
+    },
+    {
+      "key": "07_664_726202615539",
       "heat_number": "664",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:44:27",
+      "time": "2026-07-26T13:55:39",
       "round": "Final",
       "entries": [
         {
@@ -36622,7 +36743,7 @@
           "bib": "560",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Silver J1 Int'l Latin (CC,S)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Daniil Kukuevskii & Daniela Podolska",
@@ -36631,7 +36752,7 @@
           "bib": "735",
           "studio": "Imperial Dance Academy",
           "event": "Championship Closed Gold P2 MxAm Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alina Lyukshin & Felix Sindora",
@@ -36640,7 +36761,7 @@
           "bib": "843",
           "studio": "NIKA",
           "event": "Championship Novice J2 AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Ivan Nikitin & Claire Wei Yi",
@@ -36649,7 +36770,7 @@
           "bib": "549",
           "studio": "Prestige Ballroom",
           "event": "Championship Closed Silver P1 Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Michelle Popper & Vladimir Timofeev",
@@ -36658,7 +36779,7 @@
           "bib": "768",
           "studio": "Timofeev, Vladimir",
           "event": "Championship Closed Gold P2 MxAm Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Aria Lucia Reyes-Villa & Danya Rubashevsky",
@@ -36667,16 +36788,44 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Silver J1 Int'l Latin (CC,S)",
-          "result": ""
+          "result": "2"
         }
       ]
     },
     {
-      "key": "07_665_726202615127",
+      "key": "07_664A_726202620239",
+      "heat_number": "664A",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T14:02:39",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Yvanna Abadia & Anastasiya Rubashevsky",
+          "competitor1": "Yvanna Abadia",
+          "competitor2": "Anastasiya Rubashevsky",
+          "bib": "560",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Open Silver J1 Int'l Latin (R,J)",
+          "result": "1"
+        },
+        {
+          "couple": "Aria Lucia Reyes-Villa & Danya Rubashevsky",
+          "competitor1": "Aria Lucia Reyes-Villa",
+          "competitor2": "Danya Rubashevsky",
+          "bib": "561",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Open Silver J1 Int'l Latin (R,J)",
+          "result": "2"
+        }
+      ]
+    },
+    {
+      "key": "07_665_726202620939",
       "heat_number": "665",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:51:27",
+      "time": "2026-07-26T14:09:39",
       "round": "Final",
       "entries": [
         {
@@ -36686,16 +36835,16 @@
           "bib": "843",
           "studio": "NIKA",
           "event": " AC-J2 Novice Int'l Paso Doble",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_666_726202615127",
+      "key": "07_666_726202620939",
       "heat_number": "666",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:51:27",
+      "time": "2026-07-26T14:09:39",
       "round": "Final",
       "entries": [
         {
@@ -36705,16 +36854,16 @@
           "bib": "843",
           "studio": "NIKA",
           "event": " AC-J2 Novice Int'l Jive",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_667_726202615127",
+      "key": "07_667_726202620939",
       "heat_number": "667",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:51:27",
+      "time": "2026-07-26T14:09:39",
       "round": "Final",
       "entries": [
         {
@@ -36724,7 +36873,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver TB Int'l Latin (CC,S)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Amelia Slutskiy & David Slutskiy",
@@ -36733,7 +36882,7 @@
           "bib": "848",
           "studio": "My Way Dance Studio",
           "event": "Championship Closed Silver P1 AM/AM Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Ivan Statkevich & Ariana Yang",
@@ -36742,16 +36891,35 @@
           "bib": "849",
           "studio": "Feel Dance Team",
           "event": "Championship Closed Silver P1 AM/AM Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_667IL_726202615127",
+      "key": "07_667A_726202621639",
+      "heat_number": "667A",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T14:16:39",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Alexandra Golikova & Danya Rubashevsky",
+          "competitor1": "Alexandra Golikova",
+          "competitor2": "Danya Rubashevsky",
+          "bib": "561",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Closed Silver TB Int'l Latin (R,J)",
+          "result": "1"
+        }
+      ]
+    },
+    {
+      "key": "07_667IL_726202620939",
       "heat_number": "667IL",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T13:51:27",
+      "time": "2026-07-26T14:09:39",
       "round": "Final",
       "entries": [
         {
@@ -36761,16 +36929,16 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "10-Dance Scholarship Closed PT Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_668_726202621827",
+      "key": "07_668_726202624339",
       "heat_number": "668",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:18:27",
+      "time": "2026-07-26T14:43:39",
       "round": "Final",
       "entries": [
         {
@@ -36780,7 +36948,7 @@
           "bib": "501",
           "studio": "Luna Del Soul",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Bella Chatman & Danya Rubashevsky",
@@ -36789,7 +36957,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Daniil Kukuevskii & Daniela Podolska",
@@ -36798,7 +36966,7 @@
           "bib": "735",
           "studio": "Imperial Dance Academy",
           "event": "Championship Closed P2 MxAm Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alina Lyukshin & Felix Sindora",
@@ -36807,7 +36975,7 @@
           "bib": "843",
           "studio": "NIKA",
           "event": "Championship Pre-Champ J2 AM/AM Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Natalie Pavlovsky & Anastasiya Rubashevsky",
@@ -36816,7 +36984,7 @@
           "bib": "560",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Michelle Popper & Vladimir Timofeev",
@@ -36825,16 +36993,16 @@
           "bib": "768",
           "studio": "Timofeev, Vladimir",
           "event": "Championship Closed P2 MxAm Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         }
       ]
     },
     {
-      "key": "07_669_726202622527",
+      "key": "07_669_726202625039",
       "heat_number": "669",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:25:27",
+      "time": "2026-07-26T14:50:39",
       "round": "Final",
       "entries": [
         {
@@ -36844,16 +37012,16 @@
           "bib": "843",
           "studio": "NIKA",
           "event": " AC-J2 Pre-Champ Int'l Paso Doble",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_670_726202622527",
+      "key": "07_670_726202625039",
       "heat_number": "670",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:25:27",
+      "time": "2026-07-26T14:50:39",
       "round": "Final",
       "entries": [
         {
@@ -36863,7 +37031,7 @@
           "bib": "853",
           "studio": "Peak Dance Center - Lamph/Vehikite/Bath",
           "event": "Fordney AM/AM Closed P2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Alex Chen & Anastasiya Rubashevsky",
@@ -36872,7 +37040,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver TB Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Mila Dragunov & Abraham Parmenov",
@@ -36881,7 +37049,7 @@
           "bib": "834",
           "studio": "LA Dancesport Club",
           "event": "Fordney AM/AM Closed P2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alexandra Golikova & Danya Rubashevsky",
@@ -36890,7 +37058,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver TB Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Daniel Ischenko & Aleksandra Kim",
@@ -36899,7 +37067,7 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "Fordney AM/AM Closed P2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Thea Rowe & Benjamin Sklovskiy",
@@ -36908,16 +37076,16 @@
           "bib": "846",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney AM/AM Closed P2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         }
       ]
     },
     {
-      "key": "07_671_726202623227",
+      "key": "07_671_726202625739",
       "heat_number": "671",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:32:27",
+      "time": "2026-07-26T14:57:39",
       "round": "Final",
       "entries": [
         {
@@ -36927,7 +37095,7 @@
           "bib": "501",
           "studio": "Luna Del Soul",
           "event": "Championship Open Gold J2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Brandon Chen & Abbie Yeung",
@@ -36936,7 +37104,7 @@
           "bib": "809",
           "studio": "Tip Top Ballroom - Chen/Yeung",
           "event": "Fordney AM/AM Open J2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Dylan Chi & Annie Lee",
@@ -36945,7 +37113,7 @@
           "bib": "810",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Closed Silver J1 MxAm Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Michael Novikov & Angelina  Novikova",
@@ -36954,7 +37122,7 @@
           "bib": "832",
           "studio": "LA Dancesport Club",
           "event": "Fordney AM/AM Open J2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Oleksandr Polyvka & Laila Rubashevsky",
@@ -36963,7 +37131,7 @@
           "bib": "837",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney AM/AM Open J2 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Michelle Popper & Vladimir Timofeev",
@@ -36972,16 +37140,16 @@
           "bib": "768",
           "studio": "Timofeev, Vladimir",
           "event": "Championship Pre-Champ J1 MxAm Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_672_726202623927",
+      "key": "07_672_726202630439",
       "heat_number": "672",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:39:27",
+      "time": "2026-07-26T15:04:39",
       "round": "Final",
       "entries": [
         {
@@ -36991,16 +37159,16 @@
           "bib": "768",
           "studio": "Timofeev, Vladimir",
           "event": " mL-J1 Pre-Champ Int'l Paso Doble",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_673_726202623927",
+      "key": "07_673_726202630439",
       "heat_number": "673",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:39:27",
+      "time": "2026-07-26T15:04:39",
       "round": "Final",
       "entries": [
         {
@@ -37010,7 +37178,7 @@
           "bib": "812",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Novice Y AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Bella Chatman & Danya Rubashevsky",
@@ -37019,7 +37187,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Daniel Ischenko & Aleksandra Kim",
@@ -37028,7 +37196,7 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "Championship Closed Gold P2 AM/AM Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Alina Lyukshin & Felix Sindora",
@@ -37037,7 +37205,7 @@
           "bib": "843",
           "studio": "NIKA",
           "event": "Championship Novice Y AM/AM Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Chloe Nguyen & Tyler Nguyen",
@@ -37046,7 +37214,7 @@
           "bib": "863",
           "studio": "Luna Del Soul - Grant",
           "event": "Championship Closed Gold Y AM/AM Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Natalie Pavlovsky & Anastasiya Rubashevsky",
@@ -37055,16 +37223,16 @@
           "bib": "560",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_674_726202624627",
+      "key": "07_674_726202631139",
       "heat_number": "674",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:46:27",
+      "time": "2026-07-26T15:11:39",
       "round": "Final",
       "entries": [
         {
@@ -37074,16 +37242,16 @@
           "bib": "843",
           "studio": "NIKA",
           "event": " AC-Y Novice Int'l Paso Doble",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_675_726202624627",
+      "key": "07_675_726202631139",
       "heat_number": "675",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:46:27",
+      "time": "2026-07-26T15:11:39",
       "round": "Final",
       "entries": [
         {
@@ -37093,16 +37261,16 @@
           "bib": "843",
           "studio": "NIKA",
           "event": " AC-Y Novice Int'l Jive",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_676_726202624627",
+      "key": "07_676_726202631139",
       "heat_number": "676",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:46:27",
+      "time": "2026-07-26T15:11:39",
       "round": "Final",
       "entries": [
         {
@@ -37112,7 +37280,7 @@
           "bib": "560",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Silver J1 Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Cole Ackley & Zamira Vehikite",
@@ -37121,7 +37289,7 @@
           "bib": "800",
           "studio": "Peak Dance Center - Ackley/Vehikite",
           "event": "Fordney AM/AM Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Veronika Aristov & Bruce Kobylyanskyy",
@@ -37130,7 +37298,7 @@
           "bib": "825",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney AM/AM Closed P1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Aahrone Bakhvala & Iris Bakhvala",
@@ -37139,7 +37307,7 @@
           "bib": "806",
           "studio": "Feel Dance Team",
           "event": "Fordney AM/AM Closed P1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Mariia Fedotova & Nicolas Rastvortsev",
@@ -37148,7 +37316,7 @@
           "bib": "839",
           "studio": "My Way Dance Studio",
           "event": "Fordney AM/AM Closed P1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
@@ -37157,7 +37325,7 @@
           "bib": "830",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney AM/AM Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Milada Myronenko & Phabian Parra",
@@ -37166,7 +37334,7 @@
           "bib": "835",
           "studio": "BAM Dance Team",
           "event": "Fordney AM/AM Open J1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Aria Lucia Reyes-Villa & Danya Rubashevsky",
@@ -37175,7 +37343,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Silver J1 Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Adele Sklarsky & Jordan Sklarsky",
@@ -37184,16 +37352,16 @@
           "bib": "870",
           "studio": "LA Dancesport Club",
           "event": "Fordney AM/AM Closed P1 Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         }
       ]
     },
     {
-      "key": "07_677_726202625327",
+      "key": "07_677_726202631839",
       "heat_number": "677",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T14:53:27",
+      "time": "2026-07-26T15:18:39",
       "round": "Final",
       "entries": [
         {
@@ -37203,7 +37371,7 @@
           "bib": "852",
           "studio": "LA Dancesport Club",
           "event": "Fordney AM/AM Open Y Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "5"
         },
         {
           "couple": "Bella Chatman & Danya Rubashevsky",
@@ -37212,7 +37380,7 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Championship Open Gold J1 Int'l Latin (CC,S)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Dylan Chi & Isabella Moudry",
@@ -37221,7 +37389,7 @@
           "bib": "810",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney AM/AM Open Y Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Sean Ginko & Adela Yanev",
@@ -37230,7 +37398,7 @@
           "bib": "815",
           "studio": "Ginko/Yanev",
           "event": "Fordney AM/AM Open Y Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Izzy Luong & Yegor Zhukov",
@@ -37239,7 +37407,7 @@
           "bib": "861",
           "studio": "SDA, Sukachov Dance Academy",
           "event": "Fordney AM/AM Open Y Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Alina Lyukshin & Felix Sindora",
@@ -37248,7 +37416,7 @@
           "bib": "843",
           "studio": "NIKA",
           "event": "Championship Pre-Champ Y AM/AM Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Sofia Pylypenko & Benjamin Yakubov",
@@ -37257,16 +37425,35 @@
           "bib": "857",
           "studio": "BAM Dance Team",
           "event": "Fordney AM/AM Open Y Int'l Latin Championship (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         }
       ]
     },
     {
-      "key": "07_678_726202630027",
+      "key": "07_677A_726202632539",
+      "heat_number": "677A",
+      "session": "07",
+      "session_name": "Sunday Morning",
+      "time": "2026-07-26T15:25:39",
+      "round": "Final",
+      "entries": [
+        {
+          "couple": "Bella Chatman & Danya Rubashevsky",
+          "competitor1": "Bella Chatman",
+          "competitor2": "Danya Rubashevsky",
+          "bib": "561",
+          "studio": "DNA Dance Ballroom",
+          "event": "Championship Open Gold J1 Int'l Latin (R,J)",
+          "result": "1"
+        }
+      ]
+    },
+    {
+      "key": "07_678_726202632539",
       "heat_number": "678",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:00:27",
+      "time": "2026-07-26T15:25:39",
       "round": "Final",
       "entries": [
         {
@@ -37276,16 +37463,16 @@
           "bib": "843",
           "studio": "NIKA",
           "event": " AC-Y Pre-Champ Int'l Paso Doble",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_679_726202630027",
+      "key": "07_679_726202633239",
       "heat_number": "679",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:00:27",
+      "time": "2026-07-26T15:32:39",
       "round": "Final",
       "entries": [
         {
@@ -37295,7 +37482,7 @@
           "bib": "501",
           "studio": "Luna Del Soul",
           "event": "Scholarship Closed Silver PT Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Ryan Khersonsky & Elena Krifuks",
@@ -37304,7 +37491,7 @@
           "bib": "823",
           "studio": "Aesthetic Studios",
           "event": "Scholarship Closed Bronze JR Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Michael Levenkov & Aleksandra Temple",
@@ -37313,7 +37500,7 @@
           "bib": "538",
           "studio": "NIKA",
           "event": "Scholarship Closed Bronze PT Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Ashlynn Mallamace & Daniel Lee Tran",
@@ -37322,7 +37509,7 @@
           "bib": "590",
           "studio": "Tran, Daniel Lee",
           "event": "Scholarship Closed Bronze JR Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Ivan Nikitin & Claire Wei Yi",
@@ -37331,16 +37518,16 @@
           "bib": "549",
           "studio": "Prestige Ballroom",
           "event": "Scholarship Closed Silver PT Int'l Latin (CC,S,R,J)",
-          "result": ""
+          "result": "2"
         }
       ]
     },
     {
-      "key": "07_679IL_726202630027",
+      "key": "07_679IL_726202633239",
       "heat_number": "679IL",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:00:27",
+      "time": "2026-07-26T15:32:39",
       "round": "Final",
       "entries": [
         {
@@ -37350,16 +37537,16 @@
           "bib": "561",
           "studio": "DNA Dance Ballroom",
           "event": "Int'l 6-Dance Closed Bronze TB Int'l Latin (CC,S,R)",
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "07_680_726202630627",
+      "key": "07_680_726202633839",
       "heat_number": "680",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:06:27",
+      "time": "2026-07-26T15:38:39",
       "round": "Final",
       "entries": [
         {
@@ -37369,7 +37556,7 @@
           "bib": "800",
           "studio": "Peak Dance Center - Ackley/Vehikite",
           "event": "Fordney Scholarships AM/AM Open J1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Lukas Alisauskas & Brooklyn Rosario",
@@ -37378,7 +37565,7 @@
           "bib": "501",
           "studio": "Luna Del Soul",
           "event": "Open Scholarship JR Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Veronika Aristov & Bruce Kobylyanskyy",
@@ -37387,7 +37574,7 @@
           "bib": "825",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney Scholarships AM/AM Closed P1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Alex Chen & Medina Serik",
@@ -37396,7 +37583,7 @@
           "bib": "808",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney Scholarships AM/AM Closed P1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Mariia Fedotova & Nicolas Rastvortsev",
@@ -37405,7 +37592,7 @@
           "bib": "839",
           "studio": "My Way Dance Studio",
           "event": "Fordney Scholarships AM/AM Closed P1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
@@ -37414,7 +37601,7 @@
           "bib": "830",
           "studio": "Brilliant Dancesport Studio",
           "event": "Fordney Scholarships AM/AM Open J1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Milada Myronenko & Phabian Parra",
@@ -37423,7 +37610,7 @@
           "bib": "835",
           "studio": "BAM Dance Team",
           "event": "Fordney Scholarships AM/AM Open J1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Adele Sklarsky & Jordan Sklarsky",
@@ -37432,16 +37619,16 @@
           "bib": "870",
           "studio": "LA Dancesport Club",
           "event": "Fordney Scholarships AM/AM Closed P1 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         }
       ]
     },
     {
-      "key": "07_681_726202631327",
+      "key": "07_681_726202634539",
       "heat_number": "681",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:13:27",
+      "time": "2026-07-26T15:45:39",
       "round": "Final",
       "entries": [
         {
@@ -37451,7 +37638,7 @@
           "bib": "853",
           "studio": "Peak Dance Center - Lamph/Vehikite/Bath",
           "event": "Fordney Scholarships AM/AM Closed P2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Brandon Chen & Abbie Yeung",
@@ -37460,7 +37647,7 @@
           "bib": "809",
           "studio": "Tip Top Ballroom - Chen/Yeung",
           "event": "Fordney Scholarships AM/AM Open J2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         },
         {
           "couple": "Mila Dragunov & Abraham Parmenov",
@@ -37469,7 +37656,7 @@
           "bib": "834",
           "studio": "LA Dancesport Club",
           "event": "Fordney Scholarships AM/AM Closed P2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Daniel Ischenko & Aleksandra Kim",
@@ -37478,7 +37665,7 @@
           "bib": "820",
           "studio": "NIKA",
           "event": "Fordney Scholarships AM/AM Closed P2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Alina Lyukshin & Felix Sindora",
@@ -37487,7 +37674,7 @@
           "bib": "843",
           "studio": "NIKA",
           "event": "Fordney Scholarships AM/AM Open J2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Michael Novikov & Angelina  Novikova",
@@ -37496,7 +37683,7 @@
           "bib": "832",
           "studio": "LA Dancesport Club",
           "event": "Fordney Scholarships AM/AM Open J2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Oleksandr Polyvka & Laila Rubashevsky",
@@ -37505,7 +37692,7 @@
           "bib": "837",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney Scholarships AM/AM Open J2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Thea Rowe & Benjamin Sklovskiy",
@@ -37514,16 +37701,16 @@
           "bib": "846",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney Scholarships AM/AM Closed P2 Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         }
       ]
     },
     {
-      "key": "07_682_726202632027",
+      "key": "07_682_726202635239",
       "heat_number": "682",
       "session": "07",
       "session_name": "Sunday Morning",
-      "time": "2026-07-26T15:20:27",
+      "time": "2026-07-26T15:52:39",
       "round": "Final",
       "entries": [
         {
@@ -37533,7 +37720,7 @@
           "bib": "501",
           "studio": "Luna Del Soul",
           "event": "Open Scholarship Y Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Marina Anisimova & Deniz Uzalp",
@@ -37542,7 +37729,7 @@
           "bib": "852",
           "studio": "LA Dancesport Club",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "5"
         },
         {
           "couple": "Dylan Chi & Isabella Moudry",
@@ -37551,7 +37738,7 @@
           "bib": "810",
           "studio": "DNA Dance Ballroom",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "2"
         },
         {
           "couple": "Sean Ginko & Adela Yanev",
@@ -37560,7 +37747,7 @@
           "bib": "815",
           "studio": "Ginko/Yanev",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "1"
         },
         {
           "couple": "Izzy Luong & Yegor Zhukov",
@@ -37569,7 +37756,7 @@
           "bib": "861",
           "studio": "SDA, Sukachov Dance Academy",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "4"
         },
         {
           "couple": "Sofia Pylypenko & Benjamin Yakubov",
@@ -37578,7 +37765,7 @@
           "bib": "857",
           "studio": "BAM Dance Team",
           "event": "Fordney Scholarships AM/AM Open Y Int'l Latin (CC,S,R,PD,J)",
-          "result": ""
+          "result": "3"
         }
       ]
     }
@@ -38529,6 +38716,13 @@
     "Michael Novikov": "LA Dancesport Club",
     "Kristina Dudka": "Imperial Dance Academy",
     "Daniil Marinesku": "Imperial Dance Academy",
+    "Mila Dragunov": "LA Dancesport Club",
+    "Abraham Parmenov": "LA Dancesport Club",
+    "Mariia Fedotova": "My Way Dance Studio",
+    "Nicolas Rastvortsev": "My Way Dance Studio",
+    "Lucy Kobylyanskyy": "Brilliant Dancesport Studio",
+    "Maksim Mkrtchian": "Brilliant Dancesport Studio",
+    "Angelina  Novikova": "LA Dancesport Club",
     "Shakira Al-Shamari": "Feel Dance Team",
     "Jacqueline Brener-Dubois": "FADS - San Mateo",
     "Mikhael Brener-Dubois": "FADS - San Mateo",
@@ -38576,8 +38770,6 @@
     "Zamira Vehikite": "Peak Dance Center - Ackley/Vehikite",
     "Wiktor Frydrych": "RDA - Frydrych",
     "Maya Sinelnikov": "RDA - Frydrych",
-    "Lucy Kobylyanskyy": "Brilliant Dancesport Studio",
-    "Maksim Mkrtchian": "Brilliant Dancesport Studio",
     "Duke Khuu": "FADS - San Mateo",
     "Sarah Wentling": "FADS - San Mateo",
     "Natasha Avanesov": "Halim/Avanesov",
@@ -38634,15 +38826,10 @@
     "Daniela Podolska": "Imperial Dance Academy",
     "Alina Lyukshin": "NIKA",
     "Michelle Popper": "Timofeev, Vladimir",
-    "Mila Dragunov": "LA Dancesport Club",
-    "Abraham Parmenov": "LA Dancesport Club",
     "Thea Rowe": "DNA Dance Ballroom",
     "Benjamin Sklovskiy": "DNA Dance Ballroom",
-    "Angelina  Novikova": "LA Dancesport Club",
     "Oleksandr Polyvka": "DNA Dance Ballroom",
     "Laila Rubashevsky": "DNA Dance Ballroom",
-    "Mariia Fedotova": "My Way Dance Studio",
-    "Nicolas Rastvortsev": "My Way Dance Studio",
     "Milada Myronenko": "BAM Dance Team",
     "Phabian Parra": "BAM Dance Team",
     "Sean Ginko": "Ginko/Yanev",
@@ -42229,7 +42416,7 @@
       "07_613_726202611271",
       "07_614_726202611283",
       "07_616_726202611313",
-      "07_663_726202613851"
+      "07_663_726202614427"
     ],
     "Asya Pereltsvaig": [
       "02_4_723202680500"
@@ -42277,8 +42464,8 @@
       "07_615_726202611300",
       "07_622_726202611401",
       "07_624_726202611430",
-      "07_662_726202613439",
-      "07_679_726202630027"
+      "07_662_726202614015",
+      "07_679_726202633239"
     ],
     "Amy Linn": [
       "03_292_724202610000",
@@ -43241,8 +43428,8 @@
       "06_559_725202611190",
       "07_598_726202694712",
       "07_603_726202610151",
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Yegor Zhukov": [
       "04_410_724202675400",
@@ -43256,8 +43443,8 @@
       "06_559_725202611190",
       "07_598_726202694712",
       "07_603_726202610151",
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Elaine Chow": [
       "04_411_724202682600"
@@ -43434,8 +43621,8 @@
       "07_614_726202611283",
       "07_615_726202611300",
       "07_616_726202611313",
-      "07_664_726202614427",
-      "07_679_726202630027"
+      "07_664_726202615539",
+      "07_679_726202633239"
     ],
     "Maggie Sheng": [
       "04_9_724202695900"
@@ -43823,7 +44010,7 @@
       "06_559_725202611190",
       "07_648_726202612175",
       "07_649_726202612192",
-      "07_655_726202612581"
+      "07_655_726202610351"
     ],
     "Karen Taylor": [
       "05_432_725202692418",
@@ -44608,7 +44795,7 @@
       "07_627_726202611473",
       "07_628_726202611485",
       "07_629_726202611502",
-      "07_662_726202613439"
+      "07_662_726202614015"
     ],
     "Joyce He": [
       "05_537_725202620724",
@@ -44623,10 +44810,10 @@
       "05_542_725202622409",
       "05_543_725202622821",
       "05_546_725202624057",
-      "07_664_726202614427",
-      "07_668_726202621827",
-      "07_671_726202623227",
-      "07_672_726202623927"
+      "07_664_726202615539",
+      "07_668_726202624339",
+      "07_671_726202625739",
+      "07_672_726202630439"
     ],
     "Jia Xu": [
       "05_542_725202622409",
@@ -44673,12 +44860,12 @@
       "07_647_726202612163",
       "07_648_726202612175",
       "07_649_726202612192",
-      "07_663_726202613851",
-      "07_668_726202621827",
-      "07_671_726202623227",
-      "07_679_726202630027",
-      "07_680_726202630627",
-      "07_682_726202632027"
+      "07_663_726202614427",
+      "07_668_726202624339",
+      "07_671_726202625739",
+      "07_679_726202633239",
+      "07_680_726202633839",
+      "07_682_726202635239"
     ],
     "Simona Alisauskas": [
       "06_13_725202611340"
@@ -44734,14 +44921,14 @@
     "Marina Anisimova": [
       "06_557_725202680000",
       "06_557_725202683000",
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Deniz Uzalp": [
       "06_557_725202680000",
       "06_557_725202683000",
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Max Bersie": [
       "06_557_725202680000",
@@ -44773,18 +44960,18 @@
       "07_621_726202611384",
       "07_630_726202611515",
       "07_652_726202612453",
-      "07_658_726202611627",
-      "07_662_726202613439",
-      "07_671_726202623227",
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_658_726202612203",
+      "07_662_726202614015",
+      "07_671_726202625739",
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Isabella Moudry": [
       "06_557_725202680000",
       "06_557_725202683000",
       "07_603_726202610151",
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Sofia Chubay": [
       "06_557_725202680000",
@@ -44874,15 +45061,15 @@
       "07_1FORD_726202610371",
       "07_600_726202695412",
       "07_602_726202610081",
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Bruce Kobylyanskyy": [
       "07_1FORD_726202610371",
       "07_600_726202695412",
       "07_602_726202610081",
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Daniel Ischenko": [
       "07_1FORD_726202610371",
@@ -44891,10 +45078,10 @@
       "07_599_726202695412",
       "07_599IB_726202695412",
       "07_602_726202610081",
-      "07_667IL_726202615127",
-      "07_670_726202622527",
-      "07_673_726202623927",
-      "07_681_726202631327"
+      "07_667IL_726202620939",
+      "07_670_726202625039",
+      "07_673_726202630439",
+      "07_681_726202634539"
     ],
     "Aleksandra Kim": [
       "07_1FORD_726202610371",
@@ -44903,10 +45090,10 @@
       "07_599_726202695412",
       "07_599IB_726202695412",
       "07_602_726202610081",
-      "07_667IL_726202615127",
-      "07_670_726202622527",
-      "07_673_726202623927",
-      "07_681_726202631327"
+      "07_667IL_726202620939",
+      "07_670_726202625039",
+      "07_673_726202630439",
+      "07_681_726202634539"
     ],
     "Dasha Dragunov": [
       "07_2FORD_726202610384",
@@ -44915,10 +45102,11 @@
     ],
     "Michael Novikov": [
       "07_2FORD_726202610384",
+      "07_4FORD_726202641609",
       "07_596_726202693436",
       "07_601_726202610011",
-      "07_671_726202623227",
-      "07_681_726202631327"
+      "07_671_726202625739",
+      "07_681_726202634539"
     ],
     "Kristina Dudka": [
       "07_2FORD_726202610384",
@@ -44929,6 +45117,45 @@
       "07_2FORD_726202610384",
       "07_598_726202694712",
       "07_601_726202610011"
+    ],
+    "Mila Dragunov": [
+      "07_3FORD_726202641439",
+      "07_670_726202625039",
+      "07_681_726202634539"
+    ],
+    "Abraham Parmenov": [
+      "07_3FORD_726202641439",
+      "07_670_726202625039",
+      "07_681_726202634539"
+    ],
+    "Mariia Fedotova": [
+      "07_3FORD_726202641439",
+      "07_676_726202631139",
+      "07_680_726202633839"
+    ],
+    "Nicolas Rastvortsev": [
+      "07_3FORD_726202641439",
+      "07_676_726202631139",
+      "07_680_726202633839"
+    ],
+    "Lucy Kobylyanskyy": [
+      "07_4FORD_726202641609",
+      "07_598_726202694712",
+      "07_601_726202610011",
+      "07_676_726202631139",
+      "07_680_726202633839"
+    ],
+    "Maksim Mkrtchian": [
+      "07_4FORD_726202641609",
+      "07_598_726202694712",
+      "07_601_726202610011",
+      "07_676_726202631139",
+      "07_680_726202633839"
+    ],
+    "Angelina  Novikova": [
+      "07_4FORD_726202641609",
+      "07_671_726202625739",
+      "07_681_726202634539"
     ],
     "Shakira Al-Shamari": [
       "07_560_726202680000",
@@ -44949,7 +45176,7 @@
       "07_638_726202612032",
       "07_639_726202612045",
       "07_649_726202612192",
-      "07_662_726202613439"
+      "07_662_726202614015"
     ],
     "Jacqueline Brener-Dubois": [
       "07_560_726202680000",
@@ -44966,7 +45193,7 @@
       "07_646_726202612150",
       "07_647_726202612163",
       "07_649_726202612192",
-      "07_661_726202613027"
+      "07_661_726202613603"
     ],
     "Mikhael Brener-Dubois": [
       "07_560_726202680000",
@@ -44983,7 +45210,7 @@
       "07_646_726202612150",
       "07_647_726202612163",
       "07_649_726202612192",
-      "07_661_726202613027"
+      "07_661_726202613603"
     ],
     "Sophia Cremarosa": [
       "07_560_726202680000",
@@ -45006,7 +45233,7 @@
       "07_628_726202611485",
       "07_629_726202611502",
       "07_630_726202611515",
-      "07_655_726202612581"
+      "07_655_726202610351"
     ],
     "Michael Levenkov": [
       "07_560_726202680000",
@@ -45033,7 +45260,7 @@
       "07_620_726202611372",
       "07_621_726202611384",
       "07_652IL_726202612453",
-      "07_679_726202630027"
+      "07_679_726202633239"
     ],
     "Nikko Khuu-Fiorino": [
       "07_560_726202680000",
@@ -45081,7 +45308,7 @@
       "07_642_726202612091",
       "07_643_726202612104",
       "07_644_726202612120",
-      "07_653_726202612511"
+      "07_653_726202612565"
     ],
     "Aleksandra Temple": [
       "07_560_726202680000",
@@ -45117,8 +45344,8 @@
       "07_643_726202612104",
       "07_644_726202612120",
       "07_652IL_726202612453",
-      "07_653_726202612511",
-      "07_679_726202630027"
+      "07_653_726202612565",
+      "07_679_726202633239"
     ],
     "Jane Chtchemelinine": [
       "07_563_726202680412",
@@ -45134,8 +45361,8 @@
       "07_648_726202612175",
       "07_649_726202612192",
       "07_651_726202612383",
-      "07_654_726202612540",
-      "07_659_726202612039"
+      "07_654_726202612593",
+      "07_659_726202612615"
     ],
     "Aahrone Bakhvala": [
       "07_564_726202680536",
@@ -45144,9 +45371,9 @@
       "07_568_726202681112",
       "07_592_726202691748",
       "07_597_726202694136",
-      "07_659_726202612039",
-      "07_661_726202613027",
-      "07_676_726202624627"
+      "07_659_726202612615",
+      "07_661_726202613603",
+      "07_676_726202631139"
     ],
     "Iris Bakhvala": [
       "07_564_726202680536",
@@ -45155,9 +45382,9 @@
       "07_568_726202681112",
       "07_595_726202692900",
       "07_597_726202694136",
-      "07_661_726202613027",
-      "07_662_726202613439",
-      "07_676_726202624627"
+      "07_661_726202613603",
+      "07_662_726202614015",
+      "07_676_726202631139"
     ],
     "Sabine Blyth": [
       "07_565_726202680700",
@@ -45229,8 +45456,8 @@
       "07_579_726202682636",
       "07_580_726202682800",
       "07_597_726202694136",
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Jordan Sklarsky": [
       "07_565_726202680700",
@@ -45240,8 +45467,8 @@
       "07_579_726202682636",
       "07_580_726202682800",
       "07_597_726202694136",
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Katya Afanaseva": [
       "07_569_726202681236",
@@ -45287,8 +45514,8 @@
       "07_628_726202611485",
       "07_629_726202611502",
       "07_630_726202611515",
-      "07_655_726202612581",
-      "07_663_726202613851"
+      "07_655_726202610351",
+      "07_663_726202614427"
     ],
     "Eseniia Ivanitskaia": [
       "07_569_726202681236",
@@ -45300,7 +45527,7 @@
       "07_646_726202612150",
       "07_647_726202612163",
       "07_651_726202612383",
-      "07_661_726202613027"
+      "07_661_726202613603"
     ],
     "Mirai Takahashi": [
       "07_569_726202681236",
@@ -45310,7 +45537,7 @@
       "07_645_726202612133",
       "07_646_726202612150",
       "07_647_726202612163",
-      "07_661_726202613027"
+      "07_661_726202613603"
     ],
     "Sophia Grigorovitch": [
       "07_578_726202682512",
@@ -45324,8 +45551,8 @@
       "07_619_726202611355",
       "07_620_726202611372",
       "07_621_726202611384",
-      "07_668_726202621827",
-      "07_682_726202632027"
+      "07_668_726202624339",
+      "07_682_726202635239"
     ],
     "Matilda Khuu-Fiorino": [
       "07_581_726202682924",
@@ -45378,13 +45605,13 @@
     "Ivan Statkevich": [
       "07_592_726202691748",
       "07_595_726202692900",
-      "07_659_726202612039",
-      "07_667_726202615127"
+      "07_659_726202612615",
+      "07_667_726202620939"
     ],
     "Sophia Statkevich": [
       "07_593_726202692200",
       "07_630_726202611515",
-      "07_658_726202611627"
+      "07_658_726202612203"
     ],
     "Alexandra Golikova": [
       "07_593_726202692200",
@@ -45395,14 +45622,17 @@
       "07_599IB_726202695412",
       "07_650_726202612355",
       "07_652_726202612453",
-      "07_654_726202612540",
-      "07_655_726202612581",
-      "07_658_726202611627",
-      "07_661_726202613027",
-      "07_663_726202613851",
-      "07_667_726202615127",
-      "07_670_726202622527",
-      "07_679IL_726202630027"
+      "07_652A_726202612511",
+      "07_654_726202612593",
+      "07_655_726202610351",
+      "07_658_726202612203",
+      "07_661_726202613603",
+      "07_663_726202614427",
+      "07_663A_726202615003",
+      "07_667_726202620939",
+      "07_667A_726202621639",
+      "07_670_726202625039",
+      "07_679IL_726202633239"
     ],
     "Danya Rubashevsky": [
       "07_593_726202692200",
@@ -45411,43 +45641,47 @@
       "07_597_726202694136",
       "07_599_726202695412",
       "07_599IB_726202695412",
-      "07_655_726202612581",
-      "07_658_726202611627",
-      "07_661_726202613027",
-      "07_662_726202613439",
-      "07_663_726202613851",
-      "07_664_726202614427",
-      "07_667_726202615127",
-      "07_668_726202621827",
-      "07_670_726202622527",
-      "07_673_726202623927",
-      "07_676_726202624627",
-      "07_677_726202625327",
-      "07_679IL_726202630027"
+      "07_655_726202610351",
+      "07_658_726202612203",
+      "07_661_726202613603",
+      "07_662_726202614015",
+      "07_663_726202614427",
+      "07_663A_726202615003",
+      "07_664_726202615539",
+      "07_664A_726202620239",
+      "07_667_726202620939",
+      "07_667A_726202621639",
+      "07_668_726202624339",
+      "07_670_726202625039",
+      "07_673_726202630439",
+      "07_676_726202631139",
+      "07_677_726202631839",
+      "07_677A_726202632539",
+      "07_679IL_726202633239"
     ],
     "Maxine Mai": [
       "07_593_726202692200",
       "07_596_726202693436",
       "07_651_726202612383",
-      "07_657_726202610927"
+      "07_657_726202611503"
     ],
     "Adele Prozorova": [
       "07_593_726202692200",
       "07_596_726202693436",
-      "07_656_726202610227",
-      "07_660_726202612451"
+      "07_656_726202610803",
+      "07_660_726202613027"
     ],
     "Athena Mai": [
       "07_595_726202692900",
       "07_597_726202694136",
       "07_651_726202612383",
-      "07_656_726202610227"
+      "07_656_726202610803"
     ],
     "Ariana Yang": [
       "07_595_726202692900",
       "07_597_726202694136",
       "07_652_726202612453",
-      "07_667_726202615127"
+      "07_667_726202620939"
     ],
     "Garrison Baker": [
       "07_596_726202693436",
@@ -45460,42 +45694,42 @@
     "Brynnley Bath": [
       "07_596_726202693436",
       "07_602_726202610081",
-      "07_670_726202622527",
-      "07_681_726202631327"
+      "07_670_726202625039",
+      "07_681_726202634539"
     ],
     "Zayn Vehikite": [
       "07_596_726202693436",
       "07_602_726202610081",
-      "07_670_726202622527",
-      "07_681_726202631327"
+      "07_670_726202625039",
+      "07_681_726202634539"
     ],
     "Brandon Chen": [
       "07_596_726202693436",
       "07_598_726202694712",
       "07_601_726202610011",
       "07_603_726202610151",
-      "07_671_726202623227",
-      "07_681_726202631327"
+      "07_671_726202625739",
+      "07_681_726202634539"
     ],
     "Abbie Yeung": [
       "07_596_726202693436",
       "07_598_726202694712",
       "07_601_726202610011",
       "07_603_726202610151",
-      "07_671_726202623227",
-      "07_681_726202631327"
+      "07_671_726202625739",
+      "07_681_726202634539"
     ],
     "Cole Ackley": [
       "07_598_726202694712",
       "07_601_726202610011",
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Zamira Vehikite": [
       "07_598_726202694712",
       "07_601_726202610011",
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Wiktor Frydrych": [
       "07_598_726202694712",
@@ -45504,18 +45738,6 @@
     "Maya Sinelnikov": [
       "07_598_726202694712",
       "07_603_726202610151"
-    ],
-    "Lucy Kobylyanskyy": [
-      "07_598_726202694712",
-      "07_601_726202610011",
-      "07_676_726202624627",
-      "07_680_726202630627"
-    ],
-    "Maksim Mkrtchian": [
-      "07_598_726202694712",
-      "07_601_726202610011",
-      "07_676_726202624627",
-      "07_680_726202630627"
     ],
     "Duke Khuu": [
       "07_604_726202610451",
@@ -45558,9 +45780,9 @@
       "07_638_726202612032",
       "07_639_726202612045",
       "07_649_726202612192",
-      "07_655_726202612581",
-      "07_662_726202613439",
-      "07_663_726202613851"
+      "07_655_726202610351",
+      "07_662_726202614015",
+      "07_663_726202614427"
     ],
     "Aurora Generalova": [
       "07_613_726202611271",
@@ -45573,7 +45795,8 @@
       "07_638_726202612032",
       "07_645_726202612133",
       "07_647_726202612163",
-      "07_663_726202613851"
+      "07_663_726202614427",
+      "07_663A_726202615003"
     ],
     "Anastasiya Rubashevsky": [
       "07_613_726202611271",
@@ -45589,16 +45812,19 @@
       "07_638_726202612032",
       "07_639_726202612045",
       "07_652_726202612453",
-      "07_655_726202612581",
-      "07_658_726202611627",
-      "07_661_726202613027",
-      "07_662_726202613439",
-      "07_663_726202613851",
-      "07_664_726202614427",
-      "07_668_726202621827",
-      "07_670_726202622527",
-      "07_673_726202623927",
-      "07_676_726202624627"
+      "07_652A_726202612511",
+      "07_655_726202610351",
+      "07_658_726202612203",
+      "07_661_726202613603",
+      "07_662_726202614015",
+      "07_663_726202614427",
+      "07_663A_726202615003",
+      "07_664_726202615539",
+      "07_664A_726202620239",
+      "07_668_726202624339",
+      "07_670_726202625039",
+      "07_673_726202630439",
+      "07_676_726202631139"
     ],
     "Ryan Khersonsky": [
       "07_613_726202611271",
@@ -45609,8 +45835,8 @@
       "07_637_726202612020",
       "07_638_726202612032",
       "07_639_726202612045",
-      "07_662_726202613439",
-      "07_679_726202630027"
+      "07_662_726202614015",
+      "07_679_726202633239"
     ],
     "Elena Krifuks": [
       "07_613_726202611271",
@@ -45621,8 +45847,8 @@
       "07_637_726202612020",
       "07_638_726202612032",
       "07_639_726202612045",
-      "07_662_726202613439",
-      "07_679_726202630027"
+      "07_662_726202614015",
+      "07_679_726202633239"
     ],
     "Ashlynn Mallamace": [
       "07_613_726202611271",
@@ -45630,8 +45856,8 @@
       "07_615_726202611300",
       "07_622_726202611401",
       "07_624_726202611430",
-      "07_662_726202613439",
-      "07_679_726202630027"
+      "07_662_726202614015",
+      "07_679_726202633239"
     ],
     "Claire Wei Yi": [
       "07_613_726202611271",
@@ -45641,9 +45867,9 @@
       "07_625_726202611443",
       "07_640_726202612062",
       "07_644_726202612120",
-      "07_659_726202612039",
-      "07_664_726202614427",
-      "07_679_726202630027"
+      "07_659_726202612615",
+      "07_664_726202615539",
+      "07_679_726202633239"
     ],
     "Dahlia Yim": [
       "07_613_726202611271",
@@ -45655,7 +45881,7 @@
       "07_640_726202612062",
       "07_641_726202612074",
       "07_644_726202612120",
-      "07_663_726202613851"
+      "07_663_726202614427"
     ],
     "Parker Ahern": [
       "07_617_726202611330",
@@ -45700,7 +45926,7 @@
       "07_618_726202611342",
       "07_619_726202611355",
       "07_621_726202611384",
-      "07_671_726202623227"
+      "07_671_726202625739"
     ],
     "Felix Sindora": [
       "07_617_726202611330",
@@ -45713,18 +45939,18 @@
       "07_628_726202611485",
       "07_629_726202611502",
       "07_630_726202611515",
-      "07_655_726202612581",
-      "07_664_726202614427",
-      "07_665_726202615127",
-      "07_666_726202615127",
-      "07_668_726202621827",
-      "07_669_726202622527",
-      "07_673_726202623927",
-      "07_674_726202624627",
-      "07_675_726202624627",
-      "07_677_726202625327",
-      "07_678_726202630027",
-      "07_681_726202631327"
+      "07_655_726202610351",
+      "07_664_726202615539",
+      "07_665_726202620939",
+      "07_666_726202620939",
+      "07_668_726202624339",
+      "07_669_726202625039",
+      "07_673_726202630439",
+      "07_674_726202631139",
+      "07_675_726202631139",
+      "07_677_726202631839",
+      "07_678_726202632539",
+      "07_681_726202634539"
     ],
     "Leonid Generalov": [
       "07_617_726202611330",
@@ -45738,7 +45964,8 @@
       "07_645_726202612133",
       "07_647_726202612163",
       "07_652_726202612453",
-      "07_658_726202611627"
+      "07_652A_726202612511",
+      "07_658_726202612203"
     ],
     "Anastasiia Ananieva": [
       "07_622_726202611401",
@@ -45746,7 +45973,7 @@
       "07_624_726202611430",
       "07_625_726202611443",
       "07_650_726202612355",
-      "07_654_726202612540"
+      "07_654_726202612593"
     ],
     "Kuzma Kalachev": [
       "07_622_726202611401",
@@ -45760,8 +45987,8 @@
       "07_623_726202611414",
       "07_624_726202611430",
       "07_625_726202611443",
-      "07_654_726202612540",
-      "07_660_726202612451"
+      "07_654_726202612593",
+      "07_660_726202613027"
     ],
     "Alena Sivura": [
       "07_622_726202611401",
@@ -45769,15 +45996,15 @@
       "07_624_726202611430",
       "07_625_726202611443",
       "07_650_726202612355",
-      "07_659_726202612039"
+      "07_659_726202612615"
     ],
     "Maria Sivura": [
       "07_622_726202611401",
       "07_623_726202611414",
       "07_624_726202611430",
       "07_625_726202611443",
-      "07_653_726202612511",
-      "07_659_726202612039"
+      "07_653_726202612565",
+      "07_659_726202612615"
     ],
     "Anderson Zhou": [
       "07_622_726202611401",
@@ -45785,8 +46012,8 @@
       "07_624_726202611430",
       "07_625_726202611443",
       "07_641_726202612074",
-      "07_653_726202612511",
-      "07_654_726202612540"
+      "07_653_726202612565",
+      "07_654_726202612593"
     ],
     "Preston Ahern": [
       "07_626_726202611460",
@@ -45800,16 +46027,16 @@
       "07_628_726202611485",
       "07_629_726202611502",
       "07_630_726202611515",
-      "07_654_726202612540",
-      "07_663_726202613851",
-      "07_679_726202630027"
+      "07_654_726202612593",
+      "07_663_726202614427",
+      "07_679_726202633239"
     ],
     "Eva Sullivan": [
       "07_626_726202611460",
       "07_627_726202611473",
       "07_628_726202611485",
       "07_629_726202611502",
-      "07_662_726202613439"
+      "07_662_726202614015"
     ],
     "Amelia Slutskiy": [
       "07_626_726202611460",
@@ -45821,18 +46048,18 @@
       "07_643_726202612104",
       "07_644_726202612120",
       "07_648_726202612175",
-      "07_653_726202612511",
-      "07_659_726202612039",
-      "07_661_726202613027",
-      "07_667_726202615127"
+      "07_653_726202612565",
+      "07_659_726202612615",
+      "07_661_726202613603",
+      "07_667_726202620939"
     ],
     "David Slutskiy": [
       "07_626_726202611460",
       "07_629_726202611502",
       "07_630_726202611515",
       "07_648_726202612175",
-      "07_661_726202613027",
-      "07_667_726202615127"
+      "07_661_726202613603",
+      "07_667_726202620939"
     ],
     "Victoria Akhanova": [
       "07_631_726202611531",
@@ -45846,7 +46073,7 @@
       "07_643_726202612104",
       "07_644_726202612120",
       "07_651_726202612383",
-      "07_657_726202610927"
+      "07_657_726202611503"
     ],
     "Tymeya Asandei": [
       "07_631_726202611531",
@@ -45854,8 +46081,8 @@
       "07_633_726202611561",
       "07_634_726202611573",
       "07_635_726202611590",
-      "07_657_726202610927",
-      "07_660_726202612451"
+      "07_657_726202611503",
+      "07_660_726202613027"
     ],
     "Jessica Ferber": [
       "07_631_726202611531",
@@ -45863,7 +46090,7 @@
       "07_633_726202611561",
       "07_634_726202611573",
       "07_635_726202611590",
-      "07_657_726202610927"
+      "07_657_726202611503"
     ],
     "Milan Huynh": [
       "07_631_726202611531",
@@ -45871,7 +46098,7 @@
       "07_633_726202611561",
       "07_634_726202611573",
       "07_635_726202611590",
-      "07_657_726202610927"
+      "07_657_726202611503"
     ],
     "Alice Wu": [
       "07_632_726202611544",
@@ -45879,8 +46106,8 @@
       "07_635_726202611590",
       "07_648_726202612175",
       "07_649_726202612192",
-      "07_653_726202612511",
-      "07_655_726202612581"
+      "07_653_726202612565",
+      "07_655_726202610351"
     ],
     "Yuliia Berezhna": [
       "07_636_726202612003",
@@ -45889,7 +46116,7 @@
       "07_645_726202612133",
       "07_646_726202612150",
       "07_647_726202612163",
-      "07_673_726202623927"
+      "07_673_726202630439"
     ],
     "Dmitry Dmitriev": [
       "07_636_726202612003",
@@ -45898,7 +46125,7 @@
       "07_645_726202612133",
       "07_646_726202612150",
       "07_647_726202612163",
-      "07_673_726202623927"
+      "07_673_726202630439"
     ],
     "Steven Pilberg": [
       "07_636_726202612003",
@@ -45907,8 +46134,9 @@
       "07_639_726202612045",
       "07_650_726202612355",
       "07_652_726202612453",
-      "07_656_726202610227",
-      "07_658_726202611627"
+      "07_652A_726202612511",
+      "07_656_726202610803",
+      "07_658_726202612203"
     ],
     "Brooklyn Rosario": [
       "07_645_726202612133",
@@ -45916,8 +46144,8 @@
       "07_647_726202612163",
       "07_648_726202612175",
       "07_649_726202612192",
-      "07_671_726202623227",
-      "07_680_726202630627"
+      "07_671_726202625739",
+      "07_680_726202633839"
     ],
     "Chloe Nguyen": [
       "07_645_726202612133",
@@ -45925,7 +46153,7 @@
       "07_647_726202612163",
       "07_648_726202612175",
       "07_649_726202612192",
-      "07_673_726202623927"
+      "07_673_726202630439"
     ],
     "Tyler Nguyen": [
       "07_645_726202612133",
@@ -45933,149 +46161,134 @@
       "07_647_726202612163",
       "07_648_726202612175",
       "07_649_726202612192",
-      "07_673_726202623927"
+      "07_673_726202630439"
     ],
     "Alex Chen": [
       "07_650_726202612355",
       "07_652_726202612453",
-      "07_655_726202612581",
-      "07_656_726202610227",
-      "07_658_726202611627",
-      "07_661_726202613027",
-      "07_670_726202622527",
-      "07_680_726202630627"
+      "07_652A_726202612511",
+      "07_655_726202610351",
+      "07_656_726202610803",
+      "07_658_726202612203",
+      "07_661_726202613603",
+      "07_670_726202625039",
+      "07_680_726202633839"
     ],
     "Maria Kimlyk": [
       "07_651_726202612383"
     ],
     "Adam Whitehouse": [
       "07_651_726202612383",
-      "07_656_726202610227",
-      "07_660_726202612451"
+      "07_656_726202610803",
+      "07_660_726202613027"
     ],
     "Medina Serik": [
       "07_652_726202612453",
-      "07_656_726202610227",
-      "07_658_726202611627",
-      "07_680_726202630627"
+      "07_652A_726202612511",
+      "07_656_726202610803",
+      "07_658_726202612203",
+      "07_680_726202633839"
     ],
     "Ryan Rowe": [
-      "07_654_726202612540",
-      "07_656_726202610227",
-      "07_660_726202612451"
+      "07_654_726202612593",
+      "07_656_726202610803",
+      "07_660_726202613027"
     ],
     "Alice Cherenshchikova": [
-      "07_657_726202610927"
+      "07_657_726202611503"
     ],
     "Sophia Dymo": [
-      "07_657_726202610927"
+      "07_657_726202611503"
     ],
     "Aria Lucia Reyes-Villa": [
-      "07_658_726202611627",
-      "07_664_726202614427",
-      "07_676_726202624627"
+      "07_658_726202612203",
+      "07_664_726202615539",
+      "07_664A_726202620239",
+      "07_676_726202631139"
     ],
     "Bella Chatman": [
-      "07_662_726202613439",
-      "07_668_726202621827",
-      "07_673_726202623927",
-      "07_677_726202625327"
+      "07_662_726202614015",
+      "07_668_726202624339",
+      "07_673_726202630439",
+      "07_677_726202631839",
+      "07_677A_726202632539"
     ],
     "Natalie Pavlovsky": [
-      "07_662_726202613439",
-      "07_668_726202621827",
-      "07_673_726202623927"
+      "07_662_726202614015",
+      "07_668_726202624339",
+      "07_673_726202630439"
     ],
     "Yvanna Abadia": [
-      "07_664_726202614427",
-      "07_676_726202624627"
+      "07_664_726202615539",
+      "07_664A_726202620239",
+      "07_676_726202631139"
     ],
     "Daniil Kukuevskii": [
-      "07_664_726202614427",
-      "07_668_726202621827"
+      "07_664_726202615539",
+      "07_668_726202624339"
     ],
     "Daniela Podolska": [
-      "07_664_726202614427",
-      "07_668_726202621827"
+      "07_664_726202615539",
+      "07_668_726202624339"
     ],
     "Alina Lyukshin": [
-      "07_664_726202614427",
-      "07_665_726202615127",
-      "07_666_726202615127",
-      "07_668_726202621827",
-      "07_669_726202622527",
-      "07_673_726202623927",
-      "07_674_726202624627",
-      "07_675_726202624627",
-      "07_677_726202625327",
-      "07_678_726202630027",
-      "07_681_726202631327"
+      "07_664_726202615539",
+      "07_665_726202620939",
+      "07_666_726202620939",
+      "07_668_726202624339",
+      "07_669_726202625039",
+      "07_673_726202630439",
+      "07_674_726202631139",
+      "07_675_726202631139",
+      "07_677_726202631839",
+      "07_678_726202632539",
+      "07_681_726202634539"
     ],
     "Michelle Popper": [
-      "07_664_726202614427",
-      "07_668_726202621827",
-      "07_671_726202623227",
-      "07_672_726202623927"
-    ],
-    "Mila Dragunov": [
-      "07_670_726202622527",
-      "07_681_726202631327"
-    ],
-    "Abraham Parmenov": [
-      "07_670_726202622527",
-      "07_681_726202631327"
+      "07_664_726202615539",
+      "07_668_726202624339",
+      "07_671_726202625739",
+      "07_672_726202630439"
     ],
     "Thea Rowe": [
-      "07_670_726202622527",
-      "07_681_726202631327"
+      "07_670_726202625039",
+      "07_681_726202634539"
     ],
     "Benjamin Sklovskiy": [
-      "07_670_726202622527",
-      "07_681_726202631327"
-    ],
-    "Angelina  Novikova": [
-      "07_671_726202623227",
-      "07_681_726202631327"
+      "07_670_726202625039",
+      "07_681_726202634539"
     ],
     "Oleksandr Polyvka": [
-      "07_671_726202623227",
-      "07_681_726202631327"
+      "07_671_726202625739",
+      "07_681_726202634539"
     ],
     "Laila Rubashevsky": [
-      "07_671_726202623227",
-      "07_681_726202631327"
-    ],
-    "Mariia Fedotova": [
-      "07_676_726202624627",
-      "07_680_726202630627"
-    ],
-    "Nicolas Rastvortsev": [
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_671_726202625739",
+      "07_681_726202634539"
     ],
     "Milada Myronenko": [
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Phabian Parra": [
-      "07_676_726202624627",
-      "07_680_726202630627"
+      "07_676_726202631139",
+      "07_680_726202633839"
     ],
     "Sean Ginko": [
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Adela Yanev": [
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Sofia Pylypenko": [
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ],
     "Benjamin Yakubov": [
-      "07_677_726202625327",
-      "07_682_726202632027"
+      "07_677_726202631839",
+      "07_682_726202635239"
     ]
   },
   "top_matchups": {
@@ -51935,6 +52148,134 @@
         "their_bib": "813"
       }
     ],
+    "Mila Dragunov": [
+      {
+        "opponent_couple": "Brynnley Bath & Zayn Vehikite",
+        "count": 2,
+        "my_bib": "834",
+        "their_bib": "853"
+      },
+      {
+        "opponent_couple": "Daniel Ischenko & Aleksandra Kim",
+        "count": 2,
+        "my_bib": "834",
+        "their_bib": "820"
+      },
+      {
+        "opponent_couple": "Thea Rowe & Benjamin Sklovskiy",
+        "count": 2,
+        "my_bib": "834",
+        "their_bib": "846"
+      },
+      {
+        "opponent_couple": "Mariia Fedotova & Nicolas Rastvortsev",
+        "count": 1,
+        "my_bib": "834",
+        "their_bib": "839"
+      },
+      {
+        "opponent_couple": "Alex Chen & Anastasiya Rubashevsky",
+        "count": 1,
+        "my_bib": "834",
+        "their_bib": "808"
+      }
+    ],
+    "Mariia Fedotova": [
+      {
+        "opponent_couple": "Cole Ackley & Zamira Vehikite",
+        "count": 2,
+        "my_bib": "839",
+        "their_bib": "800"
+      },
+      {
+        "opponent_couple": "Veronika Aristov & Bruce Kobylyanskyy",
+        "count": 2,
+        "my_bib": "839",
+        "their_bib": "825"
+      },
+      {
+        "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
+        "count": 2,
+        "my_bib": "839",
+        "their_bib": "830"
+      },
+      {
+        "opponent_couple": "Milada Myronenko & Phabian Parra",
+        "count": 2,
+        "my_bib": "839",
+        "their_bib": "835"
+      },
+      {
+        "opponent_couple": "Adele Sklarsky & Jordan Sklarsky",
+        "count": 2,
+        "my_bib": "839",
+        "their_bib": "870"
+      }
+    ],
+    "Lucy Kobylyanskyy": [
+      {
+        "opponent_couple": "Cole Ackley & Zamira Vehikite",
+        "count": 4,
+        "my_bib": "830",
+        "their_bib": "800"
+      },
+      {
+        "opponent_couple": "Brandon Chen & Abbie Yeung",
+        "count": 2,
+        "my_bib": "830",
+        "their_bib": "809"
+      },
+      {
+        "opponent_couple": "Kristina Dudka & Daniil Marinesku",
+        "count": 2,
+        "my_bib": "830",
+        "their_bib": "829"
+      },
+      {
+        "opponent_couple": "Veronika Aristov & Bruce Kobylyanskyy",
+        "count": 2,
+        "my_bib": "830",
+        "their_bib": "825"
+      },
+      {
+        "opponent_couple": "Mariia Fedotova & Nicolas Rastvortsev",
+        "count": 2,
+        "my_bib": "830",
+        "their_bib": "839"
+      }
+    ],
+    "Michael Novikov": [
+      {
+        "opponent_couple": "Brandon Chen & Abbie Yeung",
+        "count": 2,
+        "my_bib": "832",
+        "their_bib": "809"
+      },
+      {
+        "opponent_couple": "Oleksandr Polyvka & Laila Rubashevsky",
+        "count": 2,
+        "my_bib": "832",
+        "their_bib": "837"
+      },
+      {
+        "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
+        "count": 1,
+        "my_bib": "832",
+        "their_bib": "830"
+      },
+      {
+        "opponent_couple": "Lukas Alisauskas & Brooklyn Rosario",
+        "count": 1,
+        "my_bib": "832",
+        "their_bib": "501"
+      },
+      {
+        "opponent_couple": "Dylan Chi & Annie Lee",
+        "count": 1,
+        "my_bib": "832",
+        "their_bib": "810"
+      }
+    ],
     "Shakira Al-Shamari": [
       {
         "opponent_couple": "Sophia Cremarosa & Michael Levenkov",
@@ -52525,22 +52866,22 @@
         "their_bib": "811"
       },
       {
+        "opponent_couple": "Alex Chen & Medina Serik",
+        "count": 3,
+        "my_bib": "836",
+        "their_bib": "808"
+      },
+      {
+        "opponent_couple": "Leonid Generalov & Anastasiya Rubashevsky",
+        "count": 3,
+        "my_bib": "836",
+        "their_bib": "814"
+      },
+      {
         "opponent_couple": "Alex Chen & Anastasiya Rubashevsky",
         "count": 3,
         "my_bib": "561",
         "their_bib": "808"
-      },
-      {
-        "opponent_couple": "Bohdan Aleksieiev & Matilda Khuu-Fiorino",
-        "count": 2,
-        "my_bib": "561",
-        "their_bib": "701"
-      },
-      {
-        "opponent_couple": "Maxine Mai",
-        "count": 2,
-        "my_bib": "561",
-        "their_bib": "828"
       }
     ],
     "Maxine Mai": [
@@ -52829,38 +53170,6 @@
         "count": 1,
         "my_bib": "813",
         "their_bib": "830"
-      }
-    ],
-    "Lucy Kobylyanskyy": [
-      {
-        "opponent_couple": "Cole Ackley & Zamira Vehikite",
-        "count": 4,
-        "my_bib": "830",
-        "their_bib": "800"
-      },
-      {
-        "opponent_couple": "Brandon Chen & Abbie Yeung",
-        "count": 2,
-        "my_bib": "830",
-        "their_bib": "809"
-      },
-      {
-        "opponent_couple": "Kristina Dudka & Daniil Marinesku",
-        "count": 2,
-        "my_bib": "830",
-        "their_bib": "829"
-      },
-      {
-        "opponent_couple": "Veronika Aristov & Bruce Kobylyanskyy",
-        "count": 2,
-        "my_bib": "830",
-        "their_bib": "825"
-      },
-      {
-        "opponent_couple": "Mariia Fedotova & Nicolas Rastvortsev",
-        "count": 2,
-        "my_bib": "830",
-        "their_bib": "839"
       }
     ],
     "Duke Khuu": [
@@ -53757,6 +54066,18 @@
     ],
     "Alex Chen": [
       {
+        "opponent_couple": "Leonid Generalov & Anastasiya Rubashevsky",
+        "count": 3,
+        "my_bib": "808",
+        "their_bib": "814"
+      },
+      {
+        "opponent_couple": "Alexandra Golikova & Steven Pilberg",
+        "count": 3,
+        "my_bib": "808",
+        "their_bib": "836"
+      },
+      {
         "opponent_couple": "Alexandra Golikova & Danya Rubashevsky",
         "count": 3,
         "my_bib": "808",
@@ -53764,18 +54085,6 @@
       },
       {
         "opponent_couple": "Steven Pilberg",
-        "count": 2,
-        "my_bib": "808",
-        "their_bib": "836"
-      },
-      {
-        "opponent_couple": "Leonid Generalov & Anastasiya Rubashevsky",
-        "count": 2,
-        "my_bib": "808",
-        "their_bib": "814"
-      },
-      {
-        "opponent_couple": "Alexandra Golikova & Steven Pilberg",
         "count": 2,
         "my_bib": "808",
         "their_bib": "836"
@@ -54014,7 +54323,7 @@
     "Aria Lucia Reyes-Villa": [
       {
         "opponent_couple": "Yvanna Abadia & Anastasiya Rubashevsky",
-        "count": 2,
+        "count": 3,
         "my_bib": "561",
         "their_bib": "560"
       },
@@ -54110,7 +54419,7 @@
     "Yvanna Abadia": [
       {
         "opponent_couple": "Aria Lucia Reyes-Villa & Danya Rubashevsky",
-        "count": 2,
+        "count": 3,
         "my_bib": "560",
         "their_bib": "561"
       },
@@ -54235,38 +54544,6 @@
         "their_bib": "561"
       }
     ],
-    "Mila Dragunov": [
-      {
-        "opponent_couple": "Brynnley Bath & Zayn Vehikite",
-        "count": 2,
-        "my_bib": "834",
-        "their_bib": "853"
-      },
-      {
-        "opponent_couple": "Daniel Ischenko & Aleksandra Kim",
-        "count": 2,
-        "my_bib": "834",
-        "their_bib": "820"
-      },
-      {
-        "opponent_couple": "Thea Rowe & Benjamin Sklovskiy",
-        "count": 2,
-        "my_bib": "834",
-        "their_bib": "846"
-      },
-      {
-        "opponent_couple": "Alex Chen & Anastasiya Rubashevsky",
-        "count": 1,
-        "my_bib": "834",
-        "their_bib": "808"
-      },
-      {
-        "opponent_couple": "Alexandra Golikova & Danya Rubashevsky",
-        "count": 1,
-        "my_bib": "834",
-        "their_bib": "561"
-      }
-    ],
     "Thea Rowe": [
       {
         "opponent_couple": "Brynnley Bath & Zayn Vehikite",
@@ -54299,38 +54576,6 @@
         "their_bib": "561"
       }
     ],
-    "Michael Novikov": [
-      {
-        "opponent_couple": "Brandon Chen & Abbie Yeung",
-        "count": 2,
-        "my_bib": "832",
-        "their_bib": "809"
-      },
-      {
-        "opponent_couple": "Oleksandr Polyvka & Laila Rubashevsky",
-        "count": 2,
-        "my_bib": "832",
-        "their_bib": "837"
-      },
-      {
-        "opponent_couple": "Lukas Alisauskas & Brooklyn Rosario",
-        "count": 1,
-        "my_bib": "832",
-        "their_bib": "501"
-      },
-      {
-        "opponent_couple": "Dylan Chi & Annie Lee",
-        "count": 1,
-        "my_bib": "832",
-        "their_bib": "810"
-      },
-      {
-        "opponent_couple": "Michelle Popper & Vladimir Timofeev",
-        "count": 1,
-        "my_bib": "832",
-        "their_bib": "768"
-      }
-    ],
     "Oleksandr Polyvka": [
       {
         "opponent_couple": "Brandon Chen & Abbie Yeung",
@@ -54361,38 +54606,6 @@
         "count": 1,
         "my_bib": "837",
         "their_bib": "768"
-      }
-    ],
-    "Mariia Fedotova": [
-      {
-        "opponent_couple": "Cole Ackley & Zamira Vehikite",
-        "count": 2,
-        "my_bib": "839",
-        "their_bib": "800"
-      },
-      {
-        "opponent_couple": "Veronika Aristov & Bruce Kobylyanskyy",
-        "count": 2,
-        "my_bib": "839",
-        "their_bib": "825"
-      },
-      {
-        "opponent_couple": "Lucy Kobylyanskyy & Maksim Mkrtchian",
-        "count": 2,
-        "my_bib": "839",
-        "their_bib": "830"
-      },
-      {
-        "opponent_couple": "Milada Myronenko & Phabian Parra",
-        "count": 2,
-        "my_bib": "839",
-        "their_bib": "835"
-      },
-      {
-        "opponent_couple": "Adele Sklarsky & Jordan Sklarsky",
-        "count": 2,
-        "my_bib": "839",
-        "their_bib": "870"
       }
     ],
     "Milada Myronenko": [
