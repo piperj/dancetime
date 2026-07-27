@@ -295,6 +295,12 @@
   let coupleMap = {};
   let currentSessions = [];
 
+  // Order-independent key for a couple: heat entries and ranking rows don't
+  // agree on which partner is listed first, so callers must sort before joining.
+  function coupleKey(a, b) {
+    return [a, b || ''].sort().join('|');
+  }
+
   // ── Tab switching ──────────────────────────────────────────────────────────
   document.querySelectorAll('nav button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -470,7 +476,7 @@
         Object.values(rankingData.leaderboards || {}).forEach(lb => {
           const seen = new Set();
           lb.couples = lb.couples.filter(c => {
-            const key = [c.competitor, c.partner || ''].sort().join('|');
+            const key = coupleKey(c.competitor, c.partner);
             if (seen.has(key)) return false;
             seen.add(key);
             return true;
@@ -1310,7 +1316,7 @@
   function buildCoupleMap() {
     const map = {};
     Object.values(rankingData.leaderboards || {}).forEach(lb => {
-      lb.couples.forEach(c => { map[c.competitor + '|' + (c.partner || '')] = c; });
+      lb.couples.forEach(c => { map[coupleKey(c.competitor, c.partner)] = c; });
     });
     return map;
   }
@@ -1353,13 +1359,13 @@
       if (!couples.length) return '';
 
       const displayMap = new Map();
-      couples.forEach(c => displayMap.set(c.competitor + '|' + (c.partner || ''), c));
+      couples.forEach(c => displayMap.set(coupleKey(c.competitor, c.partner), c));
       if (query && heatsData) {
         couples.forEach(c => {
           computeContestedStats(c.competitor, c.partner || null).forEach(opp => {
-            const entry = coupleMap[opp.competitor1 + '|' + (opp.competitor2 || '')];
+            const entry = coupleMap[coupleKey(opp.competitor1, opp.competitor2)];
             if (!entry) return;
-            const key = entry.competitor + '|' + (entry.partner || '');
+            const key = coupleKey(entry.competitor, entry.partner);
             if (!displayMap.has(key)) displayMap.set(key, entry);
           });
         });
