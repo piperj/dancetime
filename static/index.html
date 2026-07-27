@@ -624,7 +624,10 @@
       heat.entries.forEach(e => {
         if (e.event !== myEntry.event) return;
         if (e.competitor1 === myEntry.competitor1 && e.competitor2 === myEntry.competitor2) return;
-        opps[e.couple] ??= { couple: e.couple, competitor1: e.competitor1, competitor2: e.competitor2, my_couple: myEntry.couple ?? competitor, count: 0, my_wins: 0, their_wins: 0, ties: 0 };
+        opps[e.couple] ??= { couple: e.couple, competitor1: e.competitor1, competitor2: e.competitor2,
+                              my_couple: myEntry.couple ?? competitor,
+                              my_competitor1: myEntry.competitor1, my_competitor2: myEntry.competitor2,
+                              count: 0, my_wins: 0, their_wins: 0, ties: 0 };
         opps[e.couple].count++;
         const r = parseInt(e.result);
         const iAdvanced = isNaN(myResult) && someHaveResult;
@@ -643,19 +646,34 @@
     return Object.values(opps).sort((a, b) => b.count - a.count);
   }
 
+  // Heat balance: how much of a contested record is explained by the ELO gap
+  // between the two couples, vs. how it actually played out on the floor.
+  function eloWinProbability(myElo, oppElo) {
+    if (myElo == null || oppElo == null) return null;
+    return 1 / (1 + Math.pow(10, (oppElo - myElo) / ELO_SCALE));
+  }
+
   function renderContestedStatsHtml(stats) {
     if (!stats.length) return '<p class="text-gray-500 italic">No contested heats found</p>';
     return stats.map(s => {
       const total = s.my_wins + s.their_wins + s.ties;
       const record = total ? `${s.my_wins} vs ${s.their_wins}${s.ties ? ` (${s.ties} ties)` : ''}` : 'No results yet';
       const cls = s.my_wins > s.their_wins ? 'text-green-600' : s.my_wins < s.their_wins ? 'text-red-600' : 'text-gray-500';
+
+      const myElo = coupleMap[coupleKey(s.my_competitor1, s.my_competitor2)]?.elo;
+      const oppElo = coupleMap[coupleKey(s.competitor1, s.competitor2)]?.elo;
+      const prob = eloWinProbability(myElo, oppElo);
+      const oddsPart = (eloVisible() && prob != null) ? `Odds ${Math.round(prob * 100)}%` : '';
+      const resultPart = total ? `Result ${Math.round((s.my_wins / total) * 100)}%` : '';
+      const middleLine = [oddsPart, resultPart, record].filter(Boolean).join(' · ');
+
       return `<div class="border border-gray-300 rounded-lg p-2 bg-gray-50">
-        <div class="flex items-center mb-2">
+        <div class="flex items-center gap-2 mb-2">
           <span class="bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded-full text-xs font-medium">${s.count} heats</span>
         </div>
         <div class="space-y-2">
           <div class="bg-white border border-indigo-200 rounded p-2 text-sm">${esc(s.my_couple)}</div>
-          <div class="text-center text-xs font-semibold ${cls}">${record}</div>
+          <div class="text-center text-xs font-semibold ${cls}">${middleLine}</div>
           <div class="bg-white border border-gray-200 rounded p-2 text-sm">${esc(s.couple)}</div>
         </div>
       </div>`;
