@@ -10,8 +10,8 @@
     {
       "competitor": "Brian Baker",
       "partner": "Dee Iannone",
-      "elo": 2110.75,
-      "initial_elo": 1575.0,
+      "elo": 2120.99,
+      "initial_elo": 1696.4,
       "heats_processed": 100,
       "num_opponents": 18,
       "rank": 1
@@ -19,8 +19,8 @@
     {
       "competitor": "Brian Baker",
       "partner": "Lynette Pope",
-      "elo": 2110.75,
-      "initial_elo": 1575.0,
+      "elo": 2120.99,
+      "initial_elo": 1696.4,
       "heats_processed": 98,
       "num_opponents": 8,
       "rank": 2
@@ -28,8 +28,8 @@
     {
       "competitor": "Brian Baker",
       "partner": "Marty Barr",
-      "elo": 2110.75,
-      "initial_elo": 1575.0,
+      "elo": 2120.99,
+      "initial_elo": 1696.4,
       "heats_processed": 106,
       "num_opponents": 25,
       "rank": 3
@@ -37,866 +37,983 @@
     {
       "competitor": "Brian Baker",
       "partner": "Riley Balzar",
-      "elo": 2110.75,
-      "initial_elo": 1575.0,
+      "elo": 2120.99,
+      "initial_elo": 1696.4,
       "heats_processed": 10,
       "num_opponents": 0,
       "rank": 4
     },
     {
-      "competitor": "Leonid Burlo",
-      "partner": "Mariia Usan",
-      "elo": 1955.7,
-      "initial_elo": 1900.48,
-      "heats_processed": 8,
-      "num_opponents": 10,
-      "rank": 5
-    },
-    {
-      "competitor": "Sarah McClammy",
-      "partner": "Yuriy Kuvshynov",
-      "elo": 1903.58,
-      "initial_elo": 1903.58,
-      "heats_processed": 30,
-      "num_opponents": 0,
-      "rank": 6
-    },
-    {
-      "competitor": "Vitalina Bunina",
-      "partner": "Aleksandr Ivanov",
-      "elo": 1889.99,
-      "initial_elo": 1837.6,
-      "heats_processed": 5,
-      "num_opponents": 10,
-      "rank": 7
-    },
-    {
-      "competitor": "Oskar Krimus",
-      "partner": "Shayna McDonald",
-      "elo": 1886.04,
-      "initial_elo": 1750.0,
-      "heats_processed": 15,
-      "num_opponents": 10,
-      "rank": 8
-    },
-    {
-      "competitor": "Alice Cherenshchikova",
-      "partner": "Ilya Gurovich",
-      "elo": 1863.5,
-      "initial_elo": 1868.78,
-      "heats_processed": 10,
-      "num_opponents": 4,
-      "rank": 9
-    },
-    {
-      "competitor": "Hanna Leung",
-      "partner": "Ikaika Dowsett",
-      "elo": 1858.76,
-      "initial_elo": 1758.62,
-      "heats_processed": 28,
-      "num_opponents": 4,
-      "rank": 10
-    },
-    {
-      "competitor": "Ikaika Dowsett",
-      "partner": "Sylvia Imbens",
-      "elo": 1858.76,
-      "initial_elo": 1758.62,
-      "heats_processed": 15,
-      "num_opponents": 0,
-      "rank": 11
-    },
-    {
-      "competitor": "Alina Semenenko",
-      "partner": "Yehor Khrapal",
-      "elo": 1847.02,
-      "initial_elo": 1833.11,
-      "heats_processed": 4,
-      "num_opponents": 8,
-      "rank": 12
-    },
-    {
-      "competitor": "Daniel Pollack",
-      "partner": "Alexis Pollack",
-      "elo": 1835.94,
-      "initial_elo": 1796.86,
-      "heats_processed": 20,
-      "num_opponents": 24,
-      "rank": 13
-    },
-    {
-      "competitor": "Daniel Pollack",
-      "partner": "Samuel Kaufman",
-      "elo": 1835.94,
-      "initial_elo": 1796.86,
-      "heats_processed": 1,
-      "num_opponents": 0,
-      "rank": 14
-    },
-    {
-      "competitor": "Olena Barna",
-      "partner": "Serhiy Averkov",
-      "elo": 1833.62,
-      "initial_elo": 1790.07,
-      "heats_processed": 9,
-      "num_opponents": 8,
-      "rank": 15
-    },
-    {
-      "competitor": "Lukas Alisauskas",
-      "partner": "Lisa Shapiro",
-      "elo": 1829.26,
-      "initial_elo": 1837.42,
-      "heats_processed": 7,
-      "num_opponents": 8,
-      "rank": 16
-    },
-    {
-      "competitor": "Lukas Alisauskas",
-      "partner": "Sylvia Agin",
-      "elo": 1829.26,
-      "initial_elo": 1837.42,
-      "heats_processed": 15,
-      "num_opponents": 0,
-      "rank": 17
-    },
-    {
-      "competitor": "Hadas Fisher",
-      "partner": "Nikolay Voronovich",
-      "elo": 1827.84,
-      "initial_elo": 1818.77,
-      "heats_processed": 5,
-      "num_opponents": 10,
-      "rank": 18
-    },
-    {
       "competitor": "Alexander Novikov",
       "partner": "Laura Sirott",
-      "elo": 1815.5,
-      "initial_elo": 1817.57,
+      "elo": 1958.16,
+      "initial_elo": 2000.33,
       "heats_processed": 32,
       "num_opponents": 12,
-      "rank": 19
+      "rank": 5
     },
     {
       "competitor": "Alexander Novikov",
       "partner": "soo Kim",
-      "elo": 1815.5,
-      "initial_elo": 1817.57,
+      "elo": 1958.16,
+      "initial_elo": 2000.33,
       "heats_processed": 9,
       "num_opponents": 2,
-      "rank": 20
-    },
-    {
-      "competitor": "Ilie Bardahan",
-      "partner": "Oxana Kashkina",
-      "elo": 1805.57,
-      "initial_elo": 1750.0,
-      "heats_processed": 5,
-      "num_opponents": 12,
-      "rank": 21
+      "rank": 6
     },
     {
       "competitor": "Florin Vlad",
       "partner": "Natalia O'Connor",
-      "elo": 1803.75,
-      "initial_elo": 1781.69,
+      "elo": 1953.53,
+      "initial_elo": 1934.25,
       "heats_processed": 9,
       "num_opponents": 8,
+      "rank": 7
+    },
+    {
+      "competitor": "Leonid Burlo",
+      "partner": "Mariia Usan",
+      "elo": 1946.02,
+      "initial_elo": 1894.73,
+      "heats_processed": 8,
+      "num_opponents": 10,
+      "rank": 8
+    },
+    {
+      "competitor": "Sarah McClammy",
+      "partner": "Yuriy Kuvshynov",
+      "elo": 1913.53,
+      "initial_elo": 1913.53,
+      "heats_processed": 30,
+      "num_opponents": 0,
+      "rank": 9
+    },
+    {
+      "competitor": "Aleksandr Ivanov",
+      "partner": "Vitalina Bunina",
+      "elo": 1898.19,
+      "initial_elo": 1853.11,
+      "heats_processed": 5,
+      "num_opponents": 10,
+      "rank": 10
+    },
+    {
+      "competitor": "Ikaika Dowsett",
+      "partner": "Hanna Leung",
+      "elo": 1891.22,
+      "initial_elo": 1797.61,
+      "heats_processed": 28,
+      "num_opponents": 4,
+      "rank": 11
+    },
+    {
+      "competitor": "Ikaika Dowsett",
+      "partner": "Sylvia Imbens",
+      "elo": 1891.22,
+      "initial_elo": 1797.61,
+      "heats_processed": 15,
+      "num_opponents": 0,
+      "rank": 12
+    },
+    {
+      "competitor": "Nick Cheremukhin",
+      "partner": "Ibis Wu",
+      "elo": 1890.25,
+      "initial_elo": 1890.01,
+      "heats_processed": 12,
+      "num_opponents": 8,
+      "rank": 13
+    },
+    {
+      "competitor": "Danylo Dobrovolskyi",
+      "partner": "Anastasiia Malovana",
+      "elo": 1885.87,
+      "initial_elo": 1849.3,
+      "heats_processed": 5,
+      "num_opponents": 8,
+      "rank": 14
+    },
+    {
+      "competitor": "Shayna McDonald",
+      "partner": "Oskar Krimus",
+      "elo": 1878.28,
+      "initial_elo": 1750.0,
+      "heats_processed": 15,
+      "num_opponents": 10,
+      "rank": 15
+    },
+    {
+      "competitor": "Nikolay Voronovich",
+      "partner": "Hadas Fisher",
+      "elo": 1870.66,
+      "initial_elo": 1880.06,
+      "heats_processed": 5,
+      "num_opponents": 10,
+      "rank": 16
+    },
+    {
+      "competitor": "Alina Semenenko",
+      "partner": "Yehor Khrapal",
+      "elo": 1848.28,
+      "initial_elo": 1837.81,
+      "heats_processed": 4,
+      "num_opponents": 8,
+      "rank": 17
+    },
+    {
+      "competitor": "Karence Chan",
+      "partner": "Paul Cloud",
+      "elo": 1830.72,
+      "initial_elo": 1672.69,
+      "heats_processed": 16,
+      "num_opponents": 4,
+      "rank": 18
+    },
+    {
+      "competitor": "Mary Wong",
+      "partner": "Stefano Di Brino",
+      "elo": 1829.19,
+      "initial_elo": 1767.15,
+      "heats_processed": 15,
+      "num_opponents": 2,
+      "rank": 19
+    },
+    {
+      "competitor": "Olena Barna",
+      "partner": "Serhiy Averkov",
+      "elo": 1828.46,
+      "initial_elo": 1771.57,
+      "heats_processed": 9,
+      "num_opponents": 8,
+      "rank": 20
+    },
+    {
+      "competitor": "Tadas Jonyla",
+      "partner": "Alla Bell",
+      "elo": 1827.6,
+      "initial_elo": 1768.03,
+      "heats_processed": 12,
+      "num_opponents": 12,
+      "rank": 21
+    },
+    {
+      "competitor": "Tadas Jonyla",
+      "partner": "ESTHER Mok",
+      "elo": 1827.6,
+      "initial_elo": 1768.03,
+      "heats_processed": 12,
+      "num_opponents": 10,
       "rank": 22
     },
     {
-      "competitor": "Alexey Smirnov",
-      "partner": "Daria Smirnova",
-      "elo": 1799.04,
-      "initial_elo": 1788.37,
-      "heats_processed": 14,
-      "num_opponents": 14,
+      "competitor": "Tadas Jonyla",
+      "partner": "Frances Manning",
+      "elo": 1827.6,
+      "initial_elo": 1768.03,
+      "heats_processed": 10,
+      "num_opponents": 4,
       "rank": 23
     },
     {
-      "competitor": "Milan Huynh",
-      "partner": "",
-      "elo": 1797.08,
-      "initial_elo": 1768.98,
-      "heats_processed": 12,
-      "num_opponents": 5,
+      "competitor": "Tadas Jonyla",
+      "partner": "Jan Duffy",
+      "elo": 1827.6,
+      "initial_elo": 1768.03,
+      "heats_processed": 9,
+      "num_opponents": 4,
       "rank": 24
+    },
+    {
+      "competitor": "Grisha Radiush",
+      "partner": "Agniia Sivkovych",
+      "elo": 1826.41,
+      "initial_elo": 1612.84,
+      "heats_processed": 32,
+      "num_opponents": 21,
+      "rank": 25
+    },
+    {
+      "competitor": "Alice Cherenshchikova",
+      "partner": "Ilya Gurovich",
+      "elo": 1804.06,
+      "initial_elo": 1820.82,
+      "heats_processed": 10,
+      "num_opponents": 4,
+      "rank": 26
     },
     {
       "competitor": "Viacheslav Kostianets",
       "partner": "Yuriko Shimamoto",
-      "elo": 1794.11,
-      "initial_elo": 1663.94,
+      "elo": 1797.23,
+      "initial_elo": 1658.85,
       "heats_processed": 16,
       "num_opponents": 12,
-      "rank": 25
-    },
-    {
-      "competitor": "Anastasiia Malovana",
-      "partner": "Danylo Dobrovolskyi",
-      "elo": 1788.42,
-      "initial_elo": 1731.22,
-      "heats_processed": 5,
-      "num_opponents": 8,
-      "rank": 26
-    },
-    {
-      "competitor": "Victoria Akhanova",
-      "partner": "Bohdan Aleksieiev",
-      "elo": 1785.14,
-      "initial_elo": 1720.56,
-      "heats_processed": 10,
-      "num_opponents": 4,
       "rank": 27
     },
     {
-      "competitor": "Winnie Au",
-      "partner": "Julius Seniauskas",
-      "elo": 1782.91,
-      "initial_elo": 1692.12,
-      "heats_processed": 15,
-      "num_opponents": 6,
+      "competitor": "Ilie Bardahan",
+      "partner": "Oxana Kashkina",
+      "elo": 1791.91,
+      "initial_elo": 1749.68,
+      "heats_processed": 5,
+      "num_opponents": 12,
       "rank": 28
     },
     {
       "competitor": "Alyssa Razmus",
       "partner": "Daria Matviienko",
-      "elo": 1777.82,
-      "initial_elo": 1650.0,
+      "elo": 1791.24,
+      "initial_elo": 1677.03,
       "heats_processed": 12,
       "num_opponents": 22,
       "rank": 29
     },
     {
-      "competitor": "Mary Wong",
-      "partner": "Stefano Di Brino",
-      "elo": 1773.89,
-      "initial_elo": 1663.94,
-      "heats_processed": 15,
-      "num_opponents": 2,
-      "rank": 30
-    },
-    {
-      "competitor": "Agniia Sivkovych",
-      "partner": "Grisha Radiush",
-      "elo": 1767.83,
-      "initial_elo": 1500.0,
-      "heats_processed": 32,
-      "num_opponents": 21,
-      "rank": 31
-    },
-    {
-      "competitor": "Edgaras Brazas",
-      "partner": "Tessa Marie",
-      "elo": 1763.88,
-      "initial_elo": 1750.0,
-      "heats_processed": 5,
-      "num_opponents": 10,
-      "rank": 32
-    },
-    {
       "competitor": "Matvii Artiushenko",
       "partner": "Kristina Dudka",
-      "elo": 1759.72,
-      "initial_elo": 1500.0,
+      "elo": 1787.29,
+      "initial_elo": 1576.31,
       "heats_processed": 8,
       "num_opponents": 4,
-      "rank": 33
+      "rank": 30
     },
     {
       "competitor": "Matvii Artiushenko",
       "partner": "Patience Hughes",
-      "elo": 1759.72,
-      "initial_elo": 1500.0,
+      "elo": 1787.29,
+      "initial_elo": 1576.31,
       "heats_processed": 8,
       "num_opponents": 0,
-      "rank": 34
+      "rank": 31
     },
     {
       "competitor": "Matvii Artiushenko",
       "partner": "Sofia Chubay",
-      "elo": 1759.72,
-      "initial_elo": 1500.0,
+      "elo": 1787.29,
+      "initial_elo": 1576.31,
       "heats_processed": 15,
       "num_opponents": 16,
-      "rank": 35
+      "rank": 32
     },
     {
-      "competitor": "Serhiy Averkov",
-      "partner": "Ibis Wu",
-      "elo": 1758.73,
-      "initial_elo": 1721.96,
-      "heats_processed": 15,
-      "num_opponents": 8,
-      "rank": 36
+      "competitor": "Slawek Sochacki",
+      "partner": "Irene Fong",
+      "elo": 1786.78,
+      "initial_elo": 1773.89,
+      "heats_processed": 20,
+      "num_opponents": 4,
+      "rank": 33
+    },
+    {
+      "competitor": "Slawek Sochacki",
+      "partner": "Lynda Zadra",
+      "elo": 1786.78,
+      "initial_elo": 1773.89,
+      "heats_processed": 28,
+      "num_opponents": 0,
+      "rank": 34
+    },
+    {
+      "competitor": "Giovanni Leanza",
+      "partner": "Grace Zhou",
+      "elo": 1782.9,
+      "initial_elo": 1728.25,
+      "heats_processed": 13,
+      "num_opponents": 2,
+      "rank": 35
     },
     {
       "competitor": "Evgeny Malko",
       "partner": "Celia Rothenberg",
-      "elo": 1756.21,
-      "initial_elo": 1293.01,
+      "elo": 1782.82,
+      "initial_elo": 1466.44,
       "heats_processed": 12,
       "num_opponents": 4,
-      "rank": 37
+      "rank": 36
     },
     {
       "competitor": "Evgeny Malko",
       "partner": "Chunlin Yang",
-      "elo": 1756.21,
-      "initial_elo": 1293.01,
+      "elo": 1782.82,
+      "initial_elo": 1466.44,
       "heats_processed": 16,
       "num_opponents": 12,
-      "rank": 38
+      "rank": 37
     },
     {
       "competitor": "Evgeny Malko",
       "partner": "Iris Tam",
-      "elo": 1756.21,
-      "initial_elo": 1293.01,
+      "elo": 1782.82,
+      "initial_elo": 1466.44,
       "heats_processed": 16,
       "num_opponents": 9,
-      "rank": 39
+      "rank": 38
     },
     {
       "competitor": "Evgeny Malko",
       "partner": "Joanne Champ",
-      "elo": 1756.21,
-      "initial_elo": 1293.01,
+      "elo": 1782.82,
+      "initial_elo": 1466.44,
       "heats_processed": 16,
       "num_opponents": 10,
-      "rank": 40
+      "rank": 39
     },
     {
       "competitor": "Evgeny Malko",
       "partner": "Kathie Le",
-      "elo": 1756.21,
-      "initial_elo": 1293.01,
+      "elo": 1782.82,
+      "initial_elo": 1466.44,
       "heats_processed": 15,
       "num_opponents": 2,
-      "rank": 41
+      "rank": 40
     },
     {
       "competitor": "Evgeny Malko",
       "partner": "Kelley Maddox",
-      "elo": 1756.21,
-      "initial_elo": 1293.01,
+      "elo": 1782.82,
+      "initial_elo": 1466.44,
       "heats_processed": 6,
       "num_opponents": 0,
-      "rank": 42
+      "rank": 41
     },
     {
       "competitor": "Evgeny Malko",
       "partner": "Lily On",
-      "elo": 1756.21,
-      "initial_elo": 1293.01,
+      "elo": 1782.82,
+      "initial_elo": 1466.44,
       "heats_processed": 12,
       "num_opponents": 4,
+      "rank": 42
+    },
+    {
+      "competitor": "Jennifer Newell",
+      "partner": "Steve Vasco",
+      "elo": 1773.21,
+      "initial_elo": 1669.23,
+      "heats_processed": 15,
+      "num_opponents": 6,
       "rank": 43
     },
     {
-      "competitor": "Kai Kang",
-      "partner": "Lyla Dong",
-      "elo": 1754.58,
-      "initial_elo": 1650.0,
-      "heats_processed": 12,
-      "num_opponents": 22,
+      "competitor": "Razmik Papian",
+      "partner": "Lilian Isabel Flores",
+      "elo": 1768.48,
+      "initial_elo": 1768.12,
+      "heats_processed": 10,
+      "num_opponents": 4,
       "rank": 44
     },
     {
-      "competitor": "Iris Tam",
-      "partner": "Vaidas Skimelis",
-      "elo": 1745.71,
-      "initial_elo": 1562.56,
+      "competitor": "Razmik Papian",
+      "partner": "Matilda Khuu-Fiorino",
+      "elo": 1768.48,
+      "initial_elo": 1768.12,
       "heats_processed": 15,
       "num_opponents": 2,
       "rank": 45
     },
     {
-      "competitor": "Irene Caredis",
-      "partner": "Aaron Pierce",
-      "elo": 1741.77,
-      "initial_elo": 1750.0,
-      "heats_processed": 10,
-      "num_opponents": 14,
+      "competitor": "Razmik Papian",
+      "partner": "Michelle Popper",
+      "elo": 1768.48,
+      "initial_elo": 1768.12,
+      "heats_processed": 5,
+      "num_opponents": 6,
       "rank": 46
     },
     {
-      "competitor": "Nataliya Panivska",
-      "partner": "Daniel Lee Tran",
-      "elo": 1740.13,
-      "initial_elo": 1750.0,
+      "competitor": "Razmik Papian",
+      "partner": "Mila Bakirova",
+      "elo": 1768.48,
+      "initial_elo": 1768.12,
       "heats_processed": 10,
-      "num_opponents": 14,
+      "num_opponents": 4,
       "rank": 47
     },
     {
-      "competitor": "Karence Chan",
-      "partner": "Paul Cloud",
-      "elo": 1739.56,
-      "initial_elo": 1575.0,
-      "heats_processed": 16,
-      "num_opponents": 4,
+      "competitor": "Razmik Papian",
+      "partner": "Olha Romanenko",
+      "elo": 1768.48,
+      "initial_elo": 1768.12,
+      "heats_processed": 5,
+      "num_opponents": 10,
       "rank": 48
     },
     {
-      "competitor": "Yegor Zhukov",
-      "partner": "Izzy Luong",
-      "elo": 1735.95,
-      "initial_elo": 1679.96,
-      "heats_processed": 20,
-      "num_opponents": 16,
+      "competitor": "Razmik Papian",
+      "partner": "Sylvia Imbens",
+      "elo": 1768.48,
+      "initial_elo": 1768.12,
+      "heats_processed": 15,
+      "num_opponents": 4,
       "rank": 49
     },
     {
-      "competitor": "Jude Coraldi",
-      "partner": "Peter Hahn",
-      "elo": 1731.38,
-      "initial_elo": 1750.0,
-      "heats_processed": 8,
-      "num_opponents": 8,
+      "competitor": "Alexey Smirnov",
+      "partner": "Daria Smirnova",
+      "elo": 1766.41,
+      "initial_elo": 1783.77,
+      "heats_processed": 14,
+      "num_opponents": 14,
       "rank": 50
     },
     {
-      "competitor": "Parker Lynn",
-      "partner": "Hannah Reed",
-      "elo": 1728.99,
-      "initial_elo": 1684.18,
-      "heats_processed": 8,
+      "competitor": "Pamela Romano",
+      "partner": "William Manning",
+      "elo": 1764.55,
+      "initial_elo": 1806.32,
+      "heats_processed": 16,
       "num_opponents": 4,
       "rank": 51
     },
     {
-      "competitor": "Jessica Ferber",
-      "partner": "",
-      "elo": 1728.28,
-      "initial_elo": 1554.59,
-      "heats_processed": 19,
-      "num_opponents": 18,
+      "competitor": "Winnie Au",
+      "partner": "Julius Seniauskas",
+      "elo": 1764.35,
+      "initial_elo": 1653.4,
+      "heats_processed": 15,
+      "num_opponents": 6,
       "rank": 52
     },
     {
-      "competitor": "Ivan Spasov",
-      "partner": "Anne Ta",
-      "elo": 1726.17,
-      "initial_elo": 1729.04,
-      "heats_processed": 16,
-      "num_opponents": 2,
+      "competitor": "Bumchin Tegshjargal",
+      "partner": "Michelle Klets",
+      "elo": 1761.37,
+      "initial_elo": 1661.54,
+      "heats_processed": 10,
+      "num_opponents": 20,
       "rank": 53
     },
     {
-      "competitor": "Ivan Spasov",
-      "partner": "Tina Lu",
-      "elo": 1726.17,
-      "initial_elo": 1729.04,
-      "heats_processed": 28,
-      "num_opponents": 14,
+      "competitor": "Kai Kang",
+      "partner": "Lyla Dong",
+      "elo": 1759.98,
+      "initial_elo": 1662.34,
+      "heats_processed": 12,
+      "num_opponents": 22,
       "rank": 54
     },
     {
-      "competitor": "Olha Romanenko",
-      "partner": "Razmik Papian",
-      "elo": 1725.01,
+      "competitor": "Edgaras Brazas",
+      "partner": "Tessa Marie",
+      "elo": 1759.32,
       "initial_elo": 1750.0,
       "heats_processed": 5,
       "num_opponents": 10,
       "rank": 55
     },
     {
-      "competitor": "Bumchin Tegshjargal",
-      "partner": "Michelle Klets",
-      "elo": 1723.95,
-      "initial_elo": 1619.07,
-      "heats_processed": 10,
-      "num_opponents": 20,
+      "competitor": "Radu Sterban",
+      "partner": "soo Kim",
+      "elo": 1755.71,
+      "initial_elo": 1755.71,
+      "heats_processed": 23,
+      "num_opponents": 0,
       "rank": 56
     },
     {
-      "competitor": "Vladimir Timofeev",
-      "partner": "Anastasia Solomennikova",
-      "elo": 1720.22,
-      "initial_elo": 1675.99,
-      "heats_processed": 15,
-      "num_opponents": 0,
-      "rank": 57
-    },
-    {
-      "competitor": "Vladimir Timofeev",
-      "partner": "Anna Dmitrishena",
-      "elo": 1720.22,
-      "initial_elo": 1675.99,
-      "heats_processed": 7,
-      "num_opponents": 2,
-      "rank": 58
-    },
-    {
-      "competitor": "Vladimir Timofeev",
-      "partner": "Arina Harutyunyan",
-      "elo": 1720.22,
-      "initial_elo": 1675.99,
-      "heats_processed": 4,
-      "num_opponents": 0,
-      "rank": 59
-    },
-    {
-      "competitor": "Vladimir Timofeev",
-      "partner": "Rita Chu",
-      "elo": 1720.22,
-      "initial_elo": 1675.99,
-      "heats_processed": 15,
-      "num_opponents": 0,
-      "rank": 60
-    },
-    {
-      "competitor": "Vladimir Timofeev",
-      "partner": "Serena Ore",
-      "elo": 1720.22,
-      "initial_elo": 1675.99,
-      "heats_processed": 9,
-      "num_opponents": 2,
-      "rank": 61
-    },
-    {
-      "competitor": "Igor Colac",
-      "partner": "Roxane Milotti",
-      "elo": 1717.51,
-      "initial_elo": 1711.89,
-      "heats_processed": 4,
-      "num_opponents": 8,
-      "rank": 62
-    },
-    {
-      "competitor": "Oleksandr Skorniakov",
-      "partner": "Polina Beloedova",
-      "elo": 1715.37,
-      "initial_elo": 1750.0,
-      "heats_processed": 14,
-      "num_opponents": 8,
-      "rank": 63
-    },
-    {
-      "competitor": "Tymeya Asandei",
+      "competitor": "Milan Huynh",
       "partner": "",
-      "elo": 1712.6,
-      "initial_elo": 1575.0,
-      "heats_processed": 24,
-      "num_opponents": 18,
-      "rank": 64
-    },
-    {
-      "competitor": "Tadas Jonyla",
-      "partner": "Alla Bell",
-      "elo": 1711.99,
-      "initial_elo": 1575.0,
+      "elo": 1751.8,
+      "initial_elo": 1719.26,
       "heats_processed": 12,
-      "num_opponents": 12,
-      "rank": 65
-    },
-    {
-      "competitor": "Tadas Jonyla",
-      "partner": "ESTHER Mok",
-      "elo": 1711.99,
-      "initial_elo": 1575.0,
-      "heats_processed": 12,
-      "num_opponents": 10,
-      "rank": 66
-    },
-    {
-      "competitor": "Tadas Jonyla",
-      "partner": "Frances Manning",
-      "elo": 1711.99,
-      "initial_elo": 1575.0,
-      "heats_processed": 10,
-      "num_opponents": 4,
-      "rank": 67
-    },
-    {
-      "competitor": "Tadas Jonyla",
-      "partner": "Jan Duffy",
-      "elo": 1711.99,
-      "initial_elo": 1575.0,
-      "heats_processed": 9,
-      "num_opponents": 4,
-      "rank": 68
+      "num_opponents": 5,
+      "rank": 57
     },
     {
       "competitor": "William Manning",
       "partner": "Anastasiia Zhuchenko",
-      "elo": 1703.24,
-      "initial_elo": 1575.0,
+      "elo": 1750.53,
+      "initial_elo": 1746.63,
       "heats_processed": 16,
       "num_opponents": 12,
-      "rank": 69
+      "rank": 58
     },
     {
-      "competitor": "William Manning",
-      "partner": "Pamela Romano",
-      "elo": 1703.24,
-      "initial_elo": 1575.0,
+      "competitor": "Ivan Spasov",
+      "partner": "Anne Ta",
+      "elo": 1749.17,
+      "initial_elo": 1758.14,
       "heats_processed": 16,
-      "num_opponents": 4,
-      "rank": 70
+      "num_opponents": 2,
+      "rank": 59
     },
     {
-      "competitor": "Maia Gorea-Duong",
-      "partner": "",
-      "elo": 1696.3,
-      "initial_elo": 1681.26,
-      "heats_processed": 11,
-      "num_opponents": 15,
-      "rank": 71
-    },
-    {
-      "competitor": "Jennifer Newell",
-      "partner": "Steve Vasco",
-      "elo": 1694.24,
-      "initial_elo": 1575.0,
-      "heats_processed": 15,
-      "num_opponents": 6,
-      "rank": 72
-    },
-    {
-      "competitor": "Monica Santana",
-      "partner": "Cesar Rojo",
-      "elo": 1693.74,
-      "initial_elo": 1822.97,
-      "heats_processed": 15,
+      "competitor": "Ivan Spasov",
+      "partner": "Tina Lu",
+      "elo": 1749.17,
+      "initial_elo": 1758.14,
+      "heats_processed": 28,
       "num_opponents": 14,
-      "rank": 73
+      "rank": 60
     },
     {
-      "competitor": "Monica Santana",
-      "partner": "Jacques Ouziel",
-      "elo": 1693.74,
-      "initial_elo": 1822.97,
-      "heats_processed": 102,
-      "num_opponents": 10,
-      "rank": 74
+      "competitor": "Nataliya Panivska",
+      "partner": "Daniel Lee Tran",
+      "elo": 1748.19,
+      "initial_elo": 1750.0,
+      "heats_processed": 10,
+      "num_opponents": 14,
+      "rank": 61
     },
     {
-      "competitor": "Monica Santana",
-      "partner": "Matthew Frank",
-      "elo": 1693.74,
-      "initial_elo": 1822.97,
-      "heats_processed": 67,
+      "competitor": "Iris Tam",
+      "partner": "Vaidas Skimelis",
+      "elo": 1742.36,
+      "initial_elo": 1536.38,
+      "heats_processed": 15,
       "num_opponents": 2,
-      "rank": 75
-    },
-    {
-      "competitor": "Monica Santana",
-      "partner": "William Sharp",
-      "elo": 1693.74,
-      "initial_elo": 1822.97,
-      "heats_processed": 31,
-      "num_opponents": 2,
-      "rank": 76
-    },
-    {
-      "competitor": "Jordan Lanasa Mehta",
-      "partner": "Loc Nguyen",
-      "elo": 1690.32,
-      "initial_elo": 1650.0,
-      "heats_processed": 13,
-      "num_opponents": 20,
-      "rank": 77
-    },
-    {
-      "competitor": "Alexis Pollack",
-      "partner": "Samuel Kaufman",
-      "elo": 1689.94,
-      "initial_elo": 1700.68,
-      "heats_processed": 45,
-      "num_opponents": 20,
-      "rank": 78
+      "rank": 62
     },
     {
       "competitor": "Steve Vasco",
       "partner": "Heidy Kellison",
-      "elo": 1689.48,
-      "initial_elo": 1531.7,
+      "elo": 1741.88,
+      "initial_elo": 1602.45,
       "heats_processed": 15,
       "num_opponents": 0,
-      "rank": 79
+      "rank": 63
     },
     {
       "competitor": "Steve Vasco",
       "partner": "Keltie Morris",
-      "elo": 1689.48,
-      "initial_elo": 1531.7,
+      "elo": 1741.88,
+      "initial_elo": 1602.45,
       "heats_processed": 15,
       "num_opponents": 2,
-      "rank": 80
+      "rank": 64
     },
     {
       "competitor": "Steve Vasco",
       "partner": "Reina Rampell",
-      "elo": 1689.48,
-      "initial_elo": 1531.7,
+      "elo": 1741.88,
+      "initial_elo": 1602.45,
       "heats_processed": 18,
       "num_opponents": 0,
-      "rank": 81
+      "rank": 65
     },
     {
-      "competitor": "Anastasiya Rubashevsky",
-      "partner": "Alex N Chen",
-      "elo": 1680.16,
-      "initial_elo": 1745.99,
-      "heats_processed": 6,
-      "num_opponents": 4,
-      "rank": 82
+      "competitor": "Lukas Alisauskas",
+      "partner": "Lisa Shapiro",
+      "elo": 1733.97,
+      "initial_elo": 1731.82,
+      "heats_processed": 7,
+      "num_opponents": 8,
+      "rank": 66
     },
     {
-      "competitor": "Anastasiya Rubashevsky",
-      "partner": "Marina Rumyantseva",
-      "elo": 1680.16,
-      "initial_elo": 1745.99,
-      "heats_processed": 8,
-      "num_opponents": 4,
-      "rank": 83
-    },
-    {
-      "competitor": "Anastasiya Rubashevsky",
-      "partner": "Medina Serik",
-      "elo": 1680.16,
-      "initial_elo": 1745.99,
-      "heats_processed": 6,
-      "num_opponents": 6,
-      "rank": 84
-    },
-    {
-      "competitor": "Anastasiya Rubashevsky",
-      "partner": "Natalie Pavlovsky",
-      "elo": 1680.16,
-      "initial_elo": 1745.99,
-      "heats_processed": 9,
-      "num_opponents": 6,
-      "rank": 85
-    },
-    {
-      "competitor": "Anastasiya Rubashevsky",
-      "partner": "Ryan Rowe",
-      "elo": 1680.16,
-      "initial_elo": 1745.99,
-      "heats_processed": 8,
+      "competitor": "Lukas Alisauskas",
+      "partner": "Sylvia Agin",
+      "elo": 1733.97,
+      "initial_elo": 1731.82,
+      "heats_processed": 15,
       "num_opponents": 0,
-      "rank": 86
+      "rank": 67
     },
     {
-      "competitor": "Anastasiya Rubashevsky",
-      "partner": "Thea Rowe",
-      "elo": 1680.16,
-      "initial_elo": 1745.99,
-      "heats_processed": 9,
-      "num_opponents": 0,
-      "rank": 87
-    },
-    {
-      "competitor": "Catherine Kuntoro",
-      "partner": "Uditi Guha",
-      "elo": 1678.54,
-      "initial_elo": 1692.75,
-      "heats_processed": 19,
-      "num_opponents": 31,
-      "rank": 88
-    },
-    {
-      "competitor": "Lori Hajari",
-      "partner": "Valentin Bachvarrov",
-      "elo": 1674.21,
-      "initial_elo": 1575.0,
+      "competitor": "Daniel Pollack",
+      "partner": "Alexis Pollack",
+      "elo": 1724.0,
+      "initial_elo": 1620.06,
       "heats_processed": 20,
-      "num_opponents": 4,
-      "rank": 89
+      "num_opponents": 24,
+      "rank": 68
+    },
+    {
+      "competitor": "Daniel Pollack",
+      "partner": "Samuel Kaufman",
+      "elo": 1724.0,
+      "initial_elo": 1620.06,
+      "heats_processed": 1,
+      "num_opponents": 0,
+      "rank": 69
+    },
+    {
+      "competitor": "Jude Coraldi",
+      "partner": "Peter Hahn",
+      "elo": 1720.74,
+      "initial_elo": 1750.0,
+      "heats_processed": 8,
+      "num_opponents": 8,
+      "rank": 70
+    },
+    {
+      "competitor": "Adela Yanev",
+      "partner": "Arsenii Moroz",
+      "elo": 1719.13,
+      "initial_elo": 1634.64,
+      "heats_processed": 15,
+      "num_opponents": 24,
+      "rank": 71
     },
     {
       "competitor": "Anastasiia Marochkanych",
       "partner": "Wiktor Frydrych",
-      "elo": 1671.69,
-      "initial_elo": 1500.0,
+      "elo": 1718.51,
+      "initial_elo": 1564.88,
       "heats_processed": 14,
       "num_opponents": 4,
-      "rank": 90
+      "rank": 72
     },
     {
-      "competitor": "Justin Gomez",
-      "partner": "Kelly Kuhl",
-      "elo": 1665.03,
-      "initial_elo": 1665.03,
-      "heats_processed": 6,
+      "competitor": "Oleksandr Skorniakov",
+      "partner": "Polina Beloedova",
+      "elo": 1716.97,
+      "initial_elo": 1750.0,
+      "heats_processed": 14,
+      "num_opponents": 8,
+      "rank": 73
+    },
+    {
+      "competitor": "Whitney Myers",
+      "partner": "Jonas Kon",
+      "elo": 1715.46,
+      "initial_elo": 1715.46,
+      "heats_processed": 27,
       "num_opponents": 0,
-      "rank": 91
+      "rank": 74
     },
     {
-      "competitor": "Vladyslav Ursatiy",
-      "partner": "Candy Gao",
-      "elo": 1664.37,
-      "initial_elo": 1664.37,
+      "competitor": "Serhiy Averkov",
+      "partner": "Ibis Wu",
+      "elo": 1715.15,
+      "initial_elo": 1629.48,
       "heats_processed": 15,
-      "num_opponents": 0,
-      "rank": 92
+      "num_opponents": 8,
+      "rank": 75
     },
     {
-      "competitor": "Razmik Papian",
-      "partner": "Lilian Isabel Flores",
-      "elo": 1661.79,
-      "initial_elo": 1546.77,
+      "competitor": "Roxane Milotti",
+      "partner": "Igor Colac",
+      "elo": 1714.22,
+      "initial_elo": 1706.62,
+      "heats_processed": 4,
+      "num_opponents": 8,
+      "rank": 76
+    },
+    {
+      "competitor": "Irene Caredis",
+      "partner": "Aaron Pierce",
+      "elo": 1711.58,
+      "initial_elo": 1750.0,
       "heats_processed": 10,
-      "num_opponents": 4,
-      "rank": 93
+      "num_opponents": 14,
+      "rank": 77
     },
     {
-      "competitor": "Razmik Papian",
-      "partner": "Matilda Khuu-Fiorino",
-      "elo": 1661.79,
-      "initial_elo": 1546.77,
+      "competitor": "Polina Oddr",
+      "partner": "James Assay",
+      "elo": 1709.85,
+      "initial_elo": 1759.39,
+      "heats_processed": 13,
+      "num_opponents": 7,
+      "rank": 78
+    },
+    {
+      "competitor": "Roberta Yuen",
+      "partner": "Christian Solares",
+      "elo": 1709.07,
+      "initial_elo": 1641.84,
+      "heats_processed": 16,
+      "num_opponents": 11,
+      "rank": 79
+    },
+    {
+      "competitor": "Vladimir Timofeev",
+      "partner": "Anastasia Solomennikova",
+      "elo": 1707.82,
+      "initial_elo": 1647.38,
       "heats_processed": 15,
+      "num_opponents": 0,
+      "rank": 80
+    },
+    {
+      "competitor": "Vladimir Timofeev",
+      "partner": "Anna Dmitrishena",
+      "elo": 1707.82,
+      "initial_elo": 1647.38,
+      "heats_processed": 7,
       "num_opponents": 2,
-      "rank": 94
+      "rank": 81
     },
     {
-      "competitor": "Razmik Papian",
-      "partner": "Michelle Popper",
-      "elo": 1661.79,
-      "initial_elo": 1546.77,
-      "heats_processed": 5,
-      "num_opponents": 6,
-      "rank": 95
+      "competitor": "Vladimir Timofeev",
+      "partner": "Arina Harutyunyan",
+      "elo": 1707.82,
+      "initial_elo": 1647.38,
+      "heats_processed": 4,
+      "num_opponents": 0,
+      "rank": 82
     },
     {
-      "competitor": "Razmik Papian",
-      "partner": "Mila Bakirova",
-      "elo": 1661.79,
-      "initial_elo": 1546.77,
-      "heats_processed": 10,
-      "num_opponents": 4,
-      "rank": 96
-    },
-    {
-      "competitor": "Razmik Papian",
-      "partner": "Sylvia Imbens",
-      "elo": 1661.79,
-      "initial_elo": 1546.77,
+      "competitor": "Vladimir Timofeev",
+      "partner": "Rita Chu",
+      "elo": 1707.82,
+      "initial_elo": 1647.38,
       "heats_processed": 15,
-      "num_opponents": 4,
-      "rank": 97
+      "num_opponents": 0,
+      "rank": 83
+    },
+    {
+      "competitor": "Vladimir Timofeev",
+      "partner": "Serena Ore",
+      "elo": 1707.82,
+      "initial_elo": 1647.38,
+      "heats_processed": 9,
+      "num_opponents": 2,
+      "rank": 84
+    },
+    {
+      "competitor": "Chrystal Chen",
+      "partner": "Joseph McDonnell",
+      "elo": 1707.47,
+      "initial_elo": 1735.65,
+      "heats_processed": 31,
+      "num_opponents": 0,
+      "rank": 85
+    },
+    {
+      "competitor": "Chrystal Chen",
+      "partner": "Oscar Adrian Rodriguez",
+      "elo": 1707.47,
+      "initial_elo": 1735.65,
+      "heats_processed": 5,
+      "num_opponents": 20,
+      "rank": 86
     },
     {
       "competitor": "Danylo Afonin",
       "partner": "Veronika Rozenberg",
-      "elo": 1660.11,
-      "initial_elo": 1626.11,
+      "elo": 1695.47,
+      "initial_elo": 1670.25,
       "heats_processed": 10,
       "num_opponents": 6,
+      "rank": 87
+    },
+    {
+      "competitor": "Victoria Akhanova",
+      "partner": "Bohdan Aleksieiev",
+      "elo": 1692.48,
+      "initial_elo": 1607.13,
+      "heats_processed": 10,
+      "num_opponents": 4,
+      "rank": 88
+    },
+    {
+      "competitor": "Jessica Ferber",
+      "partner": "",
+      "elo": 1689.37,
+      "initial_elo": 1493.25,
+      "heats_processed": 19,
+      "num_opponents": 18,
+      "rank": 89
+    },
+    {
+      "competitor": "Loc Nguyen",
+      "partner": "Jordan Lanasa Mehta",
+      "elo": 1687.35,
+      "initial_elo": 1650.0,
+      "heats_processed": 13,
+      "num_opponents": 20,
+      "rank": 90
+    },
+    {
+      "competitor": "Frances Manning",
+      "partner": "Christian Solares",
+      "elo": 1687.05,
+      "initial_elo": 1777.37,
+      "heats_processed": 16,
+      "num_opponents": 4,
+      "rank": 91
+    },
+    {
+      "competitor": "Arsenii Moroz",
+      "partner": "Sophia Grigorovitch",
+      "elo": 1685.96,
+      "initial_elo": 1616.23,
+      "heats_processed": 8,
+      "num_opponents": 4,
+      "rank": 92
+    },
+    {
+      "competitor": "Tymeya Asandei",
+      "partner": "",
+      "elo": 1683.78,
+      "initial_elo": 1527.19,
+      "heats_processed": 24,
+      "num_opponents": 18,
+      "rank": 93
+    },
+    {
+      "competitor": "Izzy Luong",
+      "partner": "Yegor Zhukov",
+      "elo": 1677.81,
+      "initial_elo": 1601.06,
+      "heats_processed": 20,
+      "num_opponents": 16,
+      "rank": 94
+    },
+    {
+      "competitor": "Vladyslav Ursatiy",
+      "partner": "Candy Gao",
+      "elo": 1676.41,
+      "initial_elo": 1676.41,
+      "heats_processed": 15,
+      "num_opponents": 0,
+      "rank": 95
+    },
+    {
+      "competitor": "Roman Drobotov",
+      "partner": "Anna Han",
+      "elo": 1670.28,
+      "initial_elo": 1758.2,
+      "heats_processed": 15,
+      "num_opponents": 4,
+      "rank": 96
+    },
+    {
+      "competitor": "Lori Hajari",
+      "partner": "Valentin Bachvarrov",
+      "elo": 1668.01,
+      "initial_elo": 1575.0,
+      "heats_processed": 20,
+      "num_opponents": 4,
+      "rank": 97
+    },
+    {
+      "competitor": "Anastasiya Rubashevsky",
+      "partner": "Alex N Chen",
+      "elo": 1665.68,
+      "initial_elo": 1724.54,
+      "heats_processed": 6,
+      "num_opponents": 4,
       "rank": 98
     },
     {
-      "competitor": "Giovanni Leanza",
-      "partner": "Grace Zhou",
-      "elo": 1654.84,
-      "initial_elo": 1500.0,
-      "heats_processed": 13,
-      "num_opponents": 2,
+      "competitor": "Anastasiya Rubashevsky",
+      "partner": "Marina Rumyantseva",
+      "elo": 1665.68,
+      "initial_elo": 1724.54,
+      "heats_processed": 8,
+      "num_opponents": 4,
       "rank": 99
+    },
+    {
+      "competitor": "Anastasiya Rubashevsky",
+      "partner": "Medina Serik",
+      "elo": 1665.68,
+      "initial_elo": 1724.54,
+      "heats_processed": 6,
+      "num_opponents": 6,
+      "rank": 100
+    },
+    {
+      "competitor": "Anastasiya Rubashevsky",
+      "partner": "Natalie Pavlovsky",
+      "elo": 1665.68,
+      "initial_elo": 1724.54,
+      "heats_processed": 9,
+      "num_opponents": 6,
+      "rank": 101
+    },
+    {
+      "competitor": "Anastasiya Rubashevsky",
+      "partner": "Ryan Rowe",
+      "elo": 1665.68,
+      "initial_elo": 1724.54,
+      "heats_processed": 8,
+      "num_opponents": 0,
+      "rank": 102
+    },
+    {
+      "competitor": "Anastasiya Rubashevsky",
+      "partner": "Thea Rowe",
+      "elo": 1665.68,
+      "initial_elo": 1724.54,
+      "heats_processed": 9,
+      "num_opponents": 0,
+      "rank": 103
+    },
+    {
+      "competitor": "Monica Santana",
+      "partner": "Cesar Rojo",
+      "elo": 1664.05,
+      "initial_elo": 1706.06,
+      "heats_processed": 15,
+      "num_opponents": 14,
+      "rank": 104
+    },
+    {
+      "competitor": "Monica Santana",
+      "partner": "Jacques Ouziel",
+      "elo": 1664.05,
+      "initial_elo": 1706.06,
+      "heats_processed": 102,
+      "num_opponents": 10,
+      "rank": 105
+    },
+    {
+      "competitor": "Monica Santana",
+      "partner": "Matthew Frank",
+      "elo": 1664.05,
+      "initial_elo": 1706.06,
+      "heats_processed": 67,
+      "num_opponents": 2,
+      "rank": 106
+    },
+    {
+      "competitor": "Monica Santana",
+      "partner": "William Sharp",
+      "elo": 1664.05,
+      "initial_elo": 1706.06,
+      "heats_processed": 31,
+      "num_opponents": 2,
+      "rank": 107
+    },
+    {
+      "competitor": "Hannah Reed",
+      "partner": "Parker Lynn",
+      "elo": 1663.08,
+      "initial_elo": 1592.88,
+      "heats_processed": 8,
+      "num_opponents": 4,
+      "rank": 108
+    },
+    {
+      "competitor": "Karen Taylor",
+      "partner": "Oscar Adrian Rodriguez",
+      "elo": 1660.6,
+      "initial_elo": 1660.6,
+      "heats_processed": 11,
+      "num_opponents": 0,
+      "rank": 109
+    },
+    {
+      "competitor": "Catherine Kuntoro",
+      "partner": "Uditi Guha",
+      "elo": 1654.82,
+      "initial_elo": 1633.65,
+      "heats_processed": 19,
+      "num_opponents": 31,
+      "rank": 110
+    },
+    {
+      "competitor": "Ilya Gurovich",
+      "partner": "Anna Le",
+      "elo": 1652.09,
+      "initial_elo": 1733.31,
+      "heats_processed": 5,
+      "num_opponents": 10,
+      "rank": 111
+    },
+    {
+      "competitor": "Valeriia Hudimova",
+      "partner": "Emma Gutkin",
+      "elo": 1651.36,
+      "initial_elo": 1667.73,
+      "heats_processed": 11,
+      "num_opponents": 2,
+      "rank": 112
     },
     {
       "competitor": "Sharon Butler",
@@ -905,430 +1022,376 @@
       "initial_elo": 1650.0,
       "heats_processed": 9,
       "num_opponents": 0,
-      "rank": 100
+      "rank": 113
+    },
+    {
+      "competitor": "Justin Gomez",
+      "partner": "Kelly Kuhl",
+      "elo": 1649.43,
+      "initial_elo": 1649.43,
+      "heats_processed": 6,
+      "num_opponents": 0,
+      "rank": 114
     },
     {
       "competitor": "Ailun Shi",
       "partner": "Lorraine Zhang",
-      "elo": 1646.98,
+      "elo": 1646.91,
       "initial_elo": 1677.98,
       "heats_processed": 2,
       "num_opponents": 18,
-      "rank": 101
+      "rank": 115
     },
     {
-      "competitor": "Duke Khuu",
-      "partner": "Sarah Wentling",
-      "elo": 1646.51,
-      "initial_elo": 1600.27,
-      "heats_processed": 7,
-      "num_opponents": 12,
-      "rank": 102
-    },
-    {
-      "competitor": "Roberta Yuen",
-      "partner": "Christian Solares",
-      "elo": 1644.7,
-      "initial_elo": 1549.07,
-      "heats_processed": 16,
-      "num_opponents": 11,
-      "rank": 103
+      "competitor": "Maia Gorea-Duong",
+      "partner": "",
+      "elo": 1641.38,
+      "initial_elo": 1607.53,
+      "heats_processed": 11,
+      "num_opponents": 15,
+      "rank": 116
     },
     {
       "competitor": "Ann-Kathrin Schalkamp",
       "partner": "Reimar Leike",
-      "elo": 1641.04,
+      "elo": 1641.16,
       "initial_elo": 1650.0,
       "heats_processed": 5,
       "num_opponents": 18,
-      "rank": 104
-    },
-    {
-      "competitor": "Maksim Berenshteyn",
-      "partner": "Sophia Grigorovitch",
-      "elo": 1640.26,
-      "initial_elo": 1575.0,
-      "heats_processed": 10,
-      "num_opponents": 5,
-      "rank": 105
-    },
-    {
-      "competitor": "Felipe Telona Jr.",
-      "partner": "Sally Bard",
-      "elo": 1634.26,
-      "initial_elo": 1575.0,
-      "heats_processed": 20,
-      "num_opponents": 8,
-      "rank": 106
+      "rank": 117
     },
     {
       "competitor": "Mattie Wilson",
       "partner": "Sean Gray",
-      "elo": 1633.75,
+      "elo": 1633.05,
       "initial_elo": 1650.0,
       "heats_processed": 8,
       "num_opponents": 22,
-      "rank": 107
-    },
-    {
-      "competitor": "Adela Yanev",
-      "partner": "Arsenii Moroz",
-      "elo": 1633.74,
-      "initial_elo": 1500.0,
-      "heats_processed": 15,
-      "num_opponents": 24,
-      "rank": 108
-    },
-    {
-      "competitor": "Muying Dow",
-      "partner": "David Estrada",
-      "elo": 1633.68,
-      "initial_elo": 1611.75,
-      "heats_processed": 22,
-      "num_opponents": 15,
-      "rank": 109
-    },
-    {
-      "competitor": "Arsenii Moroz",
-      "partner": "Sophia Grigorovitch",
-      "elo": 1631.24,
-      "initial_elo": 1558.35,
-      "heats_processed": 8,
-      "num_opponents": 4,
-      "rank": 110
+      "rank": 118
     },
     {
       "competitor": "Michelle Popper",
       "partner": "Bohdan Aleksieiev",
-      "elo": 1630.77,
-      "initial_elo": 1575.0,
+      "elo": 1632.56,
+      "initial_elo": 1615.13,
       "heats_processed": 7,
       "num_opponents": 0,
-      "rank": 111
+      "rank": 119
     },
     {
       "competitor": "Michelle Popper",
       "partner": "Ivan Filippov",
-      "elo": 1630.77,
-      "initial_elo": 1575.0,
+      "elo": 1632.56,
+      "initial_elo": 1615.13,
       "heats_processed": 14,
       "num_opponents": 14,
-      "rank": 112
-    },
-    {
-      "competitor": "Mari Kure",
-      "partner": "Matthew Chow",
-      "elo": 1628.43,
-      "initial_elo": 1650.0,
-      "heats_processed": 12,
-      "num_opponents": 22,
-      "rank": 113
-    },
-    {
-      "competitor": "Nathan Murstein",
-      "partner": "Nicky Lin",
-      "elo": 1619.7,
-      "initial_elo": 1750.0,
-      "heats_processed": 15,
-      "num_opponents": 10,
-      "rank": 114
-    },
-    {
-      "competitor": "Jane Fernandez",
-      "partner": "Claire Widman",
-      "elo": 1616.32,
-      "initial_elo": 1500.0,
-      "heats_processed": 26,
-      "num_opponents": 0,
-      "rank": 115
-    },
-    {
-      "competitor": "Jane Fernandez",
-      "partner": "Dante Camacho",
-      "elo": 1616.32,
-      "initial_elo": 1500.0,
-      "heats_processed": 24,
-      "num_opponents": 9,
-      "rank": 116
-    },
-    {
-      "competitor": "Jane Fernandez",
-      "partner": "Emmanuel Saucedo - Castillo",
-      "elo": 1616.32,
-      "initial_elo": 1500.0,
-      "heats_processed": 28,
-      "num_opponents": 0,
-      "rank": 117
-    },
-    {
-      "competitor": "Yana Sobachevskaya",
-      "partner": "Artjom Shmigeljuk",
-      "elo": 1612.92,
-      "initial_elo": 1575.0,
-      "heats_processed": 13,
-      "num_opponents": 4,
-      "rank": 118
-    },
-    {
-      "competitor": "Matilda Khuu-Fiorino",
-      "partner": "Bohdan Aleksieiev",
-      "elo": 1611.48,
-      "initial_elo": 1575.0,
-      "heats_processed": 10,
-      "num_opponents": 4,
-      "rank": 119
-    },
-    {
-      "competitor": "Bohdan Aleksieiev",
-      "partner": "Mila Bakirova",
-      "elo": 1609.0,
-      "initial_elo": 1625.26,
-      "heats_processed": 10,
-      "num_opponents": 0,
       "rank": 120
     },
     {
-      "competitor": "Bohdan Aleksieiev",
-      "partner": "Nikko Khuu-Fiorino",
-      "elo": 1609.0,
-      "initial_elo": 1625.26,
-      "heats_processed": 8,
-      "num_opponents": 0,
+      "competitor": "Jane Chtchemelinine",
+      "partner": "",
+      "elo": 1632.39,
+      "initial_elo": 1625.74,
+      "heats_processed": 14,
+      "num_opponents": 9,
       "rank": 121
     },
     {
-      "competitor": "Irene Fong",
-      "partner": "Slawek Sochacki",
-      "elo": 1608.98,
-      "initial_elo": 1575.0,
-      "heats_processed": 20,
-      "num_opponents": 4,
+      "competitor": "Duke Khuu",
+      "partner": "Sarah Wentling",
+      "elo": 1631.15,
+      "initial_elo": 1582.01,
+      "heats_processed": 7,
+      "num_opponents": 12,
       "rank": 122
-    },
-    {
-      "competitor": "Slawek Sochacki",
-      "partner": "Lynda Zadra",
-      "elo": 1608.98,
-      "initial_elo": 1575.0,
-      "heats_processed": 28,
-      "num_opponents": 0,
-      "rank": 123
-    },
-    {
-      "competitor": "Cesar Rojo",
-      "partner": "Christina Lau",
-      "elo": 1602.95,
-      "initial_elo": 1806.48,
-      "heats_processed": 56,
-      "num_opponents": 8,
-      "rank": 124
-    },
-    {
-      "competitor": "Cesar Rojo",
-      "partner": "Niki Moghaddam",
-      "elo": 1602.95,
-      "initial_elo": 1806.48,
-      "heats_processed": 23,
-      "num_opponents": 0,
-      "rank": 125
-    },
-    {
-      "competitor": "Cesar Rojo",
-      "partner": "Shabnam Farzaneh",
-      "elo": 1602.95,
-      "initial_elo": 1806.48,
-      "heats_processed": 12,
-      "num_opponents": 0,
-      "rank": 126
-    },
-    {
-      "competitor": "Cesar Rojo",
-      "partner": "Theresa Fitch",
-      "elo": 1602.95,
-      "initial_elo": 1806.48,
-      "heats_processed": 30,
-      "num_opponents": 2,
-      "rank": 127
-    },
-    {
-      "competitor": "Kelly Cheng",
-      "partner": "Thomas Yim",
-      "elo": 1600.52,
-      "initial_elo": 1500.0,
-      "heats_processed": 5,
-      "num_opponents": 4,
-      "rank": 128
-    },
-    {
-      "competitor": "Sara Fan",
-      "partner": "Reimar Leike",
-      "elo": 1599.91,
-      "initial_elo": 1650.0,
-      "heats_processed": 6,
-      "num_opponents": 6,
-      "rank": 129
-    },
-    {
-      "competitor": "Deborah DeLaney",
-      "partner": "Thomas Bueno",
-      "elo": 1594.2,
-      "initial_elo": 1500.0,
-      "heats_processed": 51,
-      "num_opponents": 10,
-      "rank": 130
-    },
-    {
-      "competitor": "Ariel Kok",
-      "partner": "Misha Radiush",
-      "elo": 1593.41,
-      "initial_elo": 1500.0,
-      "heats_processed": 20,
-      "num_opponents": 6,
-      "rank": 131
-    },
-    {
-      "competitor": "Ilya Gurovich",
-      "partner": "Anna Le",
-      "elo": 1590.96,
-      "initial_elo": 1665.01,
-      "heats_processed": 5,
-      "num_opponents": 10,
-      "rank": 132
-    },
-    {
-      "competitor": "Zoreslava Samko",
-      "partner": "",
-      "elo": 1588.14,
-      "initial_elo": 1500.0,
-      "heats_processed": 19,
-      "num_opponents": 18,
-      "rank": 133
-    },
-    {
-      "competitor": "Aleeza Kinder",
-      "partner": "Damian Skimelis",
-      "elo": 1587.7,
-      "initial_elo": 1481.23,
-      "heats_processed": 9,
-      "num_opponents": 16,
-      "rank": 134
-    },
-    {
-      "competitor": "Youriy Pavlov",
-      "partner": "Doreen Marchack",
-      "elo": 1587.7,
-      "initial_elo": 1500.0,
-      "heats_processed": 25,
-      "num_opponents": 8,
-      "rank": 135
-    },
-    {
-      "competitor": "Youriy Pavlov",
-      "partner": "Ellison Custodio",
-      "elo": 1587.7,
-      "initial_elo": 1500.0,
-      "heats_processed": 16,
-      "num_opponents": 14,
-      "rank": 136
     },
     {
       "competitor": "Artem Syzdykov",
       "partner": "Emily Chen",
-      "elo": 1587.52,
-      "initial_elo": 1714.51,
+      "elo": 1628.35,
+      "initial_elo": 1723.39,
       "heats_processed": 15,
+      "num_opponents": 4,
+      "rank": 123
+    },
+    {
+      "competitor": "Mari Kure",
+      "partner": "Matthew Chow",
+      "elo": 1626.96,
+      "initial_elo": 1650.0,
+      "heats_processed": 12,
+      "num_opponents": 22,
+      "rank": 124
+    },
+    {
+      "competitor": "Justin Hurcombe",
+      "partner": "Raquel Bryant",
+      "elo": 1624.65,
+      "initial_elo": 1692.75,
+      "heats_processed": 9,
+      "num_opponents": 26,
+      "rank": 125
+    },
+    {
+      "competitor": "Felipe Telona Jr.",
+      "partner": "Sally Bard",
+      "elo": 1622.57,
+      "initial_elo": 1575.0,
+      "heats_processed": 20,
+      "num_opponents": 8,
+      "rank": 126
+    },
+    {
+      "competitor": "Bohdan Aleksieiev",
+      "partner": "Matilda Khuu-Fiorino",
+      "elo": 1616.72,
+      "initial_elo": 1649.67,
+      "heats_processed": 10,
+      "num_opponents": 4,
+      "rank": 127
+    },
+    {
+      "competitor": "Bohdan Aleksieiev",
+      "partner": "Mila Bakirova",
+      "elo": 1616.72,
+      "initial_elo": 1649.67,
+      "heats_processed": 10,
+      "num_opponents": 0,
+      "rank": 128
+    },
+    {
+      "competitor": "Bohdan Aleksieiev",
+      "partner": "Nikko Khuu-Fiorino",
+      "elo": 1616.72,
+      "initial_elo": 1649.67,
+      "heats_processed": 8,
+      "num_opponents": 0,
+      "rank": 129
+    },
+    {
+      "competitor": "Jane Fernandez",
+      "partner": "Claire Widman",
+      "elo": 1613.98,
+      "initial_elo": 1460.82,
+      "heats_processed": 26,
+      "num_opponents": 0,
+      "rank": 130
+    },
+    {
+      "competitor": "Jane Fernandez",
+      "partner": "Dante Camacho",
+      "elo": 1613.98,
+      "initial_elo": 1460.82,
+      "heats_processed": 24,
+      "num_opponents": 9,
+      "rank": 131
+    },
+    {
+      "competitor": "Jane Fernandez",
+      "partner": "Emmanuel Saucedo - Castillo",
+      "elo": 1613.98,
+      "initial_elo": 1460.82,
+      "heats_processed": 28,
+      "num_opponents": 0,
+      "rank": 132
+    },
+    {
+      "competitor": "Muying Dow",
+      "partner": "David Estrada",
+      "elo": 1612.85,
+      "initial_elo": 1597.01,
+      "heats_processed": 22,
+      "num_opponents": 15,
+      "rank": 133
+    },
+    {
+      "competitor": "Mariia Pecheneva",
+      "partner": "",
+      "elo": 1602.03,
+      "initial_elo": 1500.0,
+      "heats_processed": 14,
+      "num_opponents": 9,
+      "rank": 134
+    },
+    {
+      "competitor": "Sabine Blyth",
+      "partner": "Charlotte Liu",
+      "elo": 1601.86,
+      "initial_elo": 1578.11,
+      "heats_processed": 9,
+      "num_opponents": 4,
+      "rank": 135
+    },
+    {
+      "competitor": "Yana Sobachevskaya",
+      "partner": "Artjom Shmigeljuk",
+      "elo": 1598.49,
+      "initial_elo": 1551.61,
+      "heats_processed": 13,
+      "num_opponents": 4,
+      "rank": 136
+    },
+    {
+      "competitor": "Kelly Cheng",
+      "partner": "Thomas Yim",
+      "elo": 1597.85,
+      "initial_elo": 1500.0,
+      "heats_processed": 5,
       "num_opponents": 4,
       "rank": 137
     },
     {
-      "competitor": "Ada Liang",
-      "partner": "Zhou Ming",
-      "elo": 1585.31,
+      "competitor": "Sara Fan",
+      "partner": "Reimar Leike",
+      "elo": 1597.18,
       "initial_elo": 1650.0,
-      "heats_processed": 14,
-      "num_opponents": 26,
+      "heats_processed": 6,
+      "num_opponents": 6,
       "rank": 138
     },
     {
-      "competitor": "Ishan Sen",
-      "partner": "Sonia Zhang",
-      "elo": 1583.64,
+      "competitor": "Ada Liang",
+      "partner": "Zhou Ming",
+      "elo": 1596.09,
       "initial_elo": 1650.0,
-      "heats_processed": 8,
-      "num_opponents": 22,
+      "heats_processed": 14,
+      "num_opponents": 26,
       "rank": 139
     },
     {
-      "competitor": "Adelaida Chibukhchyan",
-      "partner": "Marco David",
-      "elo": 1582.79,
-      "initial_elo": 1635.09,
-      "heats_processed": 9,
-      "num_opponents": 26,
+      "competitor": "Deborah DeLaney",
+      "partner": "Thomas Bueno",
+      "elo": 1594.32,
+      "initial_elo": 1500.0,
+      "heats_processed": 51,
+      "num_opponents": 10,
       "rank": 140
     },
     {
       "competitor": "Brooke Johnson",
       "partner": "Jasher Kuehn",
-      "elo": 1582.65,
-      "initial_elo": 1502.53,
+      "elo": 1594.21,
+      "initial_elo": 1503.49,
       "heats_processed": 10,
       "num_opponents": 20,
       "rank": 141
     },
     {
-      "competitor": "Justin Hurcombe",
-      "partner": "Raquel Bryant",
-      "elo": 1581.73,
-      "initial_elo": 1635.45,
+      "competitor": "Adelaida Chibukhchyan",
+      "partner": "Marco David",
+      "elo": 1592.39,
+      "initial_elo": 1639.63,
       "heats_processed": 9,
       "num_opponents": 26,
       "rank": 142
     },
     {
-      "competitor": "soo Kim",
-      "partner": "Radu Sterban",
-      "elo": 1581.69,
-      "initial_elo": 1575.0,
-      "heats_processed": 23,
-      "num_opponents": 0,
+      "competitor": "Ariel Kok",
+      "partner": "Misha Radiush",
+      "elo": 1590.35,
+      "initial_elo": 1500.0,
+      "heats_processed": 20,
+      "num_opponents": 6,
       "rank": 143
     },
     {
-      "competitor": "Mariia Pecheneva",
-      "partner": "",
-      "elo": 1579.61,
+      "competitor": "Maksim Berenshteyn",
+      "partner": "Sophia Grigorovitch",
+      "elo": 1589.84,
       "initial_elo": 1500.0,
-      "heats_processed": 14,
-      "num_opponents": 9,
+      "heats_processed": 10,
+      "num_opponents": 5,
       "rank": 144
     },
     {
-      "competitor": "Nick Cheremukhin",
-      "partner": "Ibis Wu",
-      "elo": 1578.41,
-      "initial_elo": 1575.0,
-      "heats_processed": 12,
-      "num_opponents": 8,
+      "competitor": "Aleeza Kinder",
+      "partner": "Damian Skimelis",
+      "elo": 1589.68,
+      "initial_elo": 1479.9,
+      "heats_processed": 9,
+      "num_opponents": 16,
       "rank": 145
     },
     {
-      "competitor": "Dalma Katona",
-      "partner": "Timea Potys",
-      "elo": 1575.0,
-      "initial_elo": 1575.0,
+      "competitor": "Dmytro Lanin",
+      "partner": "Tais Zhukova",
+      "elo": 1584.38,
+      "initial_elo": 1535.88,
       "heats_processed": 5,
-      "num_opponents": 0,
+      "num_opponents": 6,
       "rank": 146
     },
     {
-      "competitor": "Joanna Cheung",
-      "partner": "Giulio Ferrante",
-      "elo": 1575.0,
-      "initial_elo": 1575.0,
+      "competitor": "Ishan Sen",
+      "partner": "Sonia Zhang",
+      "elo": 1582.9,
+      "initial_elo": 1650.0,
+      "heats_processed": 8,
+      "num_opponents": 22,
+      "rank": 147
+    },
+    {
+      "competitor": "Vicky Sihan Lin",
+      "partner": "Obi Sindora",
+      "elo": 1582.72,
+      "initial_elo": 1500.0,
+      "heats_processed": 20,
+      "num_opponents": 30,
+      "rank": 148
+    },
+    {
+      "competitor": "Oscar Adrian Rodriguez",
+      "partner": "Carrie Chanson",
+      "elo": 1582.67,
+      "initial_elo": 1624.41,
       "heats_processed": 15,
       "num_opponents": 0,
-      "rank": 147
+      "rank": 149
+    },
+    {
+      "competitor": "Moon Xie",
+      "partner": "Peter Parra",
+      "elo": 1582.45,
+      "initial_elo": 1602.06,
+      "heats_processed": 10,
+      "num_opponents": 8,
+      "rank": 150
+    },
+    {
+      "competitor": "Nathan Murstein",
+      "partner": "Nicky Lin",
+      "elo": 1581.84,
+      "initial_elo": 1750.0,
+      "heats_processed": 15,
+      "num_opponents": 10,
+      "rank": 151
+    },
+    {
+      "competitor": "Alexis Pollack",
+      "partner": "Samuel Kaufman",
+      "elo": 1580.79,
+      "initial_elo": 1510.84,
+      "heats_processed": 45,
+      "num_opponents": 20,
+      "rank": 152
+    },
+    {
+      "competitor": "Zoreslava Samko",
+      "partner": "",
+      "elo": 1580.29,
+      "initial_elo": 1500.0,
+      "heats_processed": 19,
+      "num_opponents": 18,
+      "rank": 153
+    },
+    {
+      "competitor": "Patrik Blom",
+      "partner": "Julia Vikingstad",
+      "elo": 1575.04,
+      "initial_elo": 1608.28,
+      "heats_processed": 13,
+      "num_opponents": 6,
+      "rank": 154
     },
     {
       "competitor": "Jurga Skimelas",
@@ -1337,7 +1400,7 @@
       "initial_elo": 1575.0,
       "heats_processed": 11,
       "num_opponents": 0,
-      "rank": 148
+      "rank": 155
     },
     {
       "competitor": "Sasha Chereonyk",
@@ -1346,384 +1409,321 @@
       "initial_elo": 1575.0,
       "heats_processed": 5,
       "num_opponents": 0,
-      "rank": 149
+      "rank": 156
     },
     {
       "competitor": "Michelle Perelmutor",
       "partner": "Zeyu Lin",
-      "elo": 1574.66,
+      "elo": 1573.97,
       "initial_elo": 1650.0,
       "heats_processed": 6,
       "num_opponents": 22,
-      "rank": 150
-    },
-    {
-      "competitor": "Karen Taylor",
-      "partner": "Oscar Adrian Rodriguez",
-      "elo": 1572.5,
-      "initial_elo": 1572.5,
-      "heats_processed": 11,
-      "num_opponents": 0,
-      "rank": 151
-    },
-    {
-      "competitor": "Vicky Sihan Lin",
-      "partner": "Obi Sindora",
-      "elo": 1570.63,
-      "initial_elo": 1500.0,
-      "heats_processed": 20,
-      "num_opponents": 30,
-      "rank": 152
-    },
-    {
-      "competitor": "Oscar Adrian Rodriguez",
-      "partner": "Carrie Chanson",
-      "elo": 1570.48,
-      "initial_elo": 1574.25,
-      "heats_processed": 15,
-      "num_opponents": 0,
-      "rank": 153
-    },
-    {
-      "competitor": "Oscar Adrian Rodriguez",
-      "partner": "Chrystal Chen",
-      "elo": 1570.48,
-      "initial_elo": 1574.25,
-      "heats_processed": 5,
-      "num_opponents": 20,
-      "rank": 154
-    },
-    {
-      "competitor": "Sophia Dymo",
-      "partner": "",
-      "elo": 1569.62,
-      "initial_elo": 1500.0,
-      "heats_processed": 19,
-      "num_opponents": 18,
-      "rank": 155
-    },
-    {
-      "competitor": "Claire Wei Yi",
-      "partner": "Ivan Nikitin",
-      "elo": 1568.38,
-      "initial_elo": 1500.0,
-      "heats_processed": 10,
-      "num_opponents": 7,
-      "rank": 156
-    },
-    {
-      "competitor": "Dmytro Lanin",
-      "partner": "Tais Zhukova",
-      "elo": 1566.49,
-      "initial_elo": 1523.78,
-      "heats_processed": 5,
-      "num_opponents": 6,
       "rank": 157
     },
     {
-      "competitor": "Thea Rowe",
-      "partner": "Benjamin Sklovskiy",
-      "elo": 1561.73,
-      "initial_elo": 1575.0,
-      "heats_processed": 9,
-      "num_opponents": 16,
+      "competitor": "Iris Bakhvala",
+      "partner": "Aahrone Bakhvala",
+      "elo": 1573.29,
+      "initial_elo": 1659.0,
+      "heats_processed": 12,
+      "num_opponents": 20,
       "rank": 158
+    },
+    {
+      "competitor": "Iris Bakhvala",
+      "partner": "Denis Filonenko",
+      "elo": 1573.29,
+      "initial_elo": 1659.0,
+      "heats_processed": 3,
+      "num_opponents": 2,
+      "rank": 159
     },
     {
       "competitor": "Sofiia Nikolaiets",
       "partner": "Jonathan Ostapenko",
-      "elo": 1561.51,
+      "elo": 1572.1,
       "initial_elo": 1575.0,
       "heats_processed": 5,
       "num_opponents": 8,
-      "rank": 159
-    },
-    {
-      "competitor": "Evangeline Co",
-      "partner": "Denis Filonenko",
-      "elo": 1560.13,
-      "initial_elo": 1500.0,
-      "heats_processed": 12,
-      "num_opponents": 2,
       "rank": 160
     },
     {
-      "competitor": "Quynh Vu",
-      "partner": "David Estrada",
-      "elo": 1555.87,
-      "initial_elo": 1575.0,
-      "heats_processed": 28,
-      "num_opponents": 2,
+      "competitor": "Veronica Flint",
+      "partner": "Dmitry Dmitriev",
+      "elo": 1563.83,
+      "initial_elo": 1693.84,
+      "heats_processed": 13,
+      "num_opponents": 14,
       "rank": 161
     },
     {
-      "competitor": "Natalia Zakrevskaia",
-      "partner": "Stephanie Bikhazi",
-      "elo": 1555.65,
-      "initial_elo": 1555.65,
-      "heats_processed": 1,
-      "num_opponents": 0,
+      "competitor": "Sophia Dymo",
+      "partner": "",
+      "elo": 1562.51,
+      "initial_elo": 1516.34,
+      "heats_processed": 19,
+      "num_opponents": 18,
       "rank": 162
     },
     {
-      "competitor": "Arina Akhanova",
-      "partner": "",
-      "elo": 1552.07,
-      "initial_elo": 1630.42,
-      "heats_processed": 11,
-      "num_opponents": 15,
+      "competitor": "Daniel Ischenko",
+      "partner": "Aleksandra Kim",
+      "elo": 1555.86,
+      "initial_elo": 1558.69,
+      "heats_processed": 48,
+      "num_opponents": 35,
       "rank": 163
     },
     {
-      "competitor": "Bianka Zubrowska",
-      "partner": "Detlef Matthies",
-      "elo": 1551.69,
-      "initial_elo": 1500.0,
-      "heats_processed": 14,
-      "num_opponents": 4,
+      "competitor": "Adrian Fu",
+      "partner": "Adele Fu",
+      "elo": 1555.78,
+      "initial_elo": 1600.85,
+      "heats_processed": 15,
+      "num_opponents": 16,
       "rank": 164
-    },
-    {
-      "competitor": "Felix Sindora",
-      "partner": "",
-      "elo": 1550.34,
-      "initial_elo": 1500.0,
-      "heats_processed": 8,
-      "num_opponents": 5,
-      "rank": 165
-    },
-    {
-      "competitor": "Boris Basin",
-      "partner": "Natalie Shirota",
-      "elo": 1542.2,
-      "initial_elo": 1661.45,
-      "heats_processed": 9,
-      "num_opponents": 8,
-      "rank": 166
-    },
-    {
-      "competitor": "Dmitry Dmitriev",
-      "partner": "Veronica Flint",
-      "elo": 1540.55,
-      "initial_elo": 1716.69,
-      "heats_processed": 13,
-      "num_opponents": 14,
-      "rank": 167
-    },
-    {
-      "competitor": "Merry Li",
-      "partner": "Philip Grecki",
-      "elo": 1538.39,
-      "initial_elo": 1663.9,
-      "heats_processed": 13,
-      "num_opponents": 20,
-      "rank": 168
-    },
-    {
-      "competitor": "Adam Liu",
-      "partner": "Diana Kaplanyan",
-      "elo": 1533.02,
-      "initial_elo": 1500.0,
-      "heats_processed": 23,
-      "num_opponents": 14,
-      "rank": 169
-    },
-    {
-      "competitor": "Kaixi Wu",
-      "partner": "Kyle Mochizuki",
-      "elo": 1532.3,
-      "initial_elo": 1650.0,
-      "heats_processed": 13,
-      "num_opponents": 31,
-      "rank": 170
     },
     {
       "competitor": "Hong Zhang",
       "partner": "Pavlo Barsuk",
-      "elo": 1530.95,
-      "initial_elo": 1530.95,
+      "elo": 1553.07,
+      "initial_elo": 1553.07,
       "heats_processed": 25,
       "num_opponents": 0,
+      "rank": 165
+    },
+    {
+      "competitor": "Adam Liu",
+      "partner": "Diana Kaplanyan",
+      "elo": 1552.39,
+      "initial_elo": 1500.0,
+      "heats_processed": 23,
+      "num_opponents": 14,
+      "rank": 166
+    },
+    {
+      "competitor": "Arina Akhanova",
+      "partner": "",
+      "elo": 1548.79,
+      "initial_elo": 1642.45,
+      "heats_processed": 11,
+      "num_opponents": 15,
+      "rank": 167
+    },
+    {
+      "competitor": "Boris Basin",
+      "partner": "Natalie Shirota",
+      "elo": 1548.55,
+      "initial_elo": 1670.04,
+      "heats_processed": 9,
+      "num_opponents": 8,
+      "rank": 168
+    },
+    {
+      "competitor": "Doreen Marchack",
+      "partner": "Youriy Pavlov",
+      "elo": 1543.76,
+      "initial_elo": 1491.1,
+      "heats_processed": 25,
+      "num_opponents": 8,
+      "rank": 169
+    },
+    {
+      "competitor": "Felix Sindora",
+      "partner": "",
+      "elo": 1541.18,
+      "initial_elo": 1500.0,
+      "heats_processed": 8,
+      "num_opponents": 5,
+      "rank": 170
+    },
+    {
+      "competitor": "Jennifer Farnworth",
+      "partner": "Sergey Malko",
+      "elo": 1541.02,
+      "initial_elo": 1575.0,
+      "heats_processed": 15,
+      "num_opponents": 4,
       "rank": 171
     },
     {
-      "competitor": "Young Lee",
-      "partner": "Denis Filonenko",
-      "elo": 1527.26,
-      "initial_elo": 1652.85,
-      "heats_processed": 15,
-      "num_opponents": 6,
+      "competitor": "Bianka Zubrowska",
+      "partner": "Detlef Matthies",
+      "elo": 1534.9,
+      "initial_elo": 1500.0,
+      "heats_processed": 14,
+      "num_opponents": 4,
       "rank": 172
     },
     {
-      "competitor": "Jane Chtchemelinine",
-      "partner": "",
-      "elo": 1522.26,
-      "initial_elo": 1442.09,
-      "heats_processed": 14,
-      "num_opponents": 9,
+      "competitor": "Platon Valoha",
+      "partner": "Susanna Williams",
+      "elo": 1534.46,
+      "initial_elo": 1628.31,
+      "heats_processed": 13,
+      "num_opponents": 8,
       "rank": 173
     },
     {
-      "competitor": "Oleksandra Cherednyk",
-      "partner": "",
-      "elo": 1519.69,
-      "initial_elo": 1575.0,
-      "heats_processed": 5,
-      "num_opponents": 4,
+      "competitor": "Youriy Pavlov",
+      "partner": "Ellison Custodio",
+      "elo": 1532.44,
+      "initial_elo": 1430.24,
+      "heats_processed": 16,
+      "num_opponents": 14,
       "rank": 174
+    },
+    {
+      "competitor": "Evangeline Co",
+      "partner": "Denis Filonenko",
+      "elo": 1530.15,
+      "initial_elo": 1461.51,
+      "heats_processed": 12,
+      "num_opponents": 2,
+      "rank": 175
+    },
+    {
+      "competitor": "Kaixi Wu",
+      "partner": "Kyle Mochizuki",
+      "elo": 1529.22,
+      "initial_elo": 1650.0,
+      "heats_processed": 13,
+      "num_opponents": 31,
+      "rank": 176
     },
     {
       "competitor": "Anastasiya Barysevich",
       "partner": "Matteo Laudati",
-      "elo": 1516.37,
+      "elo": 1527.06,
       "initial_elo": 1500.0,
       "heats_processed": 10,
       "num_opponents": 20,
-      "rank": 175
-    },
-    {
-      "competitor": "Aleksandra Kim",
-      "partner": "Daniel Ischenko",
-      "elo": 1516.2,
-      "initial_elo": 1500.0,
-      "heats_processed": 48,
-      "num_opponents": 35,
-      "rank": 176
-    },
-    {
-      "competitor": "Lev Kozhanov",
-      "partner": "Milana Gertsen",
-      "elo": 1514.86,
-      "initial_elo": 1500.0,
-      "heats_processed": 12,
-      "num_opponents": 18,
       "rank": 177
-    },
-    {
-      "competitor": "Lucia Amador",
-      "partner": "",
-      "elo": 1512.95,
-      "initial_elo": 1575.0,
-      "heats_processed": 15,
-      "num_opponents": 18,
-      "rank": 178
-    },
-    {
-      "competitor": "Lisa Shapiro",
-      "partner": "Denis Filonenko",
-      "elo": 1512.67,
-      "initial_elo": 1575.0,
-      "heats_processed": 4,
-      "num_opponents": 0,
-      "rank": 179
-    },
-    {
-      "competitor": "Lisa Shapiro",
-      "partner": "Ethan Cheng",
-      "elo": 1512.67,
-      "initial_elo": 1575.0,
-      "heats_processed": 8,
-      "num_opponents": 8,
-      "rank": 180
     },
     {
       "competitor": "Coco Lin",
       "partner": "",
-      "elo": 1504.44,
+      "elo": 1526.91,
       "initial_elo": 1500.0,
       "heats_processed": 14,
       "num_opponents": 9,
+      "rank": 178
+    },
+    {
+      "competitor": "Yuriy Kuvshynov",
+      "partner": "Donna Verna",
+      "elo": 1525.58,
+      "initial_elo": 1700.58,
+      "heats_processed": 40,
+      "num_opponents": 8,
+      "rank": 179
+    },
+    {
+      "competitor": "Yuriy Kuvshynov",
+      "partner": "Lynn Johnson",
+      "elo": 1525.58,
+      "initial_elo": 1700.58,
+      "heats_processed": 40,
+      "num_opponents": 4,
+      "rank": 180
+    },
+    {
+      "competitor": "Yuriy Kuvshynov",
+      "partner": "MacKenzie Soldan",
+      "elo": 1525.58,
+      "initial_elo": 1700.58,
+      "heats_processed": 5,
+      "num_opponents": 0,
       "rank": 181
     },
     {
-      "competitor": "Denis Filonenko",
-      "partner": "Ariana Yang",
-      "elo": 1503.59,
-      "initial_elo": 1686.54,
-      "heats_processed": 2,
-      "num_opponents": 2,
+      "competitor": "Yuriy Kuvshynov",
+      "partner": "Mary Clark-Bartlett",
+      "elo": 1525.58,
+      "initial_elo": 1700.58,
+      "heats_processed": 24,
+      "num_opponents": 4,
       "rank": 182
     },
     {
-      "competitor": "Denis Filonenko",
-      "partner": "Diana Kovalenko",
-      "elo": 1503.59,
-      "initial_elo": 1686.54,
-      "heats_processed": 4,
-      "num_opponents": 4,
+      "competitor": "Giulio Ferrante",
+      "partner": "Joanna Cheung",
+      "elo": 1524.09,
+      "initial_elo": 1524.09,
+      "heats_processed": 15,
+      "num_opponents": 0,
       "rank": 183
     },
     {
-      "competitor": "Denis Filonenko",
-      "partner": "Iris Bakhvala",
-      "elo": 1503.59,
-      "initial_elo": 1686.54,
-      "heats_processed": 3,
-      "num_opponents": 2,
+      "competitor": "Merry Li",
+      "partner": "Philip Grecki",
+      "elo": 1521.77,
+      "initial_elo": 1636.22,
+      "heats_processed": 13,
+      "num_opponents": 20,
       "rank": 184
     },
     {
-      "competitor": "Denis Filonenko",
-      "partner": "Lelie Takahashi",
-      "elo": 1503.59,
-      "initial_elo": 1686.54,
-      "heats_processed": 4,
-      "num_opponents": 2,
+      "competitor": "Timea Potys",
+      "partner": "Dalma Katona",
+      "elo": 1515.25,
+      "initial_elo": 1515.25,
+      "heats_processed": 5,
+      "num_opponents": 0,
       "rank": 185
     },
     {
-      "competitor": "Denis Filonenko",
-      "partner": "Ramona Stelzer",
-      "elo": 1503.59,
-      "initial_elo": 1686.54,
-      "heats_processed": 10,
-      "num_opponents": 2,
+      "competitor": "Oleksandra Cherednyk",
+      "partner": "",
+      "elo": 1513.15,
+      "initial_elo": 1575.0,
+      "heats_processed": 5,
+      "num_opponents": 4,
       "rank": 186
     },
     {
-      "competitor": "Denis Filonenko",
-      "partner": "Sofia Tumansky",
-      "elo": 1503.59,
-      "initial_elo": 1686.54,
-      "heats_processed": 4,
-      "num_opponents": 2,
+      "competitor": "Eric Newbury",
+      "partner": "Evgeniya Gorobets",
+      "elo": 1509.82,
+      "initial_elo": 1537.76,
+      "heats_processed": 5,
+      "num_opponents": 6,
       "rank": 187
     },
     {
-      "competitor": "Denis Filonenko",
-      "partner": "Sophia Statkevich",
-      "elo": 1503.59,
-      "initial_elo": 1686.54,
-      "heats_processed": 4,
-      "num_opponents": 2,
+      "competitor": "Lev Kozhanov",
+      "partner": "Milana Gertsen",
+      "elo": 1508.37,
+      "initial_elo": 1479.56,
+      "heats_processed": 12,
+      "num_opponents": 18,
       "rank": 188
     },
     {
-      "competitor": "Benjamin Yakubov",
-      "partner": "Sofia Pylypenko",
-      "elo": 1500.86,
+      "competitor": "Sofia Pylypenko",
+      "partner": "Benjamin Yakubov",
+      "elo": 1503.93,
       "initial_elo": 1500.0,
       "heats_processed": 10,
       "num_opponents": 14,
       "rank": 189
     },
     {
-      "competitor": "Ariana Yang",
-      "partner": "Ivan Statkevich",
-      "elo": 1500.48,
-      "initial_elo": 1453.31,
-      "heats_processed": 9,
-      "num_opponents": 20,
+      "competitor": "Quynh Vu",
+      "partner": "David Estrada",
+      "elo": 1502.34,
+      "initial_elo": 1519.4,
+      "heats_processed": 28,
+      "num_opponents": 2,
       "rank": 190
     },
     {
-      "competitor": "Alena Sivura",
-      "partner": "Stephen Hill",
-      "elo": 1500.0,
-      "initial_elo": 1500.0,
-      "heats_processed": 8,
-      "num_opponents": 0,
+      "competitor": "Lucia Amador",
+      "partner": "",
+      "elo": 1501.41,
+      "initial_elo": 1575.0,
+      "heats_processed": 15,
+      "num_opponents": 18,
       "rank": 191
     },
     {
@@ -1754,20 +1754,20 @@
       "rank": 194
     },
     {
-      "competitor": "Jonas Kon",
-      "partner": "Whitney Myers",
-      "elo": 1500.0,
-      "initial_elo": 1500.0,
-      "heats_processed": 27,
-      "num_opponents": 0,
-      "rank": 195
-    },
-    {
       "competitor": "Leah Elliott",
       "partner": "Raistlin Sharipov",
       "elo": 1500.0,
       "initial_elo": 1500.0,
       "heats_processed": 56,
+      "num_opponents": 0,
+      "rank": 195
+    },
+    {
+      "competitor": "Stephanie Bikhazi",
+      "partner": "Natalia Zakrevskaia",
+      "elo": 1500.0,
+      "initial_elo": 1500.0,
+      "heats_processed": 1,
       "num_opponents": 0,
       "rank": 196
     },
@@ -1790,334 +1790,334 @@
       "rank": 198
     },
     {
-      "competitor": "Artjom Shmigeljuk",
-      "partner": "Veronika Sobachevskaya",
-      "elo": 1495.0,
-      "initial_elo": 1534.1,
-      "heats_processed": 13,
-      "num_opponents": 2,
+      "competitor": "Claire Wei Yi",
+      "partner": "Ivan Nikitin",
+      "elo": 1496.4,
+      "initial_elo": 1414.89,
+      "heats_processed": 10,
+      "num_opponents": 7,
       "rank": 199
-    },
-    {
-      "competitor": "Frances Manning",
-      "partner": "Christian Solares",
-      "elo": 1490.59,
-      "initial_elo": 1575.0,
-      "heats_processed": 16,
-      "num_opponents": 4,
-      "rank": 200
     },
     {
       "competitor": "Obi Sindora",
       "partner": "Alina Lyukshin",
-      "elo": 1488.17,
+      "elo": 1493.54,
       "initial_elo": 1500.0,
       "heats_processed": 16,
       "num_opponents": 8,
+      "rank": 200
+    },
+    {
+      "competitor": "Lisa Shapiro",
+      "partner": "Denis Filonenko",
+      "elo": 1490.39,
+      "initial_elo": 1489.56,
+      "heats_processed": 4,
+      "num_opponents": 0,
       "rank": 201
     },
     {
-      "competitor": "Eric Newbury",
-      "partner": "Evgeniya Gorobets",
-      "elo": 1485.11,
-      "initial_elo": 1516.03,
-      "heats_processed": 5,
-      "num_opponents": 6,
+      "competitor": "Lisa Shapiro",
+      "partner": "Ethan Cheng",
+      "elo": 1490.39,
+      "initial_elo": 1489.56,
+      "heats_processed": 8,
+      "num_opponents": 8,
       "rank": 202
     },
     {
-      "competitor": "Aahrone Bakhvala",
-      "partner": "Anna Sergeenko",
-      "elo": 1484.67,
-      "initial_elo": 1498.51,
-      "heats_processed": 3,
-      "num_opponents": 0,
+      "competitor": "Young Lee",
+      "partner": "Denis Filonenko",
+      "elo": 1489.77,
+      "initial_elo": 1549.43,
+      "heats_processed": 15,
+      "num_opponents": 6,
       "rank": 203
     },
     {
-      "competitor": "Aahrone Bakhvala",
-      "partner": "Iris Bakhvala",
-      "elo": 1484.67,
-      "initial_elo": 1498.51,
-      "heats_processed": 12,
-      "num_opponents": 20,
+      "competitor": "Benjamin Sklovskiy",
+      "partner": "Thea Rowe",
+      "elo": 1489.38,
+      "initial_elo": 1482.7,
+      "heats_processed": 9,
+      "num_opponents": 16,
       "rank": 204
     },
     {
-      "competitor": "Julia Vikingstad",
-      "partner": "Patrik Blom",
-      "elo": 1482.13,
-      "initial_elo": 1502.11,
-      "heats_processed": 13,
-      "num_opponents": 6,
+      "competitor": "Ariana Yang",
+      "partner": "Denis Filonenko",
+      "elo": 1489.21,
+      "initial_elo": 1433.51,
+      "heats_processed": 2,
+      "num_opponents": 2,
       "rank": 205
     },
     {
-      "competitor": "Anna Han",
-      "partner": "Roman Drobotov",
-      "elo": 1481.65,
-      "initial_elo": 1569.56,
-      "heats_processed": 15,
-      "num_opponents": 4,
-      "rank": 206
-    },
-    {
-      "competitor": "Moon Xie",
-      "partner": "Peter Parra",
-      "elo": 1480.05,
-      "initial_elo": 1500.0,
-      "heats_processed": 10,
-      "num_opponents": 8,
-      "rank": 207
-    },
-    {
-      "competitor": "Tzu-Tung,Daisy Lee",
-      "partner": "",
-      "elo": 1477.47,
-      "initial_elo": 1500.0,
+      "competitor": "Ariana Yang",
+      "partner": "Ivan Statkevich",
+      "elo": 1489.21,
+      "initial_elo": 1433.51,
       "heats_processed": 9,
-      "num_opponents": 5,
-      "rank": 208
+      "num_opponents": 20,
+      "rank": 206
     },
     {
       "competitor": "Ivan Statkevich",
       "partner": "Anna Sergeenko",
-      "elo": 1477.35,
-      "initial_elo": 1456.69,
+      "elo": 1488.82,
+      "initial_elo": 1460.97,
       "heats_processed": 4,
       "num_opponents": 0,
-      "rank": 209
-    },
-    {
-      "competitor": "Igor Ilminskii",
-      "partner": "Lisa Radionova",
-      "elo": 1477.2,
-      "initial_elo": 1500.0,
-      "heats_processed": 13,
-      "num_opponents": 4,
-      "rank": 210
-    },
-    {
-      "competitor": "Jeff Hudson",
-      "partner": "Yuki Haraguchi",
-      "elo": 1476.27,
-      "initial_elo": 1500.0,
-      "heats_processed": 20,
-      "num_opponents": 6,
-      "rank": 211
-    },
-    {
-      "competitor": "Yuriy Kuvshynov",
-      "partner": "Donna Verna",
-      "elo": 1476.21,
-      "initial_elo": 1724.94,
-      "heats_processed": 40,
-      "num_opponents": 8,
-      "rank": 212
-    },
-    {
-      "competitor": "Yuriy Kuvshynov",
-      "partner": "Lynn Johnson",
-      "elo": 1476.21,
-      "initial_elo": 1724.94,
-      "heats_processed": 40,
-      "num_opponents": 4,
-      "rank": 213
-    },
-    {
-      "competitor": "Yuriy Kuvshynov",
-      "partner": "MacKenzie Soldan",
-      "elo": 1476.21,
-      "initial_elo": 1724.94,
-      "heats_processed": 5,
-      "num_opponents": 0,
-      "rank": 214
-    },
-    {
-      "competitor": "Yuriy Kuvshynov",
-      "partner": "Mary Clark-Bartlett",
-      "elo": 1476.21,
-      "initial_elo": 1724.94,
-      "heats_processed": 24,
-      "num_opponents": 4,
-      "rank": 215
-    },
-    {
-      "competitor": "Jennifer Farnworth",
-      "partner": "Sergey Malko",
-      "elo": 1474.0,
-      "initial_elo": 1575.0,
-      "heats_processed": 15,
-      "num_opponents": 4,
-      "rank": 216
-    },
-    {
-      "competitor": "Sergey Malko",
-      "partner": "Xiaobin Sanders",
-      "elo": 1474.0,
-      "initial_elo": 1575.0,
-      "heats_processed": 16,
-      "num_opponents": 0,
-      "rank": 217
-    },
-    {
-      "competitor": "Chloe Bagrak",
-      "partner": "Eitan Rafalovich",
-      "elo": 1470.9,
-      "initial_elo": 1500.0,
-      "heats_processed": 10,
-      "num_opponents": 14,
-      "rank": 218
-    },
-    {
-      "competitor": "Christina Akhanova",
-      "partner": "Dylan Chu",
-      "elo": 1458.77,
-      "initial_elo": 1586.1,
-      "heats_processed": 13,
-      "num_opponents": 6,
-      "rank": 219
-    },
-    {
-      "competitor": "Bailey Carrillo",
-      "partner": "Joanne Baerg",
-      "elo": 1456.86,
-      "initial_elo": 1500.0,
-      "heats_processed": 32,
-      "num_opponents": 9,
-      "rank": 220
+      "rank": 207
     },
     {
       "competitor": "Dylan Chi",
       "partner": "Isabella Moudry",
-      "elo": 1456.82,
-      "initial_elo": 1500.0,
+      "elo": 1475.57,
+      "initial_elo": 1503.66,
       "heats_processed": 31,
       "num_opponents": 25,
-      "rank": 221
+      "rank": 208
     },
     {
-      "competitor": "Christian Solares",
-      "partner": "Rachel Becker",
-      "elo": 1455.64,
-      "initial_elo": 1578.55,
-      "heats_processed": 24,
-      "num_opponents": 5,
-      "rank": 222
-    },
-    {
-      "competitor": "Marat Gutsalyuk",
-      "partner": "Sofia Gurwitz",
-      "elo": 1452.74,
-      "initial_elo": 1400.0,
-      "heats_processed": 15,
-      "num_opponents": 16,
-      "rank": 223
-    },
-    {
-      "competitor": "Lawrence Yen",
-      "partner": "Ying-chieh Chi",
-      "elo": 1451.85,
-      "initial_elo": 1500.0,
-      "heats_processed": 5,
-      "num_opponents": 20,
-      "rank": 224
-    },
-    {
-      "competitor": "Stefania Nefedova",
-      "partner": "",
-      "elo": 1449.23,
-      "initial_elo": 1500.0,
-      "heats_processed": 7,
-      "num_opponents": 4,
-      "rank": 225
-    },
-    {
-      "competitor": "Ivan Nikitin",
-      "partner": "Jennifer Lee",
-      "elo": 1448.7,
-      "initial_elo": 1434.3,
-      "heats_processed": 11,
-      "num_opponents": 4,
-      "rank": 226
-    },
-    {
-      "competitor": "Elijah Tucker",
-      "partner": "Karen Cosby",
-      "elo": 1446.68,
-      "initial_elo": 1500.0,
-      "heats_processed": 17,
-      "num_opponents": 8,
-      "rank": 227
-    },
-    {
-      "competitor": "Adrian Fu",
-      "partner": "Adele Fu",
-      "elo": 1444.9,
-      "initial_elo": 1497.05,
-      "heats_processed": 15,
-      "num_opponents": 16,
-      "rank": 228
-    },
-    {
-      "competitor": "Anna Sergeenko",
-      "partner": "Ethan Cheng",
-      "elo": 1443.28,
-      "initial_elo": 1466.06,
-      "heats_processed": 7,
-      "num_opponents": 0,
-      "rank": 229
-    },
-    {
-      "competitor": "Anna Sergeenko",
-      "partner": "Mirai Takahashi",
-      "elo": 1443.28,
-      "initial_elo": 1466.06,
-      "heats_processed": 2,
+      "competitor": "Artjom Shmigeljuk",
+      "partner": "Veronika Sobachevskaya",
+      "elo": 1473.37,
+      "initial_elo": 1470.7,
+      "heats_processed": 13,
       "num_opponents": 2,
-      "rank": 230
+      "rank": 209
     },
     {
-      "competitor": "Stefano Grassi",
-      "partner": "Zoey Zhang",
-      "elo": 1441.47,
-      "initial_elo": 1441.47,
-      "heats_processed": 15,
+      "competitor": "Aahrone Bakhvala",
+      "partner": "Anna Sergeenko",
+      "elo": 1472.56,
+      "initial_elo": 1518.76,
+      "heats_processed": 3,
       "num_opponents": 0,
-      "rank": 231
-    },
-    {
-      "competitor": "Chrystal Chen",
-      "partner": "Joseph McDonnell",
-      "elo": 1441.06,
-      "initial_elo": 1446.86,
-      "heats_processed": 31,
-      "num_opponents": 0,
-      "rank": 232
-    },
-    {
-      "competitor": "Walter Piche",
-      "partner": "Christina Lau",
-      "elo": 1439.32,
-      "initial_elo": 1500.0,
-      "heats_processed": 16,
-      "num_opponents": 10,
-      "rank": 233
+      "rank": 210
     },
     {
       "competitor": "David Blood",
       "partner": "Vanessa Thomson",
-      "elo": 1437.74,
-      "initial_elo": 1500.0,
+      "elo": 1471.24,
+      "initial_elo": 1519.31,
       "heats_processed": 16,
+      "num_opponents": 4,
+      "rank": 211
+    },
+    {
+      "competitor": "Stefano Grassi",
+      "partner": "Zoey Zhang",
+      "elo": 1470.54,
+      "initial_elo": 1470.54,
+      "heats_processed": 15,
+      "num_opponents": 0,
+      "rank": 212
+    },
+    {
+      "competitor": "Christian Solares",
+      "partner": "Rachel Becker",
+      "elo": 1466.37,
+      "initial_elo": 1618.26,
+      "heats_processed": 24,
+      "num_opponents": 5,
+      "rank": 213
+    },
+    {
+      "competitor": "Tzu-Tung,Daisy Lee",
+      "partner": "",
+      "elo": 1465.63,
+      "initial_elo": 1500.0,
+      "heats_processed": 9,
+      "num_opponents": 5,
+      "rank": 214
+    },
+    {
+      "competitor": "Jeff Hudson",
+      "partner": "Yuki Haraguchi",
+      "elo": 1460.67,
+      "initial_elo": 1500.0,
+      "heats_processed": 20,
+      "num_opponents": 6,
+      "rank": 215
+    },
+    {
+      "competitor": "Marat Gutsalyuk",
+      "partner": "Sofia Gurwitz",
+      "elo": 1458.65,
+      "initial_elo": 1400.0,
+      "heats_processed": 15,
+      "num_opponents": 16,
+      "rank": 216
+    },
+    {
+      "competitor": "Denis Filonenko",
+      "partner": "Diana Kovalenko",
+      "elo": 1456.71,
+      "initial_elo": 1595.99,
+      "heats_processed": 4,
+      "num_opponents": 4,
+      "rank": 217
+    },
+    {
+      "competitor": "Denis Filonenko",
+      "partner": "Lelie Takahashi",
+      "elo": 1456.71,
+      "initial_elo": 1595.99,
+      "heats_processed": 4,
+      "num_opponents": 2,
+      "rank": 218
+    },
+    {
+      "competitor": "Denis Filonenko",
+      "partner": "Ramona Stelzer",
+      "elo": 1456.71,
+      "initial_elo": 1595.99,
+      "heats_processed": 10,
+      "num_opponents": 2,
+      "rank": 219
+    },
+    {
+      "competitor": "Denis Filonenko",
+      "partner": "Sofia Tumansky",
+      "elo": 1456.71,
+      "initial_elo": 1595.99,
+      "heats_processed": 4,
+      "num_opponents": 2,
+      "rank": 220
+    },
+    {
+      "competitor": "Denis Filonenko",
+      "partner": "Sophia Statkevich",
+      "elo": 1456.71,
+      "initial_elo": 1595.99,
+      "heats_processed": 4,
+      "num_opponents": 2,
+      "rank": 221
+    },
+    {
+      "competitor": "Lawrence Yen",
+      "partner": "Ying-chieh Chi",
+      "elo": 1456.16,
+      "initial_elo": 1497.23,
+      "heats_processed": 5,
+      "num_opponents": 20,
+      "rank": 222
+    },
+    {
+      "competitor": "Cristian Jones",
+      "partner": "Jenessa Depew",
+      "elo": 1447.32,
+      "initial_elo": 1500.0,
+      "heats_processed": 10,
+      "num_opponents": 26,
+      "rank": 223
+    },
+    {
+      "competitor": "Bailey Carrillo",
+      "partner": "Joanne Baerg",
+      "elo": 1446.74,
+      "initial_elo": 1500.0,
+      "heats_processed": 32,
+      "num_opponents": 9,
+      "rank": 224
+    },
+    {
+      "competitor": "Maria Sivura",
+      "partner": "Ryan Hill",
+      "elo": 1445.59,
+      "initial_elo": 1471.01,
+      "heats_processed": 8,
+      "num_opponents": 0,
+      "rank": 225
+    },
+    {
+      "competitor": "Tyler Korpus",
+      "partner": "Sidonie Elliott",
+      "elo": 1440.23,
+      "initial_elo": 1500.0,
+      "heats_processed": 15,
+      "num_opponents": 16,
+      "rank": 226
+    },
+    {
+      "competitor": "Theresa Fitch",
+      "partner": "Cesar Rojo",
+      "elo": 1438.98,
+      "initial_elo": 1426.6,
+      "heats_processed": 30,
+      "num_opponents": 2,
+      "rank": 227
+    },
+    {
+      "competitor": "Ethan Cheng",
+      "partner": "Anna Sergeenko",
+      "elo": 1435.89,
+      "initial_elo": 1400.0,
+      "heats_processed": 7,
+      "num_opponents": 0,
+      "rank": 228
+    },
+    {
+      "competitor": "Eva Kaplanova",
+      "partner": "Ivan Doubianski",
+      "elo": 1435.69,
+      "initial_elo": 1500.0,
+      "heats_processed": 12,
+      "num_opponents": 24,
+      "rank": 229
+    },
+    {
+      "competitor": "Walter Piche",
+      "partner": "Christina Lau",
+      "elo": 1432.12,
+      "initial_elo": 1495.2,
+      "heats_processed": 16,
+      "num_opponents": 10,
+      "rank": 230
+    },
+    {
+      "competitor": "Johan Piper",
+      "partner": "Helen Piper",
+      "elo": 1430.12,
+      "initial_elo": 1400.0,
+      "heats_processed": 16,
+      "num_opponents": 0,
+      "rank": 231
+    },
+    {
+      "competitor": "Johan Piper",
+      "partner": "Kristina Kuvshynov",
+      "elo": 1430.12,
+      "initial_elo": 1400.0,
+      "heats_processed": 22,
+      "num_opponents": 2,
+      "rank": 232
+    },
+    {
+      "competitor": "Dmitry Lazo",
+      "partner": "Nina Kukui",
+      "elo": 1424.07,
+      "initial_elo": 1500.0,
+      "heats_processed": 12,
+      "num_opponents": 24,
+      "rank": 233
+    },
+    {
+      "competitor": "Stefania Nefedova",
+      "partner": "",
+      "elo": 1423.17,
+      "initial_elo": 1476.69,
+      "heats_processed": 7,
       "num_opponents": 4,
       "rank": 234
     },
     {
       "competitor": "Claire Widman",
       "partner": "Dante Camacho",
-      "elo": 1436.4,
-      "initial_elo": 1558.5,
+      "elo": 1421.31,
+      "initial_elo": 1509.61,
       "heats_processed": 27,
       "num_opponents": 22,
       "rank": 235
@@ -2125,74 +2125,11 @@
     {
       "competitor": "Claire Widman",
       "partner": "Don Bockenfeld",
-      "elo": 1436.4,
-      "initial_elo": 1558.5,
+      "elo": 1421.31,
+      "initial_elo": 1509.61,
       "heats_processed": 35,
       "num_opponents": 0,
       "rank": 236
-    },
-    {
-      "competitor": "Johan Piper",
-      "partner": "Helen Piper",
-      "elo": 1435.67,
-      "initial_elo": 1400.0,
-      "heats_processed": 16,
-      "num_opponents": 0,
-      "rank": 237
-    },
-    {
-      "competitor": "Johan Piper",
-      "partner": "Kristina Kuvshynov",
-      "elo": 1435.67,
-      "initial_elo": 1400.0,
-      "heats_processed": 22,
-      "num_opponents": 2,
-      "rank": 238
-    },
-    {
-      "competitor": "Cristian Jones",
-      "partner": "Jenessa Depew",
-      "elo": 1434.04,
-      "initial_elo": 1500.0,
-      "heats_processed": 10,
-      "num_opponents": 26,
-      "rank": 239
-    },
-    {
-      "competitor": "James Assay",
-      "partner": "Polina Oddr",
-      "elo": 1433.18,
-      "initial_elo": 1500.0,
-      "heats_processed": 13,
-      "num_opponents": 7,
-      "rank": 240
-    },
-    {
-      "competitor": "Eva Kaplanova",
-      "partner": "Ivan Doubianski",
-      "elo": 1431.51,
-      "initial_elo": 1500.0,
-      "heats_processed": 12,
-      "num_opponents": 24,
-      "rank": 241
-    },
-    {
-      "competitor": "Sidonie Elliott",
-      "partner": "Tyler Korpus",
-      "elo": 1424.36,
-      "initial_elo": 1500.0,
-      "heats_processed": 15,
-      "num_opponents": 16,
-      "rank": 242
-    },
-    {
-      "competitor": "Dmitry Lazo",
-      "partner": "Nina Kukui",
-      "elo": 1419.98,
-      "initial_elo": 1500.0,
-      "heats_processed": 12,
-      "num_opponents": 24,
-      "rank": 243
     },
     {
       "competitor": "Alexandra Golikova",
@@ -2201,7 +2138,7 @@
       "initial_elo": 1400.0,
       "heats_processed": 13,
       "num_opponents": 0,
-      "rank": 244
+      "rank": 237
     },
     {
       "competitor": "Jade N Lee",
@@ -2210,61 +2147,79 @@
       "initial_elo": 1400.0,
       "heats_processed": 3,
       "num_opponents": 2,
-      "rank": 245
+      "rank": 238
     },
     {
-      "competitor": "Michelle Ostapenko",
-      "partner": "Jonathan Ostapenko",
-      "elo": 1415.31,
-      "initial_elo": 1458.24,
-      "heats_processed": 10,
-      "num_opponents": 12,
-      "rank": 246
-    },
-    {
-      "competitor": "Philip Pettinger",
-      "partner": "Susan Peterson",
-      "elo": 1413.73,
-      "initial_elo": 1355.46,
-      "heats_processed": 9,
-      "num_opponents": 2,
-      "rank": 247
-    },
-    {
-      "competitor": "Dante Camacho",
+      "competitor": "Elijah Tucker",
       "partner": "Karen Cosby",
-      "elo": 1413.49,
-      "initial_elo": 1558.5,
-      "heats_processed": 61,
-      "num_opponents": 31,
-      "rank": 248
+      "elo": 1412.6,
+      "initial_elo": 1500.0,
+      "heats_processed": 17,
+      "num_opponents": 8,
+      "rank": 239
     },
     {
-      "competitor": "Charlotte Liu",
-      "partner": "Sabine Blyth",
-      "elo": 1408.55,
-      "initial_elo": 1369.46,
-      "heats_processed": 9,
-      "num_opponents": 4,
-      "rank": 249
+      "competitor": "Anna Sergeenko",
+      "partner": "Mirai Takahashi",
+      "elo": 1410.57,
+      "initial_elo": 1434.4,
+      "heats_processed": 2,
+      "num_opponents": 2,
+      "rank": 240
     },
     {
       "competitor": "Anderson Zhou",
       "partner": "",
-      "elo": 1407.16,
-      "initial_elo": 1430.98,
+      "elo": 1407.85,
+      "initial_elo": 1438.37,
       "heats_processed": 12,
       "num_opponents": 18,
-      "rank": 250
+      "rank": 241
+    },
+    {
+      "competitor": "Cesar Rojo",
+      "partner": "Christina Lau",
+      "elo": 1405.97,
+      "initial_elo": 1537.56,
+      "heats_processed": 56,
+      "num_opponents": 8,
+      "rank": 242
+    },
+    {
+      "competitor": "Cesar Rojo",
+      "partner": "Niki Moghaddam",
+      "elo": 1405.97,
+      "initial_elo": 1537.56,
+      "heats_processed": 23,
+      "num_opponents": 0,
+      "rank": 243
+    },
+    {
+      "competitor": "Cesar Rojo",
+      "partner": "Shabnam Farzaneh",
+      "elo": 1405.97,
+      "initial_elo": 1537.56,
+      "heats_processed": 12,
+      "num_opponents": 0,
+      "rank": 244
+    },
+    {
+      "competitor": "Lillian Young",
+      "partner": "David Estrada",
+      "elo": 1405.33,
+      "initial_elo": 1516.07,
+      "heats_processed": 22,
+      "num_opponents": 16,
+      "rank": 245
     },
     {
       "competitor": "Isabella Aerov",
       "partner": "",
-      "elo": 1406.28,
+      "elo": 1402.92,
       "initial_elo": 1500.0,
       "heats_processed": 7,
       "num_opponents": 18,
-      "rank": 251
+      "rank": 246
     },
     {
       "competitor": "Alana Bosetta",
@@ -2273,7 +2228,16 @@
       "initial_elo": 1400.0,
       "heats_processed": 7,
       "num_opponents": 0,
-      "rank": 252
+      "rank": 247
+    },
+    {
+      "competitor": "Alena Sivura",
+      "partner": "Stephen Hill",
+      "elo": 1400.0,
+      "initial_elo": 1400.0,
+      "heats_processed": 8,
+      "num_opponents": 0,
+      "rank": 248
     },
     {
       "competitor": "Ashlynn Mallamace",
@@ -2282,7 +2246,7 @@
       "initial_elo": 1400.0,
       "heats_processed": 8,
       "num_opponents": 0,
-      "rank": 253
+      "rank": 249
     },
     {
       "competitor": "Chris Bertrand",
@@ -2291,7 +2255,7 @@
       "initial_elo": 1400.0,
       "heats_processed": 12,
       "num_opponents": 0,
-      "rank": 254
+      "rank": 250
     },
     {
       "competitor": "Don Bockenfeld",
@@ -2300,7 +2264,7 @@
       "initial_elo": 1400.0,
       "heats_processed": 45,
       "num_opponents": 0,
-      "rank": 255
+      "rank": 251
     },
     {
       "competitor": "Joshua Wang",
@@ -2309,60 +2273,96 @@
       "initial_elo": 1400.0,
       "heats_processed": 4,
       "num_opponents": 0,
+      "rank": 252
+    },
+    {
+      "competitor": "Xiaobin Sanders",
+      "partner": "Sergey Malko",
+      "elo": 1400.0,
+      "initial_elo": 1400.0,
+      "heats_processed": 16,
+      "num_opponents": 0,
+      "rank": 253
+    },
+    {
+      "competitor": "Dylan Chu",
+      "partner": "Christina Akhanova",
+      "elo": 1396.87,
+      "initial_elo": 1511.31,
+      "heats_processed": 13,
+      "num_opponents": 6,
+      "rank": 254
+    },
+    {
+      "competitor": "Philip Pettinger",
+      "partner": "Susan Peterson",
+      "elo": 1391.96,
+      "initial_elo": 1339.86,
+      "heats_processed": 9,
+      "num_opponents": 2,
+      "rank": 255
+    },
+    {
+      "competitor": "Eseniia Ivanitskaia",
+      "partner": "Mirai Takahashi",
+      "elo": 1385.76,
+      "initial_elo": 1409.58,
+      "heats_processed": 12,
+      "num_opponents": 20,
       "rank": 256
     },
     {
-      "competitor": "Ryan Hill",
-      "partner": "Maria Sivura",
-      "elo": 1400.0,
-      "initial_elo": 1400.0,
-      "heats_processed": 8,
-      "num_opponents": 0,
+      "competitor": "David Estrada",
+      "partner": "Suzanne Wilcox",
+      "elo": 1383.5,
+      "initial_elo": 1627.63,
+      "heats_processed": 22,
+      "num_opponents": 8,
       "rank": 257
+    },
+    {
+      "competitor": "Michelle Ostapenko",
+      "partner": "Jonathan Ostapenko",
+      "elo": 1382.83,
+      "initial_elo": 1422.87,
+      "heats_processed": 10,
+      "num_opponents": 12,
+      "rank": 258
     },
     {
       "competitor": "Asya Pereltsvaig",
       "partner": "Karlis Treijs",
-      "elo": 1395.4,
-      "initial_elo": 1488.07,
+      "elo": 1382.3,
+      "initial_elo": 1486.96,
       "heats_processed": 13,
       "num_opponents": 4,
-      "rank": 258
-    },
-    {
-      "competitor": "Emma Gutkin",
-      "partner": "Valeriia Hudimova",
-      "elo": 1387.84,
-      "initial_elo": 1400.0,
-      "heats_processed": 11,
-      "num_opponents": 2,
       "rank": 259
     },
     {
       "competitor": "Olivia De La Cruz",
       "partner": "",
-      "elo": 1386.49,
-      "initial_elo": 1400.0,
+      "elo": 1377.81,
+      "initial_elo": 1390.64,
       "heats_processed": 8,
       "num_opponents": 15,
       "rank": 260
     },
     {
-      "competitor": "David Estrada",
-      "partner": "Lillian Young",
-      "elo": 1379.55,
-      "initial_elo": 1611.75,
-      "heats_processed": 22,
-      "num_opponents": 16,
+      "competitor": "Elizabeth Kossyak",
+      "partner": "Danya Rubashevsky",
+      "elo": 1373.93,
+      "initial_elo": 1432.34,
+      "heats_processed": 8,
+      "num_opponents": 6,
       "rank": 261
     },
     {
-      "competitor": "David Estrada",
-      "partner": "Suzanne Wilcox",
-      "elo": 1379.55,
-      "initial_elo": 1611.75,
-      "heats_processed": 22,
-      "num_opponents": 8,
+      "competitor": "Igor Ilminskii",
+      "partner": "Lisa Radionova",
+      "elo": 1369.47,
+      "initial_elo": 1367.18,
+      "heats_processed": 13,
+      "num_opponents": 4,
       "rank": 262
     },
     {
@@ -2375,129 +2375,129 @@
       "rank": 263
     },
     {
-      "competitor": "Mirai Takahashi",
-      "partner": "Eseniia Ivanitskaia",
-      "elo": 1363.43,
-      "initial_elo": 1359.81,
-      "heats_processed": 12,
-      "num_opponents": 20,
+      "competitor": "Ivan Nikitin",
+      "partner": "Jennifer Lee",
+      "elo": 1363.32,
+      "initial_elo": 1330.04,
+      "heats_processed": 11,
+      "num_opponents": 4,
       "rank": 264
+    },
+    {
+      "competitor": "Chloe Bagrak",
+      "partner": "Eitan Rafalovich",
+      "elo": 1358.32,
+      "initial_elo": 1356.15,
+      "heats_processed": 10,
+      "num_opponents": 14,
+      "rank": 265
+    },
+    {
+      "competitor": "Rondo Yang",
+      "partner": "Stephanie Yang",
+      "elo": 1346.57,
+      "initial_elo": 1500.0,
+      "heats_processed": 16,
+      "num_opponents": 26,
+      "rank": 266
     },
     {
       "competitor": "Jeffrey Goltiao",
       "partner": "Kristine Snell",
-      "elo": 1356.26,
+      "elo": 1346.38,
       "initial_elo": 1500.0,
       "heats_processed": 75,
       "num_opponents": 11,
-      "rank": 265
+      "rank": 267
     },
     {
       "competitor": "Alina Bitlian",
       "partner": "Tonnya Stoikova",
-      "elo": 1353.5,
+      "elo": 1342.05,
       "initial_elo": 1400.0,
       "heats_processed": 11,
       "num_opponents": 2,
-      "rank": 266
+      "rank": 268
     },
     {
-      "competitor": "Elizabeth Kossyak",
-      "partner": "Danya Rubashevsky",
-      "elo": 1350.69,
-      "initial_elo": 1400.0,
-      "heats_processed": 8,
-      "num_opponents": 6,
-      "rank": 267
+      "competitor": "Dylan Soo Hoo",
+      "partner": "Raya Ilieva",
+      "elo": 1339.48,
+      "initial_elo": 1328.53,
+      "heats_processed": 13,
+      "num_opponents": 4,
+      "rank": 269
     },
     {
       "competitor": "Alex N Chen",
       "partner": "Ally Leung",
-      "elo": 1349.7,
+      "elo": 1328.82,
       "initial_elo": 1400.0,
       "heats_processed": 9,
-      "num_opponents": 4,
-      "rank": 268
-    },
-    {
-      "competitor": "Platon Valoha",
-      "partner": "Susanna Williams",
-      "elo": 1348.64,
-      "initial_elo": 1400.0,
-      "heats_processed": 13,
-      "num_opponents": 8,
-      "rank": 269
-    },
-    {
-      "competitor": "Esperanza Chavez",
-      "partner": "Pavlo Barsuk",
-      "elo": 1347.68,
-      "initial_elo": 1321.47,
-      "heats_processed": 36,
       "num_opponents": 4,
       "rank": 270
     },
     {
       "competitor": "Ally Leung",
       "partner": "Danya Rubashevsky",
-      "elo": 1333.13,
+      "elo": 1325.2,
       "initial_elo": 1400.0,
       "heats_processed": 9,
       "num_opponents": 7,
       "rank": 271
     },
     {
-      "competitor": "Dylan Soo Hoo",
-      "partner": "Raya Ilieva",
-      "elo": 1332.87,
-      "initial_elo": 1319.36,
-      "heats_processed": 13,
-      "num_opponents": 4,
+      "competitor": "Janet Hagedorn",
+      "partner": "Nikolay Georgiev",
+      "elo": 1323.35,
+      "initial_elo": 1750.0,
+      "heats_processed": 255,
+      "num_opponents": 10,
       "rank": 272
+    },
+    {
+      "competitor": "Dante Camacho",
+      "partner": "Karen Cosby",
+      "elo": 1322.63,
+      "initial_elo": 1348.03,
+      "heats_processed": 61,
+      "num_opponents": 31,
+      "rank": 273
     },
     {
       "competitor": "Joan Warshall ",
       "partner": "Vladimir Velev",
-      "elo": 1331.99,
-      "initial_elo": 1500.0,
+      "elo": 1261.78,
+      "initial_elo": 1168.8,
       "heats_processed": 160,
       "num_opponents": 23,
-      "rank": 273
-    },
-    {
-      "competitor": "Janet Hagedorn",
-      "partner": "Nikolay Georgiev",
-      "elo": 1331.17,
-      "initial_elo": 1750.0,
-      "heats_processed": 255,
-      "num_opponents": 10,
       "rank": 274
-    },
-    {
-      "competitor": "Rondo Yang",
-      "partner": "Stephanie Yang",
-      "elo": 1325.8,
-      "initial_elo": 1500.0,
-      "heats_processed": 16,
-      "num_opponents": 26,
-      "rank": 275
-    },
-    {
-      "competitor": "Daniel Lee Tran",
-      "partner": "Megan Mallamace",
-      "elo": 1316.5,
-      "initial_elo": 1384.06,
-      "heats_processed": 10,
-      "num_opponents": 5,
-      "rank": 276
     },
     {
       "competitor": "Jacqueline Brener-Dubois",
       "partner": "Mikhael Brener-Dubois",
-      "elo": 1248.97,
-      "initial_elo": 1332.32,
+      "elo": 1258.4,
+      "initial_elo": 1341.46,
       "heats_processed": 15,
       "num_opponents": 16,
+      "rank": 275
+    },
+    {
+      "competitor": "Pavlo Barsuk",
+      "partner": "Esperanza Chavez",
+      "elo": 1224.72,
+      "initial_elo": 1191.27,
+      "heats_processed": 36,
+      "num_opponents": 4,
+      "rank": 276
+    },
+    {
+      "competitor": "Daniel Lee Tran",
+      "partner": "Megan Mallamace",
+      "elo": 1152.5,
+      "initial_elo": 1190.97,
+      "heats_processed": 10,
+      "num_opponents": 5,
       "rank": 277
     }
   ],
