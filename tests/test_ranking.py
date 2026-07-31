@@ -6,7 +6,6 @@ from ranking.models import DanceResult
 from ranking.parser import parse_results, _join_name, _extract_placement
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
-from ranking.clusters import build_graph, assign_leaderboards
 from ranking.elo_store import compute_deltas, load_history, load_ratings, load_ratings_full, save_ratings, write_history
 from ranking.writer import build_ranking_json, write_ranking_json
 
@@ -320,38 +319,6 @@ class TestEloCalculator:
             elo_module.PARTNER_WEIGHT_BASE = original
 
 
-class TestClusters:
-    def _make_results(self, groups: list[list[str]]) -> list[DanceResult]:
-        results = []
-        for i, group in enumerate(groups):
-            results.append(DanceResult(
-                event_id=i, event_name="T", round_id=1, round_name="F",
-                dance_id=1, dance_name="W", session_id=1, heat_number=i, time="",
-                competitors=group, partners={}, placements={c: j+1 for j, c in enumerate(group)},
-            ))
-        return results
-
-    def test_fully_connected_group_gets_label_A(self):
-        results = self._make_results([["A", "B", "C", "D", "E"]])
-        graph = build_graph(results)
-        assignments = assign_leaderboards(graph)
-        assert all(v == "A" for v in assignments.values())
-
-    def test_isolated_node_gets_not_rated(self):
-        results = self._make_results([["A", "B"], ["C"]])
-        graph = build_graph(results)
-        assignments = assign_leaderboards(graph)
-        assert assignments.get("C") == "Not Rated"
-
-    def test_two_separate_clusters(self):
-        results = self._make_results([["A", "B"], ["C", "D"]])
-        graph = build_graph(results)
-        assignments = assign_leaderboards(graph)
-        assert assignments["A"] == assignments["B"]
-        assert assignments["C"] == assignments["D"]
-        assert assignments["A"] != assignments["C"]
-
-
 class TestEloStore:
     def test_load_returns_empty_when_no_file(self, tmp_path):
         assert load_ratings(tmp_path) == {}
@@ -433,19 +400,18 @@ class TestRankingWriter:
             dance_results=[],
             final_ratings={"Alice": 1550.0, "Bob": 1480.0},
             initial_ratings={"Alice": 1500.0, "Bob": 1500.0},
-            assignments={"Alice": "A", "Bob": "A"},
             competitor_studios={"Alice": "Fred Astaire"},
             elo_deltas={"Alice": "+50.0", "Bob": "-20.0"},
         )
 
     def test_top_level_keys(self):
         data = self._minimal_data()
-        for key in ("meta", "leaderboards", "competitors", "studios", "competitor_studios"):
+        for key in ("meta", "couples", "competitors", "studios", "competitor_studios"):
             assert key in data
 
-    def test_leaderboard_sorted_by_elo(self):
+    def test_couples_sorted_by_elo(self):
         data = self._minimal_data()
-        couples = data["leaderboards"]["A"]["couples"]
+        couples = data["couples"]
         assert couples[0]["competitor"] == "Alice"
         assert couples[0]["rank"] == 1
 
@@ -483,7 +449,6 @@ class TestRankingWriter:
             final_ratings={"Helen": 1300.0, "Yuriy": 1600.0, "Johan": 1290.0,
                             "Ann": 1400.0, "Bob": 1400.0, "Cara": 1500.0, "Dan": 1500.0},
             initial_ratings={},
-            assignments={n: "A" for n in ("Helen", "Yuriy", "Johan", "Ann", "Bob", "Cara", "Dan")},
             competitor_studios={},
             elo_deltas={},
         )
@@ -492,7 +457,7 @@ class TestRankingWriter:
         # representative per *partnership*, so "Helen" may show up as either
         # the "competitor" or the "partner" field depending on elo tie-break —
         # look up by unordered pair, the same way the frontend's coupleKey does.
-        couples = data["leaderboards"]["A"]["couples"]
+        couples = data["couples"]
         helen_rows = {
             frozenset((c["competitor"], c["partner"])): c
             for c in couples if "Helen" in (c["competitor"], c["partner"])

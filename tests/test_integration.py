@@ -80,24 +80,22 @@ class TestRankingPipeline:
         errors = validate_ranking_json(pipeline_dirs / "data" / "ranking_999.json")
         assert errors == [], errors
 
-    def test_ranking_contains_leaderboard(self, pipeline_dirs):
+    def test_ranking_contains_couples(self, pipeline_dirs):
         import ranking
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         ranking.run(args)
         data = json.loads((pipeline_dirs / "data" / "ranking_999.json").read_text())
-        assert len(data["leaderboards"]) >= 1
-        first_lb = list(data["leaderboards"].values())[0]
-        assert len(first_lb["couples"]) >= 2
+        assert len(data["couples"]) >= 2
 
     def test_winner_ranked_first(self, pipeline_dirs):
         import ranking
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         ranking.run(args)
         data = json.loads((pipeline_dirs / "data" / "ranking_999.json").read_text())
-        for lb in data["leaderboards"].values():
-            if lb["couples"]:
-                assert lb["couples"][0]["rank"] == 1
-                assert lb["couples"][0]["elo"] >= lb["couples"][-1]["elo"]
+        couples = data["couples"]
+        if couples:
+            assert couples[0]["rank"] == 1
+            assert couples[0]["elo"] >= couples[-1]["elo"]
 
 
 class TestFullPipeline:

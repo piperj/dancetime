@@ -5,7 +5,6 @@ from scrape.zip_store import load_json
 from ranking.parser import parse_results
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
-from ranking.clusters import assign_leaderboards, build_graph
 from ranking.elo_store import (
     compute_deltas, load_history, load_ratings_full, save_ratings, write_history,
 )
@@ -136,9 +135,6 @@ def run(args):
         new_history[str(cyi)] = heat_history
         current_elo = {**current_elo, **final_ratings}
 
-        graph = build_graph(dance_results)
-        assignments = assign_leaderboards(graph)
-
         competitor_studios = {}
         for comp_data in results_data.get("results", []):
             meta = comp_data.get("_metadata", {})
@@ -155,7 +151,6 @@ def run(args):
             dance_results=dance_results,
             final_ratings=final_ratings,
             initial_ratings=initial_ratings,
-            assignments=assignments,
             competitor_studios=competitor_studios,
             elo_deltas=elo_deltas,
         )

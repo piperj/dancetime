@@ -25,7 +25,6 @@ def build_ranking_json(
     dance_results: list[DanceResult],
     final_ratings: dict[str, float],
     initial_ratings: dict[str, float],
-    assignments: dict[str, str],
     competitor_studios: dict[str, str],
     elo_deltas: dict[str, str],
 ) -> dict:
@@ -47,9 +46,8 @@ def build_ranking_json(
                 if other != c and other != partner:
                     partnership_opponents[key].add(other)
 
-    leaderboards: dict[str, list] = defaultdict(list)
+    couples: list = []
     for competitor, elo in final_ratings.items():
-        label = assignments.get(competitor, "Not Rated")
         studio = competitor_studios.get(competitor, "")
         # Competitors with no couple heats this competition (solo entries only,
         # or no dance_results at all) get a single partner-less row.
@@ -57,7 +55,7 @@ def build_ranking_json(
             key = (competitor, partner)
             partner_studio = competitor_studios.get(partner, "") if partner else ""
 
-            leaderboards[label].append({
+            couples.append({
                 "competitor": competitor,
                 "partner": partner,
                 "studio": studio,
@@ -69,15 +67,12 @@ def build_ranking_json(
                 "num_opponents": len(partnership_opponents.get(key, set())),
             })
 
-    result_leaderboards = {}
-    for label, couples in leaderboards.items():
-        # Tie-break by name so elo ties resolve the same way every run, regardless
-        # of upstream dict/set iteration order.
-        couples.sort(key=lambda x: (-x["elo"], x["competitor"]))
-        couples = dedup_couples(couples)
-        for rank, couple in enumerate(couples, start=1):
-            couple["rank"] = rank
-        result_leaderboards[label] = {"label": label, "size": len(couples), "couples": couples}
+    # Tie-break by name so elo ties resolve the same way every run, regardless
+    # of upstream dict/set iteration order.
+    couples.sort(key=lambda x: (-x["elo"], x["competitor"]))
+    couples = dedup_couples(couples)
+    for rank, couple in enumerate(couples, start=1):
+        couple["rank"] = rank
 
     name, date_range, location = comp_meta(competition_info)
 
@@ -92,7 +87,7 @@ def build_ranking_json(
             "date_range": date_range,
             "location": location,
         },
-        "leaderboards": result_leaderboards,
+        "couples": couples,
         "competitors": all_competitors,
         "studios": studios,
         "competitor_studios": competitor_studios,

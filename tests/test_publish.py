@@ -20,7 +20,7 @@ VALID_HEATS = {
 
 VALID_RANKING = {
     "meta": {"cyi": 373, "name": "Test Ball", "date_range": "Jan 29", "location": "Columbus", "elo_params": {}},
-    "leaderboards": {},
+    "couples": [],
     "competitors": [],
     "studios": [],
     "competitor_studios": {},
@@ -59,13 +59,13 @@ class TestValidator:
         p.write_text(json.dumps(VALID_RANKING))
         assert validate_ranking_json(p) == []
 
-    def test_ranking_missing_leaderboards(self, tmp_path):
+    def test_ranking_missing_couples(self, tmp_path):
         bad = dict(VALID_RANKING)
-        del bad["leaderboards"]
+        del bad["couples"]
         p = tmp_path / "ranking.json"
         p.write_text(json.dumps(bad))
         errors = validate_ranking_json(p)
-        assert any("leaderboards" in e for e in errors)
+        assert any("couples" in e for e in errors)
 
     def test_valid_index_no_errors(self, tmp_path):
         p = tmp_path / "index.json"

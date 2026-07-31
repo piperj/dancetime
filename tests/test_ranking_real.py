@@ -26,67 +26,46 @@ def _all_individuals(couples: list[dict]) -> set[str]:
 
 
 @pytest.fixture(scope="module")
-def raw_leaderboards():
-    return json.loads(RANKING_FILE.read_text())["leaderboards"]
+def raw_couples():
+    return json.loads(RANKING_FILE.read_text())["couples"]
 
 
 @pytest.fixture(scope="module")
-def deduped_leaderboards(raw_leaderboards):
-    return {label: dedup_couples(lb["couples"]) for label, lb in raw_leaderboards.items()}
+def deduped_couples(raw_couples):
+    return dedup_couples(raw_couples)
 
 
 class TestDedupOnCityLightsData:
-    def test_no_duplicate_pairs_after_dedup(self, deduped_leaderboards):
-        for label, couples in deduped_leaderboards.items():
-            keys = [_pair_key(c) for c in couples]
-            assert len(keys) == len(set(keys)), (
-                f"Leaderboard {label}: duplicate canonical pair after dedup"
-            )
+    def test_no_duplicate_pairs_after_dedup(self, deduped_couples):
+        keys = [_pair_key(c) for c in deduped_couples]
+        assert len(keys) == len(set(keys)), "duplicate canonical pair after dedup"
 
-    def test_no_individuals_lost_after_dedup(self, raw_leaderboards, deduped_leaderboards):
-        for label in raw_leaderboards:
-            before = _all_individuals(raw_leaderboards[label]["couples"])
-            after = _all_individuals(deduped_leaderboards[label])
-            assert before == after, (
-                f"Leaderboard {label}: individuals changed — "
-                f"lost={before - after}, gained={after - before}"
-            )
+    def test_no_individuals_lost_after_dedup(self, raw_couples, deduped_couples):
+        before = _all_individuals(raw_couples)
+        after = _all_individuals(deduped_couples)
+        assert before == after, (
+            f"individuals changed — lost={before - after}, gained={after - before}"
+        )
 
-    def test_written_file_has_no_mirror_pairs(self, raw_leaderboards):
+    def test_written_file_has_no_mirror_pairs(self, raw_couples):
         # The writer calls dedup_couples() before writing, so the file must already
         # be clean — no couple should appear as both (A, B) and (B, A).
-        for label, lb in raw_leaderboards.items():
-            keys = [_pair_key(c) for c in lb["couples"]]
-            assert len(keys) == len(set(keys)), (
-                f"Leaderboard {label}: mirror pair found in written file"
-            )
+        keys = [_pair_key(c) for c in raw_couples]
+        assert len(keys) == len(set(keys)), "mirror pair found in written file"
 
-    def test_known_pair_appears_exactly_once(self, raw_leaderboards):
+    def test_known_pair_appears_exactly_once(self, raw_couples):
         # Grisha Radiush & Agniia Sivkovych must appear exactly once in the file.
-        lb_a = raw_leaderboards["A"]["couples"]
         matches = [
-            c for c in lb_a
+            c for c in raw_couples
             if c["competitor"] in ("Agniia Sivkovych", "Grisha Radiush")
             and c.get("partner") in ("Agniia Sivkovych", "Grisha Radiush")
         ]
         assert len(matches) == 1
 
-    def test_dedup_is_idempotent(self, raw_leaderboards):
-        for label, lb in raw_leaderboards.items():
-            once = dedup_couples(lb["couples"])
-            twice = dedup_couples(once)
-            assert len(once) == len(twice), (
-                f"Leaderboard {label}: dedup is not idempotent"
-            )
-
-    def test_small_leaderboards_have_one_pair(self, raw_leaderboards):
-        # Non-A leaderboards in CYI 373 each contain exactly one couple.
-        for label, lb in raw_leaderboards.items():
-            if label == "A":
-                continue
-            assert len(lb["couples"]) == 1, (
-                f"Leaderboard {label}: expected 1 pair, got {len(lb['couples'])}"
-            )
+    def test_dedup_is_idempotent(self, raw_couples):
+        once = dedup_couples(raw_couples)
+        twice = dedup_couples(once)
+        assert len(once) == len(twice), "dedup is not idempotent"
 
 
 ZIP_FILE = Path(__file__).parent.parent / "data" / "raw" / "comp_373.zip"

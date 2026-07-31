@@ -30,8 +30,7 @@ def _has_heats(path: Path) -> bool:
 
 def _has_ranking(path: Path) -> bool:
     try:
-        lbs = json.loads(path.read_text()).get("leaderboards", {})
-        return any(lb.get("couples") for lb in lbs.values())
+        return bool(json.loads(path.read_text()).get("couples"))
     except Exception:
         return False
 

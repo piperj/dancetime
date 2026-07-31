@@ -331,7 +331,7 @@
 
   function updateTabVisibility() {
     const hasHeats   = (heatsData?.competitors?.length ?? 0) > 0;
-    const hasRanking = Object.values(rankingData?.leaderboards ?? {}).some(lb => lb.couples?.length > 0);
+    const hasRanking = (rankingData?.couples?.length ?? 0) > 0;
     const showElo    = eloVisible();
 
     const heatsBtn   = document.querySelector('nav button[data-tab="heats"]');
@@ -475,15 +475,15 @@
             renderCurrentHeatsView();
           });
         }
-        Object.values(rankingData.leaderboards || {}).forEach(lb => {
+        {
           const seen = new Set();
-          lb.couples = lb.couples.filter(c => {
+          rankingData.couples = (rankingData.couples || []).filter(c => {
             const key = coupleKey(c.competitor, c.partner);
             if (seen.has(key)) return false;
             seen.add(key);
             return true;
           });
-        });
+        }
 
         heatsByKey = {}; heatsByNumber = {};
         sessionFirstHeatTime = {};
@@ -537,9 +537,7 @@
 
         if (prevCompetitor) {
           const inHeats = h.competitors?.includes(prevCompetitor) || h.studios?.includes(prevCompetitor) || !!bibHeats[prevCompetitor];
-          const inRanking = Object.values(r.leaderboards || {}).some(lb =>
-            lb.couples?.some(c => c.competitor === prevCompetitor || c.partner === prevCompetitor)
-          );
+          const inRanking = (r.couples || []).some(c => c.competitor === prevCompetitor || c.partner === prevCompetitor);
           if (inHeats) {
             setHeatsSearch(prevCompetitor);
           } else if (allCompetitorNames.includes(prevCompetitor)) {
@@ -1337,11 +1335,9 @@
   function buildRankingSuggestions() {
     if (!rankingData) return;
     const names = new Set(allCompetitorNames);
-    Object.values(rankingData.leaderboards || {}).forEach(lb =>
-      (lb.couples || []).forEach(c => {
-        if (c.studio) names.add(c.studio);
-      })
-    );
+    (rankingData.couples || []).forEach(c => {
+      if (c.studio) names.add(c.studio);
+    });
     buildSuggestions('ranking-suggestions', [...names].sort());
   }
 
@@ -1353,9 +1349,7 @@
 
   function buildCoupleMap() {
     const map = {};
-    Object.values(rankingData.leaderboards || {}).forEach(lb => {
-      lb.couples.forEach(c => { map[coupleKey(c.competitor, c.partner)] = c; });
-    });
+    (rankingData.couples || []).forEach(c => { map[coupleKey(c.competitor, c.partner)] = c; });
     return map;
   }
 
@@ -1388,14 +1382,10 @@
                (c.studio || '').toLowerCase().includes(query)
         : () => true;
 
-    const sections = Object.values(rankingData.leaderboards)
-      .filter(lb => lb.couples.length)
-      .sort((a, b) => a.label.localeCompare(b.label));
+    const couples = (rankingData.couples || []).filter(predicate);
 
-    let html = sections.map(lb => {
-      const couples = lb.couples.filter(predicate);
-      if (!couples.length) return '';
-
+    let html = '';
+    if (couples.length) {
       const displayMap = new Map();
       couples.forEach(c => displayMap.set(coupleKey(c.competitor, c.partner), c));
       if (query && heatsData) {
@@ -1412,8 +1402,7 @@
         .sort((a, b) => a.rank - b.rank)
         .map(renderCoupleRow).join('');
 
-      return `<div class="lb-section">
-        <h2>Leaderboard ${esc(lb.label)} <small style="font-weight:normal;color:#888">(${lb.size} couples)</small></h2>
+      html = `<div class="lb-section">
         <div style="overflow-x:auto">
           <table class="lb-table">
             <thead><tr><th>#</th><th>Couple</th><th>Studio</th><th>ELO</th><th>Δ</th><th>Wins</th></tr></thead>
@@ -1421,7 +1410,7 @@
           </table>
         </div>
       </div>`;
-    }).join('');
+    }
 
     if (!html && raw && !bibNames && allCompetitorNames.includes(raw)) {
       const compName = compList[activeCompIdx]?.short_name || compList[activeCompIdx]?.name || 'this competition';
