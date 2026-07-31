@@ -6,7 +6,7 @@ from ranking.parser import parse_results
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
 from ranking.elo_store import (
-    load_history, load_ratings_full, save_ratings, write_history_for_cyi,
+    load_heats_competitors, load_history, load_ratings_full, save_ratings, write_history_for_cyi,
 )
 from ranking.writer import build_ranking_json, write_ranking_json
 from schedule.calendar import load_calendar, parse_date
@@ -161,7 +161,7 @@ def run(args):
             comp_counts[c] = comp_counts.get(c, 0) + 1
 
         final_ratings = calc.ratings
-        write_history_for_cyi(cyi, heat_history, out_dir)
+        write_history_for_cyi(cyi, heat_history, out_dir, load_heats_competitors(out_dir, cyi))
         current_elo = {**current_elo, **final_ratings}
 
         competitor_studios = {}

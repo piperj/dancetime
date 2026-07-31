@@ -32,6 +32,18 @@ def build_heats_json(
             if entry.competitor2:
                 competitor_heats.setdefault(entry.competitor2, []).append(instance.key)
 
+    # entries[].event repeats the same event-name string across every entry in
+    # every heat of that event; dedupe into an index table the same way
+    # ranking/elo_store.py dedupes elo_history's event/round/dance triples.
+    events: list[str] = []
+    event_index: dict[str, int] = {}
+
+    def _event_idx(name: str) -> int:
+        if name not in event_index:
+            event_index[name] = len(events)
+            events.append(name)
+        return event_index[name]
+
     heats_list = [
         {
             "key": h.key,
@@ -45,7 +57,7 @@ def build_heats_json(
                     "competitor2": e.competitor2,
                     "bib": e.bib,
                     "studio": e.studio,
-                    "event": e.event,
+                    "event": _event_idx(e.event),
                     "result": e.result,
                 }
                 for e in h.entries
@@ -67,6 +79,7 @@ def build_heats_json(
             "location": location,
         },
         "sessions": sessions,
+        "events": events,
         "heats": heats_list,
         "competitors": sorted(competitors),
         "studios": sorted(studios),

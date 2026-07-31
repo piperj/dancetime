@@ -23,7 +23,9 @@ def _load_history(history_dir: str | Path = "data/elo_history") -> dict:
     history_dir = Path(history_dir)
     if not history_dir.is_dir():
         return {}
-    return {p.stem: json.loads(p.read_text()) for p in history_dir.glob("*.json")}
+    from ranking.elo_store import load_history
+    out_dir = history_dir.parent
+    return {p.stem: load_history(out_dir, int(p.stem)) for p in history_dir.glob("*.json")}
 
 
 def _sort_history(history: dict, index_path: str | Path = "data/index.json") -> dict:

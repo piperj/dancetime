@@ -809,7 +809,7 @@
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
 
         const studioEntry = main.entries.find(e => memberSet.has(e.competitor1) || memberSet.has(e.competitor2));
-        html += renderHeatCard(primary, allRounds, studioEntry?.event || group[0].entries[0]?.event || '');
+        html += renderHeatCard(primary, allRounds, eventLabel(studioEntry?.event ?? group[0].entries[0]?.event));
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -877,7 +877,7 @@
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
 
         const bibEntry = main.entries.find(e => e.bib === bib) || group[0].entries.find(e => e.bib === bib);
-        html += renderHeatCard(primary, allRounds, bibEntry?.event || group[0].entries[0]?.event || '');
+        html += renderHeatCard(primary, allRounds, eventLabel(bibEntry?.event ?? group[0].entries[0]?.event));
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -922,7 +922,7 @@
         contested = ` <span class="text-yellow-600 cursor-pointer hover:underline" onclick="toggleJudgesPanel(event, '${esc(panelKey)}', '${esc(anchorName)}', '${esc(heat.heat_number)}')">(Contested)</span>`;
         judgesPanel = renderJudgesPanel(panelKey);
       }
-      return `<div class="mb-1"><strong>${esc(evt)}:</strong>${contested}<div class="ml-2">${rows}</div>${judgesPanel}</div>`;
+      return `<div class="mb-1"><strong>${esc(eventLabel(Number(evt)))}:</strong>${contested}<div class="ml-2">${rows}</div>${judgesPanel}</div>`;
     }).join('');
   }
 
@@ -1142,7 +1142,7 @@
 
         if (group.some(h => h.key === nextHeatKey))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
-        html += renderHeatCard(primary, allRounds, group[0].entries[0]?.event || '');
+        html += renderHeatCard(primary, allRounds, eventLabel(group[0].entries[0]?.event));
       });
     });
 
@@ -1257,7 +1257,7 @@
           (found, h) => found || h.entries.find(e => e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor),
           null
         );
-        const myEvent = myEntry?.event || '';
+        const myEvent = myEntry?.event;
         const currentPartner = group.reduce((found, h) => found || getPartner(selectedCompetitor, h), null);
 
         if (lastTime !== null)
@@ -1278,7 +1278,7 @@
           : '';
         const judgesPanel = isContested ? renderJudgesPanel(groupKey) : '';
 
-        html += renderHeatCard(primary, allRounds, myEvent, contestedBadge, judgesPanel);
+        html += renderHeatCard(primary, allRounds, eventLabel(myEvent), contestedBadge, judgesPanel);
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -1530,6 +1530,11 @@
     return heatsData?.sessions?.[heat.session];
   }
 
+  // entries[].event is an index into heatsData.events (deduped event-name table).
+  function eventLabel(idx) {
+    return heatsData?.events?.[idx] ?? '';
+  }
+
   function toggleHeatDetails(id) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -1630,6 +1635,30 @@
     return `${cyi}\x1f${e.event_name}\x1f${e.round_name}\x1f${e.dance_name}`;
   }
 
+  // elo_history/{cyi}.json stores {events: [[event_name, round_name, dance_name], ...],
+  // names: [...], rows: [...]} — each row references its event triple by index (`e.e`),
+  // and its competitor/partner by a name ref (`c`/`p`): a non-negative index into that
+  // comp's competitors list (index.json — already loaded into compList, so this is a
+  // free lookup, unlike fetching the multi-MB heats_{cyi}.json just to resolve a name),
+  // or a negative index (-(i+1)) into this file's own small `names` overflow table for
+  // the rare name not found there. Resolve a raw row back into the flat shape the rest
+  // of this module expects.
+  function eloResolveName(cyi, ref) {
+    if (ref == null) return '';
+    if (ref >= 0) {
+      const comp = compList.find(c => String(c.cyi) === String(cyi));
+      return comp?.competitors?.[ref] ?? '';
+    }
+    return eloHistoryByCyi[cyi]?.names?.[-ref - 1] ?? '';
+  }
+
+  function eloResolveRow(cyi, row) {
+    const [event_name, round_name, dance_name] = eloHistoryByCyi[cyi]?.events?.[row.e] || ['', '', ''];
+    const competitor = eloResolveName(cyi, row.c);
+    const partner = eloResolveName(cyi, row.p);
+    return { ...row, event_name, round_name, dance_name, competitor, partner };
+  }
+
   function setEloStatus(msg) {
     const st = document.getElementById('elo-status');
     st.textContent = msg;
@@ -1673,10 +1702,12 @@
       .then(data => {
         eloHistoryByCyi[cyi] = data;
         delete eloHistoryFetching[cyi];
-        for (const e of data) {
-          if (e.partner) {
-            (eloPartnerMap[e.competitor] ??= new Set()).add(e.partner);
-            (eloPartnerMap[e.partner]    ??= new Set()).add(e.competitor);
+        for (const rawE of data.rows) {
+          if (rawE.p != null) {
+            const competitor = eloResolveName(cyi, rawE.c);
+            const partner = eloResolveName(cyi, rawE.p);
+            (eloPartnerMap[competitor] ??= new Set()).add(partner);
+            (eloPartnerMap[partner]    ??= new Set()).add(competitor);
           }
         }
         return data;
@@ -1758,12 +1789,15 @@
       const [a, b] = couple;
       const entries_a = new Map(), entries_b = new Map();
       let initial_a = null, initial_b = null;
-      for (const [cyi, heats] of eloSortedCyiPairs()) {
-        for (const e of heats) {
+      for (const [cyi, data] of eloSortedCyiPairs()) {
+        for (const rawE of data.rows) {
+          const rawName = eloResolveName(cyi, rawE.c);
+          if (rawName !== a && rawName !== b) continue;
+          const e = eloResolveRow(cyi, rawE);
           if (e.competitor === a) {
             if (initial_a === null) initial_a = e.elo_before;
             entries_a.set(eloMakeKey(cyi, e), e);
-          } else if (e.competitor === b) {
+          } else {
             if (initial_b === null) initial_b = e.elo_before;
             entries_b.set(eloMakeKey(cyi, e), e);
           }
@@ -1779,9 +1813,10 @@
 
     const entries = new Map();
     let initial = null;
-    for (const [cyi, heats] of eloSortedCyiPairs()) {
-      for (const e of heats) {
-        if (e.competitor !== name) continue;
+    for (const [cyi, data] of eloSortedCyiPairs()) {
+      for (const rawE of data.rows) {
+        if (eloResolveName(cyi, rawE.c) !== name) continue;
+        const e = eloResolveRow(cyi, rawE);
         if (initial === null) initial = e.elo_before;
         entries.set(eloMakeKey(cyi, e), e);
       }
@@ -1804,8 +1839,9 @@
     const timeline = [];
     const boundaries = [];
     let prevCyi = null;
-    for (const [cyi, heats] of eloSortedCyiPairs()) {
-      for (const e of heats) {
+    for (const [cyi, data] of eloSortedCyiPairs()) {
+      for (const rawE of data.rows) {
+        const e = eloResolveRow(cyi, rawE);
         const key = eloMakeKey(cyi, e);
         if (seen.has(key) || !participating.has(key)) continue;
         seen.add(key);
