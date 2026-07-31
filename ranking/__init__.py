@@ -114,7 +114,7 @@ def run(args):
         # Stable comps (results finished changing) are ranked once and never
         # reprocessed — their existing output files are trusted as-is, and their
         # contribution is already reflected in the seeded accumulator above.
-        ranking_path = out_dir / f"ranking_{cyi}.json"
+        ranking_path = out_dir / "ranking" / f"{cyi}.json"
         if (
             _comp_phase_for(calendar, cyi, today) != "live"
             and ranking_path.exists()

@@ -72,7 +72,7 @@ def load_history(out_dir: Path, cyi: int) -> list:
     on-disk {events, names, rows} storage (see write_history_for_cyi) so callers
     don't need to know about the index indirection.
 
-    Competitor/partner names are stored as indices into heats_{cyi}.json's
+    Competitor/partner names are stored as indices into heats/{cyi}.json's
     `competitors` list (falling back to this file's own small `names` overflow
     table for anyone not found there — see write_history_for_cyi) rather than
     repeated in full on every row, so resolving them here re-reads that file."""
@@ -107,7 +107,7 @@ def load_history(out_dir: Path, cyi: int) -> list:
 
 
 def load_heats_competitors(out_dir: Path, cyi: int) -> list[str]:
-    path = Path(out_dir) / f"heats_{cyi}.json"
+    path = Path(out_dir) / "heats" / f"{cyi}.json"
     if not path.exists():
         return []
     try:
@@ -126,9 +126,9 @@ def write_history_for_cyi(
     round_name, dance_name) triple across rows into a small `events` lookup
     table, since the same triple is shared by every couple dancing the same
     heat, and (2) competitor/partner name strings by referencing
-    `competitor_index` (heats_{cyi}.json's `competitors` list, which the SPA
+    `competitor_index` (heats/{cyi}.json's `competitors` list, which the SPA
     already loads via index.json at startup — a free lookup, unlike fetching
-    heats_{cyi}.json itself just for this). Names not found there (or when no
+    heats/{cyi}.json itself just for this). Names not found there (or when no
     index is supplied, e.g. isolated tests) fall back to a small local `names`
     overflow table, encoded as a negative reference, so this never crashes on
     a mismatch between the heats and ranking pipelines."""

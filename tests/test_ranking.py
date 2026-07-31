@@ -402,7 +402,7 @@ class TestRankingWriter:
         data = self._minimal_data()
         path = write_ranking_json(data, tmp_path)
         assert path.exists()
-        assert path.name == "ranking_373.json"
+        assert path == tmp_path / "ranking" / "373.json"
 
     def test_competitor_with_multiple_partners_gets_a_row_per_partnership(self):
         # Regression test: a competitor who dances with more than one partner in

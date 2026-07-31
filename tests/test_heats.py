@@ -9,8 +9,8 @@ from heats.parser import parse_heatlists, HeatInstance, HeatEntry
 from heats.matchups import compute_top_matchups
 from heats.writer import build_heats_json, write_heats_json
 
-HEATS_JSON      = Path(__file__).parent.parent / "data" / "heats_373.json"
-HEATS_JSON_1030 = Path(__file__).parent.parent / "data" / "heats_1030.json"
+HEATS_JSON      = Path(__file__).parent.parent / "data" / "heats" / "373.json"
+HEATS_JSON_1030 = Path(__file__).parent.parent / "data" / "heats" / "1030.json"
 
 
 def _make_heatlists(entries_per_competitor):
@@ -224,7 +224,7 @@ class TestWriter:
         data = build_heats_json(999, {"Competition_Name": "T", "Date_Range": "", "Location": ""}, [], {})
         path = write_heats_json(data, tmp_path)
         assert path.exists()
-        assert path.name == "heats_999.json"
+        assert path == tmp_path / "heats" / "999.json"
 
 
 def _couple_heatlists(pairs, time="1/30/2026 12:10:42 PM", session="01"):

@@ -6,7 +6,7 @@ NDCA's availability; the mocked shape mirrors a real captured response
 (cyi 373 heat 628, Oscar Adrian Rodriguez — a Prelims semi-final the couple
 was NOT recalled from, followed by a Skated final).
 
-heats_373.json (committed fixture data) already has heat 628 with Oscar
+heats/373.json (committed fixture data) already has heat 628 with Oscar
 Adrian Rodriguez as a genuinely Contested entry, so the pill exists without
 any extra setup — only the live-fetch call itself is mocked.
 """
@@ -199,7 +199,7 @@ def _setup(page, spa_server, fetch_log=None):
 
 class TestJudgesScoresPanel:
     def test_pill_renders_for_contested_heat(self, page, spa_server):
-        """heats_373.json's genuinely-contested heat 628 shows a Contested pill."""
+        """heats/373.json's genuinely-contested heat 628 shows a Contested pill."""
         _setup(page, spa_server)
         assert page.locator("span:text-is('7th Contested')").count() == 1
 

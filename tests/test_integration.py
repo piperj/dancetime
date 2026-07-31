@@ -41,7 +41,7 @@ class TestHeatsPipeline:
         import heats
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         heats.run(args)
-        out = pipeline_dirs / "data" / "heats_999.json"
+        out = pipeline_dirs / "data" / "heats" / "999.json"
         assert out.exists()
 
     def test_heats_json_valid_schema(self, pipeline_dirs):
@@ -49,14 +49,14 @@ class TestHeatsPipeline:
         from publish.validator import validate_heats_json
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         heats.run(args)
-        errors = validate_heats_json(pipeline_dirs / "data" / "heats_999.json")
+        errors = validate_heats_json(pipeline_dirs / "data" / "heats" / "999.json")
         assert errors == [], errors
 
     def test_heats_json_contains_expected_data(self, pipeline_dirs):
         import heats
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         heats.run(args)
-        data = json.loads((pipeline_dirs / "data" / "heats_999.json").read_text())
+        data = json.loads((pipeline_dirs / "data" / "heats" / "999.json").read_text())
         assert data["meta"]["cyi"] == 999
         assert len(data["heats"]) == 1
         assert len(data["heats"][0]["entries"]) == 2
@@ -69,7 +69,7 @@ class TestRankingPipeline:
         import ranking
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         ranking.run(args)
-        out = pipeline_dirs / "data" / "ranking_999.json"
+        out = pipeline_dirs / "data" / "ranking" / "999.json"
         assert out.exists()
 
     def test_ranking_json_valid_schema(self, pipeline_dirs):
@@ -77,21 +77,21 @@ class TestRankingPipeline:
         from publish.validator import validate_ranking_json
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         ranking.run(args)
-        errors = validate_ranking_json(pipeline_dirs / "data" / "ranking_999.json")
+        errors = validate_ranking_json(pipeline_dirs / "data" / "ranking" / "999.json")
         assert errors == [], errors
 
     def test_ranking_contains_couples(self, pipeline_dirs):
         import ranking
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         ranking.run(args)
-        data = json.loads((pipeline_dirs / "data" / "ranking_999.json").read_text())
+        data = json.loads((pipeline_dirs / "data" / "ranking" / "999.json").read_text())
         assert len(data["couples"]) >= 2
 
     def test_winner_ranked_first(self, pipeline_dirs):
         import ranking
         args = _args(data_dir=pipeline_dirs / "data" / "raw", out_dir=pipeline_dirs / "data")
         ranking.run(args)
-        data = json.loads((pipeline_dirs / "data" / "ranking_999.json").read_text())
+        data = json.loads((pipeline_dirs / "data" / "ranking" / "999.json").read_text())
         couples = data["couples"]
         if couples:
             assert couples[0]["rank"] == 1
@@ -114,8 +114,8 @@ class TestFullPipeline:
 
             assert (pipeline_dirs / "index.html").exists()
             assert (pipeline_dirs / "data" / "index.json").exists()
-            assert (pipeline_dirs / "data" / "heats_999.json").exists()
-            assert (pipeline_dirs / "data" / "ranking_999.json").exists()
+            assert (pipeline_dirs / "data" / "heats" / "999.json").exists()
+            assert (pipeline_dirs / "data" / "ranking" / "999.json").exists()
         finally:
             os.chdir(orig)
 
@@ -323,7 +323,7 @@ class TestRankingStablePhase:
         self._write_calendar(out_dir, 999, "2020-01-29", "2020-02-01")
 
         ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))
-        ranking_path = out_dir / "ranking_999.json"
+        ranking_path = out_dir / "ranking" / "999.json"
         history_path = out_dir / "elo_history" / "999.json"
         assert ranking_path.exists() and history_path.exists()
         first_ranking_mtime = ranking_path.stat().st_mtime_ns
@@ -347,7 +347,7 @@ class TestRankingStablePhase:
         self._write_calendar(out_dir, 999, "2020-01-01", "2099-01-01")
 
         ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))
-        ranking_path = out_dir / "ranking_999.json"
+        ranking_path = out_dir / "ranking" / "999.json"
         first_mtime = ranking_path.stat().st_mtime_ns
 
         ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))

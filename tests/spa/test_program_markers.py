@@ -6,7 +6,7 @@ The live network call to ndcapremier.com's /feed/program/ is mocked via
 page.route(), so this suite has no external dependency and can't be flaky on
 NDCA's availability or on a real competition's schedule changing over time.
 
-Fixture: City Lights Open (cyi 373, committed heats_373.json). Helen Piper
+Fixture: City Lights Open (cyi 373, committed heats/373.json). Helen Piper
 dances only in session '02' (Friday Morning), first heat 313 at 12:10:42 pm,
 last heat 330 at 12:32:48 pm — the session itself runs from 8:30 am (heat
 211, someone else) to 3:12 pm. She has zero heats in session '04' (Saturday
@@ -46,7 +46,7 @@ def install_program_mock(page, activities_by_code, cyi=CYI, name_has_prefix=True
 
     `name_has_prefix=False` mimics competitions (e.g. Manhattan Dance
     Championships) whose Session.Name has no numeric prefix at all — only
-    Abbreviation carries the code, zero-padded the same way heats_*.json is.
+    Abbreviation carries the code, zero-padded the same way heats/*.json is.
     """
     def handle(route):
         params = urllib.parse.parse_qs(urllib.parse.urlparse(route.request.url).query)

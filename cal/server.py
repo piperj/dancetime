@@ -59,8 +59,8 @@ def _build_competitions(data_dir: Path) -> dict:
         if not cyi:
             continue
         scraped = f"comp_{cyi}.zip" in raw_files
-        has_heats = _has_heats(data_dir / f"heats_{cyi}.json")
-        has_ranking = _has_ranking(data_dir / f"ranking_{cyi}.json")
+        has_heats = _has_heats(data_dir / "heats" / f"{cyi}.json")
+        has_ranking = _has_ranking(data_dir / "ranking" / f"{cyi}.json")
         # data/raw/ is gitignored, so the raw zip alone misses comps whose
         # processed outputs survived a raw-cleanup or fresh checkout.
         scraped = scraped or has_heats or has_ranking
@@ -244,12 +244,12 @@ def make_handler(data_dir: Path, port: int):
                 deleted = []
                 for p in [
                     data_dir / "raw" / f"comp_{cyi}.zip",
-                    data_dir / f"heats_{cyi}.json",
-                    data_dir / f"ranking_{cyi}.json",
+                    data_dir / "heats" / f"{cyi}.json",
+                    data_dir / "ranking" / f"{cyi}.json",
                 ]:
                     try:
                         p.unlink()
-                        deleted.append(p.name)
+                        deleted.append(f"{p.parent.name}/{p.name}")
                     except FileNotFoundError:
                         pass
                 _set_tracked(data_dir, cyi, tracked=False)

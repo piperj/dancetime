@@ -90,9 +90,9 @@ def build_heats_json(
 
 
 def write_heats_json(data: dict, out_dir: Path) -> Path:
-    out_dir = Path(out_dir)
+    out_dir = Path(out_dir) / "heats"
     out_dir.mkdir(parents=True, exist_ok=True)
     cyi = data["meta"]["cyi"]
-    path = out_dir / f"heats_{cyi}.json"
+    path = out_dir / f"{cyi}.json"
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
     return path

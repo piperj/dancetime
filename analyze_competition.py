@@ -172,18 +172,19 @@ def load_entries(data_dir: Path = _DEFAULT_DATA_DIR):
     entries = []
     comp_names = {}
     for cyi in CYIS:
-        path = data_dir / f"heats_{cyi}.json"
+        path = data_dir / "heats" / f"{cyi}.json"
         if not path.exists():
             continue
         with open(path) as f:
             d = json.load(f)
         comp_names[cyi] = d["meta"].get("short_name", str(cyi))
+        events = d.get("events", [])
         for h in d["heats"]:
             for e in h["entries"]:
                 entries.append({
                     "cyi": cyi,
                     "comp": comp_names[cyi],
-                    "event": e["event"].strip(),
+                    "event": events[e["event"]].strip(),
                     "c1": e["competitor1"],
                     "c2": e["competitor2"],
                 })

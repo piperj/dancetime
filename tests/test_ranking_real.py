@@ -8,7 +8,7 @@ from ranking.writer import dedup_couples
 from ranking.parser import parse_results
 from scrape.zip_store import load_json
 
-RANKING_FILE = Path(__file__).parent.parent / "data" / "ranking_373.json"
+RANKING_FILE = Path(__file__).parent.parent / "data" / "ranking" / "373.json"
 
 
 def _pair_key(c: dict) -> tuple:

@@ -54,7 +54,7 @@ def _parse_start_date(date_range: str) -> str:
 def _update_index(out_dir: Path) -> None:
     competitions = []
     all_competitors: set[str] = set()
-    for heats_file in sorted(out_dir.glob("heats_*.json")):
+    for heats_file in sorted((out_dir / "heats").glob("*.json")):
         try:
             data = json.loads(heats_file.read_text())
             meta = data.get("meta", {})
@@ -63,7 +63,6 @@ def _update_index(out_dir: Path) -> None:
                 continue
             comp_competitors = sorted(data.get("competitors", []))
             all_competitors.update(comp_competitors)
-            ranking_file = out_dir / f"ranking_{cyi}.json"
             name = meta.get("name", "")
             competitions.append({
                 "cyi": cyi,
@@ -73,8 +72,8 @@ def _update_index(out_dir: Path) -> None:
                 "date_range": meta.get("date_range", ""),
                 "start_date": _parse_start_date(meta.get("date_range", "")),
                 "location": meta.get("location", ""),
-                "heats_file": f"{out_dir.name}/{heats_file.name}",
-                "ranking_file": f"{out_dir.name}/{ranking_file.name}",
+                "heats_file": f"{out_dir.name}/heats/{heats_file.name}",
+                "ranking_file": f"{out_dir.name}/ranking/{cyi}.json",
                 "competitors": comp_competitors,
             })
         except (json.JSONDecodeError, KeyError):
@@ -101,12 +100,12 @@ def _validate_outputs(out_dir: Path) -> None:
     if errors:
         print(f"publish: WARNING index.json errors: {errors}")
 
-    for heats_file in out_dir.glob("heats_*.json"):
+    for heats_file in (out_dir / "heats").glob("*.json"):
         errors = validate_heats_json(heats_file)
         if errors:
             print(f"publish: WARNING {heats_file.name} errors: {errors}")
 
-    for ranking_file in out_dir.glob("ranking_*.json"):
+    for ranking_file in (out_dir / "ranking").glob("*.json"):
         errors = validate_ranking_json(ranking_file)
         if errors:
             print(f"publish: WARNING {ranking_file.name} errors: {errors}")
