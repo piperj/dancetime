@@ -66,3 +66,12 @@ class NDCAClient:
     def fetch_competitor_heatlists(self, cyi: int, competitor_id: str, competitor_type: str) -> dict | None:
         return self._get("/feed/heatlists/", {"cyi": cyi, "id": competitor_id, "type": competitor_type})
 
+    def fetch_session_list(self, cyi: int) -> dict | None:
+        return self._get("/feed/program/", {"cyi": cyi})
+
+    def fetch_session(self, cyi: int, session: int, ballroom: int = 1, feed_type: int = 2) -> list | None:
+        return self._get(
+            "/feed/program/",
+            {"cyi": cyi, "ballroom": ballroom, "session": session, "type": feed_type},
+        )
+

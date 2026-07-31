@@ -1,4 +1,6 @@
 from ranking.models import DanceResult
+from ranking.parse_helpers import process_participants as _process_participants
+from ranking.parse_helpers import join_name as _join_name
 
 
 def parse_results(results_json: dict) -> list[DanceResult]:
@@ -105,31 +107,6 @@ def _parse_summary_fallback(
     )
 
 
-def _process_participants(
-    participants: list,
-    placement,
-    competitors: list,
-    partners: dict,
-    placements: dict,
-) -> None:
-    if len(participants) == 1:
-        name = _join_name(participants[0].get("Name", []))
-        competitors.append(name)
-        if placement is not None:
-            placements[name] = int(placement)
-    elif len(participants) == 2:
-        n1 = _join_name(participants[0].get("Name", []))
-        n2 = _join_name(participants[1].get("Name", []))
-        for n in (n1, n2):
-            if n not in competitors:
-                competitors.append(n)
-        partners[n1] = n2
-        partners[n2] = n1
-        if placement is not None:
-            placements[n1] = int(placement)
-            placements[n2] = int(placement)
-
-
 def _deduplicate(results: list[DanceResult]) -> list[DanceResult]:
     index: dict[tuple, DanceResult] = {}
     for r in results:
@@ -165,7 +142,3 @@ def _extract_placement(comp: dict) -> int | None:
     return None
 
 
-def _join_name(parts: list) -> str:
-    if not parts or not isinstance(parts, list):
-        return "Unknown"
-    return " ".join(str(p) for p in parts if p)

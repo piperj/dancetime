@@ -9,11 +9,12 @@ from ranking.elo_store import (
     load_heats_competitors, load_history, load_ratings_full, save_ratings, write_history_for_cyi,
 )
 from ranking.writer import build_ranking_json, write_ranking_json
+from ranking.studio_directory import merge_studio_directory
 from schedule.calendar import load_calendar, parse_date
 from schedule.phases import comp_phase
 
 
-def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
+def sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
     comps = []
     for zip_path in data_dir.glob("comp_*.zip"):
         try:
@@ -71,11 +72,39 @@ def _comp_phase_for(calendar: dict, cyi: int, today) -> str:
     return comp_phase(start, end, today)
 
 
+def rank_dance_results(dance_results, current_elo: dict) -> tuple[dict, dict, list, set]:
+    """Run EloCalculator over `dance_results` seeded from `current_elo`.
+
+    Shared by the regular per-CYI loop below and tools/backfill_history.py's
+    bulk-comp path, so both feed the same accumulator through identical logic.
+    Returns (final_ratings, initial_ratings, heat_history, contested_competitors).
+    """
+    initial_ratings = get_initial_ratings(dance_results, current_elo)
+    calc = EloCalculator()
+    calc.initialize(initial_ratings)
+    heat_history = []
+    contested_competitors: set = set()
+    for result in dance_results:
+        changes = calc.process_heat(result)
+        for competitor, (elo_before, elo_after) in changes.items():
+            heat_history.append({
+                "event_name": result.event_name,
+                "round_name": result.round_name,
+                "dance_name": result.dance_name,
+                "competitor": competitor,
+                "partner": result.partners.get(competitor, ""),
+                "elo_before": round(elo_before, 2),
+                "elo_after": round(elo_after, 2),
+            })
+            contested_competitors.add(competitor)
+    return calc.ratings, initial_ratings, heat_history, contested_competitors
+
+
 def run(args):
     data_dir = Path(args.data_dir)
     out_dir = Path(args.out_dir)
 
-    sorted_comps = _sorted_competitions(data_dir)
+    sorted_comps = sorted_competitions(data_dir)
     if not sorted_comps:
         print("ranking: no competition zips found")
         return
@@ -133,25 +162,9 @@ def run(args):
         if not dance_results:
             continue
 
-        initial_ratings = get_initial_ratings(dance_results, current_elo)
-
-        calc = EloCalculator()
-        calc.initialize(initial_ratings)
-        heat_history = []
-        contested_competitors: set = set()
-        for result in dance_results:
-            changes = calc.process_heat(result)
-            for competitor, (elo_before, elo_after) in changes.items():
-                heat_history.append({
-                    "event_name": result.event_name,
-                    "round_name": result.round_name,
-                    "dance_name": result.dance_name,
-                    "competitor": competitor,
-                    "partner": result.partners.get(competitor, ""),
-                    "elo_before": round(elo_before, 2),
-                    "elo_after": round(elo_after, 2),
-                })
-                contested_competitors.add(competitor)
+        final_ratings, initial_ratings, heat_history, contested_competitors = rank_dance_results(
+            dance_results, current_elo
+        )
 
         # comp_counts must only credit competitors whose elo actually moved here:
         # _rewind_cyi can only undo what's recorded in heat_history, so crediting
@@ -160,7 +173,6 @@ def run(args):
         for c in contested_competitors:
             comp_counts[c] = comp_counts.get(c, 0) + 1
 
-        final_ratings = calc.ratings
         write_history_for_cyi(cyi, heat_history, out_dir, load_heats_competitors(out_dir, cyi))
         current_elo = {**current_elo, **final_ratings}
 
@@ -171,6 +183,7 @@ def run(args):
             studio = meta.get("studio", "")
             if name and studio:
                 competitor_studios[name] = studio
+        merge_studio_directory(out_dir, competitor_studios)
 
         data = build_ranking_json(
             cyi=cyi,
