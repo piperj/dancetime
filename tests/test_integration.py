@@ -257,6 +257,52 @@ class TestRankingIncremental:
         assert first == second
 
 
+class TestSortedCompetitionsTiebreak:
+    """Two comps sharing a start_date (genuinely concurrent competitions) must sort
+    deterministically — by scrape order (zip mtime), not by glob()'s unordered
+    filesystem iteration."""
+
+    def _write_zip(self, path: Path, start_date: str) -> None:
+        import zipfile
+        with zipfile.ZipFile(path, "w") as z:
+            z.writestr("competition_info.json", json.dumps({"Start_Date": start_date}))
+            z.writestr("results.json", json.dumps({"results": []}))
+
+    def test_ties_broken_by_zip_mtime_not_glob_order(self, tmp_path):
+        import os
+        import time
+        from ranking import _sorted_competitions
+
+        raw_dir = tmp_path / "data" / "raw"
+        raw_dir.mkdir(parents=True)
+        later_zip = raw_dir / "comp_200.zip"
+        earlier_zip = raw_dir / "comp_100.zip"
+
+        # Write "later_zip" (higher cyi) first, so it gets the earlier mtime —
+        # if the sort fell back to cyi or filename order, this would fail.
+        self._write_zip(later_zip, "01/01/2026")
+        time.sleep(0.01)
+        self._write_zip(earlier_zip, "01/01/2026")
+        earlier_mtime = os.stat(earlier_zip).st_mtime
+        later_mtime = os.stat(later_zip).st_mtime
+        assert later_mtime < earlier_mtime  # sanity: later_zip really was scraped first
+
+        comps = _sorted_competitions(raw_dir)
+        assert [c[0] for c in comps] == [200, 100]
+
+    def test_result_is_stable_across_repeated_calls(self, tmp_path):
+        from ranking import _sorted_competitions
+
+        raw_dir = tmp_path / "data" / "raw"
+        raw_dir.mkdir(parents=True)
+        for cyi in (301, 302, 303):
+            self._write_zip(raw_dir / f"comp_{cyi}.zip", "03/01/2026")
+
+        first = [c[0] for c in _sorted_competitions(raw_dir)]
+        second = [c[0] for c in _sorted_competitions(raw_dir)]
+        assert first == second
+
+
 class TestRankingStablePhase:
     """A full rebuild (no --cyi) must skip reprocessing comps whose calendar dates
     put them outside the "live" phase, once they already have ranking + history

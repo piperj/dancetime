@@ -27,7 +27,11 @@ def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
         except ValueError:
             start = ""
         comps.append((cyi, zip_path, start, info))
-    return sorted(comps, key=lambda x: x[2])
+    # Comps sharing a start_date (concurrent competitions) are broken by the zip's
+    # own mtime — a proxy for scrape order, set once and rarely touched again —
+    # then by cyi, so ordering is fully deterministic instead of depending on
+    # glob()'s filesystem-dependent iteration order.
+    return sorted(comps, key=lambda x: (x[2], x[1].stat().st_mtime, x[0]))
 
 
 def _rewind_cyi(current_elo: dict, comp_counts: dict, out_dir: Path, cyi: int) -> None:
