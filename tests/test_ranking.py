@@ -6,7 +6,7 @@ from ranking.models import DanceResult
 from ranking.parser import parse_results, _join_name, _extract_placement
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
-from ranking.elo_store import compute_deltas, load_history, load_ratings, load_ratings_full, save_ratings, write_history
+from ranking.elo_store import compute_deltas, load_history, load_ratings, load_ratings_full, save_ratings, write_history_for_cyi
 from ranking.writer import build_ranking_json, write_ranking_json
 
 
@@ -347,17 +347,16 @@ class TestEloStore:
         assert deltas["Alice"] == "+0.0"
 
     def test_load_history_returns_empty_when_no_file(self, tmp_path):
-        assert load_history(tmp_path) == {}
+        assert load_history(tmp_path, 422) == []
 
     def test_write_and_load_history_roundtrip(self, tmp_path):
         entries = [{"event_name": "Test", "round_name": "Final", "dance_name": "Waltz",
                     "competitor": "Alice", "partner": "Bob",
                     "elo_before": 1500.0, "elo_after": 1512.5}]
-        write_history({"422": entries}, tmp_path)
-        loaded = load_history(tmp_path)
-        assert "422" in loaded
-        assert loaded["422"][0]["competitor"] == "Alice"
-        assert loaded["422"][0]["elo_after"] == 1512.5
+        write_history_for_cyi(422, entries, tmp_path)
+        loaded = load_history(tmp_path, 422)
+        assert loaded[0]["competitor"] == "Alice"
+        assert loaded[0]["elo_after"] == 1512.5
 
     def test_load_ratings_full_returns_empty_when_no_file(self, tmp_path):
         result = load_ratings_full(tmp_path)
@@ -377,19 +376,16 @@ class TestEloStore:
         assert (tmp_path / "elo_ratings.json").exists()
 
     def test_write_history_overwrites_fully(self, tmp_path):
-        write_history({"422": [{"elo_after": 1510.0}]}, tmp_path)
-        write_history({"422": [{"elo_after": 1520.0}]}, tmp_path)
-        loaded = load_history(tmp_path)
-        assert loaded["422"][0]["elo_after"] == 1520.0
+        write_history_for_cyi(422, [{"elo_after": 1510.0}], tmp_path)
+        write_history_for_cyi(422, [{"elo_after": 1520.0}], tmp_path)
+        loaded = load_history(tmp_path, 422)
+        assert loaded[0]["elo_after"] == 1520.0
 
-    def test_write_history_preserves_all_cyis(self, tmp_path):
-        write_history({
-            "422": [{"competitor": "Alice"}],
-            "904": [{"competitor": "Bob"}],
-        }, tmp_path)
-        loaded = load_history(tmp_path)
-        assert "422" in loaded
-        assert "904" in loaded
+    def test_write_history_preserves_other_cyis(self, tmp_path):
+        write_history_for_cyi(422, [{"competitor": "Alice"}], tmp_path)
+        write_history_for_cyi(904, [{"competitor": "Bob"}], tmp_path)
+        assert load_history(tmp_path, 422)[0]["competitor"] == "Alice"
+        assert load_history(tmp_path, 904)[0]["competitor"] == "Bob"
 
 
 class TestRankingWriter:

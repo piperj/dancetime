@@ -19,8 +19,11 @@ import matplotlib.ticker as ticker
 COLORS = ["steelblue", "tomato", "seagreen", "darkorange", "mediumpurple", "brown"]
 
 
-def _load_history(history_path: str | Path = "data/elo_history.json") -> dict:
-    return json.loads(Path(history_path).read_text()).get("history", {})
+def _load_history(history_dir: str | Path = "data/elo_history") -> dict:
+    history_dir = Path(history_dir)
+    if not history_dir.is_dir():
+        return {}
+    return {p.stem: json.loads(p.read_text()) for p in history_dir.glob("*.json")}
 
 
 def _sort_history(history: dict, index_path: str | Path = "data/index.json") -> dict:
@@ -115,12 +118,12 @@ def _align_to_timeline(
 
 def plot_elo(
     names: list[str],
-    history_path: str | Path = "data/elo_history.json",
+    history_dir: str | Path = "data/elo_history",
     data_dir: str | Path = "data/raw",
     output_path: str | Path | None = None,
     show: bool = True,
 ) -> None:
-    history = _sort_history(_load_history(history_path), Path(history_path).parent / "index.json")
+    history = _sort_history(_load_history(history_dir), Path(history_dir).parent / "index.json")
     comp_names = _load_comp_names(data_dir)
 
     extracted = [_extract_entries(history, name) for name in names]
@@ -195,14 +198,14 @@ def plot_elo(
 def main():
     parser = argparse.ArgumentParser(description="Plot ELO progression for competitors or couples.")
     parser.add_argument("names", nargs="+", help="Competitor name(s) or 'A & B' for a couple")
-    parser.add_argument("--history", default="data/elo_history.json")
+    parser.add_argument("--history", default="data/elo_history")
     parser.add_argument("--data-dir", default="data/raw")
     parser.add_argument("--out", default=None, help="Save to file instead of showing")
     args = parser.parse_args()
 
     plot_elo(
         names=args.names,
-        history_path=args.history,
+        history_dir=args.history,
         data_dir=args.data_dir,
         output_path=args.out,
         show=args.out is None,

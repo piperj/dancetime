@@ -246,10 +246,10 @@
   let heatsData = null;
   let programMarkers = null;
   let sessionFirstHeatTime = {};
-  let eloHistory = null;
+  let eloHistoryByCyi = {};
+  let eloHistoryFetching = {};
   let eloSeries  = [];
   let eloChart   = null;
-  let eloHistoryLoading = false;
   let eloPartnerMap = {};
   let _eloBoundaries = [], _eloN = 0, _cyiNameMap = {};
 
@@ -1627,58 +1627,73 @@
   }
 
   function initEloTab() {
-    if (eloHistory) { if (!Object.keys(eloPartnerMap).length) buildEloSuggestions(); return; }
-    if (eloHistoryLoading) return;
-    eloHistoryLoading = true;
-    setEloStatus('Loading ELO history…');
-    fetch('data/elo_history.json')
-      .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
-      .then(data => {
-        eloHistory = data.history;
-        eloHistoryLoading = false;
-        buildEloSuggestions();
-        if (eloSeries.length) { setEloStatus(''); renderEloChart(); }
-        else setEloStatus('Add a competitor to see their ELO progression.');
-      })
-      .catch(err => {
-        eloHistoryLoading = false;
-        setEloStatus(`Failed to load ELO history: ${err.message}`);
-      });
+    if (!Object.keys(eloPartnerMap).length) buildEloSuggestions();
+    if (eloSeries.length) { setEloStatus(''); renderEloChart(); }
+    else setEloStatus('Add a competitor to see their ELO progression.');
   }
 
+  // Suggestions come from the global competitor list (elo_ratings.json-backed,
+  // already loaded into allCompetitorNames) rather than scanning ELO history —
+  // that would require fetching every competition's history file up front.
   function buildEloSuggestions() {
-    if (!eloHistory) return;
-    const names = new Set();
-    eloPartnerMap = {};
-    for (const heats of Object.values(eloHistory)) {
-      for (const e of heats) {
-        names.add(e.competitor);
-        if (e.partner) {
-          names.add(e.partner);
-          (eloPartnerMap[e.competitor] ??= new Set()).add(e.partner);
-          (eloPartnerMap[e.partner]    ??= new Set()).add(e.competitor);
-        }
-      }
-    }
-    buildSuggestions('elo-suggestions', [...names].sort());
+    buildSuggestions('elo-suggestions', allCompetitorNames);
   }
 
+  // Partner suggestions can only reflect competitions whose history file has
+  // already been fetched (for some other series), so this list starts sparse
+  // and fills in opportunistically as eloFetchCyi() runs. Accepted trade-off
+  // of not wanting a whole extra data/elo_partners.json file.
   function updatePartnerSuggestions() {
     const a = document.getElementById('elo-search-a').value.trim();
     const partners = a && eloPartnerMap[a] ? [...eloPartnerMap[a]].sort() : [];
     buildSuggestions('elo-partner-suggestions', partners);
   }
 
+  function eloCandidateCyis(names) {
+    return compList
+      .filter(c => (c.competitors || []).some(n => names.includes(n)))
+      .map(c => String(c.cyi));
+  }
+
+  function eloFetchCyi(cyi) {
+    if (eloHistoryByCyi[cyi]) return Promise.resolve(eloHistoryByCyi[cyi]);
+    if (eloHistoryFetching[cyi]) return eloHistoryFetching[cyi];
+    const p = fetch(`data/elo_history/${cyi}.json`)
+      .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then(data => {
+        eloHistoryByCyi[cyi] = data;
+        delete eloHistoryFetching[cyi];
+        for (const e of data) {
+          if (e.partner) {
+            (eloPartnerMap[e.competitor] ??= new Set()).add(e.partner);
+            (eloPartnerMap[e.partner]    ??= new Set()).add(e.competitor);
+          }
+        }
+        return data;
+      })
+      .catch(err => { delete eloHistoryFetching[cyi]; throw err; });
+    eloHistoryFetching[cyi] = p;
+    return p;
+  }
+
   function eloAddByName(name) {
-    if (!name || !eloHistory || eloSeries.length >= 5) return;
+    if (!name || eloSeries.length >= 5) return;
     if (eloSeries.some(s => s.name === name)) return;
-    const series = eloExtractSeries(name);
-    if (!series) { setEloStatus(`"${name}" not found in ELO history.`); return; }
-    setEloStatus('');
-    series.color = ELO_COLORS[eloSeries.length % ELO_COLORS.length];
-    eloSeries.push(series);
-    renderEloChips();
-    renderEloChart();
+    const names = name.includes(' & ') ? name.split(' & ', 2).map(s => s.trim()) : [name];
+    const cyis = eloCandidateCyis(names);
+    if (!cyis.length) { setEloStatus(`"${name}" not found in ELO history.`); return; }
+    setEloStatus('Loading…');
+    Promise.all(cyis.map(eloFetchCyi))
+      .then(() => {
+        const series = eloExtractSeries(name);
+        if (!series) { setEloStatus(`"${name}" not found in ELO history.`); return; }
+        setEloStatus('');
+        series.color = ELO_COLORS[eloSeries.length % ELO_COLORS.length];
+        eloSeries.push(series);
+        renderEloChips();
+        renderEloChart();
+      })
+      .catch(err => setEloStatus(`Failed to load ELO history: ${err.message}`));
   }
 
   function eloAddContestant() {
@@ -1723,7 +1738,7 @@
   function eloSortedCyiPairs() {
     const dates = {};
     for (const c of compList) dates[String(c.cyi)] = c.start_date || '';
-    return Object.entries(eloHistory).sort(([a], [b]) => (dates[a] || '').localeCompare(dates[b] || ''));
+    return Object.entries(eloHistoryByCyi).sort(([a], [b]) => (dates[a] || '').localeCompare(dates[b] || ''));
   }
 
   function eloExtractSeries(name) {
@@ -1820,7 +1835,7 @@
   }
 
   function renderEloChart() {
-    if (!eloSeries.length || !eloHistory) return;
+    if (!eloSeries.length) return;
     const { timeline, boundaries } = eloGlobalTimeline();
     if (!timeline.length) return;
 

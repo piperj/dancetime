@@ -64,24 +64,18 @@ def save_ratings(
     return path
 
 
-def load_history(out_dir: Path) -> dict:
-    path = Path(out_dir) / "elo_history.json"
+def load_history(out_dir: Path, cyi: int) -> list:
+    path = Path(out_dir) / "elo_history" / f"{cyi}.json"
     if not path.exists():
-        return {}
-    data = json.loads(path.read_text())
-    return data.get("history", {})
+        return []
+    return json.loads(path.read_text())
 
 
-def write_history(history: dict, out_dir: Path) -> Path:
-    out_dir.mkdir(parents=True, exist_ok=True)
-    path = out_dir / "elo_history.json"
-    path.write_text(json.dumps(
-        {
-            "history": history,
-        },
-        indent=2,
-        ensure_ascii=False,
-    ))
+def write_history_for_cyi(cyi: int, heat_history: list, out_dir: Path) -> Path:
+    history_dir = Path(out_dir) / "elo_history"
+    history_dir.mkdir(parents=True, exist_ok=True)
+    path = history_dir / f"{cyi}.json"
+    path.write_text(json.dumps(heat_history, indent=2, ensure_ascii=False))
     return path
 
 

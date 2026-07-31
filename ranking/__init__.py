@@ -6,7 +6,7 @@ from ranking.parser import parse_results
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
 from ranking.elo_store import (
-    compute_deltas, load_history, load_ratings_full, save_ratings, write_history,
+    compute_deltas, load_history, load_ratings_full, save_ratings, write_history_for_cyi,
 )
 from ranking.writer import build_ranking_json, write_ranking_json
 
@@ -28,10 +28,10 @@ def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
     return sorted(comps, key=lambda x: x[2])
 
 
-def _rewind_cyi(current_elo: dict, comp_counts: dict, prior_history: dict, cyi: int) -> None:
+def _rewind_cyi(current_elo: dict, comp_counts: dict, out_dir: Path, cyi: int) -> None:
     """Undo a prior rank of `cyi`: roll competitors back to their elo_before-first-heat
     and decrement their comp_counts. Lets a re-rank produce the same result as the first."""
-    entries = prior_history.get(str(cyi), [])
+    entries = load_history(out_dir, cyi)
     if not entries:
         return
     first_before: dict[str, float] = {}
@@ -74,8 +74,6 @@ def run(args):
             print(f"ranking: CYI {args.cyi} has no results yet; preserving cumulative ratings")
             return
 
-    prior_history = load_history(out_dir)
-
     if incremental:
         # Seed accumulator from disk so that comps not in data/raw/ this run survive.
         # In CI, data/raw/ is gitignored — only the just-scraped zips are present.
@@ -85,14 +83,13 @@ def run(args):
         # If we've ranked this CYI before, rewind its contribution first so a poll-driven
         # re-rank produces the same result as the first rank.
         for cyi, _, _, _ in sorted_comps:
-            _rewind_cyi(current_elo, comp_counts, prior_history, cyi)
+            _rewind_cyi(current_elo, comp_counts, out_dir, cyi)
         prior_last_cyi = prior.get("last_cyi") or 0
     else:
         current_elo = {}
         comp_counts = {}
         prior_last_cyi = 0
 
-    new_history = {}
     last_cyi = max(prior_last_cyi, sorted_comps[-1][0])
 
     for cyi, zip_path, start_date, competition_info in sorted_comps:
@@ -100,8 +97,6 @@ def run(args):
         dance_results = parse_results(results_data)
 
         if not dance_results:
-            if str(cyi) in prior_history:
-                new_history[str(cyi)] = prior_history[str(cyi)]
             continue
 
         initial_ratings = get_initial_ratings(dance_results, current_elo)
@@ -132,7 +127,7 @@ def run(args):
             comp_counts[c] = comp_counts.get(c, 0) + 1
 
         final_ratings = calc.ratings
-        new_history[str(cyi)] = heat_history
+        write_history_for_cyi(cyi, heat_history, out_dir)
         current_elo = {**current_elo, **final_ratings}
 
         competitor_studios = {}
@@ -157,13 +152,5 @@ def run(args):
         path = write_ranking_json(data, out_dir)
         print(f"ranking: wrote {path} ({start_date})")
 
-    # Preserve history for CYIs not present in data/raw/ this run.
-    for old_cyi, old_hist in prior_history.items():
-        if old_cyi not in new_history:
-            new_history[old_cyi] = old_hist
-
     ratings_path = save_ratings(current_elo, comp_counts, last_cyi, out_dir)
     print(f"ranking: wrote {ratings_path} ({len(current_elo)} competitors)")
-    history_path = write_history(new_history, out_dir)
-    cyis = sorted(new_history.keys())
-    print(f"ranking: wrote {history_path} (CYIs: {', '.join(cyis)})")
