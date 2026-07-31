@@ -302,6 +302,11 @@
     return [a, b || ''].sort().join('|');
   }
 
+  // Display string for a heat entry's couple, order preserved (unlike coupleKey).
+  function coupleName(comp1, comp2) {
+    return comp2 ? `${comp1} & ${comp2}` : comp1;
+  }
+
   // ── Tab switching ──────────────────────────────────────────────────────────
   document.querySelectorAll('nav button').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -622,22 +627,23 @@
       heat.entries.forEach(e => {
         if (e.event !== myEntry.event) return;
         if (e.competitor1 === myEntry.competitor1 && e.competitor2 === myEntry.competitor2) return;
-        opps[e.couple] ??= { couple: e.couple, competitor1: e.competitor1, competitor2: e.competitor2,
-                              my_couple: myEntry.couple ?? competitor,
-                              my_competitor1: myEntry.competitor1, my_competitor2: myEntry.competitor2,
-                              count: 0, my_wins: 0, their_wins: 0, ties: 0 };
-        opps[e.couple].count++;
+        const couple = coupleName(e.competitor1, e.competitor2);
+        opps[couple] ??= { couple, competitor1: e.competitor1, competitor2: e.competitor2,
+                            my_couple: coupleName(myEntry.competitor1, myEntry.competitor2) ?? competitor,
+                            my_competitor1: myEntry.competitor1, my_competitor2: myEntry.competitor2,
+                            count: 0, my_wins: 0, their_wins: 0, ties: 0 };
+        opps[couple].count++;
         const r = parseInt(e.result);
         const iAdvanced = isNaN(myResult) && someHaveResult;
         const theyAdvanced = isNaN(r) && someHaveResult;
         if (!isNaN(myResult) && !isNaN(r)) {
-          if (myResult < r) opps[e.couple].my_wins++;
-          else if (myResult > r) opps[e.couple].their_wins++;
-          else opps[e.couple].ties++;
+          if (myResult < r) opps[couple].my_wins++;
+          else if (myResult > r) opps[couple].their_wins++;
+          else opps[couple].ties++;
         } else if (theyAdvanced && !isNaN(myResult)) {
-          opps[e.couple].their_wins++;
+          opps[couple].their_wins++;
         } else if (iAdvanced && !isNaN(r)) {
-          opps[e.couple].my_wins++;
+          opps[couple].my_wins++;
         }
       });
     });
@@ -775,7 +781,7 @@
     sessions.forEach((sessionHeats, si) => {
       const first = sessionHeats[0];
       const last  = sessionHeats[sessionHeats.length - 1];
-      const sessionType = first.session_name || getSessionType(first.time);
+      const sessionType = sessionName(first) || getSessionType(first.time);
 
       const activeNames = new Set();
       sessionHeats.forEach(heat => {
@@ -840,7 +846,7 @@
     sessions.forEach((sessionHeats, si) => {
       const first = sessionHeats[0];
       const last  = sessionHeats[sessionHeats.length - 1];
-      const sessionType = first.session_name || getSessionType(first.time);
+      const sessionType = sessionName(first) || getSessionType(first.time);
 
       const activeNames = new Set();
       sessionHeats.forEach(heat => {
@@ -907,7 +913,7 @@
         const advanced = isNaN(r) && someHaveResult;
         const medal = advanced ? '🥇' : rankPrefix(r);
         const rank = medal ? medal + ' ' : !isNaN(r) ? `${ordinal(r)} ` : '';
-        return `<div>${rank}${esc(e.bib)} ${esc(e.couple)}</div>`;
+        return `<div>${rank}${esc(e.bib)} ${esc(coupleName(e.competitor1, e.competitor2))}</div>`;
       }).join('');
       let contested = '', judgesPanel = '';
       if (entries.length > 1) {
@@ -1084,7 +1090,7 @@
       ${judgesPanel}
       <div id="h-${groupKey}" class="heat-details${isExpanded ? ' expanded' : ''}">
         <div class="text-xs text-gray-600 space-y-2">
-          <div><strong>Session:</strong> ${esc(primary.session_name)}</div>
+          <div><strong>Session:</strong> ${esc(sessionName(primary))}</div>
           ${roundLabel}
           <div class="mt-3"><strong>All Competitors:</strong><div class="ml-2 mt-1">${renderHeatDetails(allRounds)}</div></div>
         </div>
@@ -1123,7 +1129,7 @@
     sessions.forEach((sessionHeats, si) => {
       const first = sessionHeats[0];
       const last  = sessionHeats[sessionHeats.length - 1];
-      const sessionType = first.session_name || getSessionType(first.time);
+      const sessionType = sessionName(first) || getSessionType(first.time);
 
       html += `<div id="session-${si}" class="blue-box">
         <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
@@ -1192,7 +1198,7 @@
 
       const first = sessionHeats[0];
       const last  = sessionHeats[sessionHeats.length - 1];
-      const sessionType = first.session_name || getSessionType(first.time);
+      const sessionType = sessionName(first) || getSessionType(first.time);
 
       const partners = new Set();
       sessionHeats.forEach(h => { const p = getPartner(selectedCompetitor, h); if (p) partners.add(p); });
@@ -1445,7 +1451,7 @@
     html += `<div onclick="navigateTo('current')">⬇️ Current heat</div>`;
     currentSessions.forEach((sessionHeats, si) => {
       const first = sessionHeats[0];
-      const label = first.session_name || getSessionType(first.time);
+      const label = sessionName(first) || getSessionType(first.time);
       html += `<div onclick="navigateTo('session-${si}')">${esc(label)}</div>`;
     });
     document.getElementById('navigator-items').innerHTML = html;
@@ -1518,6 +1524,10 @@
   function getSessionType(t) {
     const h = new Date(t).getHours();
     return h < 12 ? 'Morning' : h < 18 ? 'Afternoon' : 'Evening';
+  }
+
+  function sessionName(heat) {
+    return heatsData?.sessions?.[heat.session];
   }
 
   function toggleHeatDetails(id) {

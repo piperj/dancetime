@@ -37,12 +37,10 @@ def build_heats_json(
             "key": h.key,
             "heat_number": h.heat_number,
             "session": h.session,
-            "session_name": h.session_name,
             "time": h.time,
             "round": h.round_name,
             "entries": [
                 {
-                    "couple": e.couple,
                     "competitor1": e.competitor1,
                     "competitor2": e.competitor2,
                     "bib": e.bib,

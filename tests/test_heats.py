@@ -430,7 +430,8 @@ class TestRealDataHeats1030:
                 assert "Sarah McClammy" not in e["competitor1"] or "Sarah McClammy" not in e["competitor2"], (
                     f"Sarah appears on both sides of entry in heat {key}: {e}"
                 )
-                # The couple string must not contain Sarah's name twice
-                assert e["couple"].count("Sarah McClammy") == 1, (
-                    f"Sarah appears twice in couple string '{e['couple']}' in heat {key}"
+                # Sarah must not appear as both competitor1 and competitor2 in the same entry
+                names = [e["competitor1"], e["competitor2"]]
+                assert names.count("Sarah McClammy") == 1, (
+                    f"Sarah appears twice in entry {e} in heat {key}"
                 )
