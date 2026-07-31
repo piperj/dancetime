@@ -255,3 +255,60 @@ class TestRankingIncremental:
         second = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
 
         assert first == second
+
+
+class TestRankingStablePhase:
+    """A full rebuild (no --cyi) must skip reprocessing comps whose calendar dates
+    put them outside the "live" phase, once they already have ranking + history
+    output on disk — see schedule/phases.py::comp_phase."""
+
+    def _write_calendar(self, out_dir: Path, cyi: int, start: str, end: str) -> None:
+        (out_dir / "calendar.json").write_text(json.dumps({
+            "competitions": [{"cyi": cyi, "start_date": start, "end_date": end}],
+        }))
+
+    def test_distant_comp_is_skipped_on_second_full_rebuild(self, pipeline_dirs):
+        import ranking
+
+        raw_dir = pipeline_dirs / "data" / "raw"
+        out_dir = pipeline_dirs / "data"
+        # Comp 999's fixture dates are Jan 2026; treat "now" as far enough past
+        # that it's unambiguously "distant" regardless of when this test runs.
+        self._write_calendar(out_dir, 999, "2020-01-29", "2020-02-01")
+
+        ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))
+        ranking_path = out_dir / "ranking_999.json"
+        history_path = out_dir / "elo_history" / "999.json"
+        assert ranking_path.exists() and history_path.exists()
+        first_ranking_mtime = ranking_path.stat().st_mtime_ns
+        first_history_mtime = history_path.stat().st_mtime_ns
+        first_ratings = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+
+        ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))
+
+        assert ranking_path.stat().st_mtime_ns == first_ranking_mtime
+        assert history_path.stat().st_mtime_ns == first_history_mtime
+        second_ratings = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+        assert first_ratings == second_ratings
+
+    def test_live_comp_is_reprocessed_on_full_rebuild(self, pipeline_dirs):
+        import ranking
+
+        raw_dir = pipeline_dirs / "data" / "raw"
+        out_dir = pipeline_dirs / "data"
+        # A date window spanning "now" keeps comp_phase() returning "live"
+        # indefinitely, so it must be reprocessed every rebuild.
+        self._write_calendar(out_dir, 999, "2020-01-01", "2099-01-01")
+
+        ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))
+        ranking_path = out_dir / "ranking_999.json"
+        first_mtime = ranking_path.stat().st_mtime_ns
+
+        ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))
+
+        assert ranking_path.stat().st_mtime_ns > first_mtime
+        # Still idempotent in content even though the file was rewritten.
+        first_ratings = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+        ranking.run(_args(cyi=None, data_dir=raw_dir, out_dir=out_dir))
+        second_ratings = json.loads((out_dir / "elo_ratings.json").read_text())["ratings"]
+        assert first_ratings == second_ratings

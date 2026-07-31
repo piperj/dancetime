@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from scrape.zip_store import load_json
@@ -9,6 +9,8 @@ from ranking.elo_store import (
     compute_deltas, load_history, load_ratings_full, save_ratings, write_history_for_cyi,
 )
 from ranking.writer import build_ranking_json, write_ranking_json
+from schedule.calendar import load_calendar, parse_date
+from schedule.phases import comp_phase
 
 
 def _sorted_competitions(data_dir: Path) -> list[tuple[int, Path, str, dict]]:
@@ -52,6 +54,19 @@ def _rewind_cyi(current_elo: dict, comp_counts: dict, out_dir: Path, cyi: int) -
             current_elo[c] = elo
 
 
+def _comp_phase_for(calendar: dict, cyi: int, today) -> str:
+    """Phase of `cyi` per calendar.json's dates. Unknown CYIs/dates default to
+    "live" so they're always (re)processed rather than silently skipped."""
+    comp = next((c for c in calendar.get("competitions", []) if c.get("cyi") == cyi), None)
+    if not comp:
+        return "live"
+    start = parse_date(comp.get("start_date", ""))
+    end = parse_date(comp.get("end_date", ""))
+    if start is None or end is None:
+        return "live"
+    return comp_phase(start, end, today)
+
+
 def run(args):
     data_dir = Path(args.data_dir)
     out_dir = Path(args.out_dir)
@@ -74,25 +89,40 @@ def run(args):
             print(f"ranking: CYI {args.cyi} has no results yet; preserving cumulative ratings")
             return
 
-    if incremental:
-        # Seed accumulator from disk so that comps not in data/raw/ this run survive.
-        # In CI, data/raw/ is gitignored — only the just-scraped zips are present.
-        prior = load_ratings_full(out_dir)
-        current_elo: dict[str, float] = {n: r["elo"] for n, r in prior["ratings"].items()}
-        comp_counts: dict[str, int] = {n: r.get("num_comps", 1) for n, r in prior["ratings"].items()}
-        # If we've ranked this CYI before, rewind its contribution first so a poll-driven
-        # re-rank produces the same result as the first rank.
-        for cyi, _, _, _ in sorted_comps:
-            _rewind_cyi(current_elo, comp_counts, out_dir, cyi)
-        prior_last_cyi = prior.get("last_cyi") or 0
-    else:
-        current_elo = {}
-        comp_counts = {}
-        prior_last_cyi = 0
+    # Seed the accumulator from disk. On an incremental run this lets comps not
+    # present in data/raw/ this run survive (e.g. CI, where only the just-scraped
+    # zip is present). On a full rebuild it lets already-ranked "stable" comps
+    # (see _comp_phase_for below) be skipped below instead of reprocessed, since
+    # their contribution is already folded into this state from a prior run —
+    # "rebuild from scratch" now means "resume from the persisted cumulative
+    # state, only reprocessing comps that are live or missing output."
+    prior = load_ratings_full(out_dir)
+    current_elo: dict[str, float] = {n: r["elo"] for n, r in prior["ratings"].items()}
+    comp_counts: dict[str, int] = {n: r.get("num_comps", 1) for n, r in prior["ratings"].items()}
+    prior_last_cyi = prior.get("last_cyi") or 0
 
     last_cyi = max(prior_last_cyi, sorted_comps[-1][0])
 
+    calendar = load_calendar(out_dir)
+    today = datetime.now(timezone.utc).date()
+
     for cyi, zip_path, start_date, competition_info in sorted_comps:
+        # Stable comps (results finished changing) are ranked once and never
+        # reprocessed — their existing output files are trusted as-is, and their
+        # contribution is already reflected in the seeded accumulator above.
+        ranking_path = out_dir / f"ranking_{cyi}.json"
+        if (
+            _comp_phase_for(calendar, cyi, today) != "live"
+            and ranking_path.exists()
+            and load_history(out_dir, cyi)
+        ):
+            continue
+
+        # Roll back a prior rank of this CYI (if any) so re-ranking it — whether
+        # because it has new results, or because it's being reprocessed after
+        # losing its cached output — produces the same result as the first rank.
+        _rewind_cyi(current_elo, comp_counts, out_dir, cyi)
+
         results_data = load_json(zip_path, "results.json")
         dance_results = parse_results(results_data)
 
