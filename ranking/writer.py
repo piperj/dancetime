@@ -47,18 +47,16 @@ def build_ranking_json(
 
     couples: list = []
     for competitor, elo in final_ratings.items():
-        studio = competitor_studios.get(competitor, "")
         # Competitors with no couple heats this competition (solo entries only,
-        # or no dance_results at all) get a single partner-less row.
+        # or no dance_results at all) get a single partner-less row. Studio is
+        # looked up from the top-level competitor_studios map (also in this
+        # file) at read time rather than duplicated per row.
         for partner in sorted(partners_seen.get(competitor) or {""}):
             key = (competitor, partner)
-            partner_studio = competitor_studios.get(partner, "") if partner else ""
 
             couples.append({
                 "competitor": competitor,
                 "partner": partner,
-                "studio": studio,
-                "partner_studio": partner_studio,
                 "elo": round(elo, 2),
                 "initial_elo": round(initial_ratings.get(competitor, elo), 2),
                 "heats_processed": partnership_heats.get(key, 0),

@@ -1335,9 +1335,7 @@
   function buildRankingSuggestions() {
     if (!rankingData) return;
     const names = new Set(allCompetitorNames);
-    (rankingData.couples || []).forEach(c => {
-      if (c.studio) names.add(c.studio);
-    });
+    (rankingData.studios || []).forEach(s => names.add(s));
     buildSuggestions('ranking-suggestions', [...names].sort());
   }
 
@@ -1359,10 +1357,11 @@
     const avg = avgScoresByCouple[coupleKey(c.competitor, c.partner)];
     const avgStr = avg != null ? Math.round(avg * 100) + '%' : '—';
     const delta = (deltaVal >= 0 ? '+' : '') + deltaVal;
+    const studio = rankingData.competitor_studios?.[c.competitor] || '';
     return `<tr>
       <td>${c.rank}</td>
       <td>${esc(c.competitor)}${c.partner ? ' &amp; ' + esc(c.partner) : ''}</td>
-      <td>${esc(c.studio)}</td>
+      <td>${esc(studio)}</td>
       <td>${Math.round(c.elo)}</td>
       <td class="${dc}">${esc(delta)}</td>
       <td>${avgStr}</td>
@@ -1380,7 +1379,7 @@
       : query
         ? c => c.competitor.toLowerCase().includes(query) ||
                (c.partner || '').toLowerCase().includes(query) ||
-               (c.studio || '').toLowerCase().includes(query)
+               (rankingData.competitor_studios?.[c.competitor] || '').toLowerCase().includes(query)
         : () => true;
 
     const couples = (rankingData.couples || []).filter(predicate);
