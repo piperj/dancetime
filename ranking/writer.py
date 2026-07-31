@@ -26,7 +26,6 @@ def build_ranking_json(
     final_ratings: dict[str, float],
     initial_ratings: dict[str, float],
     competitor_studios: dict[str, str],
-    elo_deltas: dict[str, str],
 ) -> dict:
     # Keyed by (competitor, partner) rather than just competitor: a competitor
     # can have more than one partner within the same competition (different
@@ -61,7 +60,6 @@ def build_ranking_json(
                 "studio": studio,
                 "partner_studio": partner_studio,
                 "elo": round(elo, 2),
-                "elo_delta": elo_deltas.get(competitor, "+0.0"),
                 "initial_elo": round(initial_ratings.get(competitor, elo), 2),
                 "heats_processed": partnership_heats.get(key, 0),
                 "num_opponents": len(partnership_opponents.get(key, set())),

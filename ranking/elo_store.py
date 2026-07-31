@@ -77,16 +77,3 @@ def write_history_for_cyi(cyi: int, heat_history: list, out_dir: Path) -> Path:
     path = history_dir / f"{cyi}.json"
     path.write_text(json.dumps(heat_history, indent=2, ensure_ascii=False))
     return path
-
-
-def compute_deltas(
-    final_ratings: dict[str, float],
-    prior_ratings: dict[str, float],
-) -> dict[str, str]:
-    deltas = {}
-    for competitor, elo in final_ratings.items():
-        prior_elo = prior_ratings.get(competitor, elo)
-        delta = elo - prior_elo
-        sign = "+" if delta >= 0 else ""
-        deltas[competitor] = f"{sign}{delta:.1f}"
-    return deltas

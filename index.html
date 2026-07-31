@@ -1354,10 +1354,11 @@
   }
 
   function renderCoupleRow(c) {
-    const dc = c.elo_delta.startsWith('+') ? 'delta-pos' : c.elo_delta.startsWith('-') ? 'delta-neg' : '';
+    const deltaVal = Math.round(c.elo - c.initial_elo);
+    const dc = deltaVal >= 0 ? 'delta-pos' : 'delta-neg';
     const avg = avgScoresByCouple[coupleKey(c.competitor, c.partner)];
     const avgStr = avg != null ? Math.round(avg * 100) + '%' : '—';
-    const delta = c.elo_delta.replace(/\.\d+$/, '');
+    const delta = (deltaVal >= 0 ? '+' : '') + deltaVal;
     return `<tr>
       <td>${c.rank}</td>
       <td>${esc(c.competitor)}${c.partner ? ' &amp; ' + esc(c.partner) : ''}</td>

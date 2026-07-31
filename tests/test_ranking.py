@@ -6,7 +6,7 @@ from ranking.models import DanceResult
 from ranking.parser import parse_results, _join_name, _extract_placement
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
-from ranking.elo_store import compute_deltas, load_history, load_ratings, load_ratings_full, save_ratings, write_history_for_cyi
+from ranking.elo_store import load_history, load_ratings, load_ratings_full, save_ratings, write_history_for_cyi
 from ranking.writer import build_ranking_json, write_ranking_json
 
 
@@ -334,18 +334,6 @@ class TestEloStore:
         assert raw["ratings"]["Alice"]["num_comps"] == 3
         assert raw["ratings"]["Alice"]["last_cyi"] == 373
 
-    def test_compute_deltas_positive(self):
-        deltas = compute_deltas({"Alice": 1550.0}, {"Alice": 1500.0})
-        assert deltas["Alice"] == "+50.0"
-
-    def test_compute_deltas_negative(self):
-        deltas = compute_deltas({"Alice": 1450.0}, {"Alice": 1500.0})
-        assert deltas["Alice"] == "-50.0"
-
-    def test_compute_deltas_new_competitor(self):
-        deltas = compute_deltas({"Alice": 1500.0}, {})
-        assert deltas["Alice"] == "+0.0"
-
     def test_load_history_returns_empty_when_no_file(self, tmp_path):
         assert load_history(tmp_path, 422) == []
 
@@ -397,7 +385,6 @@ class TestRankingWriter:
             final_ratings={"Alice": 1550.0, "Bob": 1480.0},
             initial_ratings={"Alice": 1500.0, "Bob": 1500.0},
             competitor_studios={"Alice": "Fred Astaire"},
-            elo_deltas={"Alice": "+50.0", "Bob": "-20.0"},
         )
 
     def test_top_level_keys(self):
@@ -446,7 +433,6 @@ class TestRankingWriter:
                             "Ann": 1400.0, "Bob": 1400.0, "Cara": 1500.0, "Dan": 1500.0},
             initial_ratings={},
             competitor_studios={},
-            elo_deltas={},
         )
 
         # dedup_couples collapses the mirrored A&B/B&A rows down to one

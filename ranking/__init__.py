@@ -6,7 +6,7 @@ from ranking.parser import parse_results
 from ranking.skill_rating import get_initial_ratings
 from ranking.elo import EloCalculator
 from ranking.elo_store import (
-    compute_deltas, load_history, load_ratings_full, save_ratings, write_history_for_cyi,
+    load_history, load_ratings_full, save_ratings, write_history_for_cyi,
 )
 from ranking.writer import build_ranking_json, write_ranking_json
 from schedule.calendar import load_calendar, parse_date
@@ -172,8 +172,6 @@ def run(args):
             if name and studio:
                 competitor_studios[name] = studio
 
-        elo_deltas = compute_deltas(final_ratings, initial_ratings)
-
         data = build_ranking_json(
             cyi=cyi,
             competition_info=competition_info,
@@ -181,7 +179,6 @@ def run(args):
             final_ratings=final_ratings,
             initial_ratings=initial_ratings,
             competitor_studios=competitor_studios,
-            elo_deltas=elo_deltas,
         )
         path = write_ranking_json(data, out_dir)
         print(f"ranking: wrote {path} ({start_date})")
