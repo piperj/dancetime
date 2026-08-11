@@ -30,6 +30,14 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Restore last_run.json from cache
+        uses: actions/cache/restore@v4
+        with:
+          path: data/last_run.json
+          key: last-run-${{ github.run_id }}
+          restore-keys: |
+            last-run-
+
       - name: Check which competitions need updating
         id: check
         run: |
@@ -68,6 +76,13 @@ jobs:
           from schedule.runner import mark_run
           mark_run(Path('data'), json.loads('${{ steps.check.outputs.cyis }}'))
           "
+
+      - name: Save last_run.json to cache
+        if: steps.check.outputs.run == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: data/last_run.json
+          key: last-run-${{ github.run_id }}
 
       - name: Commit and push if changed
         if: steps.check.outputs.run == 'true'
