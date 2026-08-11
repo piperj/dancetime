@@ -9779,7 +9779,7 @@
       "location": "Sarasota, FL",
       "start_date": "2026-07-29",
       "end_date": "2026-08-02",
-      "published": false
+      "published": true
     },
     {
       "cyi": 303,
@@ -9788,7 +9788,7 @@
       "location": "Jersey City, NY",
       "start_date": "2026-07-29",
       "end_date": "2026-08-02",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1676,
@@ -9797,7 +9797,7 @@
       "location": "San Antonio, TX",
       "start_date": "2026-08-01",
       "end_date": "2026-08-01",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1601,
@@ -9815,7 +9815,7 @@
       "location": "",
       "start_date": "2026-08-08",
       "end_date": "2026-08-08",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1539,
@@ -9824,7 +9824,7 @@
       "location": "Greenville, SC",
       "start_date": "2026-08-08",
       "end_date": "2026-08-08",
-      "published": false
+      "published": true
     },
     {
       "cyi": 895,
@@ -10611,15 +10611,6 @@
       "published": false
     },
     {
-      "cyi": 1695,
-      "competition_id": 113,
-      "name": "Texas Challenge",
-      "location": "Houston, TX",
-      "start_date": "2027-05-06",
-      "end_date": "2027-05-08",
-      "published": false
-    },
-    {
       "cyi": 294,
       "competition_id": 103,
       "name": "Northcoast Dancesport Classic",
@@ -10656,15 +10647,6 @@
       "published": false
     },
     {
-      "cyi": 1137,
-      "competition_id": 146,
-      "name": "Las Vegas Classic",
-      "location": "Las Vegas, NV",
-      "start_date": "2027-05-15",
-      "end_date": "2027-05-15",
-      "published": false
-    },
-    {
       "cyi": 1396,
       "competition_id": 158,
       "name": "Go Wild Minneapolis Dancesport",
@@ -10679,15 +10661,6 @@
       "name": "People's Choice Dancesport Competition",
       "location": "Scottsdale, AZ",
       "start_date": "2027-05-26",
-      "end_date": "2027-05-30",
-      "published": false
-    },
-    {
-      "cyi": 445,
-      "competition_id": 109,
-      "name": "Dancing a la Carte",
-      "location": "Springfield, MA",
-      "start_date": "2027-05-28",
       "end_date": "2027-05-30",
       "published": false
     },
@@ -10795,7 +10768,7 @@
       "competition_id": 130,
       "name": "Millennium Dancesport Championships",
       "location": "Orlando, FL",
-      "start_date": "2027-06-23",
+      "start_date": "2027-06-22",
       "end_date": "2027-06-27",
       "published": false
     },
@@ -10849,8 +10822,8 @@
       "competition_id": 65,
       "name": "Orlando Dance Classic",
       "location": "Orlando, FL",
-      "start_date": "2027-07-17",
-      "end_date": "2027-07-17",
+      "start_date": "2027-07-18",
+      "end_date": "2027-07-18",
       "published": false
     },
     {
@@ -11340,21 +11313,21 @@
       "published": false
     },
     {
-      "cyi": 1073,
-      "competition_id": 41,
-      "name": "The Snow Ball",
-      "location": "Minneapolis, MN",
-      "start_date": "2028-01-06",
-      "end_date": "2028-01-09",
-      "published": false
-    },
-    {
       "cyi": 1769,
       "competition_id": 167,
       "name": "Austin Star Ball",
       "location": "Austin, TX",
       "start_date": "2028-01-08",
       "end_date": "2028-01-08",
+      "published": false
+    },
+    {
+      "cyi": 1073,
+      "competition_id": 41,
+      "name": "The Snow Ball",
+      "location": "Minneapolis, MN",
+      "start_date": "2028-01-13",
+      "end_date": "2028-01-16",
       "published": false
     },
     {
@@ -15372,15 +15345,6 @@
       "published": false
     },
     {
-      "cyi": 9553,
-      "competition_id": 27,
-      "name": "Colorado Star Ball Championships",
-      "location": "Denver, CO",
-      "start_date": "2031-06-12",
-      "end_date": "2031-06-15",
-      "published": false
-    },
-    {
       "cyi": 3000,
       "competition_id": 150,
       "name": "Atlantic Dancesport Challenge",
@@ -15394,6 +15358,15 @@
       "competition_id": 136,
       "name": "Yankee Classic & New England Dancesport Championships",
       "location": "Boston, MA",
+      "start_date": "2031-06-19",
+      "end_date": "2031-06-22",
+      "published": false
+    },
+    {
+      "cyi": 9553,
+      "competition_id": 27,
+      "name": "Colorado Star Ball Championships",
+      "location": "Denver, CO",
       "start_date": "2031-06-19",
       "end_date": "2031-06-22",
       "published": false
@@ -15948,21 +15921,21 @@
       "published": false
     },
     {
-      "cyi": 5210,
-      "competition_id": 41,
-      "name": "The Snow Ball",
-      "location": "Minneapolis, MN",
-      "start_date": "2032-01-08",
-      "end_date": "2032-01-11",
-      "published": false
-    },
-    {
       "cyi": 5216,
       "competition_id": 167,
       "name": "Austin Star Ball",
       "location": "Austin, TX",
       "start_date": "2032-01-10",
       "end_date": "2032-01-10",
+      "published": false
+    },
+    {
+      "cyi": 5210,
+      "competition_id": 41,
+      "name": "The Snow Ball",
+      "location": "Minneapolis, MN",
+      "start_date": "2032-01-15",
+      "end_date": "2032-01-18",
       "published": false
     },
     {
@@ -17091,21 +17064,21 @@
       "published": false
     },
     {
-      "cyi": 9392,
-      "competition_id": 41,
-      "name": "The Snow Ball",
-      "location": "Minneapolis, MN",
-      "start_date": "2033-01-06",
-      "end_date": "2033-01-09",
-      "published": false
-    },
-    {
       "cyi": 9464,
       "competition_id": 167,
       "name": "Austin Star Ball",
       "location": "Austin, TX",
       "start_date": "2033-01-08",
       "end_date": "2033-01-08",
+      "published": false
+    },
+    {
+      "cyi": 9392,
+      "competition_id": 41,
+      "name": "The Snow Ball",
+      "location": "Minneapolis, MN",
+      "start_date": "2033-01-13",
+      "end_date": "2033-01-16",
       "published": false
     },
     {
@@ -20853,6 +20826,15 @@
       "published": false
     },
     {
+      "cyi": 9900,
+      "competition_id": 65,
+      "name": "Orlando Dance Classic",
+      "location": "Orlando, FL",
+      "start_date": "2036-07-19",
+      "end_date": "2036-07-19",
+      "published": false
+    },
+    {
       "cyi": 9641,
       "competition_id": 72,
       "name": "Boca Ballroom DanceSport Competition",
@@ -20992,8 +20974,8 @@
       "competition_id": 41,
       "name": "The Snow Ball",
       "location": "Minneapolis, MN",
-      "start_date": "2037-01-08",
-      "end_date": "2037-01-11",
+      "start_date": "2037-01-15",
+      "end_date": "2037-01-18",
       "published": false
     },
     {
@@ -21019,8 +21001,8 @@
       "competition_id": 41,
       "name": "The Snow Ball",
       "location": "Minneapolis, MN",
-      "start_date": "2038-01-07",
-      "end_date": "2038-01-10",
+      "start_date": "2038-01-14",
+      "end_date": "2038-01-17",
       "published": false
     }
   ]
