@@ -48,12 +48,87 @@ class TestNDCAClient:
         client = self._make_client({"Status": 1, "Result": {"not": "a list"}})
         assert client.fetch_competitor_list(373) == []
 
+    def test_fetch_competitor_list_returns_list_on_success(self):
+        client = self._make_client({"Status": 1, "Result": [{"ID": 1}, {"ID": 2}]})
+        assert client.fetch_competitor_list(373) == [{"ID": 1}, {"ID": 2}]
+
     def test_fetch_competition_info(self):
         # compyears endpoint uses "Events" key, not "Result"
         mock_data = {"Status": 1, "Events": [{"Competition_Name": "Test Ball", "Comp_Year_ID": 373}]}
         client = self._make_client(mock_data)
         result = client.fetch_competition_info(373)
         assert result["Competition_Name"] == "Test Ball"
+
+    def test_fetch_competition_info_empty_events_returns_none(self):
+        client = self._make_client({"Status": 1, "Events": []})
+        assert client.fetch_competition_info(373) is None
+
+    def test_fetch_competition_info_bad_status_returns_none(self):
+        client = self._make_client({"Status": 0, "Events": []})
+        assert client.fetch_competition_info(373) is None
+
+    def test_fetch_competition_info_network_error_returns_none(self):
+        import requests
+        mock_session = MagicMock()
+        mock_session.get.side_effect = requests.RequestException("timeout")
+        client = NDCAClient(session=mock_session)
+        assert client.fetch_competition_info(373) is None
+
+    def test_fetch_competition_info_json_error_returns_none(self):
+        mock_session = MagicMock()
+        mock_resp = MagicMock()
+        mock_resp.raise_for_status.return_value = None
+        mock_resp.json.side_effect = ValueError("bad json")
+        mock_session.get.return_value = mock_resp
+        client = NDCAClient(session=mock_session)
+        assert client.fetch_competition_info(373) is None
+
+    def test_fetch_calendar_returns_events(self):
+        mock_data = {"Status": 1, "Events": [{"Comp_Year_ID": 1}, {"Comp_Year_ID": 2}]}
+        client = self._make_client(mock_data)
+        assert client.fetch_calendar() == mock_data["Events"]
+
+    def test_fetch_calendar_bad_status_returns_none(self):
+        client = self._make_client({"Status": 0, "Events": []})
+        assert client.fetch_calendar() is None
+
+    def test_fetch_calendar_network_error_returns_none(self):
+        import requests
+        mock_session = MagicMock()
+        mock_session.get.side_effect = requests.RequestException("timeout")
+        client = NDCAClient(session=mock_session)
+        assert client.fetch_calendar() is None
+
+    def test_fetch_calendar_json_error_returns_none(self):
+        mock_session = MagicMock()
+        mock_resp = MagicMock()
+        mock_resp.raise_for_status.return_value = None
+        mock_resp.json.side_effect = ValueError("bad json")
+        mock_session.get.return_value = mock_resp
+        client = NDCAClient(session=mock_session)
+        assert client.fetch_calendar() is None
+
+    def test_fetch_competitor_results_delegates_to_get(self):
+        client = self._make_client({"Status": 1, "Result": {"placements": []}})
+        result = client.fetch_competitor_results(373, "42", "leader")
+        assert result == {"placements": []}
+
+    def test_fetch_competitor_heatlists_delegates_to_get(self):
+        client = self._make_client({"Status": 1, "Result": {"heats": []}})
+        result = client.fetch_competitor_heatlists(373, "42", "leader")
+        assert result == {"heats": []}
+
+    def test_fetch_session_list_delegates_to_get(self):
+        client = self._make_client({"Status": 1, "Result": {"sessions": []}})
+        assert client.fetch_session_list(373) == {"sessions": []}
+
+    def test_fetch_session_delegates_to_get(self):
+        client = self._make_client({"Status": 1, "Result": [{"bib": 1}]})
+        assert client.fetch_session(373, session=2) == [{"bib": 1}]
+
+    def test_default_session_created_when_none_passed(self):
+        client = NDCAClient()
+        assert client._session is not None
 
 
 class TestZipStore:
