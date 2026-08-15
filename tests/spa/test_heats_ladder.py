@@ -122,10 +122,11 @@ class TestHeatsTab:
 
         _type_search(page, "competitorSearch", name)
 
-        # Heat cards are .heat-box divs; clicking toggles the adjacent .heat-details.expanded
+        # Heat cards are .heat-box divs; clicking the couples-count pill toggles
+        # the adjacent .heat-details.expanded (only that pill opens it now).
         heat_boxes = page.locator("#scheduleContent .heat-box")
         assert heat_boxes.count() >= 1, "expected at least one .heat-box"
-        heat_boxes.first.click()
+        heat_boxes.first.locator("[data-role='couples-pill']").click()
         details = page.locator("#scheduleContent .heat-details.expanded")
         assert details.count() >= 1, "expected at least one expanded heat-details after click"
 

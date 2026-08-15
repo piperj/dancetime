@@ -106,9 +106,19 @@ def install_ndca_mocks(page, fetch_log=None):
                 "Result": {"Events": [_mock_event(), _other_cyi_event()]},
             })
         elif "date=" in url:
+            # HeatCard picks an arbitrary entrant of the contested group as the
+            # fetch anchor (any of them resolves in real NDCA data), not
+            # necessarily Oscar -- register every heat-628 entrant name so
+            # whichever one gets picked still resolves. The `id=` branch above
+            # ignores which id was actually requested, so the id value here
+            # doesn't need to be distinct per name.
             route.fulfill(json={
                 "Status": 1,
-                "Result": [{"ID": COMPETITOR_ID, "Name": ["Oscar", "Adrian Rodriguez"]}],
+                "Result": [
+                    {"ID": COMPETITOR_ID, "Name": ["Oscar", "Adrian Rodriguez"]},
+                    {"ID": COMPETITOR_ID, "Name": ["Anastasiya", "Barysevich"]},
+                    {"ID": COMPETITOR_ID, "Name": ["Bumchin", "Tegshjargal"]},
+                ],
             })
         else:
             route.continue_()
@@ -147,25 +157,24 @@ def _search_competitor(page, name):
 
 def _click_contested_pill(page):
     page.locator("span:text-is('7th Contested')").click()
-    panel_id = _panel_id(page)
-    # toggleJudgesPanel() closes synchronously; opening lazy-fetches (mocked,
-    # but still a real async round trip) and shows a placeholder meanwhile.
+    panel_key = _panel_key(page)
+    # HeatCard.toggleJudges() paints the expanded/loading state synchronously;
+    # the real fetch (mocked, but still an async round trip) resolves after.
     page.wait_for_function(
-        """(id) => {
-            const el = document.getElementById(id);
+        """(key) => {
+            const el = document.querySelector(`[data-role="judges-panel"][data-panel-key="${key}"]`);
             if (!el || !el.classList.contains('expanded')) return true;
             return !el.textContent.includes('Loading judges scores');
         }""",
-        arg=panel_id,
+        arg=panel_key,
     )
 
 
-def _panel_id(page):
+def _panel_key(page):
     return page.evaluate("""() => {
         const pill = Array.from(document.querySelectorAll('span'))
             .find(s => s.textContent.trim() === '7th Contested');
-        const m = pill.getAttribute('onclick').match(/toggleJudgesPanel\\(event, '([^']+)'/);
-        return 'jp-' + m[1];
+        return pill.dataset.panelKey;
     }""")
 
 
@@ -173,7 +182,7 @@ def _panel(page):
     """The judges-panel belonging to the '7th Contested' pill specifically —
     every contested heat on the page has its own (mostly collapsed) panel,
     so a bare '.judges-panel' selector matches many elements."""
-    return page.locator(f"#{_panel_id(page)}")
+    return page.locator(f'[data-role="judges-panel"][data-panel-key="{_panel_key(page)}"]')
 
 
 def _assert_panel_expanded(page, expanded):
@@ -181,8 +190,11 @@ def _assert_panel_expanded(page, expanded):
     so a same-tick DOM update (e.g. WebKit finishing the click's synchronous
     handler a beat late) can't read a stale class list."""
     page.wait_for_function(
-        "([id, expanded]) => document.getElementById(id)?.classList.contains('expanded') === expanded",
-        arg=[_panel_id(page), expanded],
+        """([key, expanded]) => {
+            const el = document.querySelector(`[data-role="judges-panel"][data-panel-key="${key}"]`);
+            return (el?.classList.contains('expanded') ?? false) === expanded;
+        }""",
+        arg=[_panel_key(page), expanded],
     )
 
 

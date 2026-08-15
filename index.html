@@ -21,8 +21,7 @@
 
     .sticky-header { background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
     .blue-box { background: #6366f1; color: white; padding: 0.75rem 1rem; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-bottom: 0.5rem; }
-    .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: pointer; transition: all 0.2s ease; transform-origin: top; width: fit-content; min-width: 100%; }
-    .heat-box:active { transform: scale(0.98); }
+    .heat-box { background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; margin-bottom: 0.75rem; cursor: default; transition: all 0.2s ease; transform-origin: top; width: fit-content; min-width: 100%; }
     .heat-details { display: none; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e5e7eb; }
     .heat-details.expanded { display: block; }
     .judges-panel { display: none; margin-top: 0.5rem; cursor: default; }
@@ -286,9 +285,6 @@
   let bibHeats = {};
   let bibToNames = {};
   let selectedCompetitor = null;
-  let expandedHeats = new Set();
-  let expandedJudgesPanels = new Set();
-  let judgesDataCache = {};
   let compList = [];
   let activeCompIdx = 0;
   let avgScores = {};
@@ -451,9 +447,6 @@
     studioCompetitors = {};
     bibHeats = {};
     selectedCompetitor = null;
-    expandedHeats = new Set();
-    expandedJudgesPanels = new Set();
-    judgesDataCache = {};
     avgScores = {};
     avgScoresByCouple = {};
     coupleMap = {};
@@ -471,6 +464,7 @@
       .then(([h, r]) => {
         heatsData = h;
         rankingData = r;
+        HeatCard.init({ cyi: h.meta?.cyi, eventLabels: h.events });
         programMarkers = null;
         const programCyi = h.meta?.cyi;
         if (programCyi) {
@@ -717,8 +711,7 @@
       return;
     }
     selectedCompetitor = val;
-    expandedHeats.clear();
-    expandedJudgesPanels.clear();
+    HeatCard.collapseAll();
     setCompetitorParam(val);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !!bibHeats[val]);
     if (heatsData.studios?.includes(val)) generateStudioSchedule();
@@ -809,7 +802,7 @@
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
 
         const studioEntry = main.entries.find(e => memberSet.has(e.competitor1) || memberSet.has(e.competitor2));
-        html += renderHeatCard(primary, allRounds, eventLabel(studioEntry?.event ?? group[0].entries[0]?.event));
+        html += HeatCard.render(primary, allRounds, eventLabel(studioEntry?.event ?? group[0].entries[0]?.event), sessionName(primary));
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -877,7 +870,7 @@
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
 
         const bibEntry = main.entries.find(e => e.bib === bib) || group[0].entries.find(e => e.bib === bib);
-        html += renderHeatCard(primary, allRounds, eventLabel(bibEntry?.event ?? group[0].entries[0]?.event));
+        html += HeatCard.render(primary, allRounds, eventLabel(bibEntry?.event ?? group[0].entries[0]?.event), sessionName(primary));
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -894,66 +887,7 @@
     setHeatsSearch(name);
   }
 
-  // ── Shared heat rendering ──────────────────────────────────────────────────
-  function renderRoundEntries(heat) {
-    const byEvent = {};
-    heat.entries.forEach(e => { (byEvent[e.event] ??= []).push(e); });
-    return Object.entries(byEvent).map(([evt, entries], idx) => {
-      const someHaveResult = entries.some(e => e.result !== '');
-      entries.sort((a, b) => {
-        const ra = parseInt(a.result), rb = parseInt(b.result);
-        const aAdv = isNaN(ra), bAdv = isNaN(rb);
-        if (aAdv && bAdv) return 0;
-        if (aAdv) return -1;
-        if (bAdv) return 1;
-        return ra - rb;
-      });
-      const rows = entries.map(e => {
-        const r = parseInt(e.result);
-        const advanced = isNaN(r) && someHaveResult;
-        const medal = advanced ? '🥇' : rankPrefix(r);
-        const rank = medal ? medal + ' ' : !isNaN(r) ? `${ordinal(r)} ` : '';
-        return `<div>${rank}${esc(e.bib)} ${esc(coupleName(e.competitor1, e.competitor2))}</div>`;
-      }).join('');
-      let contested = '', judgesPanel = '';
-      if (entries.length > 1) {
-        const panelKey = `${heat.key}__${idx}`;
-        const anchorName = entries[0].competitor1;
-        contested = ` <span class="text-yellow-600 cursor-pointer hover:underline" onclick="toggleJudgesPanel(event, '${esc(panelKey)}', '${esc(anchorName)}', '${esc(heat.heat_number)}')">(Contested)</span>`;
-        judgesPanel = renderJudgesPanel(panelKey);
-      }
-      return `<div class="mb-1"><strong>${esc(eventLabel(Number(evt)))}:</strong>${contested}<div class="ml-2">${rows}</div>${judgesPanel}</div>`;
-    }).join('');
-  }
-
-  // Builds the panel's inner content from judgesDataCache, memoizing the
-  // rendered HTML alongside the raw data so the 10s auto-refresh (which calls
-  // this on every open panel every tick) doesn't re-render unchanged data.
-  // Single source of truth — used both by the full-page render
-  // (renderJudgesPanel) and by toggleJudgesPanel's direct DOM update after a
-  // fetch, so the two never drift out of sync.
-  function buildJudgesPanelContent(key) {
-    const cached = judgesDataCache[key];
-    if (!cached) return '';
-    if (!cached.html) cached.html = JudgesScores.renderPanel(cached.data);
-    return cached.html;
-  }
-
-  // Renders the (possibly-open) judges-scores panel slot for a Contested pill.
-  // Re-run on every render (including the 10s auto-refresh), so it must restore
-  // from judgesDataCache rather than relying on DOM state, which gets rebuilt.
-  function renderJudgesPanel(key) {
-    const isExpanded = expandedJudgesPanels.has(key);
-    const content = isExpanded ? buildJudgesPanelContent(key) : '';
-    return `<div id="jp-${esc(key)}" class="judges-panel${isExpanded ? ' expanded' : ''}" onclick="event.stopPropagation()">${content}</div>`;
-  }
-
-  function buildCouplesBadge(n) {
-    return n === 1
-      ? '<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 ml-2">Solo on floor</span>'
-      : `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 ml-2">${n} couples</span>`;
-  }
-
+  // ── Shared heat rendering (static/heat-card.js: HeatCard.render) ──────────
   function getHeatRounds(heatNumber, session, fallback) {
     const sorted = (heatsByNumber[heatNumber] || fallback)
       .filter(h => h.session === session)
@@ -1068,36 +1002,6 @@
       part.forEach(h => { floorPositionByKey[h.key] = i; }));
   }
 
-  function renderHeatDetails(allRounds) {
-    return allRounds.map((heat, gi) => {
-      const roundHeader = allRounds.length > 1
-        ? `<div class="font-semibold text-gray-600 mb-1">${esc(heat.round)}</div>`
-        : '';
-      return (gi > 0 ? '<hr class="my-2 border-gray-200">' : '') + roundHeader + renderRoundEntries(heat);
-    }).join('');
-  }
-
-  function renderHeatCard(primary, allRounds, eventName, extraBadge = '', judgesPanel = '') {
-    const n = allRounds[allRounds.length - 1].entries.length;
-    const groupKey = allRounds.map(h => h.key).join('-');
-    const isExpanded = allRounds.some(h => expandedHeats.has(h.key)) || expandedHeats.has(groupKey);
-    const roundLabel = allRounds.length === 1 ? `<div><strong>Round:</strong> ${esc(primary.round)}</div>` : '';
-    return `<div class="heat-box" onclick="toggleHeatDetails('h-${groupKey}')">
-      <div class="text-base text-gray-900">
-        <strong>${esc(primary.heat_number)}</strong> · ${esc(formatTime(primary.time))} ${extraBadge} ${buildCouplesBadge(n)}
-      </div>
-      <div class="text-sm text-gray-700 mt-1">${esc(eventName)}</div>
-      ${judgesPanel}
-      <div id="h-${groupKey}" class="heat-details${isExpanded ? ' expanded' : ''}">
-        <div class="text-xs text-gray-600 space-y-2">
-          <div><strong>Session:</strong> ${esc(sessionName(primary))}</div>
-          ${roundLabel}
-          <div class="mt-3"><strong>All Competitors:</strong><div class="ml-2 mt-1">${renderHeatDetails(allRounds)}</div></div>
-        </div>
-      </div>
-    </div>`;
-  }
-
   // ── All-heats view (no competitor selected) ────────────────────────────────
   // The next upcoming physical heat's key, or null once they're all done. Cheap
   // enough to call on the refresh tick to decide whether a re-render is needed.
@@ -1142,7 +1046,7 @@
 
         if (group.some(h => h.key === nextHeatKey))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
-        html += renderHeatCard(primary, allRounds, eventLabel(group[0].entries[0]?.event));
+        html += HeatCard.render(primary, allRounds, eventLabel(group[0].entries[0]?.event), sessionName(primary));
       });
     });
 
@@ -1266,19 +1170,7 @@
         if (group.some(h => myHeats.indexOf(h) === nextIdx))
           html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
 
-        const isContested = main.entries.some(e =>
-          e.event === myEvent &&
-          e.competitor1 !== selectedCompetitor &&
-          e.competitor2 !== selectedCompetitor
-        );
-        const mainMyEntry = main.entries.find(e => e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor) || myEntry;
-        const groupKey = allRounds.map(h => h.key).join('-');
-        const contestedBadge = isContested
-          ? `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 ml-2 cursor-pointer hover:underline" onclick="toggleJudgesPanel(event, '${esc(groupKey)}', '${esc(selectedCompetitor)}', '${esc(primary.heat_number)}')">${contestedLabel(mainMyEntry?.result)}</span>`
-          : '';
-        const judgesPanel = isContested ? renderJudgesPanel(groupKey) : '';
-
-        html += renderHeatCard(primary, allRounds, eventLabel(myEvent), contestedBadge, judgesPanel);
+        html += HeatCard.render(primary, allRounds, eventLabel(myEvent), sessionName(primary));
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -1535,42 +1427,6 @@
     return heatsData?.events?.[idx] ?? '';
   }
 
-  function toggleHeatDetails(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.toggle('expanded');
-    const key = id.slice(2);
-    el.classList.contains('expanded') ? expandedHeats.add(key) : expandedHeats.delete(key);
-  }
-
-  // Lazy-loads and toggles the live judges-scores panel under a Contested pill.
-  // Always fetched live (never cached to disk) via judges-scores.js — but the
-  // resolved data IS kept in judgesDataCache (in memory only) for the rest of
-  // the session, since the 10s auto-refresh rebuilds this DOM node from scratch
-  // and would otherwise silently collapse/re-fetch an open panel every tick.
-  async function toggleJudgesPanel(event, key, competitorName, heatNumber) {
-    event.stopPropagation();
-    const el = document.getElementById('jp-' + key);
-    if (!el) return;
-    const isOpen = el.classList.toggle('expanded');
-    isOpen ? expandedJudgesPanels.add(key) : expandedJudgesPanels.delete(key);
-    if (!isOpen) return;
-    if (judgesDataCache[key]) {
-      el.innerHTML = buildJudgesPanelContent(key);
-      return;
-    }
-
-    el.innerHTML = '<div class="text-xs text-gray-500 p-2">Loading judges scores…</div>';
-    try {
-      const cyi = heatsData.meta.cyi;
-      const eventData = await JudgesScores.fetchJudgesData(cyi, competitorName, heatNumber);
-      judgesDataCache[key] = { data: eventData };
-      el.innerHTML = buildJudgesPanelContent(key);
-    } catch (err) {
-      el.innerHTML = `<div class="text-xs text-red-600 p-2">Couldn't load judges scores: ${esc(err.message)}</div>`;
-    }
-  }
-
   function formatDate(s) {
     const d = new Date(s);
     const day = String(d.getDate()).padStart(2, '0');
@@ -1599,23 +1455,6 @@
 
   function esc(s) {
     return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-
-  const ORDINAL_SFX = ['th','st','nd','rd','th'];
-  function ordinal(n) {
-    const v = n % 100;
-    return n + (v >= 11 && v <= 13 ? 'th' : ORDINAL_SFX[Math.min(n % 10, 4)]);
-  }
-
-  function rankPrefix(r) {
-    return r === 1 ? '🥇' : r === 2 ? '🥈' : r === 3 ? '🥉' : null;
-  }
-
-  function contestedLabel(result) {
-    const r = parseInt(result);
-    if (isNaN(r)) return 'Contested';
-    const medal = rankPrefix(r);
-    return medal ? `${medal} Contested` : `${ordinal(r)} Contested`;
   }
 
   // ── ELO tab ────────────────────────────────────────────────────────────────
@@ -2012,6 +1851,7 @@
   }, 10000);
 </script>
 <script src="judges-scores.js"></script>
+<script src="heat-card.js"></script>
 <script src="program.js"></script>
 </body>
 </html>
