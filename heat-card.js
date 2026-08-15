@@ -70,6 +70,29 @@
   let ctx = { cyi: null, eventLabels: [] }; // set once per competition via init()
 
   class HeatCard {
+    // Search context, shared by every instance -- describes who/what the
+    // current view is scoped to, set once per render pass by the caller
+    // (generateStudioSchedule/generateBibSchedule/generateAllHeatsSchedule/
+    // generateSchedule) via HeatCard.setContext(). A contested group is only
+    // shown if it's relevant to this context -- e.g. searching a bib on a
+    // multi-event heat only shows the pill for *that bib's* event, not an
+    // unrelated event sharing the same physical heat.
+    //   { type: 'all' }                                -- All-Heats: no filter
+    //   { type: 'studio', members: Set<name> }          -- Studio view
+    //   { type: 'bib', bib: string }                    -- Bib view
+    //   { type: 'competitor', name: string }            -- individual competitor view
+    static context = { type: 'all' };
+
+    static isRelevant(entry) {
+      const ctx = HeatCard.context;
+      switch (ctx.type) {
+        case 'competitor': return entry.competitor1 === ctx.name || entry.competitor2 === ctx.name;
+        case 'bib': return entry.bib === ctx.bib;
+        case 'studio': return ctx.members.has(entry.competitor1) || ctx.members.has(entry.competitor2);
+        default: return true; // 'all'
+      }
+    }
+
     constructor(key) {
       this.key = key;
       this.expansion = null; // null | 'couples' | a contested-group panelKey
@@ -93,6 +116,7 @@
         round.entries.forEach(e => { (byEvent[e.event] ??= []).push(e); });
         Object.entries(byEvent).forEach(([evt, entries], idx) => {
           if (entries.length <= 1) return;
+          if (!entries.some(HeatCard.isRelevant)) return;
           const sorted = entries.slice().sort(byResult);
           // byResult sorts advancing/unresolved (blank-result) entries first,
           // which is right for the couples-list display but wrong for "best
@@ -246,6 +270,13 @@
     registry.forEach(card => card.close());
   }
 
+  // Sets which contested groups are relevant to the current view -- called
+  // once per render pass by each of the 4 generate*Schedule functions, before
+  // their render loop. See HeatCard.isRelevant() for the context shapes.
+  function setContext(context) {
+    HeatCard.context = context;
+  }
+
   // ── Click dispatch ──────────────────────────────────────────────────────
   // One delegated listener replaces every per-element onclick="" string.
   function rerender(card) {
@@ -288,5 +319,5 @@
 
   document.getElementById('scheduleContent')?.addEventListener('click', onContainerClick);
 
-  global.HeatCard = { init, render, collapseAll };
+  global.HeatCard = { init, render, collapseAll, setContext };
 })(window);

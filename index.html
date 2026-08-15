@@ -751,6 +751,7 @@
   function generateStudioSchedule() {
     const studio = selectedCompetitor;
     const memberSet = new Set(studioCompetitors[studio] || []);
+    HeatCard.setContext({ type: 'studio', members: memberSet });
     document.getElementById('participantName').textContent = studio;
 
     if (!memberSet.size) {
@@ -816,6 +817,7 @@
   }
 
   function generateBibSchedule(bib) {
+    HeatCard.setContext({ type: 'bib', bib });
     document.getElementById('participantName').textContent = `Bib ${bib}`;
 
     const heatKeySet = bibHeats[bib];
@@ -1015,6 +1017,7 @@
   function generateAllHeatsSchedule() {
     if (!heatsData) return;
     showingAllHeats = true;
+    HeatCard.setContext({ type: 'all' });
 
     // Reuse the partition already computed at load, rather than re-partitioning
     // the full heat set on every (10s-polled) render.
@@ -1059,6 +1062,7 @@
   // ── Competitor schedule ────────────────────────────────────────────────────
   function generateSchedule() {
     if (!selectedCompetitor || !heatsData) return;
+    HeatCard.setContext({ type: 'competitor', name: selectedCompetitor });
 
     document.getElementById('participantName').textContent = selectedCompetitor;
 
