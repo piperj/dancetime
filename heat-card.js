@@ -107,30 +107,66 @@
       this.n = allRounds[allRounds.length - 1].entries.length;
     }
 
-    // Per-round, per-event contested groups -- derived fresh from allRounds,
-    // not from any selected competitor, so identical across all 4 views.
+    // One pill per contested *event* -- collapsed across every round of this
+    // heat, not one pill per round. A couple that advances from a contested
+    // Semi-Final to a contested Final is the same contested field, still in
+    // progress; showing two separate pills for it (one dead-ended in the
+    // semi, since JudgesScores.fetchJudgesData always returns the whole
+    // heat's rounds together regardless which pill you click) was a real
+    // regression found by spot-checking real data (CYI 373 heat 628,
+    // searching "Jasher Kuehn" -- recalled from Semi-Final to Final). Each
+    // resulting group is still gated by HeatCard.isRelevant, so a
+    // competitor/bib search (always exactly one couple) yields at most one
+    // pill; only a studio search spanning two simultaneous events can yield
+    // more than one.
     contestedGroups() {
+      // Flatten every round's entries into one list per event id, each
+      // tagged with which round (and that round's position) it came from.
+      const byEvent = new Map(); // event id -> [{ round, roundIndex, entry }]
+      this.allRounds.forEach((round, roundIndex) => {
+        round.entries.forEach(entry => {
+          if (!byEvent.has(entry.event)) byEvent.set(entry.event, []);
+          byEvent.get(entry.event).push({ round, roundIndex, entry });
+        });
+      });
+
       const groups = [];
-      this.allRounds.forEach(round => {
-        const byEvent = {};
-        round.entries.forEach(e => { (byEvent[e.event] ??= []).push(e); });
-        Object.entries(byEvent).forEach(([evt, entries], idx) => {
-          if (entries.length <= 1) return;
-          if (!entries.some(HeatCard.isRelevant)) return;
-          const sorted = entries.slice().sort(byResult);
-          // byResult sorts advancing/unresolved (blank-result) entries first,
-          // which is right for the couples-list display but wrong for "best
-          // placement" -- find the best *numeric* result instead, if any.
-          const best = sorted.find(e => e.result !== '');
-          groups.push({
-            panelKey: `${round.key}__${idx}`,
-            eventIdx: Number(evt),
-            heatNumber: round.heat_number,
-            entries: sorted,
-            anchorName: sorted[0].competitor1,
-            clickable: !!best,
-            labelResult: best?.result,
-          });
+      byEvent.forEach((appearances, evt) => {
+        // Contested if any single round had more than one couple in this
+        // event -- a couple who danced alone every round they appear in
+        // was never actually contested, even if the event recurs.
+        const byRound = new Map();
+        appearances.forEach(a => {
+          if (!byRound.has(a.roundIndex)) byRound.set(a.roundIndex, []);
+          byRound.get(a.roundIndex).push(a);
+        });
+        if (![...byRound.values()].some(list => list.length > 1)) return;
+
+        const relevant = appearances.filter(a => HeatCard.isRelevant(a.entry));
+        if (relevant.length === 0) return;
+
+        // Final results trump Semi-Final results, if available: walk rounds
+        // latest-first and use the first one where a relevant entry has a
+        // posted result. Falls back to the latest relevant round, unscored,
+        // if nothing's been judged yet.
+        const roundIndices = [...new Set(relevant.map(a => a.roundIndex))].sort((a, b) => b - a);
+        let chosen = null, clickable = false;
+        for (const ri of roundIndices) {
+          const scored = relevant.filter(a => a.roundIndex === ri && a.entry.result !== '');
+          if (scored.length > 0) {
+            chosen = scored.reduce((best, a) => parseInt(a.entry.result) < parseInt(best.entry.result) ? a : best);
+            clickable = true;
+            break;
+          }
+        }
+        if (!chosen) chosen = relevant.find(a => a.roundIndex === roundIndices[0]);
+
+        groups.push({
+          panelKey: `${this.key}__evt${evt}`,
+          heatNumber: chosen.round.heat_number,
+          anchorName: chosen.entry.competitor1,
+          clickable,
+          labelResult: clickable ? chosen.entry.result : undefined,
         });
       });
       return groups;
