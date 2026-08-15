@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Heats Tab, Under Pressure</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --paper: #fbfaf7;
+    --ink: #26241f;
+    --ink-soft: #55524a;
+    --rule: #e4e0d6;
+    --accent: #a8442e;
+    --code-bg: #f0ede4;
+    --good-bg: #eef4ea;
+    --good-border: #7c9a63;
+    --now-red: #c0392b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1c1a17;
+      --ink: #e9e5da;
+      --ink-soft: #b3ada0;
+      --rule: #37342c;
+      --accent: #e08a6f;
+      --code-bg: #262319;
+      --good-bg: #212b1c;
+      --good-border: #5c7a49;
+      --now-red: #e0685a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, "SF Pro Text", "Georgia", serif;
+    line-height: 1.65;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  h1 {
+    font-size: 1.85rem;
+    line-height: 1.25;
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .kicker {
+    font-family: -apple-system, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 0.6rem;
+  }
+  .dek {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0.8rem 0 0;
+  }
+  .meta {
+    font-family: -apple-system, sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 1.4rem 0 2.2rem;
+  }
+  h2 {
+    font-size: 1.24rem;
+    margin: 2.6rem 0 0.9rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.6rem;
+  }
+  p { margin: 0 0 1.05rem; }
+  strong { color: var(--ink); }
+  code {
+    background: var(--code-bg);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    font-family: "SF Mono", ui-monospace, Menlo, monospace;
+  }
+  .verdict {
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    font-size: 1.05rem;
+    margin: 0.5rem 0 1.5rem;
+  }
+  .good {
+    background: var(--good-bg);
+    border-left: 3px solid var(--good-border);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.2rem 0;
+    font-size: 0.97rem;
+  }
+  .mock {
+    position: relative;
+    background: var(--code-bg);
+    border-radius: 10px;
+    padding: 0.9rem 1rem 1.1rem;
+    margin: 1.4rem 0;
+    font-family: -apple-system, sans-serif;
+    font-size: 0.85rem;
+  }
+  .mock .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.3rem;
+    border-bottom: 1px dashed var(--rule);
+    color: var(--ink-soft);
+  }
+  .mock .now-line {
+    position: relative;
+    height: 0;
+    border-top: 2px solid var(--now-red);
+    margin: 0.4rem 0;
+  }
+  .mock .now-label {
+    position: absolute;
+    right: 0.3rem;
+    top: -0.7rem;
+    background: var(--now-red);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+  }
+  ol {
+    padding-left: 1.3rem;
+    margin: 0.5rem 0 1rem;
+  }
+  ol li { margin-bottom: 0.85rem; }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    font-family: -apple-system, sans-serif;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="kicker">UX Audit · dancetime · Heats tab</p>
+  <h1>The Heats Tab, Under Pressure</h1>
+  <p class="dek">A rehearsal for the five seconds you actually have, phone in hand, between heats.</p>
+</header>
+
+<p class="meta">2026-08-10 — two agents standing in for you: one walked the live site
+(<code>piperj.github.io/dancetime/?competitor=Johan+Piper</code>) on a mobile viewport with your
+real data, the other traced <code>static/index.html</code>'s render logic directly.</p>
+
+<p>Not a code review — a rehearsal. The brief was three questions, in your own words: <em>when is
+it my turn? what dances am I doing? will I be surprised, alone on the floor?</em></p>
+
+<h2>The verdict, in one line</h2>
+
+<div class="verdict">The underlying logic for "when's my turn" is already correct — it's just
+invisible until you go looking for it. That's the whole story, and it's a good one: nothing here
+needs new data or new computation, only a different default and a different visual treatment.</div>
+
+<h2>What's actually broken: the first five seconds</h2>
+
+<p>Open your own deep link right now, mid-competition, and here's what happens: you land at the
+<strong>top of your entire day</strong> — heat 414, 9:00am — not at "now." On a 42-heat day that's
+over 5,000 pixels of schedule between you and the thing you actually opened the app to see. The
+correct position exists and updates live (a marker that re-checks the real clock every 10 seconds
+and advances automatically), but reaching it today means noticing a small hamburger icon, tapping
+it, and tapping "Current heat" — a multi-step recovery from a bad default, exactly when you have
+the least patience for multi-step anything.</p>
+
+<h2>What's already good, so it doesn't get lost in the fix list</h2>
+
+<p>Dance names are legible on every card, no decoding required. The Contested badge, when it
+fires, is genuinely well done — yellow, a medal emoji for placements, tappable straight through to
+judges' scores. Font sizes are readable without zooming, tap targets are full-width, nothing forces
+horizontal scroll. The break/award markers interleaved into the schedule are a nice pacing touch.
+None of that needs to change.</p>
+
+<h2>The "alone on the floor" question — settled: leave it alone</h2>
+
+<p>This one got revisited mid-audit and an always-on binary-indicator redesign was drafted — then
+rejected on sight. The pills stay exactly as they are. No further work planned here without a
+fresh request.</p>
+
+<h2>What's going on the TODO list</h2>
+
+<p>Four changes, all aimed at the same five-second window — the moment you glance at your phone
+between heats:</p>
+
+<div class="mock">
+  <div class="row"><span>Heat 421 · 10:40am</span><span>3 couples</span></div>
+  <div class="row"><span>Heat 422 · 10:52am</span><span>Contested 🥈</span></div>
+  <div class="now-line"><span class="now-label">NOW · 11:03</span></div>
+  <div class="row" style="opacity:.5"><span>Heat 423 · 11:15am</span><span>Solo on floor</span></div>
+  <div class="row" style="opacity:.5"><span>Heat 424 · 11:30am</span><span>4 couples</span></div>
+</div>
+
+<ol>
+  <li><strong>Auto-scroll to "now" on load.</strong> No more hunting for the hamburger menu — the
+  scroll-to-marker code already exists for the manual tap, it just needs to fire on its own.</li>
+  <li><strong>A red "now" line, Apple Calendar-style</strong>, instead of a marker glued to one heat
+  card — a horizontal line across the schedule at the actual current time, time label included, as
+  sketched above.</li>
+  <li><strong>Slow, continuous auto-scroll</strong> to keep that line at a constant spot on screen
+  (even while it's technically off-screen) — drifting at a steady rate rather than snapping every
+  10 seconds, and slowing further during a break so a quiet stretch doesn't scroll at the same pace
+  as back-to-back heats.</li>
+  <li><strong>A floating play/pause button</strong>, replacing the hamburger-menu "Current heat"
+  item entirely — toggles the slow auto-scroll on or off, and a double-tap re-centers the red line
+  to the middle of the screen.</li>
+</ol>
+
+<p>All four are now logged in <code>CLAUDE.md</code>'s TODO list, in that order, since 1 and 2 are
+the prerequisites the other two build on.</p>
+
+<footer>Compiled 2026-08-10 from a two-agent audit (live mobile walkthrough + code trace) of
+<code>static/index.html</code>; revised 2026-08-11 to drop a floor-status-pill redesign that was
+proposed then rejected — focus stays on "Now."</footer>
+
+</body>
+</html>

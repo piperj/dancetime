@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Sister Project: A Field Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --paper: #fbfaf7;
+    --ink: #26241f;
+    --ink-soft: #55524a;
+    --rule: #e4e0d6;
+    --accent: #a8442e;
+    --accent-soft: #f2e4de;
+    --code-bg: #f0ede4;
+    --steal-bg: #eef4ea;
+    --steal-border: #7c9a63;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1c1a17;
+      --ink: #e9e5da;
+      --ink-soft: #b3ada0;
+      --rule: #37342c;
+      --accent: #e08a6f;
+      --accent-soft: #3a2620;
+      --code-bg: #262319;
+      --steal-bg: #212b1c;
+      --steal-border: #5c7a49;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, "SF Pro Text", "Georgia", serif;
+    line-height: 1.65;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.25;
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .kicker {
+    font-family: -apple-system, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 0.6rem;
+  }
+  .dek {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    margin: 0.8rem 0 0;
+  }
+  .meta {
+    font-family: -apple-system, sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 1.4rem 0 2.2rem;
+  }
+  h2 {
+    font-size: 1.28rem;
+    margin: 2.6rem 0 0.9rem;
+    padding-top: 0.2rem;
+    border-top: 1px solid var(--rule);
+    padding-top: 1.6rem;
+  }
+  h2 .num {
+    color: var(--accent);
+    font-family: -apple-system, sans-serif;
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+  p { margin: 0 0 1.05rem; }
+  strong { color: var(--ink); }
+  code {
+    background: var(--code-bg);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.88em;
+    font-family: "SF Mono", ui-monospace, Menlo, monospace;
+  }
+  .callout {
+    background: var(--steal-bg);
+    border-left: 3px solid var(--steal-border);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.2rem 0;
+    font-size: 0.97rem;
+  }
+  .callout strong {
+    color: var(--steal-border);
+    font-family: -apple-system, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  ol {
+    padding-left: 1.3rem;
+    margin: 0.5rem 0 1rem;
+  }
+  ol li { margin-bottom: 0.7rem; }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--rule);
+    font-family: -apple-system, sans-serif;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="kicker">Field Report · dancetime</p>
+  <h1>The Sister Project</h1>
+  <p class="dek">Two codebases, one shared ancestor, and what they each chose to become.</p>
+</header>
+
+<p class="meta">Surveyed from a local checkout (<code>~/Downloads/dancetime-master</code>) — the
+GitHub URL in our notes now 404s, likely gone private or renamed under its owner, Wojciech, so
+treat this as a snapshot rather than a live link.</p>
+
+<p>Two projects started from the same seed — scraping NDCA dancesport results — and grew apart.
+I went and looked at what the other one became. Short version: it evolved into a slicker, more
+disciplined tool that never grew a rating system, while ours grew ELO and stayed scrappy
+everywhere else. There's genuine stuff to steal here, and a couple of landmines they're standing
+next to without knowing it.</p>
+
+<h2><span class="num">1</span>The big divergence: what even is the database?</h2>
+
+<p>Our project treats <code>git</code> as the database. A bot commits fresh JSON straight to
+<code>main</code> on a schedule — hourly now, though it ran every 15 minutes until a self-healing
+fix widened the interval (per-CYI last-run tracking means a missed tick no longer loses a scrape).
+It's blunt but it works, and we get history, diffing, and rollback for free — that's exactly why
+the <code>last_run.json</code> noise-commit problem was worth fixing rather than living with.</p>
+
+<p>Their project has no committed data at all. Instead, <strong>the live deployed website is the
+database</strong> — but to be precise about who's doing the loading: this happens in their <em>CI
+build job</em>, not in a visitor's browser. Nobody's browser downloads the whole thing. Their
+build starts by downloading its own previous deployment over HTTP, treats that as "what we knew
+yesterday," fetches only what's actually due for a fresh re-scrape (tiered by how close a
+competition is), and redeploys the whole tree. A visitor's browser only ever fetches the handful
+of JSON files the page they're looking at actually needs.</p>
+
+<p>That said, "not wasteful for the browser" isn't the same as "not wasteful, period." I read their
+actual code, and every single build run re-downloads <em>every known competition's</em> heat-list
+and results files from the live site — their own comment calls this "the bulk of the work
+(hundreds of unchanged comps)" — just to reconstruct "what do we already have" before deciding
+what's due. That's a real, self-imposed cost, paid on a schedule, purely so the build doesn't have
+to trust its own local disk between runs. And it creates a genuine dependency you flagged
+correctly: the build needs the previous deployment to be up and answering over HTTP to know its
+own prior state at all. If the live site is unreachable, they've made a deliberate choice to abort
+the run rather than guess — better than corrupting data, but it does mean a live-site outage can
+stall their whole pipeline, a dependency our git-as-database approach simply doesn't have.</p>
+
+<p>On the "NDCA deletes heat lists after an event ends" claim — that's <em>their</em> stated
+reason for this whole design, not something I independently confirmed, and you're right to push
+back on it. I just tested it directly: I hit NDCA's live feed for Hawaii Star Ball 2024, a
+competition that finished well over a year ago, and it still returned a full heat list, 200 OK, no
+special access needed. That lines up with our own experience — the Phase D backfill pulled
+session data for prior, long-concluded editions straight from NDCA's live API. So the data itself
+persists on NDCA's side; what disappears is more likely the <em>discoverability path</em> — a
+comp drops off the current calendar/listing pages, organizer sites go stale, links rot — not the
+underlying records. Their datastore-recovery motivation may be solving a problem that isn't quite
+the one they think it is. Worth a gentle heads-up if we're ever in touch with Wojciech.</p>
+
+<p>None of which erases the real tradeoff underneath: they get a deploy pipeline with zero commit
+noise, but zero git history over the data itself — a bad deploy just becomes tomorrow's "prior
+state" with no diff to catch it. We get the opposite. That part of the design fork is real and
+worth knowing about, even with the "upstream deletes data" justification softened.</p>
+
+<div class="callout"><strong>Worth stealing</strong>They have a "recompute everything from what's
+already on disk, no network" mode, cleanly separated from "go fetch new data." When you're just
+retuning ELO math, that distinction saves real time — worth adding to our rebuild tooling.</div>
+
+<h2><span class="num">2</span>A caching bug that doesn't affect us — mostly — but is a fun war story</h2>
+
+<p>Their frontend is built from versioned JavaScript modules, and at one point Cloudflare's zone
+edge cache served an ES-module response in a form the browser's module loader flatly rejected —
+<strong>blank page, no console error</strong> — on their custom domain only, never on the raw
+<code>*.pages.dev</code> URL. The actual fix was a Cloudflare zone cache rule that bypasses edge
+caching for that content — I'd originally credited their JS/CSS content-hashing (fingerprinting)
+with fixing this, which was wrong. Fingerprinting solves an adjacent problem: it stops a
+<em>visitor's own browser</em> from running a stale cached copy of JS after a deploy, by giving
+every changed file a brand-new URL. It's a necessary companion to the cache-rule fix, but a
+different mechanism solving a different bug.</p>
+
+<p>We don't have the Cloudflare-edge-cache failure mode at all — no ES modules, no zone cache to
+misbehave. But "we don't have this problem" oversells it: our <code>program.js</code>/
+<code>judges-scores.js</code> are loaded by fixed filename with no cache-busting, and GitHub Pages
+doesn't set aggressive no-cache/immutable headers the way their deploy does. A browser holding a
+stale cached copy after we ship a breaking change to either file would silently keep running the
+old version — the same underlying risk (fixed-URL script goes stale), just without Cloudflare's
+added failure mode on top. Not urgent, but worth knowing it's not zero.</p>
+
+<h2><span class="num">3</span>The frontend: theirs is a proper app, ours is a productive pile</h2>
+
+<p>This is the most legible difference if you opened both in an editor. Ours is one big HTML file
+with an inline script and a web of shared global variables (<code>heatsData</code>,
+<code>rankingData</code>, the ELO chart object) — functional, fast to extend, but tangled by
+design. Theirs is a real hash-routed single-page app: every view is its own small file,
+data-fetching is separated from rendering, and URLs are real shareable deep links (down to which
+dancers are selected and which day/session filters are active) with working browser back/forward
+and scroll-position restore.</p>
+
+<p>Given we already have a habit of carving out self-contained new features into their own file
+(<code>program.js</code>, <code>judges-scores.js</code>), their split — fetch/cache in one place,
+pure logic in another, DOM-building in a third — is a natural next increment for <em>new</em>
+features, not a rewrite of what exists. It's the same instinct we already have, just one layer more
+disciplined.</p>
+
+<p>One concrete gap: their stylesheet is compiled once and committed to the repo; ours loads
+Tailwind live from a CDN at runtime — every page load, a visitor's browser downloads Tailwind's JS
+and generates all the CSS on the fly, in-browser. Theirs works offline and never depends on a CDN
+staying up or unchanged; ours doesn't, and it's not what Tailwind itself recommends for production
+use. Worth fixing, but not "cheap" the way I first described it — we currently have zero JS/Node
+tooling anywhere in this project (no <code>package.json</code>, no npm, nothing), while they
+already had the whole toolchain in place. Doing this properly means standing up Node/npm from
+scratch just for this one file, not a one-line swap.</p>
+
+<h2><span class="num">4</span>What they built instead of a rating system</h2>
+
+<p>They have <strong>no ELO, no ranking, nothing rating-shaped, at all</strong> — confirmed, not
+assumed. Their whole story is schedule and discovery: printable running-order sheets for a
+dancer's day, full judge-by-judge skating sheets (not just placements — the whole scoresheet), and
+a "field finder" that tells you where a competitive field is thin or deep, broken down by style,
+level, and age group, so you can pick where to actually enter. That last one is basically the
+shipped, fully-realized version of our still-standalone heat-competitiveness report — worth reading
+their design notes before we build the SPA-integrated version of ours, since they've already made
+(and presumably learned from) the relevant design decisions.</p>
+
+<p>They also have a neat, small idea we don't: a way to define a named "crowd" — say, everyone
+who's trained with a particular pro — by walking the partnership graph outward from a few seed
+names, rather than hand-maintaining a roster. Low priority, but genuinely cute, and would slot
+naturally into a "who's in Kris's orbit" kind of view.</p>
+
+<p>None of this touches our ELO/matchup/sandbagging-detection territory — that stays entirely
+ours.</p>
+
+<h2><span class="num">5</span>Two landmines we've hit that they're standing next to</h2>
+
+<p>We learned the hard way that one of NDCA's own timestamp fields lies on multi-day competitions —
+it silently reports the <em>last</em> day of the event for rounds that happened earlier in the
+week. They never hit this bug, but only because of how they happened to split responsibilities
+between two data sources — nothing in their code actually <em>knows</em> about the landmine. If
+they ever start trusting that field for anything beyond a footnote, they'll fall into the same
+hole we already mapped. Worth passing along if we're ever back in touch with Wojciech.</p>
+
+<p>Separately: there's a much cheaper NDCA API endpoint that returns an entire session's worth of
+placements in one call, instead of one call per competitor. We found it and use it; they haven't —
+they're still paying for a call per competitor, which adds up fast on a large competition. Another
+one worth passing along.</p>
+
+<h2><span class="num">6</span>Testing: a good habit worth copying, and one worth admiring but not adopting</h2>
+
+<p>The genuinely useful idea: their release check actually launches a browser against the
+<em>built</em> site and blocks every network request that isn't to itself — if some future edit
+accidentally introduces a call out to a CDN or an external API, the test hard-fails and names the
+offending URL. Our browser test suite checks behavior but has no equivalent trip-wire for "did we
+accidentally start depending on the outside world." Cheap to add, catches a real category of
+mistake.</p>
+
+<p>The idea I'd admire from a distance rather than copy wholesale: before building anything
+non-trivial, they write a design spec (with real numbers pulled from the data, not guesses) and
+then a detailed implementation plan that explicitly checks itself against the spec line-by-line
+before anyone writes code. It's a genuinely rigorous process — makes sense coming from a computer
+scientist's instincts — and one spec+plan pair I checked runs about 1,400 lines combined, another
+closer to 1,600, so "upfront prose for a solo maintainer's project" understates it if anything. I'd
+guessed they never revise a spec after shipping, but I can't actually back that up — the checkout
+I'm working from has no git history to check, so treat that specific claim as a guess, not a
+finding. Our after-the-fact notebook plus TODO list is still the right size for how we actually
+work. If we ever tackle something unusually large and multi-file (the deferred session-feed
+rewrite, maybe), it might be worth borrowing just the "check the plan against the spec before
+writing code" step, without the full ceremony around it.</p>
+
+<h2><span class="num">7</span>The short list, if you want to act on any of this</h2>
+
+<ol>
+  <li>Drop the Tailwind CDN dependency in favor of a committed, locally-built stylesheet — worth
+  doing, but budget for it honestly: it means standing up a Node/npm toolchain from scratch, since
+  we don't have one today. Not a one-line swap.</li>
+  <li>Add a "no requests leave localhost" trip-wire to our browser test suite — genuinely cheap,
+  <code>tests/spa/conftest.py</code> already hands us real Playwright <code>Page</code> objects
+  that support it directly.</li>
+  <li>Give <code>tools/recompute_with_bulk.py</code> a way to recompute bulk comps without
+  live-refetching their placements from NDCA each time — that's the actual gap. The core
+  <code>ranking</code> pipeline already has no network calls at all; the network dependency is
+  specifically in the bulk-comp recompute tool, which currently re-fetches session data live
+  because bulk archives only store the final computed ranking, not the raw placements.</li>
+  <li>Read their field-finder design notes before building the SPA-integrated version of our own
+  heat-competitiveness report — no need to design that one from scratch.</li>
+  <li>If we're ever back in touch with Wojciech: pass along the two landmines from earlier — the
+  <code>Date_Time</code> unreliability bug they're not guarded against, and the cheaper
+  <code>type=2</code> session-feed endpoint they're not using yet.</li>
+  <li>Everything else here — the partnership-crowd idea, the spec-then-plan process, the
+  corpus-driven age-code documentation — is genuinely interesting but not urgent. File away, don't
+  chase.</li>
+</ol>
+
+<footer>Compiled 2026-08-10 from a local checkout of the sister project, then fact-checked
+section-by-section against both codebases (one verification pass per section, plus a live NDCA API
+test) — three real corrections landed as a result.</footer>
+
+</body>
+</html>
