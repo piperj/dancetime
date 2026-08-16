@@ -25,6 +25,8 @@ def run(args):
     print("publish: copied static/heat-card.js → heat-card.js")
     shutil.copy2(Path("static/program.js"), Path("program.js"))
     print("publish: copied static/program.js → program.js")
+    shutil.copy2(Path("static/now-line.js"), Path("now-line.js"))
+    print("publish: copied static/now-line.js → now-line.js")
 
     _validate_outputs(out_dir)
 

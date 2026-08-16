@@ -31,7 +31,6 @@
     .judges-table th, .judges-table td { padding: 0.25rem 0.5rem; text-align: center; border-bottom: 1px solid #f0f0f0; }
     .judges-table th:nth-child(2), .judges-table td:nth-child(2) { text-align: left; }
     .judges-table th { color: #6b7280; font-weight: 600; }
-    .next-marker  { background: #22c55e; color: #fff; margin: 0.5rem 0; padding: 0.5rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 700; box-shadow: 0 2px 6px rgba(34,197,94,0.4); }
     .done-marker  { color: #065f46; margin: 0.375rem 0; text-align: center; font-style: italic; }
     .break-marker { color: #6b7280; margin: 0.375rem 0; text-align: center; font-style: italic; }
     .partner-change-marker { color: #1e40af; margin: 0.375rem 0; text-align: center; font-style: italic; }
@@ -82,6 +81,19 @@
     .navigator-menu div { padding: .5rem 1rem; cursor: pointer; font-size: .9rem; white-space: nowrap; }
     .navigator-menu div:hover { background: #eef2ff; }
     .navigator-menu div:not(:last-child) { border-bottom: 1px solid #f3f4f6; }
+
+    /* "Now" line -- lives in page-flow coordinates (position:absolute, top
+       set in px by static/now-line.js every frame), not pinned to the
+       viewport, so it scrolls with the cards like Apple Calendar's
+       current-time line. #now-line-root is a body-level sibling of
+       #scheduleContent, not a child of it -- #scheduleContent gets wiped by
+       innerHTML replacement on every search change and the 10s auto-refresh. */
+    #now-line-root.hidden { display: none; }
+    #now-line { position: absolute; left: 1rem; right: 1rem; z-index: 15; display: flex; align-items: center; opacity: .34; pointer-events: none; }
+    #now-line .now-line-bar { flex: 1; height: 2px; background: #ef4444; margin-left: .9rem; }
+    #now-line .now-line-chip { background: #ef4444; color: #fff; font-size: .68rem; font-weight: 700; padding: .12rem .45rem; border-radius: .3rem; margin-left: .35rem; margin-right: .9rem; font-variant-numeric: tabular-nums; }
+    #now-fab { position: fixed; right: 1rem; bottom: 1.25rem; z-index: 30; width: 3.2rem; height: 3.2rem; border-radius: 50%; border: none; background: #4f46e5; color: #fff; font-size: 1.2rem; box-shadow: 0 8px 20px rgba(79,70,229,.4); cursor: pointer; }
+    #now-fab:active { transform: scale(.93); }
   </style>
 </head>
 <body>
@@ -244,6 +256,9 @@
   let allCompetitorNames = [];
   let heatsData = null;
   let programMarkers = null;
+  // True from the start of a competition load until its program-markers
+  // fetch settles -- see updateTabVisibility()'s NowLine.setActive() call.
+  let awaitingProgramMarkers = false;
   let sessionFirstHeatTime = {};
   let eloHistoryByCyi = {};
   let eloHistoryFetching = {};
@@ -356,6 +371,12 @@
     heatsControls.classList.toggle('hidden', !isHeats || !heatsData);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
     scheduleContent.classList.toggle('hidden', !isHeats || !heatsData);
+    // Held back until loadComp()'s program-markers fetch settles -- letting
+    // NowLine activate off the first, markers-less render would scroll to a
+    // target that a moment later shifts by however much the Awards/break
+    // markers add to the page once they arrive, a visible jump the user
+    // shouldn't see. See loadComp()'s awaitingProgramMarkers.
+    if (window.NowLine) window.NowLine.setActive(isHeats && !!heatsData && !awaitingProgramMarkers);
     rankingControls.classList.toggle('hidden', !isRanking || !rankingData);
     rankingView.classList.toggle('hidden', !isRanking);
     document.getElementById('elo-controls').classList.toggle('hidden', !isElo);
@@ -467,11 +488,14 @@
         HeatCard.init({ cyi: h.meta?.cyi, eventLabels: h.events });
         programMarkers = null;
         const programCyi = h.meta?.cyi;
+        awaitingProgramMarkers = !!programCyi;
         if (programCyi) {
           loadProgramMarkers(programCyi).then(data => {
             if (heatsData !== h) return; // a different competition was selected meanwhile
             programMarkers = data;
+            awaitingProgramMarkers = false;
             renderCurrentHeatsView();
+            updateTabVisibility(); // NowLine activates here, once, against the settled render
           });
         }
         {
@@ -799,9 +823,6 @@
         if (lastTime !== null)
           html += transitionMarker(lastKey, lastTime, primary, null, false);
 
-        if (group.some(h => h.key === nextHeatKey))
-          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
-
         const studioEntry = main.entries.find(e => memberSet.has(e.competitor1) || memberSet.has(e.competitor2));
         html += HeatCard.render(primary, allRounds, eventLabel(studioEntry?.event ?? group[0].entries[0]?.event), sessionName(primary));
 
@@ -811,7 +832,7 @@
     });
 
     if (!nextHeatKey && allHeats.length > 0)
-      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
+      html += `<div id="allDoneMarker" class="done-marker" data-now-time="${esc(nudgeLater(allHeats[allHeats.length - 1].time))}">✅ All done!</div>`;
 
     setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats found for this studio</p>');
   }
@@ -868,9 +889,6 @@
         if (lastTime !== null)
           html += transitionMarker(lastKey, lastTime, primary, null, false);
 
-        if (group.some(h => h.key === nextHeatKey))
-          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
-
         const bibEntry = main.entries.find(e => e.bib === bib) || group[0].entries.find(e => e.bib === bib);
         html += HeatCard.render(primary, allRounds, eventLabel(bibEntry?.event ?? group[0].entries[0]?.event), sessionName(primary));
 
@@ -880,7 +898,7 @@
     });
 
     if (!nextHeatKey && allHeats.length > 0)
-      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
+      html += `<div id="allDoneMarker" class="done-marker" data-now-time="${esc(nudgeLater(allHeats[allHeats.length - 1].time))}">✅ All done!</div>`;
 
     setScheduleHTML(html || `<p class="text-gray-500 text-center">No heats found for bib ${esc(bib)}</p>`);
   }
@@ -922,8 +940,8 @@
   // per product decision — only costume/floor breaks get the subtler treatment.
   function renderProgramActivity(a) {
     if (a.category === 'break')
-      return `<div class="costume-marker">👗 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
-    return `<div class="award-marker">🏆 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
+      return `<div class="costume-marker" data-now-time="${esc(a.time)}">👗 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
+    return `<div class="award-marker" data-now-time="${esc(a.time)}">🏆 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
   }
 
   function transitionMarker(prevKey, prevMainTime, next, partner, partnerChanged) {
@@ -1047,14 +1065,12 @@
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
         const primary = allRounds[0];
 
-        if (group.some(h => h.key === nextHeatKey))
-          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
         html += HeatCard.render(primary, allRounds, eventLabel(group[0].entries[0]?.event), sessionName(primary));
       });
     });
 
     if (!nextHeatKey && uniqueHeats.length > 0)
-      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
+      html += `<div id="allDoneMarker" class="done-marker" data-now-time="${esc(nudgeLater(uniqueHeats[uniqueHeats.length - 1].time))}">✅ All done!</div>`;
 
     setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats in this competition</p>');
   }
@@ -1092,10 +1108,18 @@
 
     let html = '';
     let si = 0;
+    // Tracks the latest data-now-time actually emitted below (a heat card or
+    // a program-activity marker), so the "All done!" marker appended at the
+    // very end can be timestamped strictly after it -- a trailing Award/Top
+    // ceremony marker can carry a data-now-time later than the last heat's
+    // own time, and "All done!" needs to out-rank that too or the "now" line
+    // (static/now-line.js) clamps onto the Awards marker instead.
+    let lastStopTime = null;
+    const bumpStopTime = t => { if (t && (!lastStopTime || t > lastStopTime)) lastStopTime = t; };
     blocks.forEach((block, bi) => {
       if (block.kind === 'topOnly') {
         html += `<div class="blue-box"><div class="text-sm">${esc(heatsData.sessions[block.code])}</div></div>`;
-        block.activities.forEach(a => { html += renderProgramActivity(a); });
+        block.activities.forEach(a => { html += renderProgramActivity(a); bumpStopTime(a.time); });
         return;
       }
 
@@ -1146,7 +1170,7 @@
           let lastAwardIdx = -1;
           pending.forEach((a, i) => { if (a.category === 'award') lastAwardIdx = i; });
           pending.forEach((a, i) => {
-            if (a.category === 'top' || i > lastAwardIdx) html += renderProgramActivity(a);
+            if (a.category === 'top' || i > lastAwardIdx) { html += renderProgramActivity(a); bumpStopTime(a.time); }
           });
           // "First heat" is normally the session's actual first heat (useful
           // for grabbing a table before the floor gets busy). But if this
@@ -1158,7 +1182,7 @@
           html += `<div class="break-marker">▶️ First heat ${esc(formatTime(firstHeatTime))}</div>`;
           isFirstGroup = false;
         } else {
-          pending.forEach(a => { html += renderProgramActivity(a); });
+          pending.forEach(a => { html += renderProgramActivity(a); bumpStopTime(a.time); });
         }
 
         const myEntry = group.reduce(
@@ -1171,10 +1195,8 @@
         if (lastTime !== null)
           html += transitionMarker(lastKey, lastTime, primary, currentPartner, currentPartner !== lastPartner);
 
-        if (group.some(h => myHeats.indexOf(h) === nextIdx))
-          html += `<div id="nextHeatMarker" class="next-marker">⬇️ Next heat ${esc(primary.heat_number)}</div>`;
-
         html += HeatCard.render(primary, allRounds, eventLabel(myEvent), sessionName(primary));
+        bumpStopTime(primary.time);
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -1194,6 +1216,7 @@
         actIdx++;
         if (a.category !== 'top' && sawAward) continue;
         html += renderProgramActivity(a);
+        bumpStopTime(a.time);
         if (a.category === 'award') sawAward = true;
       }
 
@@ -1209,7 +1232,7 @@
     });
 
     if (nextIdx === -1 && myHeats.length > 0)
-      html += '<div id="allDoneMarker" class="done-marker">✅ All done!</div>';
+      html += `<div id="allDoneMarker" class="done-marker" data-now-time="${esc(nudgeLater(lastStopTime || myHeats[myHeats.length - 1].time))}">✅ All done!</div>`;
 
     setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats found for this competitor</p>');
     populateContestedStats();
@@ -1344,7 +1367,6 @@
     if (isOpen) { menu.classList.add('hidden'); return; }
 
     let html = `<div onclick="navigateTo('top')">⬆️ Top</div>`;
-    html += `<div onclick="navigateTo('current')">⬇️ Current heat</div>`;
     currentSessions.forEach((sessionHeats, si) => {
       const first = sessionHeats[0];
       const label = sessionName(first) || getSessionType(first.time);
@@ -1358,9 +1380,6 @@
     document.getElementById('navigator-menu')?.classList.add('hidden');
     if (target === 'top') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (target === 'current') {
-      const marker = document.getElementById('nextHeatMarker') || document.getElementById('allDoneMarker');
-      if (marker) marker.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } else {
       const el = document.getElementById(target);
       if (el) {
@@ -1459,6 +1478,14 @@
 
   function esc(s) {
     return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // One second after `isoTime` -- used to timestamp the "All done!" marker's
+  // data-now-time strictly later than the last real stop it follows, so
+  // static/now-line.js's "now" line can never tie with (and, via a stable
+  // sort, lose to) that stop.
+  function nudgeLater(isoTime) {
+    return new Date(new Date(isoTime).getTime() + 1000).toISOString();
   }
 
   // ── ELO tab ────────────────────────────────────────────────────────────────
@@ -1857,5 +1884,6 @@
 <script src="judges-scores.js"></script>
 <script src="heat-card.js"></script>
 <script src="program.js"></script>
+<script src="now-line.js"></script>
 </body>
 </html>

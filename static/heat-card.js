@@ -263,7 +263,7 @@
       const panelsHtml = groups.map(g => this.renderJudgesPanelWrapper(g)).join('');
       const roundLabel = allRounds.length === 1 ? `<div><strong>Round:</strong> ${esc(primary.round)}</div>` : '';
       const expanded = this.couplesOpen();
-      return `<div class="heat-box" data-card-key="${esc(this.key)}">
+      return `<div class="heat-box" data-card-key="${esc(this.key)}" data-now-time="${esc(primary.time)}">
       <div class="text-base text-gray-900">
         <strong>${esc(primary.heat_number)}</strong> · ${esc(formatTime(primary.time))}${pillsHtml} ${this.renderCouplesBadge()}
       </div>
