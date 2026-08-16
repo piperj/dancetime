@@ -69,18 +69,15 @@
   let lastWrittenScrollY = null; // what we last set scrollY to ourselves, so an unmatched 'scroll' event is recognizable as external
   let justRebuilt = false; // one frame of grace right after any rebuildStops(), so a transient page-height shrink (e.g. a momentary empty/placeholder render) that the browser itself clamps scrollY for doesn't get misread as external interference
 
-  function maxScroll() { return document.documentElement.scrollHeight - window.innerHeight; }
-  function clampScroll(y) { return Math.max(0, Math.min(maxScroll(), y)); }
+  // Cached rather than read fresh every tick() -- document.documentElement
+  // .scrollHeight forces a layout reflow, and the page height only actually
+  // changes on a DOM mutation, which is exactly when rebuildStops() (the
+  // only other writer of this cache) already runs.
+  let cachedMaxScroll = 0;
+  function refreshMaxScroll() { cachedMaxScroll = document.documentElement.scrollHeight - window.innerHeight; }
+  function clampScroll(y) { return Math.max(0, Math.min(cachedMaxScroll, y)); }
   function writeScroll(y) { lastWrittenScrollY = y; window.scrollTo(0, y); }
   function idealTarget(now) { return scrollTargetFor(stops, now, window.innerHeight); }
-
-  function fmtClock(ms) {
-    const d = new Date(ms);
-    let h = d.getHours() % 12 || 12;
-    const m = String(d.getMinutes()).padStart(2, '0');
-    const ap = d.getHours() >= 12 ? 'PM' : 'AM';
-    return `${h}:${m} ${ap}`;
-  }
 
   function buildRoot() {
     root = document.createElement('div');
@@ -148,6 +145,7 @@
     // the gap before the next rAF frame. One frame of grace in tick()
     // absorbs that too, rather than mistaking it for interference.
     justRebuilt = true;
+    refreshMaxScroll();
     if (active && playing && !interacting && stops.length) {
       writeScroll(clampScroll(trackedScroll(idealTarget(Date.now()), offset)));
     }
@@ -207,11 +205,28 @@
     clearTimeout(settleTimer);
   }
 
+  let lastClockText = null; // last string written to chipEl -- avoids a DOM write every frame for a value that only changes once a minute
+
   function tick() {
     const now = Date.now();
 
+    // Nothing to update while the Heats tab isn't active -- #now-line-root
+    // is hidden, and there's no drift/tracking bookkeeping to do either
+    // (we never write scroll while inactive; rebuildStops() re-baselines
+    // everything the moment we go active again).
+    if (!active) {
+      requestAnimationFrame(tick);
+      return;
+    }
+
     if (lineEl) lineEl.style.top = contentYFor(stops, now) + 'px';
-    if (chipEl) chipEl.textContent = fmtClock(now);
+    if (chipEl) {
+      const text = window.formatTime(now);
+      if (text !== lastClockText) {
+        lastClockText = text;
+        chipEl.textContent = text;
+      }
+    }
 
     // Catch-all for scrolls we didn't cause ourselves and that aren't a
     // #scheduleContent re-render (that case is handled synchronously in
@@ -296,6 +311,11 @@
     // event that may never arrive -- the wall-clock line position needs no
     // equivalent fix, since it's recomputed fresh from Date.now() every
     // frame with nothing accumulated to drift.
+    // The page height cache only tracks DOM mutations (rebuildStops); a
+    // viewport resize/orientation-change doesn't touch the DOM but still
+    // changes scrollHeight - innerHeight, so it needs its own refresh.
+    window.addEventListener('resize', refreshMaxScroll);
+
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden) return;
       if (!pointerDown && !interacting) return;
@@ -342,6 +362,7 @@
     scheduleContent = document.getElementById('scheduleContent');
     if (!scheduleContent) return; // defensive -- not expected given script load order
     lastWrittenScrollY = window.scrollY;
+    refreshMaxScroll();
     buildRoot();
     wireEvents();
     setPlaying(true);

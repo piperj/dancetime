@@ -87,8 +87,9 @@
        viewport, so it scrolls with the cards like Apple Calendar's
        current-time line. #now-line-root is a body-level sibling of
        #scheduleContent, not a child of it -- #scheduleContent gets wiped by
-       innerHTML replacement on every search change and the 10s auto-refresh. */
-    #now-line-root.hidden { display: none; }
+       innerHTML replacement on every search change and the 10s auto-refresh.
+       Visibility toggle uses the global .hidden rule above -- no ID-scoped
+       override needed. */
     #now-line { position: absolute; left: 1rem; right: 1rem; z-index: 15; display: flex; align-items: center; opacity: .34; pointer-events: none; }
     #now-line .now-line-bar { flex: 1; height: 2px; background: #ef4444; margin-left: .9rem; }
     #now-line .now-line-chip { background: #ef4444; color: #fff; font-size: .68rem; font-weight: 700; padding: .12rem .45rem; border-radius: .3rem; margin-left: .35rem; margin-right: .9rem; font-variant-numeric: tabular-nums; }
@@ -1116,10 +1117,11 @@
     // (static/now-line.js) clamps onto the Awards marker instead.
     let lastStopTime = null;
     const bumpStopTime = t => { if (t && (!lastStopTime || t > lastStopTime)) lastStopTime = t; };
+    const addActivity = a => { html += renderProgramActivity(a); bumpStopTime(a.time); };
     blocks.forEach((block, bi) => {
       if (block.kind === 'topOnly') {
         html += `<div class="blue-box"><div class="text-sm">${esc(heatsData.sessions[block.code])}</div></div>`;
-        block.activities.forEach(a => { html += renderProgramActivity(a); bumpStopTime(a.time); });
+        block.activities.forEach(addActivity);
         return;
       }
 
@@ -1170,7 +1172,7 @@
           let lastAwardIdx = -1;
           pending.forEach((a, i) => { if (a.category === 'award') lastAwardIdx = i; });
           pending.forEach((a, i) => {
-            if (a.category === 'top' || i > lastAwardIdx) { html += renderProgramActivity(a); bumpStopTime(a.time); }
+            if (a.category === 'top' || i > lastAwardIdx) addActivity(a);
           });
           // "First heat" is normally the session's actual first heat (useful
           // for grabbing a table before the floor gets busy). But if this
@@ -1182,7 +1184,7 @@
           html += `<div class="break-marker">▶️ First heat ${esc(formatTime(firstHeatTime))}</div>`;
           isFirstGroup = false;
         } else {
-          pending.forEach(a => { html += renderProgramActivity(a); bumpStopTime(a.time); });
+          pending.forEach(addActivity);
         }
 
         const myEntry = group.reduce(
@@ -1215,8 +1217,7 @@
         const a = acts[actIdx];
         actIdx++;
         if (a.category !== 'top' && sawAward) continue;
-        html += renderProgramActivity(a);
-        bumpStopTime(a.time);
+        addActivity(a);
         if (a.category === 'award') sawAward = true;
       }
 
