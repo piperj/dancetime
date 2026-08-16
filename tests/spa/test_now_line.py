@@ -83,10 +83,11 @@ class TestFab:
         _setup_all_heats(page, spa_server)
         fab = page.locator("#now-fab")
         assert fab.count() == 1
-        before = fab.text_content()
+        ring = page.locator("#now-fab .now-fab-ring")
+        before = ring.get_attribute("stroke")
         fab.click()
         page.wait_for_timeout(400)  # past the single/double-tap commit delay
-        after = fab.text_content()
+        after = ring.get_attribute("stroke")
         assert after != before
 
 

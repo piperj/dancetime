@@ -93,7 +93,9 @@
     #now-line { position: absolute; left: 1rem; right: 1rem; z-index: 15; display: flex; align-items: center; opacity: .34; pointer-events: none; }
     #now-line .now-line-bar { flex: 1; height: 2px; background: #ef4444; margin-left: .9rem; }
     #now-line .now-line-chip { background: #ef4444; color: #fff; font-size: .68rem; font-weight: 700; padding: .12rem .45rem; border-radius: .3rem; margin-left: .35rem; margin-right: .9rem; font-variant-numeric: tabular-nums; }
-    #now-fab { position: fixed; right: 1rem; bottom: 1.25rem; z-index: 30; width: 3.2rem; height: 3.2rem; border-radius: 50%; border: none; background: #4f46e5; color: #fff; font-size: 1.2rem; box-shadow: 0 8px 20px rgba(79,70,229,.4); cursor: pointer; }
+    #now-fab { position: fixed; right: 1rem; bottom: 1.25rem; z-index: 30; width: 3.84rem; height: 3.84rem; padding: 0; margin: 0; border: none; border-radius: 50%; background: transparent; cursor: pointer; -webkit-tap-highlight-color: transparent; filter: drop-shadow(0 2px 6px rgba(0,0,0,.25)); }
+    #now-fab svg { display: block; width: 100%; height: 100%; }
+    #now-fab .now-fab-disc, #now-fab .now-fab-ring { transition: fill .18s ease, stroke .18s ease; }
     #now-fab:active { transform: scale(.93); }
   </style>
 </head>

@@ -57,7 +57,7 @@
   // ── DOM / browser glue ──────────────────────────────────────────────────
 
   let scheduleContent = null;
-  let root = null, lineEl = null, chipEl = null, fabEl = null;
+  let root = null, lineEl = null, chipEl = null, fabEl = null, fabDiscEl = null, fabRingEl = null;
   let stops = [];
   let active = false;    // mirrors the Heats tab being the active tab, via setActive()
   let playing = true;
@@ -94,7 +94,22 @@
     fabEl.id = 'now-fab';
     fabEl.type = 'button';
     fabEl.setAttribute('aria-label', 'Play/pause schedule tracking');
-    fabEl.textContent = '▶';
+    // Ring Halo treatment: the play/pause glyph is a true cutout (an SVG
+    // luminance mask, not a drawn icon) so the FAB stays a thin, near-
+    // transparent ring over busy schedule content instead of a solid button
+    // sitting on top of it. Color is the only state signal -- red while
+    // paused, green while tracking is playing -- driven from setPlaying().
+    fabEl.innerHTML =
+      '<svg viewBox="0 0 56 56" aria-hidden="true">' +
+        '<defs>' +
+          '<mask id="now-fab-play"><rect width="56" height="56" fill="#fff"/><polygon points="23,17.5 23,38.5 39.5,28" fill="#000"/></mask>' +
+          '<mask id="now-fab-pause"><rect width="56" height="56" fill="#fff"/><rect x="20.5" y="17.5" width="6" height="21" rx="1.5" fill="#000"/><rect x="29.5" y="17.5" width="6" height="21" rx="1.5" fill="#000"/></mask>' +
+        '</defs>' +
+        '<circle class="now-fab-disc" cx="28" cy="28" r="24"/>' +
+        '<circle class="now-fab-ring" cx="28" cy="28" r="24" fill="none" stroke-width="2"/>' +
+      '</svg>';
+    fabDiscEl = fabEl.querySelector('.now-fab-disc');
+    fabRingEl = fabEl.querySelector('.now-fab-ring');
     root.appendChild(fabEl);
 
     document.body.appendChild(root);
@@ -172,7 +187,12 @@
       resyncBaseline();
     }
     playing = p;
-    if (fabEl) fabEl.textContent = p ? '▶' : '⏸';
+    if (fabDiscEl && fabRingEl) {
+      const rgb = p ? '239,68,68' : '34,197,94'; // red while playing, green while paused
+      fabDiscEl.setAttribute('mask', 'url(#now-fab-' + (p ? 'play' : 'pause') + ')');
+      fabDiscEl.setAttribute('fill', 'rgba(' + rgb + ',.30)');
+      fabRingEl.setAttribute('stroke', 'rgba(' + rgb + ',.95)');
+    }
   }
 
   function recenter() {
