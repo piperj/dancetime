@@ -92,6 +92,7 @@ class TestPublishRun:
         (static_dir / "judges-scores.js").write_text("")
         (static_dir / "heat-card.js").write_text("")
         (static_dir / "program.js").write_text("")
+        (static_dir / "now-line.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -120,6 +121,7 @@ class TestPublishRun:
         (static_dir / "judges-scores.js").write_text("")
         (static_dir / "heat-card.js").write_text("")
         (static_dir / "program.js").write_text("")
+        (static_dir / "now-line.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -148,6 +150,7 @@ class TestPublishRun:
         (static_dir / "judges-scores.js").write_text("")
         (static_dir / "heat-card.js").write_text("")
         (static_dir / "program.js").write_text("")
+        (static_dir / "now-line.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()

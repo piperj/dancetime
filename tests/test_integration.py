@@ -22,6 +22,7 @@ def pipeline_dirs(tmp_path):
     (static_dir / "judges-scores.js").write_text("")
     (static_dir / "heat-card.js").write_text("")
     (static_dir / "program.js").write_text("")
+    (static_dir / "now-line.js").write_text("")
     return tmp_path
 
 
