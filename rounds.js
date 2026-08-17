@@ -168,8 +168,20 @@
   // So the *fine* key (verbatim level) still drives when a new
   // RoundSequencer starts; the broad key only drives when a new header
   // actually prints.
+  //
+  // Night Club is the exception -- real data (Manhattan, cyi 904) shows its
+  // sub-levels genuinely interleaved within one tight heat_number range
+  // (e.g. heat 269 "Beginner1 Hustle" and heat 274 "Beginner 2 Hustle" are
+  // only 5 apart, with other sub-levels' heats in between), not scheduled
+  // as separate blocks the way standard families' sub-levels are. Splitting
+  // by verbatim level there resets the sequencer's gap-fill state between
+  // two heats that are actually right next to each other on the real
+  // schedule -- so for Night Club, the fine key collapses to the broad key
+  // instead, keeping one continuous RoundSequencer across the whole broad
+  // tier. See thor.md 2026-08-17.
   function fineBlockKeyFor(parsed) {
     const p = parsed[0] || {};
+    if (p.styleFamily === 'nightclub') return broadBlockKeyFor(parsed);
     return `${p.level || ''}||${p.styleFamily || 'unknown'}`;
   }
   function broadBlockKeyFor(parsed) {
@@ -372,7 +384,13 @@
         }
         if (idx === -1) idx = pos; // unrecognized code/family -- just append, no gap detection
 
-        const missing = idx - pos;
+        // With a fixed `seq`, "missing" is a count of *sequence positions*
+        // skipped. Night Club (and any unrecognized family) has no `seq`
+        // to index into, but a gap between two of this couple's own
+        // dances is just as real -- count it directly from the
+        // heat_number difference instead, so the same fillGap() still
+        // finds and fills any real intervening heat. See thor.md 2026-08-17.
+        const missing = seq ? idx - pos : (lastPlacedNum != null ? heatNumber - lastPlacedNum - 1 : 0);
         if (missing > 0) fillGap(missing, heatNumber);
         row.cells.push(cellFor(p, 0));
         pos = idx + 1;
@@ -512,20 +530,26 @@
         // whole rounds passed with no entry for this couple at all -- those
         // rounds never got a row in the first place (place() only creates
         // one on a real dance), so this is exactly the "collapse empty
-        // rounds into a Break" case: just close out whatever's pending and
-        // show one marker, not a floor-position/rest-time heuristic. Night
-        // Club and any unrecognized family have no round length at all
+        // rounds into a Break" case: just close out whatever's pending, no
+        // Break pill (per the user, Rounds has no break-time treatment at
+        // all). Unrecognized families have no round length at all
         // (roundSequenceFor returns null) -- fall back to a fixed
         // small-gap threshold instead of firing on every single skipped
-        // heat_number.
-        const roundLen = (roundSequenceFor(parsed[0]?.styleFamily) || []).length || 3;
+        // heat_number. Night Club is deliberately exempt: it's a genuine
+        // single continuous line with no fixed round width to overflow, and
+        // now that null-seq gaps get filled by heat_number continuity too
+        // (see place() above), forcing a row break here would just hide
+        // real intervening heats that fillGap would otherwise show -- a
+        // confirmed bug against Manhattan real data (heat 269 -> 274, a
+        // 4-heat gap, rendered nothing at all). See thor.md 2026-08-17.
+        const styleFamily = parsed[0]?.styleFamily;
+        const roundLen = (roundSequenceFor(styleFamily) || []).length || 3;
         const heatNumberGap = lastHeatNumber != null ? Math.max(0, heatNumber - lastHeatNumber - 1) : 0;
-        if (heatNumberGap >= roundLen) {
+        if (styleFamily !== 'nightclub' && heatNumberGap >= roundLen) {
           // A gap this size crosses a full round's worth of heat_numbers --
           // force the round closed rather than let fillGap's within-round
           // empty-cell logic (bounded to a handful of sequence positions)
-          // try to represent it. No Break pill in Rounds -- per the user,
-          // the tab has no break-time treatment at all.
+          // try to represent it.
           sequencer.flush();
         }
 

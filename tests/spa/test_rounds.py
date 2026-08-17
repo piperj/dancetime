@@ -302,10 +302,11 @@ class TestRoundsBroadLevelGrouping:
 
 
 class TestRoundsNightClubSingleLine:
-    def test_night_club_round_has_no_padding_or_gap_cells(self, page, spa_server):
+    def test_night_club_round_has_no_padding_between_adjacent_heats(self, page, spa_server):
         # Night Club opts out of the fixed round-sequence grid entirely --
-        # danced cells append flat, in one continuous sequence, with no
-        # empty/removed placeholders between unrelated Night Club dances.
+        # danced cells append flat, in one continuous sequence -- but two
+        # genuinely adjacent heat_numbers (no real gap at all) still render
+        # with nothing extra between them.
         wait_for_spa(page, spa_server)
         html = page.evaluate("""
 () => {
@@ -332,6 +333,58 @@ class TestRoundsNightClubSingleLine:
         assert count_cells(html) == 2                # just the two real cells, no gap/empty filler
         assert ">MER<" in html
         assert ">H<" in html
+
+    def test_night_club_fills_a_real_gap_between_the_couples_own_heats(self, page, spa_server):
+        # Manhattan real-data bug (cyi 904): heat 269 "Beginner1 Hustle" and
+        # heat 274 "Beginner 2 Hustle" -- two DIFFERENT verbatim sub-levels,
+        # 5 heats apart, genuinely interleaved with each other and a third
+        # sub-level on the real schedule, not scheduled as separate blocks
+        # the way standard families' sub-levels are. fineBlockKeyFor() used
+        # to split by verbatim level regardless of family, so these two
+        # heats landed in separate RoundSequencer instances with no shared
+        # gap-fill state -- nothing rendered between them at all, even after
+        # the heat_number-continuity gap math was added. Night Club's fine
+        # key now collapses to its broad key, so both heats -- and the real
+        # West Coast Swing heat for someone else in between -- land in one
+        # continuous row.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = ["AC-A1 Beginner1 Hustle", "AC-A1 Beginner 2 West Coast Swing", "AC-A1 Beginner 2 Hustle"];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('nc1', '269', '2026-01-01T19:31:00', [
+      { competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' },
+    ]),
+    heat('nc2', '270', '2026-01-01T19:35:00', [
+      { competitor1: 'Other X', competitor2: 'Other Y', event: 1, bib: '2', result: '' },
+    ]),
+    heat('nc3', '274', '2026-01-01T19:50:00', [
+      { competitor1: 'Test A', competitor2: 'Test B', event: 2, bib: '1', result: '' },
+    ]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: {
+      'Test A': ['nc1', 'nc3'], 'Test B': ['nc1', 'nc3'],
+      'Other X': ['nc2'], 'Other Y': ['nc2'],
+    },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert html.count("style-block") == 1  # one shared "Beginner Night Club" header
+        assert html.count('class="heat-row"') == 1  # one continuous line, not force-split
+        assert count_cells(html) == 3  # 269 H, 270 WCS (empty), 274 H
+        assert 'class="cell empty"' in html
+        assert ">270<" in html and ">WCS<" in html
+        assert ">271<" not in html and ">272<" not in html and ">273<" not in html
 
 
 class TestRoundsTrailingFill:
