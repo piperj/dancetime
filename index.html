@@ -43,13 +43,11 @@
     .break-row .pill { border: 1.5px solid #6366f1; color: #6366f1; font-size: .7rem; font-weight: 700; padding: .2rem .7rem; border-radius: 999px; white-space: nowrap; }
 
     /* Rounds tab grid (static/rounds.js). */
-    .session-header { background: linear-gradient(135deg, #6366f1, #4338ca); color: #fff; padding: .7rem .9rem .8rem; border-radius: .6rem; margin-bottom: .6rem; box-shadow: 0 4px 10px rgba(79,70,229,.25); }
-    .session-header .when { font-size: .72rem; letter-spacing: .03em; opacity: .85; font-weight: 600; }
-    .session-header .who { font-size: 1.15rem; font-weight: 700; margin-top: .15rem; }
     .style-block { display: flex; gap: .5rem; margin: .9rem 0 .5rem; }
     .gutter { flex: 0 0 22px; display: flex; justify-content: center; padding-top: .15rem; }
     .gutter .icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: .95rem; color: #6b7280; }
-    .style-label { flex: 1; border: 1.5px solid var(--style-color, #e5e7eb); background: #fff; border-radius: .5rem; padding: .4rem .65rem; font-size: .85rem; font-weight: 700; color: #1f2430; display: flex; align-items: center; }
+    .style-label { flex: 1; border: 1.5px solid var(--style-color, #e5e7eb); background: #fff; border-radius: .5rem; padding: .4rem .65rem; font-size: .85rem; font-weight: 700; color: #1f2430; display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+    .style-label .style-time { font-weight: 600; font-size: .72rem; color: #6b7280; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .heat-row { display: flex; gap: .5rem; margin-bottom: .45rem; }
     .heat-row .cells { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); gap: .4rem; }
     .cell { position: relative; aspect-ratio: 1/1; border-radius: .5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: var(--cell-color, #999); box-shadow: inset 0 -2px 0 rgba(0,0,0,.12); }
@@ -1246,16 +1244,9 @@
           // Same backlog problem as the trailing case, mirrored: this
           // competitor's block can start well after the session's actual
           // first heat, so `pending` may hold hours of other people's award
-          // notices. Keep only what follows the last one — typically just an
-          // immediately-preceding costume break.
-          // 'top' ceremonies are always relevant regardless of position, so
-          // they're never trimmed — only stale 'award'/'break' noise before
-          // the most recent 'award' gets dropped.
-          let lastAwardIdx = -1;
-          pending.forEach((a, i) => { if (a.category === 'award') lastAwardIdx = i; });
-          pending.forEach((a, i) => {
-            if (a.category === 'top' || i > lastAwardIdx) addActivity(a);
-          });
+          // notices -- see trimLeadingActivities's doc comment in
+          // schedule-shared.js (shared with Rounds -- one implementation).
+          ScheduleShared.trimLeadingActivities(pending).forEach(addActivity);
           // "First heat" is normally the session's actual first heat (useful
           // for grabbing a table before the floor gets busy). But if this
           // competitor's own block starts well after a break/award — i.e.
@@ -1296,20 +1287,9 @@
       });
 
       // Past this competitor's last heat of the session, only the notice
-      // covering *that* heat is relevant (typically a costume break followed
-      // by the award for it) — later activities belong to other heats this
-      // competitor has no stake in, so stop after the first award. 'top'
-      // ceremonies are always relevant, though, so they never stop the flush
-      // and keep showing even when they land right after that award (e.g.
-      // "Awards" then "Ca Star Ball Top Awards" back to back).
-      let sawAward = false;
-      while (actIdx < acts.length) {
-        const a = acts[actIdx];
-        actIdx++;
-        if (a.category !== 'top' && sawAward) continue;
-        addActivity(a);
-        if (a.category === 'award') sawAward = true;
-      }
+      // covering *that* heat is relevant -- see trimTrailingActivities's
+      // doc comment in schedule-shared.js (shared with Rounds).
+      ScheduleShared.trimTrailingActivities(acts.slice(actIdx)).forEach(addActivity);
 
       const nextBlock = blocks[bi + 1];
       if (nextBlock && nextBlock.kind === 'session') {

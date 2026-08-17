@@ -372,9 +372,12 @@
       sessionHeats.forEach(h => { const p = ScheduleShared.getPartner(selectedCompetitor, h); if (p) partners.add(p); });
       const who = partners.size ? firstNames(Array.from(partners)).join(', ') : 'Solo';
 
-      html += `<div class="session-header" data-now-time="${esc(first.time)}">` +
-        `<div class="when">${esc(sessionType)} · ${esc(formatTime(first.time))} – ${esc(formatTime(last.time))}</div>` +
-        `<div class="who">${esc(who)}</div></div>`;
+      // Same "blue-box" markup Heats uses for its own session header --
+      // Rounds previously had its own gradient .session-header style; the
+      // user wants one consistent look between the two tabs.
+      html += `<div class="blue-box">` +
+        `<div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>` +
+        `<div class="font-semibold">${esc(who)}</div></div>`;
 
       const acts = ctx.programMarkers?.bySession?.[code]?.activities || [];
       let actIdx = 0;
@@ -401,7 +404,7 @@
 
       let sequencer = RoundSequencer(emitRow, null, describeGapHeat);
       let currentFineKey = null, currentBroadKey = null, currentFamily = null;
-      let lastPartner = null, lastHeatNumber = null;
+      let lastPartner = null, lastHeatNumber = null, isFirstGroup = true;
 
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
@@ -411,7 +414,15 @@
         const pending = [];
         while (actIdx < acts.length && acts[actIdx].time <= primary.time) { pending.push(acts[actIdx]); actIdx++; }
         if (pending.length) sequencer.flush();
-        pending.forEach(addActivity);
+        // The competitor's own block usually starts well after the
+        // session's actual first heat -- on the very first group, drop
+        // stale award notices for heats that happened before their block
+        // even started (only 'top' ceremonies survive there). Mirrors
+        // generateSchedule()'s identical leading-edge trim in index.html --
+        // shared with ScheduleShared so both tabs use one implementation.
+        // See thor.md.
+        (isFirstGroup ? ScheduleShared.trimLeadingActivities(pending) : pending).forEach(addActivity);
+        isFirstGroup = false;
 
         const myEntry = group.reduce(
           (found, h) => found || h.entries.find(e => e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor),
@@ -444,7 +455,7 @@
             const styleLabel = [broadLevel(p0.level), STYLE_LABEL[p0.styleFamily]].filter(Boolean).join(' ') || 'Unknown';
             html += `<div class="style-block" style="--style-color:${styleColor}">` +
               `<div class="gutter">${costumeChange ? '<span class="icon" title="costume change">👗</span>' : ''}</div>` +
-              `<div class="style-label">${esc(styleLabel)}</div></div>`;
+              `<div class="style-label"><span>${esc(styleLabel)}</span><span class="style-time">${esc(formatTime(primary.time))}</span></div></div>`;
             currentBroadKey = broadKey;
             currentFamily = p0.styleFamily;
           }
@@ -490,20 +501,9 @@
 
       sequencer.flush();
       // Past this competitor's last heat of the session, only the notice
-      // covering *that* heat is relevant (typically a costume break followed
-      // by the award for it) -- later activities belong to other heats this
-      // competitor has no stake in, so stop after the first award. 'top'
-      // ceremonies are always relevant, so they never stop the flush.
-      // Mirrors generateSchedule()'s identical trailing-activity trim in
-      // index.html -- see thor.md 2026-08-16.
-      let sawAward = false;
-      while (actIdx < acts.length) {
-        const a = acts[actIdx];
-        actIdx++;
-        if (a.category !== 'top' && sawAward) continue;
-        addActivity(a);
-        if (a.category === 'award') sawAward = true;
-      }
+      // covering *that* heat is relevant -- see trimTrailingActivities's
+      // doc comment in schedule-shared.js.
+      ScheduleShared.trimTrailingActivities(acts.slice(actIdx)).forEach(addActivity);
     });
 
     return html;

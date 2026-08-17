@@ -86,6 +86,14 @@ class TestRoundsRender:
         assert ">W<" in html
         assert ">T<" in html
 
+    def test_style_block_shows_first_dance_start_time(self, page, spa_server):
+        # h1 (heat 100, amSmooth Waltz) starts the first style block at
+        # 10:00am -- the style-label box shows that start time.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate(SETUP_JS)
+        assert 'class="style-time"' in html
+        assert "10:00 am" in html
+
     def test_contested_dot_on_shared_heat(self, page, spa_server):
         wait_for_spa(page, spa_server)
         html = page.evaluate(SETUP_JS)

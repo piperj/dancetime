@@ -26,5 +26,44 @@
     return `<div class="break-row" data-now-time="${esc(time)}"><div class="line"></div><div class="pill">${esc(text)}</div><div class="line"></div></div>`;
   }
 
-  global.ScheduleShared = { getPartner, renderBreakPill };
+  // A competitor's own block of the schedule only ever sees a *slice* of a
+  // session's program-marker activities ({time, title, category}) -- their
+  // own block usually starts and ends well after/before the session's
+  // actual first/last heat, so the raw activities lying in that slice's
+  // leading/trailing edges are frequently *other* heats' award notices, not
+  // theirs. Both trims agree on one rule: an 'award' notice is only
+  // relevant if it's the one right after this competitor's own last heat of
+  // the block; a 'top' (studio/teacher/comp-wide) ceremony is always
+  // relevant regardless of position. Shared by both tabs so this rule only
+  // has one implementation -- Rounds previously reimplemented only the
+  // trailing half and never got the leading half at all, which showed every
+  // stale award notice before a competitor's own first heat. See thor.md.
+
+  // Leading edge (before this competitor's first heat of a block): drop
+  // every 'award' entirely -- none of them are for a heat this competitor
+  // danced -- keeping only 'top' ceremonies (position-independent) and
+  // anything (rare) that happens to fall after the very last award.
+  function trimLeadingActivities(pending) {
+    let lastAwardIdx = -1;
+    pending.forEach((a, i) => { if (a.category === 'award') lastAwardIdx = i; });
+    return pending.filter((a, i) => a.category === 'top' || i > lastAwardIdx);
+  }
+
+  // Trailing edge (after this competitor's last heat of a block): keep
+  // everything up through the first 'award' (the one covering their last
+  // heat), plus any 'top' ceremony wherever it falls; drop every 'award'
+  // after that first one -- those belong to other heats this competitor has
+  // no stake in.
+  function trimTrailingActivities(remaining) {
+    const kept = [];
+    let sawAward = false;
+    for (const a of remaining) {
+      if (a.category !== 'top' && sawAward) continue;
+      kept.push(a);
+      if (a.category === 'award') sawAward = true;
+    }
+    return kept;
+  }
+
+  global.ScheduleShared = { getPartner, renderBreakPill, trimLeadingActivities, trimTrailingActivities };
 })(window);
