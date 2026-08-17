@@ -376,13 +376,13 @@
       // Rounds previously had its own gradient .session-header style; the
       // user wants one consistent look between the two tabs.
       html += `<div class="blue-box">` +
-        `<div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>` +
+        `<div class="text-sm">${esc(sessionType)} · ${esc(formatTime(first.time))} - ${esc(formatTime(last.time))}</div>` +
         `<div class="font-semibold">${esc(who)}</div></div>`;
 
       const acts = ctx.programMarkers?.bySession?.[code]?.activities || [];
       let actIdx = 0;
       const addActivity = a => {
-        html += `<div class="awards-row" data-now-time="${esc(a.time)}"><div class="gutter"><span class="icon" title="awards">🏆</span></div><div class="marker">${esc(a.title)} — ${esc(formatTime(a.time))}</div></div>`;
+        html += `<div class="awards-row" data-now-time="${esc(a.time)}"><div class="gutter"><span class="icon" title="awards">🏆</span></div><div class="marker">${esc(a.title)} · ${esc(formatTime(a.time))}</div></div>`;
       };
 
       let sessionEmittedRow = false;
@@ -455,7 +455,7 @@
             const styleLabel = [broadLevel(p0.level), STYLE_LABEL[p0.styleFamily]].filter(Boolean).join(' ') || 'Unknown';
             html += `<div class="style-block" style="--style-color:${styleColor}">` +
               `<div class="gutter">${costumeChange ? '<span class="icon" title="costume change">👗</span>' : ''}</div>` +
-              `<div class="style-label"><span>${esc(styleLabel)}</span><span class="style-time">${esc(formatTime(primary.time))}</span></div></div>`;
+              `<div class="style-label">${esc(styleLabel)} · ${esc(formatTime(primary.time))}</div></div>`;
             currentBroadKey = broadKey;
             currentFamily = p0.styleFamily;
           }

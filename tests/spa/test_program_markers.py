@@ -148,14 +148,14 @@ class TestProgramMarkers:
         # Session 02's real first heat (heat 211, not Helen's) is 8:30 am —
         # with nothing relevant in between, that's what should be surfaced,
         # not Helen's own 12:10 pm.
-        assert "First heat 8:30 am" in text
+        assert "First heat · 8:30 am" in text
 
     def test_first_heat_uses_own_heat_when_backlog_present(self, page, spa_server):
         install_program_mock(page, {
             "02": [{"title": "Awards", "date_time": "1/23/2026 9:45 AM"}],
         })
         text = _search_and_wait_for_markers(page, spa_server)
-        assert "First heat 12:10 pm" in text
+        assert "First heat · 12:10 pm" in text
         assert "8:30 am" not in text
 
     def test_trailing_awards_stop_at_first_relevant_one(self, page, spa_server):

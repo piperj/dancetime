@@ -91,8 +91,7 @@ class TestRoundsRender:
         # 10:00am -- the style-label box shows that start time.
         wait_for_spa(page, spa_server)
         html = page.evaluate(SETUP_JS)
-        assert 'class="style-time"' in html
-        assert "10:00 am" in html
+        assert "· 10:00 am" in html
 
     def test_contested_dot_on_shared_heat(self, page, spa_server):
         wait_for_spa(page, spa_server)
