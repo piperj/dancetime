@@ -334,6 +334,164 @@ class TestRoundsNightClubSingleLine:
         assert ">H<" in html
 
 
+class TestRoundsTrailingFill:
+    def test_trailing_positions_show_as_empty_unless_removed_for_everyone(self, page, spa_server):
+        # Johan Piper / Manhattan-style fixture: round 1 has no Paso Doble
+        # heat at all (removed for everyone -- no box), but Jive still runs
+        # for someone else (an empty box); rounds 2-4 have all five
+        # canonical Int'l Latin positions, with Jive always empty since this
+        # couple never dances it. Wanted output: "C S R [J]" then three
+        # rounds of "C S R PD [J]" -- the box after the couple's own last
+        # dance of a round is no longer silently dropped; it's only skipped
+        # when the organizers truly never scheduled anyone there.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = [
+    "AC-A1 Full Bronze Int'l Cha Cha",     // 0
+    "AC-A1 Full Bronze Int'l Samba",       // 1
+    "AC-A1 Full Bronze Int'l Rumba",       // 2
+    "AC-A1 Full Bronze Int'l Paso Doble",  // 3
+    "AC-A1 Full Bronze Int'l Jive",        // 4
+  ];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const mine = (num) => ({ competitor1: 'Test A', competitor2: 'Test B', event: num, bib: '1', result: '' });
+  const other = (num) => ({ competitor1: 'Other X', competitor2: 'Other Y', event: num, bib: '2', result: '' });
+  const heats = [
+    // Round 1: C,S,R mine; PD (heat 700) truly removed for everyone -- no
+    // entry at that number at all, its slot just goes unused; J (701) runs
+    // for someone else only.
+    heat('r1c', '697', '2026-01-01T10:00:00', [mine(0)]),
+    heat('r1s', '698', '2026-01-01T10:01:00', [mine(1)]),
+    heat('r1r', '699', '2026-01-01T10:02:00', [mine(2)]),
+    heat('r1j', '701', '2026-01-01T10:03:00', [other(4)]),
+    // Round 2: full C,S,R,PD mine; J other-only.
+    heat('r2c', '702', '2026-01-01T10:10:00', [mine(0)]),
+    heat('r2s', '703', '2026-01-01T10:11:00', [mine(1)]),
+    heat('r2r', '704', '2026-01-01T10:12:00', [mine(2)]),
+    heat('r2p', '705', '2026-01-01T10:13:00', [mine(3)]),
+    heat('r2j', '706', '2026-01-01T10:14:00', [other(4)]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: {
+      'Test A': ['r1c', 'r1s', 'r1r', 'r2c', 'r2s', 'r2r', 'r2p'],
+      'Test B': ['r1c', 'r1s', 'r1r', 'r2c', 'r2s', 'r2r', 'r2p'],
+      'Other X': ['r1j', 'r2j'], 'Other Y': ['r1j', 'r2j'],
+    },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        # Round 1: C, S, R filled + one empty J cell (heat 701) -- no PD box at all.
+        assert count_cells(html) == 3 + 1 + 4 + 1  # round1: 3 mine + 1 empty; round2: 4 mine + 1 empty
+        assert html.count(">J<") == 2  # one empty J cell per round
+        assert ">701<" in html  # the real heat number behind round 1's empty J cell
+        assert html.count(">PD<") == 1  # round 1's Paso Doble never rendered at all
+
+    def test_leading_positions_fill_when_couples_only_dance_is_last_in_round(self, page, spa_server):
+        # Manhattan real-data bug: this couple's only Int'l Latin entry is
+        # Jive (the round's last canonical position), so fillGap's old
+        # lastPlacedNum-forward math had nothing to anchor from on a row's
+        # very first placement -- none of the leading C/S/R/PD boxes ever
+        # rendered. Anchoring from the current heatNumber backward instead
+        # fixes it: C, S, R, PD should all show as empty boxes before the
+        # filled J cell.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = [
+    "AC-A1 Full Bronze Int'l Cha Cha",     // 0
+    "AC-A1 Full Bronze Int'l Samba",       // 1
+    "AC-A1 Full Bronze Int'l Rumba",       // 2
+    "AC-A1 Full Bronze Int'l Paso Doble",  // 3
+    "AC-A1 Full Bronze Int'l Jive",        // 4
+  ];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const other = (num) => ({ competitor1: 'Other X', competitor2: 'Other Y', event: num, bib: '2', result: '' });
+  const mine = (num) => ({ competitor1: 'Test A', competitor2: 'Test B', event: num, bib: '1', result: '' });
+  const heats = [
+    heat('m1', '994', '2026-01-01T10:00:00', [other(0)]),
+    heat('m2', '995', '2026-01-01T10:01:00', [other(1)]),
+    heat('m3', '996', '2026-01-01T10:02:00', [other(2)]),
+    heat('m4', '997', '2026-01-01T10:03:00', [other(3)]),
+    heat('m5', '998', '2026-01-01T10:04:00', [mine(4)]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: {
+      'Test A': ['m5'], 'Test B': ['m5'],
+      'Other X': ['m1', 'm2', 'm3', 'm4'], 'Other Y': ['m1', 'm2', 'm3', 'm4'],
+    },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert count_cells(html) == 5  # C, S, R, PD empty + J filled
+        assert 'class="cell empty"' in html
+        assert html.count('class="cell empty"') == 4
+        assert ">994<" in html and ">C<" in html
+        assert ">998<" in html and ">J<" in html
+
+    def test_multi_dance_round_disables_trailing_fill(self, page, spa_server):
+        # IGB 2026 real-data bug: a multi-dance grouped heat (W,T,Q sharing
+        # one heat_number) advances `pos` by one per code without regard to
+        # its real seq index, so trusting `pos` for trailing-fill math
+        # wandered into the *next* physical round's real heats and
+        # mislabeled them as this round's missing tail. No trailing cells
+        # should render after a multi-dance round at all.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = [
+    "AC-A1 Beginner Int'l Ballroom (W,T,Q)",  // 0 -- multi-dance, intlBallroom
+    "AC-A1 Beginner Int'l Waltz",             // 1 -- next round, someone else
+  ];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('i1', '464', '2026-01-01T10:00:00', [
+      { competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' },
+    ]),
+    heat('i2', '465', '2026-01-01T10:01:00', [
+      { competitor1: 'Other X', competitor2: 'Other Y', event: 1, bib: '2', result: '' },
+    ]),
+    heat('i3', '466', '2026-01-01T10:02:00', [
+      { competitor1: 'Other X', competitor2: 'Other Y', event: 1, bib: '2', result: '' },
+    ]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: {
+      'Test A': ['i1'], 'Test B': ['i1'],
+      'Other X': ['i2', 'i3'], 'Other Y': ['i2', 'i3'],
+    },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert count_cells(html) == 3  # just W, T, Q -- no bogus trailing "465 W" / "466 W" cells
+        assert ">465<" not in html
+        assert ">466<" not in html
+
+
 class TestRoundsMultiDanceGrouping:
     def test_multi_dance_cells_wrapped_in_one_bounding_box(self, page, spa_server):
         # One heat_number grouping three dances (W,T,F) explodes into three

@@ -251,7 +251,7 @@
   // rounds collapses into a single Break marker, driven by heatNumberGap
   // crossing a full round's worth of heat_numbers (see render()), not by
   // floor-position/rest-time heuristics.
-  function RoundSequencer(emitRow, seq, describeGapHeat) {
+  function RoundSequencer(emitRow, seq, describeGapHeat, expectedFamily) {
     let pos = 0;
     let row = null;
     let lastPlacedNum = null; // heat_number of the last real cell placed in the *current* row
@@ -261,38 +261,76 @@
     // callback instead, since a fresh RoundSequencer is constructed on
     // every block change within one session.
     function newRow(time) {
-      row = { cells: [], time, isFirst: false, swapped: false };
+      row = { cells: [], time, isFirst: false, swapped: false, hadMultiDance: false };
       lastPlacedNum = null;
+    }
+
+    // A `removed` position (no real heat_number found, for anyone, at that
+    // number) contributes no cell at all. Validated against `expectedFamily`,
+    // not just `seq.includes(code)` -- several families reuse the same
+    // one-letter code (e.g. "W" is Waltz in both American Smooth and
+    // International Ballroom), so a code match alone can't tell a genuine
+    // gap-fill from a heat_number lookup that wandered into a completely
+    // different round after this one ended (a confirmed bug -- see
+    // thor.md 2026-08-17).
+    function describeIfExpected(gapNum) {
+      const info = gapNum != null ? describeGapHeat(gapNum) : null;
+      return info && info.styleFamily === expectedFamily ? info : null;
+    }
+
+    // Every canonical position in the round is expected to show a box --
+    // "if a competitor is in a heat, show all the boxes from the round,"
+    // filled for what they danced, empty (real heat, someone else's) for
+    // what they didn't -- and a position is only skipped entirely when the
+    // organizers truly never scheduled a heat there for anyone. Applies to
+    // the *tail* of the round too (after the couple's own last dance, up to
+    // the round's full width), not just gaps between two of their own
+    // cells -- see thor.md 2026-08-17.
+    //
+    // Skipped entirely when this row contained a multi-dance grouped heat:
+    // that branch (below) increments `pos` by one per code in whatever
+    // order the event string gave them, not by matching each code to its
+    // real `seq` index -- so `pos` no longer reliably means "how far into
+    // the canonical sequence we are." Trusting it here wandered forward
+    // into the *next* physical round's real heat_numbers and mislabeled
+    // them as this round's missing tail (a confirmed bug against IGB 2026
+    // real data -- see thor.md 2026-08-17).
+    function fillTrailing() {
+      if (!seq || !row || row.hadMultiDance) return;
+      for (let i = pos; i < seq.length; i++) {
+        const gapNum = lastPlacedNum != null ? lastPlacedNum + 1 + (i - pos) : null;
+        const info = describeIfExpected(gapNum);
+        if (info) row.cells.push(renderCell({ empty: true, num: gapNum, code: info.code, title: info.danceName }));
+      }
     }
 
     // Pads the current round out to its full canonical width before
     // emitting -- "if a competitor is in a heat, show all the boxes from
-    // the round" -- then resets for the next round. Trailing padding (past
-    // Removed dances (no real heat_number at all) render nothing -- not
-    // even a placeholder cell -- so the round reads left-aligned rather
-    // than gapped. No trailing padding either: whatever the couple's last
-    // real cell was is simply the end of the row.
+    // the round" -- then resets for the next round.
     function flush() {
+      fillTrailing();
       if (row) emitRow(row);
       row = null;
       pos = 0;
       lastPlacedNum = null;
     }
 
-    // `heatNumber` is the *current* heat_number about to be placed --
-    // gapNum must land strictly inside (lastPlacedNum, heatNumber), never
-    // at or past heatNumber itself. Missing a bound check here means the
-    // last "gap" candidate is actually heatNumber's own number -- looking
-    // it up finds this same heat_number's own real dance and mislabels
-    // an adjacent (removed) slot as if it were a real heat (a confirmed
-    // bug: two cells both claiming heat 315 -- see thor.md 2026-08-16).
-    // A `removed` position (no real heat_number found) contributes no
-    // cell at all -- per the user, a horizontal line there just reads as
-    // confusing, especially in a sparse Night Club round.
+    // Anchored off `heatNumber` (the position actually being placed right
+    // now) and counted *backward*, not forward from `lastPlacedNum` --
+    // `lastPlacedNum` is null for a row's very first placement, which used
+    // to make every leading gap unfillable even when the couple's first
+    // dance of a round was its last canonical position (e.g. only dancing
+    // Jive in an Int'l Latin round that also has Cha Cha/Samba/Rumba/Paso
+    // Doble): with no lastPlacedNum to anchor from, none of those leading
+    // boxes ever rendered (a confirmed bug against Manhattan real data --
+    // see thor.md 2026-08-17). Counting backward from `heatNumber` needs no
+    // prior placement and can never reach `heatNumber` itself (the minimum
+    // subtracted term is 1), so the old `gapNum < heatNumber` bound check
+    // is now automatic rather than a separate guard.
     function fillGap(missing, heatNumber) {
       for (let i = 0; i < missing; i++) {
-        const gapNum = lastPlacedNum != null ? lastPlacedNum + 1 + i : null;
-        const info = (gapNum != null && gapNum < heatNumber) ? describeGapHeat(gapNum) : null;
+        const gapNum = heatNumber - (missing - i);
+        const info = describeIfExpected(gapNum);
         if (info) row.cells.push(renderCell({ empty: true, num: gapNum, code: info.code, title: info.danceName }));
       }
     }
@@ -310,12 +348,13 @@
         // wrapped in one bounding box (renderMultiDanceGroup) so the group
         // still reads as one heat, even if a rare column-overflow forces it
         // to split across two rows.
+        row.hadMultiDance = true;
         let groupCells = [];
         const flushGroup = () => {
           if (groupCells.length) { row.cells.push(renderMultiDanceGroup(groupCells)); groupCells = []; }
         };
         parsed.forEach((p, i) => {
-          if (seq && pos >= seq.length) { flushGroup(); flush(); newRow(time); }
+          if (seq && pos >= seq.length) { flushGroup(); flush(); newRow(time); row.hadMultiDance = true; }
           groupCells.push(cellFor(p, i));
           pos++;
         });
@@ -393,16 +432,21 @@
       };
       // Resolves which real heat (if any) sits at a given heat_number, for
       // labeling `empty` cells -- any entry works, since we only need that
-      // heat's own dance code/name, not who's dancing it.
+      // heat's own dance code/name, not who's dancing it. Includes
+      // styleFamily so callers can reject a match that landed in some other
+      // family's heat -- several families reuse the same one-letter code
+      // (e.g. "W" is Waltz in both American Smooth and International
+      // Ballroom), so code alone isn't enough to confirm it belongs to
+      // *this* round. See thor.md 2026-08-17.
       const describeGapHeat = heatNumber => {
         const heats = (ctx.heatsByNumber[heatNumber] || []).filter(h => h.session === code);
         const entry = heats[0]?.entries?.[0];
         if (!entry) return null;
         const p0 = DanceTaxonomy.parseEvent(eventLabel(entry.event))[0];
-        return p0 ? { code: p0.code, danceName: p0.danceName } : null;
+        return p0 ? { code: p0.code, danceName: p0.danceName, styleFamily: p0.styleFamily } : null;
       };
 
-      let sequencer = RoundSequencer(emitRow, null, describeGapHeat);
+      let sequencer = RoundSequencer(emitRow, null, describeGapHeat, null);
       let currentFineKey = null, currentBroadKey = null, currentFamily = null;
       let lastPartner = null, lastHeatNumber = null, isFirstGroup = true;
 
@@ -460,7 +504,7 @@
             currentFamily = p0.styleFamily;
           }
           currentFineKey = fineKey;
-          sequencer = RoundSequencer(emitRow, roundSequenceFor(p0.styleFamily), describeGapHeat);
+          sequencer = RoundSequencer(emitRow, roundSequenceFor(p0.styleFamily), describeGapHeat, p0.styleFamily);
           lastHeatNumber = null; // a new sub-level always starts its own first round, no cross-block gap math
         }
 
