@@ -60,7 +60,7 @@
   let root = null, lineEl = null, chipEl = null, fabEl = null, fabDiscEl = null, fabRingEl = null;
   let stops = [];
   let active = false;    // mirrors the Heats tab being the active tab, via setActive()
-  let playing = true;
+  let playing = false;
   let pointerDown = false;
   let interacting = false;
   let offset = 0;
@@ -385,7 +385,7 @@
     refreshMaxScroll();
     buildRoot();
     wireEvents();
-    setPlaying(true);
+    setPlaying(false);
     requestAnimationFrame(tick);
   }
 
@@ -393,6 +393,16 @@
 
   window.NowLine = {
     setActive,
+    // Epoch-ms of the latest stop currently tracked (stops is kept sorted
+    // ascending by rebuildStops()), or null if there are none. Callers
+    // building an "All done!" marker must read this only after the
+    // MutationObserver triggered by their DOM write has had a chance to run
+    // -- a requestAnimationFrame callback scheduled right after the write is
+    // safe (rAF always runs after the microtask queue, where the observer's
+    // callback is queued, has drained); a synchronous read right after
+    // building HTML (before writing it) is not, and will see the previous
+    // render's stops.
+    latestStopTime: () => stops.length ? stops[stops.length - 1].t : null,
     _test: {
       smoothstep, contentYFor, scrollTargetFor, trackedScroll, LEAD_MS, LINE_FRACTION,
       // Read-only introspection for integration tests -- not used by the

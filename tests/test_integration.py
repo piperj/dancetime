@@ -23,6 +23,9 @@ def pipeline_dirs(tmp_path):
     (static_dir / "heat-card.js").write_text("")
     (static_dir / "program.js").write_text("")
     (static_dir / "now-line.js").write_text("")
+    (static_dir / "dance-taxonomy.js").write_text("")
+    (static_dir / "schedule-shared.js").write_text("")
+    (static_dir / "rounds.js").write_text("")
     return tmp_path
 
 

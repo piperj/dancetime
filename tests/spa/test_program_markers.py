@@ -1,6 +1,8 @@
 """
-Program-feed markers (awards / costume breaks / top-award ceremonies / first
-heat) on a competitor's personal Heats schedule.
+Program-feed markers (awards / top-award ceremonies / first heat) on a
+competitor's personal Heats schedule, plus the taxonomy-driven
+costume-change marker that replaced the old NDCA-keyword-based one (see
+static/dance-taxonomy.js's styleFamilyChanged() and thor.md 2026-08-16).
 
 The live network call to ndcapremier.com's /feed/program/ is mocked via
 page.route(), so this suite has no external dependency and can't be flaky on
@@ -101,27 +103,44 @@ def _search_and_wait_for_markers(page, spa_server):
 
 
 class TestProgramMarkers:
-    def test_leading_backlog_is_trimmed_to_last_break(self, page, spa_server):
+    def test_leading_backlog_of_awards_is_fully_trimmed(self, page, spa_server):
+        # Every leading award belongs to a heat before this competitor's own
+        # first heat -- none of them are relevant, so all get dropped (only
+        # a 'top' ceremony, or -- previously -- a trailing break/costume
+        # marker, would have survived; there's no such marker anymore).
         install_program_mock(page, {
             "02": [
                 {"title": "Awards", "date_time": "1/23/2026 9:45 AM"},
                 {"title": "Awards", "date_time": "1/23/2026 11:35 AM"},
-                {"title": "Costume Change Break", "date_time": "1/23/2026 11:50 AM"},
             ],
         })
         text = _search_and_wait_for_markers(page, spa_server)
         assert "9:45" not in text
         assert "11:35" not in text
-        assert "Costume Change Break" in text
-        assert text.index("Costume Change Break") < text.index("313")
+        assert "First heat" in text
 
-    def test_first_heat_before_break_in_reading_order(self, page, spa_server):
-        install_program_mock(page, {
-            "02": [{"title": "Costume Change Break", "date_time": "1/23/2026 11:50 AM"}],
-        })
-        text = _search_and_wait_for_markers(page, spa_server)
-        assert text.index("Costume Change Break") < text.index("First heat")
-        assert text.index("First heat") < text.index("313")
+    def test_costume_change_marker_fires_on_style_family_transition(self, page, spa_server):
+        # Helen's real schedule in this fixture never actually changes style
+        # family (313-330 are all Int'l Ballroom at varying levels) -- inject
+        # one mid-session so the taxonomy-driven marker has something to fire
+        # on, and confirm it lands in reading order between the two affected
+        # heats rather than leaking to the very first heat (costume-change
+        # never fires before a session's first block).
+        wait_for_spa(page, spa_server, query="?show_elo=1")
+        install_program_mock(page, {"02": []})
+        _select_city_lights(page)
+        page.evaluate("""() => {
+            const heat = Object.values(heatsByKey).find(h => h.heat_number === '320' && h.session === '02');
+            const entry = heat.entries.find(e => e.competitor1 === 'Helen Piper' || e.competitor2 === 'Helen Piper');
+            heatsData.events[entry.event] = "AC-B2 Cl. Pre-Bronze Amer. Foxtrot";
+        }""")
+        page.evaluate(f"setHeatsSearch('{COMPETITOR}')")
+        page.wait_for_function("() => typeof programMarkers !== 'undefined' && programMarkers !== null", timeout=10_000)
+        page.wait_for_timeout(300)
+        text = page.locator("#scheduleContent").inner_text()
+        assert "Costume change" in text
+        assert text.index("318") < text.index("Costume change") < text.index("320")
+        assert text.index("Costume change") > text.index("First heat")
 
     def test_first_heat_falls_back_to_session_start_with_no_backlog(self, page, spa_server):
         install_program_mock(page, {"02": []})

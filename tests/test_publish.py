@@ -93,6 +93,9 @@ class TestPublishRun:
         (static_dir / "heat-card.js").write_text("")
         (static_dir / "program.js").write_text("")
         (static_dir / "now-line.js").write_text("")
+        (static_dir / "dance-taxonomy.js").write_text("")
+        (static_dir / "schedule-shared.js").write_text("")
+        (static_dir / "rounds.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -122,6 +125,9 @@ class TestPublishRun:
         (static_dir / "heat-card.js").write_text("")
         (static_dir / "program.js").write_text("")
         (static_dir / "now-line.js").write_text("")
+        (static_dir / "dance-taxonomy.js").write_text("")
+        (static_dir / "schedule-shared.js").write_text("")
+        (static_dir / "rounds.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()
@@ -151,6 +157,9 @@ class TestPublishRun:
         (static_dir / "heat-card.js").write_text("")
         (static_dir / "program.js").write_text("")
         (static_dir / "now-line.js").write_text("")
+        (static_dir / "dance-taxonomy.js").write_text("")
+        (static_dir / "schedule-shared.js").write_text("")
+        (static_dir / "rounds.js").write_text("")
 
         out_dir = tmp_path / "data"
         out_dir.mkdir()

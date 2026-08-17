@@ -93,6 +93,26 @@
       }
     }
 
+    // Pure, instance-free: true iff more than one couple danced this event
+    // within this one round -- the same rule contestedGroups() uses
+    // (byRound.length > 1), stripped down for callers (Rounds' static amber
+    // dot) that don't need the click-panel wrapping. `allRounds` is a
+    // physical heat's rounds (as passed to HeatCard.render); `roundIndex`
+    // picks one of them; `eventId` is the event index to check.
+    static roundHasMultipleCouples(allRounds, roundIndex, eventId) {
+      const round = allRounds[roundIndex];
+      if (!round) return false;
+      return round.entries.filter(e => e.event === eventId).length > 1;
+    }
+
+    // Pure, instance-free: true iff exactly one couple danced the last
+    // (most advanced) round of this physical heat -- the same rule
+    // renderCouplesBadge() uses (this.n === 1), stripped down for Rounds'
+    // static blue solo dot.
+    static isSoloHeat(allRounds) {
+      return allRounds[allRounds.length - 1]?.entries.length === 1;
+    }
+
     constructor(key) {
       this.key = key;
       this.expansion = null; // null | 'couples' | a contested-group panelKey
@@ -135,12 +155,9 @@
         // Contested if any single round had more than one couple in this
         // event -- a couple who danced alone every round they appear in
         // was never actually contested, even if the event recurs.
-        const byRound = new Map();
-        appearances.forEach(a => {
-          if (!byRound.has(a.roundIndex)) byRound.set(a.roundIndex, []);
-          byRound.get(a.roundIndex).push(a);
-        });
-        if (![...byRound.values()].some(list => list.length > 1)) return;
+        const appearedInRounds = new Set(appearances.map(a => a.roundIndex));
+        const contested = [...appearedInRounds].some(ri => HeatCard.roundHasMultipleCouples(this.allRounds, ri, evt));
+        if (!contested) return;
 
         const relevant = appearances.filter(a => HeatCard.isRelevant(a.entry));
         if (relevant.length === 0) return;
@@ -224,7 +241,7 @@
 
     renderCouplesBadge() {
       const active = this.couplesOpen();
-      const solo = this.n === 1;
+      const solo = HeatCard.isSoloHeat(this.allRounds);
       const label = solo ? 'Solo on floor' : `${this.n} couples`;
       const colorClasses = solo ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800';
       return `<span data-role="couples-pill" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${colorClasses} ml-2 cursor-pointer${active ? ' ring-2 ring-indigo-400' : ''}">${esc(label)}</span>`;
@@ -355,5 +372,9 @@
 
   document.getElementById('scheduleContent')?.addEventListener('click', onContainerClick);
 
-  global.HeatCard = { init, render, collapseAll, setContext };
+  global.HeatCard = {
+    init, render, collapseAll, setContext,
+    roundHasMultipleCouples: HeatCard.roundHasMultipleCouples,
+    isSoloHeat: HeatCard.isSoloHeat,
+  };
 })(window);

@@ -1,0 +1,108 @@
+{
+  "markers": {
+    "american": { "label": "American", "families": ["amSmooth", "amRhythm"] },
+    "international": { "label": "International", "families": ["intlBallroom", "intlLatin"] },
+    "countryWestern": { "label": "Country Western", "families": ["nightclub"] }
+  },
+  "families": {
+    "amSmooth": {
+      "label": "American Smooth",
+      "marker": "american",
+      "roundSequence": ["W", "T", "F", "VW", "P"],
+      "dances": {
+        "Waltz": "W",
+        "Tango": "T",
+        "Foxtrot": "F",
+        "Viennese Waltz": "VW",
+        "Peabody": "P"
+      }
+    },
+    "amRhythm": {
+      "label": "American Rhythm",
+      "marker": "american",
+      "roundSequence": ["C", "R", "SW", "B", "MA"],
+      "codeAliases": { "CC": "C" },
+      "dances": {
+        "Cha Cha": "C",
+        "Rumba": "R",
+        "Swing": "SW",
+        "Bolero": "B",
+        "Mambo": "MA"
+      }
+    },
+    "intlBallroom": {
+      "label": "International Ballroom",
+      "marker": "international",
+      "roundSequence": ["W", "T", "VW", "F", "Q"],
+      "dances": {
+        "Waltz": "W",
+        "Tango": "T",
+        "Viennese Waltz": "VW",
+        "Foxtrot": "F",
+        "Quickstep": "Q"
+      }
+    },
+    "intlLatin": {
+      "label": "International Latin",
+      "marker": "international",
+      "roundSequence": ["C", "S", "R", "PD", "J"],
+      "dances": {
+        "Cha Cha": "C",
+        "Samba": "S",
+        "Rumba": "R",
+        "Paso Doble": "PD",
+        "Jive": "J"
+      }
+    },
+    "nightclub": {
+      "label": "Night Club",
+      "marker": null,
+      "roundSequence": ["MER", "S", "BA", "H", "WCS", "Sal", "AT", "NC2", "C2", "PK", "PD", "2S", "CWW", "CWS"],
+      "dances": {
+        "Merengue": "MER",
+        "Samba": "S",
+        "Bachata": "BA",
+        "Hustle": "H",
+        "West Coast Swing": "WCS",
+        "Salsa": "Sal",
+        "Argentine Tango": "AT",
+        "Night Club 2-Step": "NC2",
+        "Country 2-Step": "C2",
+        "Polka": "PK",
+        "Paso Doble": "PD",
+        "Two Step": "2S",
+        "Waltz": "CWW",
+        "Swing": "CWS",
+        "Cha Cha": "CWCC"
+      }
+    }
+  },
+  "familySearchOrder": ["amSmooth", "intlBallroom", "amRhythm", "intlLatin", "nightclub"],
+  "rolePrefixes": {
+    "AC": "Amateur Couple",
+    "G": "Gentleman",
+    "L": "Lady",
+    "mG": "Mixed Gentleman",
+    "mL": "Mixed Lady"
+  },
+  "singleDanceAgeBands": {
+    "A1": [19, 30],
+    "A2": [31, 40],
+    "A3": [41, 50],
+    "B1": [51, 60],
+    "B2": [61, 70],
+    "C1": [71, 75],
+    "C2": [76, 80],
+    "D1": [81, null]
+  },
+  "multiDanceAgeDivisions": {
+    "A": [19, 35],
+    "B": [36, 50],
+    "C": [51, 60],
+    "S1": [61, 70],
+    "S2": [71, 75],
+    "S3": [76, 80],
+    "S4": [81, null],
+    "SR": [61, null]
+  }
+}

@@ -37,6 +37,33 @@
     .award-marker { background: #fff; border: 2px solid #d4af37; color: #7a5c00; margin: 0.6rem 0; padding: 0.65rem 1rem; border-radius: 0.5rem; text-align: center; font-weight: 700; box-shadow: 0 2px 8px rgba(212,175,55,0.35); }
     .costume-marker { color: #6b21a8; margin: 0.375rem 0; text-align: center; font-style: italic; }
 
+    /* Break pill (shared by Heats and Rounds — static/schedule-shared.js). */
+    .break-row { display: flex; align-items: center; gap: .5rem; margin: .5rem 0 .7rem; }
+    .break-row .line { flex: 1; height: 1px; background: #e5e7eb; }
+    .break-row .pill { border: 1.5px solid #6366f1; color: #6366f1; font-size: .7rem; font-weight: 700; padding: .2rem .7rem; border-radius: 999px; white-space: nowrap; }
+
+    /* Rounds tab grid (static/rounds.js). */
+    .session-header { background: linear-gradient(135deg, #6366f1, #4338ca); color: #fff; padding: .7rem .9rem .8rem; border-radius: .6rem; margin-bottom: .6rem; box-shadow: 0 4px 10px rgba(79,70,229,.25); }
+    .session-header .when { font-size: .72rem; letter-spacing: .03em; opacity: .85; font-weight: 600; }
+    .session-header .who { font-size: 1.15rem; font-weight: 700; margin-top: .15rem; }
+    .style-block { display: flex; gap: .5rem; margin: .9rem 0 .5rem; }
+    .gutter { flex: 0 0 22px; display: flex; justify-content: center; padding-top: .15rem; }
+    .gutter .icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: .95rem; color: #6b7280; }
+    .style-label { flex: 1; border: 1.5px solid var(--style-color, #e5e7eb); background: #fff; border-radius: .5rem; padding: .4rem .65rem; font-size: .85rem; font-weight: 700; color: #1f2430; display: flex; align-items: center; justify-content: space-between; }
+    .style-label .syllabus { font-weight: 600; font-size: .68rem; color: #6b7280; text-transform: uppercase; letter-spacing: .03em; }
+    .heat-row { display: flex; gap: .5rem; margin-bottom: .45rem; }
+    .heat-row .cells { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); gap: .4rem; }
+    .cell { position: relative; aspect-ratio: 1/1; border-radius: .5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: var(--cell-color, #999); box-shadow: inset 0 -2px 0 rgba(0,0,0,.12); }
+    .cell .num { font-size: .72rem; font-weight: 700; opacity: .9; line-height: 1; font-variant-numeric: tabular-nums; margin-bottom: .3rem; }
+    .cell .letter { font-size: 1.5rem; font-weight: 600; line-height: 1; }
+    .cell.empty { background: #fff; border: 2px solid #9ca3af; color: #6b7280; box-shadow: none; }
+    .dot { position: absolute; top: -4px; right: -4px; width: 11px; height: 11px; border-radius: 50%; box-shadow: 0 0 0 2px #f5f5f5; }
+    .dot.contested { background: #d97706; }
+    .dot.solo { background: #fff; border: 1.5px solid #2563eb; }
+    .badge-swap { position: absolute; top: -3px; left: -3px; font-size: .55rem; line-height: 1; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 1.5px 0 0 #fff, -1.5px 0 0 #fff, 0 1.5px 0 #fff, 0 -1.5px 0 #fff; }
+    .awards-row { display: flex; gap: .5rem; margin: .4rem 0 .7rem; }
+    .awards-row .marker { flex: 1; background: #fff; border: 2px solid #d4af37; color: #7a5c00; text-align: center; font-weight: 700; font-size: .8rem; padding: .5rem .75rem; border-radius: .5rem; box-shadow: 0 2px 8px rgba(212,175,55,.25); }
+
     .search-bar { padding: .75rem 1rem; background: #fff; border-bottom: 1px solid #eee; display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
     .search-bar input[type=search] { padding: .4rem .7rem; border: 1px solid #ccc; border-radius: 4px; font-size: .95rem; }
 
@@ -103,6 +130,7 @@
 
 <nav>
   <button class="active" data-tab="heats">Heats</button>
+  <button data-tab="rounds">Rounds</button>
   <button data-tab="ranking">Ladder</button>
   <button data-tab="elo">Ranking</button>
 </nav>
@@ -232,6 +260,11 @@
   </div>
 </main>
 
+<!-- Loaded ahead of the inline script below (unlike the other static/*.js
+     modules) because that script's top-level initial-load chain awaits
+     DanceTaxonomy.ready synchronously at parse time, not lazily inside a
+     later function call -- see thor.md 2026-08-16. -->
+<script src="dance-taxonomy.js"></script>
 <script>
   const compHeader     = document.getElementById('comp-header');
   const heatsControls  = document.getElementById('heats-controls');
@@ -334,9 +367,15 @@
         const input = document.getElementById('search-ranking');
         if (param !== (input.value || null)) { input.value = param || ''; }
         renderRanking();
-      } else if (activeTab === 'heats' && param && param !== selectedCompetitor) {
-        if (heatsData?.competitors?.includes(param) || heatsData?.studios?.includes(param) || bibHeats[param]) {
+      } else if (activeTab === 'heats' || activeTab === 'rounds') {
+        if (param && param !== selectedCompetitor &&
+            (heatsData?.competitors?.includes(param) || heatsData?.studios?.includes(param) || bibHeats[param])) {
           setHeatsSearch(param);
+        } else if (selectedCompetitor) {
+          // Same competitor already selected -- switching between Heats and
+          // Rounds still needs a fresh render, since the two tabs draw
+          // #scheduleContent completely differently.
+          renderCurrentHeatsView();
         }
       } else if (activeTab === 'elo') {
         initEloTab();
@@ -354,38 +393,42 @@
     const showElo    = eloVisible();
 
     const heatsBtn   = document.querySelector('nav button[data-tab="heats"]');
+    const roundsBtn  = document.querySelector('nav button[data-tab="rounds"]');
     const rankingBtn = document.querySelector('nav button[data-tab="ranking"]');
     const eloBtn     = document.querySelector('nav button[data-tab="elo"]');
     heatsBtn.classList.toggle('hidden', !hasHeats);
+    roundsBtn.classList.toggle('hidden', !hasHeats);
     rankingBtn.classList.toggle('hidden', !hasRanking || !showElo);
     eloBtn.classList.toggle('hidden', !showElo);
 
     if (activeTab === 'heats'   && !hasHeats   && hasRanking && showElo) activeTab = 'ranking';
+    if (activeTab === 'rounds'  && !hasHeats) activeTab = (hasRanking && showElo) ? 'ranking' : 'heats';
     if (activeTab === 'ranking' && (!hasRanking || !showElo) && hasHeats) activeTab = 'heats';
     if (activeTab === 'elo'     && !showElo) activeTab = 'heats';
     document.querySelectorAll('nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
 
     const isHeats   = activeTab === 'heats';
+    const isRounds  = activeTab === 'rounds';
     const isRanking = activeTab === 'ranking';
     const isElo     = activeTab === 'elo';
 
     compHeader.classList.toggle('hidden', isElo || (!heatsData && !rankingData));
-    heatsSearchBar.classList.toggle('hidden', !isHeats || !heatsData);
-    heatsControls.classList.toggle('hidden', !isHeats || !heatsData);
+    heatsSearchBar.classList.toggle('hidden', !(isHeats || isRounds) || !heatsData);
+    heatsControls.classList.toggle('hidden', !(isHeats || isRounds) || !heatsData);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
-    scheduleContent.classList.toggle('hidden', !isHeats || !heatsData);
+    scheduleContent.classList.toggle('hidden', !(isHeats || isRounds) || !heatsData);
     // Held back until loadComp()'s program-markers fetch settles -- letting
     // NowLine activate off the first, markers-less render would scroll to a
     // target that a moment later shifts by however much the Awards/break
     // markers add to the page once they arrive, a visible jump the user
     // shouldn't see. See loadComp()'s awaitingProgramMarkers.
-    if (window.NowLine) window.NowLine.setActive(isHeats && !!heatsData && !awaitingProgramMarkers);
+    if (window.NowLine) window.NowLine.setActive((isHeats || isRounds) && !!heatsData && !awaitingProgramMarkers);
     rankingControls.classList.toggle('hidden', !isRanking || !rankingData);
     rankingView.classList.toggle('hidden', !isRanking);
     document.getElementById('elo-controls').classList.toggle('hidden', !isElo);
     document.getElementById('elo-view').classList.toggle('hidden', !isElo);
     status.classList.toggle('hidden',
-      (isHeats && !!heatsData) || (isRanking && !!rankingData) || isElo);
+      ((isHeats || isRounds) && !!heatsData) || (isRanking && !!rankingData) || isElo);
   }
 
   // ── Competition dropdown ───────────────────────────────────────────────────
@@ -451,7 +494,7 @@
   }
 
   // ── Load index ─────────────────────────────────────────────────────────────
-  Promise.all([fetch('data/index.json'), fetch('data/elo_ratings.json')])
+  Promise.all([fetch('data/index.json'), fetch('data/elo_ratings.json'), DanceTaxonomy.ready])
     .then(([ir, er]) => Promise.all([ir.json(), er.json()]))
     .then(([index, eloRatings]) => {
       allCompetitorNames = index.all_competitors || Object.keys(eloRatings.ratings || {}).sort();
@@ -497,6 +540,7 @@
             if (heatsData !== h) return; // a different competition was selected meanwhile
             programMarkers = data;
             awaitingProgramMarkers = false;
+            Rounds.init({ programMarkers: data }); // merges into the context set above -- see rounds.js's init()
             renderCurrentHeatsView();
             updateTabVisibility(); // NowLine activates here, once, against the settled render
           });
@@ -520,6 +564,7 @@
             sessionFirstHeatTime[heat.session] = heat.time;
         });
         buildFloorPositions();
+        Rounds.init({ cyi: h.meta?.cyi, heatsData: h, heatsByKey, floorPositionByKey, sessionFirstHeatTime, programMarkers: null });
         Object.entries(h.competitor_studios || {}).forEach(([name, studio]) => {
           (studioCompetitors[studio] ??= []).push(name);
         });
@@ -741,9 +786,57 @@
     HeatCard.collapseAll();
     setCompetitorParam(val);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !!bibHeats[val]);
-    if (heatsData.studios?.includes(val)) generateStudioSchedule();
-    else if (bibHeats[val]) generateBibSchedule(val);
+    renderSelectedCompetitor();
+  }
+
+  // Studio/bib schedules are shared by both tabs (list format only -- Rounds
+  // is scoped to one competitor's own grid, per the mockup); an individual
+  // competitor forks between generateSchedule()'s list and Rounds.render()'s
+  // grid depending on which tab is active.
+  function renderSelectedCompetitor() {
+    if (heatsData.studios?.includes(selectedCompetitor)) generateStudioSchedule();
+    else if (bibHeats[selectedCompetitor]) generateBibSchedule(selectedCompetitor);
+    else if (activeTab === 'rounds') renderRoundsSchedule();
     else generateSchedule();
+  }
+
+  // Two-phase render matching generateSchedule()'s NowLine.latestStopTime()
+  // sequencing fix: write the grid HTML first, then append the "All done!"
+  // marker in a rAF callback once the MutationObserver has rebuilt stops.
+  function renderRoundsSchedule() {
+    if (!selectedCompetitor || !heatsData) return;
+    document.getElementById('participantName').textContent = selectedCompetitor;
+    const myHeatKeys = heatsData.competitor_heats[selectedCompetitor] || [];
+    const myHeats = myHeatKeys.map(k => heatsByKey[k]).filter(Boolean);
+    const studio = heatsData.competitor_studios[selectedCompetitor];
+    document.getElementById('heatCount').innerHTML = studio
+      ? `<span class="text-gray-500">${esc(studio)}</span> • ${myHeats.length} heats`
+      : `Heat Schedule • ${myHeats.length} heats`;
+    currentSessions = groupHeatsBySession(myHeats.slice().sort((a, b) => new Date(a.time) - new Date(b.time)));
+
+    const html = Rounds.render(selectedCompetitor);
+    setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats found for this competitor</p>');
+    appendDoneMarkerIfFinished(myHeats);
+  }
+
+  // Shared by generateSchedule() and renderRoundsSchedule() -- see
+  // NowLine.latestStopTime()'s doc comment for why this must run in a rAF
+  // callback rather than synchronously right after the DOM write.
+  function appendDoneMarkerIfFinished(heats) {
+    if (!heats.length) return;
+    const now = new Date();
+    if (heats.some(h => new Date(h.time) > now)) return; // still upcoming heats
+    requestAnimationFrame(() => {
+      // A second render (e.g. the program-markers fetch resolving right
+      // after this one started) can land its own marker before this rAF
+      // callback fires -- whichever gets here first wins, the other is a
+      // no-op, rather than both appending and doubling up the marker.
+      if (scheduleContent.querySelector('#allDoneMarker')) return;
+      const t = window.NowLine ? window.NowLine.latestStopTime() : null;
+      const fallback = new Date(heats[heats.length - 1].time).getTime();
+      const marker = `<div id="allDoneMarker" class="done-marker" data-now-time="${esc(new Date((t || fallback) + 1000).toISOString())}">✅ All done!</div>`;
+      scheduleContent.insertAdjacentHTML('beforeend', marker);
+    });
   }
 
   document.getElementById('competitorSearch').addEventListener('input', e => {
@@ -814,7 +907,7 @@
 
       html += `<div id="session-${si}" class="blue-box">
         <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
-        <div class="font-semibold">${esc(Array.from(activeNames).sort().join(', '))}</div>
+        <div class="font-semibold">${esc(firstNames(Array.from(activeNames).sort()).join(', '))}</div>
       </div>`;
 
       let lastTime = null, lastKey = null;
@@ -876,7 +969,7 @@
           }
         });
       });
-      const subtitle = activeNames.size ? Array.from(activeNames).sort().join(', ') : `Bib ${bib}`;
+      const subtitle = activeNames.size ? firstNames(Array.from(activeNames).sort()).join(', ') : `Bib ${bib}`;
 
       html += `<div id="session-${si}" class="blue-box">
         <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
@@ -935,15 +1028,10 @@
     return a != null && b != null && b - a > 1;
   }
 
-  // Marker HTML to show before a heat when the couple has left the floor (a heat
-  // was skipped, with a positive rest gap) and/or switched partner since their
-  // previous shown heat. `partner`/`partnerChanged` are null/false for views that
-  // don't track a partner (studio, bib, all-heats).
-  // 'top' ceremonies (top student/teacher/studio, etc.) share the award styling
-  // per product decision — only costume/floor breaks get the subtler treatment.
+  // Marker HTML for an 'award'/'top' program activity (costume-change markers
+  // are no longer sourced from this feed -- see static/dance-taxonomy.js's
+  // styleFamilyChanged() and thor.md 2026-08-16).
   function renderProgramActivity(a) {
-    if (a.category === 'break')
-      return `<div class="costume-marker" data-now-time="${esc(a.time)}">👗 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
     return `<div class="award-marker" data-now-time="${esc(a.time)}">🏆 ${esc(a.title)} — ${esc(formatTime(a.time))}</div>`;
   }
 
@@ -954,7 +1042,7 @@
         const fmt = formatBreakTime(Math.round(rest));
         return partnerChanged && partner
           ? `<div class="partner-change-marker">🔄 ${esc(partner)} · ${fmt} rest</div>`
-          : `<div class="break-marker">⏸️ Break · ${fmt} rest</div>`;
+          : ScheduleShared.renderBreakPill({ minutes: Math.round(rest), label: `${fmt} break`, time: next.time });
       }
     }
     if (partnerChanged && partner)
@@ -1094,7 +1182,6 @@
       ? `<span class="text-gray-500">${esc(studio)}</span> • ${myHeats.length} heats`
       : `Heat Schedule • ${myHeats.length} heats`;
 
-    const nextIdx = findNextHeatPosition(myHeats);
     const sessions = groupHeatsBySession(myHeats);
     currentSessions = sessions;
 
@@ -1111,15 +1198,7 @@
 
     let html = '';
     let si = 0;
-    // Tracks the latest data-now-time actually emitted below (a heat card or
-    // a program-activity marker), so the "All done!" marker appended at the
-    // very end can be timestamped strictly after it -- a trailing Award/Top
-    // ceremony marker can carry a data-now-time later than the last heat's
-    // own time, and "All done!" needs to out-rank that too or the "now" line
-    // (static/now-line.js) clamps onto the Awards marker instead.
-    let lastStopTime = null;
-    const bumpStopTime = t => { if (t && (!lastStopTime || t > lastStopTime)) lastStopTime = t; };
-    const addActivity = a => { html += renderProgramActivity(a); bumpStopTime(a.time); };
+    const addActivity = a => { html += renderProgramActivity(a); };
     blocks.forEach((block, bi) => {
       if (block.kind === 'topOnly') {
         html += `<div class="blue-box"><div class="text-sm">${esc(heatsData.sessions[block.code])}</div></div>`;
@@ -1137,10 +1216,10 @@
       const sessionType = sessionName(first) || getSessionType(first.time);
 
       const partners = new Set();
-      sessionHeats.forEach(h => { const p = getPartner(selectedCompetitor, h); if (p) partners.add(p); });
-      const partnerText = partners.size ? Array.from(partners).join(', ') : 'Solo';
+      sessionHeats.forEach(h => { const p = ScheduleShared.getPartner(selectedCompetitor, h); if (p) partners.add(p); });
+      const partnerText = partners.size ? firstNames(Array.from(partners)).join(', ') : 'Solo';
 
-      const firstPartner = getPartner(selectedCompetitor, sessionHeats[0]);
+      const firstPartner = ScheduleShared.getPartner(selectedCompetitor, sessionHeats[0]);
       html += `<div id="session-${si}" class="blue-box">
         <div class="text-sm">${esc(sessionType)} • ${esc(formatTime(first.time))}–${esc(formatTime(last.time))}</div>
         <div class="font-semibold">${esc(partnerText)}</div>
@@ -1150,7 +1229,7 @@
       if (partners.size > 1 && firstPartner)
         html += `<div class="partner-change-marker">🔄 ${esc(firstPartner)}</div>`;
 
-      let lastTime = null, lastKey = null, lastPartner = null, isFirstGroup = true;
+      let lastTime = null, lastKey = null, lastPartner = null, isFirstGroup = true, lastParsed = null;
 
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
@@ -1194,13 +1273,21 @@
           null
         );
         const myEvent = myEntry?.event;
-        const currentPartner = group.reduce((found, h) => found || getPartner(selectedCompetitor, h), null);
+        const currentPartner = group.reduce((found, h) => found || ScheduleShared.getPartner(selectedCompetitor, h), null);
 
         if (lastTime !== null)
           html += transitionMarker(lastKey, lastTime, primary, currentPartner, currentPartner !== lastPartner);
 
+        // Costume-change marker: fires on a style-family transition between
+        // consecutive heats (never before the session's first heat, since
+        // lastParsed starts null). Shares DanceTaxonomy.styleFamilyChanged()
+        // with Rounds' block-boundary logic -- see static/rounds.js.
+        const parsedEvent = DanceTaxonomy.parseEvent(eventLabel(myEvent));
+        if (lastParsed && DanceTaxonomy.styleFamilyChanged(lastParsed, parsedEvent))
+          html += `<div class="costume-marker" data-now-time="${esc(primary.time)}">👗 Costume change</div>`;
+        lastParsed = parsedEvent;
+
         html += HeatCard.render(primary, allRounds, eventLabel(myEvent), sessionName(primary));
-        bumpStopTime(primary.time);
 
         lastTime = main.time;
         lastKey = primary.key;
@@ -1229,15 +1316,17 @@
         if (new Date(last.time).toDateString() === new Date(nextFirst.time).toDateString()) {
           const rest = restMinutes(last.time, nextFirst.time);
           if (rest > 0)
-            html += `<div class="break-marker">⏸️ Break · ${formatBreakTime(Math.round(rest))} rest</div>`;
+            html += ScheduleShared.renderBreakPill({
+              minutes: Math.round(rest),
+              label: `${formatBreakTime(Math.round(rest))} break`,
+              time: nextFirst.time,
+            });
         }
       }
     });
 
-    if (nextIdx === -1 && myHeats.length > 0)
-      html += `<div id="allDoneMarker" class="done-marker" data-now-time="${esc(nudgeLater(lastStopTime || myHeats[myHeats.length - 1].time))}">✅ All done!</div>`;
-
     setScheduleHTML(html || '<p class="text-gray-500 text-center">No heats found for this competitor</p>');
+    appendDoneMarkerIfFinished(myHeats);
     populateContestedStats();
   }
 
@@ -1395,17 +1484,6 @@
   }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
-  function getPartner(competitor, heat) {
-    const e = heat.entries.find(e => e.competitor1 === competitor || e.competitor2 === competitor);
-    if (!e) return null;
-    return e.competitor1 === competitor ? e.competitor2 : e.competitor1;
-  }
-
-  function findNextHeatPosition(heats) {
-    const now = new Date();
-    return heats.findIndex(h => new Date(h.time) > now);
-  }
-
   function groupHeatsByHeatNumber(sessionHeats) {
     const groups = [];
     sessionHeats.forEach(heat => {
@@ -1441,11 +1519,22 @@
 
   function getSessionType(t) {
     const h = new Date(t).getHours();
-    return h < 12 ? 'Morning' : h < 18 ? 'Afternoon' : 'Evening';
+    return h < 12 ? 'Matinee' : h < 18 ? 'Afternoon' : 'Evening';
   }
 
+  // NDCA's own session names say "Morning" -- competitions and dancers
+  // actually call that session "Matinee", so relabel for display only.
   function sessionName(heat) {
-    return heatsData?.sessions?.[heat.session];
+    const raw = heatsData?.sessions?.[heat.session];
+    return raw ? raw.replace(/\bMorning\b/, 'Matinee') : raw;
+  }
+
+  function firstName(name) {
+    return String(name ?? '').split(' ')[0];
+  }
+
+  function firstNames(names) {
+    return names.map(firstName);
   }
 
   // entries[].event is an index into heatsData.events (deduped event-name table).
@@ -1873,9 +1962,7 @@
       // and only when the next heat has actually advanced (avoids a full DOM rebuild each tick).
       if (showingAllHeats && allHeatsNextKey() !== lastAllHeatsNextKey) generateAllHeatsSchedule();
     }
-    else if (heatsData.studios?.includes(selectedCompetitor)) generateStudioSchedule();
-    else if (bibHeats[selectedCompetitor]) generateBibSchedule(selectedCompetitor);
-    else generateSchedule();
+    else renderSelectedCompetitor();
   }
   setInterval(() => {
     if (!heatsData) return;
@@ -1888,5 +1975,7 @@
 <script src="heat-card.js"></script>
 <script src="program.js"></script>
 <script src="now-line.js"></script>
+<script src="schedule-shared.js"></script>
+<script src="rounds.js"></script>
 </body>
 </html>

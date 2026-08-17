@@ -27,6 +27,12 @@ def run(args):
     print("publish: copied static/program.js → program.js")
     shutil.copy2(Path("static/now-line.js"), Path("now-line.js"))
     print("publish: copied static/now-line.js → now-line.js")
+    shutil.copy2(Path("static/dance-taxonomy.js"), Path("dance-taxonomy.js"))
+    print("publish: copied static/dance-taxonomy.js → dance-taxonomy.js")
+    shutil.copy2(Path("static/schedule-shared.js"), Path("schedule-shared.js"))
+    print("publish: copied static/schedule-shared.js → schedule-shared.js")
+    shutil.copy2(Path("static/rounds.js"), Path("rounds.js"))
+    print("publish: copied static/rounds.js → rounds.js")
 
     _validate_outputs(out_dir)
 

@@ -1,9 +1,16 @@
-// Live NDCA "program" feed — awards / costume breaks / top-award ceremonies.
-// Mirrors judges-scores.js: fetched client-side straight from ndcapremier.com,
-// no local caching in the data pipeline. Session Activity titles are free text
+// Live NDCA "program" feed — awards / top-award ceremonies. Mirrors
+// judges-scores.js: fetched client-side straight from ndcapremier.com, no
+// local caching in the data pipeline. Session Activity titles are free text
 // and inconsistent across competitions (typos included, e.g. "Top Teahcers
 // and Studios"), so activities are categorized by keyword rather than an
 // exact-match table.
+//
+// Costume-change/break markers used to be sourced from this feed too (an
+// activity title containing "break"/"costume"), but that NDCA-keyword
+// signal was unreliable (an organizer who doesn't title the activity that
+// way is invisible here). Both tabs now derive costume-change markers from
+// DanceTaxonomy.styleFamilyChanged() instead -- see static/dance-taxonomy.js
+// and thor.md 2026-08-16 -- so this module no longer has a 'break' category.
 (function () {
   const NDCA_BASE = 'https://ndcapremier.com';
   const cache = {};
@@ -12,7 +19,6 @@
     const t = title.toLowerCase();
     if (t.includes('top')) return 'top';
     if (t.includes('award')) return 'award';
-    if (t.includes('break') || t.includes('costume')) return 'break';
     return null;
   }
 
