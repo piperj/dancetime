@@ -25,16 +25,6 @@
     return `${h}:${m} ${ap}`;
   }
 
-  function formatBreakTime(mins) {
-    if (mins >= 60) {
-      const h = Math.floor(mins / 60), q = Math.floor((mins % 60) / 15);
-      return h + ['', '¼', '½', '¾'][q] + ' hr';
-    }
-    if (mins >= 45) return '¾ hr';
-    if (mins > 15) return `${Math.floor(mins / 5) * 5} min`;
-    return `${mins} min`;
-  }
-
   function firstName(name) { return String(name ?? '').split(' ')[0]; }
   function firstNames(names) { return names.map(firstName); }
 
@@ -109,10 +99,6 @@
     return ctx.heatsData?.events?.[idx] ?? '';
   }
 
-  function restMinutes(prevMainTime, nextStartTime) {
-    return ((new Date(nextStartTime) - new Date(prevMainTime)) / 1000 - 90) / 60;
-  }
-
   function getHeatRounds(heatNumber, session, fallback) {
     const sorted = (ctx.heatsByNumber[heatNumber] || fallback)
       .filter(h => h.session === session)
@@ -135,11 +121,6 @@
     intlBallroom: 'International Ballroom', intlLatin: 'International Latin',
     nightclub: 'Night Club', unknown: '',
   };
-  const STYLE_SYLLABUS = {
-    amSmooth: 'Amer.', amRhythm: 'Amer.', intlBallroom: "Int'l", intlLatin: "Int'l",
-    nightclub: 'Club', unknown: '',
-  };
-
   // Night Club deliberately opts out of the fixed round-sequence grid: its
   // syllabus (11 possible dances) is sparse and irregular per couple, so a
   // canonical-order layout with a slot for every dance reads as more noise
@@ -153,16 +134,26 @@
   }
 
   // A block groups by the *broad* syllabus tier (Bronze/Silver/Gold/...),
-  // not the verbatim level phrase -- "Cl. Pre-Bronze", "Cl. Full Bronze"
-  // and "Cl. Intermediate Bronze" are all just "Bronze" for grouping and
-  // display purposes; a dancer thinks of the whole Bronze/International
-  // block as one category, not three. Order matters only in that each
-  // phrase is expected to contain exactly one of these.
-  const BROAD_LEVELS = ['Newcomer', 'Novice', 'Bronze', 'Silver', 'Gold'];
+  // not the verbatim level phrase -- "Cl. Pre-Bronze", "Cl. Full Bronze",
+  // "Cl. Intermediate Bronze" and even a no-separator "PreBronze" are all
+  // just "Bronze" for grouping and display purposes; a dancer thinks of the
+  // whole Bronze/International block as one category, not three. Plain
+  // substring match, deliberately no \b word-boundary -- a boundary would
+  // require a separator before "Bronze" and miss the concatenated
+  // "PreBronze" form seen in real event strings. "Newcomer", "Novice",
+  // "Beginner 1" and "Beginner 2" are all one entry-level tier too, shown
+  // as "Beginner". Checked in order; the first matching pattern wins.
+  const BROAD_LEVEL_GROUPS = [
+    { label: 'Beginner', match: /Newcomer|Novice|Beginner/i },
+    { label: 'Bronze', match: /Bronze/i },
+    { label: 'Silver', match: /Silver/i },
+    { label: 'Gold', match: /Gold/i },
+    { label: 'Open', match: /Open/i },
+  ];
   function broadLevel(level) {
     const s = String(level || '');
-    for (const lvl of BROAD_LEVELS) {
-      if (s.toLowerCase().includes(lvl.toLowerCase())) return lvl;
+    for (const { label, match } of BROAD_LEVEL_GROUPS) {
+      if (match.test(s)) return label;
     }
     return s; // unrecognized phrasing -- fall back to showing it verbatim
   }
@@ -203,6 +194,14 @@
     const cellColor = STYLE_COLOR[styleFamily] || STYLE_COLOR.unknown;
     return `<div class="cell" style="--cell-color:${cellColor}" title="${esc(title || '')}">` +
       `<span class="num">${esc(num)}</span><span class="letter">${esc(code || '?')}</span>${swap}${dots}</div>`;
+  }
+
+  // Wraps a multi-dance grouped heat's exploded cells (e.g. one heat_number
+  // covering W,T,F,VW) in one bounding box spanning that many grid tracks,
+  // so the group still visually reads as one heat rather than N unrelated
+  // cells sitting side by side.
+  function renderMultiDanceGroup(cells) {
+    return `<div class="multi-dance-group" style="grid-column:span ${cells.length}">${cells.join('')}</div>`;
   }
 
   // Grid width: always a fixed 7 columns, so a cell's on-screen size is
@@ -307,12 +306,20 @@
         // real multi-dance code lists aren't always given in canonical
         // order (see thor.md 2026-08-16), so per-position gap/skip
         // detection meant for one-dance-per-heat_number rounds doesn't
-        // generalize cleanly here.
+        // generalize cleanly here. All cells from one heat_number are
+        // wrapped in one bounding box (renderMultiDanceGroup) so the group
+        // still reads as one heat, even if a rare column-overflow forces it
+        // to split across two rows.
+        let groupCells = [];
+        const flushGroup = () => {
+          if (groupCells.length) { row.cells.push(renderMultiDanceGroup(groupCells)); groupCells = []; }
+        };
         parsed.forEach((p, i) => {
-          if (seq && pos >= seq.length) { flush(); newRow(time); }
-          row.cells.push(cellFor(p, i));
+          if (seq && pos >= seq.length) { flushGroup(); flush(); newRow(time); }
+          groupCells.push(cellFor(p, i));
           pos++;
         });
+        flushGroup();
         lastPlacedNum = heatNumber;
       } else {
         const p = parsed[0];
@@ -381,7 +388,6 @@
         sessionEmittedRow = true;
         html += renderRow(row);
       };
-
       // Resolves which real heat (if any) sits at a given heat_number, for
       // labeling `empty` cells -- any entry works, since we only need that
       // heat's own dance code/name, not who's dancing it.
@@ -395,12 +401,11 @@
 
       let sequencer = RoundSequencer(emitRow, null, describeGapHeat);
       let currentFineKey = null, currentBroadKey = null, currentFamily = null;
-      let lastPartner = null, lastMainTime = null, lastHeatNumber = null;
+      let lastPartner = null, lastHeatNumber = null;
 
       groupHeatsByHeatNumber(sessionHeats).forEach(group => {
         const allRounds = getHeatRounds(group[0].heat_number, group[0].session, group);
         const primary = allRounds[0];
-        const main = allRounds[allRounds.length - 1];
         const heatNumber = parseInt(primary.heat_number, 10);
 
         const pending = [];
@@ -439,7 +444,7 @@
             const styleLabel = [broadLevel(p0.level), STYLE_LABEL[p0.styleFamily]].filter(Boolean).join(' ') || 'Unknown';
             html += `<div class="style-block" style="--style-color:${styleColor}">` +
               `<div class="gutter">${costumeChange ? '<span class="icon" title="costume change">👗</span>' : ''}</div>` +
-              `<div class="style-label">${esc(styleLabel)} <span class="syllabus">${esc(STYLE_SYLLABUS[p0.styleFamily] || '')}</span></div></div>`;
+              `<div class="style-label">${esc(styleLabel)}</div></div>`;
             currentBroadKey = broadKey;
             currentFamily = p0.styleFamily;
           }
@@ -461,13 +466,12 @@
         const roundLen = (roundSequenceFor(parsed[0]?.styleFamily) || []).length || 3;
         const heatNumberGap = lastHeatNumber != null ? Math.max(0, heatNumber - lastHeatNumber - 1) : 0;
         if (heatNumberGap >= roundLen) {
+          // A gap this size crosses a full round's worth of heat_numbers --
+          // force the round closed rather than let fillGap's within-round
+          // empty-cell logic (bounded to a handful of sequence positions)
+          // try to represent it. No Break pill in Rounds -- per the user,
+          // the tab has no break-time treatment at all.
           sequencer.flush();
-          const rest = restMinutes(lastMainTime, primary.time);
-          html += ScheduleShared.renderBreakPill({
-            minutes: Math.max(0, Math.round(rest)),
-            label: rest > 0 ? `${formatBreakTime(Math.round(rest))} break` : 'Break',
-            time: primary.time,
-          });
         }
 
         const cellFor = (p, i) => renderCell({
@@ -480,13 +484,26 @@
         });
         sequencer.place({ time: primary.time, heatNumber, parsed, cellFor, swapped: partnerSwapped });
 
-        lastMainTime = main.time;
         lastPartner = currentPartner;
         lastHeatNumber = heatNumber;
       });
 
       sequencer.flush();
-      while (actIdx < acts.length) { addActivity(acts[actIdx]); actIdx++; }
+      // Past this competitor's last heat of the session, only the notice
+      // covering *that* heat is relevant (typically a costume break followed
+      // by the award for it) -- later activities belong to other heats this
+      // competitor has no stake in, so stop after the first award. 'top'
+      // ceremonies are always relevant, so they never stop the flush.
+      // Mirrors generateSchedule()'s identical trailing-activity trim in
+      // index.html -- see thor.md 2026-08-16.
+      let sawAward = false;
+      while (actIdx < acts.length) {
+        const a = acts[actIdx];
+        actIdx++;
+        if (a.category !== 'top' && sawAward) continue;
+        addActivity(a);
+        if (a.category === 'award') sawAward = true;
+      }
     });
 
     return html;

@@ -110,16 +110,17 @@ class TestRoundsRender:
         first_marker = html.find("costume change")
         assert first_marker == -1 or html.index(">100<") < html.index(">101<") < first_marker
 
-    def test_break_pill_shares_markup_with_heats_tab(self, page, spa_server):
+    def test_large_gap_closes_the_round_with_no_break_pill(self, page, spa_server):
         # h3 (102) -> h4 (110) is a gap of 7 heat_numbers, past
         # intlBallroom's 5-dance round length -- crosses the
         # heatNumberGap-based break threshold (not a floor-position
         # heuristic; rounds.js no longer uses one -- see thor.md 2026-08-16).
+        # Rounds has no break-time treatment at all -- the round just closes
+        # and a fresh one starts, with no visual marker in between.
         wait_for_spa(page, spa_server)
         html = page.evaluate(SETUP_JS)
-        assert "break-row" in html
-        assert 'class="pill"' in html
-        assert html.index(">102<") < html.index("break-row") < html.index(">110<")
+        assert "break-row" not in html
+        assert html.count('class="heat-row"') == 3  # 100, 101 in one row; 102 and 110 each start fresh
 
     def test_now_time_stops_present_for_now_line(self, page, spa_server):
         wait_for_spa(page, spa_server)
@@ -226,6 +227,72 @@ class TestRoundsBroadLevelGrouping:
         assert "Pre-Bronze" not in html
         assert "Full Bronze" not in html
 
+    def test_no_separator_prebronze_still_groups_as_bronze(self, page, spa_server):
+        # Real event strings sometimes concatenate "Pre" and "Bronze" with
+        # no separator ("PreBronze") -- a \b word-boundary check before
+        # "Bronze" would miss this, since there's no non-word character
+        # between "Pre" and "Bronze" to form a boundary.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = ["AC-A1 PreBronze Int'l Waltz"];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('pb1', '310', '2026-01-01T10:00:00', [{ competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' }]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: { 'Test A': ['pb1'], 'Test B': ['pb1'] },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert "Bronze International Ballroom" in html
+        assert "PreBronze" not in html
+
+    def test_newcomer_novice_and_beginner_share_one_beginner_header(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = [
+    "AC-A1 Newcomer Int'l Waltz",
+    "AC-A1 Novice Int'l Waltz",
+    "AC-A1 Beginner 1 Int'l Waltz",
+    "AC-A1 Beginner 2 Int'l Waltz",
+  ];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('bg0', '899', '2026-01-01T09:55:00', [{ competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' }]),
+    heat('bg1', '900', '2026-01-01T10:00:00', [{ competitor1: 'Test A', competitor2: 'Test B', event: 1, bib: '1', result: '' }]),
+    heat('bg2', '905', '2026-01-01T10:10:00', [{ competitor1: 'Test A', competitor2: 'Test B', event: 2, bib: '1', result: '' }]),
+    heat('bg3', '910', '2026-01-01T10:20:00', [{ competitor1: 'Test A', competitor2: 'Test B', event: 3, bib: '1', result: '' }]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: { 'Test A': ['bg0', 'bg1', 'bg2', 'bg3'], 'Test B': ['bg0', 'bg1', 'bg2', 'bg3'] },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert html.count("style-block") == 1
+        assert html.count("Beginner International Ballroom") == 1
+        assert "Newcomer" not in html
+        assert "Novice" not in html
+        assert "Beginner 1" not in html
+        assert "Beginner 2" not in html
+
 
 class TestRoundsNightClubSingleLine:
     def test_night_club_round_has_no_padding_or_gap_cells(self, page, spa_server):
@@ -258,6 +325,78 @@ class TestRoundsNightClubSingleLine:
         assert count_cells(html) == 2                # just the two real cells, no gap/empty filler
         assert ">MER<" in html
         assert ">H<" in html
+
+
+class TestRoundsMultiDanceGrouping:
+    def test_multi_dance_cells_wrapped_in_one_bounding_box(self, page, spa_server):
+        # One heat_number grouping three dances (W,T,F) explodes into three
+        # cells, all wrapped in one bounding box spanning three grid tracks
+        # -- so the group still reads as one heat, not three unrelated ones.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = ["AC-A1 Full Bronze Amer. Smooth (W,T,F)"];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('m1', '500', '2026-01-01T10:00:00', [{ competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' }]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: { 'Test A': ['m1'], 'Test B': ['m1'] },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert 'class="multi-dance-group" style="grid-column:span 3"' in html
+        assert count_cells(html) == 3
+        assert ">W<" in html and ">T<" in html and ">F<" in html
+
+
+class TestRoundsTrailingActivities:
+    def test_stops_after_first_award_past_last_heat(self, page, spa_server):
+        # Past this competitor's last heat, only the award covering it is
+        # relevant -- later awards belong to other levels/heats entirely.
+        # Mirrors generateSchedule()'s identical trim in index.html.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = ["AC-A1 Full Bronze Amer. Waltz"];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('w1', '800', '2026-01-01T08:32:00', [{ competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' }]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: { 'Test A': ['w1'], 'Test B': ['w1'] },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({
+    cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+    floorPositionByKey: {}, sessionFirstHeatTime: {},
+    programMarkers: { bySession: { '01': { activities: [
+      { time: '2026-01-01T09:02:00', title: 'Awards', category: 'award' },
+      { time: '2026-01-01T10:22:00', title: 'Awards', category: 'award' },
+      { time: '2026-01-01T11:17:00', title: 'Awards', category: 'award' },
+      { time: '2026-01-01T12:20:00', title: 'Top Awards', category: 'top' },
+    ] } } },
+  });
+  return Rounds.render('Test A');
+}
+""")
+        assert html.count("awards-row") == 2  # the one real award + the always-relevant top ceremony
+        assert "9:02 am" in html
+        assert "10:22 am" not in html
+        assert "11:17 am" not in html
+        assert "12:20 pm" in html
 
 
 class TestRoundsNavWiring:

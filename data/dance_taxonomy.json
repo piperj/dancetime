@@ -58,6 +58,7 @@
       "label": "Night Club",
       "marker": null,
       "roundSequence": ["MER", "S", "BA", "H", "WCS", "Sal", "AT", "NC2", "C2", "PK", "PD", "2S", "CWW", "CWS"],
+      "codeAliases": { "SA": "S", "ME": "MER", "NC": "NC2" },
       "dances": {
         "Merengue": "MER",
         "Samba": "S",
