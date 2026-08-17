@@ -7,6 +7,53 @@
     return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  function formatTime(s) {
+    const d = new Date(s);
+    let h = d.getHours();
+    const m = String(d.getMinutes()).padStart(2, '0');
+    const ap = h >= 12 ? 'pm' : 'am';
+    h = h % 12 || 12;
+    return `${h}:${m} ${ap}`;
+  }
+
+  function firstName(name) { return String(name ?? '').split(' ')[0]; }
+  function firstNames(names) { return names.map(firstName); }
+
+  function groupHeatsByHeatNumber(sessionHeats) {
+    const groups = [];
+    sessionHeats.forEach(heat => {
+      const prev = groups[groups.length - 1];
+      if (prev && prev[0].heat_number === heat.heat_number) prev.push(heat);
+      else groups.push([heat]);
+    });
+    return groups;
+  }
+
+  function groupHeatsBySession(heats) {
+    const sessions = [];
+    let cur = [], curId = null;
+    heats.forEach(h => {
+      if (h.session !== curId) { if (cur.length) sessions.push(cur); cur = [h]; curId = h.session; }
+      else cur.push(h);
+    });
+    if (cur.length) sessions.push(cur);
+    return sessions;
+  }
+
+  function getSessionType(t) {
+    const h = new Date(t).getHours();
+    return h < 12 ? 'Matinee' : h < 18 ? 'Afternoon' : 'Evening';
+  }
+
+  // NDCA's own session names say "Morning" -- competitions and dancers
+  // actually call that session "Matinee", so relabel for display only.
+  // `heatsData` is passed explicitly since this module holds no state of
+  // its own (Heats and Rounds each own their own heatsData reference).
+  function sessionName(heat, heatsData) {
+    const raw = heatsData?.sessions?.[heat.session];
+    return raw ? raw.replace(/\bMorning\b/, 'Matinee') : raw;
+  }
+
   // Session-level partner lookup: who `competitor` is dancing with in `heat`,
   // or null if they don't appear in it. Moved from index.html's inline
   // script (previously a bare global) so both tabs call the one
@@ -65,5 +112,9 @@
     return kept;
   }
 
-  global.ScheduleShared = { getPartner, renderBreakPill, trimLeadingActivities, trimTrailingActivities };
+  global.ScheduleShared = {
+    esc, formatTime, firstName, firstNames,
+    groupHeatsByHeatNumber, groupHeatsBySession, getSessionType, sessionName,
+    getPartner, renderBreakPill, trimLeadingActivities, trimTrailingActivities,
+  };
 })(window);

@@ -12,25 +12,11 @@
 (function (global) {
   'use strict';
 
-  function esc(s) {
-    return String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  }
+  // esc/formatTime/firstName(s)/groupHeatsBy*/getSessionType/sessionName all
+  // live in schedule-shared.js -- pure, stateless, and identical to the
+  // versions index.html's inline script uses, so both tabs share one copy.
+  const { esc, formatTime, firstName, firstNames, groupHeatsByHeatNumber, groupHeatsBySession, getSessionType } = ScheduleShared;
 
-  function formatTime(s) {
-    const d = new Date(s);
-    let h = d.getHours();
-    const m = String(d.getMinutes()).padStart(2, '0');
-    const ap = h >= 12 ? 'pm' : 'am';
-    h = h % 12 || 12;
-    return `${h}:${m} ${ap}`;
-  }
-
-  function firstName(name) { return String(name ?? '').split(' ')[0]; }
-  function firstNames(names) { return names.map(firstName); }
-
-  // ── Small physical-heat helpers, duplicated from index.html's inline
-  // script rather than reached across the script boundary (heat-card.js's
-  // existing precedent) -- pure over their inputs, no shared state. ────────
   function partitionRounds(sorted) {
     const partitions = [];
     let cur = [], names = new Set();
@@ -46,32 +32,6 @@
   function splitHeatRounds(sorted, anchorKey) {
     const partitions = partitionRounds(sorted);
     return partitions.find(p => p.some(h => h.key === anchorKey)) || partitions[0] || sorted;
-  }
-
-  function groupHeatsByHeatNumber(sessionHeats) {
-    const groups = [];
-    sessionHeats.forEach(heat => {
-      const prev = groups[groups.length - 1];
-      if (prev && prev[0].heat_number === heat.heat_number) prev.push(heat);
-      else groups.push([heat]);
-    });
-    return groups;
-  }
-
-  function groupHeatsBySession(heats) {
-    const sessions = [];
-    let cur = [], curId = null;
-    heats.forEach(h => {
-      if (h.session !== curId) { if (cur.length) sessions.push(cur); cur = [h]; curId = h.session; }
-      else cur.push(h);
-    });
-    if (cur.length) sessions.push(cur);
-    return sessions;
-  }
-
-  function getSessionType(t) {
-    const h = new Date(t).getHours();
-    return h < 12 ? 'Matinee' : h < 18 ? 'Afternoon' : 'Evening';
   }
 
   // ── Module context, set via init() ───────────────────────────────────────
@@ -91,8 +51,7 @@
   }
 
   function sessionName(heat) {
-    const raw = ctx.heatsData?.sessions?.[heat.session];
-    return raw ? raw.replace(/\bMorning\b/, 'Matinee') : raw;
+    return ScheduleShared.sessionName(heat, ctx.heatsData);
   }
 
   function eventLabel(idx) {
@@ -224,6 +183,15 @@
   // A round with more than 7 dances (Night Club) wraps onto additional grid
   // rows automatically, since the grid only ever declares 7 column tracks.
   const MAX_COLS = 7;
+
+  // Forced-round-close gap threshold for a style family the taxonomy
+  // doesn't recognize (roundSequenceFor returns null, so there's no real
+  // round width to measure against). Every known family's roundSequence
+  // (data/dance_taxonomy.json) is 5 dances wide; 3 is a deliberately
+  // smaller, arbitrary fallback -- small enough to still catch a genuine
+  // multi-round skip, large enough not to fire on every single skipped
+  // heat_number within one round.
+  const UNKNOWN_FAMILY_ROUND_LEN = 3;
 
   function renderRow(row) {
     const gutterIcon = row.isFirst
@@ -543,7 +511,7 @@
         // confirmed bug against Manhattan real data (heat 269 -> 274, a
         // 4-heat gap, rendered nothing at all). See thor.md 2026-08-17.
         const styleFamily = parsed[0]?.styleFamily;
-        const roundLen = (roundSequenceFor(styleFamily) || []).length || 3;
+        const roundLen = (roundSequenceFor(styleFamily) || []).length || UNKNOWN_FAMILY_ROUND_LEN;
         const heatNumberGap = lastHeatNumber != null ? Math.max(0, heatNumber - lastHeatNumber - 1) : 0;
         if (styleFamily !== 'nightclub' && heatNumberGap >= roundLen) {
           // A gap this size crosses a full round's worth of heat_numbers --

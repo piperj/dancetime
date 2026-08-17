@@ -405,28 +405,29 @@
     if (activeTab === 'elo'     && !showElo) activeTab = 'heats';
     document.querySelectorAll('nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === activeTab));
 
-    const isHeats   = activeTab === 'heats';
-    const isRounds  = activeTab === 'rounds';
-    const isRanking = activeTab === 'ranking';
-    const isElo     = activeTab === 'elo';
+    const isHeats     = activeTab === 'heats';
+    const isRounds    = activeTab === 'rounds';
+    const isRanking   = activeTab === 'ranking';
+    const isElo       = activeTab === 'elo';
+    const showsHeats  = isHeats || isRounds; // Heats and Rounds share one search bar/content area
 
     compHeader.classList.toggle('hidden', isElo || (!heatsData && !rankingData));
-    heatsSearchBar.classList.toggle('hidden', !(isHeats || isRounds) || !heatsData);
-    heatsControls.classList.toggle('hidden', !(isHeats || isRounds) || !heatsData);
+    heatsSearchBar.classList.toggle('hidden', !showsHeats || !heatsData);
+    heatsControls.classList.toggle('hidden', !showsHeats || !heatsData);
     document.getElementById('contestedStatsBox').classList.toggle('hidden', !isHeats || !selectedCompetitor);
-    scheduleContent.classList.toggle('hidden', !(isHeats || isRounds) || !heatsData);
+    scheduleContent.classList.toggle('hidden', !showsHeats || !heatsData);
     // Held back until loadComp()'s program-markers fetch settles -- letting
     // NowLine activate off the first, markers-less render would scroll to a
     // target that a moment later shifts by however much the Awards/break
     // markers add to the page once they arrive, a visible jump the user
     // shouldn't see. See loadComp()'s awaitingProgramMarkers.
-    if (window.NowLine) window.NowLine.setActive((isHeats || isRounds) && !!heatsData && !awaitingProgramMarkers);
+    if (window.NowLine) window.NowLine.setActive(showsHeats && !!heatsData && !awaitingProgramMarkers);
     rankingControls.classList.toggle('hidden', !isRanking || !rankingData);
     rankingView.classList.toggle('hidden', !isRanking);
     document.getElementById('elo-controls').classList.toggle('hidden', !isElo);
     document.getElementById('elo-view').classList.toggle('hidden', !isElo);
     status.classList.toggle('hidden',
-      ((isHeats || isRounds) && !!heatsData) || (isRanking && !!rankingData) || isElo);
+      (showsHeats && !!heatsData) || (isRanking && !!rankingData) || isElo);
   }
 
   // ── Competition dropdown ───────────────────────────────────────────────────
@@ -1464,26 +1465,18 @@
   }
 
   // ── Helpers ────────────────────────────────────────────────────────────────
-  function groupHeatsByHeatNumber(sessionHeats) {
-    const groups = [];
-    sessionHeats.forEach(heat => {
-      const prev = groups[groups.length - 1];
-      if (prev && prev[0].heat_number === heat.heat_number) prev.push(heat);
-      else groups.push([heat]);
-    });
-    return groups;
-  }
-
-  function groupHeatsBySession(heats) {
-    const sessions = [];
-    let cur = [], curId = null;
-    heats.forEach(h => {
-      if (h.session !== curId) { if (cur.length) sessions.push(cur); cur = [h]; curId = h.session; }
-      else cur.push(h);
-    });
-    if (cur.length) sessions.push(cur);
-    return sessions;
-  }
+  // groupHeatsByHeatNumber/groupHeatsBySession/getSessionType/firstName(s)/
+  // formatTime/esc all live in schedule-shared.js -- pure, stateless helpers
+  // shared with rounds.js so there's one copy of each. Wrapped in plain
+  // function declarations (not a top-level destructure) since this inline
+  // script runs before schedule-shared.js's <script src> tag below it.
+  function groupHeatsByHeatNumber(sessionHeats) { return ScheduleShared.groupHeatsByHeatNumber(sessionHeats); }
+  function groupHeatsBySession(heats) { return ScheduleShared.groupHeatsBySession(heats); }
+  function getSessionType(t) { return ScheduleShared.getSessionType(t); }
+  function firstName(name) { return ScheduleShared.firstName(name); }
+  function firstNames(names) { return ScheduleShared.firstNames(names); }
+  function formatTime(s) { return ScheduleShared.formatTime(s); }
+  function esc(s) { return ScheduleShared.esc(s); }
 
   function collectUniqueHeats(keys) {
     const heats = [];
@@ -1497,24 +1490,10 @@
     return dedupePhysicalHeats(heats);
   }
 
-  function getSessionType(t) {
-    const h = new Date(t).getHours();
-    return h < 12 ? 'Matinee' : h < 18 ? 'Afternoon' : 'Evening';
-  }
-
   // NDCA's own session names say "Morning" -- competitions and dancers
   // actually call that session "Matinee", so relabel for display only.
   function sessionName(heat) {
-    const raw = heatsData?.sessions?.[heat.session];
-    return raw ? raw.replace(/\bMorning\b/, 'Matinee') : raw;
-  }
-
-  function firstName(name) {
-    return String(name ?? '').split(' ')[0];
-  }
-
-  function firstNames(names) {
-    return names.map(firstName);
+    return ScheduleShared.sessionName(heat, heatsData);
   }
 
   // entries[].event is an index into heatsData.events (deduped event-name table).
@@ -1529,15 +1508,6 @@
     return `${ ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()] } ${mon}/${day}`;
   }
 
-  function formatTime(s) {
-    const d = new Date(s);
-    let h = d.getHours();
-    const m = String(d.getMinutes()).padStart(2, '0');
-    const ap = h >= 12 ? 'pm' : 'am';
-    h = h % 12 || 12;
-    return `${h}:${m} ${ap}`;
-  }
-
   function formatBreakTime(mins) {
     if (mins >= 60) {
       const h = Math.floor(mins / 60), q = Math.floor((mins % 60) / 15);
@@ -1546,10 +1516,6 @@
     if (mins >= 45) return '¾ hr';
     if (mins > 15) return `${Math.floor(mins / 5) * 5} min`;
     return `${mins} min`;
-  }
-
-  function esc(s) {
-    return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
   // One second after `isoTime` -- used to timestamp the "All done!" marker's

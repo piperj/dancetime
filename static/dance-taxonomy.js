@@ -110,9 +110,14 @@
       const hit = findCodeInFamily(fam, code);
       if (hit) return { styleFamily: fam, code: hit.code, danceName: hit.danceName };
     }
-    for (const fam of taxonomy.familySearchOrder || []) {
-      const hit = findCodeInFamily(fam, code);
-      if (hit) return { styleFamily: fam, code: hit.code, danceName: hit.danceName };
+    // With no markerKey, familiesForMarker already returned the full
+    // familySearchOrder above -- only fall back to a taxonomy-wide search
+    // here when the marker narrowed the first pass to a smaller group.
+    if (markerKey) {
+      for (const fam of taxonomy.familySearchOrder || []) {
+        const hit = findCodeInFamily(fam, code);
+        if (hit) return { styleFamily: fam, code: hit.code, danceName: hit.danceName };
+      }
     }
     return null;
   }
@@ -127,10 +132,23 @@
     return fam.marker === 'american' || fam.marker === 'countryWestern';
   }
 
+  // Event strings are static per competition and this parser is pure over
+  // `taxonomy` (fixed once ready() resolves), so a raw-string cache avoids
+  // re-running the marker/family scan for the same event on every render
+  // and 10s auto-refresh -- Heats and Rounds both call parseEvent per heat
+  // group, and Rounds calls it again per gap cell.
+  const parseCache = new Map();
+
   function parseEvent(eventString) {
     const raw = String(eventString ?? '');
-    if (!taxonomy) return [unknownEntry(raw, '', null)];
+    if (!taxonomy) return [unknownEntry(raw, '', null)]; // not cached -- pre-ready() callers shouldn't pin a placeholder result
+    if (parseCache.has(raw)) return parseCache.get(raw);
+    const result = parseEventUncached(raw);
+    parseCache.set(raw, result);
+    return result;
+  }
 
+  function parseEventUncached(raw) {
     let s = raw.trim();
 
     // Multi-dance grouped events: a trailing "(W,T,F,VW)"-style code list.
