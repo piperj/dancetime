@@ -335,18 +335,20 @@ class TestRoundsNightClubSingleLine:
         assert ">H<" in html
 
     def test_night_club_fills_a_real_gap_between_the_couples_own_heats(self, page, spa_server):
-        # Manhattan real-data bug (cyi 904): heat 269 "Beginner1 Hustle" and
-        # heat 274 "Beginner 2 Hustle" -- two DIFFERENT verbatim sub-levels,
-        # 5 heats apart, genuinely interleaved with each other and a third
-        # sub-level on the real schedule, not scheduled as separate blocks
-        # the way standard families' sub-levels are. fineBlockKeyFor() used
-        # to split by verbatim level regardless of family, so these two
-        # heats landed in separate RoundSequencer instances with no shared
-        # gap-fill state -- nothing rendered between them at all, even after
-        # the heat_number-continuity gap math was added. Night Club's fine
-        # key now collapses to its broad key, so both heats -- and the real
-        # West Coast Swing heat for someone else in between -- land in one
-        # continuous row.
+        # Manhattan real-data case (cyi 904, Johan Piper): heat 269
+        # "Beginner1 Hustle" and heat 274 "Beginner 2 Hustle" -- two
+        # DIFFERENT verbatim sub-levels, 5 heats apart, genuinely interleaved
+        # with each other and a third sub-level on the real schedule, not
+        # scheduled as separate blocks the way standard families' sub-levels
+        # are. Night Club's *broad* key still collapses both sub-levels
+        # under one shared "Beginner Night Club" header/RoundSequencer (no
+        # fixed round width to reset against) -- but within that shared
+        # sequencer, this couple's own Hustle code showing up a second time
+        # is the signal that a new pass through the syllabus started, so it
+        # still gets its own row rather than reading as one heat danced
+        # twice in a row. The real West Coast Swing heat for someone else,
+        # sitting between the couple's two Hustles, is captured as a
+        # trailing empty cell on the first row before the split.
         wait_for_spa(page, spa_server)
         html = page.evaluate("""
 () => {
@@ -380,7 +382,7 @@ class TestRoundsNightClubSingleLine:
 }
 """)
         assert html.count("style-block") == 1  # one shared "Beginner Night Club" header
-        assert html.count('class="heat-row"') == 1  # one continuous line, not force-split
+        assert html.count('class="heat-row"') == 2  # own-code repeat splits into two separate rows
         assert count_cells(html) == 3  # 269 H, 270 WCS (empty), 274 H
         assert 'class="cell empty"' in html
         assert ">270<" in html and ">WCS<" in html

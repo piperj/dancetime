@@ -235,6 +235,7 @@
     let pos = 0;
     let row = null;
     let lastPlacedNum = null; // heat_number of the last real cell placed in the *current* row
+    let rowCodes = null; // Set of this couple's own dance codes already placed in the *current* row -- null-seq families only (see place())
 
     // isFirst (the ▶️ "first heat" gutter icon) is a session-wide property,
     // not per-block -- left false here and set by the caller's emitRow
@@ -243,6 +244,7 @@
     function newRow(time) {
       row = { cells: [], time, isFirst: false, swapped: false, hadMultiDance: false };
       lastPlacedNum = null;
+      rowCodes = new Set();
     }
 
     // A `removed` position (no real heat_number found, for anyone, at that
@@ -334,8 +336,17 @@
           if (groupCells.length) { row.cells.push(renderMultiDanceGroup(groupCells)); groupCells = []; }
         };
         parsed.forEach((p, i) => {
-          if (seq && pos >= seq.length) { flushGroup(); flush(); newRow(time); row.hadMultiDance = true; }
+          // With a fixed seq, a row rolls over once it's full (pos reaches
+          // the round's canonical width). With no seq (Night Club/unknown),
+          // there's no width to measure against -- instead, this couple's
+          // own code repeating within one row is the signal that a new
+          // pass through the syllabus has started (see the single-dance
+          // branch's identical check below for why).
+          if ((seq && pos >= seq.length) || (!seq && rowCodes.has(p.code))) {
+            flushGroup(); flush(); newRow(time); row.hadMultiDance = true;
+          }
           groupCells.push(cellFor(p, i));
+          rowCodes.add(p.code);
           pos++;
         });
         flushGroup();
@@ -343,12 +354,28 @@
       } else {
         const p = parsed[0];
         let idx = seq ? seq.indexOf(p.code, pos) : -1;
-        if (seq && idx === -1) {
-          // Doesn't fit the remainder of this round -- close it (padded)
-          // and start a fresh one, searching from the top of the sequence.
+        // Doesn't fit the remainder of this round -- close it (padded) and
+        // start a fresh one. With a fixed seq, "doesn't fit" means the code
+        // isn't in the remaining sequence positions. With no seq (Night
+        // Club/unknown), there's no sequence to check against -- instead,
+        // this couple's own code showing up a second time in one row means
+        // they've wrapped back around to a dance they already danced this
+        // row, i.e. a new pass through the syllabus has started (a real bug
+        // against Manhattan data: Beginner1 and Beginner2 Hustle, two
+        // genuinely separate heats, otherwise landed in the same row as one
+        // heat_number-continuous line). See thor.md 2026-08-17.
+        if ((seq && idx === -1) || (!seq && rowCodes.has(p.code))) {
+          // For a null-seq family, capture any real intervening heat into
+          // the row being closed *before* flushing it -- fillTrailing()
+          // (called by flush()) is a no-op without a seq to measure against,
+          // so this is the only chance for that gap to render anywhere.
+          if (!seq && lastPlacedNum != null) {
+            const missingBeforeSplit = heatNumber - lastPlacedNum - 1;
+            if (missingBeforeSplit > 0) fillGap(missingBeforeSplit, heatNumber);
+          }
           flush();
           newRow(time);
-          idx = seq.indexOf(p.code);
+          idx = seq ? seq.indexOf(p.code) : -1;
         }
         if (idx === -1) idx = pos; // unrecognized code/family -- just append, no gap detection
 
@@ -361,6 +388,7 @@
         const missing = seq ? idx - pos : (lastPlacedNum != null ? heatNumber - lastPlacedNum - 1 : 0);
         if (missing > 0) fillGap(missing, heatNumber);
         row.cells.push(cellFor(p, 0));
+        rowCodes.add(p.code);
         pos = idx + 1;
         lastPlacedNum = heatNumber;
       }
@@ -500,20 +528,20 @@
         // one on a real dance), so this is exactly the "collapse empty
         // rounds into a Break" case: just close out whatever's pending, no
         // Break pill (per the user, Rounds has no break-time treatment at
-        // all). Unrecognized families have no round length at all
-        // (roundSequenceFor returns null) -- fall back to a fixed
-        // small-gap threshold instead of firing on every single skipped
-        // heat_number. Night Club is deliberately exempt: it's a genuine
-        // single continuous line with no fixed round width to overflow, and
-        // now that null-seq gaps get filled by heat_number continuity too
-        // (see place() above), forcing a row break here would just hide
-        // real intervening heats that fillGap would otherwise show -- a
+        // all). Any family with no fixed round width -- Night Club (opts
+        // out deliberately, see roundSequenceFor) or a genuinely
+        // unrecognized 'unknown' family (no taxonomy entry at all) -- is
+        // exempt from this forced close: both rely on place()'s null-seq
+        // branch to fill gaps via heat_number continuity instead (see
+        // place() above), so forcing a row break here would just hide real
+        // intervening heats that fillGap would otherwise show -- a
         // confirmed bug against Manhattan real data (heat 269 -> 274, a
         // 4-heat gap, rendered nothing at all). See thor.md 2026-08-17.
         const styleFamily = parsed[0]?.styleFamily;
-        const roundLen = (roundSequenceFor(styleFamily) || []).length || UNKNOWN_FAMILY_ROUND_LEN;
+        const seqForFamily = roundSequenceFor(styleFamily);
+        const roundLen = (seqForFamily || []).length || UNKNOWN_FAMILY_ROUND_LEN;
         const heatNumberGap = lastHeatNumber != null ? Math.max(0, heatNumber - lastHeatNumber - 1) : 0;
-        if (styleFamily !== 'nightclub' && heatNumberGap >= roundLen) {
+        if (seqForFamily && heatNumberGap >= roundLen) {
           // A gap this size crosses a full round's worth of heat_numbers --
           // force the round closed rather than let fillGap's within-round
           // empty-cell logic (bounded to a handful of sequence positions)
@@ -521,9 +549,23 @@
           sequencer.flush();
         }
 
+        // Contested if *any* round this couple actually appeared in (for
+        // this event) had more than one couple -- not just the physical
+        // heat's last round. Mirrors HeatCard.contestedGroups()'s own rule:
+        // a couple contested in the Semi-Final but recalled alone to the
+        // Final is still a contested field, in progress. Checking only the
+        // last round (as this used to) missed exactly that case.
+        const myRoundIndices = allRounds.reduce((acc, round, ri) => {
+          const hasMe = round.entries.some(e => e.event === myEvent &&
+            (e.competitor1 === selectedCompetitor || e.competitor2 === selectedCompetitor));
+          if (hasMe) acc.push(ri);
+          return acc;
+        }, []);
+        const contested = myRoundIndices.some(ri => HeatCard.roundHasMultipleCouples(allRounds, ri, myEvent));
+
         const cellFor = (p, i) => renderCell({
           code: p.code, num: primary.heat_number,
-          contested: HeatCard.roundHasMultipleCouples(allRounds, allRounds.length - 1, myEvent),
+          contested,
           solo: HeatCard.isSoloHeat(allRounds),
           badgeSwap: partnerSwapped && i === 0,
           title: p.danceName,
