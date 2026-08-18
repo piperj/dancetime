@@ -89,3 +89,51 @@ class TestLiveHeatListMatchesFreshScrape:
         extra = actual - expected     # heats the SPA showed that aren't his
         assert not missing, f"cyi={cyi}: SPA is missing heats from the live record: {sorted(missing, key=int)}"
         assert not extra, f"cyi={cyi}: SPA shows heats not in the live record: {sorted(extra, key=int)}"
+
+
+class TestLiveRoundsGridMatchesFreshScrape:
+    # Same live trust check as TestLiveHeatListMatchesFreshScrape above, but
+    # against the Rounds tab's grid instead of the Heats tab's card list --
+    # every heat_number Johan actually danced must show up as a filled
+    # (non-empty) grid cell, and no filled cell should show a heat_number
+    # that isn't his. `.cell.empty` cells are deliberately excluded: those
+    # render someone else's real heat at a canonical position this couple
+    # didn't dance, not one of Johan's own heats (see rounds.js's renderCell
+    # doc comment).
+    def test_rounds_grid_matches_live_ndca_record(self, page, spa_server):
+        from scrape.client import NDCAClient
+        from .conftest import REPO_ROOT
+
+        client = NDCAClient()
+        index_json = json.loads((REPO_ROOT / "data" / "index.json").read_text())
+        cyi, competitor_id = _find_comp_and_id(client, index_json)
+        expected = _ground_truth_heats(client, cyi, competitor_id)
+        assert expected, f"{SEARCH_NAME!r} (cyi={cyi}) has no heats in the live record -- nothing to compare"
+
+        wait_for_spa(page, spa_server)
+        page.evaluate(f"selectComp(compList.findIndex(c => c.cyi === {cyi}))")
+        page.wait_for_function(
+            """() => {
+                const s = document.getElementById('status');
+                return s.classList.contains('hidden') || !s.textContent.includes('Loading');
+            }""",
+            timeout=15_000,
+        )
+        # Switch to Rounds before selecting the competitor -- selectHeatsCompetitor's
+        # renderSelectedCompetitor() forks on activeTab, so Rounds must already be
+        # active for setHeatsSearch to render the grid rather than the card list.
+        page.locator('nav button[data-tab="rounds"]').click()
+        page.evaluate(f"setHeatsSearch({SEARCH_NAME!r})")
+        page.wait_for_function(
+            "() => document.querySelectorAll('#scheduleContent .cell:not(.empty)').length > 0",
+            timeout=10_000,
+        )
+        actual = set(page.evaluate(
+            "() => Array.from(document.querySelectorAll('#scheduleContent .cell:not(.empty) .num'))"
+            ".map(e => e.textContent.trim())"
+        ))
+
+        missing = expected - actual   # heats he has but the grid didn't show
+        extra = actual - expected     # filled cells whose heat_number isn't his
+        assert not missing, f"cyi={cyi}: Rounds grid is missing heats from the live record: {sorted(missing, key=int)}"
+        assert not extra, f"cyi={cyi}: Rounds grid shows heats not in the live record: {sorted(extra, key=int)}"
