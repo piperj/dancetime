@@ -578,6 +578,104 @@ class TestRoundsMultiDanceGrouping:
         assert ">W<" in html and ">T<" in html and ">F<" in html
 
 
+class TestRoundsMidRoundDroppedDance:
+    def test_dropped_dance_between_own_placements_renders_no_duplicate(self, page, spa_server):
+        # IGB 2026 real-data regression: 444 W, 445 T, 446 F, 447 Q with
+        # Viennese Waltz dropped entirely (no heat_number reserved for it at
+        # all -- the numbers stay contiguous). Placing F must not compute a
+        # phantom "missing" count off VW's sequence position and re-render
+        # heat 445 (T) a second time as a bogus gap cell.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = [
+    "AC-A1 Full Bronze Int'l Waltz",          // 0
+    "AC-A1 Full Bronze Int'l Tango",          // 1
+    "AC-A1 Full Bronze Int'l Foxtrot",        // 2
+    "AC-A1 Full Bronze Int'l Quickstep",      // 3
+  ];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const mine = (num) => ({ competitor1: 'Test A', competitor2: 'Test B', event: num, bib: '1', result: '' });
+  const heats = [
+    heat('d1', '444', '2026-01-01T10:00:00', [mine(0)]),
+    heat('d2', '445', '2026-01-01T10:01:00', [mine(1)]),
+    heat('d3', '446', '2026-01-01T10:02:00', [mine(2)]),
+    heat('d4', '447', '2026-01-01T10:03:00', [mine(3)]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: { 'Test A': ['d1', 'd2', 'd3', 'd4'], 'Test B': ['d1', 'd2', 'd3', 'd4'] },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: { '01': '2026-01-01T10:00:00' }, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert count_cells(html) == 4  # W, T, F, Q -- no duplicate empty cell for VW's dropped slot
+        assert 'class="cell empty"' not in html
+        assert html.count(">445<") == 1
+        assert ">W<" in html and ">T<" in html and ">F<" in html and ">Q<" in html
+
+    def test_dropped_dance_as_first_position_of_a_later_round_renders_no_duplicate(self, page, spa_server):
+        # Same class of bug, but at a round *boundary* rather than mid-round:
+        # round 1 dances the full W,T,VW,F,Q; round 2 drops W entirely (no
+        # heat_number reserved for anyone), so round 2's first placement for
+        # this couple is T -- the row's very first cell. lastPlacedNum must
+        # carry over from round 1's last placement (Q) so this leading gap
+        # is measured in real heat_numbers, not sequence position, or the
+        # old idx-pos fallback would wrongly re-render round 1's own Q heat
+        # as a bogus gap cell for round 2.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = [
+    "AC-A1 Full Bronze Int'l Waltz",          // 0
+    "AC-A1 Full Bronze Int'l Tango",          // 1
+    "AC-A1 Full Bronze Int'l Viennese Waltz", // 2
+    "AC-A1 Full Bronze Int'l Foxtrot",        // 3
+    "AC-A1 Full Bronze Int'l Quickstep",      // 4
+  ];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const mine = (num) => ({ competitor1: 'Test A', competitor2: 'Test B', event: num, bib: '1', result: '' });
+  const heats = [
+    // Round 1: full W,T,VW,F,Q.
+    heat('e1', '444', '2026-01-01T10:00:00', [mine(0)]),
+    heat('e2', '445', '2026-01-01T10:01:00', [mine(1)]),
+    heat('e3', '446', '2026-01-01T10:02:00', [mine(2)]),
+    heat('e4', '447', '2026-01-01T10:03:00', [mine(3)]),
+    heat('e5', '448', '2026-01-01T10:04:00', [mine(4)]),
+    // Round 2: W (449) dropped entirely -- T is the first real heat.
+    heat('e6', '449', '2026-01-01T10:10:00', [mine(1)]),
+    heat('e7', '450', '2026-01-01T10:11:00', [mine(2)]),
+    heat('e8', '451', '2026-01-01T10:12:00', [mine(3)]),
+    heat('e9', '452', '2026-01-01T10:13:00', [mine(4)]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: {
+      'Test A': ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9'],
+      'Test B': ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9'],
+    },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: { '01': '2026-01-01T10:00:00' }, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert count_cells(html) == 9  # round1: 5 real; round2: 4 real -- no bogus gap cells anywhere
+        assert 'class="cell empty"' not in html
+        assert html.count(">448<") == 1  # round 1's own Q not re-rendered as round 2's leading gap
+        assert html.count(">T<") == 2  # round1's T and round2's T, each their own real cell
+
+
 class TestRoundsTrailingActivities:
     def test_stops_after_first_award_past_last_heat(self, page, spa_server):
         # Past this competitor's last heat, only the award covering it is

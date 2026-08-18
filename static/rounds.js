@@ -249,16 +249,29 @@
   function RoundSequencer(emitRow, seq, describeGapHeat, expectedFamily) {
     let pos = 0;
     let row = null;
-    let lastPlacedNum = null; // heat_number of the last real cell placed in the *current* row
+    // heat_number of the last real cell this couple has had placed by this
+    // sequencer instance so far -- deliberately NOT row-scoped (see
+    // newRow()'s doc comment below).
+    let lastPlacedNum = null;
     let rowCodes = null; // Set of this couple's own dance codes already placed in the *current* row -- null-seq families only (see place())
 
     // `lastTime` tracks the most recent heat placed into this row (updated
     // on every place() call, not just the first) -- the caller's emitRow
     // callback uses it as the "end" side of the break-gap measurement
     // against the next row's own start time.
+    //
+    // `lastPlacedNum` is deliberately NOT reset here -- it tracks the last
+    // real heat_number placed across the whole sequencer instance (one fine
+    // block/sub-level), not just the current row. A new row starting mid-
+    // block (round rollover, or a mid-row split) still needs a real anchor
+    // for its own first placement's gap math -- resetting it to null on
+    // every row start silently fell back to sequence-position math there,
+    // which reintroduced the exact duplicate-gap-cell bug this file's
+    // history already fixed once for the *within-row* case (a dance
+    // dropped for everyone landing as a round's first danced position, not
+    // just a middle one). See thor.md 2026-08-17.
     function newRow(time) {
       row = { cells: [], time, lastTime: time, hadMultiDance: false, roundKeys: new Set() };
-      lastPlacedNum = null;
       rowCodes = new Set();
     }
 
@@ -292,13 +305,48 @@
     // into the *next* physical round's real heat_numbers and mislabeled
     // them as this round's missing tail (a confirmed bug against IGB 2026
     // real data -- see thor.md 2026-08-17).
+    //
+    // Walks real heat_numbers forward one at a time from `lastPlacedNum`,
+    // rather than assuming one heat_number per remaining canonical
+    // position -- a dance dropped for everyone doesn't reliably open (or
+    // skip) a fixed number of real heat_numbers; real data has shown both
+    // a genuinely unused number (a "hole") and no hole at all (the next
+    // real dance renumbered right in). A hole is harmless here -- probing
+    // it just finds no real heat and the walk moves on to the next number,
+    // still within the iteration budget below.
+    //
+    // What the walk must not do is wander into the *next* round's own real
+    // heats once this round's real trailing dances are exhausted -- same
+    // style family, so describeIfExpected's family check alone can't tell
+    // the difference. The iteration budget (`seq.length - pos`, one
+    // attempt per remaining canonical position) bounds *how far* the walk
+    // can reach, but a dropped dance with no hole shifts every later
+    // dance's real heat_number back by one, which can let the budget still
+    // land on the next round's first heat. The real signal that we've
+    // crossed into a new round is a *repeated* dance code -- `rowCodes`
+    // (shared with place()'s own repeat-detection) already tracks every
+    // code placed in this row, real or filled; a candidate whose code is
+    // already in there belongs to the next pass, not this round's tail, so
+    // the walk stops there instead of rendering it. See thor.md 2026-08-17.
     function fillTrailing() {
-      if (!seq || !row || row.hadMultiDance) return;
+      if (!seq || !row || row.hadMultiDance || lastPlacedNum == null) return;
+      let n = lastPlacedNum;
       for (let i = pos; i < seq.length; i++) {
-        const gapNum = lastPlacedNum != null ? lastPlacedNum + 1 + (i - pos) : null;
-        const info = describeIfExpected(gapNum);
-        if (info) row.cells.push(renderCell({ empty: true, num: gapNum, code: info.code, title: info.danceName }));
+        n++;
+        const info = describeIfExpected(n);
+        if (!info) continue; // a hole -- no real heat at this number, keep walking
+        if (rowCodes.has(info.code)) break; // repeated code -- this is the next round's own dance
+        row.cells.push(renderCell({ empty: true, num: n, code: info.code, title: info.danceName }));
+        rowCodes.add(info.code);
       }
+    }
+
+    // Shared by both gap-fill call sites below -- the real heat_number
+    // distance since the last cell this couple actually danced, or null
+    // when there's no real placement yet to anchor from (this sequencer
+    // instance's very first placement).
+    function anchoredGap(heatNumber) {
+      return lastPlacedNum != null ? heatNumber - lastPlacedNum - 1 : null;
     }
 
     // Pads the current round out to its full canonical width before
@@ -309,6 +357,15 @@
       if (row) emitRow(row);
       row = null;
       pos = 0;
+    }
+
+    // Called by the caller when it force-closes a round because a gap of a
+    // full round's worth of heat_numbers (or more) means whole rounds
+    // passed with no entry for this couple at all (see render()'s
+    // heatNumberGap check) -- `lastPlacedNum` is stale across a skip that
+    // large, so the next placement must fall back to leading-gap math
+    // rather than treat the entire skipped stretch as a gap to fill.
+    function resetAnchor() {
       lastPlacedNum = null;
     }
 
@@ -328,7 +385,10 @@
       for (let i = 0; i < missing; i++) {
         const gapNum = heatNumber - (missing - i);
         const info = describeIfExpected(gapNum);
-        if (info) row.cells.push(renderCell({ empty: true, num: gapNum, code: info.code, title: info.danceName }));
+        if (info) {
+          row.cells.push(renderCell({ empty: true, num: gapNum, code: info.code, title: info.danceName }));
+          rowCodes.add(info.code);
+        }
       }
     }
 
@@ -388,11 +448,19 @@
           // the row being closed *before* flushing it -- fillTrailing()
           // (called by flush()) is a no-op without a seq to measure against,
           // so this is the only chance for that gap to render anywhere.
-          if (!seq && lastPlacedNum != null) {
-            const missingBeforeSplit = heatNumber - lastPlacedNum - 1;
-            if (missingBeforeSplit > 0) fillGap(missingBeforeSplit, heatNumber);
+          if (!seq) {
+            const missingBeforeSplit = anchoredGap(heatNumber);
+            if (missingBeforeSplit != null && missingBeforeSplit > 0) fillGap(missingBeforeSplit, heatNumber);
           }
           flush();
+          // The gap up to this heat_number has already been fully paid off
+          // by the fillTrailing() call inside flush() (seq case) or the
+          // missingBeforeSplit fillGap() above (null-seq case) -- without
+          // this reset, the unconditional anchoredGap(heatNumber) below
+          // would recompute the exact same real-heat-number distance from
+          // the still-stale `lastPlacedNum` and render the same gap heats
+          // a second time, now attributed to the new row.
+          lastPlacedNum = null;
           newRow(time);
           idx = seq ? seq.indexOf(p.code) : -1;
         }
@@ -410,15 +478,15 @@
         // real data (444 W, 445 T, 446 F, 447 Q with VW dropped: placing F
         // wrongly inserted a second "445 T" gap cell). Once there's a real
         // `lastPlacedNum` to anchor from, the heat_number difference is
-        // ground truth for both seq and no-seq families alike. Only a
-        // row's very first placement (no `lastPlacedNum` yet) still falls
-        // back to sequence-position math for the leading-gap case (e.g.
-        // a couple only dancing Jive in an Int'l Latin round) -- there's
-        // no real heat_number anchor to measure from there. See thor.md
-        // 2026-08-17.
-        const missing = lastPlacedNum != null
-          ? heatNumber - lastPlacedNum - 1
-          : (seq ? idx - pos : 0);
+        // ground truth for both seq and no-seq families alike. Only this
+        // sequencer instance's very first placement ever (no `lastPlacedNum`
+        // yet at all -- it now persists across row/round boundaries within
+        // one fine block, see newRow()'s doc comment) still falls back to
+        // sequence-position math for the leading-gap case (e.g. a couple
+        // only dancing Jive in an Int'l Latin round) -- there's no real
+        // heat_number anchor to measure from there. See thor.md 2026-08-17.
+        const anchored = anchoredGap(heatNumber);
+        const missing = anchored != null ? anchored : (seq ? idx - pos : 0);
         if (missing > 0) fillGap(missing, heatNumber);
         row.cells.push(cellFor(p, 0));
         rowCodes.add(p.code);
@@ -434,7 +502,7 @@
       if (seq && pos >= seq.length) flush();
     }
 
-    return { place, flush };
+    return { place, flush, resetAnchor };
   }
 
   // Populated fresh on every render() call; read by the delegated click
@@ -618,8 +686,14 @@
           // A gap this size crosses a full round's worth of heat_numbers --
           // force the round closed rather than let fillGap's within-round
           // empty-cell logic (bounded to a handful of sequence positions)
-          // try to represent it.
+          // try to represent it. resetAnchor() clears the sequencer's own
+          // memory of the last real heat placed too -- lastPlacedNum now
+          // persists across row boundaries (see newRow()'s doc comment), so
+          // without this the *next* placement's gap math would measure the
+          // real heat_number distance across this entire skipped stretch
+          // and try to render an empty cell for every real heat in it.
           sequencer.flush();
+          sequencer.resetAnchor();
         }
 
         // Contested if *any* round this couple actually appeared in (for
