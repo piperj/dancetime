@@ -398,13 +398,27 @@
         }
         if (idx === -1) idx = pos; // unrecognized code/family -- just append, no gap detection
 
-        // With a fixed `seq`, "missing" is a count of *sequence positions*
-        // skipped. Night Club (and any unrecognized family) has no `seq`
-        // to index into, but a gap between two of this couple's own
-        // dances is just as real -- count it directly from the
-        // heat_number difference instead, so the same fillGap() still
-        // finds and fills any real intervening heat. See thor.md 2026-08-17.
-        const missing = seq ? idx - pos : (lastPlacedNum != null ? heatNumber - lastPlacedNum - 1 : 0);
+        // "missing" must be measured in real heat_numbers, not sequence
+        // positions -- a sequence position that the organizers dropped
+        // *entirely* (no heat_number reserved for anyone, e.g. IGB 2026
+        // dropping Viennese Waltz) never opens a heat_number gap at all,
+        // even though it's still a `seq` position skipped. Trusting
+        // sequence-position distance there (idx - pos) computed a phantom
+        // "missing" count and called fillGap on a heat_number that was
+        // actually the *next* real dance already placed, re-rendering it
+        // as a duplicate empty cell -- a confirmed bug against IGB 2026
+        // real data (444 W, 445 T, 446 F, 447 Q with VW dropped: placing F
+        // wrongly inserted a second "445 T" gap cell). Once there's a real
+        // `lastPlacedNum` to anchor from, the heat_number difference is
+        // ground truth for both seq and no-seq families alike. Only a
+        // row's very first placement (no `lastPlacedNum` yet) still falls
+        // back to sequence-position math for the leading-gap case (e.g.
+        // a couple only dancing Jive in an Int'l Latin round) -- there's
+        // no real heat_number anchor to measure from there. See thor.md
+        // 2026-08-17.
+        const missing = lastPlacedNum != null
+          ? heatNumber - lastPlacedNum - 1
+          : (seq ? idx - pos : 0);
         if (missing > 0) fillGap(missing, heatNumber);
         row.cells.push(cellFor(p, 0));
         rowCodes.add(p.code);
