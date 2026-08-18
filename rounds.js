@@ -148,7 +148,7 @@
     return `${broadLevel(p.level)}||${p.styleFamily || 'unknown'}`;
   }
 
-  function renderCell({ code, contested, solo, empty, num, badgeSwap, title, styleFamily }) {
+  function renderCell({ code, contested, solo, empty, num, swapPartner, title, styleFamily }) {
     // A dance the organizer couldn't fill (no real heat_number at all)
     // contributes no cell whatsoever -- see fillGap()'s caller.
     // `empty`: this couple has no entry for this dance, but the heat exists
@@ -161,7 +161,12 @@
       contested ? `<span class="dot contested" title="contested"></span>` : '',
       !contested && solo ? `<span class="dot solo" title="solo on floor"></span>` : '',
     ].join('');
-    const swap = badgeSwap ? `<span class="badge-swap" title="partner swap">🔁</span>` : '';
+    // Tappable, not just hover -- title alone doesn't work on a phone. Sized
+    // to match the gutter icons (large enough to actually tap) and revealed
+    // via the shared [data-reveal]/.revealed click toggle.
+    const swap = swapPartner
+      ? `<span class="badge-swap" data-reveal title="partner swap">🔄<span class="reveal-text">${esc(firstName(swapPartner))}</span></span>`
+      : '';
     const cellColor = STYLE_COLOR[styleFamily] || STYLE_COLOR.unknown;
     return `<div class="cell" style="--cell-color:${cellColor}" title="${esc(title || '')}">` +
       `<span class="num">${esc(num)}</span><span class="letter">${esc(code || '?')}</span>${swap}${dots}</div>`;
@@ -193,12 +198,17 @@
   // heat_number within one round.
   const UNKNOWN_FAMILY_ROUND_LEN = 3;
 
+  // Below this, a gap between two rounds is just ordinary between-round
+  // pacing (walking off/on the floor, judges resetting); at or above it,
+  // it's a real wait worth flagging with the ⏸️ gutter icon.
+  const BREAK_THRESHOLD_MINUTES = 8;
+
   function renderRow(row) {
-    const gutterIcon = row.isFirst
-      ? `<span class="icon" title="first heat">▶️</span>`
-      : row.swapped
-        ? `<span class="icon" title="partner swap in this round">🔁</span>`
-        : '';
+    // A gap since the previous round large enough to be a real wait, not
+    // just normal between-round pacing -- tap to see how long.
+    const gutterIcon = row.breakMinutes
+      ? `<span class="icon" data-reveal title="break">⏸️<span class="reveal-text">${row.breakMinutes} min</span></span>`
+      : '';
     return `<div class="heat-row" data-now-time="${esc(row.time)}">` +
       `<div class="gutter">${gutterIcon}</div>` +
       `<div class="cells" style="grid-template-columns:repeat(${MAX_COLS},1fr)">${row.cells.join('')}</div></div>`;
@@ -237,12 +247,12 @@
     let lastPlacedNum = null; // heat_number of the last real cell placed in the *current* row
     let rowCodes = null; // Set of this couple's own dance codes already placed in the *current* row -- null-seq families only (see place())
 
-    // isFirst (the ▶️ "first heat" gutter icon) is a session-wide property,
-    // not per-block -- left false here and set by the caller's emitRow
-    // callback instead, since a fresh RoundSequencer is constructed on
-    // every block change within one session.
+    // `lastTime` tracks the most recent heat placed into this row (updated
+    // on every place() call, not just the first) -- the caller's emitRow
+    // callback uses it as the "end" side of the break-gap measurement
+    // against the next row's own start time.
     function newRow(time) {
-      row = { cells: [], time, isFirst: false, swapped: false, hadMultiDance: false };
+      row = { cells: [], time, lastTime: time, hadMultiDance: false };
       lastPlacedNum = null;
       rowCodes = new Set();
     }
@@ -318,7 +328,7 @@
     }
 
     // Places one physical heat_number's parsed dance(s).
-    function place({ time, heatNumber, parsed, cellFor, swapped }) {
+    function place({ time, heatNumber, parsed, cellFor }) {
       if (!row) newRow(time);
 
       if (parsed.length > 1) {
@@ -396,7 +406,7 @@
       // Applied last so it always lands on whichever row actually ended up
       // holding this heat_number's cell(s), even if the sequence-mismatch
       // or multi-dance branch above rolled over into a fresh row first.
-      if (swapped) row.swapped = true;
+      row.lastTime = time;
       if (seq && pos >= seq.length) flush();
     }
 
@@ -438,10 +448,18 @@
         html += `<div class="awards-row" data-now-time="${esc(a.time)}"><div class="gutter"><span class="icon" title="awards">🏆</span></div><div class="marker">${esc(a.title)} · ${esc(formatTime(a.time))}</div></div>`;
       };
 
-      let sessionEmittedRow = false;
+      // A gap between this row's start and the previous row's own last
+      // placed heat, big enough to read as a real wait rather than normal
+      // pacing between rounds -- flagged with the ⏸️ gutter icon (see
+      // renderRow). Reset per session so a session boundary never reads as
+      // a break.
+      let prevRowEndTime = null;
       const emitRow = row => {
-        row.isFirst = !sessionEmittedRow;
-        sessionEmittedRow = true;
+        if (prevRowEndTime != null) {
+          const gapMin = Math.round((new Date(row.time) - prevRowEndTime) / 60000);
+          if (gapMin >= BREAK_THRESHOLD_MINUTES) row.breakMinutes = gapMin;
+        }
+        prevRowEndTime = new Date(row.lastTime);
         html += renderRow(row);
       };
       // Resolves which real heat (if any) sits at a given heat_number, for
@@ -567,11 +585,11 @@
           code: p.code, num: primary.heat_number,
           contested,
           solo: HeatCard.isSoloHeat(allRounds),
-          badgeSwap: partnerSwapped && i === 0,
+          swapPartner: partnerSwapped && i === 0 ? currentPartner : null,
           title: p.danceName,
           styleFamily: p.styleFamily,
         });
-        sequencer.place({ time: primary.time, heatNumber, parsed, cellFor, swapped: partnerSwapped });
+        sequencer.place({ time: primary.time, heatNumber, parsed, cellFor });
 
         lastPartner = currentPartner;
         lastHeatNumber = heatNumber;
@@ -586,6 +604,17 @@
 
     return html;
   }
+
+  // Tap-to-reveal for the break (⏸️) and partner-swap (🔄) icons -- title
+  // tooltips don't work on a phone. One delegated listener toggles a
+  // `.revealed` class on whatever [data-reveal] element was tapped; the
+  // label itself is CSS-hidden until then (see .reveal-text in index.html).
+  // Content resets every render (setScheduleHTML replaces #scheduleContent
+  // wholesale), so no explicit close-on-rerender bookkeeping is needed.
+  document.getElementById('scheduleContent')?.addEventListener('click', e => {
+    const el = e.target.closest('[data-reveal]');
+    if (el) el.classList.toggle('revealed');
+  });
 
   global.Rounds = { init, render };
 })(window);

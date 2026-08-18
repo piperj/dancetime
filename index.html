@@ -45,7 +45,8 @@
     /* Rounds tab grid (static/rounds.js). */
     .style-block { display: flex; gap: .5rem; margin: .9rem 0 .5rem; }
     .gutter { flex: 0 0 22px; display: flex; justify-content: center; padding-top: .15rem; }
-    .gutter .icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: .95rem; color: #6b7280; }
+    .gutter .icon { position: relative; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: .95rem; color: #6b7280; }
+    .gutter .icon[data-reveal] { cursor: pointer; }
     .style-label { flex: 1; border: 1.5px solid var(--style-color, #e5e7eb); background: #fff; border-radius: .5rem; padding: .4rem .65rem; font-size: .85rem; font-weight: 700; color: #1f2430; }
     .heat-row { display: flex; gap: .5rem; margin-bottom: .45rem; }
     .heat-row .cells { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); gap: .4rem; }
@@ -58,7 +59,18 @@
     .dot { position: absolute; top: -4px; right: -4px; width: 11px; height: 11px; border-radius: 50%; box-shadow: 0 0 0 2px #f5f5f5; }
     .dot.contested { background: #d97706; }
     .dot.solo { background: #fff; border: 1.5px solid #2563eb; }
-    .badge-swap { position: absolute; top: -3px; left: -3px; font-size: .55rem; line-height: 1; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 1.5px 0 0 #fff, -1.5px 0 0 #fff, 0 1.5px 0 #fff, 0 -1.5px 0 #fff; }
+    /* Same size as the gutter icons (.95rem) -- large enough to actually tap.
+       Solid white disc, not a text-shadow halo -- no blur. */
+    .badge-swap { position: absolute; top: -9px; left: -9px; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: .95rem; line-height: 1; cursor: pointer; background: #fff; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
+    /* Tap-reveal label shared by the break (⏸️) and partner-swap (🔄) icons --
+       title tooltips don't work on a phone (static/rounds.js). Same pill
+       format as .break-row .pill above, just sized to read at a glance
+       without reading glasses. */
+    .reveal-text { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 4px; background: #fff; border: 1.5px solid #6366f1; color: #6366f1; font-size: .85rem; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; white-space: nowrap; z-index: 5; }
+    [data-reveal].revealed .reveal-text { display: block; }
+    /* The break icon sits in the narrow left-edge gutter -- a centered pill
+       would spill off the left of the screen, so grow it rightward instead. */
+    .gutter .icon .reveal-text { left: 0; transform: none; }
     .awards-row { display: flex; gap: .5rem; margin: .4rem 0 .7rem; }
     .awards-row .marker { flex: 1; background: #fff; border: 2px solid #d4af37; color: #7a5c00; text-align: center; font-weight: 700; font-size: .8rem; padding: .5rem .75rem; border-radius: .5rem; box-shadow: 0 2px 8px rgba(212,175,55,.25); }
 
