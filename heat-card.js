@@ -1,8 +1,9 @@
 // Heat-card rendering + click behavior, extracted out of index.html's inline
 // script. One HeatCard instance per physical heat, kept in a registry that
-// survives the 10s auto-refresh full-HTML rebuild, so expansion state and
-// fetched judges-score data persist across renders without any DOM-side
-// state (no ids to look up, no onclick strings to build/escape).
+// survives full-HTML rebuilds (a search change, tab switch, or the one-shot
+// "all done" rebuild), so expansion state and fetched judges-score data
+// persist across renders without any DOM-side state (no ids to look up, no
+// onclick strings to build/escape).
 //
 // Click model (all four heat-card views: Studio, Bib, All-Heats, individual
 // competitor):

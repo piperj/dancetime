@@ -142,7 +142,7 @@ class TestBackgroundingGuard:
         # on a real screen lock / app switch.
         page.locator("#scheduleContent").dispatch_event("pointerdown")
         page.wait_for_timeout(20)
-        assert page.evaluate("NowLine._test.isInteracting()") is True
+        assert page.evaluate("NowLine.isInteracting()") is True
 
         # Simulate the page being hidden -- document.hidden is normally a
         # read-only getter, so it's stubbed for this test.
@@ -151,7 +151,7 @@ class TestBackgroundingGuard:
             document.dispatchEvent(new Event('visibilitychange'));
         }""")
         page.wait_for_timeout(20)
-        assert page.evaluate("NowLine._test.isInteracting()") is False, \
+        assert page.evaluate("NowLine.isInteracting()") is False, \
             "a mid-gesture backgrounding should force-clear the frozen state, not leave it stuck"
 
 

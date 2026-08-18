@@ -134,9 +134,9 @@
 
   // Event strings are static per competition and this parser is pure over
   // `taxonomy` (fixed once ready() resolves), so a raw-string cache avoids
-  // re-running the marker/family scan for the same event on every render
-  // and 10s auto-refresh -- Heats and Rounds both call parseEvent per heat
-  // group, and Rounds calls it again per gap cell.
+  // re-running the marker/family scan for the same event on every render --
+  // Heats and Rounds both call parseEvent per heat group, and Rounds calls
+  // it again per gap cell.
   const parseCache = new Map();
 
   function parseEvent(eventString) {

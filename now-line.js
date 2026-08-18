@@ -121,8 +121,9 @@
   // frame. This matters: index.html's setScheduleHTML() (the thing that
   // triggers this rebuild in the first place) captures scrollY before
   // replacing #scheduleContent's content and restores it after, so an
-  // expand/collapse or the 10s auto-refresh doesn't yank the page out from
-  // under a manually-scrolled user. That restore call is synchronous, so a
+  // expand/collapse or the one-shot "all done" rebuild doesn't yank the page
+  // out from under a manually-scrolled user. That restore call is
+  // synchronous, so a
   // MutationObserver callback -- a microtask, guaranteed to run after it but
   // before the next paint -- is the one place we can reliably act as the
   // last word for this render, rather than reactively detecting the
@@ -403,17 +404,20 @@
     // building HTML (before writing it) is not, and will see the previous
     // render's stops.
     latestStopTime: () => stops.length ? stops[stops.length - 1].t : null,
+    // True while a touch/pointer/wheel gesture is in progress or still
+    // settling (see beginInteraction()/scheduleRelease()) -- the one
+    // authoritative gesture tracker on the page. index.html's one-shot "all
+    // done" rebuild defers to this rather than keeping its own separate
+    // touchstart/touchend listeners, so there's a single place that knows
+    // whether the user is mid-scroll.
+    isInteracting: () => pointerDown || interacting,
     _test: {
       smoothstep, contentYFor, scrollTargetFor, trackedScroll, LEAD_MS, LINE_FRACTION,
       // Read-only introspection for integration tests -- not used by the
       // module itself. debugStops() lets a test confirm the MutationObserver
       // rebuild actually picked up a layout change (e.g. a card expanding)
-      // without guessing at exact pixel values; isInteracting() lets a test
-      // confirm a frozen gesture actually got cleared (e.g. after a
-      // simulated backgrounding) without depending on scroll position, which
-      // may coincidentally already match the target.
+      // without guessing at exact pixel values.
       debugStops: () => stops.map(s => ({ t: s.t, y: s.y })),
-      isInteracting: () => pointerDown || interacting,
     },
   };
 })();

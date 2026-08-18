@@ -432,11 +432,12 @@
   let groupData = new Map();
 
   // Which cell's heat-box (if any) is currently open -- deliberately NOT
-  // reset inside render(). The app's 10s auto-refresh (index.html) tears
-  // down and rebuilds #scheduleContent wholesale, which would otherwise
-  // silently close a box the user just opened; surviving that rebuild here
-  // is what makes render() re-embed it below instead of the click handler
-  // owning it as one-off DOM state. Cleared on competitor reselection via
+  // reset inside render(). Any full rebuild of #scheduleContent (a search
+  // change, or the one-shot "all done" rebuild in index.html) would
+  // otherwise silently close a box the user just opened; surviving that
+  // rebuild here is what makes render() re-embed it below instead of the
+  // click handler owning it as one-off DOM state. Cleared on competitor
+  // reselection via
   // Rounds.collapseOpen() (see index.html's selectHeatsCompetitor).
   let openRoundKey = null;
 
@@ -670,8 +671,8 @@
   // sit inside a `.cell`, so without this guard every reveal tap would also
   // pop the heat-box open). Only patches the DOM directly for instant
   // feedback -- `openRoundKey` is the durable record; render() re-embeds it
-  // from there on every subsequent call (including the 10s auto-refresh),
-  // so the box doesn't need this handler's help to survive a rebuild.
+  // from there on every subsequent call, so the box doesn't need this
+  // handler's help to survive a rebuild.
   document.getElementById('scheduleContent')?.addEventListener('click', e => {
     if (e.target.closest('[data-reveal]')) return;
     const cell = e.target.closest('.cell[data-round-key]');

@@ -128,7 +128,8 @@
        viewport, so it scrolls with the cards like Apple Calendar's
        current-time line. #now-line-root is a body-level sibling of
        #scheduleContent, not a child of it -- #scheduleContent gets wiped by
-       innerHTML replacement on every search change and the 10s auto-refresh.
+       innerHTML replacement on every search change and the one-shot "all
+       done" rebuild (see scheduleAllDoneCheck() below).
        Visibility toggle uses the global .hidden rule above -- no ID-scoped
        override needed. */
     #now-line { position: absolute; left: 1rem; right: 1rem; z-index: 15; display: flex; align-items: center; opacity: .34; pointer-events: none; }
@@ -289,15 +290,17 @@
   // Replaces the schedule content while preserving scroll position (both
   // axes — a wide judges table makes the page (and its .heat-box card) grow
   // past the viewport width on narrow/mobile screens, by design: a sideways
-  // swipe or landscape rotation brings the rest into view). The periodic
-  // auto-refresh (every 10s) rebuilds this whole subtree from scratch;
-  // without this, an open judges panel (which adds a lot of height/width)
-  // can shift everything below/right of it, so a click or scroll a moment
-  // later lands somewhere else entirely.
+  // swipe or landscape rotation brings the rest into view). The one-shot
+  // "all done" rebuild (see scheduleAllDoneCheck() below) rebuilds this
+  // whole subtree from scratch just like any other render here; without
+  // this, an open judges panel (which adds a lot of height/width) can shift
+  // everything below/right of it, so a click or scroll a moment later lands
+  // somewhere else entirely.
   function setScheduleHTML(html) {
     const scrollX = window.scrollX, scrollY = window.scrollY;
     scheduleContent.innerHTML = html;
     window.scrollTo(scrollX, scrollY);
+    scheduleAllDoneCheck();
   }
   const rankingView    = document.getElementById('ranking-view');
   const status         = document.getElementById('status');
@@ -345,7 +348,6 @@
   let floorPositionByKey = {};
   let allPhysicalHeats = [];
   let showingAllHeats = false;     // true only while the All-Heats view is the active render
-  let lastAllHeatsNextKey = null;  // next-heat key last rendered by generateAllHeatsSchedule
   let studioCompetitors = {};
   let bibHeats = {};
   let bibToNames = {};
@@ -1145,7 +1147,7 @@
     HeatCard.setContext({ type: 'all' });
 
     // Reuse the partition already computed at load, rather than re-partitioning
-    // the full heat set on every (10s-polled) render.
+    // the full heat set on every render.
     const uniqueHeats = allPhysicalHeats.map(part => part[0]);
 
     document.getElementById('participantName').textContent = 'All Heats';
@@ -1155,7 +1157,6 @@
     const sessions = groupHeatsBySession(uniqueHeats);
     currentSessions = sessions;
     const nextHeatKey = allHeatsNextKey();
-    lastAllHeatsNextKey = nextHeatKey;
 
     let html = '';
     sessions.forEach((sessionHeats, si) => {
@@ -1909,30 +1910,62 @@
     btn.addEventListener('click', () => { input.value = ''; input.dispatchEvent(new Event('input')); input.focus(); });
   });
 
-  // Tracks whether a touch/scroll gesture is in progress, so the periodic
-  // rebuild below can skip a tick rather than yank a rebuilt DOM out from
-  // under an in-flight scroll (which aborts momentum scrolling on mobile and
-  // resets any element mid-gesture, e.g. a horizontally-scrolled table).
-  let touchInProgress = false;
-  document.addEventListener('touchstart', () => { touchInProgress = true; }, { passive: true });
-  document.addEventListener('touchend', () => { touchInProgress = false; }, { passive: true });
-
-  // Auto-refresh during live competition — advances the "next heat" marker as heats finish
+  // Rebuilds whichever heats/rounds view is current — used both by explicit
+  // events (tab switch, program-markers fetch settling) and by the one-shot
+  // "all done" timer below.
   function renderCurrentHeatsView() {
     if (!heatsData) return;
     if (!selectedCompetitor) {
-      // Only refresh the actual All-Heats view — not the "not competing" placeholder —
-      // and only when the next heat has actually advanced (avoids a full DOM rebuild each tick).
-      if (showingAllHeats && allHeatsNextKey() !== lastAllHeatsNextKey) generateAllHeatsSchedule();
+      if (showingAllHeats) generateAllHeatsSchedule();
     }
     else renderSelectedCompetitor();
   }
-  setInterval(() => {
-    if (!heatsData) return;
-    if (touchInProgress) return;
-    if (document.activeElement?.id === 'competitorSearch') return;
+
+  // The red now-line (now-line.js) already gives continuous, real-time
+  // visual feedback on its own rAF loop -- nothing about that needs a
+  // periodic rebuild. The only thing left that actually changes with wall-
+  // clock time (as opposed to on user interaction) is the "✅ All done!"
+  // banner flipping on once the last heat/marker on the current view passes.
+  // Rather than poll every 10s to catch that one moment, schedule a single
+  // timer for exactly when it happens, using NowLine's own notion of "last
+  // stop" -- and reschedule it every time the view is rebuilt, since a new
+  // render can change what "last" means (different competitor, more heats
+  // loaded, etc.). See thor.md 2026-08-17.
+  let allDoneRaf = null, allDoneTimer = null;
+  function scheduleAllDoneCheck() {
+    // Cancel both the pending rAF and any timer it already produced --
+    // setScheduleHTML() can fire again before a previously-queued rAF has
+    // run (e.g. two competitor switches in quick succession), and clearing
+    // only the timer here would leave that stale rAF free to schedule a
+    // second, redundant timer once it does run.
+    if (allDoneRaf != null) cancelAnimationFrame(allDoneRaf);
+    clearTimeout(allDoneTimer);
+    // rAF, not synchronous: NowLine's stops are rebuilt off a
+    // MutationObserver microtask queued by the DOM write this just followed
+    // -- see now-line.js's rebuildStops() doc comment for why a rAF callback
+    // is the earliest safe read.
+    allDoneRaf = requestAnimationFrame(() => {
+      allDoneRaf = null;
+      if (!window.NowLine) return;
+      const last = NowLine.latestStopTime();
+      if (last == null) return;
+      const delay = last - Date.now();
+      if (delay <= 0) return; // already past -- the render that just happened already accounts for it
+      allDoneTimer = setTimeout(fireAllDoneCheck, delay + 250);
+    });
+  }
+  function fireAllDoneCheck() {
+    // Same interruption guards the old 10s poll used -- rare here (fires
+    // once, not every 10s), but still worth not fighting an in-flight
+    // gesture or clobbering a half-typed search. Gesture state comes from
+    // NowLine itself (the one place on the page that already tracks it)
+    // rather than a second, separate touchstart/touchend listener here.
+    if (window.NowLine?.isInteracting() || document.activeElement?.id === 'competitorSearch') {
+      allDoneTimer = setTimeout(fireAllDoneCheck, 1000);
+      return;
+    }
     renderCurrentHeatsView();
-  }, 10000);
+  }
 </script>
 <script src="judges-scores.js"></script>
 <script src="heat-card.js"></script>
