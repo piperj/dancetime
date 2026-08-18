@@ -619,6 +619,191 @@ class TestRoundsTrailingActivities:
         assert "12:20 pm" in html
 
 
+# Two same-code Night Club heats for one couple, 15 minutes apart -- Night
+# Club has no fixed round width (roundSequenceFor returns null), so the
+# couple's own code repeating is what splits them into two rows (see
+# RoundSequencer.place's null-seq branch); the 15-minute gap between the
+# first row's last placed heat and the second row's start crosses
+# BREAK_THRESHOLD_MINUTES (8), so the second row gets a ⏸️ gutter icon.
+BREAK_SETUP_JS = """
+() => {
+  const events = ["AC-A1 Full Bronze Hustle"];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('br1', '500', '2026-01-01T10:00:00', [
+      { competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' },
+    ]),
+    heat('br2', '501', '2026-01-01T10:15:00', [
+      { competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' },
+    ]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: { 'Test A': ['br1', 'br2'], 'Test B': ['br1', 'br2'] },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: { '01': '2026-01-01T10:00:00' }, programMarkers: null });
+}
+"""
+
+# Two consecutive Int'l Ballroom heats (Waltz then Tango, adjacent seq
+# positions -- no round flush between them) for the same couple, but with
+# Test A's partner switching from 'Test B' to 'Carol Jones' between heats --
+# the second cell gets a partner-swap badge.
+SWAP_SETUP_JS = """
+() => {
+  const events = ["AC-A1 Full Bronze Int'l Waltz", "AC-A1 Full Bronze Int'l Tango"];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const heats = [
+    heat('sw1', '600', '2026-01-01T10:00:00', [
+      { competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' },
+    ]),
+    heat('sw2', '601', '2026-01-01T10:01:00', [
+      { competitor1: 'Test A', competitor2: 'Carol Jones', event: 1, bib: '1', result: '' },
+    ]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: { 'Test A': ['sw1', 'sw2'], 'Test B': ['sw1'], 'Carol Jones': ['sw2'] },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: { '01': '2026-01-01T10:00:00' }, programMarkers: null });
+}
+"""
+
+
+class TestRoundsTapToReveal:
+    # Title tooltips don't work on a phone -- both the break (⏸️) and
+    # partner-swap (🔄) icons instead expose their label via a tap that
+    # toggles `.revealed` on the `[data-reveal]` element (see rounds.js's
+    # delegated click listener). Exercised against real DOM (setScheduleHTML),
+    # not just the returned HTML string, since this is a live click handler.
+
+    def test_tap_break_icon_reveals_minutes(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        page.evaluate(BREAK_SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        icon = page.locator('.icon[data-reveal]')
+        assert icon.count() == 1
+        assert "revealed" not in (icon.get_attribute("class") or "")
+        icon.click()
+        assert "revealed" in icon.get_attribute("class")
+        assert "15 min" in icon.locator(".reveal-text").inner_text()
+
+    def test_tap_break_icon_again_hides_it(self, page, spa_server):
+        # classList.toggle -- a second tap on the same icon reverses the
+        # first, hiding the label again.
+        wait_for_spa(page, spa_server)
+        page.evaluate(BREAK_SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        icon = page.locator('.icon[data-reveal]')
+        icon.click()
+        icon.click()
+        assert "revealed" not in (icon.get_attribute("class") or "")
+
+    def test_tap_swap_badge_reveals_partner_first_name(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        page.evaluate(SWAP_SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        badge = page.locator(".badge-swap[data-reveal]")
+        assert badge.count() == 1
+        badge.click()
+        assert "revealed" in badge.get_attribute("class")
+        assert badge.locator(".reveal-text").inner_text() == "Carol"
+
+    def test_tapping_reveal_icon_does_not_open_the_heat_box(self, page, spa_server):
+        # The reveal icons sit inside a `.cell[data-round-key]` -- without the
+        # click handler's [data-reveal] guard, tapping either icon would also
+        # pop open the Heats-tab heat-box underneath it.
+        wait_for_spa(page, spa_server)
+        page.evaluate(SWAP_SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        page.locator(".badge-swap[data-reveal]").click()
+        assert page.locator(".round-heat-box").count() == 0
+
+
+class TestRoundsHeatBoxTap:
+    # Tapping a filled cell drops the same Heats-tab heat-box card right
+    # under that cell's row; a second tap on the same cell closes it; tapping
+    # a different cell swaps which one is open (single-expansion model,
+    # mirroring HeatCard's own behavior).
+
+    def test_tap_cell_opens_heat_box_below_its_row(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        page.evaluate(SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        assert page.locator(".round-heat-box").count() == 0
+        page.locator(".cell[data-round-key]").first.click()
+        boxes = page.locator(".round-heat-box")
+        assert boxes.count() == 1
+        assert boxes.locator(".heat-box").count() == 1
+
+    def test_tap_same_cell_again_closes_the_box(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        page.evaluate(SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        cell = page.locator(".cell[data-round-key]").first
+        cell.click()
+        assert page.locator(".round-heat-box").count() == 1
+        cell.click()
+        assert page.locator(".round-heat-box").count() == 0
+
+    def test_tap_different_cell_swaps_the_open_box(self, page, spa_server):
+        wait_for_spa(page, spa_server)
+        page.evaluate(SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        cells = page.locator(".cell[data-round-key]")
+        assert cells.count() >= 2
+        first_key = cells.nth(0).get_attribute("data-round-key")
+        second_key = cells.nth(1).get_attribute("data-round-key")
+        assert first_key != second_key
+
+        cells.nth(0).click()
+        assert page.locator(".round-heat-box").count() == 1
+        assert page.locator(".round-heat-box").get_attribute("data-round-key") == first_key
+
+        cells.nth(1).click()
+        boxes = page.locator(".round-heat-box")
+        assert boxes.count() == 1  # the old box is gone, not stacked
+        assert boxes.get_attribute("data-round-key") == second_key
+
+    def test_box_survives_rerender_via_open_round_key(self, page, spa_server):
+        # openRoundKey is durable state, not one-off DOM bookkeeping -- a
+        # fresh render() call (e.g. the app's 10s auto-refresh) must re-embed
+        # the box in the same spot rather than silently closing it.
+        wait_for_spa(page, spa_server)
+        page.evaluate(SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        page.locator(".cell[data-round-key]").first.click()
+        open_key = page.locator(".round-heat-box").get_attribute("data-round-key")
+
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        boxes = page.locator(".round-heat-box")
+        assert boxes.count() == 1
+        assert boxes.get_attribute("data-round-key") == open_key
+
+    def test_collapse_open_clears_the_box_on_next_render(self, page, spa_server):
+        # Rounds.collapseOpen() is what index.html's selectHeatsCompetitor
+        # calls alongside HeatCard.collapseAll() so an open box never leaks
+        # across to a newly-selected competitor's grid.
+        wait_for_spa(page, spa_server)
+        page.evaluate(SETUP_JS)
+        page.evaluate("() => { setScheduleHTML(Rounds.render('Test A')); }")
+        page.locator(".cell[data-round-key]").first.click()
+        assert page.locator(".round-heat-box").count() == 1
+
+        page.evaluate("() => { Rounds.collapseOpen(); setScheduleHTML(Rounds.render('Test A')); }")
+        assert page.locator(".round-heat-box").count() == 0
+
+
 class TestRoundsNavWiring:
     def test_rounds_tab_hidden_without_heats_data(self, page, spa_server):
         wait_for_spa(page, spa_server, query="?show_elo=1")
