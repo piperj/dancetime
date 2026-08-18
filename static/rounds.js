@@ -148,13 +148,15 @@
     return `${broadLevel(p.level)}||${p.styleFamily || 'unknown'}`;
   }
 
-  function renderCell({ code, contested, solo, empty, num, swapPartner, title, styleFamily }) {
+  function renderCell({ code, contested, solo, empty, num, swapPartner, title, styleFamily, roundKey }) {
     // A dance the organizer couldn't fill (no real heat_number at all)
     // contributes no cell whatsoever -- see fillGap()'s caller.
     // `empty`: this couple has no entry for this dance, but the heat exists
     // (someone else dances it) -- shown as an outlined box with that real
     // heat's own number/dance letter, just not filled in with this
     // couple's color, so the round still reads as one continuous sequence.
+    // No `data-round-key` -- an empty cell is someone else's heat, not this
+    // competitor's, so there's no heat-box for it to open.
     if (empty) return `<div class="cell empty" title="${esc(title || '')}">` +
       `<span class="num">${esc(num)}</span><span class="letter">${esc(code || '?')}</span></div>`;
     const dots = [
@@ -168,7 +170,10 @@
       ? `<span class="badge-swap" data-reveal title="partner swap">🔄<span class="reveal-text">${esc(firstName(swapPartner))}</span></span>`
       : '';
     const cellColor = STYLE_COLOR[styleFamily] || STYLE_COLOR.unknown;
-    return `<div class="cell" style="--cell-color:${cellColor}" title="${esc(title || '')}">` +
+    // `data-round-key` is this heat_number's group key (see render()'s
+    // groupData) -- the click handler below uses it to look up and drop a
+    // HeatCard-rendered heat-box under this cell's row.
+    return `<div class="cell" style="--cell-color:${cellColor}" title="${esc(title || '')}" data-round-key="${esc(roundKey)}">` +
       `<span class="num">${esc(num)}</span><span class="letter">${esc(code || '?')}</span>${swap}${dots}</div>`;
   }
 
@@ -252,7 +257,7 @@
     // callback uses it as the "end" side of the break-gap measurement
     // against the next row's own start time.
     function newRow(time) {
-      row = { cells: [], time, lastTime: time, hadMultiDance: false };
+      row = { cells: [], time, lastTime: time, hadMultiDance: false, roundKeys: new Set() };
       lastPlacedNum = null;
       rowCodes = new Set();
     }
@@ -327,8 +332,12 @@
       }
     }
 
-    // Places one physical heat_number's parsed dance(s).
-    function place({ time, heatNumber, parsed, cellFor }) {
+    // Places one physical heat_number's parsed dance(s). `roundKey` is
+    // recorded onto whichever row ends up holding this heat_number's
+    // cell(s) -- render()'s emitRow uses it to decide whether the row it's
+    // about to emit needs the open heat-box appended after it (see
+    // render()'s `openRoundKey`).
+    function place({ time, heatNumber, parsed, cellFor, roundKey }) {
       if (!row) newRow(time);
 
       if (parsed.length > 1) {
@@ -407,15 +416,39 @@
       // holding this heat_number's cell(s), even if the sequence-mismatch
       // or multi-dance branch above rolled over into a fresh row first.
       row.lastTime = time;
+      row.roundKeys.add(roundKey);
       if (seq && pos >= seq.length) flush();
     }
 
     return { place, flush };
   }
 
+  // Populated fresh on every render() call; read by the delegated click
+  // handler below (which fires long after render() returns, on whatever
+  // cell the user happens to tap) -- keyed the same way HeatCard.render's
+  // own groupKey is (`allRounds.map(h => h.key).join('-')`), so a click
+  // handed straight to HeatCard.render reproduces exactly the card the
+  // Heats tab would show for that same physical heat.
+  let groupData = new Map();
+
+  // Which cell's heat-box (if any) is currently open -- deliberately NOT
+  // reset inside render(). The app's 10s auto-refresh (index.html) tears
+  // down and rebuilds #scheduleContent wholesale, which would otherwise
+  // silently close a box the user just opened; surviving that rebuild here
+  // is what makes render() re-embed it below instead of the click handler
+  // owning it as one-off DOM state. Cleared on competitor reselection via
+  // Rounds.collapseOpen() (see index.html's selectHeatsCompetitor).
+  let openRoundKey = null;
+
+  function heatBoxWrapperHtml(roundKey, data) {
+    return `<div class="round-heat-box" data-round-key="${esc(roundKey)}">` +
+      HeatCard.render(data.primary, data.allRounds, data.eventName, data.sessionLabel) + `</div>`;
+  }
+
   // ── Main entry point ─────────────────────────────────────────────────────
   function render(selectedCompetitor) {
     if (!selectedCompetitor || !ctx.heatsData) return '';
+    groupData = new Map();
 
     const myHeatKeys = ctx.heatsData.competitor_heats[selectedCompetitor] || [];
     const myHeats = myHeatKeys.map(k => ctx.heatsByKey[k]).filter(Boolean);
@@ -461,6 +494,13 @@
         }
         prevRowEndTime = new Date(row.lastTime);
         html += renderRow(row);
+        // Re-embed the open heat-box right after whichever row actually
+        // holds its cell(s), so it reappears in the same spot across every
+        // auto-refresh rebuild without the click handler having to fight
+        // setScheduleHTML for ownership of that DOM node.
+        if (openRoundKey && row.roundKeys.has(openRoundKey) && groupData.has(openRoundKey)) {
+          html += heatBoxWrapperHtml(openRoundKey, groupData.get(openRoundKey));
+        }
       };
       // Resolves which real heat (if any) sits at a given heat_number, for
       // labeling `empty` cells -- any entry works, since we only need that
@@ -581,6 +621,12 @@
         }, []);
         const contested = myRoundIndices.some(ri => HeatCard.roundHasMultipleCouples(allRounds, ri, myEvent));
 
+        // Same key HeatCard.render derives internally -- lets the click
+        // handler hand this group straight to HeatCard.render and get back
+        // exactly the card the Heats tab would show for this physical heat.
+        const roundKey = allRounds.map(h => h.key).join('-');
+        groupData.set(roundKey, { primary, allRounds, eventName: eventLabel(myEvent), sessionLabel: sessionType });
+
         const cellFor = (p, i) => renderCell({
           code: p.code, num: primary.heat_number,
           contested,
@@ -588,8 +634,9 @@
           swapPartner: partnerSwapped && i === 0 ? currentPartner : null,
           title: p.danceName,
           styleFamily: p.styleFamily,
+          roundKey,
         });
-        sequencer.place({ time: primary.time, heatNumber, parsed, cellFor });
+        sequencer.place({ time: primary.time, heatNumber, parsed, cellFor, roundKey });
 
         lastPartner = currentPartner;
         lastHeatNumber = heatNumber;
@@ -616,5 +663,42 @@
     if (el) el.classList.toggle('revealed');
   });
 
-  global.Rounds = { init, render };
+  // Tapping a filled cell drops the same Heats-tab heat-box card right under
+  // that cell's row (one at a time -- a second tap elsewhere closes whatever
+  // was already open, mirroring HeatCard's own single-expansion model).
+  // Ignores taps that landed on the swap/break reveal icons above (those
+  // sit inside a `.cell`, so without this guard every reveal tap would also
+  // pop the heat-box open). Only patches the DOM directly for instant
+  // feedback -- `openRoundKey` is the durable record; render() re-embeds it
+  // from there on every subsequent call (including the 10s auto-refresh),
+  // so the box doesn't need this handler's help to survive a rebuild.
+  document.getElementById('scheduleContent')?.addEventListener('click', e => {
+    if (e.target.closest('[data-reveal]')) return;
+    const cell = e.target.closest('.cell[data-round-key]');
+    if (!cell) return;
+    const row = cell.closest('.heat-row');
+    if (!row) return;
+
+    const roundKey = cell.dataset.roundKey;
+    const existingBox = document.querySelector('.round-heat-box[data-round-key]');
+    const reopeningSame = existingBox?.dataset.roundKey === roundKey;
+    if (existingBox) existingBox.remove();
+    openRoundKey = reopeningSame ? null : roundKey;
+    if (reopeningSame) return;
+
+    const data = groupData.get(roundKey);
+    if (!data) return;
+    row.insertAdjacentHTML('afterend', heatBoxWrapperHtml(roundKey, data));
+  });
+
+  // Closes any open heat-box without needing a live #scheduleContent DOM
+  // (e.g. reselecting a competitor, which rebuilds the whole subtree right
+  // after) -- called from index.html's selectHeatsCompetitor alongside the
+  // equivalent HeatCard.collapseAll(), so an open box never leaks across
+  // to a different competitor's grid.
+  function collapseOpen() {
+    openRoundKey = null;
+  }
+
+  global.Rounds = { init, render, collapseOpen };
 })(window);
