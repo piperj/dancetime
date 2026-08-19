@@ -271,7 +271,7 @@
     // dropped for everyone landing as a round's first danced position, not
     // just a middle one). See thor.md 2026-08-17.
     function newRow(time) {
-      row = { cells: [], time, lastTime: time, hadMultiDance: false, roundKeys: new Set() };
+      row = { cells: [], time, lastTime: time, roundKeys: new Set() };
       rowCodes = new Set();
     }
 
@@ -297,14 +297,15 @@
     // the round's full width), not just gaps between two of their own
     // cells -- see thor.md 2026-08-17.
     //
-    // Skipped entirely when this row contained a multi-dance grouped heat:
-    // that branch (below) increments `pos` by one per code in whatever
-    // order the event string gave them, not by matching each code to its
-    // real `seq` index -- so `pos` no longer reliably means "how far into
-    // the canonical sequence we are." Trusting it here wandered forward
-    // into the *next* physical round's real heat_numbers and mislabeled
-    // them as this round's missing tail (a confirmed bug against IGB 2026
-    // real data -- see thor.md 2026-08-17).
+    // Runs for multi-dance grouped rows too, now that the group branch
+    // (below) matches each bracketed code to its real `seq` index instead
+    // of a blind per-code `pos++` -- `pos` is trustworthy there for the
+    // same reason it is here. (An earlier version of this code distrusted
+    // the bracket order and disabled fillTrailing entirely for such rows,
+    // after an untrusted `pos` wandered into the *next* physical round's
+    // real heat_numbers and mislabeled them as this round's missing tail --
+    // a confirmed bug against IGB 2026 real data. The bracket order itself
+    // was never the problem; it's canonical. See thor.md 2026-08-17/08-18.)
     //
     // Walks real heat_numbers forward one at a time from `lastPlacedNum`,
     // rather than assuming one heat_number per remaining canonical
@@ -329,7 +330,7 @@
     // already in there belongs to the next pass, not this round's tail, so
     // the walk stops there instead of rendering it. See thor.md 2026-08-17.
     function fillTrailing() {
-      if (!seq || !row || row.hadMultiDance || lastPlacedNum == null) return;
+      if (!seq || !row || lastPlacedNum == null) return;
       let n = lastPlacedNum;
       for (let i = pos; i < seq.length; i++) {
         n++;
@@ -392,6 +393,30 @@
       }
     }
 
+    // Resolves `code`'s real seq index at or after the current `pos`,
+    // rolling the row over via `onRollover()` first if it doesn't fit --
+    // shared by both branches of place() below, which previously
+    // hand-duplicated this exact match/rollover/fallback shape (a real
+    // maintenance risk: the multi-dance branch's own copy of this logic
+    // went unfixed for a while after the single-dance branch's was
+    // corrected, see thor.md 2026-08-17/08-18). The two branches still
+    // differ in what `onRollover` itself does -- the single-dance branch
+    // also pays off a null-seq gap before closing the row -- so only the
+    // matching/fallback shape is factored out here, not the full rollover
+    // behavior. With a fixed seq, the code must appear somewhere at or
+    // after the current position; with no seq (Night Club/unknown), this
+    // couple's own code repeating within the row is the new-pass signal
+    // instead. `onRollover` is expected to leave `pos` at 0 (via flush()),
+    // which is why the re-search after it omits the `pos` start argument.
+    function resolveIndex(code, onRollover) {
+      let idx = seq ? seq.indexOf(code, pos) : -1;
+      if ((seq && idx === -1) || (!seq && rowCodes.has(code))) {
+        onRollover();
+        idx = seq ? seq.indexOf(code) : -1;
+      }
+      return idx === -1 ? pos : idx; // unrecognized code/family -- just append, no gap detection
+    }
+
     // Places one physical heat_number's parsed dance(s). `roundKey` is
     // recorded onto whichever row ends up holding this heat_number's
     // cell(s) -- render()'s emitRow uses it to decide whether the row it's
@@ -401,38 +426,39 @@
       if (!row) newRow(time);
 
       if (parsed.length > 1) {
-        // Multi-dance grouped heat: consecutive run, no gap detection --
-        // real multi-dance code lists aren't always given in canonical
-        // order (see thor.md 2026-08-16), so per-position gap/skip
-        // detection meant for one-dance-per-heat_number rounds doesn't
-        // generalize cleanly here. All cells from one heat_number are
-        // wrapped in one bounding box (renderMultiDanceGroup) so the group
-        // still reads as one heat, even if a rare column-overflow forces it
-        // to split across two rows.
-        row.hadMultiDance = true;
+        // Multi-dance grouped heat: the bracketed code list is the real,
+        // canonical order these dances happen in (confirmed by the user --
+        // not merely "whatever order the event string gave them," as an
+        // earlier, unverified version of this comment claimed). So each
+        // code is matched to its real `seq` index via resolveIndex(), just
+        // like the single-dance branch below, rather than a blind per-code
+        // `pos++` -- that's what makes `pos`/`fillTrailing()` trustworthy
+        // again for rows containing a group (previously worked around by
+        // disabling fillTrailing entirely for such rows --
+        // `row.hadMultiDance`, now removed -- after an untrusted `pos`
+        // wandered into the next physical round's real heats, see
+        // thor.md 2026-08-17). Still no leading-gap detection within the
+        // group itself (no fillGap call here, unlike the single-dance
+        // branch) -- every code in one bracketed group shares one real
+        // heat_number, so there's no heat_number gap *between* them to
+        // detect. All cells from one heat_number are wrapped in one
+        // bounding box (renderMultiDanceGroup) so the group reads as one
+        // heat, even if a rare column-overflow forces it to split across
+        // two rows.
         let groupCells = [];
         const flushGroup = () => {
           if (groupCells.length) { row.cells.push(renderMultiDanceGroup(groupCells)); groupCells = []; }
         };
         parsed.forEach((p, i) => {
-          // With a fixed seq, a row rolls over once it's full (pos reaches
-          // the round's canonical width). With no seq (Night Club/unknown),
-          // there's no width to measure against -- instead, this couple's
-          // own code repeating within one row is the signal that a new
-          // pass through the syllabus has started (see the single-dance
-          // branch's identical check below for why).
-          if ((seq && pos >= seq.length) || (!seq && rowCodes.has(p.code))) {
-            flushGroup(); flush(); newRow(time); row.hadMultiDance = true;
-          }
+          const idx = resolveIndex(p.code, () => { flushGroup(); flush(); newRow(time); });
           groupCells.push(cellFor(p, i));
           rowCodes.add(p.code);
-          pos++;
+          pos = idx + 1;
         });
         flushGroup();
         lastPlacedNum = heatNumber;
       } else {
         const p = parsed[0];
-        let idx = seq ? seq.indexOf(p.code, pos) : -1;
         // Doesn't fit the remainder of this round -- close it (padded) and
         // start a fresh one. With a fixed seq, "doesn't fit" means the code
         // isn't in the remaining sequence positions. With no seq (Night
@@ -443,7 +469,7 @@
         // against Manhattan data: Beginner1 and Beginner2 Hustle, two
         // genuinely separate heats, otherwise landed in the same row as one
         // heat_number-continuous line). See thor.md 2026-08-17.
-        if ((seq && idx === -1) || (!seq && rowCodes.has(p.code))) {
+        const idx = resolveIndex(p.code, () => {
           // For a null-seq family, capture any real intervening heat into
           // the row being closed *before* flushing it -- fillTrailing()
           // (called by flush()) is a no-op without a seq to measure against,
@@ -462,9 +488,7 @@
           // a second time, now attributed to the new row.
           lastPlacedNum = null;
           newRow(time);
-          idx = seq ? seq.indexOf(p.code) : -1;
-        }
-        if (idx === -1) idx = pos; // unrecognized code/family -- just append, no gap detection
+        });
 
         // "missing" must be measured in real heat_numbers, not sequence
         // positions -- a sequence position that the organizers dropped

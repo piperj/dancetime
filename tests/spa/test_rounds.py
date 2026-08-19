@@ -500,13 +500,16 @@ class TestRoundsTrailingFill:
         assert ">994<" in html and ">C<" in html
         assert ">998<" in html and ">J<" in html
 
-    def test_multi_dance_round_disables_trailing_fill(self, page, spa_server):
+    def test_multi_dance_round_ending_on_last_seq_position_has_no_bogus_trailing(self, page, spa_server):
         # IGB 2026 real-data bug: a multi-dance grouped heat (W,T,Q sharing
-        # one heat_number) advances `pos` by one per code without regard to
-        # its real seq index, so trusting `pos` for trailing-fill math
-        # wandered into the *next* physical round's real heats and
-        # mislabeled them as this round's missing tail. No trailing cells
-        # should render after a multi-dance round at all.
+        # one heat_number, Int'l Ballroom seq W,T,VW,F,Q) used to advance
+        # `pos` by one per code regardless of real seq index, so trusting
+        # `pos` for trailing-fill math wandered into the *next* physical
+        # round's real heats and mislabeled them as this round's missing
+        # tail. Now each code is matched to its real seq index (W->0, T->1,
+        # Q->4), so `pos` correctly lands on seq.length after Q and the
+        # round closes with no trailing iterations at all -- no bogus cells,
+        # without needing to disable trailing-fill for the whole row.
         wait_for_spa(page, spa_server)
         html = page.evaluate("""
 () => {
@@ -545,6 +548,55 @@ class TestRoundsTrailingFill:
         assert count_cells(html) == 3  # just W, T, Q -- no bogus trailing "465 W" / "466 W" cells
         assert ">465<" not in html
         assert ">466<" not in html
+
+    def test_multi_dance_round_still_fills_real_trailing_siblings(self, page, spa_server):
+        # The old `hadMultiDance` workaround disabled fillTrailing() for
+        # *any* row touched by a multi-dance group -- overcorrecting for the
+        # IGB bug above by also hiding real, same-round sibling heats a
+        # multi-dance couple didn't dance. A couple dancing only W,T at
+        # heat 464 (Int'l Ballroom seq W,T,VW,F,Q) should still see empty
+        # boxes for VW/F/Q at heats 465-467, since those are real heats in
+        # the *same* round for other couples -- not the next round.
+        wait_for_spa(page, spa_server)
+        html = page.evaluate("""
+() => {
+  const events = [
+    "AC-A1 Beginner Int'l Ballroom (W,T)",   // 0 -- multi-dance, intlBallroom, only W+T
+    "AC-A1 Beginner Int'l Viennese Waltz",   // 1 -- someone else, same round's remaining dances
+    "AC-A1 Beginner Int'l Foxtrot",          // 2
+    "AC-A1 Beginner Int'l Quickstep",        // 3
+  ];
+  function heat(key, heatNumber, time, entries) {
+    return { key, heat_number: heatNumber, session: '01', time, round: 'Final', entries };
+  }
+  const other = (num) => ({ competitor1: 'Other X', competitor2: 'Other Y', event: num, bib: '2', result: '' });
+  const heats = [
+    heat('i1', '464', '2026-01-01T10:00:00', [
+      { competitor1: 'Test A', competitor2: 'Test B', event: 0, bib: '1', result: '' },
+    ]),
+    heat('i2', '465', '2026-01-01T10:01:00', [other(1)]),
+    heat('i3', '466', '2026-01-01T10:02:00', [other(2)]),
+    heat('i4', '467', '2026-01-01T10:03:00', [other(3)]),
+  ];
+  window.__testHeatsData = {
+    sessions: { '01': 'Test Session' }, events,
+    competitor_heats: {
+      'Test A': ['i1'], 'Test B': ['i1'],
+      'Other X': ['i2', 'i3', 'i4'], 'Other Y': ['i2', 'i3', 'i4'],
+    },
+    competitor_studios: {}, heats,
+  };
+  window.__testHeatsByKey = Object.fromEntries(heats.map(h => [h.key, h]));
+  Rounds.init({ cyi: 999999, heatsData: window.__testHeatsData, heatsByKey: window.__testHeatsByKey,
+                floorPositionByKey: {}, sessionFirstHeatTime: {}, programMarkers: null });
+  return Rounds.render('Test A');
+}
+""")
+        assert count_cells(html) == 5  # W, T filled + VW, F, Q empty
+        assert html.count('class="cell empty"') == 3
+        assert '>465<' in html and '>VW<' in html
+        assert '>466<' in html and '>F<' in html
+        assert '>467<' in html and '>Q<' in html
 
 
 class TestRoundsMultiDanceGrouping:
