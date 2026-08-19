@@ -46,6 +46,7 @@
       "label": "International Latin",
       "marker": "international",
       "roundSequence": ["C", "S", "R", "PD", "J"],
+      "codeAliases": { "CC": "C" },
       "dances": {
         "Cha Cha": "C",
         "Samba": "S",

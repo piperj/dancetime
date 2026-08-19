@@ -53,6 +53,34 @@ def test_result_index_circuit_place_zero_is_skipped():
     assert "E|R|Alice Smith" not in index
 
 
+def test_result_index_disambiguates_shared_partner_in_same_round():
+    # Regression test: a pro (Yuriy) dancing with two different students in
+    # the same round/event used to have his second placement silently
+    # overwrite the first's, since the index was keyed by name alone. Both
+    # placements must be independently retrievable via the couple-aware key.
+    results = [{
+        "Events": [{
+            "Name": "Top Solo Grand Prix",
+            "Rounds": [{
+                "Name": "Final",
+                "Dances": [{
+                    "Competitors": [
+                        {"Result": 4, "Participants": [
+                            {"Name": ["Sarah", "McClammy"]}, {"Name": ["Yuriy", "Kuvshynov"]},
+                        ]},
+                        {"Result": 3, "Participants": [
+                            {"Name": ["Debbie", "Babcock"]}, {"Name": ["Yuriy", "Kuvshynov"]},
+                        ]},
+                    ],
+                }],
+            }],
+        }],
+    }]
+    index = _build_result_index(results)
+    assert index["Top Solo Grand Prix|Final|Sarah McClammy|Yuriy Kuvshynov"] == "4"
+    assert index["Top Solo Grand Prix|Final|Debbie Babcock|Yuriy Kuvshynov"] == "3"
+
+
 def test_result_index_summary_does_not_override_direct_result():
     results = [{
         "Events": [{

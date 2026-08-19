@@ -73,8 +73,8 @@ def parse_heatlists(
                             round_name=round_name,
                         )
 
-                    result_val = result_index.get(
-                        _result_key(event_name, round_name, competitor_name), ""
+                    result_val = _lookup_result(
+                        result_index, event_name, round_name, competitor_name, partner_name
                     )
                     entry_obj = HeatEntry(
                         couple=couple,
@@ -95,6 +95,12 @@ def parse_heatlists(
 
 
 def _build_result_index(results: list[dict]) -> dict[str, str]:
+    # Keyed on both a couple-level key (event|round|sorted names) and a
+    # single-name key (event|round|name). The couple key disambiguates a
+    # competitor (e.g. a pro) who partners more than one person within the
+    # same round -- looking up by name alone would let the second couple's
+    # placement silently overwrite the first's. The single-name key remains
+    # for genuine solo entries and is used as a lookup fallback.
     index = {}
     for comp_data in results:
         for event in comp_data.get("Events") or []:
@@ -107,10 +113,9 @@ def _build_result_index(results: list[dict]) -> dict[str, str]:
                         placement = comp.get("Result")
                         if placement is None:
                             continue
-                        for participant in comp.get("Participants") or []:
-                            name_parts = participant.get("Name") or []
-                            name = " ".join(str(x) for x in name_parts)
-                            index[_result_key(event_name, round_name, name)] = str(placement)
+                        names = _participant_names(comp)
+                        for key in _result_keys(event_name, round_name, names):
+                            index[key] = str(placement)
 
                 # Fall back to Summary Circuit.Place (multi-dance rounds like semi-finals
                 # leave individual Result=None and store the combined placement here).
@@ -121,14 +126,27 @@ def _build_result_index(results: list[dict]) -> dict[str, str]:
                     place = circuit.get("Place")
                     if not place:
                         continue
-                    for participant in comp.get("Participants") or []:
-                        name_parts = participant.get("Name") or []
-                        name = " ".join(str(x) for x in name_parts)
-                        key = _result_key(event_name, round_name, name)
+                    names = _participant_names(comp)
+                    for key in _result_keys(event_name, round_name, names):
                         if key not in index:
                             index[key] = str(place)
 
     return index
+
+
+def _participant_names(comp: dict) -> list[str]:
+    names = []
+    for participant in comp.get("Participants") or []:
+        name_parts = participant.get("Name") or []
+        names.append(" ".join(str(x) for x in name_parts))
+    return names
+
+
+def _result_keys(event: str, round_name: str, names: list[str]) -> list[str]:
+    keys = [_result_key(event, round_name, name) for name in names if name]
+    if len(names) == 2 and names[0] and names[1]:
+        keys.append(_couple_result_key(event, round_name, names[0], names[1]))
+    return keys
 
 
 def _make_heat_key(sid: str, heat_num: str, time_str: str) -> str:
@@ -138,6 +156,25 @@ def _make_heat_key(sid: str, heat_num: str, time_str: str) -> str:
 
 def _result_key(event: str, round_name: str, competitor: str) -> str:
     return f"{event}|{round_name}|{competitor}"
+
+
+def _couple_result_key(event: str, round_name: str, name_a: str, name_b: str) -> str:
+    a, b = sorted((name_a, name_b))
+    return f"{event}|{round_name}|{a}|{b}"
+
+
+def _lookup_result(
+    result_index: dict[str, str],
+    event_name: str,
+    round_name: str,
+    competitor_name: str,
+    partner_name: str,
+) -> str:
+    if partner_name:
+        couple_key = _couple_result_key(event_name, round_name, competitor_name, partner_name)
+        if couple_key in result_index:
+            return result_index[couple_key]
+    return result_index.get(_result_key(event_name, round_name, competitor_name), "")
 
 
 def _entry_exists(instance: HeatInstance, competitor_name: str, partner_name: str) -> bool:
@@ -210,7 +247,9 @@ def _synthesize_rounds_from_results(
                     competitor2 = names[1] if len(names) > 1 else ""
                     couple = f"{competitor1} & {competitor2}" if competitor2 else competitor1
                     studio = name_to_studio.get(competitor1) or name_to_studio.get(competitor2, "")
-                    result_val = result_index.get(_result_key(event_name, round_name, competitor1), "")
+                    result_val = _lookup_result(
+                        result_index, event_name, round_name, competitor1, competitor2
+                    )
 
                     instance.entries.append(HeatEntry(
                         couple=couple,

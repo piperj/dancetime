@@ -17,6 +17,25 @@ PARTNER_WEIGHT_BASE: float = 0.20
 K_FACTOR: float = 64.0
 
 
+def compute_partner_shares(r_comp: float, r_partner: float) -> tuple[float, float]:
+    """Return (w_comp, w_partner) biased toward the weaker partner; sum to 1.
+
+    Module-level so both `EloCalculator` (per-heat delta splitting) and
+    `ranking/writer.py` (blending a couple's displayed rating from each
+    member's final individual rating) share one implementation.
+    """
+    logistic = 1.0 / (1.0 + math.pow(10, (r_partner - r_comp) / ELO_SCALE))
+    w_partner = logistic * (1.0 - 2.0 * PARTNER_WEIGHT_BASE) + PARTNER_WEIGHT_BASE
+    return 1.0 - w_partner, w_partner
+
+
+def blend_couple_rating(r_a: float, r_b: float) -> float:
+    """Blended couple rating pulled toward the weaker partner, mirroring
+    `EloCalculator._build_units`'s per-heat couple rating computation."""
+    w_a, w_b = compute_partner_shares(r_a, r_b)
+    return w_a * r_a + w_b * r_b
+
+
 class EloCalculator:
     def __init__(self):
         # name → current rating, e.g. {"Johan": 1400.0, "Kristina": 1303.0}
@@ -51,9 +70,7 @@ class EloCalculator:
           w_kristina = 0.582 × 0.60 + 0.20 = 0.549  (55%)
           w_johan    = 1 - 0.549             = 0.451  (45%)
         """
-        logistic = 1.0 / (1.0 + math.pow(10, (r_partner - r_comp) / ELO_SCALE))
-        w_partner = logistic * (1.0 - 2.0 * PARTNER_WEIGHT_BASE) + PARTNER_WEIGHT_BASE
-        return 1.0 - w_partner, w_partner
+        return compute_partner_shares(r_comp, r_partner)
 
     def _build_units(
         self, competitors: list[str], result: DanceResult

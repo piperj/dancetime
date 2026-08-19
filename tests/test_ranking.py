@@ -449,3 +449,47 @@ class TestRankingWriter:
         for pair, row in helen_rows.items():
             assert row["heats_processed"] == 1, pair
             assert row["num_opponents"] == 2, pair
+
+    def test_multiple_partners_get_distinct_couple_blended_elo(self):
+        # Regression test: the Ladder used to stamp every partnership row with
+        # the competitor's raw individual rating, so a person's different
+        # couples all showed the identical ELO/delta (e.g. "Sarah & Rasheed"
+        # and "Sarah & Yuriy" both showing 1914/+196). Each row should instead
+        # show a couple-blended rating that reflects *that* partner's rating.
+        data = build_ranking_json(
+            cyi=1030,
+            competition_info={"Name": "Cal Star Ball", "StartDate": "2026-08-01", "EndDate": "2026-08-03", "Location": "LA"},
+            dance_results=[
+                DanceResult(
+                    event_id=1, event_name="Bronze Latin", round_id=1, round_name="Final",
+                    dance_id=1, dance_name="Cha Cha", session_id=1, heat_number=1, time="",
+                    competitors=["Sarah", "Rasheed", "Ann", "Bob"],
+                    partners={"Sarah": "Rasheed", "Rasheed": "Sarah", "Ann": "Bob", "Bob": "Ann"},
+                    placements={"Sarah": 1, "Rasheed": 1, "Ann": 2, "Bob": 2},
+                ),
+                DanceResult(
+                    event_id=2, event_name="Bronze Rhythm", round_id=1, round_name="Final",
+                    dance_id=2, dance_name="Rumba", session_id=1, heat_number=2, time="",
+                    competitors=["Sarah", "Yuriy", "Cara", "Dan"],
+                    partners={"Sarah": "Yuriy", "Yuriy": "Sarah", "Cara": "Dan", "Dan": "Cara"},
+                    placements={"Sarah": 1, "Yuriy": 1, "Cara": 2, "Dan": 2},
+                ),
+            ],
+            final_ratings={"Sarah": 1914.0, "Rasheed": 1200.0, "Yuriy": 1900.0,
+                            "Ann": 1400.0, "Bob": 1400.0, "Cara": 1500.0, "Dan": 1500.0},
+            initial_ratings={},
+            competitor_studios={},
+        )
+
+        sarah_rows = {
+            frozenset((c["competitor"], c["partner"])): c
+            for c in data["couples"] if "Sarah" in (c["competitor"], c["partner"])
+        }
+        rasheed_row = sarah_rows[frozenset({"Sarah", "Rasheed"})]
+        yuriy_row = sarah_rows[frozenset({"Sarah", "Yuriy"})]
+
+        assert rasheed_row["elo"] != yuriy_row["elo"]
+        # Both blended ratings should sit strictly between the two individual
+        # ratings involved (never equal to Sarah's bare individual rating).
+        assert 1200.0 < rasheed_row["elo"] < 1914.0
+        assert 1900.0 < yuriy_row["elo"] < 1914.0

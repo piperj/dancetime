@@ -57,7 +57,7 @@
     .style-label { flex: 1; border: 1.5px solid var(--style-color, #e5e7eb); background: #fff; border-radius: .5rem; padding: .4rem .65rem; font-size: .85rem; font-weight: 700; color: #1f2430; }
     .heat-row { display: flex; gap: .5rem; margin-bottom: .45rem; }
     .heat-row .cells { flex: 1; display: grid; grid-template-columns: repeat(7, 1fr); gap: .4rem; }
-    .cell { position: relative; aspect-ratio: 1/1; border-radius: .5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: var(--cell-color, #999); box-shadow: inset 0 -2px 0 rgba(0,0,0,.12); }
+    .cell { position: relative; aspect-ratio: 1/1; min-width: 0; border-radius: .5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; background: var(--cell-color, #999); box-shadow: inset 0 -2px 0 rgba(0,0,0,.12); }
     .cell[data-round-key] { cursor: pointer; }
     /* Tapping a filled Rounds cell drops the same heat-box card the Heats tab
        uses right under that cell's row (static/rounds.js). */

@@ -98,7 +98,13 @@ def install_ndca_mocks(page, fetch_log=None):
     """
     def handle(route):
         url = route.request.url
-        if fetch_log is not None:
+        # Only /feed/results/ calls are judges-scores.js's own requests. The
+        # SPA also fires /feed/program/ calls in the background (program.js's
+        # award/ceremony markers, on their own async schedule unrelated to
+        # judges-panel clicks) -- logging those too made fetch-count
+        # assertions flaky, since they could land on either side of a
+        # count_after_first_open snapshot depending on timing.
+        if fetch_log is not None and "/feed/results/" in url:
             fetch_log.append(url)
         if "id=" in url:
             route.fulfill(json={

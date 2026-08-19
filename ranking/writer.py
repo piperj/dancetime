@@ -3,6 +3,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from common import comp_meta, short_name
+from ranking.elo import blend_couple_rating
 from ranking.models import DanceResult
 
 
@@ -54,11 +55,27 @@ def build_ranking_json(
         for partner in sorted(partners_seen.get(competitor) or {""}):
             key = (competitor, partner)
 
+            # A competitor with several partners this competition (pro
+            # dancing with multiple students, etc.) has one individual
+            # rating in `final_ratings`, but each partnership should show
+            # its own couple-blended rating rather than the same bare
+            # individual number repeated on every row (see thor.md
+            # 2026-08-18: Ladder was showing identical ELO across a
+            # person's different couples).
+            if partner:
+                couple_elo = blend_couple_rating(elo, final_ratings.get(partner, elo))
+                couple_initial_elo = blend_couple_rating(
+                    initial_ratings.get(competitor, elo), initial_ratings.get(partner, elo)
+                )
+            else:
+                couple_elo = elo
+                couple_initial_elo = initial_ratings.get(competitor, elo)
+
             couples.append({
                 "competitor": competitor,
                 "partner": partner,
-                "elo": round(elo, 2),
-                "initial_elo": round(initial_ratings.get(competitor, elo), 2),
+                "elo": round(couple_elo, 2),
+                "initial_elo": round(couple_initial_elo, 2),
                 "heats_processed": partnership_heats.get(key, 0),
                 "num_opponents": len(partnership_opponents.get(key, set())),
             })
