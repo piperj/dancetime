@@ -9869,7 +9869,7 @@
       "location": "Alexandria, VA",
       "start_date": "2026-08-25",
       "end_date": "2026-08-29",
-      "published": false
+      "published": true
     },
     {
       "cyi": 712,
@@ -10641,6 +10641,15 @@
       "published": false
     },
     {
+      "cyi": 1695,
+      "competition_id": 113,
+      "name": "Texas Challenge",
+      "location": "Houston, TX",
+      "start_date": "2027-05-07",
+      "end_date": "2027-05-08",
+      "published": false
+    },
+    {
       "cyi": 477,
       "competition_id": 111,
       "name": "American Star Ball Championships",
@@ -10656,6 +10665,15 @@
       "location": "Naples, FL",
       "start_date": "2027-05-13",
       "end_date": "2027-05-16",
+      "published": false
+    },
+    {
+      "cyi": 1137,
+      "competition_id": 146,
+      "name": "Las Vegas Classic",
+      "location": "Las Vegas, NV",
+      "start_date": "2027-05-15",
+      "end_date": "2027-05-15",
       "published": false
     },
     {
@@ -17679,6 +17697,15 @@
       "published": false
     },
     {
+      "cyi": 9920,
+      "competition_id": 136,
+      "name": "Yankee Classic & New England Dancesport Championships",
+      "location": "Boston, MA",
+      "start_date": "2033-06-16",
+      "end_date": "2033-06-19",
+      "published": false
+    },
+    {
       "cyi": 9309,
       "competition_id": 130,
       "name": "Millennium Dancesport Championships",
@@ -18696,6 +18723,15 @@
       "published": false
     },
     {
+      "cyi": 9915,
+      "competition_id": 146,
+      "name": "Las Vegas Classic",
+      "location": "Las Vegas, NV",
+      "start_date": "2034-05-20",
+      "end_date": "2034-05-20",
+      "published": false
+    },
+    {
       "cyi": 9527,
       "competition_id": 14,
       "name": "People's Choice Dancesport Competition",
@@ -18790,6 +18826,15 @@
       "competition_id": 27,
       "name": "Colorado Star Ball Championships",
       "location": "Denver, CO",
+      "start_date": "2034-06-15",
+      "end_date": "2034-06-18",
+      "published": false
+    },
+    {
+      "cyi": 9921,
+      "competition_id": 136,
+      "name": "Yankee Classic & New England Dancesport Championships",
+      "location": "Boston, MA",
       "start_date": "2034-06-15",
       "end_date": "2034-06-18",
       "published": false
@@ -19749,6 +19794,15 @@
       "published": false
     },
     {
+      "cyi": 9918,
+      "competition_id": 113,
+      "name": "Texas Challenge",
+      "location": "Houston, TX",
+      "start_date": "2035-05-10",
+      "end_date": "2035-05-12",
+      "published": false
+    },
+    {
       "cyi": 9846,
       "competition_id": 29,
       "name": "Pacific Grand Ball",
@@ -19789,6 +19843,15 @@
       "competition_id": 158,
       "name": "Go Wild Minneapolis Dancesport",
       "location": "Minneapolis, MN",
+      "start_date": "2035-05-19",
+      "end_date": "2035-05-19",
+      "published": false
+    },
+    {
+      "cyi": 9916,
+      "competition_id": 146,
+      "name": "Las Vegas Classic",
+      "location": "Las Vegas, NV",
       "start_date": "2035-05-19",
       "end_date": "2035-05-19",
       "published": false
@@ -19870,6 +19933,15 @@
       "competition_id": 27,
       "name": "Colorado Star Ball Championships",
       "location": "Denver, CO",
+      "start_date": "2035-06-14",
+      "end_date": "2035-06-17",
+      "published": false
+    },
+    {
+      "cyi": 9922,
+      "competition_id": 136,
+      "name": "Yankee Classic & New England Dancesport Championships",
+      "location": "Boston, MA",
       "start_date": "2035-06-14",
       "end_date": "2035-06-17",
       "published": false
@@ -20802,6 +20874,15 @@
       "published": false
     },
     {
+      "cyi": 9919,
+      "competition_id": 113,
+      "name": "Texas Challenge",
+      "location": "Houston, TX",
+      "start_date": "2036-05-08",
+      "end_date": "2036-05-10",
+      "published": false
+    },
+    {
       "cyi": 9850,
       "competition_id": 103,
       "name": "Northcoast Dancesport Classic",
@@ -20842,6 +20923,15 @@
       "competition_id": 158,
       "name": "Go Wild Minneapolis Dancesport",
       "location": "Minneapolis, MN",
+      "start_date": "2036-05-17",
+      "end_date": "2036-05-17",
+      "published": false
+    },
+    {
+      "cyi": 9917,
+      "competition_id": 146,
+      "name": "Las Vegas Classic",
+      "location": "Las Vegas, NV",
       "start_date": "2036-05-17",
       "end_date": "2036-05-17",
       "published": false
@@ -20923,6 +21013,15 @@
       "competition_id": 27,
       "name": "Colorado Star Ball Championships",
       "location": "Denver, CO",
+      "start_date": "2036-06-19",
+      "end_date": "2036-06-22",
+      "published": false
+    },
+    {
+      "cyi": 9923,
+      "competition_id": 136,
+      "name": "Yankee Classic & New England Dancesport Championships",
+      "location": "Boston, MA",
       "start_date": "2036-06-19",
       "end_date": "2036-06-22",
       "published": false
