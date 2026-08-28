@@ -10578,6 +10578,15 @@
       "published": false
     },
     {
+      "cyi": 434,
+      "competition_id": 108,
+      "name": "Miami Vibe Dancesport Competition",
+      "location": "Ft Lauderdale, FL",
+      "start_date": "2027-04-21",
+      "end_date": "2027-04-25",
+      "published": false
+    },
+    {
       "cyi": 1450,
       "competition_id": 161,
       "name": "Patriot Dance Festival",
@@ -19920,6 +19929,15 @@
       "published": false
     },
     {
+      "cyi": 9927,
+      "competition_id": 22,
+      "name": "Chicago Crystal Ball",
+      "location": "Naperville, IL",
+      "start_date": "2035-06-07",
+      "end_date": "2035-06-10",
+      "published": false
+    },
+    {
       "cyi": 9593,
       "competition_id": 20,
       "name": "Prestige DanceSport",
@@ -20005,6 +20023,15 @@
       "competition_id": 65,
       "name": "Orlando Dance Classic",
       "location": "Orlando, FL",
+      "start_date": "2035-07-21",
+      "end_date": "2035-07-21",
+      "published": false
+    },
+    {
+      "cyi": 9924,
+      "competition_id": 64,
+      "name": "North Carolina Open",
+      "location": "Charlotte, NC",
       "start_date": "2035-07-21",
       "end_date": "2035-07-21",
       "published": false
@@ -21000,6 +21027,15 @@
       "published": false
     },
     {
+      "cyi": 9928,
+      "competition_id": 22,
+      "name": "Chicago Crystal Ball",
+      "location": "Naperville, IL",
+      "start_date": "2036-06-12",
+      "end_date": "2036-06-15",
+      "published": false
+    },
+    {
       "cyi": 9594,
       "competition_id": 20,
       "name": "Prestige DanceSport",
@@ -21054,12 +21090,30 @@
       "published": false
     },
     {
+      "cyi": 9925,
+      "competition_id": 64,
+      "name": "North Carolina Open",
+      "location": "Charlotte, NC",
+      "start_date": "2036-07-19",
+      "end_date": "2036-07-19",
+      "published": false
+    },
+    {
       "cyi": 9900,
       "competition_id": 65,
       "name": "Orlando Dance Classic",
       "location": "Orlando, FL",
       "start_date": "2036-07-19",
       "end_date": "2036-07-19",
+      "published": false
+    },
+    {
+      "cyi": 9926,
+      "competition_id": 67,
+      "name": "Florida State DanceSport Championships",
+      "location": "Sarasota, FL",
+      "start_date": "2036-07-29",
+      "end_date": "2036-08-03",
       "published": false
     },
     {
