@@ -9878,7 +9878,7 @@
       "location": "Garden Grove, CA",
       "start_date": "2026-09-02",
       "end_date": "2026-09-06",
-      "published": false
+      "published": true
     },
     {
       "cyi": 875,
@@ -11073,15 +11073,6 @@
       "published": false
     },
     {
-      "cyi": 313,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2027-09-23",
-      "end_date": "2027-09-26",
-      "published": false
-    },
-    {
       "cyi": 334,
       "competition_id": 81,
       "name": "Southwestern Invitational",
@@ -11203,6 +11194,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2027-10-21",
+      "end_date": "2027-10-24",
+      "published": false
+    },
+    {
+      "cyi": 313,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2027-10-21",
       "end_date": "2027-10-24",
       "published": false
@@ -12225,15 +12225,6 @@
       "published": false
     },
     {
-      "cyi": 314,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2028-09-28",
-      "end_date": "2028-10-01",
-      "published": false
-    },
-    {
       "cyi": 335,
       "competition_id": 81,
       "name": "Southwestern Invitational",
@@ -12373,6 +12364,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2028-10-26",
+      "end_date": "2028-10-29",
+      "published": false
+    },
+    {
+      "cyi": 314,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2028-10-26",
       "end_date": "2028-10-29",
       "published": false
@@ -13377,15 +13377,6 @@
       "published": false
     },
     {
-      "cyi": 2842,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2029-09-27",
-      "end_date": "2029-09-30",
-      "published": false
-    },
-    {
       "cyi": 1683,
       "competition_id": 81,
       "name": "Southwestern Invitational",
@@ -13508,6 +13499,15 @@
       "name": "Grand National Championships",
       "location": "Doral, FL",
       "start_date": "2029-10-24",
+      "end_date": "2029-10-28",
+      "published": false
+    },
+    {
+      "cyi": 2842,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
+      "start_date": "2029-10-25",
       "end_date": "2029-10-28",
       "published": false
     },
@@ -14529,15 +14529,6 @@
       "published": false
     },
     {
-      "cyi": 4064,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2030-09-26",
-      "end_date": "2030-09-29",
-      "published": false
-    },
-    {
       "cyi": 2862,
       "competition_id": 81,
       "name": "Southwestern Invitational",
@@ -14668,6 +14659,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2030-10-24",
+      "end_date": "2030-10-27",
+      "published": false
+    },
+    {
+      "cyi": 4064,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2030-10-24",
       "end_date": "2030-10-27",
       "published": false
@@ -15681,15 +15681,6 @@
       "published": false
     },
     {
-      "cyi": 9393,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2031-09-25",
-      "end_date": "2031-09-28",
-      "published": false
-    },
-    {
       "cyi": 4062,
       "competition_id": 81,
       "name": "Southwestern Invitational",
@@ -15811,6 +15802,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2031-10-23",
+      "end_date": "2031-10-26",
+      "published": false
+    },
+    {
+      "cyi": 9393,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2031-10-23",
       "end_date": "2031-10-26",
       "published": false
@@ -16815,15 +16815,6 @@
       "published": false
     },
     {
-      "cyi": 9457,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2032-09-23",
-      "end_date": "2032-09-26",
-      "published": false
-    },
-    {
       "cyi": 6235,
       "competition_id": 80,
       "name": "Cleveland Dancesport",
@@ -16954,6 +16945,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2032-10-21",
+      "end_date": "2032-10-24",
+      "published": false
+    },
+    {
+      "cyi": 9457,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2032-10-21",
       "end_date": "2032-10-24",
       "published": false
@@ -17967,15 +17967,6 @@
       "published": false
     },
     {
-      "cyi": 9559,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2033-09-22",
-      "end_date": "2033-09-25",
-      "published": false
-    },
-    {
       "cyi": 9412,
       "competition_id": 80,
       "name": "Cleveland Dancesport",
@@ -18106,6 +18097,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2033-10-20",
+      "end_date": "2033-10-23",
+      "published": false
+    },
+    {
+      "cyi": 9559,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2033-10-20",
       "end_date": "2033-10-23",
       "published": false
@@ -19110,15 +19110,6 @@
       "published": false
     },
     {
-      "cyi": 9560,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2034-09-21",
-      "end_date": "2034-09-24",
-      "published": false
-    },
-    {
       "cyi": 9552,
       "competition_id": 81,
       "name": "Southwestern Invitational",
@@ -19258,6 +19249,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2034-10-26",
+      "end_date": "2034-10-29",
+      "published": false
+    },
+    {
+      "cyi": 9560,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2034-10-26",
       "end_date": "2034-10-29",
       "published": false
@@ -20244,24 +20244,6 @@
       "published": false
     },
     {
-      "cyi": 9657,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2035-09-27",
-      "end_date": "2035-09-30",
-      "published": false
-    },
-    {
-      "cyi": 9658,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
-      "start_date": "2035-09-27",
-      "end_date": "2035-09-30",
-      "published": false
-    },
-    {
       "cyi": 9672,
       "competition_id": 81,
       "name": "Southwestern Invitational",
@@ -20392,6 +20374,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2035-10-25",
+      "end_date": "2035-10-28",
+      "published": false
+    },
+    {
+      "cyi": 9657,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2035-10-25",
       "end_date": "2035-10-28",
       "published": false
@@ -21275,6 +21266,15 @@
       "name": "Grand National Championships",
       "location": "Doral, FL",
       "start_date": "2036-10-22",
+      "end_date": "2036-10-26",
+      "published": false
+    },
+    {
+      "cyi": 9658,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
+      "start_date": "2036-10-23",
       "end_date": "2036-10-26",
       "published": false
     },
