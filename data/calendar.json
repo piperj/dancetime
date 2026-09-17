@@ -9905,7 +9905,7 @@
       "location": "Cleveland, OH",
       "start_date": "2026-09-17",
       "end_date": "2026-09-19",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1478,
@@ -10731,15 +10731,6 @@
       "published": false
     },
     {
-      "cyi": 724,
-      "competition_id": 125,
-      "name": "The Big Easy Dance Gala",
-      "location": "New Orleans, LA",
-      "start_date": "2027-06-03",
-      "end_date": "2027-06-05",
-      "published": false
-    },
-    {
       "cyi": 466,
       "competition_id": 110,
       "name": "Sapphire Dancesport",
@@ -10753,15 +10744,6 @@
       "competition_id": 163,
       "name": "Three Diamond Classic",
       "location": "Pittsburgh, PA",
-      "start_date": "2027-06-05",
-      "end_date": "2027-06-05",
-      "published": false
-    },
-    {
-      "cyi": 1240,
-      "competition_id": 150,
-      "name": "Atlantic Dancesport Challenge",
-      "location": "College Park, MD",
       "start_date": "2027-06-05",
       "end_date": "2027-06-05",
       "published": false
