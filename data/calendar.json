@@ -1974,7 +1974,7 @@
     {
       "cyi": 205,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Irvine, CA",
       "start_date": "2018-08-29",
       "end_date": "2018-09-02",
@@ -3117,7 +3117,7 @@
     {
       "cyi": 705,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Irvine, CA",
       "start_date": "2019-08-28",
       "end_date": "2019-09-01",
@@ -4422,7 +4422,7 @@
     {
       "cyi": 707,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Irvine, CA",
       "start_date": "2021-09-01",
       "end_date": "2021-09-05",
@@ -5439,7 +5439,7 @@
     {
       "cyi": 708,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Irvine, CA",
       "start_date": "2022-08-31",
       "end_date": "2022-09-04",
@@ -6528,7 +6528,7 @@
     {
       "cyi": 709,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Irvine, CA",
       "start_date": "2023-08-30",
       "end_date": "2023-09-03",
@@ -7635,7 +7635,7 @@
     {
       "cyi": 710,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Irvine, CA",
       "start_date": "2024-08-28",
       "end_date": "2024-09-01",
@@ -8744,7 +8744,7 @@
     {
       "cyi": 711,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Irvine, CA",
       "start_date": "2025-08-27",
       "end_date": "2025-08-31",
@@ -9874,7 +9874,7 @@
     {
       "cyi": 712,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2026-09-02",
       "end_date": "2026-09-06",
@@ -10985,7 +10985,7 @@
     {
       "cyi": 713,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2027-09-01",
       "end_date": "2027-09-05",
@@ -12137,7 +12137,7 @@
     {
       "cyi": 714,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2028-08-30",
       "end_date": "2028-09-03",
@@ -13289,7 +13289,7 @@
     {
       "cyi": 2822,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2029-08-29",
       "end_date": "2029-09-02",
@@ -14441,7 +14441,7 @@
     {
       "cyi": 4077,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2030-08-28",
       "end_date": "2030-09-01",
@@ -15593,7 +15593,7 @@
     {
       "cyi": 4078,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2031-08-27",
       "end_date": "2031-08-31",
@@ -16736,7 +16736,7 @@
     {
       "cyi": 7239,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2032-09-01",
       "end_date": "2032-09-05",
@@ -17888,7 +17888,7 @@
     {
       "cyi": 9369,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2033-08-31",
       "end_date": "2033-09-04",
@@ -19022,7 +19022,7 @@
     {
       "cyi": 9518,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2034-08-30",
       "end_date": "2034-09-03",
@@ -20156,7 +20156,7 @@
     {
       "cyi": 9646,
       "competition_id": 75,
-      "name": "Embassy Dance Championships",
+      "name": "Embassy Ballroom Championships",
       "location": "Garden Grove, CA",
       "start_date": "2035-08-29",
       "end_date": "2035-09-02",
@@ -21195,6 +21195,15 @@
       "location": "Fort Lauderdale, FL",
       "start_date": "2036-08-14",
       "end_date": "2036-08-17",
+      "published": false
+    },
+    {
+      "cyi": 9941,
+      "competition_id": 75,
+      "name": "Embassy Ballroom Championships",
+      "location": "Garden Grove, CA",
+      "start_date": "2036-08-27",
+      "end_date": "2036-08-31",
       "published": false
     },
     {
