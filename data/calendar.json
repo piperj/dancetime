@@ -10029,7 +10029,7 @@
       "cyi": 343,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2026-10-14",
       "end_date": "2026-10-18",
       "published": false
@@ -11145,15 +11145,6 @@
       "published": false
     },
     {
-      "cyi": 344,
-      "competition_id": 105,
-      "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
-      "start_date": "2027-10-14",
-      "end_date": "2027-10-17",
-      "published": false
-    },
-    {
       "cyi": 1429,
       "competition_id": 87,
       "name": "Pennsylvania DanceSport Challenge",
@@ -11176,6 +11167,15 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
+      "start_date": "2027-10-21",
+      "end_date": "2027-10-24",
+      "published": false
+    },
+    {
+      "cyi": 344,
+      "competition_id": 105,
+      "name": "San Francisco Autumn Dance Classic",
+      "location": "Burlingame, CA",
       "start_date": "2027-10-21",
       "end_date": "2027-10-24",
       "published": false
@@ -11205,15 +11205,6 @@
       "location": "Doral, FL",
       "start_date": "2027-10-27",
       "end_date": "2027-10-31",
-      "published": false
-    },
-    {
-      "cyi": 638,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2027-11-03",
-      "end_date": "2027-11-07",
       "published": false
     },
     {
@@ -11289,6 +11280,15 @@
       "published": false
     },
     {
+      "cyi": 638,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2027-12-01",
+      "end_date": "2027-12-05",
+      "published": false
+    },
+    {
       "cyi": 499,
       "competition_id": 112,
       "name": "Kings Ball",
@@ -11361,19 +11361,19 @@
       "published": false
     },
     {
-      "cyi": 1748,
-      "competition_id": 155,
-      "name": "California Chic Classic",
-      "location": "Newport Beach, CA",
+      "cyi": 2840,
+      "competition_id": 38,
+      "name": "Colorado Winter Classic",
+      "location": "Denver, CO",
       "start_date": "2028-01-15",
       "end_date": "2028-01-15",
       "published": false
     },
     {
-      "cyi": 2840,
-      "competition_id": 38,
-      "name": "Colorado Winter Classic",
-      "location": "Denver, CO",
+      "cyi": 1748,
+      "competition_id": 155,
+      "name": "California Chic Classic",
+      "location": "Newport Beach, CA",
       "start_date": "2028-01-15",
       "end_date": "2028-01-15",
       "published": false
@@ -11640,19 +11640,19 @@
       "published": false
     },
     {
-      "cyi": 1719,
-      "competition_id": 21,
-      "name": "Indianapolis Open Dancesport Competition",
-      "location": "Indianapolis, IN",
+      "cyi": 1717,
+      "competition_id": 55,
+      "name": "The Ball at the San Francisco Open Dancesport Championships",
+      "location": "Burlingame, CA",
       "start_date": "2028-03-30",
       "end_date": "2028-04-02",
       "published": false
     },
     {
-      "cyi": 1717,
-      "competition_id": 55,
-      "name": "The Ball at the San Francisco Open Dancesport Championships",
-      "location": "Burlingame, CA",
+      "cyi": 1719,
+      "competition_id": 21,
+      "name": "Indianapolis Open Dancesport Competition",
+      "location": "Indianapolis, IN",
       "start_date": "2028-03-30",
       "end_date": "2028-04-02",
       "published": false
@@ -12300,7 +12300,7 @@
       "cyi": 1684,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2028-10-19",
       "end_date": "2028-10-22",
       "published": false
@@ -12357,15 +12357,6 @@
       "location": "Seattle, WA",
       "start_date": "2028-10-26",
       "end_date": "2028-10-29",
-      "published": false
-    },
-    {
-      "cyi": 639,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2028-11-01",
-      "end_date": "2028-11-05",
       "published": false
     },
     {
@@ -12438,6 +12429,15 @@
       "location": "Santa Barbara, CA",
       "start_date": "2028-11-24",
       "end_date": "2028-11-26",
+      "published": false
+    },
+    {
+      "cyi": 639,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2028-11-29",
+      "end_date": "2028-12-03",
       "published": false
     },
     {
@@ -12639,19 +12639,19 @@
       "published": false
     },
     {
-      "cyi": 2832,
-      "competition_id": 129,
-      "name": "Florida Star Ball",
-      "location": "Tampa, FL",
+      "cyi": 2845,
+      "competition_id": 118,
+      "name": "Boston Tea Party Dancesport Championships",
+      "location": "Boston, MA",
       "start_date": "2029-02-15",
       "end_date": "2029-02-18",
       "published": false
     },
     {
-      "cyi": 2845,
-      "competition_id": 118,
-      "name": "Boston Tea Party Dancesport Championships",
-      "location": "Boston, MA",
+      "cyi": 2832,
+      "competition_id": 129,
+      "name": "Florida Star Ball",
+      "location": "Tampa, FL",
       "start_date": "2029-02-15",
       "end_date": "2029-02-18",
       "published": false
@@ -12999,19 +12999,19 @@
       "published": false
     },
     {
-      "cyi": 1811,
-      "competition_id": 165,
-      "name": "Crown of Carolina DanceSport Classic",
-      "location": "Charlotte, NC",
+      "cyi": 1751,
+      "competition_id": 157,
+      "name": "OK DanceSport",
+      "location": "Oklahoma City, OK",
       "start_date": "2029-05-26",
       "end_date": "2029-05-26",
       "published": false
     },
     {
-      "cyi": 1751,
-      "competition_id": 157,
-      "name": "OK DanceSport",
-      "location": "Oklahoma City, OK",
+      "cyi": 1811,
+      "competition_id": 165,
+      "name": "Crown of Carolina DanceSport Classic",
+      "location": "Charlotte, NC",
       "start_date": "2029-05-26",
       "end_date": "2029-05-26",
       "published": false
@@ -13452,7 +13452,7 @@
       "cyi": 1685,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2029-10-18",
       "end_date": "2029-10-21",
       "published": false
@@ -13485,19 +13485,19 @@
       "published": false
     },
     {
-      "cyi": 2842,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
+      "cyi": 2870,
+      "competition_id": 96,
+      "name": "Paragon Open DanceSport Championships",
+      "location": "Stamford, CT",
       "start_date": "2029-10-25",
       "end_date": "2029-10-28",
       "published": false
     },
     {
-      "cyi": 2870,
-      "competition_id": 96,
-      "name": "Paragon Open DanceSport Championships",
-      "location": "Stamford, CT",
+      "cyi": 2842,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2029-10-25",
       "end_date": "2029-10-28",
       "published": false
@@ -13509,15 +13509,6 @@
       "location": "Saint Petersburg, FL",
       "start_date": "2029-10-28",
       "end_date": "2029-10-28",
-      "published": false
-    },
-    {
-      "cyi": 1707,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2029-10-31",
-      "end_date": "2029-11-04",
       "published": false
     },
     {
@@ -13597,6 +13588,15 @@
       "competition_id": 112,
       "name": "Kings Ball",
       "location": "Whippany, NJ",
+      "start_date": "2029-11-28",
+      "end_date": "2029-12-02",
+      "published": false
+    },
+    {
+      "cyi": 1707,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
       "start_date": "2029-11-28",
       "end_date": "2029-12-02",
       "published": false
@@ -14070,15 +14070,6 @@
       "published": false
     },
     {
-      "cyi": 2933,
-      "competition_id": 103,
-      "name": "Northcoast Dancesport Classic",
-      "location": "Cleveland, OH",
-      "start_date": "2030-05-09",
-      "end_date": "2030-05-11",
-      "published": false
-    },
-    {
       "cyi": 2922,
       "competition_id": 29,
       "name": "Pacific Grand Ball",
@@ -14097,12 +14088,12 @@
       "published": false
     },
     {
-      "cyi": 4037,
-      "competition_id": 115,
-      "name": "Crown Jewel of Dancesport",
-      "location": "Naples, FL",
-      "start_date": "2030-05-16",
-      "end_date": "2030-05-19",
+      "cyi": 2933,
+      "competition_id": 103,
+      "name": "Northcoast Dancesport Classic",
+      "location": "Cleveland, OH",
+      "start_date": "2030-05-09",
+      "end_date": "2030-05-11",
       "published": false
     },
     {
@@ -14110,6 +14101,15 @@
       "competition_id": 111,
       "name": "American Star Ball Championships",
       "location": "Atlantic City, NJ",
+      "start_date": "2030-05-16",
+      "end_date": "2030-05-19",
+      "published": false
+    },
+    {
+      "cyi": 4037,
+      "competition_id": 115,
+      "name": "Crown Jewel of Dancesport",
+      "location": "Naples, FL",
       "start_date": "2030-05-16",
       "end_date": "2030-05-19",
       "published": false
@@ -14595,7 +14595,7 @@
       "cyi": 6219,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2030-10-17",
       "end_date": "2030-10-20",
       "published": false
@@ -14691,15 +14691,6 @@
       "published": false
     },
     {
-      "cyi": 4160,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2030-11-06",
-      "end_date": "2030-11-10",
-      "published": false
-    },
-    {
       "cyi": 2950,
       "competition_id": 119,
       "name": "Dallas Dancesport Classic",
@@ -14749,6 +14740,15 @@
       "competition_id": 112,
       "name": "Kings Ball",
       "location": "Whippany, NJ",
+      "start_date": "2030-12-04",
+      "end_date": "2030-12-08",
+      "published": false
+    },
+    {
+      "cyi": 4160,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
       "start_date": "2030-12-04",
       "end_date": "2030-12-08",
       "published": false
@@ -14826,19 +14826,19 @@
       "published": false
     },
     {
-      "cyi": 4080,
-      "competition_id": 160,
-      "name": "Boston Dancesport Cup",
-      "location": "Boston, MA",
+      "cyi": 2991,
+      "competition_id": 38,
+      "name": "Colorado Winter Classic",
+      "location": "Denver, CO",
       "start_date": "2031-01-18",
       "end_date": "2031-01-18",
       "published": false
     },
     {
-      "cyi": 2991,
-      "competition_id": 38,
-      "name": "Colorado Winter Classic",
-      "location": "Denver, CO",
+      "cyi": 4080,
+      "competition_id": 160,
+      "name": "Boston Dancesport Cup",
+      "location": "Boston, MA",
       "start_date": "2031-01-18",
       "end_date": "2031-01-18",
       "published": false
@@ -15756,7 +15756,7 @@
       "cyi": 9299,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2031-10-16",
       "end_date": "2031-10-19",
       "published": false
@@ -15834,15 +15834,6 @@
       "published": false
     },
     {
-      "cyi": 9317,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2031-11-05",
-      "end_date": "2031-11-09",
-      "published": false
-    },
-    {
       "cyi": 4140,
       "competition_id": 99,
       "name": "Los Angeles Dance Festival",
@@ -15906,12 +15897,12 @@
       "published": false
     },
     {
-      "cyi": 3005,
-      "competition_id": 95,
-      "name": "Houston Star Ball",
-      "location": "Houston, TX",
-      "start_date": "2031-12-06",
-      "end_date": "2031-12-06",
+      "cyi": 9317,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2031-12-03",
+      "end_date": "2031-12-07",
       "published": false
     },
     {
@@ -15919,6 +15910,15 @@
       "competition_id": 25,
       "name": "The Winter Solstice Dancesport Challenge",
       "location": "Fort Wayne, IN",
+      "start_date": "2031-12-06",
+      "end_date": "2031-12-06",
+      "published": false
+    },
+    {
+      "cyi": 3005,
+      "competition_id": 95,
+      "name": "Houston Star Ball",
+      "location": "Houston, TX",
       "start_date": "2031-12-06",
       "end_date": "2031-12-06",
       "published": false
@@ -16707,21 +16707,21 @@
       "published": false
     },
     {
-      "cyi": 4127,
-      "competition_id": 72,
-      "name": "Boca Ballroom DanceSport Competition",
-      "location": "Fort Lauderdale, FL",
-      "start_date": "2032-08-19",
-      "end_date": "2032-08-22",
-      "published": false
-    },
-    {
       "cyi": 4137,
       "competition_id": 73,
       "name": "CBC DanceSport",
       "location": "Columbus, OH",
       "start_date": "2032-08-19",
       "end_date": "2032-08-21",
+      "published": false
+    },
+    {
+      "cyi": 4127,
+      "competition_id": 72,
+      "name": "Boca Ballroom DanceSport Competition",
+      "location": "Fort Lauderdale, FL",
+      "start_date": "2032-08-19",
+      "end_date": "2032-08-22",
       "published": false
     },
     {
@@ -16887,21 +16887,21 @@
       "published": false
     },
     {
-      "cyi": 9445,
-      "competition_id": 105,
-      "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
-      "start_date": "2032-10-14",
-      "end_date": "2032-10-17",
-      "published": false
-    },
-    {
       "cyi": 9282,
       "competition_id": 92,
       "name": "Hotlanta The Classic",
       "location": "Atlanta, GA",
       "start_date": "2032-10-14",
       "end_date": "2032-10-16",
+      "published": false
+    },
+    {
+      "cyi": 9445,
+      "competition_id": 105,
+      "name": "San Francisco Autumn Dance Classic",
+      "location": "Burlingame, CA",
+      "start_date": "2032-10-14",
+      "end_date": "2032-10-17",
       "published": false
     },
     {
@@ -16959,15 +16959,6 @@
       "published": false
     },
     {
-      "cyi": 9497,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2032-11-03",
-      "end_date": "2032-11-07",
-      "published": false
-    },
-    {
       "cyi": 9332,
       "competition_id": 99,
       "name": "Los Angeles Dance Festival",
@@ -16977,19 +16968,19 @@
       "published": false
     },
     {
-      "cyi": 5201,
-      "competition_id": 119,
-      "name": "Dallas Dancesport Classic",
-      "location": "Dallas, TX",
+      "cyi": 5205,
+      "competition_id": 132,
+      "name": "Commonwealth Classic",
+      "location": "Burlington, MA",
       "start_date": "2032-11-05",
       "end_date": "2032-11-07",
       "published": false
     },
     {
-      "cyi": 5205,
-      "competition_id": 132,
-      "name": "Commonwealth Classic",
-      "location": "Burlington, MA",
+      "cyi": 5201,
+      "competition_id": 119,
+      "name": "Dallas Dancesport Classic",
+      "location": "Dallas, TX",
       "start_date": "2032-11-05",
       "end_date": "2032-11-07",
       "published": false
@@ -17049,12 +17040,12 @@
       "published": false
     },
     {
-      "cyi": 4126,
-      "competition_id": 95,
-      "name": "Houston Star Ball",
-      "location": "Houston, TX",
-      "start_date": "2032-12-04",
-      "end_date": "2032-12-04",
+      "cyi": 9497,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2032-12-01",
+      "end_date": "2032-12-05",
       "published": false
     },
     {
@@ -17062,6 +17053,15 @@
       "competition_id": 25,
       "name": "The Winter Solstice Dancesport Challenge",
       "location": "Fort Wayne, IN",
+      "start_date": "2032-12-04",
+      "end_date": "2032-12-04",
+      "published": false
+    },
+    {
+      "cyi": 4126,
+      "competition_id": 95,
+      "name": "Houston Star Ball",
+      "location": "Houston, TX",
       "start_date": "2032-12-04",
       "end_date": "2032-12-04",
       "published": false
@@ -17994,15 +17994,6 @@
       "published": false
     },
     {
-      "cyi": 9322,
-      "competition_id": 30,
-      "name": "Elite Dancesport",
-      "location": "Irvine, CA",
-      "start_date": "2033-10-06",
-      "end_date": "2033-10-09",
-      "published": false
-    },
-    {
       "cyi": 9330,
       "competition_id": 88,
       "name": "Chicago Harvest Moon Ball DanceSport Championships",
@@ -18012,12 +18003,12 @@
       "published": false
     },
     {
-      "cyi": 9329,
-      "competition_id": 86,
-      "name": "Jacksonville Star Ball",
-      "location": "Jacksonville, FL",
-      "start_date": "2033-10-08",
-      "end_date": "2033-10-08",
+      "cyi": 9322,
+      "competition_id": 30,
+      "name": "Elite Dancesport",
+      "location": "Irvine, CA",
+      "start_date": "2033-10-06",
+      "end_date": "2033-10-09",
       "published": false
     },
     {
@@ -18025,6 +18016,15 @@
       "competition_id": 90,
       "name": "Naples Star Ball",
       "location": "Naples, FL",
+      "start_date": "2033-10-08",
+      "end_date": "2033-10-08",
+      "published": false
+    },
+    {
+      "cyi": 9329,
+      "competition_id": 86,
+      "name": "Jacksonville Star Ball",
+      "location": "Jacksonville, FL",
       "start_date": "2033-10-08",
       "end_date": "2033-10-08",
       "published": false
@@ -18051,7 +18051,7 @@
       "cyi": 9677,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2033-10-13",
       "end_date": "2033-10-16",
       "published": false
@@ -18120,15 +18120,6 @@
       "published": false
     },
     {
-      "cyi": 9863,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2033-11-02",
-      "end_date": "2033-11-06",
-      "published": false
-    },
-    {
       "cyi": 9353,
       "competition_id": 132,
       "name": "Commonwealth Classic",
@@ -18189,6 +18180,15 @@
       "location": "Santa Barbara, CA",
       "start_date": "2033-11-25",
       "end_date": "2033-11-27",
+      "published": false
+    },
+    {
+      "cyi": 9863,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2033-11-30",
+      "end_date": "2033-12-04",
       "published": false
     },
     {
@@ -18993,21 +18993,21 @@
       "published": false
     },
     {
-      "cyi": 9547,
-      "competition_id": 73,
-      "name": "CBC DanceSport",
-      "location": "Columbus, OH",
-      "start_date": "2034-08-17",
-      "end_date": "2034-08-19",
-      "published": false
-    },
-    {
       "cyi": 9461,
       "competition_id": 72,
       "name": "Boca Ballroom DanceSport Competition",
       "location": "Fort Lauderdale, FL",
       "start_date": "2034-08-17",
       "end_date": "2034-08-20",
+      "published": false
+    },
+    {
+      "cyi": 9547,
+      "competition_id": 73,
+      "name": "CBC DanceSport",
+      "location": "Columbus, OH",
+      "start_date": "2034-08-17",
+      "end_date": "2034-08-19",
       "published": false
     },
     {
@@ -19176,7 +19176,7 @@
       "cyi": 9678,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2034-10-19",
       "end_date": "2034-10-22",
       "published": false
@@ -19254,15 +19254,6 @@
       "published": false
     },
     {
-      "cyi": 9864,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2034-11-01",
-      "end_date": "2034-11-05",
-      "published": false
-    },
-    {
       "cyi": 9510,
       "competition_id": 132,
       "name": "Commonwealth Classic",
@@ -19323,6 +19314,15 @@
       "location": "Santa Barbara, CA",
       "start_date": "2034-11-24",
       "end_date": "2034-11-26",
+      "published": false
+    },
+    {
+      "cyi": 9864,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2034-11-29",
+      "end_date": "2034-12-03",
       "published": false
     },
     {
@@ -20127,21 +20127,21 @@
       "published": false
     },
     {
-      "cyi": 9642,
-      "competition_id": 73,
-      "name": "CBC DanceSport",
-      "location": "Columbus, OH",
-      "start_date": "2035-08-16",
-      "end_date": "2035-08-18",
-      "published": false
-    },
-    {
       "cyi": 9640,
       "competition_id": 72,
       "name": "Boca Ballroom DanceSport Competition",
       "location": "Fort Lauderdale, FL",
       "start_date": "2035-08-16",
       "end_date": "2035-08-19",
+      "published": false
+    },
+    {
+      "cyi": 9642,
+      "competition_id": 73,
+      "name": "CBC DanceSport",
+      "location": "Columbus, OH",
+      "start_date": "2035-08-16",
+      "end_date": "2035-08-18",
       "published": false
     },
     {
@@ -20310,7 +20310,7 @@
       "cyi": 9679,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame",
+      "location": "Burlingame, CA",
       "start_date": "2035-10-18",
       "end_date": "2035-10-21",
       "published": false
@@ -20376,15 +20376,6 @@
       "location": "Saint Petersburg, FL",
       "start_date": "2035-10-28",
       "end_date": "2035-10-28",
-      "published": false
-    },
-    {
-      "cyi": 9865,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2035-10-31",
-      "end_date": "2035-11-04",
       "published": false
     },
     {
@@ -20478,12 +20469,12 @@
       "published": false
     },
     {
-      "cyi": 9776,
-      "competition_id": 95,
-      "name": "Houston Star Ball",
-      "location": "Houston, TX",
-      "start_date": "2035-12-01",
-      "end_date": "2035-12-01",
+      "cyi": 9865,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2035-11-28",
+      "end_date": "2035-12-02",
       "published": false
     },
     {
@@ -20491,6 +20482,15 @@
       "competition_id": 25,
       "name": "The Winter Solstice Dancesport Challenge",
       "location": "Fort Wayne, IN",
+      "start_date": "2035-12-01",
+      "end_date": "2035-12-01",
+      "published": false
+    },
+    {
+      "cyi": 9776,
+      "competition_id": 95,
+      "name": "Houston Star Ball",
+      "location": "Houston, TX",
       "start_date": "2035-12-01",
       "end_date": "2035-12-01",
       "published": false
@@ -20712,19 +20712,19 @@
       "published": false
     },
     {
-      "cyi": 9761,
-      "competition_id": 104,
-      "name": "First Coast Classic Dancesport Championships",
-      "location": "St Augustine, FL",
+      "cyi": 9786,
+      "competition_id": 116,
+      "name": "Gateway DanceSport Championships",
+      "location": "St Louis, MO",
       "start_date": "2036-03-05",
       "end_date": "2036-03-08",
       "published": false
     },
     {
-      "cyi": 9786,
-      "competition_id": 116,
-      "name": "Gateway DanceSport Championships",
-      "location": "St Louis, MO",
+      "cyi": 9761,
+      "competition_id": 104,
+      "name": "First Coast Classic Dancesport Championships",
+      "location": "St Augustine, FL",
       "start_date": "2036-03-05",
       "end_date": "2036-03-08",
       "published": false
@@ -20928,21 +20928,21 @@
       "published": false
     },
     {
-      "cyi": 9850,
-      "competition_id": 103,
-      "name": "Northcoast Dancesport Classic",
-      "location": "Cleveland, OH",
-      "start_date": "2036-05-08",
-      "end_date": "2036-05-10",
-      "published": false
-    },
-    {
       "cyi": 9847,
       "competition_id": 29,
       "name": "Pacific Grand Ball",
       "location": "Seattle, WA",
       "start_date": "2036-05-08",
       "end_date": "2036-05-11",
+      "published": false
+    },
+    {
+      "cyi": 9850,
+      "competition_id": 103,
+      "name": "Northcoast Dancesport Classic",
+      "location": "Cleveland, OH",
+      "start_date": "2036-05-08",
+      "end_date": "2036-05-10",
       "published": false
     },
     {
@@ -20964,19 +20964,19 @@
       "published": false
     },
     {
-      "cyi": 9878,
-      "competition_id": 158,
-      "name": "Go Wild Minneapolis Dancesport",
-      "location": "Minneapolis, MN",
+      "cyi": 9917,
+      "competition_id": 146,
+      "name": "Las Vegas Classic",
+      "location": "Las Vegas, NV",
       "start_date": "2036-05-17",
       "end_date": "2036-05-17",
       "published": false
     },
     {
-      "cyi": 9917,
-      "competition_id": 146,
-      "name": "Las Vegas Classic",
-      "location": "Las Vegas, NV",
+      "cyi": 9878,
+      "competition_id": 158,
+      "name": "Go Wild Minneapolis Dancesport",
+      "location": "Minneapolis, MN",
       "start_date": "2036-05-17",
       "end_date": "2036-05-17",
       "published": false
@@ -21270,15 +21270,6 @@
       "published": false
     },
     {
-      "cyi": 9866,
-      "competition_id": 98,
-      "name": "Caribbean DanceSport Classic",
-      "location": "San Juan, PR",
-      "start_date": "2036-11-05",
-      "end_date": "2036-11-09",
-      "published": false
-    },
-    {
       "cyi": 9612,
       "competition_id": 99,
       "name": "Los Angeles Dance Festival",
@@ -21312,6 +21303,15 @@
       "location": "Fort Wayne, IN",
       "start_date": "2036-11-29",
       "end_date": "2036-12-06",
+      "published": false
+    },
+    {
+      "cyi": 9866,
+      "competition_id": 98,
+      "name": "Caribbean DanceSport Classic",
+      "location": "San Juan, PR",
+      "start_date": "2036-12-03",
+      "end_date": "2036-12-07",
       "published": false
     },
     {
