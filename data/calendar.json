@@ -9951,7 +9951,7 @@
       "location": "Seattle, WA",
       "start_date": "2026-09-24",
       "end_date": "2026-09-27",
-      "published": false
+      "published": true
     },
     {
       "cyi": 333,
@@ -10506,15 +10506,6 @@
       "published": false
     },
     {
-      "cyi": 839,
-      "competition_id": 21,
-      "name": "Indianapolis Open Dancesport Competition",
-      "location": "Indianapolis, IN",
-      "start_date": "2027-04-01",
-      "end_date": "2027-04-04",
-      "published": false
-    },
-    {
       "cyi": 659,
       "competition_id": 122,
       "name": "Windy City Open Dancesport Competition",
@@ -10683,6 +10674,15 @@
       "location": "Las Vegas, NV",
       "start_date": "2027-05-15",
       "end_date": "2027-05-15",
+      "published": false
+    },
+    {
+      "cyi": 839,
+      "competition_id": 21,
+      "name": "Indianapolis Open Dancesport Competition",
+      "location": "Indianapolis, IN",
+      "start_date": "2027-05-20",
+      "end_date": "2027-05-22",
       "published": false
     },
     {
