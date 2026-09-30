@@ -1038,7 +1038,7 @@
     {
       "cyi": 669,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2017-08-23",
       "end_date": "2017-08-26",
@@ -1965,7 +1965,7 @@
     {
       "cyi": 670,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2018-08-22",
       "end_date": "2018-08-26",
@@ -3108,7 +3108,7 @@
     {
       "cyi": 671,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2019-08-21",
       "end_date": "2019-08-24",
@@ -4413,7 +4413,7 @@
     {
       "cyi": 673,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2021-08-25",
       "end_date": "2021-08-29",
@@ -5430,7 +5430,7 @@
     {
       "cyi": 674,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2022-08-24",
       "end_date": "2022-08-28",
@@ -6519,7 +6519,7 @@
     {
       "cyi": 675,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2023-08-23",
       "end_date": "2023-08-26",
@@ -7626,7 +7626,7 @@
     {
       "cyi": 676,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2024-08-20",
       "end_date": "2024-08-24",
@@ -8735,7 +8735,7 @@
     {
       "cyi": 677,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2025-08-19",
       "end_date": "2025-08-23",
@@ -9865,7 +9865,7 @@
     {
       "cyi": 678,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2026-08-25",
       "end_date": "2026-08-29",
@@ -10985,7 +10985,7 @@
     {
       "cyi": 679,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2027-08-24",
       "end_date": "2027-08-28",
@@ -12137,7 +12137,7 @@
     {
       "cyi": 1792,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2028-08-22",
       "end_date": "2028-08-26",
@@ -13289,7 +13289,7 @@
     {
       "cyi": 1793,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2029-08-21",
       "end_date": "2029-08-25",
@@ -14441,7 +14441,7 @@
     {
       "cyi": 4029,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2030-08-20",
       "end_date": "2030-08-24",
@@ -15593,7 +15593,7 @@
     {
       "cyi": 4030,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2031-08-19",
       "end_date": "2031-08-23",
@@ -16736,7 +16736,7 @@
     {
       "cyi": 9310,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2032-08-24",
       "end_date": "2032-08-28",
@@ -17888,7 +17888,7 @@
     {
       "cyi": 9466,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2033-08-23",
       "end_date": "2033-08-27",
@@ -19022,7 +19022,7 @@
     {
       "cyi": 9522,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2034-08-22",
       "end_date": "2034-08-26",
@@ -20165,7 +20165,7 @@
     {
       "cyi": 9653,
       "competition_id": 123,
-      "name": "Capital DanceSport Championships",
+      "name": "Capital Dance Championships",
       "location": "Alexandria, VA",
       "start_date": "2035-08-21",
       "end_date": "2035-08-25",
@@ -21222,6 +21222,15 @@
       "location": "Fort Lauderdale, FL",
       "start_date": "2036-08-14",
       "end_date": "2036-08-17",
+      "published": false
+    },
+    {
+      "cyi": 9944,
+      "competition_id": 123,
+      "name": "Capital Dance Championships",
+      "location": "Alexandria, VA",
+      "start_date": "2036-08-19",
+      "end_date": "2036-08-23",
       "published": false
     },
     {
