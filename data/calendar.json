@@ -2107,15 +2107,6 @@
       "published": false
     },
     {
-      "cyi": 222,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Virginia Beach, VA",
-      "start_date": "2018-10-13",
-      "end_date": "2018-10-13",
-      "published": false
-    },
-    {
       "cyi": 223,
       "competition_id": 90,
       "name": "Naples Star Ball",
@@ -3268,15 +3259,6 @@
       "published": false
     },
     {
-      "cyi": 1594,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Virginia Beach, VA",
-      "start_date": "2019-10-12",
-      "end_date": "2019-10-12",
-      "published": false
-    },
-    {
       "cyi": 1563,
       "competition_id": 91,
       "name": "Phoenix Fall Festival",
@@ -4384,15 +4366,6 @@
       "published": false
     },
     {
-      "cyi": 1596,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Virginia Beach, VA",
-      "start_date": "2021-08-14",
-      "end_date": "2021-08-14",
-      "published": false
-    },
-    {
       "cyi": 728,
       "competition_id": 73,
       "name": "CBC DanceSport",
@@ -5388,15 +5361,6 @@
       "name": "Heart of America DanceSport Championships",
       "location": "Kansas City, MO",
       "start_date": "2022-08-11",
-      "end_date": "2022-08-13",
-      "published": false
-    },
-    {
-      "cyi": 1597,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Virginia Beach, VA",
-      "start_date": "2022-08-13",
       "end_date": "2022-08-13",
       "published": false
     },
@@ -6470,15 +6434,6 @@
       "start_date": "2023-08-12",
       "end_date": "2023-08-12",
       "published": true
-    },
-    {
-      "cyi": 1598,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Virginia Beach, VA",
-      "start_date": "2023-08-12",
-      "end_date": "2023-08-12",
-      "published": false
     },
     {
       "cyi": 9290,
@@ -7583,15 +7538,6 @@
       "competition_id": 70,
       "name": "Greenville Dance Challenge",
       "location": "Greenville, SC",
-      "start_date": "2024-08-10",
-      "end_date": "2024-08-10",
-      "published": true
-    },
-    {
-      "cyi": 1599,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Virginia Beach, VA",
       "start_date": "2024-08-10",
       "end_date": "2024-08-10",
       "published": true
@@ -8724,15 +8670,6 @@
       "published": true
     },
     {
-      "cyi": 1600,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2025-08-16",
-      "end_date": "2025-08-16",
-      "published": false
-    },
-    {
       "cyi": 677,
       "competition_id": 123,
       "name": "Capital Dance Championships",
@@ -9800,15 +9737,6 @@
       "published": true
     },
     {
-      "cyi": 1601,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2026-08-08",
-      "end_date": "2026-08-08",
-      "published": false
-    },
-    {
       "cyi": 9624,
       "competition_id": 18,
       "name": "BYU Summer Dancesport Challenge",
@@ -9960,7 +9888,7 @@
       "location": "Dallas, TX",
       "start_date": "2026-10-01",
       "end_date": "2026-10-03",
-      "published": false
+      "published": true
     },
     {
       "cyi": 575,
@@ -9969,7 +9897,7 @@
       "location": "Stamford, CT",
       "start_date": "2026-10-01",
       "end_date": "2026-10-04",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1290,
@@ -10947,15 +10875,6 @@
       "published": false
     },
     {
-      "cyi": 1602,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2027-08-14",
-      "end_date": "2027-08-14",
-      "published": false
-    },
-    {
       "cyi": 959,
       "competition_id": 71,
       "name": "The NV Ball DanceSport Championships",
@@ -11370,19 +11289,19 @@
       "published": false
     },
     {
-      "cyi": 2840,
-      "competition_id": 38,
-      "name": "Colorado Winter Classic",
-      "location": "Denver, CO",
+      "cyi": 1748,
+      "competition_id": 155,
+      "name": "California Chic Classic",
+      "location": "Newport Beach, CA",
       "start_date": "2028-01-15",
       "end_date": "2028-01-15",
       "published": false
     },
     {
-      "cyi": 1748,
-      "competition_id": 155,
-      "name": "California Chic Classic",
-      "location": "Newport Beach, CA",
+      "cyi": 2840,
+      "competition_id": 38,
+      "name": "Colorado Winter Classic",
+      "location": "Denver, CO",
       "start_date": "2028-01-15",
       "end_date": "2028-01-15",
       "published": false
@@ -11649,19 +11568,19 @@
       "published": false
     },
     {
-      "cyi": 1717,
-      "competition_id": 55,
-      "name": "The Ball at the San Francisco Open Dancesport Championships",
-      "location": "Burlingame, CA",
+      "cyi": 1719,
+      "competition_id": 21,
+      "name": "Indianapolis Open Dancesport Competition",
+      "location": "Indianapolis, IN",
       "start_date": "2028-03-30",
       "end_date": "2028-04-02",
       "published": false
     },
     {
-      "cyi": 1719,
-      "competition_id": 21,
-      "name": "Indianapolis Open Dancesport Competition",
-      "location": "Indianapolis, IN",
+      "cyi": 1717,
+      "competition_id": 55,
+      "name": "The Ball at the San Francisco Open Dancesport Championships",
+      "location": "Burlingame, CA",
       "start_date": "2028-03-30",
       "end_date": "2028-04-02",
       "published": false
@@ -12087,15 +12006,6 @@
       "location": "San Diego, CA",
       "start_date": "2028-08-10",
       "end_date": "2028-08-13",
-      "published": false
-    },
-    {
-      "cyi": 1603,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2028-08-12",
-      "end_date": "2028-08-12",
       "published": false
     },
     {
@@ -12549,19 +12459,19 @@
       "published": false
     },
     {
-      "cyi": 2841,
-      "competition_id": 38,
-      "name": "Colorado Winter Classic",
-      "location": "Denver, CO",
+      "cyi": 2826,
+      "competition_id": 155,
+      "name": "California Chic Classic",
+      "location": "Newport Beach, CA",
       "start_date": "2029-01-20",
       "end_date": "2029-01-20",
       "published": false
     },
     {
-      "cyi": 2826,
-      "competition_id": 155,
-      "name": "California Chic Classic",
-      "location": "Newport Beach, CA",
+      "cyi": 2841,
+      "competition_id": 38,
+      "name": "Colorado Winter Classic",
+      "location": "Denver, CO",
       "start_date": "2029-01-20",
       "end_date": "2029-01-20",
       "published": false
@@ -12612,19 +12522,19 @@
       "published": false
     },
     {
-      "cyi": 1773,
-      "competition_id": 152,
-      "name": "St. Louis DanceSport",
-      "location": "St Louis, MO",
+      "cyi": 1797,
+      "competition_id": 43,
+      "name": "Aloha Ball",
+      "location": "Honolulu, HI",
       "start_date": "2029-02-03",
       "end_date": "2029-02-03",
       "published": false
     },
     {
-      "cyi": 1797,
-      "competition_id": 43,
-      "name": "Aloha Ball",
-      "location": "Honolulu, HI",
+      "cyi": 1773,
+      "competition_id": 152,
+      "name": "St. Louis DanceSport",
+      "location": "St Louis, MO",
       "start_date": "2029-02-03",
       "end_date": "2029-02-03",
       "published": false
@@ -12720,19 +12630,19 @@
       "published": false
     },
     {
-      "cyi": 1815,
-      "competition_id": 104,
-      "name": "First Coast Classic Dancesport Championships",
-      "location": "St Augustine, FL",
+      "cyi": 1779,
+      "competition_id": 116,
+      "name": "Gateway DanceSport Championships",
+      "location": "St Louis, MO",
       "start_date": "2029-03-07",
       "end_date": "2029-03-10",
       "published": false
     },
     {
-      "cyi": 1779,
-      "competition_id": 116,
-      "name": "Gateway DanceSport Championships",
-      "location": "St Louis, MO",
+      "cyi": 1815,
+      "competition_id": 104,
+      "name": "First Coast Classic Dancesport Championships",
+      "location": "St Augustine, FL",
       "start_date": "2029-03-07",
       "end_date": "2029-03-10",
       "published": false
@@ -13161,19 +13071,19 @@
       "published": false
     },
     {
-      "cyi": 2961,
-      "competition_id": 65,
-      "name": "Orlando Dance Classic",
-      "location": "Orlando, FL",
+      "cyi": 3009,
+      "competition_id": 64,
+      "name": "North Carolina Open",
+      "location": "Charlotte, NC",
       "start_date": "2029-07-21",
       "end_date": "2029-07-21",
       "published": false
     },
     {
-      "cyi": 3009,
-      "competition_id": 64,
-      "name": "North Carolina Open",
-      "location": "Charlotte, NC",
+      "cyi": 2961,
+      "competition_id": 65,
+      "name": "Orlando Dance Classic",
+      "location": "Orlando, FL",
       "start_date": "2029-07-21",
       "end_date": "2029-07-21",
       "published": false
@@ -13239,15 +13149,6 @@
       "location": "San Diego, CA",
       "start_date": "2029-08-09",
       "end_date": "2029-08-12",
-      "published": false
-    },
-    {
-      "cyi": 1768,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2029-08-11",
-      "end_date": "2029-08-11",
       "published": false
     },
     {
@@ -13494,19 +13395,19 @@
       "published": false
     },
     {
-      "cyi": 2870,
-      "competition_id": 96,
-      "name": "Paragon Open DanceSport Championships",
-      "location": "Stamford, CT",
+      "cyi": 2842,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
       "start_date": "2029-10-25",
       "end_date": "2029-10-28",
       "published": false
     },
     {
-      "cyi": 2842,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
+      "cyi": 2870,
+      "competition_id": 96,
+      "name": "Paragon Open DanceSport Championships",
+      "location": "Stamford, CT",
       "start_date": "2029-10-25",
       "end_date": "2029-10-28",
       "published": false
@@ -13593,15 +13494,6 @@
       "published": false
     },
     {
-      "cyi": 1790,
-      "competition_id": 112,
-      "name": "Kings Ball",
-      "location": "Whippany, NJ",
-      "start_date": "2029-11-28",
-      "end_date": "2029-12-02",
-      "published": false
-    },
-    {
       "cyi": 1707,
       "competition_id": 98,
       "name": "Caribbean DanceSport Classic",
@@ -13611,12 +13503,12 @@
       "published": false
     },
     {
-      "cyi": 1750,
-      "competition_id": 95,
-      "name": "Houston Star Ball",
-      "location": "Houston, TX",
-      "start_date": "2029-12-01",
-      "end_date": "2029-12-01",
+      "cyi": 1790,
+      "competition_id": 112,
+      "name": "Kings Ball",
+      "location": "Whippany, NJ",
+      "start_date": "2029-11-28",
+      "end_date": "2029-12-02",
       "published": false
     },
     {
@@ -13624,6 +13516,15 @@
       "competition_id": 25,
       "name": "The Winter Solstice Dancesport Challenge",
       "location": "Fort Wayne, IN",
+      "start_date": "2029-12-01",
+      "end_date": "2029-12-01",
+      "published": false
+    },
+    {
+      "cyi": 1750,
+      "competition_id": 95,
+      "name": "Houston Star Ball",
+      "location": "Houston, TX",
       "start_date": "2029-12-01",
       "end_date": "2029-12-01",
       "published": false
@@ -13683,6 +13584,15 @@
       "published": false
     },
     {
+      "cyi": 2897,
+      "competition_id": 38,
+      "name": "Colorado Winter Classic",
+      "location": "Denver, CO",
+      "start_date": "2030-01-19",
+      "end_date": "2030-01-19",
+      "published": false
+    },
+    {
       "cyi": 4063,
       "competition_id": 160,
       "name": "Boston Dancesport Cup",
@@ -13696,15 +13606,6 @@
       "competition_id": 155,
       "name": "California Chic Classic",
       "location": "Newport Beach, CA",
-      "start_date": "2030-01-19",
-      "end_date": "2030-01-19",
-      "published": false
-    },
-    {
-      "cyi": 2897,
-      "competition_id": 38,
-      "name": "Colorado Winter Classic",
-      "location": "Denver, CO",
       "start_date": "2030-01-19",
       "end_date": "2030-01-19",
       "published": false
@@ -14079,6 +13980,15 @@
       "published": false
     },
     {
+      "cyi": 2933,
+      "competition_id": 103,
+      "name": "Northcoast Dancesport Classic",
+      "location": "Cleveland, OH",
+      "start_date": "2030-05-09",
+      "end_date": "2030-05-11",
+      "published": false
+    },
+    {
       "cyi": 2922,
       "competition_id": 29,
       "name": "Pacific Grand Ball",
@@ -14097,12 +14007,12 @@
       "published": false
     },
     {
-      "cyi": 2933,
-      "competition_id": 103,
-      "name": "Northcoast Dancesport Classic",
-      "location": "Cleveland, OH",
-      "start_date": "2030-05-09",
-      "end_date": "2030-05-11",
+      "cyi": 4037,
+      "competition_id": 115,
+      "name": "Crown Jewel of Dancesport",
+      "location": "Naples, FL",
+      "start_date": "2030-05-16",
+      "end_date": "2030-05-19",
       "published": false
     },
     {
@@ -14110,15 +14020,6 @@
       "competition_id": 111,
       "name": "American Star Ball Championships",
       "location": "Atlantic City, NJ",
-      "start_date": "2030-05-16",
-      "end_date": "2030-05-19",
-      "published": false
-    },
-    {
-      "cyi": 4037,
-      "competition_id": 115,
-      "name": "Crown Jewel of Dancesport",
-      "location": "Naples, FL",
       "start_date": "2030-05-16",
       "end_date": "2030-05-19",
       "published": false
@@ -14214,19 +14115,19 @@
       "published": false
     },
     {
-      "cyi": 4095,
-      "competition_id": 22,
-      "name": "Chicago Crystal Ball",
-      "location": "Naperville, IL",
+      "cyi": 2976,
+      "competition_id": 20,
+      "name": "Prestige DanceSport",
+      "location": "Detroit, MI",
       "start_date": "2030-06-06",
       "end_date": "2030-06-09",
       "published": false
     },
     {
-      "cyi": 2976,
-      "competition_id": 20,
-      "name": "Prestige DanceSport",
-      "location": "Detroit, MI",
+      "cyi": 4095,
+      "competition_id": 22,
+      "name": "Chicago Crystal Ball",
+      "location": "Naperville, IL",
       "start_date": "2030-06-06",
       "end_date": "2030-06-09",
       "published": false
@@ -14398,15 +14299,6 @@
       "competition_id": 70,
       "name": "Greenville Dance Challenge",
       "location": "Greenville, SC",
-      "start_date": "2030-08-10",
-      "end_date": "2030-08-10",
-      "published": false
-    },
-    {
-      "cyi": 3012,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
       "start_date": "2030-08-10",
       "end_date": "2030-08-10",
       "published": false
@@ -14601,15 +14493,6 @@
       "published": false
     },
     {
-      "cyi": 6219,
-      "competition_id": 105,
-      "name": "San Francisco Autumn Dance Classic",
-      "location": "Burlingame, CA",
-      "start_date": "2030-10-17",
-      "end_date": "2030-10-20",
-      "published": false
-    },
-    {
       "cyi": 2913,
       "competition_id": 92,
       "name": "Hotlanta The Classic",
@@ -14619,12 +14502,12 @@
       "published": false
     },
     {
-      "cyi": 2928,
-      "competition_id": 87,
-      "name": "Pennsylvania DanceSport Challenge",
-      "location": "Lancaster, PA",
-      "start_date": "2030-10-19",
-      "end_date": "2030-10-19",
+      "cyi": 6219,
+      "competition_id": 105,
+      "name": "San Francisco Autumn Dance Classic",
+      "location": "Burlingame, CA",
+      "start_date": "2030-10-17",
+      "end_date": "2030-10-20",
       "published": false
     },
     {
@@ -14632,6 +14515,15 @@
       "competition_id": 93,
       "name": "Icon DanceSport",
       "location": "Columbus, OH",
+      "start_date": "2030-10-19",
+      "end_date": "2030-10-19",
+      "published": false
+    },
+    {
+      "cyi": 2928,
+      "competition_id": 87,
+      "name": "Pennsylvania DanceSport Challenge",
+      "location": "Lancaster, PA",
       "start_date": "2030-10-19",
       "end_date": "2030-10-19",
       "published": false
@@ -15114,19 +15006,19 @@
       "published": false
     },
     {
-      "cyi": 4071,
-      "competition_id": 55,
-      "name": "The Ball at the San Francisco Open Dancesport Championships",
-      "location": "Burlingame, CA",
+      "cyi": 4075,
+      "competition_id": 21,
+      "name": "Indianapolis Open Dancesport Competition",
+      "location": "Indianapolis, IN",
       "start_date": "2031-04-03",
       "end_date": "2031-04-06",
       "published": false
     },
     {
-      "cyi": 4075,
-      "competition_id": 21,
-      "name": "Indianapolis Open Dancesport Competition",
-      "location": "Indianapolis, IN",
+      "cyi": 4071,
+      "competition_id": 55,
+      "name": "The Ball at the San Francisco Open Dancesport Championships",
+      "location": "Burlingame, CA",
       "start_date": "2031-04-03",
       "end_date": "2031-04-06",
       "published": false
@@ -15258,19 +15150,19 @@
       "published": false
     },
     {
-      "cyi": 4086,
-      "competition_id": 115,
-      "name": "Crown Jewel of Dancesport",
-      "location": "Naples, FL",
+      "cyi": 2990,
+      "competition_id": 111,
+      "name": "American Star Ball Championships",
+      "location": "Atlantic City, NJ",
       "start_date": "2031-05-15",
       "end_date": "2031-05-18",
       "published": false
     },
     {
-      "cyi": 2990,
-      "competition_id": 111,
-      "name": "American Star Ball Championships",
-      "location": "Atlantic City, NJ",
+      "cyi": 4086,
+      "competition_id": 115,
+      "name": "Crown Jewel of Dancesport",
+      "location": "Naples, FL",
       "start_date": "2031-05-15",
       "end_date": "2031-05-18",
       "published": false
@@ -15546,15 +15438,6 @@
       "published": false
     },
     {
-      "cyi": 3013,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2031-08-09",
-      "end_date": "2031-08-09",
-      "published": false
-    },
-    {
       "cyi": 5188,
       "competition_id": 70,
       "name": "Greenville Dance Challenge",
@@ -15573,21 +15456,21 @@
       "published": false
     },
     {
-      "cyi": 3015,
-      "competition_id": 73,
-      "name": "CBC DanceSport",
-      "location": "Columbus, OH",
-      "start_date": "2031-08-14",
-      "end_date": "2031-08-16",
-      "published": false
-    },
-    {
       "cyi": 3020,
       "competition_id": 72,
       "name": "Boca Ballroom DanceSport Competition",
       "location": "Fort Lauderdale, FL",
       "start_date": "2031-08-14",
       "end_date": "2031-08-17",
+      "published": false
+    },
+    {
+      "cyi": 3015,
+      "competition_id": 73,
+      "name": "CBC DanceSport",
+      "location": "Columbus, OH",
+      "start_date": "2031-08-14",
+      "end_date": "2031-08-16",
       "published": false
     },
     {
@@ -15627,6 +15510,15 @@
       "published": false
     },
     {
+      "cyi": 4134,
+      "competition_id": 120,
+      "name": "Ultimate Dancesport Challenge",
+      "location": "New Orleans, LA",
+      "start_date": "2031-09-18",
+      "end_date": "2031-09-20",
+      "published": false
+    },
+    {
       "cyi": 4076,
       "competition_id": 80,
       "name": "Cleveland Dancesport",
@@ -15640,15 +15532,6 @@
       "competition_id": 114,
       "name": "Smoky Mountain Invitational",
       "location": "Gatlinburg, TN",
-      "start_date": "2031-09-18",
-      "end_date": "2031-09-20",
-      "published": false
-    },
-    {
-      "cyi": 4134,
-      "competition_id": 120,
-      "name": "Ultimate Dancesport Challenge",
-      "location": "New Orleans, LA",
       "start_date": "2031-09-18",
       "end_date": "2031-09-20",
       "published": false
@@ -16203,19 +16086,19 @@
       "published": false
     },
     {
-      "cyi": 9287,
-      "competition_id": 151,
-      "name": "Baltimore Dancesport Challenge",
-      "location": "Linthicum Heights, MD",
+      "cyi": 7253,
+      "competition_id": 154,
+      "name": "The Royal Ball",
+      "location": "Los Angeles, CA",
       "start_date": "2032-03-20",
       "end_date": "2032-03-20",
       "published": false
     },
     {
-      "cyi": 7253,
-      "competition_id": 154,
-      "name": "The Royal Ball",
-      "location": "Los Angeles, CA",
+      "cyi": 9287,
+      "competition_id": 151,
+      "name": "Baltimore Dancesport Challenge",
+      "location": "Linthicum Heights, MD",
       "start_date": "2032-03-20",
       "end_date": "2032-03-20",
       "published": false
@@ -16689,15 +16572,6 @@
       "published": false
     },
     {
-      "cyi": 5179,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2032-08-14",
-      "end_date": "2032-08-14",
-      "published": false
-    },
-    {
       "cyi": 9280,
       "competition_id": 70,
       "name": "Greenville Dance Challenge",
@@ -16716,21 +16590,21 @@
       "published": false
     },
     {
-      "cyi": 4137,
-      "competition_id": 73,
-      "name": "CBC DanceSport",
-      "location": "Columbus, OH",
-      "start_date": "2032-08-19",
-      "end_date": "2032-08-21",
-      "published": false
-    },
-    {
       "cyi": 4127,
       "competition_id": 72,
       "name": "Boca Ballroom DanceSport Competition",
       "location": "Fort Lauderdale, FL",
       "start_date": "2032-08-19",
       "end_date": "2032-08-22",
+      "published": false
+    },
+    {
+      "cyi": 4137,
+      "competition_id": 73,
+      "name": "CBC DanceSport",
+      "location": "Columbus, OH",
+      "start_date": "2032-08-19",
+      "end_date": "2032-08-21",
       "published": false
     },
     {
@@ -16761,19 +16635,19 @@
       "published": false
     },
     {
-      "cyi": 5194,
-      "competition_id": 114,
-      "name": "Smoky Mountain Invitational",
-      "location": "Gatlinburg, TN",
+      "cyi": 9283,
+      "competition_id": 78,
+      "name": "Galaxy Dance Festival",
+      "location": "Phoenix, AZ",
       "start_date": "2032-09-16",
       "end_date": "2032-09-18",
       "published": false
     },
     {
-      "cyi": 9283,
-      "competition_id": 78,
-      "name": "Galaxy Dance Festival",
-      "location": "Phoenix, AZ",
+      "cyi": 5194,
+      "competition_id": 114,
+      "name": "Smoky Mountain Invitational",
+      "location": "Gatlinburg, TN",
       "start_date": "2032-09-16",
       "end_date": "2032-09-18",
       "published": false
@@ -16896,21 +16770,21 @@
       "published": false
     },
     {
-      "cyi": 9282,
-      "competition_id": 92,
-      "name": "Hotlanta The Classic",
-      "location": "Atlanta, GA",
-      "start_date": "2032-10-14",
-      "end_date": "2032-10-16",
-      "published": false
-    },
-    {
       "cyi": 9445,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
       "location": "Burlingame, CA",
       "start_date": "2032-10-14",
       "end_date": "2032-10-17",
+      "published": false
+    },
+    {
+      "cyi": 9282,
+      "competition_id": 92,
+      "name": "Hotlanta The Classic",
+      "location": "Atlanta, GA",
+      "start_date": "2032-10-14",
+      "end_date": "2032-10-16",
       "published": false
     },
     {
@@ -16977,19 +16851,19 @@
       "published": false
     },
     {
-      "cyi": 5205,
-      "competition_id": 132,
-      "name": "Commonwealth Classic",
-      "location": "Burlington, MA",
+      "cyi": 5201,
+      "competition_id": 119,
+      "name": "Dallas Dancesport Classic",
+      "location": "Dallas, TX",
       "start_date": "2032-11-05",
       "end_date": "2032-11-07",
       "published": false
     },
     {
-      "cyi": 5201,
-      "competition_id": 119,
-      "name": "Dallas Dancesport Classic",
-      "location": "Dallas, TX",
+      "cyi": 5205,
+      "competition_id": 132,
+      "name": "Commonwealth Classic",
+      "location": "Burlington, MA",
       "start_date": "2032-11-05",
       "end_date": "2032-11-07",
       "published": false
@@ -17346,19 +17220,19 @@
       "published": false
     },
     {
-      "cyi": 9288,
-      "competition_id": 151,
-      "name": "Baltimore Dancesport Challenge",
-      "location": "Linthicum Heights, MD",
+      "cyi": 7254,
+      "competition_id": 154,
+      "name": "The Royal Ball",
+      "location": "Los Angeles, CA",
       "start_date": "2033-03-19",
       "end_date": "2033-03-19",
       "published": false
     },
     {
-      "cyi": 7254,
-      "competition_id": 154,
-      "name": "The Royal Ball",
-      "location": "Los Angeles, CA",
+      "cyi": 9288,
+      "competition_id": 151,
+      "name": "Baltimore Dancesport Challenge",
+      "location": "Linthicum Heights, MD",
       "start_date": "2033-03-19",
       "end_date": "2033-03-19",
       "published": false
@@ -17517,15 +17391,6 @@
       "published": false
     },
     {
-      "cyi": 9289,
-      "competition_id": 103,
-      "name": "Northcoast Dancesport Classic",
-      "location": "Cleveland, OH",
-      "start_date": "2033-05-05",
-      "end_date": "2033-05-07",
-      "published": false
-    },
-    {
       "cyi": 9439,
       "competition_id": 29,
       "name": "Pacific Grand Ball",
@@ -17539,6 +17404,15 @@
       "competition_id": 113,
       "name": "Texas Challenge",
       "location": "Houston, TX",
+      "start_date": "2033-05-05",
+      "end_date": "2033-05-07",
+      "published": false
+    },
+    {
+      "cyi": 9289,
+      "competition_id": 103,
+      "name": "Northcoast Dancesport Classic",
+      "location": "Cleveland, OH",
       "start_date": "2033-05-05",
       "end_date": "2033-05-07",
       "published": false
@@ -17571,19 +17445,19 @@
       "published": false
     },
     {
-      "cyi": 9413,
-      "competition_id": 146,
-      "name": "Las Vegas Classic",
-      "location": "Las Vegas, NV",
+      "cyi": 9365,
+      "competition_id": 158,
+      "name": "Go Wild Minneapolis Dancesport",
+      "location": "Minneapolis, MN",
       "start_date": "2033-05-21",
       "end_date": "2033-05-21",
       "published": false
     },
     {
-      "cyi": 9365,
-      "competition_id": 158,
-      "name": "Go Wild Minneapolis Dancesport",
-      "location": "Minneapolis, MN",
+      "cyi": 9413,
+      "competition_id": 146,
+      "name": "Las Vegas Classic",
+      "location": "Las Vegas, NV",
       "start_date": "2033-05-21",
       "end_date": "2033-05-21",
       "published": false
@@ -17607,19 +17481,19 @@
       "published": false
     },
     {
-      "cyi": 9851,
-      "competition_id": 165,
-      "name": "Crown of Carolina DanceSport Classic",
-      "location": "Charlotte, NC",
+      "cyi": 9811,
+      "competition_id": 157,
+      "name": "OK DanceSport",
+      "location": "Oklahoma City, OK",
       "start_date": "2033-05-28",
       "end_date": "2033-05-28",
       "published": false
     },
     {
-      "cyi": 9811,
-      "competition_id": 157,
-      "name": "OK DanceSport",
-      "location": "Oklahoma City, OK",
+      "cyi": 9851,
+      "competition_id": 165,
+      "name": "Crown of Carolina DanceSport Classic",
+      "location": "Charlotte, NC",
       "start_date": "2033-05-28",
       "end_date": "2033-05-28",
       "published": false
@@ -17643,19 +17517,19 @@
       "published": false
     },
     {
-      "cyi": 9400,
-      "competition_id": 168,
-      "name": "All Star Dance Challenge",
-      "location": "San Jose, CA",
+      "cyi": 9345,
+      "competition_id": 163,
+      "name": "Three Diamond Classic",
+      "location": "Pittsburgh, PA",
       "start_date": "2033-06-04",
       "end_date": "2033-06-04",
       "published": false
     },
     {
-      "cyi": 9345,
-      "competition_id": 163,
-      "name": "Three Diamond Classic",
-      "location": "Pittsburgh, PA",
+      "cyi": 9400,
+      "competition_id": 168,
+      "name": "All Star Dance Challenge",
+      "location": "San Jose, CA",
       "start_date": "2033-06-04",
       "end_date": "2033-06-04",
       "published": false
@@ -17841,15 +17715,6 @@
       "published": false
     },
     {
-      "cyi": 9313,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2033-08-13",
-      "end_date": "2033-08-13",
-      "published": false
-    },
-    {
       "cyi": 9281,
       "competition_id": 70,
       "name": "Greenville Dance Challenge",
@@ -18003,15 +17868,6 @@
       "published": false
     },
     {
-      "cyi": 9330,
-      "competition_id": 88,
-      "name": "Chicago Harvest Moon Ball DanceSport Championships",
-      "location": "Chicago, IL",
-      "start_date": "2033-10-06",
-      "end_date": "2033-10-09",
-      "published": false
-    },
-    {
       "cyi": 9322,
       "competition_id": 30,
       "name": "Elite Dancesport",
@@ -18021,12 +17877,12 @@
       "published": false
     },
     {
-      "cyi": 9320,
-      "competition_id": 90,
-      "name": "Naples Star Ball",
-      "location": "Naples, FL",
-      "start_date": "2033-10-08",
-      "end_date": "2033-10-08",
+      "cyi": 9330,
+      "competition_id": 88,
+      "name": "Chicago Harvest Moon Ball DanceSport Championships",
+      "location": "Chicago, IL",
+      "start_date": "2033-10-06",
+      "end_date": "2033-10-09",
       "published": false
     },
     {
@@ -18034,6 +17890,15 @@
       "competition_id": 86,
       "name": "Jacksonville Star Ball",
       "location": "Jacksonville, FL",
+      "start_date": "2033-10-08",
+      "end_date": "2033-10-08",
+      "published": false
+    },
+    {
+      "cyi": 9320,
+      "competition_id": 90,
+      "name": "Naples Star Ball",
+      "location": "Naples, FL",
       "start_date": "2033-10-08",
       "end_date": "2033-10-08",
       "published": false
@@ -18291,6 +18156,15 @@
       "published": false
     },
     {
+      "cyi": 9430,
+      "competition_id": 38,
+      "name": "Colorado Winter Classic",
+      "location": "Denver, CO",
+      "start_date": "2034-01-21",
+      "end_date": "2034-01-21",
+      "published": false
+    },
+    {
       "cyi": 9543,
       "competition_id": 155,
       "name": "California Chic Classic",
@@ -18304,15 +18178,6 @@
       "competition_id": 160,
       "name": "Boston Dancesport Cup",
       "location": "Boston, MA",
-      "start_date": "2034-01-21",
-      "end_date": "2034-01-21",
-      "published": false
-    },
-    {
-      "cyi": 9430,
-      "competition_id": 38,
-      "name": "Colorado Winter Classic",
-      "location": "Denver, CO",
       "start_date": "2034-01-21",
       "end_date": "2034-01-21",
       "published": false
@@ -18696,19 +18561,19 @@
       "published": false
     },
     {
-      "cyi": 9855,
-      "competition_id": 111,
-      "name": "American Star Ball Championships",
-      "location": "Atlantic City, NJ",
+      "cyi": 9666,
+      "competition_id": 115,
+      "name": "Crown Jewel of Dancesport",
+      "location": "Naples, FL",
       "start_date": "2034-05-18",
       "end_date": "2034-05-21",
       "published": false
     },
     {
-      "cyi": 9666,
-      "competition_id": 115,
-      "name": "Crown Jewel of Dancesport",
-      "location": "Naples, FL",
+      "cyi": 9855,
+      "competition_id": 111,
+      "name": "American Star Ball Championships",
+      "location": "Atlantic City, NJ",
       "start_date": "2034-05-18",
       "end_date": "2034-05-21",
       "published": false
@@ -18984,20 +18849,20 @@
       "published": false
     },
     {
-      "cyi": 9463,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2034-08-12",
-      "end_date": "2034-08-12",
-      "published": false
-    },
-    {
       "cyi": 9649,
       "competition_id": 71,
       "name": "The NV Ball DanceSport Championships",
       "location": "Las Vegas, NV",
       "start_date": "2034-08-16",
+      "end_date": "2034-08-19",
+      "published": false
+    },
+    {
+      "cyi": 9547,
+      "competition_id": 73,
+      "name": "CBC DanceSport",
+      "location": "Columbus, OH",
+      "start_date": "2034-08-17",
       "end_date": "2034-08-19",
       "published": false
     },
@@ -19008,15 +18873,6 @@
       "location": "Fort Lauderdale, FL",
       "start_date": "2034-08-17",
       "end_date": "2034-08-20",
-      "published": false
-    },
-    {
-      "cyi": 9547,
-      "competition_id": 73,
-      "name": "CBC DanceSport",
-      "location": "Columbus, OH",
-      "start_date": "2034-08-17",
-      "end_date": "2034-08-19",
       "published": false
     },
     {
@@ -19434,7 +19290,7 @@
       "published": false
     },
     {
-      "cyi": 9805,
+      "cyi": 9803,
       "competition_id": 155,
       "name": "California Chic Classic",
       "location": "Newport Beach, CA",
@@ -19443,7 +19299,7 @@
       "published": false
     },
     {
-      "cyi": 9803,
+      "cyi": 9805,
       "competition_id": 155,
       "name": "California Chic Classic",
       "location": "Newport Beach, CA",
@@ -20118,15 +19974,6 @@
       "published": false
     },
     {
-      "cyi": 9669,
-      "competition_id": 89,
-      "name": "Fantasy Ball DanceSport Competition",
-      "location": "Norfolk, VA",
-      "start_date": "2035-08-11",
-      "end_date": "2035-08-11",
-      "published": false
-    },
-    {
       "cyi": 9651,
       "competition_id": 70,
       "name": "Greenville Dance Challenge",
@@ -20145,21 +19992,21 @@
       "published": false
     },
     {
-      "cyi": 9640,
-      "competition_id": 72,
-      "name": "Boca Ballroom DanceSport Competition",
-      "location": "Fort Lauderdale, FL",
-      "start_date": "2035-08-16",
-      "end_date": "2035-08-19",
-      "published": false
-    },
-    {
       "cyi": 9642,
       "competition_id": 73,
       "name": "CBC DanceSport",
       "location": "Columbus, OH",
       "start_date": "2035-08-16",
       "end_date": "2035-08-18",
+      "published": false
+    },
+    {
+      "cyi": 9640,
+      "competition_id": 72,
+      "name": "Boca Ballroom DanceSport Competition",
+      "location": "Fort Lauderdale, FL",
+      "start_date": "2035-08-16",
+      "end_date": "2035-08-19",
       "published": false
     },
     {
@@ -20289,15 +20136,6 @@
       "published": false
     },
     {
-      "cyi": 9691,
-      "competition_id": 88,
-      "name": "Chicago Harvest Moon Ball DanceSport Championships",
-      "location": "Chicago, IL",
-      "start_date": "2035-10-11",
-      "end_date": "2035-10-14",
-      "published": false
-    },
-    {
       "cyi": 9597,
       "competition_id": 30,
       "name": "Elite Dancesport",
@@ -20307,12 +20145,12 @@
       "published": false
     },
     {
-      "cyi": 9686,
-      "competition_id": 91,
-      "name": "Phoenix Fall Festival",
-      "location": "Phoenix, AZ",
-      "start_date": "2035-10-13",
-      "end_date": "2035-10-13",
+      "cyi": 9691,
+      "competition_id": 88,
+      "name": "Chicago Harvest Moon Ball DanceSport Championships",
+      "location": "Chicago, IL",
+      "start_date": "2035-10-11",
+      "end_date": "2035-10-14",
       "published": false
     },
     {
@@ -20320,6 +20158,15 @@
       "competition_id": 90,
       "name": "Naples Star Ball",
       "location": "Naples, FL",
+      "start_date": "2035-10-13",
+      "end_date": "2035-10-13",
+      "published": false
+    },
+    {
+      "cyi": 9686,
+      "competition_id": 91,
+      "name": "Phoenix Fall Festival",
+      "location": "Phoenix, AZ",
       "start_date": "2035-10-13",
       "end_date": "2035-10-13",
       "published": false
@@ -20559,7 +20406,7 @@
       "published": false
     },
     {
-      "cyi": 9804,
+      "cyi": 9806,
       "competition_id": 155,
       "name": "California Chic Classic",
       "location": "Newport Beach, CA",
@@ -20568,7 +20415,7 @@
       "published": false
     },
     {
-      "cyi": 9806,
+      "cyi": 9804,
       "competition_id": 155,
       "name": "California Chic Classic",
       "location": "Newport Beach, CA",
@@ -20946,15 +20793,6 @@
       "published": false
     },
     {
-      "cyi": 9847,
-      "competition_id": 29,
-      "name": "Pacific Grand Ball",
-      "location": "Seattle, WA",
-      "start_date": "2036-05-08",
-      "end_date": "2036-05-11",
-      "published": false
-    },
-    {
       "cyi": 9850,
       "competition_id": 103,
       "name": "Northcoast Dancesport Classic",
@@ -20964,12 +20802,12 @@
       "published": false
     },
     {
-      "cyi": 9857,
-      "competition_id": 111,
-      "name": "American Star Ball Championships",
-      "location": "Atlantic City, NJ",
-      "start_date": "2036-05-15",
-      "end_date": "2036-05-18",
+      "cyi": 9847,
+      "competition_id": 29,
+      "name": "Pacific Grand Ball",
+      "location": "Seattle, WA",
+      "start_date": "2036-05-08",
+      "end_date": "2036-05-11",
       "published": false
     },
     {
@@ -20982,12 +20820,12 @@
       "published": false
     },
     {
-      "cyi": 9917,
-      "competition_id": 146,
-      "name": "Las Vegas Classic",
-      "location": "Las Vegas, NV",
-      "start_date": "2036-05-17",
-      "end_date": "2036-05-17",
+      "cyi": 9857,
+      "competition_id": 111,
+      "name": "American Star Ball Championships",
+      "location": "Atlantic City, NJ",
+      "start_date": "2036-05-15",
+      "end_date": "2036-05-18",
       "published": false
     },
     {
@@ -20995,6 +20833,15 @@
       "competition_id": 158,
       "name": "Go Wild Minneapolis Dancesport",
       "location": "Minneapolis, MN",
+      "start_date": "2036-05-17",
+      "end_date": "2036-05-17",
+      "published": false
+    },
+    {
+      "cyi": 9917,
+      "competition_id": 146,
+      "name": "Las Vegas Classic",
+      "location": "Las Vegas, NV",
       "start_date": "2036-05-17",
       "end_date": "2036-05-17",
       "published": false
@@ -21213,6 +21060,24 @@
       "location": "San Diego, CA",
       "start_date": "2036-08-07",
       "end_date": "2036-08-10",
+      "published": false
+    },
+    {
+      "cyi": 9945,
+      "competition_id": 70,
+      "name": "Greenville Dance Challenge",
+      "location": "Greenville, SC",
+      "start_date": "2036-08-09",
+      "end_date": "2036-08-09",
+      "published": false
+    },
+    {
+      "cyi": 9947,
+      "competition_id": 69,
+      "name": "Heart of America DanceSport Championships",
+      "location": "Kansas City, MO",
+      "start_date": "2036-08-13",
+      "end_date": "2036-08-16",
       "published": false
     },
     {
