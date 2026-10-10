@@ -9924,7 +9924,7 @@
       "location": "Irvine, CA",
       "start_date": "2026-10-08",
       "end_date": "2026-10-11",
-      "published": false
+      "published": true
     },
     {
       "cyi": 1013,
@@ -12207,6 +12207,15 @@
       "published": false
     },
     {
+      "cyi": 314,
+      "competition_id": 26,
+      "name": "Summit DanceSport",
+      "location": "Seattle, WA",
+      "start_date": "2028-10-19",
+      "end_date": "2028-10-22",
+      "published": false
+    },
+    {
       "cyi": 354,
       "competition_id": 92,
       "name": "Hotlanta The Classic",
@@ -12265,15 +12274,6 @@
       "competition_id": 96,
       "name": "Paragon Open DanceSport Championships",
       "location": "Stamford, CT",
-      "start_date": "2028-10-26",
-      "end_date": "2028-10-29",
-      "published": false
-    },
-    {
-      "cyi": 314,
-      "competition_id": 26,
-      "name": "Summit DanceSport",
-      "location": "Seattle, WA",
       "start_date": "2028-10-26",
       "end_date": "2028-10-29",
       "published": false
