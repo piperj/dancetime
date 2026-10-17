@@ -10014,7 +10014,7 @@
       "location": "Burlingame, CA",
       "start_date": "2026-10-14",
       "end_date": "2026-10-18",
-      "published": false
+      "published": true
     },
     {
       "cyi": 352,
@@ -11046,15 +11046,6 @@
       "published": false
     },
     {
-      "cyi": 334,
-      "competition_id": 81,
-      "name": "Southwestern Invitational",
-      "location": "Dallas, TX",
-      "start_date": "2027-09-24",
-      "end_date": "2027-09-26",
-      "published": false
-    },
-    {
       "cyi": 1062,
       "competition_id": 82,
       "name": "Master Dance Grand Ball",
@@ -11070,6 +11061,15 @@
       "location": "Stamford, CT",
       "start_date": "2027-09-30",
       "end_date": "2027-10-03",
+      "published": false
+    },
+    {
+      "cyi": 334,
+      "competition_id": 81,
+      "name": "Southwestern Invitational",
+      "location": "Dallas, TX",
+      "start_date": "2027-09-30",
+      "end_date": "2027-10-02",
       "published": false
     },
     {
