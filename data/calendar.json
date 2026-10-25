@@ -10065,10 +10065,10 @@
       "cyi": 1406,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2026-10-25",
       "end_date": "2026-10-25",
-      "published": false
+      "published": true
     },
     {
       "cyi": 405,
@@ -11193,7 +11193,7 @@
       "cyi": 1407,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2027-10-24",
       "end_date": "2027-10-24",
       "published": false
@@ -12336,7 +12336,7 @@
       "cyi": 1408,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2028-10-22",
       "end_date": "2028-10-22",
       "published": false
@@ -13506,7 +13506,7 @@
       "cyi": 1753,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2029-10-28",
       "end_date": "2029-10-28",
       "published": false
@@ -14658,7 +14658,7 @@
       "cyi": 2941,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2030-10-27",
       "end_date": "2030-10-27",
       "published": false
@@ -15801,7 +15801,7 @@
       "cyi": 2975,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2031-10-26",
       "end_date": "2031-10-26",
       "published": false
@@ -16944,7 +16944,7 @@
       "cyi": 4141,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2032-10-24",
       "end_date": "2032-10-24",
       "published": false
@@ -18096,7 +18096,7 @@
       "cyi": 9409,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2033-10-23",
       "end_date": "2033-10-23",
       "published": false
@@ -19212,7 +19212,7 @@
       "cyi": 9616,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2034-10-22",
       "end_date": "2034-10-22",
       "published": false
@@ -20382,7 +20382,7 @@
       "cyi": 9692,
       "competition_id": 97,
       "name": "Tropicana Dance Challenge",
-      "location": "Saint Petersburg, FL",
+      "location": "St. Petersburg, FL",
       "start_date": "2035-10-28",
       "end_date": "2035-10-28",
       "published": false
@@ -21306,6 +21306,15 @@
       "published": false
     },
     {
+      "cyi": 9955,
+      "competition_id": 120,
+      "name": "Ultimate Dancesport Challenge",
+      "location": "New Orleans, LA",
+      "start_date": "2036-09-18",
+      "end_date": "2036-09-20",
+      "published": false
+    },
+    {
       "cyi": 9951,
       "competition_id": 80,
       "name": "Cleveland Dancesport",
@@ -21365,6 +21374,15 @@
       "name": "Summit DanceSport",
       "location": "Seattle, WA",
       "start_date": "2036-10-23",
+      "end_date": "2036-10-26",
+      "published": false
+    },
+    {
+      "cyi": 9956,
+      "competition_id": 97,
+      "name": "Tropicana Dance Challenge",
+      "location": "Saint Petersburg, FL",
+      "start_date": "2036-10-26",
       "end_date": "2036-10-26",
       "published": false
     },
