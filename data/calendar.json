@@ -11181,20 +11181,11 @@
       "published": false
     },
     {
-      "cyi": 1344,
-      "competition_id": 96,
-      "name": "Paragon Open DanceSport Championships",
-      "location": "Stamford, CT",
-      "start_date": "2027-10-21",
-      "end_date": "2027-10-24",
-      "published": false
-    },
-    {
       "cyi": 344,
       "competition_id": 105,
       "name": "San Francisco Autumn Dance Classic",
       "location": "Burlingame, CA",
-      "start_date": "2027-10-21",
+      "start_date": "2027-10-20",
       "end_date": "2027-10-24",
       "published": false
     },
@@ -11203,6 +11194,15 @@
       "competition_id": 26,
       "name": "Summit DanceSport",
       "location": "Seattle, WA",
+      "start_date": "2027-10-21",
+      "end_date": "2027-10-24",
+      "published": false
+    },
+    {
+      "cyi": 1344,
+      "competition_id": 96,
+      "name": "Paragon Open DanceSport Championships",
+      "location": "Stamford, CT",
       "start_date": "2027-10-21",
       "end_date": "2027-10-24",
       "published": false
@@ -21414,12 +21414,30 @@
       "published": false
     },
     {
+      "cyi": 9964,
+      "competition_id": 30,
+      "name": "Elite Dancesport",
+      "location": "Irvine, CA",
+      "start_date": "2036-10-09",
+      "end_date": "2036-10-12",
+      "published": false
+    },
+    {
       "cyi": 9962,
       "competition_id": 90,
       "name": "Naples Star Ball",
       "location": "Naples, FL",
       "start_date": "2036-10-11",
       "end_date": "2036-10-11",
+      "published": false
+    },
+    {
+      "cyi": 9963,
+      "competition_id": 105,
+      "name": "San Francisco Autumn Dance Classic",
+      "location": "Burlingame, CA",
+      "start_date": "2036-10-16",
+      "end_date": "2036-10-19",
       "published": false
     },
     {
