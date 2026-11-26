@@ -639,15 +639,11 @@
     "AC-B Intermediate Bronze Amer. Viennese Waltz",
     "L-C Pre Bronze Amer. Waltz",
     "AC-C Intermediate Bronze Amer. Waltz",
-    "G-C Open Full Bronze Amer. Waltz",
     "L-C Pre Bronze Amer. Tango",
     "AC-C Intermediate Bronze Amer. Tango",
-    "G-C Open Full Bronze Amer. Tango",
     "L-C Pre Bronze Amer. Foxtrot",
     "AC-C Intermediate Bronze Amer. Foxtrot",
-    "G-C Open Full Bronze Amer. Foxtrot",
     "AC-C Intermediate Bronze Amer. Viennese Waltz",
-    "G-C Open Full Bronze Amer. Viennese Waltz",
     "L-C Intermediate Bronze Amer. Waltz",
     "L-C Intermediate Bronze Amer. Tango",
     "L-C Intermediate Bronze Amer. Foxtrot",
@@ -670,10 +666,14 @@
     "G-A Full Bronze Amer. Foxtrot",
     "L-C Open Intermediate Bronze Amer. Foxtrot",
     "L-S1 Intermediate Bronze Amer. Foxtrot",
+    "G-C Open Full Bronze Amer. Foxtrot",
     "G-A Full Bronze Amer. Viennese Waltz",
     "L-C Open Intermediate Bronze Amer. Viennese Waltz",
+    "G-C Open Full Bronze Amer. Viennese Waltz",
     "L-C Full Bronze Amer. Waltz",
+    "G-C Open Full Bronze Amer. Waltz",
     "L-C Full Bronze Amer. Tango",
+    "G-C Open Full Bronze Amer. Tango",
     "L-C Full Bronze Amer. Foxtrot",
     "AC-C Open Intermediate Bronze Amer. Waltz",
     "G-S1 Open Full Bronze Amer. Waltz /P",
@@ -797,18 +797,14 @@
     "L-C Open Full Silver Amer. Foxtrot",
     "L-C Open Full Silver Amer. Viennese Waltz",
     "L-S2 Gold Star 2 Amer. Waltz",
-    "L-S3 Full Gold Amer. Waltz",
     "G-S4 Open Int. Gold Amer. Waltz",
     "L-C Intermediate Gold Amer. Waltz",
     "L-S2 Gold Star 2 Amer. Tango",
-    "L-S3 Full Gold Amer. Tango",
     "G-S4 Open Int. Gold Amer. Tango",
     "L-C Intermediate Gold Amer. Tango",
     "L-S2 Gold Star 2 Amer. Foxtrot",
-    "L-S3 Full Gold Amer. Foxtrot",
     "L-C Intermediate Gold Amer. Foxtrot",
     "L-S2 Gold Star 2 Amer. Viennese Waltz",
-    "L-S3 Full Gold Amer. Viennese Waltz",
     "L-C Intermediate Gold Amer. Viennese Waltz",
     "L-S2 Full Gold Amer. Waltz",
     "L-S2 Full Gold Amer. Tango",
@@ -834,7 +830,6 @@
     "Closed Sr Scholarship Full Silver  S2 M/F Amer. Smooth (W,T,F)",
     "Closed Bronze Multi Dance S1 M/F Amer. Smooth (W,T,F)",
     "WDSS Open C Amer. Smooth (W,T,F,VW)",
-    "Closed Gold Multi Dance S3 Amer. Smooth (W,T,F,VW)",
     "Gents Open Sr Multi S4 Amer. Smooth (W,T,F)",
     "Closed Gold Multi Dance C Amer. Smooth (W,T,F,VW)",
     "Open Scholarship C Amer. Smooth #NR (W,T,F,VW)",
@@ -844,7 +839,6 @@
     "Closed Gold Multi Dance S2 Amer. Smooth (W,T,F,VW)",
     "Open Sr1 Sr 2 Scholarship S2 Amer. Smooth #NR (W,T,F,VW)",
     "Gents Closed Silver Multi S2 Amer. Smooth (W,T,F,VW)",
-    "Closed Sr Scholarship Full Gold S3 M/F Amer. Smooth (W,T,F)",
     "Closed Sr Scholarship Full Gold S2 M/F Amer. Smooth (W,T,F)",
     "Open Sr1 Sr 2 Scholarship S1 Amer. Smooth #NR (W,T,F,VW)",
     "Open Sr3 Sr4 Scholarship S4 Amer. Smooth #NR (W,T,F)",
@@ -868,19 +862,24 @@
     "L-S1 Pre Bronze Int'l Jive",
     "L-S1 Open Gold Star 1 Int'l Jive",
     "L-S2 Gold Star 1 Int'l Jive",
+    "L-S2 Gold Star 2 Int'l Cha Cha",
     "L-S1 Intermediate Silver Int'l Cha Cha",
     "L-A Intermediate Bronze Int'l Cha Cha",
-    "L-S2 Gold Star 2 Int'l Cha Cha",
+    "L-S1 Gold Star 1 Int'l Cha Cha",
+    "L-S2 Gold Star 2 Int'l Samba",
     "L-S1 Intermediate Silver Int'l Samba",
     "L-A Intermediate Bronze Int'l Samba",
-    "L-S2 Gold Star 2 Int'l Samba",
+    "L-S1 Gold Star 1 Int'l Samba",
     "L-C Newcomer Int'l Rumba",
+    "L-S2 Gold Star 2 Int'l Rumba",
     "L-S1 Intermediate Silver Int'l Rumba",
     "L-A Intermediate Bronze Int'l Rumba",
-    "L-S2 Gold Star 2 Int'l Rumba",
-    "L-S1 Intermediate Silver Int'l Paso Doble",
+    "L-S1 Gold Star 1 Int'l Rumba",
     "L-S2 Gold Star 2 Int'l Paso Doble",
+    "L-S1 Intermediate Silver Int'l Paso Doble",
+    "L-S1 Gold Star 1 Int'l Paso Doble",
     "L-S1 Intermediate Silver Int'l Jive",
+    "L-S1 Gold Star 1 Int'l Jive",
     "L-S2 Gold Star 2 Int'l Jive",
     "L-A Full Bronze Int'l Cha Cha",
     "L-B Intermediate Bronze Int'l Cha Cha",
@@ -891,17 +890,18 @@
     "Closed Bronze Multi Dance S1 M/F Int'l Latin (CC,S,R)",
     "Closed Bronze Multi Dance A M/F Int'l Latin (CC,S,R)",
     "Closed Bronze Multi Dance B M/F Int'l Latin (CC,S,R)",
+    "Sr Open S2 Int'l Latin Championship (CC,S,R)",
     "Closed Silver Multi Dance S1 Int'l Latin (CC,S,R,J)",
     "WDSS Closed Bronze A Int'l Latin (CC,S,R)",
     "Closed Bronze Multi Dance C M/F Int'l Latin (CC,S,R)",
     "Closed Sr Scholarship Full Bronze S1 M/F Int'l Latin (CC,S,R)",
     "B.O.B Closed Scholarship Full Bronze A Int'l Latin (CC,S,R)",
-    "B.O.B Closed Scholarship Full Bronze B Int'l Latin (CC,S,R)",
     "Sr Open S1 Int'l Latin Championship (CC,S,R)",
+    "B.O.B Closed Scholarship Full Bronze B Int'l Latin (CC,S,R)",
     "Open Amateur AD AM/AM Int'l Ballroom Championship #NR (W,T,VW,F,Q)",
     "Open Sr1 Sr 2 Scholarship S1 Int'l Latin (CC,S,R,PD)",
-    "Closed Sr Scholarship Full Silver  S1 M/F Int'l Latin (CC,S,R)",
-    "Open Sr1 Sr 2 Scholarship S2 Int'l Latin (CC,S,R,PD)"
+    "Open Sr1 Sr 2 Scholarship S2 Int'l Latin (CC,S,R,PD)",
+    "Closed Sr Scholarship Full Silver  S1 M/F Int'l Latin (CC,S,R)"
   ],
   "heats": [
     {
@@ -8685,10 +8685,10 @@
       ]
     },
     {
-      "key": "03_251_112820268405",
+      "key": "03_251_112820268555",
       "heat_number": "251",
       "session": "03",
-      "time": "2026-11-28T20:40:54",
+      "time": "2026-11-28T20:55:54",
       "round": "Final",
       "entries": [
         {
@@ -8718,10 +8718,10 @@
       ]
     },
     {
-      "key": "03_252_112820269023",
+      "key": "03_252_112820269184",
       "heat_number": "252",
       "session": "03",
-      "time": "2026-11-28T21:02:39",
+      "time": "2026-11-28T21:18:42",
       "round": "Final",
       "entries": [
         {
@@ -8735,10 +8735,10 @@
       ]
     },
     {
-      "key": "03_253_112820269092",
+      "key": "03_253_112820269023",
       "heat_number": "253",
       "session": "03",
-      "time": "2026-11-28T21:09:24",
+      "time": "2026-11-28T21:02:39",
       "round": "Final",
       "entries": [
         {
@@ -8834,10 +8834,10 @@
       ]
     },
     {
-      "key": "03_7_112820268473",
+      "key": "03_7_112820268405",
       "heat_number": "7",
       "session": "03",
-      "time": "2026-11-28T20:47:39",
+      "time": "2026-11-28T20:40:54",
       "round": "Final",
       "entries": [
         {
@@ -8899,10 +8899,10 @@
       ]
     },
     {
-      "key": "03_8_112820269132",
+      "key": "03_8_112820269252",
       "heat_number": "8",
       "session": "03",
-      "time": "2026-11-28T21:13:27",
+      "time": "2026-11-28T21:25:27",
       "round": "Final",
       "entries": [
         {
@@ -8948,10 +8948,83 @@
       ]
     },
     {
-      "key": "03_9_112820269282",
+      "key": "03_9_112820269064",
       "heat_number": "9",
       "session": "03",
-      "time": "2026-11-28T21:28:27",
+      "time": "2026-11-28T21:06:42",
+      "round": "Semi-Final",
+      "entries": [
+        {
+          "competitor1": "Egor Bezukladnikov",
+          "competitor2": "Irene Lee",
+          "bib": "132",
+          "studio": "Best Dance Studio",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Igor Colac",
+          "competitor2": "Roxane Milotti",
+          "bib": "152",
+          "studio": "South Bay Dance Center",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Oleksandra Fedorova",
+          "competitor2": "Oleksii Ihnatov",
+          "bib": "101",
+          "studio": "Ihnatov-Fedorova",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Nicolas Gastelum",
+          "competitor2": "Hanna Pierce",
+          "bib": "114",
+          "studio": "FADS Ahwatukee",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Annika Johnson",
+          "competitor2": "Cole Ornelas",
+          "bib": "123",
+          "studio": "Arthur Murray Reno",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Kristina Kuvshynov",
+          "competitor2": "Yuriy Kuvshynov",
+          "bib": "109",
+          "studio": "Arete Dance Center",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Melinda Piekstra",
+          "competitor2": "Dominic Seigler",
+          "bib": "115",
+          "studio": "Sway Ballroom Dance",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Mishka Teleha",
+          "competitor2": "Oleg Teleha",
+          "bib": "121",
+          "studio": "La Vida Dance",
+          "event": 605,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "03_9_112820269402",
+      "heat_number": "9",
+      "session": "03",
+      "time": "2026-11-28T21:40:27",
       "round": "Final",
       "entries": [
         {
@@ -8959,6 +9032,14 @@
           "competitor2": "Irene Lee",
           "bib": "132",
           "studio": "Best Dance Studio",
+          "event": 605,
+          "result": ""
+        },
+        {
+          "competitor1": "Igor Colac",
+          "competitor2": "Roxane Milotti",
+          "bib": "152",
+          "studio": "South Bay Dance Center",
           "event": 605,
           "result": ""
         },
@@ -9225,14 +9306,6 @@
           "studio": "The Art Of Ballroom",
           "event": 623,
           "result": ""
-        },
-        {
-          "competitor1": "Michael O’Bryan",
-          "competitor2": "Anna Shahbazyan",
-          "bib": "329",
-          "studio": "Anna Shahbazyan",
-          "event": 624,
-          "result": ""
         }
       ]
     },
@@ -9248,7 +9321,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 625,
+          "event": 624,
           "result": ""
         },
         {
@@ -9256,15 +9329,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 626,
-          "result": ""
-        },
-        {
-          "competitor1": "Michael O’Bryan",
-          "competitor2": "Anna Shahbazyan",
-          "bib": "329",
-          "studio": "Anna Shahbazyan",
-          "event": 627,
+          "event": 625,
           "result": ""
         }
       ]
@@ -9281,7 +9346,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 628,
+          "event": 626,
           "result": ""
         },
         {
@@ -9289,15 +9354,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 629,
-          "result": ""
-        },
-        {
-          "competitor1": "Michael O’Bryan",
-          "competitor2": "Anna Shahbazyan",
-          "bib": "329",
-          "studio": "Anna Shahbazyan",
-          "event": 630,
+          "event": 627,
           "result": ""
         }
       ]
@@ -9314,15 +9371,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 631,
-          "result": ""
-        },
-        {
-          "competitor1": "Michael O’Bryan",
-          "competitor2": "Anna Shahbazyan",
-          "bib": "329",
-          "studio": "Anna Shahbazyan",
-          "event": 632,
+          "event": 628,
           "result": ""
         }
       ]
@@ -9339,7 +9388,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 633,
+          "event": 629,
           "result": ""
         },
         {
@@ -9347,7 +9396,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 633,
+          "event": 629,
           "result": ""
         },
         {
@@ -9355,7 +9404,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 633,
+          "event": 629,
           "result": ""
         }
       ]
@@ -9372,7 +9421,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 634,
+          "event": 630,
           "result": ""
         },
         {
@@ -9380,7 +9429,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 634,
+          "event": 630,
           "result": ""
         },
         {
@@ -9388,7 +9437,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 634,
+          "event": 630,
           "result": ""
         }
       ]
@@ -9405,7 +9454,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 635,
+          "event": 631,
           "result": ""
         },
         {
@@ -9413,7 +9462,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 635,
+          "event": 631,
           "result": ""
         }
       ]
@@ -9430,7 +9479,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 636,
+          "event": 632,
           "result": ""
         },
         {
@@ -9438,7 +9487,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 637,
+          "event": 633,
           "result": ""
         },
         {
@@ -9446,7 +9495,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 638,
+          "event": 634,
           "result": ""
         },
         {
@@ -9454,7 +9503,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 637,
+          "event": 633,
           "result": ""
         }
       ]
@@ -9471,7 +9520,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 639,
+          "event": 635,
           "result": ""
         },
         {
@@ -9479,7 +9528,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 640,
+          "event": 636,
           "result": ""
         },
         {
@@ -9487,7 +9536,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 641,
+          "event": 637,
           "result": ""
         },
         {
@@ -9495,7 +9544,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 640,
+          "event": 636,
           "result": ""
         }
       ]
@@ -9512,7 +9561,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 642,
+          "event": 638,
           "result": ""
         },
         {
@@ -9520,7 +9569,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 643,
+          "event": 639,
           "result": ""
         },
         {
@@ -9528,7 +9577,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 644,
+          "event": 640,
           "result": ""
         },
         {
@@ -9536,7 +9585,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 643,
+          "event": 639,
           "result": ""
         }
       ]
@@ -9553,7 +9602,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 645,
+          "event": 641,
           "result": ""
         },
         {
@@ -9561,7 +9610,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 646,
+          "event": 642,
           "result": ""
         }
       ]
@@ -9578,7 +9627,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 647,
+          "event": 643,
           "result": ""
         },
         {
@@ -9586,7 +9635,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 648,
+          "event": 644,
           "result": ""
         },
         {
@@ -9594,7 +9643,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 649,
+          "event": 645,
           "result": ""
         },
         {
@@ -9602,7 +9651,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 649,
+          "event": 645,
           "result": ""
         }
       ]
@@ -9619,7 +9668,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 650,
+          "event": 646,
           "result": ""
         },
         {
@@ -9627,7 +9676,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 651,
+          "event": 647,
           "result": ""
         },
         {
@@ -9635,7 +9684,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 651,
+          "event": 647,
           "result": ""
         }
       ]
@@ -9645,6 +9694,55 @@
       "heat_number": "274",
       "session": "04",
       "time": "2026-11-29T09:57:00",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Luisa Alvarez",
+          "competitor2": "Milo Pestana",
+          "bib": "314",
+          "studio": "Master Dance Club",
+          "event": 648,
+          "result": ""
+        },
+        {
+          "competitor1": "Nikki Carnahan",
+          "competitor2": "Tekierius Green",
+          "bib": "108",
+          "studio": "The Art Of Ballroom",
+          "event": 649,
+          "result": ""
+        },
+        {
+          "competitor1": "Vickie Le",
+          "competitor2": "Dominic Seigler",
+          "bib": "115",
+          "studio": "Sway Ballroom Dance",
+          "event": 650,
+          "result": ""
+        },
+        {
+          "competitor1": "Michael O’Bryan",
+          "competitor2": "Anna Shahbazyan",
+          "bib": "329",
+          "studio": "Anna Shahbazyan",
+          "event": 651,
+          "result": ""
+        },
+        {
+          "competitor1": "Dawn Stone",
+          "competitor2": "Oleg Teleha",
+          "bib": "121",
+          "studio": "La Vida Dance",
+          "event": 650,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "04_275_112920269582",
+      "heat_number": "275",
+      "session": "04",
+      "time": "2026-11-29T09:58:21",
       "round": "Final",
       "entries": [
         {
@@ -9664,44 +9762,11 @@
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
-          "competitor2": "Dominic Seigler",
-          "bib": "115",
-          "studio": "Sway Ballroom Dance",
+          "competitor1": "Michael O’Bryan",
+          "competitor2": "Anna Shahbazyan",
+          "bib": "329",
+          "studio": "Anna Shahbazyan",
           "event": 654,
-          "result": ""
-        },
-        {
-          "competitor1": "Dawn Stone",
-          "competitor2": "Oleg Teleha",
-          "bib": "121",
-          "studio": "La Vida Dance",
-          "event": 654,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "04_275_112920269582",
-      "heat_number": "275",
-      "session": "04",
-      "time": "2026-11-29T09:58:21",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Luisa Alvarez",
-          "competitor2": "Milo Pestana",
-          "bib": "314",
-          "studio": "Master Dance Club",
-          "event": 655,
-          "result": ""
-        },
-        {
-          "competitor1": "Nikki Carnahan",
-          "competitor2": "Tekierius Green",
-          "bib": "108",
-          "studio": "The Art Of Ballroom",
-          "event": 656,
           "result": ""
         }
       ]
@@ -9718,7 +9783,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 657,
+          "event": 655,
           "result": ""
         },
         {
@@ -9726,7 +9791,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 657,
+          "event": 655,
           "result": ""
         },
         {
@@ -9734,7 +9799,15 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 657,
+          "event": 655,
+          "result": ""
+        },
+        {
+          "competitor1": "Michael O’Bryan",
+          "competitor2": "Anna Shahbazyan",
+          "bib": "329",
+          "studio": "Anna Shahbazyan",
+          "event": 656,
           "result": ""
         }
       ]
@@ -9751,7 +9824,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 658,
+          "event": 657,
           "result": ""
         },
         {
@@ -9759,7 +9832,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 658,
+          "event": 657,
           "result": ""
         },
         {
@@ -9767,6 +9840,14 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
+          "event": 657,
+          "result": ""
+        },
+        {
+          "competitor1": "Michael O’Bryan",
+          "competitor2": "Anna Shahbazyan",
+          "bib": "329",
+          "studio": "Anna Shahbazyan",
           "event": 658,
           "result": ""
         }
@@ -11275,19 +11356,11 @@
           "result": ""
         },
         {
-          "competitor1": "Keiko Fukami",
-          "competitor2": "Marco Spadafora",
-          "bib": "117",
-          "studio": "Dance Around The Clock-Spadafora",
-          "event": 782,
-          "result": ""
-        },
-        {
           "competitor1": "Yohsuke Fukami",
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 783,
+          "event": 782,
           "result": ""
         },
         {
@@ -11295,7 +11368,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 784,
+          "event": 783,
           "result": ""
         }
       ]
@@ -11312,15 +11385,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 785,
-          "result": ""
-        },
-        {
-          "competitor1": "Keiko Fukami",
-          "competitor2": "Marco Spadafora",
-          "bib": "117",
-          "studio": "Dance Around The Clock-Spadafora",
-          "event": 786,
+          "event": 784,
           "result": ""
         },
         {
@@ -11328,7 +11393,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 787,
+          "event": 785,
           "result": ""
         },
         {
@@ -11336,7 +11401,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 788,
+          "event": 786,
           "result": ""
         }
       ]
@@ -11353,15 +11418,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 789,
-          "result": ""
-        },
-        {
-          "competitor1": "Keiko Fukami",
-          "competitor2": "Marco Spadafora",
-          "bib": "117",
-          "studio": "Dance Around The Clock-Spadafora",
-          "event": 790,
+          "event": 787,
           "result": ""
         },
         {
@@ -11369,7 +11426,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 791,
+          "event": 788,
           "result": ""
         }
       ]
@@ -11386,15 +11443,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 792,
-          "result": ""
-        },
-        {
-          "competitor1": "Keiko Fukami",
-          "competitor2": "Marco Spadafora",
-          "bib": "117",
-          "studio": "Dance Around The Clock-Spadafora",
-          "event": 793,
+          "event": 789,
           "result": ""
         },
         {
@@ -11402,7 +11451,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 794,
+          "event": 790,
           "result": ""
         }
       ]
@@ -11419,7 +11468,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 795,
+          "event": 791,
           "result": ""
         }
       ]
@@ -11436,7 +11485,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 796,
+          "event": 792,
           "result": ""
         }
       ]
@@ -11453,7 +11502,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 797,
+          "event": 793,
           "result": ""
         },
         {
@@ -11461,7 +11510,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 798,
+          "event": 794,
           "result": ""
         }
       ]
@@ -11478,7 +11527,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 799,
+          "event": 795,
           "result": ""
         },
         {
@@ -11486,7 +11535,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 800,
+          "event": 796,
           "result": ""
         }
       ]
@@ -11503,7 +11552,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 801,
+          "event": 797,
           "result": ""
         },
         {
@@ -11511,7 +11560,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 802,
+          "event": 798,
           "result": ""
         },
         {
@@ -11519,7 +11568,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 802,
+          "event": 798,
           "result": ""
         },
         {
@@ -11527,7 +11576,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 802,
+          "event": 798,
           "result": ""
         },
         {
@@ -11535,7 +11584,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 803,
+          "event": 799,
           "result": ""
         }
       ]
@@ -11552,7 +11601,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 804,
+          "event": 800,
           "result": ""
         },
         {
@@ -11560,7 +11609,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 805,
+          "event": 801,
           "result": ""
         },
         {
@@ -11568,7 +11617,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 805,
+          "event": 801,
           "result": ""
         },
         {
@@ -11576,7 +11625,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 805,
+          "event": 801,
           "result": ""
         },
         {
@@ -11584,7 +11633,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 806,
+          "event": 802,
           "result": ""
         }
       ]
@@ -11601,7 +11650,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 807,
+          "event": 803,
           "result": ""
         },
         {
@@ -11609,7 +11658,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 807,
+          "event": 803,
           "result": ""
         },
         {
@@ -11617,7 +11666,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 808,
+          "event": 804,
           "result": ""
         },
         {
@@ -11625,7 +11674,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 809,
+          "event": 805,
           "result": ""
         },
         {
@@ -11633,7 +11682,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 810,
+          "event": 806,
           "result": ""
         }
       ]
@@ -11650,7 +11699,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 811,
+          "event": 807,
           "result": ""
         },
         {
@@ -11658,7 +11707,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 811,
+          "event": 807,
           "result": ""
         },
         {
@@ -11666,7 +11715,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 812,
+          "event": 808,
           "result": ""
         },
         {
@@ -11674,7 +11723,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 813,
+          "event": 809,
           "result": ""
         },
         {
@@ -11682,7 +11731,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 811,
+          "event": 807,
           "result": ""
         },
         {
@@ -11690,7 +11739,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 814,
+          "event": 810,
           "result": ""
         },
         {
@@ -11698,7 +11747,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 811,
+          "event": 807,
           "result": ""
         },
         {
@@ -11706,7 +11755,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 814,
+          "event": 810,
           "result": ""
         }
       ]
@@ -11723,7 +11772,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 815,
+          "event": 811,
           "result": ""
         },
         {
@@ -11731,7 +11780,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 816,
+          "event": 812,
           "result": ""
         },
         {
@@ -11739,7 +11788,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 816,
+          "event": 812,
           "result": ""
         },
         {
@@ -11747,7 +11796,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 817,
+          "event": 813,
           "result": ""
         },
         {
@@ -11755,7 +11804,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 816,
+          "event": 812,
           "result": ""
         },
         {
@@ -11763,7 +11812,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 817,
+          "event": 813,
           "result": ""
         }
       ]
@@ -11780,15 +11829,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 818,
-          "result": ""
-        },
-        {
-          "competitor1": "Keiko Fukami",
-          "competitor2": "Marco Spadafora",
-          "bib": "117",
-          "studio": "Dance Around The Clock-Spadafora",
-          "event": 819,
+          "event": 814,
           "result": ""
         },
         {
@@ -11796,7 +11837,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 820,
+          "event": 815,
           "result": ""
         },
         {
@@ -11804,7 +11845,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 821,
+          "event": 816,
           "result": ""
         }
       ]
@@ -11821,7 +11862,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 822,
+          "event": 817,
           "result": ""
         },
         {
@@ -11829,7 +11870,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 823,
+          "event": 818,
           "result": ""
         },
         {
@@ -11837,7 +11878,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 824,
+          "event": 819,
           "result": ""
         },
         {
@@ -11845,7 +11886,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 825,
+          "event": 820,
           "result": ""
         },
         {
@@ -11853,7 +11894,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 826,
+          "event": 821,
           "result": ""
         }
       ]
@@ -11870,7 +11911,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 827,
+          "event": 822,
           "result": ""
         },
         {
@@ -11878,15 +11919,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 828,
-          "result": ""
-        },
-        {
-          "competitor1": "Keiko Fukami",
-          "competitor2": "Marco Spadafora",
-          "bib": "117",
-          "studio": "Dance Around The Clock-Spadafora",
-          "event": 829,
+          "event": 823,
           "result": ""
         },
         {
@@ -11894,7 +11927,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 830,
+          "event": 824,
           "result": ""
         }
       ]
@@ -11911,7 +11944,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 831,
+          "event": 825,
           "result": ""
         },
         {
@@ -11919,7 +11952,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 832,
+          "event": 826,
           "result": ""
         },
         {
@@ -11927,7 +11960,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 833,
+          "event": 827,
           "result": ""
         }
       ]
@@ -11944,7 +11977,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 834,
+          "event": 828,
           "result": ""
         },
         {
@@ -11952,7 +11985,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 835,
+          "event": 829,
           "result": ""
         },
         {
@@ -11960,7 +11993,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 836,
+          "event": 830,
           "result": ""
         },
         {
@@ -11968,7 +12001,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 837,
+          "event": 831,
           "result": ""
         }
       ]
@@ -11985,7 +12018,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 838,
+          "event": 832,
           "result": ""
         },
         {
@@ -11993,7 +12026,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 839,
+          "event": 833,
           "result": ""
         },
         {
@@ -12001,7 +12034,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 840,
+          "event": 834,
           "result": ""
         },
         {
@@ -12009,7 +12042,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 841,
+          "event": 835,
           "result": ""
         }
       ]
@@ -12026,7 +12059,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 842,
+          "event": 836,
           "result": ""
         },
         {
@@ -12034,7 +12067,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 843,
+          "event": 837,
           "result": ""
         },
         {
@@ -12042,6 +12075,72 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
+          "event": 838,
+          "result": ""
+        },
+        {
+          "competitor1": "Pure Panambo",
+          "competitor2": "Andrey Tarasov",
+          "bib": "139",
+          "studio": "Andrey Tarasov",
+          "event": 839,
+          "result": ""
+        },
+        {
+          "competitor1": "Judy Pedersen",
+          "competitor2": "Ievgen Tkachenko",
+          "bib": "102",
+          "studio": "Infinite",
+          "event": 840,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "05_337_112920261040",
+      "heat_number": "337",
+      "session": "05",
+      "time": "2026-11-29T13:04:03",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Bella Bautista",
+          "competitor2": "Dennis Sy",
+          "bib": "110",
+          "studio": "Dennis Sy",
+          "event": 841,
+          "result": ""
+        },
+        {
+          "competitor1": "Pure Panambo",
+          "competitor2": "Andrey Tarasov",
+          "bib": "139",
+          "studio": "Andrey Tarasov",
+          "event": 842,
+          "result": ""
+        },
+        {
+          "competitor1": "Judy Pedersen",
+          "competitor2": "Ievgen Tkachenko",
+          "bib": "102",
+          "studio": "Infinite",
+          "event": 843,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "05_338_112920261052",
+      "heat_number": "338",
+      "session": "05",
+      "time": "2026-11-29T13:05:24",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Bella Bautista",
+          "competitor2": "Dennis Sy",
+          "bib": "110",
+          "studio": "Dennis Sy",
           "event": 844,
           "result": ""
         },
@@ -12064,72 +12163,6 @@
       ]
     },
     {
-      "key": "05_337_112920261040",
-      "heat_number": "337",
-      "session": "05",
-      "time": "2026-11-29T13:04:03",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Bella Bautista",
-          "competitor2": "Dennis Sy",
-          "bib": "110",
-          "studio": "Dennis Sy",
-          "event": 847,
-          "result": ""
-        },
-        {
-          "competitor1": "Pure Panambo",
-          "competitor2": "Andrey Tarasov",
-          "bib": "139",
-          "studio": "Andrey Tarasov",
-          "event": 848,
-          "result": ""
-        },
-        {
-          "competitor1": "Judy Pedersen",
-          "competitor2": "Ievgen Tkachenko",
-          "bib": "102",
-          "studio": "Infinite",
-          "event": 849,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "05_338_112920261052",
-      "heat_number": "338",
-      "session": "05",
-      "time": "2026-11-29T13:05:24",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Bella Bautista",
-          "competitor2": "Dennis Sy",
-          "bib": "110",
-          "studio": "Dennis Sy",
-          "event": 850,
-          "result": ""
-        },
-        {
-          "competitor1": "Pure Panambo",
-          "competitor2": "Andrey Tarasov",
-          "bib": "139",
-          "studio": "Andrey Tarasov",
-          "event": 851,
-          "result": ""
-        },
-        {
-          "competitor1": "Judy Pedersen",
-          "competitor2": "Ievgen Tkachenko",
-          "bib": "102",
-          "studio": "Infinite",
-          "event": 852,
-          "result": ""
-        }
-      ]
-    },
-    {
       "key": "05_339_112920261064",
       "heat_number": "339",
       "session": "05",
@@ -12137,11 +12170,19 @@
       "round": "Final",
       "entries": [
         {
+          "competitor1": "Umario Diallo",
+          "competitor2": "Georgeann  Nicol",
+          "bib": "151",
+          "studio": "Invictus",
+          "event": 847,
+          "result": ""
+        },
+        {
           "competitor1": "Isabel Eslava",
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 853,
+          "event": 848,
           "result": ""
         },
         {
@@ -12149,7 +12190,15 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 854,
+          "event": 849,
+          "result": ""
+        },
+        {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 850,
           "result": ""
         },
         {
@@ -12157,7 +12206,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 855,
+          "event": 847,
           "result": ""
         }
       ]
@@ -12170,11 +12219,19 @@
       "round": "Final",
       "entries": [
         {
+          "competitor1": "Umario Diallo",
+          "competitor2": "Georgeann  Nicol",
+          "bib": "151",
+          "studio": "Invictus",
+          "event": 851,
+          "result": ""
+        },
+        {
           "competitor1": "Isabel Eslava",
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 856,
+          "event": 852,
           "result": ""
         },
         {
@@ -12182,7 +12239,15 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 857,
+          "event": 853,
+          "result": ""
+        },
+        {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 854,
           "result": ""
         },
         {
@@ -12190,7 +12255,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 858,
+          "event": 851,
           "result": ""
         }
       ]
@@ -12207,7 +12272,15 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 859,
+          "event": 855,
+          "result": ""
+        },
+        {
+          "competitor1": "Umario Diallo",
+          "competitor2": "Georgeann  Nicol",
+          "bib": "151",
+          "studio": "Invictus",
+          "event": 856,
           "result": ""
         },
         {
@@ -12215,7 +12288,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 860,
+          "event": 857,
           "result": ""
         },
         {
@@ -12223,7 +12296,15 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 861,
+          "event": 858,
+          "result": ""
+        },
+        {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 859,
           "result": ""
         },
         {
@@ -12231,7 +12312,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 862,
+          "event": 856,
           "result": ""
         }
       ]
@@ -12244,11 +12325,27 @@
       "round": "Final",
       "entries": [
         {
+          "competitor1": "Umario Diallo",
+          "competitor2": "Georgeann  Nicol",
+          "bib": "151",
+          "studio": "Invictus",
+          "event": 860,
+          "result": ""
+        },
+        {
           "competitor1": "Isabel Eslava",
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 863,
+          "event": 861,
+          "result": ""
+        },
+        {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 862,
           "result": ""
         },
         {
@@ -12256,7 +12353,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 864,
+          "event": 860,
           "result": ""
         }
       ]
@@ -12273,7 +12370,15 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 865,
+          "event": 863,
+          "result": ""
+        },
+        {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 864,
           "result": ""
         },
         {
@@ -12281,7 +12386,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 866,
+          "event": 865,
           "result": ""
         }
       ]
@@ -12298,7 +12403,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 867,
+          "event": 866,
           "result": ""
         },
         {
@@ -12306,7 +12411,7 @@
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 868,
+          "event": 867,
           "result": ""
         }
       ]
@@ -12323,7 +12428,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 869,
+          "event": 868,
           "result": ""
         },
         {
@@ -12331,7 +12436,7 @@
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 870,
+          "event": 869,
           "result": ""
         }
       ]
@@ -12348,7 +12453,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 871,
+          "event": 870,
           "result": ""
         },
         {
@@ -12356,7 +12461,7 @@
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 872,
+          "event": 871,
           "result": ""
         }
       ]
@@ -12373,7 +12478,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 873,
+          "event": 872,
           "result": ""
         },
         {
@@ -12381,7 +12486,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 874,
+          "event": 873,
           "result": ""
         },
         {
@@ -12389,7 +12494,7 @@
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 875,
+          "event": 874,
           "result": ""
         }
       ]
@@ -12401,6 +12506,14 @@
       "time": "2026-11-29T13:31:36",
       "round": "Final",
       "entries": [
+        {
+          "competitor1": "Umario Diallo",
+          "competitor2": "Georgeann  Nicol",
+          "bib": "151",
+          "studio": "Invictus",
+          "event": 875,
+          "result": ""
+        },
         {
           "competitor1": "Isabel Eslava",
           "competitor2": "Dennis Sy",
@@ -12451,11 +12564,19 @@
           "result": ""
         },
         {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 881,
+          "result": ""
+        },
+        {
           "competitor1": "Sabrina Manzi",
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 881,
+          "event": 882,
           "result": ""
         },
         {
@@ -12463,7 +12584,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 882,
+          "event": 881,
           "result": ""
         }
       ]
@@ -12493,6 +12614,14 @@
       "round": "Final",
       "entries": [
         {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 884,
+          "result": ""
+        },
+        {
           "competitor1": "Pure Panambo",
           "competitor2": "Andrey Tarasov",
           "bib": "139",
@@ -12518,11 +12647,19 @@
       "round": "Final",
       "entries": [
         {
+          "competitor1": "Umario Diallo",
+          "competitor2": "Georgeann  Nicol",
+          "bib": "151",
+          "studio": "Invictus",
+          "event": 885,
+          "result": ""
+        },
+        {
           "competitor1": "Isabel Eslava",
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 885,
+          "event": 886,
           "result": ""
         },
         {
@@ -12530,7 +12667,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 886,
+          "event": 885,
           "result": ""
         }
       ]
@@ -12588,9 +12725,11 @@
     "Eseniia Ivanitskaia",
     "Evgeny Malko",
     "Fonzie Zapata",
+    "Georgeann  Nicol",
     "Hanna Pierce",
     "Hunter Doughty",
     "Ievgen Tkachenko",
+    "Igor Colac",
     "Illia Sydorenko",
     "Inessa Simonyan",
     "Irene Lee",
@@ -12613,7 +12752,6 @@
     "Judy Zhu",
     "Kalea Chantry",
     "Kateryna Kyrylenko",
-    "Keiko Fukami",
     "Kelley Maddox",
     "Kristina Kudelko",
     "Kristina Kuvshynov",
@@ -12628,7 +12766,6 @@
     "Luisa Alvarez",
     "Lukasz Switalski",
     "Maggie Sheng",
-    "Marco Spadafora",
     "Marcus Johnson",
     "Mariam Khachatrian",
     "Marina Sanchez",
@@ -12662,7 +12799,9 @@
     "Rashaad Jones",
     "Rebecca Henzie",
     "Rob Carnahan",
+    "Roman Italyankin",
     "Roman Zotov",
+    "Roxane Milotti",
     "Russ Bartlett",
     "Sabrina Manzi",
     "Sam Enriquez",
@@ -12681,10 +12820,12 @@
     "Timea Potys",
     "Tracey Cutler",
     "Tuyen Huynh",
+    "Umario Diallo",
     "Veronika Qutner",
     "Vickie Le",
     "Vicky Bich Le",
     "Viktoriya Nyemchek",
+    "Windy Yu",
     "Yinchieh Wang",
     "Yohsuke Fukami",
     "Yuriy Kuvshynov",
@@ -12700,7 +12841,6 @@
     "Best Dance Studio",
     "Danc-In-Ivan Romanov",
     "Dance All You Can",
-    "Dance Around The Clock-Spadafora",
     "Dance Art Studio",
     "Dance Daly Ballroom",
     "Dance Discover",
@@ -12720,6 +12860,7 @@
     "Herzog Dance Studios",
     "Ihnatov-Fedorova",
     "Infinite",
+    "Invictus",
     "Kristina Kudelko",
     "La Vida Dance",
     "Leo Chiriboga",
@@ -12734,7 +12875,9 @@
     "Peak Dance Center-Adzhubei-Chantry",
     "Prestige Ballroom",
     "RS Dance",
+    "Roma Dance LA",
     "Sizzling Latin",
+    "South Bay Dance Center",
     "Starlite Ballroom-Wang",
     "Stefan Badea",
     "Sway Ballroom Dance",
@@ -12859,15 +13002,17 @@
     "Natalia Malkova": "FADS Diamond Bar",
     "Elena Nesterova": "Infinite",
     "Ievgen Tkachenko": "Infinite",
+    "Igor Colac": "South Bay Dance Center",
+    "Roxane Milotti": "South Bay Dance Center",
     "Oleksandra Fedorova": "Ihnatov-Fedorova",
     "Oleksii Ihnatov": "Ihnatov-Fedorova",
     "Mishka Teleha": "La Vida Dance",
     "Oleg Teleha": "La Vida Dance",
-    "Michael O’Bryan": "Anna Shahbazyan",
-    "Anna Shahbazyan": "Anna Shahbazyan",
     "Kelley Maddox": "The Ballroom Of Sacremento",
     "Evgeny Malko": "The Ballroom Of Sacremento",
     "Vickie Le": "Sway Ballroom Dance",
+    "Michael O’Bryan": "Anna Shahbazyan",
+    "Anna Shahbazyan": "Anna Shahbazyan",
     "Jon Ericksen": "Edelweiss Premier Ballroom",
     "Alla Novikova": "Edelweiss Premier Ballroom",
     "John Bernal": "Bernal Dance",
@@ -12882,8 +13027,6 @@
     "Stefan Badea": "Stefan Badea",
     "Deborah Holmes": "Stefan Badea",
     "Tuyen Huynh": "La Vida Dance",
-    "Keiko Fukami": "Dance Around The Clock-Spadafora",
-    "Marco Spadafora": "Dance Around The Clock-Spadafora",
     "Yohsuke Fukami": "Kristina Kudelko",
     "Bella Bautista": "Dennis Sy",
     "Dennis Sy": "Dennis Sy",
@@ -12892,7 +13035,11 @@
     "Pure Panambo": "Andrey Tarasov",
     "Andrey Tarasov": "Andrey Tarasov",
     "Judy Pedersen": "Infinite",
+    "Umario Diallo": "Invictus",
+    "Georgeann  Nicol": "Invictus",
     "Isabel Eslava": "Dennis Sy",
+    "Roman Italyankin": "Roma Dance LA",
+    "Windy Yu": "Roma Dance LA",
     "Sabrina Manzi": "RS Dance",
     "Veronika Qutner": "RS Dance",
     "Chris Henzie": "Team 106-Henzie",
@@ -12983,10 +13130,11 @@
       "03_247_112820268040",
       "03_248_112820268052",
       "03_250_112820268340",
-      "03_251_112820268405",
-      "03_253_112820269092",
+      "03_251_112820268555",
+      "03_253_112820269023",
       "03_6_112820268220",
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Luisa Alvarez": [
       "01_1_112720269261",
@@ -12998,7 +13146,7 @@
       "02_119_112820261002",
       "02_160_112820261110",
       "02_165_112820261142",
-      "03_7_112820268473",
+      "03_7_112820268405",
       "04_272_112920269541",
       "04_273_112920269553",
       "04_274_112920269570",
@@ -13037,7 +13185,7 @@
       "02_97_112820269324",
       "02_98_112820269340",
       "02_99_112820269352",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Hunter Doughty": [
       "01_1_112720269261",
@@ -13067,7 +13215,7 @@
       "02_158_112820261055",
       "02_162_112820261118",
       "02_163_112820261122",
-      "03_7_112820268473",
+      "03_7_112820268405",
       "04_296_112920261026",
       "04_297_112920261028",
       "04_298_112920261029",
@@ -13095,45 +13243,47 @@
       "02_95_112820269300",
       "02_96_112820269312",
       "02_97_112820269324",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Jefferson Estoya": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Lovelyn Estoya": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Annika Johnson": [
       "01_1_112720269261",
       "01_1_112720269594",
       "01_3_112720261008",
-      "03_7_112820268473",
-      "03_9_112820269282"
+      "03_7_112820268405",
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Cole Ornelas": [
       "01_1_112720269261",
       "01_1_112720269594",
       "01_3_112720261008",
-      "03_7_112820268473",
-      "03_9_112820269282"
+      "03_7_112820268405",
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Zsolt Katona": [
       "01_1_112720269261",
       "01_1_112720269594",
       "01_4_112720261018",
-      "03_7_112820268473",
-      "03_8_112820269132"
+      "03_7_112820268405",
+      "03_8_112820269252"
     ],
     "Timea Potys": [
       "01_1_112720269261",
       "01_1_112720269594",
       "01_4_112720261018",
-      "03_7_112820268473",
-      "03_8_112820269132"
+      "03_7_112820268405",
+      "03_8_112820269252"
     ],
     "Emma Lias": [
       "01_1_112720269261",
@@ -13146,12 +13296,12 @@
     "Alexander Whyatt": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Amy Whyatt": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Daniel Buhala": [
       "01_10_112720266432",
@@ -13829,13 +13979,15 @@
       "01_2_112720269385",
       "01_3_112720261008",
       "03_6_112820268220",
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Irene Lee": [
       "01_2_112720269385",
       "01_3_112720261008",
       "03_6_112820268220",
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Yuriy Kuvshynov": [
       "01_2_112720269385",
@@ -13853,9 +14005,10 @@
       "03_242_112820267571",
       "03_243_112820267583",
       "03_249_112820268164",
-      "03_251_112820268405",
+      "03_251_112820268555",
       "03_6_112820268220",
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Lukasz Switalski": [
       "01_2_112720269385",
@@ -13955,20 +14108,24 @@
     "Nicolas Gastelum": [
       "01_3_112720261008",
       "03_5_112820267351",
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Hanna Pierce": [
       "01_3_112720261008",
       "03_5_112820267351",
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Melinda Piekstra": [
       "01_3_112720261008",
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Dominic Seigler": [
       "01_3_112720261008",
-      "03_9_112820269282",
+      "03_9_112820269064",
+      "03_9_112820269402",
       "04_268_112920269485",
       "04_269_112920269501",
       "04_270_112920269513",
@@ -13985,11 +14142,11 @@
     ],
     "Angela Kuryshova": [
       "01_4_112720261018",
-      "03_8_112820269132"
+      "03_8_112820269252"
     ],
     "Slavik Samokhin": [
       "01_4_112720261018",
-      "03_8_112820269132"
+      "03_8_112820269252"
     ],
     "Ivan Nikitin": [
       "01_4_112720261018"
@@ -14652,11 +14809,11 @@
     ],
     "Mykola Adzhubei": [
       "02_223_112820262142",
-      "03_252_112820269023"
+      "03_252_112820269184"
     ],
     "Kalea Chantry": [
       "02_223_112820262142",
-      "03_252_112820269023"
+      "03_252_112820269184"
     ],
     "Buzz Blanton": [
       "03_224_112820267000",
@@ -14691,7 +14848,7 @@
       "03_242_112820267571",
       "03_243_112820267583",
       "03_249_112820268164",
-      "03_251_112820268405"
+      "03_251_112820268555"
     ],
     "Alexander Novikov": [
       "03_224_112820267000",
@@ -14733,8 +14890,8 @@
       "03_247_112820268040",
       "03_248_112820268052",
       "03_250_112820268340",
-      "03_251_112820268405",
-      "03_253_112820269092"
+      "03_251_112820268555",
+      "03_253_112820269023"
     ],
     "Larry Donahue": [
       "03_244_112820268000",
@@ -14744,8 +14901,8 @@
       "03_248_112820268052",
       "03_249_112820268164",
       "03_250_112820268340",
-      "03_251_112820268405",
-      "03_253_112820269092"
+      "03_251_112820268555",
+      "03_253_112820269023"
     ],
     "Alisa Radiush": [
       "03_244_112820268000",
@@ -14755,16 +14912,16 @@
       "03_248_112820268052",
       "03_249_112820268164",
       "03_250_112820268340",
-      "03_251_112820268405",
-      "03_253_112820269092"
+      "03_251_112820268555",
+      "03_253_112820269023"
     ],
     "David Nyemchek jr": [
       "03_5_112820267351",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Viktoriya Nyemchek": [
       "03_5_112820267351",
-      "03_7_112820268473"
+      "03_7_112820268405"
     ],
     "Danylo Dobrovolskyi": [
       "03_6_112820268220"
@@ -14773,22 +14930,22 @@
       "03_6_112820268220"
     ],
     "Kateryna Kyrylenko": [
-      "03_8_112820269132"
+      "03_8_112820269252"
     ],
     "Andrii Voloshko": [
-      "03_8_112820269132"
+      "03_8_112820269252"
     ],
     "Ivan Malkov": [
-      "03_8_112820269132"
+      "03_8_112820269252"
     ],
     "Natalia Malkova": [
-      "03_8_112820269132"
+      "03_8_112820269252"
     ],
     "Elena Nesterova": [
-      "03_8_112820269132"
+      "03_8_112820269252"
     ],
     "Ievgen Tkachenko": [
-      "03_8_112820269132",
+      "03_8_112820269252",
       "05_334_112920261000",
       "05_335_112920261012",
       "05_336_112920261024",
@@ -14802,17 +14959,29 @@
       "05_351_112920261474",
       "05_352_112920261531"
     ],
+    "Igor Colac": [
+      "03_9_112820269064",
+      "03_9_112820269402"
+    ],
+    "Roxane Milotti": [
+      "03_9_112820269064",
+      "03_9_112820269402"
+    ],
     "Oleksandra Fedorova": [
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Oleksii Ihnatov": [
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Mishka Teleha": [
-      "03_9_112820269282"
+      "03_9_112820269064",
+      "03_9_112820269402"
     ],
     "Oleg Teleha": [
-      "03_9_112820269282",
+      "03_9_112820269064",
+      "03_9_112820269402",
       "04_254_112920269300",
       "04_255_112920269312",
       "04_256_112920269324",
@@ -14852,34 +15021,6 @@
       "04_329_112920261133",
       "04_331_112920261142"
     ],
-    "Michael O’Bryan": [
-      "04_261_112920269392",
-      "04_262_112920269404",
-      "04_263_112920269420",
-      "04_264_112920269433",
-      "04_268_112920269485",
-      "04_269_112920269501",
-      "04_270_112920269513",
-      "04_271_112920269525",
-      "04_279_112920261003",
-      "04_280_112920261005",
-      "04_281_112920261006",
-      "04_282_112920261007"
-    ],
-    "Anna Shahbazyan": [
-      "04_261_112920269392",
-      "04_262_112920269404",
-      "04_263_112920269420",
-      "04_264_112920269433",
-      "04_268_112920269485",
-      "04_269_112920269501",
-      "04_270_112920269513",
-      "04_271_112920269525",
-      "04_279_112920261003",
-      "04_280_112920261005",
-      "04_281_112920261006",
-      "04_282_112920261007"
-    ],
     "Kelley Maddox": [
       "04_265_112920269445",
       "04_266_112920269461",
@@ -14914,6 +15055,34 @@
       "04_326_112920261119",
       "04_328_112920261129",
       "04_329_112920261133"
+    ],
+    "Michael O’Bryan": [
+      "04_268_112920269485",
+      "04_269_112920269501",
+      "04_270_112920269513",
+      "04_271_112920269525",
+      "04_274_112920269570",
+      "04_275_112920269582",
+      "04_276_112920269594",
+      "04_277_112920261001",
+      "04_279_112920261003",
+      "04_280_112920261005",
+      "04_281_112920261006",
+      "04_282_112920261007"
+    ],
+    "Anna Shahbazyan": [
+      "04_268_112920269485",
+      "04_269_112920269501",
+      "04_270_112920269513",
+      "04_271_112920269525",
+      "04_274_112920269570",
+      "04_275_112920269582",
+      "04_276_112920269594",
+      "04_277_112920261001",
+      "04_279_112920261003",
+      "04_280_112920261005",
+      "04_281_112920261006",
+      "04_282_112920261007"
     ],
     "Jon Ericksen": [
       "04_291_112920261019",
@@ -15118,22 +15287,6 @@
       "04_331_112920261142",
       "04_332_112920261148"
     ],
-    "Keiko Fukami": [
-      "04_317_112920261055",
-      "04_318_112920261056",
-      "04_319_112920261057",
-      "04_320_112920261059",
-      "04_330_112920261137",
-      "04_332_112920261148"
-    ],
-    "Marco Spadafora": [
-      "04_317_112920261055",
-      "04_318_112920261056",
-      "04_319_112920261057",
-      "04_320_112920261059",
-      "04_330_112920261137",
-      "04_332_112920261148"
-    ],
     "Yohsuke Fukami": [
       "04_317_112920261055",
       "04_318_112920261056",
@@ -15228,6 +15381,22 @@
       "05_351_112920261474",
       "05_352_112920261531"
     ],
+    "Umario Diallo": [
+      "05_339_112920261064",
+      "05_340_112920261080",
+      "05_341_112920261092",
+      "05_342_112920261104",
+      "05_348_112920261313",
+      "05_352_112920261531"
+    ],
+    "Georgeann  Nicol": [
+      "05_339_112920261064",
+      "05_340_112920261080",
+      "05_341_112920261092",
+      "05_342_112920261104",
+      "05_348_112920261313",
+      "05_352_112920261531"
+    ],
     "Isabel Eslava": [
       "05_339_112920261064",
       "05_340_112920261080",
@@ -15236,6 +15405,24 @@
       "05_343_112920261120",
       "05_348_112920261313",
       "05_352_112920261531"
+    ],
+    "Roman Italyankin": [
+      "05_339_112920261064",
+      "05_340_112920261080",
+      "05_341_112920261092",
+      "05_342_112920261104",
+      "05_343_112920261120",
+      "05_349_112920261370",
+      "05_351_112920261474"
+    ],
+    "Windy Yu": [
+      "05_339_112920261064",
+      "05_340_112920261080",
+      "05_341_112920261092",
+      "05_342_112920261104",
+      "05_343_112920261120",
+      "05_349_112920261370",
+      "05_351_112920261474"
     ],
     "Sabrina Manzi": [
       "05_344_112920261133",
@@ -15808,65 +15995,65 @@
     "Egor Bezukladnikov": [
       {
         "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
-        "count": 4,
+        "count": 5,
         "my_bib": "132",
         "their_bib": "109"
+      },
+      {
+        "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
+        "count": 3,
+        "my_bib": "132",
+        "their_bib": "114"
+      },
+      {
+        "opponent_couple": "Annika Johnson & Cole Ornelas",
+        "count": 3,
+        "my_bib": "132",
+        "their_bib": "123"
+      },
+      {
+        "opponent_couple": "Melinda Piekstra & Dominic Seigler",
+        "count": 3,
+        "my_bib": "132",
+        "their_bib": "115"
       },
       {
         "opponent_couple": "Lukasz Switalski & Natalia Switalski",
         "count": 2,
         "my_bib": "132",
         "their_bib": "148"
-      },
-      {
-        "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
-        "count": 2,
-        "my_bib": "132",
-        "their_bib": "114"
-      },
-      {
-        "opponent_couple": "Annika Johnson & Cole Ornelas",
-        "count": 2,
-        "my_bib": "132",
-        "their_bib": "123"
-      },
-      {
-        "opponent_couple": "Melinda Piekstra & Dominic Seigler",
-        "count": 2,
-        "my_bib": "132",
-        "their_bib": "115"
       }
     ],
     "Kristina Kuvshynov": [
       {
         "opponent_couple": "Egor Bezukladnikov & Irene Lee",
-        "count": 4,
+        "count": 5,
         "my_bib": "109",
         "their_bib": "132"
+      },
+      {
+        "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
+        "count": 3,
+        "my_bib": "109",
+        "their_bib": "114"
+      },
+      {
+        "opponent_couple": "Annika Johnson & Cole Ornelas",
+        "count": 3,
+        "my_bib": "109",
+        "their_bib": "123"
+      },
+      {
+        "opponent_couple": "Melinda Piekstra & Dominic Seigler",
+        "count": 3,
+        "my_bib": "109",
+        "their_bib": "115"
       },
       {
         "opponent_couple": "Lukasz Switalski & Natalia Switalski",
         "count": 2,
         "my_bib": "109",
         "their_bib": "148"
-      },
-      {
-        "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
-        "count": 2,
-        "my_bib": "109",
-        "their_bib": "114"
-      },
-      {
-        "opponent_couple": "Annika Johnson & Cole Ornelas",
-        "count": 2,
-        "my_bib": "109",
-        "their_bib": "123"
-      },
-      {
-        "opponent_couple": "Melinda Piekstra & Dominic Seigler",
-        "count": 2,
-        "my_bib": "109",
-        "their_bib": "115"
       }
     ],
     "Lukasz Switalski": [
@@ -15904,65 +16091,65 @@
     "Nicolas Gastelum": [
       {
         "opponent_couple": "Egor Bezukladnikov & Irene Lee",
-        "count": 2,
+        "count": 3,
         "my_bib": "114",
         "their_bib": "132"
       },
       {
         "opponent_couple": "Annika Johnson & Cole Ornelas",
-        "count": 2,
+        "count": 3,
         "my_bib": "114",
         "their_bib": "123"
       },
       {
         "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
-        "count": 2,
+        "count": 3,
         "my_bib": "114",
         "their_bib": "109"
       },
       {
         "opponent_couple": "Melinda Piekstra & Dominic Seigler",
-        "count": 2,
+        "count": 3,
         "my_bib": "114",
         "their_bib": "115"
       },
       {
-        "opponent_couple": "David Nyemchek jr & Viktoriya Nyemchek",
-        "count": 1,
+        "opponent_couple": "Igor Colac & Roxane Milotti",
+        "count": 2,
         "my_bib": "114",
-        "their_bib": "147"
+        "their_bib": "152"
       }
     ],
     "Melinda Piekstra": [
       {
         "opponent_couple": "Egor Bezukladnikov & Irene Lee",
-        "count": 2,
+        "count": 3,
         "my_bib": "115",
         "their_bib": "132"
       },
       {
         "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
-        "count": 2,
+        "count": 3,
         "my_bib": "115",
         "their_bib": "114"
       },
       {
         "opponent_couple": "Annika Johnson & Cole Ornelas",
-        "count": 2,
+        "count": 3,
         "my_bib": "115",
         "their_bib": "123"
       },
       {
         "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
-        "count": 2,
+        "count": 3,
         "my_bib": "115",
         "their_bib": "109"
       },
       {
-        "opponent_couple": "Oleksandra Fedorova & Oleksii Ihnatov",
-        "count": 1,
+        "opponent_couple": "Igor Colac & Roxane Milotti",
+        "count": 2,
         "my_bib": "115",
-        "their_bib": "101"
+        "their_bib": "152"
       }
     ],
     "Angela Kuryshova": [
@@ -16945,68 +17132,100 @@
         "their_bib": "116"
       }
     ],
+    "Igor Colac": [
+      {
+        "opponent_couple": "Egor Bezukladnikov & Irene Lee",
+        "count": 2,
+        "my_bib": "152",
+        "their_bib": "132"
+      },
+      {
+        "opponent_couple": "Oleksandra Fedorova & Oleksii Ihnatov",
+        "count": 2,
+        "my_bib": "152",
+        "their_bib": "101"
+      },
+      {
+        "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
+        "count": 2,
+        "my_bib": "152",
+        "their_bib": "114"
+      },
+      {
+        "opponent_couple": "Annika Johnson & Cole Ornelas",
+        "count": 2,
+        "my_bib": "152",
+        "their_bib": "123"
+      },
+      {
+        "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
+        "count": 2,
+        "my_bib": "152",
+        "their_bib": "109"
+      }
+    ],
     "Oleksandra Fedorova": [
       {
         "opponent_couple": "Egor Bezukladnikov & Irene Lee",
-        "count": 1,
+        "count": 2,
         "my_bib": "101",
         "their_bib": "132"
       },
       {
+        "opponent_couple": "Igor Colac & Roxane Milotti",
+        "count": 2,
+        "my_bib": "101",
+        "their_bib": "152"
+      },
+      {
         "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
-        "count": 1,
+        "count": 2,
         "my_bib": "101",
         "their_bib": "114"
       },
       {
         "opponent_couple": "Annika Johnson & Cole Ornelas",
-        "count": 1,
+        "count": 2,
         "my_bib": "101",
         "their_bib": "123"
       },
       {
         "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
-        "count": 1,
+        "count": 2,
         "my_bib": "101",
         "their_bib": "109"
-      },
-      {
-        "opponent_couple": "Melinda Piekstra & Dominic Seigler",
-        "count": 1,
-        "my_bib": "101",
-        "their_bib": "115"
       }
     ],
     "Mishka Teleha": [
       {
         "opponent_couple": "Egor Bezukladnikov & Irene Lee",
-        "count": 1,
+        "count": 2,
         "my_bib": "121",
         "their_bib": "132"
       },
       {
+        "opponent_couple": "Igor Colac & Roxane Milotti",
+        "count": 2,
+        "my_bib": "121",
+        "their_bib": "152"
+      },
+      {
         "opponent_couple": "Oleksandra Fedorova & Oleksii Ihnatov",
-        "count": 1,
+        "count": 2,
         "my_bib": "121",
         "their_bib": "101"
       },
       {
         "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
-        "count": 1,
+        "count": 2,
         "my_bib": "121",
         "their_bib": "114"
       },
       {
         "opponent_couple": "Annika Johnson & Cole Ornelas",
-        "count": 1,
+        "count": 2,
         "my_bib": "121",
         "their_bib": "123"
-      },
-      {
-        "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
-        "count": 1,
-        "my_bib": "121",
-        "their_bib": "109"
       }
     ],
     "Dawn Stone": [
@@ -17024,7 +17243,7 @@
       },
       {
         "opponent_couple": "Michael O’Bryan & Anna Shahbazyan",
-        "count": 6,
+        "count": 7,
         "my_bib": "121",
         "their_bib": "329"
       },
@@ -17041,32 +17260,6 @@
         "their_bib": "314"
       }
     ],
-    "Michael O’Bryan": [
-      {
-        "opponent_couple": "Nikki Carnahan & Rob Carnahan",
-        "count": 12,
-        "my_bib": "329",
-        "their_bib": "303"
-      },
-      {
-        "opponent_couple": "Dawn Stone & Oleg Teleha",
-        "count": 6,
-        "my_bib": "329",
-        "their_bib": "121"
-      },
-      {
-        "opponent_couple": "Danielle Blunt & Oleg Teleha",
-        "count": 3,
-        "my_bib": "329",
-        "their_bib": "121"
-      },
-      {
-        "opponent_couple": "Vickie Le & Dominic Seigler",
-        "count": 3,
-        "my_bib": "329",
-        "their_bib": "115"
-      }
-    ],
     "Kelley Maddox": [
       {
         "opponent_couple": "Danielle Blunt & Oleg Teleha",
@@ -17081,6 +17274,12 @@
         "their_bib": "108"
       },
       {
+        "opponent_couple": "Michael O’Bryan & Anna Shahbazyan",
+        "count": 2,
+        "my_bib": "129",
+        "their_bib": "329"
+      },
+      {
         "opponent_couple": "Luisa Alvarez & Milo Pestana",
         "count": 2,
         "my_bib": "129",
@@ -17091,12 +17290,6 @@
         "count": 2,
         "my_bib": "129",
         "their_bib": "115"
-      },
-      {
-        "opponent_couple": "Patty Mathis & Oleg Suvorov",
-        "count": 2,
-        "my_bib": "129",
-        "their_bib": "128"
       }
     ],
     "Vickie Le": [
@@ -17120,7 +17313,7 @@
       },
       {
         "opponent_couple": "Michael O’Bryan & Anna Shahbazyan",
-        "count": 3,
+        "count": 4,
         "my_bib": "115",
         "their_bib": "329"
       },
@@ -17129,6 +17322,38 @@
         "count": 2,
         "my_bib": "115",
         "their_bib": "108"
+      }
+    ],
+    "Michael O’Bryan": [
+      {
+        "opponent_couple": "Nikki Carnahan & Rob Carnahan",
+        "count": 8,
+        "my_bib": "329",
+        "their_bib": "303"
+      },
+      {
+        "opponent_couple": "Dawn Stone & Oleg Teleha",
+        "count": 7,
+        "my_bib": "329",
+        "their_bib": "121"
+      },
+      {
+        "opponent_couple": "Vickie Le & Dominic Seigler",
+        "count": 4,
+        "my_bib": "329",
+        "their_bib": "115"
+      },
+      {
+        "opponent_couple": "Nikki Carnahan & Tekierius Green",
+        "count": 4,
+        "my_bib": "329",
+        "their_bib": "108"
+      },
+      {
+        "opponent_couple": "Luisa Alvarez & Milo Pestana",
+        "count": 2,
+        "my_bib": "329",
+        "their_bib": "314"
       }
     ],
     "Jon Ericksen": [
@@ -17293,12 +17518,6 @@
     ],
     "Tamara Morenc Romano": [
       {
-        "opponent_couple": "Keiko Fukami & Marco Spadafora",
-        "count": 5,
-        "my_bib": "119",
-        "their_bib": "117"
-      },
-      {
         "opponent_couple": "Tracey Cutler & Leon Fernandez",
         "count": 4,
         "my_bib": "119",
@@ -17321,6 +17540,12 @@
         "count": 4,
         "my_bib": "119",
         "their_bib": "146"
+      },
+      {
+        "opponent_couple": "Yohsuke Fukami & Kristina Kudelko",
+        "count": 4,
+        "my_bib": "119",
+        "their_bib": "320"
       }
     ],
     "Stefan Badea": [
@@ -17329,12 +17554,6 @@
         "count": 5,
         "my_bib": "146",
         "their_bib": "119"
-      },
-      {
-        "opponent_couple": "Keiko Fukami & Marco Spadafora",
-        "count": 5,
-        "my_bib": "146",
-        "their_bib": "117"
       },
       {
         "opponent_couple": "John Bernal & Lisa Roquemore",
@@ -17353,6 +17572,12 @@
         "count": 4,
         "my_bib": "146",
         "their_bib": "141"
+      },
+      {
+        "opponent_couple": "Tamara Morenc Romano & Illia Sydorenko",
+        "count": 4,
+        "my_bib": "146",
+        "their_bib": "119"
       }
     ],
     "Tuyen Huynh": [
@@ -17387,50 +17612,12 @@
         "their_bib": "320"
       }
     ],
-    "Keiko Fukami": [
-      {
-        "opponent_couple": "Stefan Badea & Deborah Holmes",
-        "count": 5,
-        "my_bib": "117",
-        "their_bib": "146"
-      },
-      {
-        "opponent_couple": "Tamara Morenc Romano & Illia Sydorenko",
-        "count": 5,
-        "my_bib": "117",
-        "their_bib": "119"
-      },
-      {
-        "opponent_couple": "Yohsuke Fukami & Kristina Kudelko",
-        "count": 3,
-        "my_bib": "117",
-        "their_bib": "320"
-      },
-      {
-        "opponent_couple": "John Bernal & Lisa Roquemore",
-        "count": 1,
-        "my_bib": "117",
-        "their_bib": "134"
-      },
-      {
-        "opponent_couple": "Jon Ericksen & Alla Novikova",
-        "count": 1,
-        "my_bib": "117",
-        "their_bib": "328"
-      }
-    ],
     "Yohsuke Fukami": [
       {
         "opponent_couple": "Tamara Morenc Romano & Illia Sydorenko",
         "count": 4,
         "my_bib": "320",
         "their_bib": "119"
-      },
-      {
-        "opponent_couple": "Keiko Fukami & Marco Spadafora",
-        "count": 3,
-        "my_bib": "320",
-        "their_bib": "117"
       },
       {
         "opponent_couple": "Tuyen Huynh & Illia Sydorenko",
@@ -17449,6 +17636,12 @@
         "count": 2,
         "my_bib": "320",
         "their_bib": "146"
+      },
+      {
+        "opponent_couple": "Danielle Blunt & Oleg Teleha",
+        "count": 1,
+        "my_bib": "320",
+        "their_bib": "121"
       }
     ],
     "Bella Bautista": [
@@ -17509,10 +17702,10 @@
         "their_bib": "139"
       },
       {
-        "opponent_couple": "Isabel Eslava & Dennis Sy",
+        "opponent_couple": "Umario Diallo & Georgeann  Nicol",
         "count": 4,
         "my_bib": "107",
-        "their_bib": "110"
+        "their_bib": "151"
       }
     ],
     "Pure Panambo": [
@@ -17535,16 +17728,16 @@
         "their_bib": "107"
       },
       {
+        "opponent_couple": "Roman Italyankin & Windy Yu",
+        "count": 2,
+        "my_bib": "139",
+        "their_bib": "150"
+      },
+      {
         "opponent_couple": "Leonardo Chiriboga & Elenita Pascua",
         "count": 1,
         "my_bib": "139",
         "their_bib": "124"
-      },
-      {
-        "opponent_couple": "Sabrina Manzi & Veronika Qutner",
-        "count": 1,
-        "my_bib": "139",
-        "their_bib": "145"
       }
     ],
     "Judy Pedersen": [
@@ -17567,24 +17760,68 @@
         "their_bib": "110"
       },
       {
+        "opponent_couple": "Roman Italyankin & Windy Yu",
+        "count": 6,
+        "my_bib": "102",
+        "their_bib": "150"
+      },
+      {
         "opponent_couple": "Bella Bautista & Dennis Sy",
         "count": 5,
         "my_bib": "102",
         "their_bib": "110"
+      }
+    ],
+    "Umario Diallo": [
+      {
+        "opponent_couple": "Isabel Eslava & Dennis Sy",
+        "count": 6,
+        "my_bib": "151",
+        "their_bib": "110"
+      },
+      {
+        "opponent_couple": "Judy Pedersen & Ievgen Tkachenko",
+        "count": 5,
+        "my_bib": "151",
+        "their_bib": "102"
+      },
+      {
+        "opponent_couple": "Delanie Farber & Marcus Johnson",
+        "count": 4,
+        "my_bib": "151",
+        "their_bib": "107"
+      },
+      {
+        "opponent_couple": "Roman Italyankin & Windy Yu",
+        "count": 4,
+        "my_bib": "151",
+        "their_bib": "150"
       },
       {
         "opponent_couple": "Leonardo Chiriboga & Elenita Pascua",
-        "count": 2,
-        "my_bib": "102",
+        "count": 1,
+        "my_bib": "151",
         "their_bib": "124"
       }
     ],
     "Isabel Eslava": [
       {
+        "opponent_couple": "Umario Diallo & Georgeann  Nicol",
+        "count": 6,
+        "my_bib": "110",
+        "their_bib": "151"
+      },
+      {
         "opponent_couple": "Judy Pedersen & Ievgen Tkachenko",
         "count": 6,
         "my_bib": "110",
         "their_bib": "102"
+      },
+      {
+        "opponent_couple": "Roman Italyankin & Windy Yu",
+        "count": 5,
+        "my_bib": "110",
+        "their_bib": "150"
       },
       {
         "opponent_couple": "Delanie Farber & Marcus Johnson",
@@ -17597,12 +17834,38 @@
         "count": 1,
         "my_bib": "110",
         "their_bib": "124"
+      }
+    ],
+    "Roman Italyankin": [
+      {
+        "opponent_couple": "Judy Pedersen & Ievgen Tkachenko",
+        "count": 6,
+        "my_bib": "150",
+        "their_bib": "102"
       },
       {
-        "opponent_couple": "Sabrina Manzi & Veronika Qutner",
-        "count": 1,
-        "my_bib": "110",
-        "their_bib": "145"
+        "opponent_couple": "Isabel Eslava & Dennis Sy",
+        "count": 5,
+        "my_bib": "150",
+        "their_bib": "110"
+      },
+      {
+        "opponent_couple": "Umario Diallo & Georgeann  Nicol",
+        "count": 4,
+        "my_bib": "150",
+        "their_bib": "151"
+      },
+      {
+        "opponent_couple": "Delanie Farber & Marcus Johnson",
+        "count": 4,
+        "my_bib": "150",
+        "their_bib": "107"
+      },
+      {
+        "opponent_couple": "Pure Panambo & Andrey Tarasov",
+        "count": 2,
+        "my_bib": "150",
+        "their_bib": "139"
       }
     ],
     "Sabrina Manzi": [
@@ -17619,16 +17882,22 @@
         "their_bib": "110"
       },
       {
+        "opponent_couple": "Umario Diallo & Georgeann  Nicol",
+        "count": 1,
+        "my_bib": "145",
+        "their_bib": "151"
+      },
+      {
         "opponent_couple": "Isabel Eslava & Dennis Sy",
         "count": 1,
         "my_bib": "145",
         "their_bib": "110"
       },
       {
-        "opponent_couple": "Pure Panambo & Andrey Tarasov",
+        "opponent_couple": "Roman Italyankin & Windy Yu",
         "count": 1,
         "my_bib": "145",
-        "their_bib": "139"
+        "their_bib": "150"
       }
     ]
   }
