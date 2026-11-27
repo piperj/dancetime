@@ -18,11 +18,9 @@
     "G-B Open Full Bronze C/W Cha Cha",
     "Professional Rising Star Amer. Rhythm (CC,R,SW,B,M)",
     "L-S5 Full Silver  Merengue",
-    "L-B Open Gold Star 1 Merengue",
     "L-S2 Pre Bronze Merengue",
     "G-S1 Newcomer Merengue",
     "L-S4 Newcomer Merengue",
-    "L-B Open Gold Star 1 Hustle",
     "G-S1 Newcomer Hustle",
     "L-S4 Newcomer Hustle",
     "L-S2 Pre Bronze Hustle",
@@ -36,7 +34,6 @@
     "G-B Open Full Bronze West Coast Swing",
     "L-S2 Pre Bronze West Coast Swing",
     "L-C Pre Bronze Salsa",
-    "L-B Open Gold Star 1 Salsa",
     "L-S2 Pre Bronze Salsa",
     "G-S1 Newcomer Salsa",
     "G-B Open Full Bronze Salsa",
@@ -44,26 +41,22 @@
     "L-S1 Pre Bronze Salsa",
     "L-S5 Full Silver  Samba",
     "L-S5 Intermediate Silver Vals",
-    "L-B Open Gold Star 1 Nightclub Two Step",
     "G-S1 Newcomer Nightclub Two Step",
     "L-S2 Pre Bronze Nightclub Two Step",
     "G-B Open Full Bronze C/W Waltz",
     "Professional Rising Star Int'l Ballroom (W,T,VW,F,Q)",
     "L-S5 Intermediate Silver Paso Doble",
     "L-C Pre Bronze Bachata",
-    "L-B Open Gold Star 1 Bachata",
     "L-S2 Pre Bronze Bachata",
     "G-S1 Newcomer Bachata",
     "G-B Open Full Bronze Bachata",
     "L-S4 Newcomer Bachata",
     "L-S1 Open Full Bronze Milonga",
     "L-S5 Pre Silver Merengue",
-    "L-B Open Gold Star 2 Merengue",
     "L-S2 Intermediate Bronze Merengue",
     "G-S1 Pre Bronze Merengue",
     "L-S4 Pre Bronze Merengue",
     "AC-C Pre Bronze Hustle",
-    "L-B Open Gold Star 2 Hustle",
     "G-S1 Pre Bronze Hustle",
     "L-S4 Pre Bronze Hustle",
     "L-S1 Intermediate Bronze Hustle",
@@ -76,7 +69,6 @@
     "AC-C Pre Bronze West Coast Swing",
     "G-B Open Full Silver West Coast Swing",
     "AC-C Pre Bronze Salsa",
-    "L-B Open Gold Star 2 Salsa",
     "L-S2 Intermediate Bronze Salsa",
     "G-S1 Pre Bronze Salsa",
     "G-B Open Full Silver Salsa",
@@ -91,22 +83,22 @@
     "G-C Open Full Bronze C/W Rumba",
     "G-C Open Full Bronze C/W Triple 2",
     "AC-C Pre Bronze Nightclub Two Step",
-    "L-B Open Gold Star 2 Nightclub Two Step",
     "G-S1 Pre Bronze Nightclub Two Step",
     "L-S5 Full Silver  Paso Doble",
     "AC-C Pre Bronze Bachata",
-    "L-B Open Gold Star 2 Bachata",
     "L-S2 Intermediate Bronze Bachata",
     "G-S1 Pre Bronze Bachata",
     "G-B Open Full Silver Bachata",
     "L-S4 Pre Bronze Bachata",
     "L-S5 Pre Silver Milonga",
     "L-S1 Open Full Silver Milonga",
+    "L-B Open Gold Star 2 Merengue",
     "L-S2 Full Bronze Merengue",
     "G-S1 Intermediate Bronze Merengue",
-    "L-S5 Intermediate Silver Samba",
     "Solo Viennesse Waltz",
+    "L-S5 Intermediate Silver Samba",
     "Professional Rising Star Int'l Latin (CC,S,R,PD,J)",
+    "L-B Open Gold Star 2 Hustle",
     "G-S1 Intermediate Bronze Hustle",
     "L-S5 Intermediate Silver Argentine Tango",
     "L-S1 Open Full Gold Argentine Tango",
@@ -118,6 +110,7 @@
     "G-S1 Intermediate Bronze Salsa",
     "G-B Full Gold Salsa",
     "L-S1 Full Bronze Salsa",
+    "L-B Open Gold Star 2 Nightclub Two Step",
     "G-S1 Intermediate Bronze Nightclub Two Step",
     "L-C Intermediate Bronze Bachata",
     "L-S2 Full Bronze Bachata",
@@ -126,9 +119,11 @@
     "L-S5 Intermediate Silver Milonga",
     "L-S1 Open Full Gold Milonga",
     "L-S5 Intermediate Silver Merengue",
+    "L-B Open Gold Star 1 Merengue",
     "L-S2 Open Full Bronze Merengue",
     "G-S1 Full Bronze Merengue",
     "AC-C Intermediate Bronze Hustle",
+    "L-B Open Gold Star 1 Hustle",
     "G-S1 Full Bronze Hustle",
     "G-B Full Bronze C/W Cha Cha",
     "L-S5 Pre Silver Vals",
@@ -144,9 +139,11 @@
     "L-S5 Full Silver  West Coast Swing",
     "AC-C Intermediate Bronze West Coast Swing",
     "AC-C Intermediate Bronze Salsa",
+    "L-B Open Gold Star 1 Salsa",
     "L-S2 Open Full Bronze Salsa",
     "G-S1 Full Bronze Salsa",
     "AC-C Intermediate Bronze Nightclub Two Step",
+    "L-B Open Gold Star 1 Nightclub Two Step",
     "G-S1 Full Bronze Nightclub Two Step",
     "G-C Full Bronze C/W Cha Cha",
     "G-B Open Full Bronze CW NC2",
@@ -157,6 +154,7 @@
     "G-C Full Bronze C/W Rumba",
     "G-B Open Full Bronze C/W Two Step",
     "AC-C Intermediate Bronze Bachata",
+    "L-B Open Gold Star 1 Bachata",
     "L-S2 Open Full Bronze Bachata",
     "G-S1 Full Bronze Bachata",
     "L-S5 Full Silver  Milonga",
@@ -166,8 +164,10 @@
     "G-B Full Silver  West Coast Swing",
     "G-B Open Full Bronze C/W Rumba",
     "L-C Full Bronze Salsa",
+    "L-B Open Gold Star 2 Salsa",
     "G-B Full Silver  Salsa",
     "L-C Full Bronze Bachata",
+    "L-B Open Gold Star 2 Bachata",
     "G-B Full Silver  Bachata",
     "L-S1 Open Gold Star 2 Milonga",
     "Nightclub Latin 3 Dance Open C M/F Nightclub (ME,SA,BA)",
@@ -1083,19 +1083,11 @@
           "result": ""
         },
         {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 3,
-          "result": ""
-        },
-        {
           "competitor1": "Melbin De La Cruz",
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 4,
+          "event": 3,
           "result": ""
         },
         {
@@ -1103,7 +1095,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 5,
+          "event": 4,
           "result": ""
         },
         {
@@ -1111,7 +1103,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 6,
+          "event": 5,
           "result": ""
         }
       ]
@@ -1124,19 +1116,11 @@
       "round": "Final",
       "entries": [
         {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 7,
-          "result": ""
-        },
-        {
           "competitor1": "Martin Diedrich",
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 8,
+          "event": 6,
           "result": ""
         },
         {
@@ -1144,7 +1128,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 9,
+          "event": 7,
           "result": ""
         },
         {
@@ -1152,7 +1136,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 10,
+          "event": 8,
           "result": ""
         },
         {
@@ -1160,7 +1144,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 11,
+          "event": 9,
           "result": ""
         }
       ]
@@ -1177,7 +1161,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 12,
+          "event": 10,
           "result": ""
         }
       ]
@@ -1194,7 +1178,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 13,
+          "event": 11,
           "result": ""
         }
       ]
@@ -1211,7 +1195,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 14,
+          "event": 12,
           "result": ""
         },
         {
@@ -1219,7 +1203,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 15,
+          "event": 13,
           "result": ""
         },
         {
@@ -1227,7 +1211,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 16,
+          "event": 14,
           "result": ""
         }
       ]
@@ -1244,7 +1228,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 17,
+          "event": 15,
           "result": ""
         },
         {
@@ -1252,7 +1236,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 18,
+          "event": 16,
           "result": ""
         },
         {
@@ -1260,7 +1244,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 19,
+          "event": 17,
           "result": ""
         }
       ]
@@ -1277,15 +1261,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 20,
-          "result": ""
-        },
-        {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 21,
+          "event": 18,
           "result": ""
         },
         {
@@ -1293,7 +1269,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 22,
+          "event": 19,
           "result": ""
         },
         {
@@ -1301,7 +1277,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 23,
+          "event": 20,
           "result": ""
         },
         {
@@ -1309,7 +1285,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 24,
+          "event": 21,
           "result": ""
         },
         {
@@ -1317,7 +1293,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 25,
+          "event": 22,
           "result": ""
         },
         {
@@ -1325,7 +1301,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 22,
+          "event": 19,
           "result": ""
         },
         {
@@ -1333,7 +1309,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 26,
+          "event": 23,
           "result": ""
         }
       ]
@@ -1350,7 +1326,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 27,
+          "event": 24,
           "result": ""
         }
       ]
@@ -1367,7 +1343,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 28,
+          "event": 25,
           "result": ""
         }
       ]
@@ -1380,19 +1356,11 @@
       "round": "Final",
       "entries": [
         {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 29,
-          "result": ""
-        },
-        {
           "competitor1": "Martin Diedrich",
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 30,
+          "event": 26,
           "result": ""
         },
         {
@@ -1400,7 +1368,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 31,
+          "event": 27,
           "result": ""
         }
       ]
@@ -1417,7 +1385,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 32,
+          "event": 28,
           "result": ""
         }
       ]
@@ -1434,7 +1402,7 @@
           "competitor2": "Irene Lee",
           "bib": "132",
           "studio": "Best Dance Studio",
-          "event": 33,
+          "event": 29,
           "result": ""
         },
         {
@@ -1442,7 +1410,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 33,
+          "event": 29,
           "result": ""
         },
         {
@@ -1450,7 +1418,7 @@
           "competitor2": "Natalia Switalski",
           "bib": "148",
           "studio": "Dance Discover",
-          "event": 33,
+          "event": 29,
           "result": ""
         }
       ]
@@ -1467,7 +1435,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 34,
+          "event": 30,
           "result": ""
         }
       ]
@@ -1484,15 +1452,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 35,
-          "result": ""
-        },
-        {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 36,
+          "event": 31,
           "result": ""
         },
         {
@@ -1500,7 +1460,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 37,
+          "event": 32,
           "result": ""
         },
         {
@@ -1508,7 +1468,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 38,
+          "event": 33,
           "result": ""
         },
         {
@@ -1516,7 +1476,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 39,
+          "event": 34,
           "result": ""
         },
         {
@@ -1524,7 +1484,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 40,
+          "event": 35,
           "result": ""
         }
       ]
@@ -1541,7 +1501,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 41,
+          "event": 36,
           "result": ""
         }
       ]
@@ -1558,15 +1518,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 42,
-          "result": ""
-        },
-        {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 43,
+          "event": 37,
           "result": ""
         },
         {
@@ -1574,7 +1526,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 44,
+          "event": 38,
           "result": ""
         },
         {
@@ -1582,7 +1534,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 45,
+          "event": 39,
           "result": ""
         },
         {
@@ -1590,7 +1542,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 46,
+          "event": 40,
           "result": ""
         }
       ]
@@ -1607,15 +1559,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 47,
-          "result": ""
-        },
-        {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 48,
+          "event": 41,
           "result": ""
         },
         {
@@ -1623,7 +1567,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 49,
+          "event": 42,
           "result": ""
         },
         {
@@ -1631,7 +1575,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 50,
+          "event": 43,
           "result": ""
         },
         {
@@ -1639,7 +1583,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 51,
+          "event": 44,
           "result": ""
         }
       ]
@@ -1656,7 +1600,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 52,
+          "event": 45,
           "result": ""
         },
         {
@@ -1664,7 +1608,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 53,
+          "event": 46,
           "result": ""
         }
       ]
@@ -1681,7 +1625,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 54,
+          "event": 47,
           "result": ""
         },
         {
@@ -1689,7 +1633,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 55,
+          "event": 48,
           "result": ""
         },
         {
@@ -1697,7 +1641,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 56,
+          "event": 49,
           "result": ""
         }
       ]
@@ -1714,7 +1658,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 57,
+          "event": 50,
           "result": ""
         },
         {
@@ -1722,7 +1666,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 58,
+          "event": 51,
           "result": ""
         },
         {
@@ -1730,7 +1674,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 59,
+          "event": 52,
           "result": ""
         }
       ]
@@ -1747,15 +1691,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 60,
-          "result": ""
-        },
-        {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 61,
+          "event": 53,
           "result": ""
         },
         {
@@ -1763,7 +1699,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 62,
+          "event": 54,
           "result": ""
         },
         {
@@ -1771,7 +1707,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 63,
+          "event": 55,
           "result": ""
         },
         {
@@ -1779,7 +1715,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 64,
+          "event": 56,
           "result": ""
         },
         {
@@ -1787,7 +1723,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 65,
+          "event": 57,
           "result": ""
         },
         {
@@ -1795,7 +1731,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 66,
+          "event": 58,
           "result": ""
         }
       ]
@@ -1812,7 +1748,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 67,
+          "event": 59,
           "result": ""
         }
       ]
@@ -1829,7 +1765,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 68,
+          "event": 60,
           "result": ""
         }
       ]
@@ -1846,7 +1782,7 @@
           "competitor2": "Irene Lee",
           "bib": "132",
           "studio": "Best Dance Studio",
-          "event": 69,
+          "event": 61,
           "result": ""
         },
         {
@@ -1854,7 +1790,7 @@
           "competitor2": "Hanna Pierce",
           "bib": "114",
           "studio": "FADS Ahwatukee",
-          "event": 69,
+          "event": 61,
           "result": ""
         },
         {
@@ -1862,7 +1798,7 @@
           "competitor2": "Cole Ornelas",
           "bib": "123",
           "studio": "Arthur Murray Reno",
-          "event": 69,
+          "event": 61,
           "result": ""
         },
         {
@@ -1870,7 +1806,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 69,
+          "event": 61,
           "result": ""
         },
         {
@@ -1878,7 +1814,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 69,
+          "event": 61,
           "result": ""
         }
       ]
@@ -1895,7 +1831,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 70,
+          "event": 62,
           "result": ""
         }
       ]
@@ -1912,7 +1848,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 71,
+          "event": 63,
           "result": ""
         }
       ]
@@ -1929,7 +1865,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 72,
+          "event": 64,
           "result": ""
         }
       ]
@@ -1946,7 +1882,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 73,
+          "event": 65,
           "result": ""
         }
       ]
@@ -1963,7 +1899,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 74,
+          "event": 66,
           "result": ""
         }
       ]
@@ -1980,15 +1916,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 75,
-          "result": ""
-        },
-        {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 76,
+          "event": 67,
           "result": ""
         },
         {
@@ -1996,7 +1924,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 77,
+          "event": 68,
           "result": ""
         }
       ]
@@ -2013,7 +1941,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 78,
+          "event": 69,
           "result": ""
         }
       ]
@@ -2030,15 +1958,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 79,
-          "result": ""
-        },
-        {
-          "competitor1": "Tracey Cutler",
-          "competitor2": "Leon Fernandez",
-          "bib": "141",
-          "studio": "Leon Dance",
-          "event": 80,
+          "event": 70,
           "result": ""
         },
         {
@@ -2046,7 +1966,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 81,
+          "event": 71,
           "result": ""
         },
         {
@@ -2054,7 +1974,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 82,
+          "event": 72,
           "result": ""
         },
         {
@@ -2062,7 +1982,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 83,
+          "event": 73,
           "result": ""
         },
         {
@@ -2070,7 +1990,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 84,
+          "event": 74,
           "result": ""
         }
       ]
@@ -2080,6 +2000,156 @@
       "heat_number": "38",
       "session": "01",
       "time": "2026-11-27T19:19:00",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Daniel Buhala",
+          "competitor2": "Lillian Torres",
+          "bib": "144",
+          "studio": "Dance Art Studio",
+          "event": 75,
+          "result": ""
+        },
+        {
+          "competitor1": "Marina Sanchez",
+          "competitor2": "Roman Zotov",
+          "bib": "106",
+          "studio": "RS Dance",
+          "event": 76,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_39_112720267201",
+      "heat_number": "39",
+      "session": "01",
+      "time": "2026-11-27T19:20:12",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 77,
+          "result": ""
+        },
+        {
+          "competitor1": "Melbin De La Cruz",
+          "competitor2": "Emily Mak",
+          "bib": "122",
+          "studio": "Dance With Melbin",
+          "event": 78,
+          "result": ""
+        },
+        {
+          "competitor1": "Martin Diedrich",
+          "competitor2": "Anne Montserrat",
+          "bib": "315",
+          "studio": "La Vida Dance",
+          "event": 79,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_4_112720266333",
+      "heat_number": "4",
+      "session": "01",
+      "time": "2026-11-27T18:33:36",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Rashaad Jones",
+          "competitor2": "Natalia Zakrevskaia",
+          "bib": "322",
+          "studio": "N Space Dance Studio",
+          "event": 80,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_4_112720266363",
+      "heat_number": "4",
+      "session": "01",
+      "time": "2026-11-27T18:36:36",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Daniel Buhala",
+          "competitor2": "Lillian Torres",
+          "bib": "144",
+          "studio": "Dance Art Studio",
+          "event": 81,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_4_112720261018",
+      "heat_number": "4",
+      "session": "01",
+      "time": "2026-11-27T22:18:42",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Zsolt Katona",
+          "competitor2": "Timea Potys",
+          "bib": "131",
+          "studio": "Sizzling Latin",
+          "event": 82,
+          "result": ""
+        },
+        {
+          "competitor1": "Angela Kuryshova",
+          "competitor2": "Slavik Samokhin",
+          "bib": "127",
+          "studio": "FADS-Samokhin",
+          "event": 82,
+          "result": ""
+        },
+        {
+          "competitor1": "Ivan Nikitin",
+          "competitor2": "Maggie Sheng",
+          "bib": "112",
+          "studio": "Prestige Ballroom",
+          "event": 82,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_40_112720267212",
+      "heat_number": "40",
+      "session": "01",
+      "time": "2026-11-27T19:21:24",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 83,
+          "result": ""
+        },
+        {
+          "competitor1": "Martin Diedrich",
+          "competitor2": "Anne Montserrat",
+          "bib": "315",
+          "studio": "La Vida Dance",
+          "event": 84,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_41_112720267223",
+      "heat_number": "41",
+      "session": "01",
+      "time": "2026-11-27T19:22:36",
       "round": "Final",
       "entries": [
         {
@@ -2101,140 +2171,6 @@
       ]
     },
     {
-      "key": "01_39_112720267201",
-      "heat_number": "39",
-      "session": "01",
-      "time": "2026-11-27T19:20:12",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Melbin De La Cruz",
-          "competitor2": "Emily Mak",
-          "bib": "122",
-          "studio": "Dance With Melbin",
-          "event": 87,
-          "result": ""
-        },
-        {
-          "competitor1": "Martin Diedrich",
-          "competitor2": "Anne Montserrat",
-          "bib": "315",
-          "studio": "La Vida Dance",
-          "event": 88,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "01_4_112720266333",
-      "heat_number": "4",
-      "session": "01",
-      "time": "2026-11-27T18:33:36",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Daniel Buhala",
-          "competitor2": "Lillian Torres",
-          "bib": "144",
-          "studio": "Dance Art Studio",
-          "event": 89,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "01_4_112720266402",
-      "heat_number": "4",
-      "session": "01",
-      "time": "2026-11-27T18:40:24",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Rashaad Jones",
-          "competitor2": "Natalia Zakrevskaia",
-          "bib": "322",
-          "studio": "N Space Dance Studio",
-          "event": 90,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "01_4_112720261018",
-      "heat_number": "4",
-      "session": "01",
-      "time": "2026-11-27T22:18:42",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Zsolt Katona",
-          "competitor2": "Timea Potys",
-          "bib": "131",
-          "studio": "Sizzling Latin",
-          "event": 91,
-          "result": ""
-        },
-        {
-          "competitor1": "Angela Kuryshova",
-          "competitor2": "Slavik Samokhin",
-          "bib": "127",
-          "studio": "FADS-Samokhin",
-          "event": 91,
-          "result": ""
-        },
-        {
-          "competitor1": "Ivan Nikitin",
-          "competitor2": "Maggie Sheng",
-          "bib": "112",
-          "studio": "Prestige Ballroom",
-          "event": 91,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "01_40_112720267212",
-      "heat_number": "40",
-      "session": "01",
-      "time": "2026-11-27T19:21:24",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Martin Diedrich",
-          "competitor2": "Anne Montserrat",
-          "bib": "315",
-          "studio": "La Vida Dance",
-          "event": 92,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "01_41_112720267223",
-      "heat_number": "41",
-      "session": "01",
-      "time": "2026-11-27T19:22:36",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Daniel Buhala",
-          "competitor2": "Lillian Torres",
-          "bib": "144",
-          "studio": "Dance Art Studio",
-          "event": 93,
-          "result": ""
-        },
-        {
-          "competitor1": "Marina Sanchez",
-          "competitor2": "Roman Zotov",
-          "bib": "106",
-          "studio": "RS Dance",
-          "event": 94,
-          "result": ""
-        }
-      ]
-    },
-    {
       "key": "01_42_112720267234",
       "heat_number": "42",
       "session": "01",
@@ -2246,7 +2182,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 95,
+          "event": 87,
           "result": ""
         },
         {
@@ -2254,7 +2190,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 96,
+          "event": 88,
           "result": ""
         },
         {
@@ -2262,7 +2198,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 97,
+          "event": 89,
           "result": ""
         }
       ]
@@ -2279,7 +2215,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 98,
+          "event": 90,
           "result": ""
         },
         {
@@ -2287,7 +2223,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 99,
+          "event": 91,
           "result": ""
         },
         {
@@ -2295,7 +2231,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 100,
+          "event": 92,
           "result": ""
         },
         {
@@ -2303,7 +2239,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 101,
+          "event": 93,
           "result": ""
         },
         {
@@ -2311,7 +2247,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 102,
+          "event": 94,
           "result": ""
         }
       ]
@@ -2324,11 +2260,19 @@
       "round": "Final",
       "entries": [
         {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 95,
+          "result": ""
+        },
+        {
           "competitor1": "Martin Diedrich",
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 103,
+          "event": 96,
           "result": ""
         }
       ]
@@ -2345,6 +2289,80 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
+          "event": 97,
+          "result": ""
+        },
+        {
+          "competitor1": "Melbin De La Cruz",
+          "competitor2": "Emily Mak",
+          "bib": "122",
+          "studio": "Dance With Melbin",
+          "event": 98,
+          "result": ""
+        },
+        {
+          "competitor1": "Martin Diedrich",
+          "competitor2": "Anne Montserrat",
+          "bib": "315",
+          "studio": "La Vida Dance",
+          "event": 99,
+          "result": ""
+        },
+        {
+          "competitor1": "Rashaad Jones",
+          "competitor2": "Natalia Zakrevskaia",
+          "bib": "322",
+          "studio": "N Space Dance Studio",
+          "event": 100,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_46_112720267283",
+      "heat_number": "46",
+      "session": "01",
+      "time": "2026-11-27T19:28:36",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Daniel Buhala",
+          "competitor2": "Lillian Torres",
+          "bib": "144",
+          "studio": "Dance Art Studio",
+          "event": 101,
+          "result": ""
+        },
+        {
+          "competitor1": "Marina Sanchez",
+          "competitor2": "Roman Zotov",
+          "bib": "106",
+          "studio": "RS Dance",
+          "event": 102,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "01_47_112720267294",
+      "heat_number": "47",
+      "session": "01",
+      "time": "2026-11-27T19:29:48",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Daniel Buhala",
+          "competitor2": "Lillian Torres",
+          "bib": "144",
+          "studio": "Dance Art Studio",
+          "event": 103,
+          "result": ""
+        },
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
           "event": 104,
           "result": ""
         },
@@ -2363,72 +2381,6 @@
           "studio": "La Vida Dance",
           "event": 106,
           "result": ""
-        },
-        {
-          "competitor1": "Rashaad Jones",
-          "competitor2": "Natalia Zakrevskaia",
-          "bib": "322",
-          "studio": "N Space Dance Studio",
-          "event": 107,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "01_46_112720267283",
-      "heat_number": "46",
-      "session": "01",
-      "time": "2026-11-27T19:28:36",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Daniel Buhala",
-          "competitor2": "Lillian Torres",
-          "bib": "144",
-          "studio": "Dance Art Studio",
-          "event": 108,
-          "result": ""
-        },
-        {
-          "competitor1": "Marina Sanchez",
-          "competitor2": "Roman Zotov",
-          "bib": "106",
-          "studio": "RS Dance",
-          "event": 109,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "01_47_112720267294",
-      "heat_number": "47",
-      "session": "01",
-      "time": "2026-11-27T19:29:48",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Daniel Buhala",
-          "competitor2": "Lillian Torres",
-          "bib": "144",
-          "studio": "Dance Art Studio",
-          "event": 110,
-          "result": ""
-        },
-        {
-          "competitor1": "Melbin De La Cruz",
-          "competitor2": "Emily Mak",
-          "bib": "122",
-          "studio": "Dance With Melbin",
-          "event": 111,
-          "result": ""
-        },
-        {
-          "competitor1": "Martin Diedrich",
-          "competitor2": "Anne Montserrat",
-          "bib": "315",
-          "studio": "La Vida Dance",
-          "event": 112,
-          "result": ""
         }
       ]
     },
@@ -2444,7 +2396,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 113,
+          "event": 107,
+          "result": ""
+        },
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 108,
           "result": ""
         },
         {
@@ -2452,7 +2412,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 114,
+          "event": 109,
           "result": ""
         }
       ]
@@ -2469,16 +2429,16 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 115,
+          "event": 110,
           "result": ""
         }
       ]
     },
     {
-      "key": "01_5_112720266343",
+      "key": "01_5_112720266373",
       "heat_number": "5",
       "session": "01",
-      "time": "2026-11-27T18:34:36",
+      "time": "2026-11-27T18:37:36",
       "round": "Final",
       "entries": [
         {
@@ -2486,7 +2446,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 116,
+          "event": 111,
           "result": ""
         }
       ]
@@ -2503,7 +2463,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 117,
+          "event": 112,
           "result": ""
         }
       ]
@@ -2520,7 +2480,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 118,
+          "event": 113,
           "result": ""
         }
       ]
@@ -2537,7 +2497,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 119,
+          "event": 114,
           "result": ""
         }
       ]
@@ -2554,7 +2514,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 120,
+          "event": 115,
           "result": ""
         }
       ]
@@ -2571,7 +2531,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 121,
+          "event": 116,
           "result": ""
         }
       ]
@@ -2588,7 +2548,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 122,
+          "event": 117,
           "result": ""
         }
       ]
@@ -2605,7 +2565,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 123,
+          "event": 118,
           "result": ""
         },
         {
@@ -2613,7 +2573,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 124,
+          "event": 119,
           "result": ""
         },
         {
@@ -2621,7 +2581,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 125,
+          "event": 120,
           "result": ""
         }
       ]
@@ -2638,7 +2598,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 126,
+          "event": 121,
           "result": ""
         },
         {
@@ -2646,7 +2606,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 127,
+          "event": 122,
           "result": ""
         }
       ]
@@ -2663,7 +2623,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 128,
+          "event": 123,
+          "result": ""
+        },
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 124,
           "result": ""
         },
         {
@@ -2671,7 +2639,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 129,
+          "event": 125,
           "result": ""
         },
         {
@@ -2679,7 +2647,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 130,
+          "event": 126,
           "result": ""
         }
       ]
@@ -2696,7 +2664,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 131,
+          "event": 127,
+          "result": ""
+        },
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 128,
           "result": ""
         },
         {
@@ -2704,7 +2680,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 132,
+          "event": 129,
           "result": ""
         }
       ]
@@ -2721,16 +2697,16 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 133,
+          "event": 130,
           "result": ""
         }
       ]
     },
     {
-      "key": "01_6_112720266353",
+      "key": "01_6_112720266383",
       "heat_number": "6",
       "session": "01",
-      "time": "2026-11-27T18:35:36",
+      "time": "2026-11-27T18:38:36",
       "round": "Final",
       "entries": [
         {
@@ -2738,7 +2714,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 134,
+          "event": 131,
           "result": ""
         }
       ]
@@ -2755,7 +2731,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 135,
+          "event": 132,
           "result": ""
         }
       ]
@@ -2772,7 +2748,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 136,
+          "event": 133,
           "result": ""
         }
       ]
@@ -2789,7 +2765,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 137,
+          "event": 134,
           "result": ""
         }
       ]
@@ -2806,7 +2782,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 138,
+          "event": 135,
           "result": ""
         }
       ]
@@ -2823,7 +2799,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 139,
+          "event": 136,
           "result": ""
         }
       ]
@@ -2840,7 +2816,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 140,
+          "event": 137,
           "result": ""
         }
       ]
@@ -2857,7 +2833,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 141,
+          "event": 138,
+          "result": ""
+        },
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 139,
           "result": ""
         },
         {
@@ -2865,7 +2849,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 142,
+          "event": 140,
           "result": ""
         },
         {
@@ -2873,7 +2857,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "315",
           "studio": "La Vida Dance",
-          "event": 143,
+          "event": 141,
           "result": ""
         }
       ]
@@ -2890,7 +2874,7 @@
           "competitor2": "Lillian Torres",
           "bib": "144",
           "studio": "Dance Art Studio",
-          "event": 144,
+          "event": 142,
           "result": ""
         },
         {
@@ -2898,7 +2882,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 145,
+          "event": 143,
           "result": ""
         }
       ]
@@ -2915,7 +2899,7 @@
           "competitor2": "Roman Zotov",
           "bib": "106",
           "studio": "RS Dance",
-          "event": 146,
+          "event": 144,
           "result": ""
         }
       ]
@@ -2932,7 +2916,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 147,
+          "event": 145,
           "result": ""
         },
         {
@@ -2940,16 +2924,16 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 148,
+          "event": 146,
           "result": ""
         }
       ]
     },
     {
-      "key": "01_7_112720266364",
+      "key": "01_7_112720266394",
       "heat_number": "7",
       "session": "01",
-      "time": "2026-11-27T18:36:48",
+      "time": "2026-11-27T18:39:48",
       "round": "Final",
       "entries": [
         {
@@ -2957,7 +2941,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "304",
           "studio": "Arete Dance Center",
-          "event": 149,
+          "event": 147,
           "result": ""
         }
       ]
@@ -2974,7 +2958,15 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 150,
+          "event": 148,
+          "result": ""
+        },
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
+          "event": 149,
           "result": ""
         },
         {
@@ -2982,7 +2974,7 @@
           "competitor2": "Natalia Zakrevskaia",
           "bib": "322",
           "studio": "N Space Dance Studio",
-          "event": 151,
+          "event": 150,
           "result": ""
         }
       ]
@@ -2999,6 +2991,14 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
+          "event": 151,
+          "result": ""
+        },
+        {
+          "competitor1": "Tracey Cutler",
+          "competitor2": "Leon Fernandez",
+          "bib": "141",
+          "studio": "Leon Dance",
           "event": 152,
           "result": ""
         },
@@ -3165,10 +3165,10 @@
       ]
     },
     {
-      "key": "01_8_112720266380",
+      "key": "01_8_112720266410",
       "heat_number": "8",
       "session": "01",
-      "time": "2026-11-27T18:38:00",
+      "time": "2026-11-27T18:41:00",
       "round": "Final",
       "entries": [
         {
@@ -3384,10 +3384,10 @@
       ]
     },
     {
-      "key": "01_9_112720266391",
+      "key": "01_9_112720266421",
       "heat_number": "9",
       "session": "01",
-      "time": "2026-11-27T18:39:12",
+      "time": "2026-11-27T18:42:12",
       "round": "Final",
       "entries": [
         {
@@ -8800,6 +8800,14 @@
       "round": "Final",
       "entries": [
         {
+          "competitor1": "Boris Basin",
+          "competitor2": "Natalie Shirota",
+          "bib": "153",
+          "studio": "FADS Diamond Bar-Boris Basin",
+          "event": 602,
+          "result": ""
+        },
+        {
           "competitor1": "Egor Bezukladnikov",
           "competitor2": "Irene Lee",
           "bib": "132",
@@ -12694,6 +12702,7 @@
     "Ariana Yang",
     "Ashley Sartell",
     "Bella Bautista",
+    "Boris Basin",
     "Brian Monroy",
     "Buzz Blanton",
     "Caroline Moss",
@@ -12785,6 +12794,7 @@
     "Natalia Malkova",
     "Natalia Switalski",
     "Natalia Zakrevskaia",
+    "Natalie Shirota",
     "Neerja Saxena",
     "Nicolas Gastelum",
     "Nikki Carnahan",
@@ -12852,6 +12862,7 @@
     "FADS Ahwatukee",
     "FADS Chandler",
     "FADS Diamond Bar",
+    "FADS Diamond Bar-Boris Basin",
     "FADS-North Scottsdale",
     "FADS-Samokhin",
     "Feel Dance",
@@ -12908,8 +12919,6 @@
     "Amy Whyatt": "Dance Daly Ballroom",
     "Daniel Buhala": "Dance Art Studio",
     "Lillian Torres": "Edelweiss Premier Ballroom",
-    "Tracey Cutler": "Leon Dance",
-    "Leon Fernandez": "Leon Dance",
     "Melbin De La Cruz": "Dance With Melbin",
     "Emily Mak": "Dance With Melbin",
     "Martin Diedrich": "La Vida Dance",
@@ -12933,6 +12942,8 @@
     "Hanna Pierce": "FADS Ahwatukee",
     "Melinda Piekstra": "Sway Ballroom Dance",
     "Dominic Seigler": "Sway Ballroom Dance",
+    "Tracey Cutler": "Leon Dance",
+    "Leon Fernandez": "Leon Dance",
     "Angela Kuryshova": "FADS-Samokhin",
     "Slavik Samokhin": "FADS-Samokhin",
     "Ivan Nikitin": "Prestige Ballroom",
@@ -12994,6 +13005,8 @@
     "Alisa Radiush": "Galaxy",
     "David Nyemchek jr": "Nyemchek/Nyemchek",
     "Viktoriya Nyemchek": "Nyemchek/Nyemchek",
+    "Boris Basin": "FADS Diamond Bar-Boris Basin",
+    "Natalie Shirota": "FADS Diamond Bar-Boris Basin",
     "Danylo Dobrovolskyi": "FADS-North Scottsdale",
     "Anastasiia Malovana": "FADS-North Scottsdale",
     "Kateryna Kyrylenko": "Andrii Voloshko",
@@ -13062,13 +13075,13 @@
       "01_53_112720267364",
       "01_54_112720267380",
       "01_59_112720267470",
-      "01_6_112720266353",
+      "01_6_112720266383",
       "01_60_112720267481",
       "01_61_112720267492",
       "01_62_112720267503",
       "01_63_112720267514",
       "01_64_112720267530",
-      "01_7_112720266364",
+      "01_7_112720266394",
       "01_73_112720268123",
       "01_74_112720268153",
       "01_75_112720268193",
@@ -13076,11 +13089,11 @@
       "01_77_112720268262",
       "01_78_112720268323",
       "01_79_112720268385",
-      "01_8_112720266380",
+      "01_8_112720266410",
       "01_80_112720268435",
       "01_81_112720268485",
       "01_84_112720269000",
-      "01_9_112720266391"
+      "01_9_112720266421"
     ],
     "Kristina Kuvshynov": [
       "01_1_112720266300",
@@ -13100,13 +13113,13 @@
       "01_53_112720267364",
       "01_54_112720267380",
       "01_59_112720267470",
-      "01_6_112720266353",
+      "01_6_112720266383",
       "01_60_112720267481",
       "01_61_112720267492",
       "01_62_112720267503",
       "01_63_112720267514",
       "01_64_112720267530",
-      "01_7_112720266364",
+      "01_7_112720266394",
       "01_73_112720268123",
       "01_74_112720268153",
       "01_75_112720268193",
@@ -13114,11 +13127,11 @@
       "01_77_112720268262",
       "01_78_112720268323",
       "01_79_112720268385",
-      "01_8_112720266380",
+      "01_8_112720266410",
       "01_80_112720268435",
       "01_81_112720268485",
       "01_84_112720269000",
-      "01_9_112720266391",
+      "01_9_112720266421",
       "03_229_112820267064",
       "03_230_112820267080",
       "03_231_112820267092",
@@ -13315,12 +13328,12 @@
       "01_27_112720267030",
       "01_36_112720267164",
       "01_38_112720267190",
-      "01_4_112720266333",
+      "01_4_112720266363",
       "01_41_112720267223",
       "01_42_112720267234",
       "01_46_112720267283",
       "01_47_112720267294",
-      "01_5_112720266343",
+      "01_5_112720266373",
       "01_52_112720267354",
       "01_55_112720267391",
       "01_56_112720267402",
@@ -13350,12 +13363,12 @@
       "01_27_112720267030",
       "01_36_112720267164",
       "01_38_112720267190",
-      "01_4_112720266333",
+      "01_4_112720266363",
       "01_41_112720267223",
       "01_42_112720267234",
       "01_46_112720267283",
       "01_47_112720267294",
-      "01_5_112720266343",
+      "01_5_112720266373",
       "01_52_112720267354",
       "01_55_112720267391",
       "01_56_112720267402",
@@ -13388,132 +13401,6 @@
       "03_242_112820267571",
       "03_243_112820267583",
       "03_249_112820268164"
-    ],
-    "Tracey Cutler": [
-      "01_10_112720266432",
-      "01_11_112720266443",
-      "01_16_112720266502",
-      "01_19_112720266533",
-      "01_21_112720266554",
-      "01_23_112720266581",
-      "01_24_112720266592",
-      "01_28_112720267041",
-      "01_35_112720267153",
-      "01_37_112720267174",
-      "01_75_112720268193",
-      "01_81_112720268485",
-      "02_120_112820261003",
-      "02_121_112820261005",
-      "02_122_112820261006",
-      "02_123_112820261007",
-      "02_124_112820261009",
-      "02_125_112820261010",
-      "02_126_112820261011",
-      "02_127_112820261013",
-      "02_128_112820261014",
-      "02_129_112820261015",
-      "02_130_112820261017",
-      "02_131_112820261018",
-      "02_132_112820261019",
-      "02_133_112820261021",
-      "02_134_112820261022",
-      "02_139_112820261029",
-      "02_140_112820261030",
-      "02_141_112820261032",
-      "02_142_112820261033",
-      "02_143_112820261034",
-      "02_144_112820261036",
-      "02_145_112820261037",
-      "02_146_112820261038",
-      "02_147_112820261040",
-      "02_148_112820261041",
-      "02_162_112820261118",
-      "02_163_112820261122",
-      "04_296_112920261026",
-      "04_297_112920261028",
-      "04_298_112920261029",
-      "04_299_112920261030",
-      "04_300_112920261032",
-      "04_301_112920261033",
-      "04_302_112920261034",
-      "04_303_112920261036",
-      "04_305_112920261038",
-      "04_306_112920261040",
-      "04_307_112920261041",
-      "04_308_112920261042",
-      "04_309_112920261044",
-      "04_310_112920261045",
-      "04_311_112920261046",
-      "04_312_112920261048",
-      "04_313_112920261049",
-      "04_314_112920261051",
-      "04_315_112920261052",
-      "04_316_112920261053",
-      "04_327_112920261123",
-      "04_328_112920261129"
-    ],
-    "Leon Fernandez": [
-      "01_10_112720266432",
-      "01_11_112720266443",
-      "01_16_112720266502",
-      "01_19_112720266533",
-      "01_21_112720266554",
-      "01_23_112720266581",
-      "01_24_112720266592",
-      "01_28_112720267041",
-      "01_35_112720267153",
-      "01_37_112720267174",
-      "01_75_112720268193",
-      "01_81_112720268485",
-      "02_120_112820261003",
-      "02_121_112820261005",
-      "02_122_112820261006",
-      "02_123_112820261007",
-      "02_124_112820261009",
-      "02_125_112820261010",
-      "02_126_112820261011",
-      "02_127_112820261013",
-      "02_128_112820261014",
-      "02_129_112820261015",
-      "02_130_112820261017",
-      "02_131_112820261018",
-      "02_132_112820261019",
-      "02_133_112820261021",
-      "02_134_112820261022",
-      "02_139_112820261029",
-      "02_140_112820261030",
-      "02_141_112820261032",
-      "02_142_112820261033",
-      "02_143_112820261034",
-      "02_144_112820261036",
-      "02_145_112820261037",
-      "02_146_112820261038",
-      "02_147_112820261040",
-      "02_148_112820261041",
-      "02_162_112820261118",
-      "02_163_112820261122",
-      "04_296_112920261026",
-      "04_297_112920261028",
-      "04_298_112920261029",
-      "04_299_112920261030",
-      "04_300_112920261032",
-      "04_301_112920261033",
-      "04_302_112920261034",
-      "04_303_112920261036",
-      "04_305_112920261038",
-      "04_306_112920261040",
-      "04_307_112920261041",
-      "04_308_112920261042",
-      "04_309_112920261044",
-      "04_310_112920261045",
-      "04_311_112920261046",
-      "04_312_112920261048",
-      "04_313_112920261049",
-      "04_314_112920261051",
-      "04_315_112920261052",
-      "04_316_112920261053",
-      "04_327_112920261123",
-      "04_328_112920261129"
     ],
     "Melbin De La Cruz": [
       "01_10_112720266432",
@@ -13948,7 +13835,7 @@
       "01_27_112720267030",
       "01_28_112720267041",
       "01_37_112720267174",
-      "01_4_112720266402",
+      "01_4_112720266333",
       "01_42_112720267234",
       "01_43_112720267250",
       "01_45_112720267272",
@@ -13965,7 +13852,7 @@
       "01_27_112720267030",
       "01_28_112720267041",
       "01_37_112720267174",
-      "01_4_112720266402",
+      "01_4_112720266333",
       "01_42_112720267234",
       "01_43_112720267250",
       "01_45_112720267272",
@@ -14139,6 +14026,132 @@
       "04_326_112920261119",
       "04_328_112920261129",
       "04_329_112920261133"
+    ],
+    "Tracey Cutler": [
+      "01_39_112720267201",
+      "01_40_112720267212",
+      "01_44_112720267261",
+      "01_47_112720267294",
+      "01_48_112720267310",
+      "01_57_112720267413",
+      "01_58_112720267424",
+      "01_65_112720267541",
+      "01_70_112720267590",
+      "01_71_112720268001",
+      "01_75_112720268193",
+      "01_81_112720268485",
+      "02_120_112820261003",
+      "02_121_112820261005",
+      "02_122_112820261006",
+      "02_123_112820261007",
+      "02_124_112820261009",
+      "02_125_112820261010",
+      "02_126_112820261011",
+      "02_127_112820261013",
+      "02_128_112820261014",
+      "02_129_112820261015",
+      "02_130_112820261017",
+      "02_131_112820261018",
+      "02_132_112820261019",
+      "02_133_112820261021",
+      "02_134_112820261022",
+      "02_139_112820261029",
+      "02_140_112820261030",
+      "02_141_112820261032",
+      "02_142_112820261033",
+      "02_143_112820261034",
+      "02_144_112820261036",
+      "02_145_112820261037",
+      "02_146_112820261038",
+      "02_147_112820261040",
+      "02_148_112820261041",
+      "02_162_112820261118",
+      "02_163_112820261122",
+      "04_296_112920261026",
+      "04_297_112920261028",
+      "04_298_112920261029",
+      "04_299_112920261030",
+      "04_300_112920261032",
+      "04_301_112920261033",
+      "04_302_112920261034",
+      "04_303_112920261036",
+      "04_305_112920261038",
+      "04_306_112920261040",
+      "04_307_112920261041",
+      "04_308_112920261042",
+      "04_309_112920261044",
+      "04_310_112920261045",
+      "04_311_112920261046",
+      "04_312_112920261048",
+      "04_313_112920261049",
+      "04_314_112920261051",
+      "04_315_112920261052",
+      "04_316_112920261053",
+      "04_327_112920261123",
+      "04_328_112920261129"
+    ],
+    "Leon Fernandez": [
+      "01_39_112720267201",
+      "01_40_112720267212",
+      "01_44_112720267261",
+      "01_47_112720267294",
+      "01_48_112720267310",
+      "01_57_112720267413",
+      "01_58_112720267424",
+      "01_65_112720267541",
+      "01_70_112720267590",
+      "01_71_112720268001",
+      "01_75_112720268193",
+      "01_81_112720268485",
+      "02_120_112820261003",
+      "02_121_112820261005",
+      "02_122_112820261006",
+      "02_123_112820261007",
+      "02_124_112820261009",
+      "02_125_112820261010",
+      "02_126_112820261011",
+      "02_127_112820261013",
+      "02_128_112820261014",
+      "02_129_112820261015",
+      "02_130_112820261017",
+      "02_131_112820261018",
+      "02_132_112820261019",
+      "02_133_112820261021",
+      "02_134_112820261022",
+      "02_139_112820261029",
+      "02_140_112820261030",
+      "02_141_112820261032",
+      "02_142_112820261033",
+      "02_143_112820261034",
+      "02_144_112820261036",
+      "02_145_112820261037",
+      "02_146_112820261038",
+      "02_147_112820261040",
+      "02_148_112820261041",
+      "02_162_112820261118",
+      "02_163_112820261122",
+      "04_296_112920261026",
+      "04_297_112920261028",
+      "04_298_112920261029",
+      "04_299_112920261030",
+      "04_300_112920261032",
+      "04_301_112920261033",
+      "04_302_112920261034",
+      "04_303_112920261036",
+      "04_305_112920261038",
+      "04_306_112920261040",
+      "04_307_112920261041",
+      "04_308_112920261042",
+      "04_309_112920261044",
+      "04_310_112920261045",
+      "04_311_112920261046",
+      "04_312_112920261048",
+      "04_313_112920261049",
+      "04_314_112920261051",
+      "04_315_112920261052",
+      "04_316_112920261053",
+      "04_327_112920261123",
+      "04_328_112920261129"
     ],
     "Angela Kuryshova": [
       "01_4_112720261018",
@@ -14922,6 +14935,12 @@
     "Viktoriya Nyemchek": [
       "03_5_112820267351",
       "03_7_112820268405"
+    ],
+    "Boris Basin": [
+      "03_6_112820268220"
+    ],
+    "Natalie Shirota": [
+      "03_6_112820268220"
     ],
     "Danylo Dobrovolskyi": [
       "03_6_112820268220"
@@ -15712,18 +15731,18 @@
         "their_bib": "303"
       },
       {
-        "opponent_couple": "Tracey Cutler & Leon Fernandez",
-        "count": 6,
-        "my_bib": "144",
-        "their_bib": "141"
-      },
-      {
         "opponent_couple": "Marina Sanchez & Roman Zotov",
         "count": 6,
         "my_bib": "144",
         "their_bib": "106"
       },
       {
+        "opponent_couple": "Tracey Cutler & Leon Fernandez",
+        "count": 5,
+        "my_bib": "144",
+        "their_bib": "141"
+      },
+      {
         "opponent_couple": "Mattia Bielli & Tamara Morenc Romano",
         "count": 4,
         "my_bib": "144",
@@ -15734,38 +15753,6 @@
         "count": 4,
         "my_bib": "144",
         "their_bib": "137"
-      }
-    ],
-    "Tracey Cutler": [
-      {
-        "opponent_couple": "Sam Enriquez & Neerja Saxena",
-        "count": 21,
-        "my_bib": "141",
-        "their_bib": "111"
-      },
-      {
-        "opponent_couple": "Janet Vaughan & Fonzie Zapata",
-        "count": 19,
-        "my_bib": "141",
-        "their_bib": "137"
-      },
-      {
-        "opponent_couple": "Nikki Carnahan & Rob Carnahan",
-        "count": 17,
-        "my_bib": "141",
-        "their_bib": "303"
-      },
-      {
-        "opponent_couple": "Mattia Bielli & Tamara Morenc Romano",
-        "count": 17,
-        "my_bib": "141",
-        "their_bib": "118"
-      },
-      {
-        "opponent_couple": "John Bernal & Lisa Roquemore",
-        "count": 16,
-        "my_bib": "141",
-        "their_bib": "134"
       }
     ],
     "Melbin De La Cruz": [
@@ -15808,12 +15795,6 @@
         "their_bib": "122"
       },
       {
-        "opponent_couple": "Tracey Cutler & Leon Fernandez",
-        "count": 10,
-        "my_bib": "315",
-        "their_bib": "141"
-      },
-      {
         "opponent_couple": "Sharon Koi & Moses Ramos",
         "count": 8,
         "my_bib": "315",
@@ -15824,6 +15805,12 @@
         "count": 8,
         "my_bib": "315",
         "their_bib": "303"
+      },
+      {
+        "opponent_couple": "Tracey Cutler & Leon Fernandez",
+        "count": 8,
+        "my_bib": "315",
+        "their_bib": "141"
       },
       {
         "opponent_couple": "Rashaad Jones & Natalia Zakrevskaia",
@@ -15858,10 +15845,10 @@
         "their_bib": "149"
       },
       {
-        "opponent_couple": "Tracey Cutler & Leon Fernandez",
+        "opponent_couple": "Caroline Moss & Dmitry Nikolaev",
         "count": 10,
         "my_bib": "103",
-        "their_bib": "141"
+        "their_bib": "130"
       }
     ],
     "Patty Mathis": [
@@ -15910,12 +15897,6 @@
         "their_bib": "315"
       },
       {
-        "opponent_couple": "Tracey Cutler & Leon Fernandez",
-        "count": 4,
-        "my_bib": "106",
-        "their_bib": "141"
-      },
-      {
         "opponent_couple": "Sharon Koi & Moses Ramos",
         "count": 4,
         "my_bib": "106",
@@ -15926,6 +15907,12 @@
         "count": 4,
         "my_bib": "106",
         "their_bib": "303"
+      },
+      {
+        "opponent_couple": "Patty Mathis & Oleg Suvorov",
+        "count": 3,
+        "my_bib": "106",
+        "their_bib": "128"
       }
     ],
     "Nikki Carnahan": [
@@ -15938,7 +15925,7 @@
       {
         "opponent_couple": "Tracey Cutler & Leon Fernandez",
         "count": 27,
-        "my_bib": "108",
+        "my_bib": "303",
         "their_bib": "141"
       },
       {
@@ -15980,16 +15967,16 @@
         "their_bib": "315"
       },
       {
-        "opponent_couple": "Tracey Cutler & Leon Fernandez",
-        "count": 4,
-        "my_bib": "322",
-        "their_bib": "141"
-      },
-      {
         "opponent_couple": "Sharon Koi & Moses Ramos",
         "count": 4,
         "my_bib": "322",
         "their_bib": "103"
+      },
+      {
+        "opponent_couple": "Marina Sanchez & Roman Zotov",
+        "count": 3,
+        "my_bib": "322",
+        "their_bib": "106"
       }
     ],
     "Egor Bezukladnikov": [
@@ -16082,10 +16069,10 @@
         "their_bib": "147"
       },
       {
-        "opponent_couple": "Danylo Dobrovolskyi & Anastasiia Malovana",
+        "opponent_couple": "Boris Basin & Natalie Shirota",
         "count": 1,
         "my_bib": "148",
-        "their_bib": "105"
+        "their_bib": "153"
       }
     ],
     "Nicolas Gastelum": [
@@ -16150,6 +16137,38 @@
         "count": 2,
         "my_bib": "115",
         "their_bib": "152"
+      }
+    ],
+    "Tracey Cutler": [
+      {
+        "opponent_couple": "Sam Enriquez & Neerja Saxena",
+        "count": 21,
+        "my_bib": "141",
+        "their_bib": "111"
+      },
+      {
+        "opponent_couple": "Janet Vaughan & Fonzie Zapata",
+        "count": 19,
+        "my_bib": "141",
+        "their_bib": "137"
+      },
+      {
+        "opponent_couple": "Nikki Carnahan & Rob Carnahan",
+        "count": 17,
+        "my_bib": "141",
+        "their_bib": "303"
+      },
+      {
+        "opponent_couple": "Mattia Bielli & Tamara Morenc Romano",
+        "count": 17,
+        "my_bib": "141",
+        "their_bib": "118"
+      },
+      {
+        "opponent_couple": "John Bernal & Lisa Roquemore",
+        "count": 16,
+        "my_bib": "141",
+        "their_bib": "134"
       }
     ],
     "Angela Kuryshova": [
@@ -17034,7 +17053,39 @@
         "their_bib": "133"
       }
     ],
+    "Boris Basin": [
+      {
+        "opponent_couple": "Egor Bezukladnikov & Irene Lee",
+        "count": 1,
+        "my_bib": "153",
+        "their_bib": "132"
+      },
+      {
+        "opponent_couple": "Danylo Dobrovolskyi & Anastasiia Malovana",
+        "count": 1,
+        "my_bib": "153",
+        "their_bib": "105"
+      },
+      {
+        "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
+        "count": 1,
+        "my_bib": "153",
+        "their_bib": "109"
+      },
+      {
+        "opponent_couple": "Lukasz Switalski & Natalia Switalski",
+        "count": 1,
+        "my_bib": "153",
+        "their_bib": "148"
+      }
+    ],
     "Danylo Dobrovolskyi": [
+      {
+        "opponent_couple": "Boris Basin & Natalie Shirota",
+        "count": 1,
+        "my_bib": "105",
+        "their_bib": "153"
+      },
       {
         "opponent_couple": "Egor Bezukladnikov & Irene Lee",
         "count": 1,
