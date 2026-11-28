@@ -374,7 +374,6 @@
     "Closed Gold Scholarship B Amer. Rhythm (CC,R,SW)",
     "WDSS Closed Bronze C Amer. Rhythm (CC,R,SW)",
     "Closed Sr Scholarship Full Silver  S3 M/F Amer. Rhythm (CC,R,SW)",
-    "Sr Open S1 Amer. Rhythm Championship (CC,R,SW)",
     "Closed Silver Multi Dance C Amer. Rhythm (CC,R,SW,M)",
     "Closed Gold Multi Dance B Amer. Rhythm (CC,R,SW,B,M)",
     "Open C M/F Amer. Rhythm Championship (CC,R,SW,B,M)",
@@ -717,7 +716,6 @@
     "L-S1 Open Intermediate Silver Amer. Viennese Waltz",
     "L-C Pre Silver Amer. Viennese Waltz",
     "L-B Pre Silver Amer. Viennese Waltz",
-    "G-C Pre Silver Amer. Viennese Waltz",
     "L-S2 Intermediate Silver Amer. Viennese Waltz",
     "L-C Open Full Bronze Amer. Waltz",
     "L-C Intermediate Silver Amer. Waltz",
@@ -776,14 +774,19 @@
     "AC-C Open Full Bronze Amer. Viennese Waltz",
     "L-C Full Silver  Amer. Viennese Waltz",
     "L-C Open Full Silver Amer. Waltz",
+    "G-C Open Pre Silver Amer. Waltz",
     "L-C Open Full Silver Amer. Tango",
+    "G-C Open Pre Silver Amer. Tango",
     "L-C Open Full Silver Amer. Foxtrot",
+    "G-C Open Pre Silver Amer. Foxtrot",
     "L-C Open Full Silver Amer. Viennese Waltz",
     "L-S2 Gold Star 2 Amer. Waltz",
     "G-S4 Open Int. Gold Amer. Waltz",
+    "G-C Open Intermediate Silver Amer. Waltz",
     "L-C Intermediate Gold Amer. Waltz",
     "L-S2 Gold Star 2 Amer. Tango",
     "G-S4 Open Int. Gold Amer. Tango",
+    "G-C Open Intermediate Silver Amer. Tango",
     "L-C Intermediate Gold Amer. Tango",
     "L-S2 Gold Star 2 Amer. Foxtrot",
     "L-C Intermediate Gold Amer. Foxtrot",
@@ -799,7 +802,6 @@
     "Closed Sr Scholarship Full Bronze S2 M/F Amer. Smooth (W,T,F)",
     "Closed Silver Multi Dance C Amer. Smooth (W,T,F,VW)",
     "Closed Silver Multi Dance B Amer. Smooth (W,T,F,VW)",
-    "Gents Closed Silver Multi C Amer. Smooth (W,T,F,VW)",
     "Closed Silver Multi Dance S2 Amer. Smooth (W,T,F,VW)",
     "B.O.B Closed Scholarship Full Silver  C Amer. Smooth (W,T,F)",
     "Closed Sr Scholarship Full Silver  S1 M/F Amer. Smooth (W,T,F)",
@@ -895,7 +897,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 0,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -985,7 +987,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 1,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Hunter Doughty",
@@ -1009,7 +1011,7 @@
           "bib": "133",
           "studio": "FADS Chandler",
           "event": 1,
-          "result": ""
+          "result": "2"
         },
         {
           "competitor1": "Annika Johnson",
@@ -1017,7 +1019,7 @@
           "bib": "123",
           "studio": "Arthur Murray Reno",
           "event": 1,
-          "result": ""
+          "result": "4"
         },
         {
           "competitor1": "Zsolt Katona",
@@ -1025,7 +1027,7 @@
           "bib": "131",
           "studio": "Sizzling Latin",
           "event": 1,
-          "result": ""
+          "result": "5"
         },
         {
           "competitor1": "Emma Lias",
@@ -1033,7 +1035,7 @@
           "bib": "143",
           "studio": "McCann Dance",
           "event": 1,
-          "result": ""
+          "result": "6"
         },
         {
           "competitor1": "Alexander Whyatt",
@@ -1041,7 +1043,7 @@
           "bib": "136",
           "studio": "Dance Daly Ballroom",
           "event": 1,
-          "result": ""
+          "result": "3"
         }
       ]
     },
@@ -1058,7 +1060,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 2,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -1066,7 +1068,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 3,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1074,7 +1076,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 4,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1082,7 +1084,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 5,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1099,7 +1101,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 6,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1107,7 +1109,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 7,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Patty Mathis",
@@ -1115,7 +1117,7 @@
           "bib": "128",
           "studio": "Dance All You Can",
           "event": 8,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -1123,7 +1125,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 9,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1140,7 +1142,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 10,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1157,7 +1159,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 11,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1174,7 +1176,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 12,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Patty Mathis",
@@ -1182,7 +1184,7 @@
           "bib": "128",
           "studio": "Dance All You Can",
           "event": 13,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -1190,7 +1192,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 14,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1207,7 +1209,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 15,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -1215,7 +1217,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 16,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Patty Mathis",
@@ -1223,7 +1225,7 @@
           "bib": "128",
           "studio": "Dance All You Can",
           "event": 17,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1240,7 +1242,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 18,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -1248,7 +1250,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 19,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1256,7 +1258,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 20,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -1264,7 +1266,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 21,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1272,7 +1274,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 22,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Patty Mathis",
@@ -1280,7 +1282,7 @@
           "bib": "128",
           "studio": "Dance All You Can",
           "event": 19,
-          "result": ""
+          "result": "2"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -1288,7 +1290,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 23,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1305,7 +1307,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 24,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1322,7 +1324,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 25,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1339,7 +1341,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 26,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Patty Mathis",
@@ -1347,7 +1349,7 @@
           "bib": "128",
           "studio": "Dance All You Can",
           "event": 27,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1364,7 +1366,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 28,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1381,7 +1383,7 @@
           "bib": "132",
           "studio": "Best Dance Studio",
           "event": 29,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Kristina Kuvshynov",
@@ -1389,15 +1391,7 @@
           "bib": "109",
           "studio": "Arete Dance Center",
           "event": 29,
-          "result": ""
-        },
-        {
-          "competitor1": "Lukasz Switalski",
-          "competitor2": "Natalia Switalski",
-          "bib": "148",
-          "studio": "Dance Discover",
-          "event": 29,
-          "result": ""
+          "result": "2"
         }
       ]
     },
@@ -1414,7 +1408,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 30,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1431,7 +1425,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 31,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -1439,7 +1433,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 32,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1447,7 +1441,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 33,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -1455,7 +1449,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 34,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1463,7 +1457,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 35,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1480,7 +1474,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 36,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1497,7 +1491,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 37,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -1505,7 +1499,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 38,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1513,7 +1507,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 39,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1521,7 +1515,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 40,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1538,7 +1532,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 41,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1546,7 +1540,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 42,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1554,7 +1548,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 43,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -1562,7 +1556,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 44,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1579,7 +1573,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 45,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Nikki Carnahan",
@@ -1587,7 +1581,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 46,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1604,7 +1598,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 47,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Nikki Carnahan",
@@ -1612,7 +1606,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 48,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -1620,7 +1614,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 49,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1637,7 +1631,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 50,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Nikki Carnahan",
@@ -1645,7 +1639,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 51,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -1653,7 +1647,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 52,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1670,7 +1664,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 53,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -1678,7 +1672,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 54,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1686,7 +1680,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 55,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -1694,7 +1688,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 56,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1702,7 +1696,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 57,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -1710,7 +1704,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 58,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1727,7 +1721,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 59,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1744,15 +1738,15 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 60,
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "01_3_112720261008",
+      "key": "01_3_112720261018",
       "heat_number": "3",
       "session": "01",
-      "time": "2026-11-27T22:08:42",
+      "time": "2026-11-27T22:18:42",
       "round": "Final",
       "entries": [
         {
@@ -1761,7 +1755,7 @@
           "bib": "132",
           "studio": "Best Dance Studio",
           "event": 61,
-          "result": ""
+          "result": "2"
         },
         {
           "competitor1": "Nicolas Gastelum",
@@ -1769,7 +1763,7 @@
           "bib": "114",
           "studio": "FADS Ahwatukee",
           "event": 61,
-          "result": ""
+          "result": "5"
         },
         {
           "competitor1": "Annika Johnson",
@@ -1777,7 +1771,7 @@
           "bib": "123",
           "studio": "Arthur Murray Reno",
           "event": 61,
-          "result": ""
+          "result": "3"
         },
         {
           "competitor1": "Kristina Kuvshynov",
@@ -1785,7 +1779,7 @@
           "bib": "109",
           "studio": "Arete Dance Center",
           "event": 61,
-          "result": ""
+          "result": "4"
         },
         {
           "competitor1": "Melinda Piekstra",
@@ -1793,7 +1787,7 @@
           "bib": "115",
           "studio": "Sway Ballroom Dance",
           "event": 61,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1810,7 +1804,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 62,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1827,7 +1821,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 63,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1844,7 +1838,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 64,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1861,7 +1855,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 65,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1878,7 +1872,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 66,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1895,7 +1889,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 67,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1903,7 +1897,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 68,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1920,7 +1914,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 69,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1937,7 +1931,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 70,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -1945,7 +1939,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 71,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -1953,7 +1947,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 72,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -1961,7 +1955,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 73,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -1969,7 +1963,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 74,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -1986,7 +1980,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 75,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -1994,7 +1988,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 76,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2011,7 +2005,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 77,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2019,7 +2013,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 78,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2036,7 +2030,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 79,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2053,15 +2047,15 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 80,
-          "result": ""
+          "result": "1"
         }
       ]
     },
     {
-      "key": "01_4_112720261018",
+      "key": "01_4_112720261008",
       "heat_number": "4",
       "session": "01",
-      "time": "2026-11-27T22:18:42",
+      "time": "2026-11-27T22:08:42",
       "round": "Final",
       "entries": [
         {
@@ -2070,7 +2064,7 @@
           "bib": "131",
           "studio": "Sizzling Latin",
           "event": 81,
-          "result": ""
+          "result": "3"
         },
         {
           "competitor1": "Angela Kuryshova",
@@ -2078,7 +2072,7 @@
           "bib": "127",
           "studio": "FADS-Samokhin",
           "event": 81,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Ivan Nikitin",
@@ -2086,7 +2080,7 @@
           "bib": "112",
           "studio": "Prestige Ballroom",
           "event": 81,
-          "result": ""
+          "result": "2"
         }
       ]
     },
@@ -2103,7 +2097,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 82,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2120,7 +2114,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 83,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -2128,7 +2122,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 84,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2145,7 +2139,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 85,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Nikki Carnahan",
@@ -2153,7 +2147,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 86,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -2161,7 +2155,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 87,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2178,7 +2172,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 88,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -2186,7 +2180,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 89,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2194,7 +2188,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 90,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -2202,7 +2196,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 91,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -2210,7 +2204,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 92,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2227,7 +2221,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 93,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2244,7 +2238,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 94,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -2252,7 +2246,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 95,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2260,7 +2254,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 96,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -2268,7 +2262,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 97,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2285,7 +2279,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 98,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -2293,7 +2287,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 99,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2310,7 +2304,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 100,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -2318,7 +2312,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 101,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2326,7 +2320,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 102,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2343,7 +2337,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 103,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2351,7 +2345,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 104,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2368,7 +2362,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 105,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2385,7 +2379,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 106,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2402,7 +2396,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 107,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2419,7 +2413,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 108,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2436,7 +2430,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 109,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2453,7 +2447,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 110,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2470,7 +2464,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 111,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2487,7 +2481,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 112,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2504,7 +2498,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 113,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Nikki Carnahan",
@@ -2512,7 +2506,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 114,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -2520,7 +2514,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 115,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2537,7 +2531,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 116,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Nikki Carnahan",
@@ -2545,7 +2539,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 117,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2562,7 +2556,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 118,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -2570,7 +2564,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 119,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2578,7 +2572,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 120,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2595,7 +2589,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 121,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2603,7 +2597,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 122,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2620,7 +2614,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 123,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2637,7 +2631,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 124,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2654,7 +2648,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 125,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2671,7 +2665,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 126,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2688,7 +2682,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 127,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2705,7 +2699,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 128,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2722,7 +2716,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 129,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2739,7 +2733,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 130,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2756,7 +2750,7 @@
           "bib": "303",
           "studio": "The Art Of Ballroom",
           "event": 131,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Melbin De La Cruz",
@@ -2764,7 +2758,7 @@
           "bib": "122",
           "studio": "Dance With Melbin",
           "event": 132,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Martin Diedrich",
@@ -2772,7 +2766,7 @@
           "bib": "315",
           "studio": "La Vida Dance",
           "event": 133,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2789,7 +2783,7 @@
           "bib": "144",
           "studio": "Dance Art Studio",
           "event": 134,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Marina Sanchez",
@@ -2797,7 +2791,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 135,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2814,7 +2808,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 136,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2831,7 +2825,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 137,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -2839,7 +2833,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 138,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2856,7 +2850,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 139,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2873,7 +2867,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 140,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -2881,7 +2875,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 141,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2898,7 +2892,7 @@
           "bib": "108",
           "studio": "The Art Of Ballroom",
           "event": 142,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Rashaad Jones",
@@ -2906,7 +2900,7 @@
           "bib": "322",
           "studio": "N Space Dance Studio",
           "event": 143,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2923,7 +2917,7 @@
           "bib": "106",
           "studio": "RS Dance",
           "event": 144,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2940,7 +2934,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 145,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2957,7 +2951,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 146,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -2974,7 +2968,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 147,
-          "result": ""
+          "result": "2"
         },
         {
           "competitor1": "Tracey Cutler",
@@ -2982,7 +2976,7 @@
           "bib": "141",
           "studio": "Leon Dance",
           "event": 147,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Sharon Koi",
@@ -2990,7 +2984,7 @@
           "bib": "103",
           "studio": "Master Dance Club",
           "event": 148,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3007,7 +3001,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 149,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3024,7 +3018,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 150,
-          "result": ""
+          "result": "2"
         },
         {
           "competitor1": "Tracey Cutler",
@@ -3032,7 +3026,7 @@
           "bib": "141",
           "studio": "Leon Dance",
           "event": 150,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3049,7 +3043,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 151,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3066,7 +3060,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 152,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3083,7 +3077,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 153,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3100,7 +3094,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 154,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3117,7 +3111,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 155,
-          "result": ""
+          "result": "2"
         },
         {
           "competitor1": "Tracey Cutler",
@@ -3125,7 +3119,7 @@
           "bib": "141",
           "studio": "Leon Dance",
           "event": 155,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Patty Mathis",
@@ -3133,7 +3127,7 @@
           "bib": "128",
           "studio": "Dance All You Can",
           "event": 156,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3150,7 +3144,7 @@
           "bib": "302",
           "studio": "Starlite Ballroom-Wang",
           "event": 157,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3167,7 +3161,7 @@
           "bib": "319",
           "studio": "Dance All You Can",
           "event": 158,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Brian Monroy",
@@ -3175,7 +3169,7 @@
           "bib": "326",
           "studio": "Monroy",
           "event": 159,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3192,7 +3186,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 160,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3209,7 +3203,7 @@
           "bib": "302",
           "studio": "Starlite Ballroom-Wang",
           "event": 161,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3226,7 +3220,7 @@
           "bib": "302",
           "studio": "Starlite Ballroom-Wang",
           "event": 162,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3243,7 +3237,7 @@
           "bib": "326",
           "studio": "Monroy",
           "event": 163,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3260,7 +3254,7 @@
           "bib": "319",
           "studio": "Dance All You Can",
           "event": 164,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Brian Monroy",
@@ -3268,7 +3262,7 @@
           "bib": "326",
           "studio": "Monroy",
           "event": 165,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3285,7 +3279,7 @@
           "bib": "302",
           "studio": "Starlite Ballroom-Wang",
           "event": 166,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3302,7 +3296,7 @@
           "bib": "304",
           "studio": "Arete Dance Center",
           "event": 167,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3319,7 +3313,7 @@
           "bib": "319",
           "studio": "Dance All You Can",
           "event": 168,
-          "result": ""
+          "result": "1"
         },
         {
           "competitor1": "Brian Monroy",
@@ -3327,7 +3321,7 @@
           "bib": "326",
           "studio": "Monroy",
           "event": 169,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3344,7 +3338,7 @@
           "bib": "326",
           "studio": "Monroy",
           "event": 170,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3361,7 +3355,7 @@
           "bib": "302",
           "studio": "Starlite Ballroom-Wang",
           "event": 171,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3378,7 +3372,7 @@
           "bib": "326",
           "studio": "Monroy",
           "event": 172,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -3395,7 +3389,7 @@
           "bib": "302",
           "studio": "Starlite Ballroom-Wang",
           "event": 173,
-          "result": ""
+          "result": "1"
         }
       ]
     },
@@ -5839,19 +5833,11 @@
       "round": "Final",
       "entries": [
         {
-          "competitor1": "Vicky Bich Le",
-          "competitor2": "Ivan Romanov",
-          "bib": "149",
-          "studio": "Danc-In-Ivan Romanov",
-          "event": 359,
-          "result": ""
-        },
-        {
           "competitor1": "Mattia Bielli",
           "competitor2": "Tamara Morenc Romano",
           "bib": "118",
           "studio": "La Vida Dance",
-          "event": 360,
+          "event": 359,
           "result": ""
         },
         {
@@ -5859,7 +5845,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 360,
+          "event": 359,
           "result": ""
         },
         {
@@ -5867,7 +5853,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 361,
+          "event": 360,
           "result": ""
         }
       ]
@@ -5884,7 +5870,7 @@
           "competitor2": "Tamara Morenc Romano",
           "bib": "118",
           "studio": "La Vida Dance",
-          "event": 362,
+          "event": 361,
           "result": ""
         },
         {
@@ -5892,7 +5878,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 363,
+          "event": 362,
           "result": ""
         },
         {
@@ -5900,7 +5886,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 364,
+          "event": 363,
           "result": ""
         },
         {
@@ -5908,7 +5894,7 @@
           "competitor2": "Fonzie Zapata",
           "bib": "137",
           "studio": "Fonzie's Dance City",
-          "event": 365,
+          "event": 364,
           "result": ""
         }
       ]
@@ -5925,7 +5911,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 366,
+          "event": 365,
           "result": ""
         },
         {
@@ -5933,7 +5919,7 @@
           "competitor2": "Ivan Romanov",
           "bib": "149",
           "studio": "Danc-In-Ivan Romanov",
-          "event": 367,
+          "event": 366,
           "result": ""
         },
         {
@@ -5941,7 +5927,7 @@
           "competitor2": "Tamara Morenc Romano",
           "bib": "118",
           "studio": "La Vida Dance",
-          "event": 368,
+          "event": 367,
           "result": ""
         },
         {
@@ -5949,7 +5935,7 @@
           "competitor2": "Oleksii Boiko",
           "bib": "126",
           "studio": "La Vida Dance",
-          "event": 367,
+          "event": 366,
           "result": ""
         },
         {
@@ -5957,7 +5943,7 @@
           "competitor2": "Fonzie Zapata",
           "bib": "137",
           "studio": "Fonzie's Dance City",
-          "event": 369,
+          "event": 368,
           "result": ""
         }
       ]
@@ -5974,7 +5960,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 370,
+          "event": 369,
           "result": ""
         },
         {
@@ -5982,7 +5968,7 @@
           "competitor2": "Lilia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 371,
+          "event": 370,
           "result": ""
         },
         {
@@ -5990,7 +5976,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 372,
+          "event": 371,
           "result": ""
         }
       ]
@@ -6007,7 +5993,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 373,
+          "event": 372,
           "result": ""
         },
         {
@@ -6015,7 +6001,7 @@
           "competitor2": "Lilia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 374,
+          "event": 373,
           "result": ""
         },
         {
@@ -6023,7 +6009,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 375,
+          "event": 374,
           "result": ""
         }
       ]
@@ -6040,7 +6026,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 376,
+          "event": 375,
           "result": ""
         },
         {
@@ -6048,7 +6034,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 377,
+          "event": 376,
           "result": ""
         }
       ]
@@ -6065,7 +6051,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 378,
+          "event": 377,
           "result": ""
         },
         {
@@ -6073,7 +6059,7 @@
           "competitor2": "Sofia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 379,
+          "event": 378,
           "result": ""
         },
         {
@@ -6081,7 +6067,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 380,
+          "event": 379,
           "result": ""
         }
       ]
@@ -6098,7 +6084,7 @@
           "competitor2": "Sofia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 381,
+          "event": 380,
           "result": ""
         }
       ]
@@ -6115,7 +6101,7 @@
           "competitor2": "Sophia Statkevich",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 382,
+          "event": 381,
           "result": ""
         }
       ]
@@ -6132,7 +6118,7 @@
           "competitor2": "Sophia Statkevich",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 383,
+          "event": 382,
           "result": ""
         }
       ]
@@ -6149,7 +6135,7 @@
           "competitor2": "Sophia Statkevich",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 384,
+          "event": 383,
           "result": ""
         }
       ]
@@ -6166,7 +6152,7 @@
           "competitor2": "Sofia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 385,
+          "event": 384,
           "result": ""
         }
       ]
@@ -6183,7 +6169,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 386,
+          "event": 385,
           "result": ""
         }
       ]
@@ -6200,7 +6186,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 387,
+          "event": 386,
           "result": ""
         }
       ]
@@ -6217,7 +6203,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 388,
+          "event": 387,
           "result": ""
         }
       ]
@@ -6234,7 +6220,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 389,
+          "event": 388,
           "result": ""
         },
         {
@@ -6242,7 +6228,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 390,
+          "event": 389,
           "result": ""
         }
       ]
@@ -6259,7 +6245,7 @@
           "competitor2": "Lilia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 391,
+          "event": 390,
           "result": ""
         },
         {
@@ -6267,7 +6253,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 392,
+          "event": 391,
           "result": ""
         },
         {
@@ -6275,7 +6261,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 393,
+          "event": 392,
           "result": ""
         }
       ]
@@ -6292,7 +6278,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 394,
+          "event": 393,
           "result": ""
         },
         {
@@ -6300,7 +6286,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 395,
+          "event": 394,
           "result": ""
         }
       ]
@@ -6317,7 +6303,7 @@
           "competitor2": "",
           "bib": "313",
           "studio": "Feel Dance",
-          "event": 396,
+          "event": 395,
           "result": ""
         },
         {
@@ -6325,7 +6311,7 @@
           "competitor2": "Ivan Statkevich",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 397,
+          "event": 396,
           "result": ""
         },
         {
@@ -6333,7 +6319,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 398,
+          "event": 397,
           "result": ""
         },
         {
@@ -6341,7 +6327,7 @@
           "competitor2": "",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 396,
+          "event": 395,
           "result": ""
         },
         {
@@ -6349,7 +6335,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 398,
+          "event": 397,
           "result": ""
         }
       ]
@@ -6366,7 +6352,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 399,
+          "event": 398,
           "result": ""
         },
         {
@@ -6374,7 +6360,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 400,
+          "event": 399,
           "result": ""
         }
       ]
@@ -6391,7 +6377,7 @@
           "competitor2": "Anna Sergeenko",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 401,
+          "event": 400,
           "result": ""
         },
         {
@@ -6399,7 +6385,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 402,
+          "event": 401,
           "result": ""
         }
       ]
@@ -6416,7 +6402,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 403,
+          "event": 402,
           "result": ""
         },
         {
@@ -6424,7 +6410,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 404,
+          "event": 403,
           "result": ""
         }
       ]
@@ -6441,7 +6427,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 405,
+          "event": 404,
           "result": ""
         },
         {
@@ -6449,7 +6435,7 @@
           "competitor2": "Ani Matevosyn",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 406,
+          "event": 405,
           "result": ""
         },
         {
@@ -6457,7 +6443,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 407,
+          "event": 406,
           "result": ""
         }
       ]
@@ -6474,7 +6460,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 408,
+          "event": 407,
           "result": ""
         },
         {
@@ -6482,7 +6468,7 @@
           "competitor2": "Lilia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 409,
+          "event": 408,
           "result": ""
         },
         {
@@ -6490,7 +6476,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 410,
+          "event": 409,
           "result": ""
         }
       ]
@@ -6507,7 +6493,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 411,
+          "event": 410,
           "result": ""
         },
         {
@@ -6515,7 +6501,7 @@
           "competitor2": "Ani Matevosyn",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 412,
+          "event": 411,
           "result": ""
         },
         {
@@ -6523,7 +6509,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 413,
+          "event": 412,
           "result": ""
         }
       ]
@@ -6540,7 +6526,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 414,
+          "event": 413,
           "result": ""
         },
         {
@@ -6548,7 +6534,7 @@
           "competitor2": "Ani Matevosyn",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 415,
+          "event": 414,
           "result": ""
         },
         {
@@ -6556,7 +6542,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 416,
+          "event": 415,
           "result": ""
         }
       ]
@@ -6573,7 +6559,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 417,
+          "event": 416,
           "result": ""
         },
         {
@@ -6581,7 +6567,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 417,
+          "event": 416,
           "result": ""
         },
         {
@@ -6589,7 +6575,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 418,
+          "event": 417,
           "result": ""
         }
       ]
@@ -6606,7 +6592,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 419,
+          "event": 418,
           "result": ""
         },
         {
@@ -6614,7 +6600,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 419,
+          "event": 418,
           "result": ""
         },
         {
@@ -6622,7 +6608,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 420,
+          "event": 419,
           "result": ""
         }
       ]
@@ -6639,7 +6625,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 421,
+          "event": 420,
           "result": ""
         },
         {
@@ -6647,7 +6633,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 421,
+          "event": 420,
           "result": ""
         },
         {
@@ -6655,7 +6641,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 422,
+          "event": 421,
           "result": ""
         }
       ]
@@ -6672,7 +6658,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 423,
+          "event": 422,
           "result": ""
         },
         {
@@ -6680,7 +6666,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 423,
+          "event": 422,
           "result": ""
         },
         {
@@ -6688,7 +6674,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 424,
+          "event": 423,
           "result": ""
         }
       ]
@@ -6705,7 +6691,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 425,
+          "event": 424,
           "result": ""
         },
         {
@@ -6713,7 +6699,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 426,
+          "event": 425,
           "result": ""
         },
         {
@@ -6721,7 +6707,7 @@
           "competitor2": "Lilia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 427,
+          "event": 426,
           "result": ""
         }
       ]
@@ -6738,7 +6724,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 428,
+          "event": 427,
           "result": ""
         },
         {
@@ -6746,7 +6732,7 @@
           "competitor2": "Sofia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 429,
+          "event": 428,
           "result": ""
         }
       ]
@@ -6763,7 +6749,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 430,
+          "event": 429,
           "result": ""
         },
         {
@@ -6771,7 +6757,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 431,
+          "event": 430,
           "result": ""
         },
         {
@@ -6779,7 +6765,7 @@
           "competitor2": "Lilia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 432,
+          "event": 431,
           "result": ""
         }
       ]
@@ -6796,7 +6782,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 433,
+          "event": 432,
           "result": ""
         },
         {
@@ -6804,7 +6790,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 434,
+          "event": 433,
           "result": ""
         }
       ]
@@ -6821,7 +6807,7 @@
           "competitor2": "Michelle Papyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 435,
+          "event": 434,
           "result": ""
         }
       ]
@@ -6838,7 +6824,7 @@
           "competitor2": "Sophia Statkevich",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 436,
+          "event": 435,
           "result": ""
         }
       ]
@@ -6855,7 +6841,7 @@
           "competitor2": "Michelle Papyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 437,
+          "event": 436,
           "result": ""
         }
       ]
@@ -6872,7 +6858,7 @@
           "competitor2": "Joseph Murphy",
           "bib": "135",
           "studio": "Dancing Light Studios",
-          "event": 438,
+          "event": 437,
           "result": ""
         }
       ]
@@ -6889,7 +6875,7 @@
           "competitor2": "Michelle Papyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 439,
+          "event": 438,
           "result": ""
         }
       ]
@@ -6906,7 +6892,7 @@
           "competitor2": "Inessa Simonyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 440,
+          "event": 439,
           "result": ""
         },
         {
@@ -6914,7 +6900,7 @@
           "competitor2": "Lelie Takahashi",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 441,
+          "event": 440,
           "result": ""
         }
       ]
@@ -6931,7 +6917,7 @@
           "competitor2": "Lelie Takahashi",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 442,
+          "event": 441,
           "result": ""
         }
       ]
@@ -6948,7 +6934,7 @@
           "competitor2": "Inessa Simonyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 443,
+          "event": 442,
           "result": ""
         },
         {
@@ -6956,7 +6942,7 @@
           "competitor2": "Lelie Takahashi",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 444,
+          "event": 443,
           "result": ""
         }
       ]
@@ -6973,7 +6959,7 @@
           "competitor2": "Stella Minasyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 445,
+          "event": 444,
           "result": ""
         },
         {
@@ -6981,7 +6967,7 @@
           "competitor2": "Lelie Takahashi",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 446,
+          "event": 445,
           "result": ""
         }
       ]
@@ -6998,7 +6984,7 @@
           "competitor2": "Izabella Matevosyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 447,
+          "event": 446,
           "result": ""
         }
       ]
@@ -7015,7 +7001,7 @@
           "competitor2": "Izabella Matevosyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 448,
+          "event": 447,
           "result": ""
         }
       ]
@@ -7032,7 +7018,7 @@
           "competitor2": "Izabella Matevosyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 449,
+          "event": 448,
           "result": ""
         }
       ]
@@ -7049,7 +7035,7 @@
           "competitor2": "Stella Minasyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 450,
+          "event": 449,
           "result": ""
         }
       ]
@@ -7066,7 +7052,7 @@
           "competitor2": "Stella Minasyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 451,
+          "event": 450,
           "result": ""
         }
       ]
@@ -7083,7 +7069,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 452,
+          "event": 451,
           "result": ""
         },
         {
@@ -7091,7 +7077,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 453,
+          "event": 452,
           "result": ""
         },
         {
@@ -7099,7 +7085,7 @@
           "competitor2": "",
           "bib": "310",
           "studio": "Feel Dance",
-          "event": 454,
+          "event": 453,
           "result": ""
         },
         {
@@ -7107,7 +7093,7 @@
           "competitor2": "",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 455,
+          "event": 454,
           "result": ""
         },
         {
@@ -7115,7 +7101,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 456,
+          "event": 455,
           "result": ""
         }
       ]
@@ -7132,7 +7118,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 457,
+          "event": 456,
           "result": ""
         },
         {
@@ -7140,7 +7126,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 458,
+          "event": 457,
           "result": ""
         },
         {
@@ -7148,7 +7134,7 @@
           "competitor2": "",
           "bib": "310",
           "studio": "Feel Dance",
-          "event": 459,
+          "event": 458,
           "result": ""
         },
         {
@@ -7156,7 +7142,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 460,
+          "event": 459,
           "result": ""
         }
       ]
@@ -7173,7 +7159,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 461,
+          "event": 460,
           "result": ""
         }
       ]
@@ -7190,7 +7176,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 462,
+          "event": 461,
           "result": ""
         }
       ]
@@ -7207,7 +7193,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 463,
+          "event": 462,
           "result": ""
         },
         {
@@ -7215,7 +7201,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 464,
+          "event": 463,
           "result": ""
         },
         {
@@ -7223,7 +7209,7 @@
           "competitor2": "",
           "bib": "310",
           "studio": "Feel Dance",
-          "event": 465,
+          "event": 464,
           "result": ""
         },
         {
@@ -7231,7 +7217,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 466,
+          "event": 465,
           "result": ""
         }
       ]
@@ -7248,7 +7234,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 467,
+          "event": 466,
           "result": ""
         }
       ]
@@ -7265,7 +7251,7 @@
           "competitor2": "Jason Lozin",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 468,
+          "event": 467,
           "result": ""
         }
       ]
@@ -7282,7 +7268,7 @@
           "competitor2": "Stella Minasyan",
           "bib": "138",
           "studio": "VM Dance Studios",
-          "event": 469,
+          "event": 468,
           "result": ""
         },
         {
@@ -7290,7 +7276,7 @@
           "competitor2": "",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 470,
+          "event": 469,
           "result": ""
         }
       ]
@@ -7307,7 +7293,7 @@
           "competitor2": "",
           "bib": "313",
           "studio": "Feel Dance",
-          "event": 471,
+          "event": 470,
           "result": ""
         },
         {
@@ -7315,7 +7301,7 @@
           "competitor2": "",
           "bib": "311",
           "studio": "Feel Dance",
-          "event": 472,
+          "event": 471,
           "result": ""
         },
         {
@@ -7323,7 +7309,7 @@
           "competitor2": "",
           "bib": "310",
           "studio": "Feel Dance",
-          "event": 472,
+          "event": 471,
           "result": ""
         },
         {
@@ -7331,7 +7317,7 @@
           "competitor2": "",
           "bib": "312",
           "studio": "Feel Dance",
-          "event": 472,
+          "event": 471,
           "result": ""
         }
       ]
@@ -7348,7 +7334,7 @@
           "competitor2": "Michelle Ostapenko",
           "bib": "327",
           "studio": "Ostapenko",
-          "event": 473,
+          "event": 472,
           "result": ""
         },
         {
@@ -7356,7 +7342,7 @@
           "competitor2": "Lilia Tumansky",
           "bib": "113",
           "studio": "Feel Dance",
-          "event": 474,
+          "event": 473,
           "result": ""
         },
         {
@@ -7364,7 +7350,7 @@
           "competitor2": "",
           "bib": "310",
           "studio": "Feel Dance",
-          "event": 475,
+          "event": 474,
           "result": ""
         }
       ]
@@ -7381,7 +7367,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 476,
+          "event": 475,
           "result": ""
         },
         {
@@ -7389,7 +7375,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 476,
+          "event": 475,
           "result": ""
         },
         {
@@ -7397,7 +7383,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 477,
+          "event": 476,
           "result": ""
         }
       ]
@@ -7414,7 +7400,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 478,
+          "event": 477,
           "result": ""
         },
         {
@@ -7422,7 +7408,7 @@
           "competitor2": "Mirai Takahashi",
           "bib": "308",
           "studio": "Feel Dance",
-          "event": 479,
+          "event": 478,
           "result": ""
         }
       ]
@@ -7439,7 +7425,7 @@
           "competitor2": "Iris Bakhvala",
           "bib": "307",
           "studio": "Feel Dance",
-          "event": 480,
+          "event": 479,
           "result": ""
         },
         {
@@ -7447,7 +7433,7 @@
           "competitor2": "Damian Marshall",
           "bib": "323",
           "studio": "N Space Dance Studio",
-          "event": 481,
+          "event": 480,
           "result": ""
         },
         {
@@ -7455,7 +7441,7 @@
           "competitor2": "Ariana Yang",
           "bib": "309",
           "studio": "Feel Dance",
-          "event": 482,
+          "event": 481,
           "result": ""
         }
       ]
@@ -7472,7 +7458,7 @@
           "competitor2": "Kalea Chantry",
           "bib": "318",
           "studio": "Peak Dance Center-Adzhubei-Chantry",
-          "event": 483,
+          "event": 482,
           "result": ""
         },
         {
@@ -7480,7 +7466,7 @@
           "competitor2": "Michelle Ostapenko",
           "bib": "327",
           "studio": "Ostapenko",
-          "event": 483,
+          "event": 482,
           "result": ""
         }
       ]
@@ -7497,7 +7483,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 484,
+          "event": 483,
           "result": ""
         }
       ]
@@ -7514,7 +7500,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 485,
+          "event": 484,
           "result": ""
         }
       ]
@@ -7531,7 +7517,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 486,
+          "event": 485,
           "result": ""
         }
       ]
@@ -7548,7 +7534,7 @@
           "competitor2": "Oleksii Boiko",
           "bib": "126",
           "studio": "La Vida Dance",
-          "event": 487,
+          "event": 486,
           "result": ""
         },
         {
@@ -7556,7 +7542,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 488,
+          "event": 487,
           "result": ""
         },
         {
@@ -7564,7 +7550,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 489,
+          "event": 488,
           "result": ""
         },
         {
@@ -7572,7 +7558,7 @@
           "competitor2": "Ashley Sartell",
           "bib": "306",
           "studio": "Vivre Dance Studio",
-          "event": 490,
+          "event": 489,
           "result": ""
         },
         {
@@ -7580,7 +7566,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 491,
+          "event": 490,
           "result": ""
         },
         {
@@ -7588,7 +7574,7 @@
           "competitor2": "Dawn Stone",
           "bib": "120",
           "studio": "La Vida Dance",
-          "event": 492,
+          "event": 491,
           "result": ""
         },
         {
@@ -7596,7 +7582,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 493,
+          "event": 492,
           "result": ""
         }
       ]
@@ -7613,7 +7599,7 @@
           "competitor2": "Oleksii Boiko",
           "bib": "126",
           "studio": "La Vida Dance",
-          "event": 494,
+          "event": 493,
           "result": ""
         },
         {
@@ -7621,7 +7607,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 495,
+          "event": 494,
           "result": ""
         },
         {
@@ -7629,7 +7615,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 496,
+          "event": 495,
           "result": ""
         },
         {
@@ -7637,7 +7623,7 @@
           "competitor2": "Ashley Sartell",
           "bib": "306",
           "studio": "Vivre Dance Studio",
-          "event": 497,
+          "event": 496,
           "result": ""
         },
         {
@@ -7645,7 +7631,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 498,
+          "event": 497,
           "result": ""
         },
         {
@@ -7653,7 +7639,7 @@
           "competitor2": "Dawn Stone",
           "bib": "120",
           "studio": "La Vida Dance",
-          "event": 499,
+          "event": 498,
           "result": ""
         },
         {
@@ -7661,7 +7647,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 500,
+          "event": 499,
           "result": ""
         }
       ]
@@ -7678,7 +7664,7 @@
           "competitor2": "Oleksii Boiko",
           "bib": "126",
           "studio": "La Vida Dance",
-          "event": 501,
+          "event": 500,
           "result": ""
         },
         {
@@ -7686,7 +7672,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 502,
+          "event": 501,
           "result": ""
         },
         {
@@ -7694,7 +7680,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 503,
+          "event": 502,
           "result": ""
         },
         {
@@ -7702,7 +7688,7 @@
           "competitor2": "Ashley Sartell",
           "bib": "306",
           "studio": "Vivre Dance Studio",
-          "event": 504,
+          "event": 503,
           "result": ""
         },
         {
@@ -7710,7 +7696,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 505,
+          "event": 504,
           "result": ""
         },
         {
@@ -7718,7 +7704,7 @@
           "competitor2": "Dawn Stone",
           "bib": "120",
           "studio": "La Vida Dance",
-          "event": 506,
+          "event": 505,
           "result": ""
         },
         {
@@ -7726,7 +7712,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 507,
+          "event": 506,
           "result": ""
         }
       ]
@@ -7743,7 +7729,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 508,
+          "event": 507,
           "result": ""
         },
         {
@@ -7751,7 +7737,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 509,
+          "event": 508,
           "result": ""
         },
         {
@@ -7759,7 +7745,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 510,
+          "event": 509,
           "result": ""
         },
         {
@@ -7767,7 +7753,7 @@
           "competitor2": "Dawn Stone",
           "bib": "120",
           "studio": "La Vida Dance",
-          "event": 511,
+          "event": 510,
           "result": ""
         },
         {
@@ -7775,7 +7761,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 512,
+          "event": 511,
           "result": ""
         }
       ]
@@ -7792,7 +7778,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 513,
+          "event": 512,
           "result": ""
         },
         {
@@ -7800,7 +7786,7 @@
           "competitor2": "Emily Mak",
           "bib": "122",
           "studio": "Dance With Melbin",
-          "event": 514,
+          "event": 513,
           "result": ""
         },
         {
@@ -7808,7 +7794,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 515,
+          "event": 514,
           "result": ""
         },
         {
@@ -7816,7 +7802,7 @@
           "competitor2": "Dawn Stone",
           "bib": "120",
           "studio": "La Vida Dance",
-          "event": 516,
+          "event": 515,
           "result": ""
         },
         {
@@ -7824,7 +7810,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 517,
+          "event": 516,
           "result": ""
         }
       ]
@@ -7841,7 +7827,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 518,
+          "event": 517,
           "result": ""
         },
         {
@@ -7849,7 +7835,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 519,
+          "event": 518,
           "result": ""
         },
         {
@@ -7857,7 +7843,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 520,
+          "event": 519,
           "result": ""
         }
       ]
@@ -7874,7 +7860,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 521,
+          "event": 520,
           "result": ""
         },
         {
@@ -7882,7 +7868,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 522,
+          "event": 521,
           "result": ""
         },
         {
@@ -7890,7 +7876,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 523,
+          "event": 522,
           "result": ""
         }
       ]
@@ -7907,7 +7893,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 524,
+          "event": 523,
           "result": ""
         },
         {
@@ -7915,7 +7901,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 525,
+          "event": 524,
           "result": ""
         }
       ]
@@ -7932,7 +7918,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 526,
+          "event": 525,
           "result": ""
         },
         {
@@ -7940,7 +7926,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 527,
+          "event": 526,
           "result": ""
         },
         {
@@ -7948,7 +7934,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 528,
+          "event": 527,
           "result": ""
         }
       ]
@@ -7965,7 +7951,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 529,
+          "event": 528,
           "result": ""
         },
         {
@@ -7973,7 +7959,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 530,
+          "event": 529,
           "result": ""
         },
         {
@@ -7981,7 +7967,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 531,
+          "event": 530,
           "result": ""
         }
       ]
@@ -7998,7 +7984,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 532,
+          "event": 531,
           "result": ""
         },
         {
@@ -8006,7 +7992,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 533,
+          "event": 532,
           "result": ""
         }
       ]
@@ -8023,7 +8009,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 534,
+          "event": 533,
           "result": ""
         }
       ]
@@ -8040,7 +8026,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 535,
+          "event": 534,
           "result": ""
         }
       ]
@@ -8057,7 +8043,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 536,
+          "event": 535,
           "result": ""
         }
       ]
@@ -8074,7 +8060,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 537,
+          "event": 536,
           "result": ""
         }
       ]
@@ -8091,7 +8077,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 538,
+          "event": 537,
           "result": ""
         },
         {
@@ -8099,7 +8085,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 539,
+          "event": 538,
           "result": ""
         },
         {
@@ -8107,7 +8093,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 540,
+          "event": 539,
           "result": ""
         }
       ]
@@ -8124,7 +8110,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 541,
+          "event": 540,
           "result": ""
         },
         {
@@ -8132,7 +8118,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 542,
+          "event": 541,
           "result": ""
         },
         {
@@ -8140,7 +8126,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 543,
+          "event": 542,
           "result": ""
         }
       ]
@@ -8157,7 +8143,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 544,
+          "event": 543,
           "result": ""
         },
         {
@@ -8165,7 +8151,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 545,
+          "event": 544,
           "result": ""
         }
       ]
@@ -8182,7 +8168,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 546,
+          "event": 545,
           "result": ""
         },
         {
@@ -8190,7 +8176,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 547,
+          "event": 546,
           "result": ""
         },
         {
@@ -8198,7 +8184,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 548,
+          "event": 547,
           "result": ""
         }
       ]
@@ -8215,7 +8201,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 549,
+          "event": 548,
           "result": ""
         },
         {
@@ -8223,7 +8209,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 550,
+          "event": 549,
           "result": ""
         },
         {
@@ -8231,7 +8217,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 551,
+          "event": 550,
           "result": ""
         }
       ]
@@ -8248,7 +8234,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 552,
+          "event": 551,
           "result": ""
         },
         {
@@ -8256,7 +8242,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 553,
+          "event": 552,
           "result": ""
         },
         {
@@ -8264,7 +8250,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 554,
+          "event": 553,
           "result": ""
         }
       ]
@@ -8281,7 +8267,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 555,
+          "event": 554,
           "result": ""
         },
         {
@@ -8289,7 +8275,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 556,
+          "event": 555,
           "result": ""
         },
         {
@@ -8297,7 +8283,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 557,
+          "event": 556,
           "result": ""
         }
       ]
@@ -8314,7 +8300,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 558,
+          "event": 557,
           "result": ""
         },
         {
@@ -8322,7 +8308,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 559,
+          "event": 558,
           "result": ""
         }
       ]
@@ -8339,7 +8325,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 560,
+          "event": 559,
           "result": ""
         },
         {
@@ -8347,7 +8333,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 561,
+          "event": 560,
           "result": ""
         },
         {
@@ -8355,7 +8341,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 562,
+          "event": 561,
           "result": ""
         }
       ]
@@ -8372,7 +8358,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 563,
+          "event": 562,
           "result": ""
         },
         {
@@ -8380,7 +8366,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 564,
+          "event": 563,
           "result": ""
         },
         {
@@ -8388,7 +8374,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 565,
+          "event": 564,
           "result": ""
         }
       ]
@@ -8405,7 +8391,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 566,
+          "event": 565,
           "result": ""
         },
         {
@@ -8413,7 +8399,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 567,
+          "event": 566,
           "result": ""
         }
       ]
@@ -8430,7 +8416,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 568,
+          "event": 567,
           "result": ""
         },
         {
@@ -8438,7 +8424,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 569,
+          "event": 568,
           "result": ""
         }
       ]
@@ -8455,7 +8441,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 570,
+          "event": 569,
           "result": ""
         },
         {
@@ -8463,7 +8449,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 571,
+          "event": 570,
           "result": ""
         }
       ]
@@ -8480,7 +8466,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 572,
+          "event": 571,
           "result": ""
         },
         {
@@ -8488,7 +8474,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 573,
+          "event": 572,
           "result": ""
         }
       ]
@@ -8505,7 +8491,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 574,
+          "event": 573,
           "result": ""
         },
         {
@@ -8513,7 +8499,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 575,
+          "event": 574,
           "result": ""
         }
       ]
@@ -8530,7 +8516,7 @@
           "competitor2": "Anne Montserrat",
           "bib": "316",
           "studio": "La Vida Dance",
-          "event": 576,
+          "event": 575,
           "result": ""
         },
         {
@@ -8538,7 +8524,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 577,
+          "event": 576,
           "result": ""
         },
         {
@@ -8546,7 +8532,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 578,
+          "event": 577,
           "result": ""
         },
         {
@@ -8554,7 +8540,7 @@
           "competitor2": "Lillian Torres",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 579,
+          "event": 578,
           "result": ""
         }
       ]
@@ -8571,7 +8557,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 580,
+          "event": 579,
           "result": ""
         },
         {
@@ -8579,7 +8565,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 581,
+          "event": 580,
           "result": ""
         }
       ]
@@ -8596,7 +8582,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 582,
+          "event": 581,
           "result": ""
         },
         {
@@ -8604,7 +8590,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 583,
+          "event": 582,
           "result": ""
         },
         {
@@ -8612,7 +8598,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 584,
+          "event": 583,
           "result": ""
         }
       ]
@@ -8629,7 +8615,7 @@
           "competitor2": "Kalea Chantry",
           "bib": "318",
           "studio": "Peak Dance Center-Adzhubei-Chantry",
-          "event": 585,
+          "event": 584,
           "result": ""
         }
       ]
@@ -8646,7 +8632,7 @@
           "competitor2": "Kristina Kuvshynov",
           "bib": "305",
           "studio": "Arete Dance Center",
-          "event": 586,
+          "event": 585,
           "result": ""
         },
         {
@@ -8654,7 +8640,7 @@
           "competitor2": "Alisa Radiush",
           "bib": "324",
           "studio": "Galaxy",
-          "event": 587,
+          "event": 586,
           "result": ""
         }
       ]
@@ -8671,7 +8657,7 @@
           "competitor2": "Hanna Pierce",
           "bib": "114",
           "studio": "FADS Ahwatukee",
-          "event": 588,
+          "event": 587,
           "result": ""
         },
         {
@@ -8679,7 +8665,7 @@
           "competitor2": "Viktoriya Nyemchek",
           "bib": "147",
           "studio": "Nyemchek/Nyemchek",
-          "event": 588,
+          "event": 587,
           "result": ""
         },
         {
@@ -8687,7 +8673,7 @@
           "competitor2": "Natalia Switalski",
           "bib": "148",
           "studio": "Dance Discover",
-          "event": 588,
+          "event": 587,
           "result": ""
         }
       ]
@@ -8704,7 +8690,7 @@
           "competitor2": "Natalie Shirota",
           "bib": "153",
           "studio": "FADS Diamond Bar-Boris Basin",
-          "event": 589,
+          "event": 588,
           "result": ""
         },
         {
@@ -8712,7 +8698,7 @@
           "competitor2": "Irene Lee",
           "bib": "132",
           "studio": "Best Dance Studio",
-          "event": 589,
+          "event": 588,
           "result": ""
         },
         {
@@ -8720,7 +8706,7 @@
           "competitor2": "Anastasiia Malovana",
           "bib": "105",
           "studio": "FADS-North Scottsdale",
-          "event": 589,
+          "event": 588,
           "result": ""
         },
         {
@@ -8728,7 +8714,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 589,
+          "event": 588,
           "result": ""
         },
         {
@@ -8736,7 +8722,7 @@
           "competitor2": "Natalia Switalski",
           "bib": "148",
           "studio": "Dance Discover",
-          "event": 589,
+          "event": 588,
           "result": ""
         }
       ]
@@ -8753,7 +8739,7 @@
           "competitor2": "Moses Ramos",
           "bib": "103",
           "studio": "Master Dance Club",
-          "event": 590,
+          "event": 589,
           "result": ""
         },
         {
@@ -8761,7 +8747,7 @@
           "competitor2": "Ashley Sartell",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 590,
+          "event": 589,
           "result": ""
         },
         {
@@ -8769,7 +8755,7 @@
           "competitor2": "Lovelyn Estoya",
           "bib": "133",
           "studio": "FADS Chandler",
-          "event": 590,
+          "event": 589,
           "result": ""
         },
         {
@@ -8777,7 +8763,7 @@
           "competitor2": "Cole Ornelas",
           "bib": "123",
           "studio": "Arthur Murray Reno",
-          "event": 590,
+          "event": 589,
           "result": ""
         },
         {
@@ -8785,7 +8771,7 @@
           "competitor2": "Timea Potys",
           "bib": "131",
           "studio": "Sizzling Latin",
-          "event": 590,
+          "event": 589,
           "result": ""
         },
         {
@@ -8793,7 +8779,7 @@
           "competitor2": "Viktoriya Nyemchek",
           "bib": "147",
           "studio": "Nyemchek/Nyemchek",
-          "event": 590,
+          "event": 589,
           "result": ""
         },
         {
@@ -8801,7 +8787,7 @@
           "competitor2": "Amy Whyatt",
           "bib": "136",
           "studio": "Dance Daly Ballroom",
-          "event": 590,
+          "event": 589,
           "result": ""
         }
       ]
@@ -8818,7 +8804,7 @@
           "competitor2": "Timea Potys",
           "bib": "131",
           "studio": "Sizzling Latin",
-          "event": 591,
+          "event": 590,
           "result": ""
         },
         {
@@ -8826,7 +8812,7 @@
           "competitor2": "Slavik Samokhin",
           "bib": "127",
           "studio": "FADS-Samokhin",
-          "event": 591,
+          "event": 590,
           "result": ""
         },
         {
@@ -8834,7 +8820,7 @@
           "competitor2": "Andrii Voloshko",
           "bib": "140",
           "studio": "Andrii Voloshko",
-          "event": 591,
+          "event": 590,
           "result": ""
         },
         {
@@ -8842,7 +8828,7 @@
           "competitor2": "Natalia Malkova",
           "bib": "116",
           "studio": "FADS Diamond Bar",
-          "event": 591,
+          "event": 590,
           "result": ""
         },
         {
@@ -8850,7 +8836,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 591,
+          "event": 590,
           "result": ""
         }
       ]
@@ -8867,7 +8853,7 @@
           "competitor2": "Irene Lee",
           "bib": "132",
           "studio": "Best Dance Studio",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8875,7 +8861,7 @@
           "competitor2": "Roxane Milotti",
           "bib": "152",
           "studio": "South Bay Dance Center",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8883,7 +8869,7 @@
           "competitor2": "Oleksii Ihnatov",
           "bib": "101",
           "studio": "Ihnatov-Fedorova",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8891,7 +8877,7 @@
           "competitor2": "Hanna Pierce",
           "bib": "114",
           "studio": "FADS Ahwatukee",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8899,7 +8885,7 @@
           "competitor2": "Cole Ornelas",
           "bib": "123",
           "studio": "Arthur Murray Reno",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8907,7 +8893,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8915,7 +8901,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8923,7 +8909,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 592,
+          "event": 591,
           "result": ""
         }
       ]
@@ -8940,7 +8926,7 @@
           "competitor2": "Irene Lee",
           "bib": "132",
           "studio": "Best Dance Studio",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8948,7 +8934,7 @@
           "competitor2": "Roxane Milotti",
           "bib": "152",
           "studio": "South Bay Dance Center",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8956,7 +8942,7 @@
           "competitor2": "Oleksii Ihnatov",
           "bib": "101",
           "studio": "Ihnatov-Fedorova",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8964,7 +8950,7 @@
           "competitor2": "Hanna Pierce",
           "bib": "114",
           "studio": "FADS Ahwatukee",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8972,7 +8958,7 @@
           "competitor2": "Cole Ornelas",
           "bib": "123",
           "studio": "Arthur Murray Reno",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8980,7 +8966,7 @@
           "competitor2": "Yuriy Kuvshynov",
           "bib": "109",
           "studio": "Arete Dance Center",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8988,7 +8974,7 @@
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 592,
+          "event": 591,
           "result": ""
         },
         {
@@ -8996,7 +8982,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 592,
+          "event": 591,
           "result": ""
         }
       ]
@@ -9013,7 +8999,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 593,
+          "event": 592,
           "result": ""
         },
         {
@@ -9021,7 +9007,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 594,
+          "event": 593,
           "result": ""
         }
       ]
@@ -9038,7 +9024,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 595,
+          "event": 594,
           "result": ""
         },
         {
@@ -9046,7 +9032,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 596,
+          "event": 595,
           "result": ""
         }
       ]
@@ -9063,7 +9049,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 597,
+          "event": 596,
           "result": ""
         },
         {
@@ -9071,7 +9057,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 598,
+          "event": 597,
           "result": ""
         }
       ]
@@ -9088,7 +9074,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 599,
+          "event": 598,
           "result": ""
         },
         {
@@ -9096,7 +9082,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 600,
+          "event": 599,
           "result": ""
         },
         {
@@ -9104,7 +9090,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 601,
+          "event": 600,
           "result": ""
         }
       ]
@@ -9121,7 +9107,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 602,
+          "event": 601,
           "result": ""
         },
         {
@@ -9129,7 +9115,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 603,
+          "event": 602,
           "result": ""
         },
         {
@@ -9137,7 +9123,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 604,
+          "event": 603,
           "result": ""
         }
       ]
@@ -9154,7 +9140,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 605,
+          "event": 604,
           "result": ""
         },
         {
@@ -9162,7 +9148,7 @@
           "competitor2": "Oleg Suvorov",
           "bib": "128",
           "studio": "Dance All You Can",
-          "event": 606,
+          "event": 605,
           "result": ""
         },
         {
@@ -9170,7 +9156,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 607,
+          "event": 606,
           "result": ""
         }
       ]
@@ -9187,7 +9173,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 608,
+          "event": 607,
           "result": ""
         }
       ]
@@ -9204,7 +9190,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 609,
+          "event": 608,
           "result": ""
         },
         {
@@ -9212,7 +9198,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 610,
+          "event": 609,
           "result": ""
         }
       ]
@@ -9229,7 +9215,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 611,
+          "event": 610,
           "result": ""
         },
         {
@@ -9237,7 +9223,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 612,
+          "event": 611,
           "result": ""
         }
       ]
@@ -9254,7 +9240,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 613,
+          "event": 612,
           "result": ""
         },
         {
@@ -9262,7 +9248,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 614,
+          "event": 613,
           "result": ""
         }
       ]
@@ -9279,7 +9265,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 615,
+          "event": 614,
           "result": ""
         }
       ]
@@ -9296,7 +9282,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 616,
+          "event": 615,
           "result": ""
         },
         {
@@ -9304,7 +9290,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 616,
+          "event": 615,
           "result": ""
         },
         {
@@ -9312,7 +9298,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 616,
+          "event": 615,
           "result": ""
         }
       ]
@@ -9329,7 +9315,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 617,
+          "event": 616,
           "result": ""
         },
         {
@@ -9337,7 +9323,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 617,
+          "event": 616,
           "result": ""
         },
         {
@@ -9345,7 +9331,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 617,
+          "event": 616,
           "result": ""
         }
       ]
@@ -9362,7 +9348,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 618,
+          "event": 617,
           "result": ""
         },
         {
@@ -9370,7 +9356,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 618,
+          "event": 617,
           "result": ""
         }
       ]
@@ -9387,15 +9373,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 619,
+          "event": 618,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 620,
+          "event": 619,
           "result": ""
         },
         {
@@ -9403,7 +9389,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 621,
+          "event": 620,
           "result": ""
         },
         {
@@ -9411,7 +9397,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 620,
+          "event": 619,
           "result": ""
         }
       ]
@@ -9428,15 +9414,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 622,
+          "event": 621,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 623,
+          "event": 622,
           "result": ""
         },
         {
@@ -9444,7 +9430,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 624,
+          "event": 623,
           "result": ""
         },
         {
@@ -9452,7 +9438,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 623,
+          "event": 622,
           "result": ""
         }
       ]
@@ -9469,15 +9455,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 625,
+          "event": 624,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 626,
+          "event": 625,
           "result": ""
         },
         {
@@ -9485,7 +9471,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 627,
+          "event": 626,
           "result": ""
         },
         {
@@ -9493,7 +9479,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 626,
+          "event": 625,
           "result": ""
         }
       ]
@@ -9510,7 +9496,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 628,
+          "event": 627,
           "result": ""
         },
         {
@@ -9518,7 +9504,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 629,
+          "event": 628,
           "result": ""
         }
       ]
@@ -9535,7 +9521,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 630,
+          "event": 629,
           "result": ""
         },
         {
@@ -9543,15 +9529,15 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 631,
+          "event": 630,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 632,
+          "event": 631,
           "result": ""
         },
         {
@@ -9559,7 +9545,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 632,
+          "event": 631,
           "result": ""
         }
       ]
@@ -9576,15 +9562,15 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 633,
+          "event": 632,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 634,
+          "event": 633,
           "result": ""
         },
         {
@@ -9592,7 +9578,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 634,
+          "event": 633,
           "result": ""
         }
       ]
@@ -9609,7 +9595,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 635,
+          "event": 634,
           "result": ""
         },
         {
@@ -9617,15 +9603,15 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 636,
+          "event": 635,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 637,
+          "event": 636,
           "result": ""
         },
         {
@@ -9633,7 +9619,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 638,
+          "event": 637,
           "result": ""
         },
         {
@@ -9641,7 +9627,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 637,
+          "event": 636,
           "result": ""
         }
       ]
@@ -9658,7 +9644,7 @@
           "competitor2": "Milo Pestana",
           "bib": "314",
           "studio": "Master Dance Club",
-          "event": 639,
+          "event": 638,
           "result": ""
         },
         {
@@ -9666,7 +9652,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 640,
+          "event": 639,
           "result": ""
         },
         {
@@ -9674,7 +9660,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 641,
+          "event": 640,
           "result": ""
         }
       ]
@@ -9691,7 +9677,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 642,
+          "event": 641,
           "result": ""
         },
         {
@@ -9699,7 +9685,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 642,
+          "event": 641,
           "result": ""
         },
         {
@@ -9707,7 +9693,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 642,
+          "event": 641,
           "result": ""
         },
         {
@@ -9715,7 +9701,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 643,
+          "event": 642,
           "result": ""
         }
       ]
@@ -9732,7 +9718,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 644,
+          "event": 643,
           "result": ""
         },
         {
@@ -9740,7 +9726,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 644,
+          "event": 643,
           "result": ""
         },
         {
@@ -9748,7 +9734,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 644,
+          "event": 643,
           "result": ""
         },
         {
@@ -9756,7 +9742,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 645,
+          "event": 644,
           "result": ""
         }
       ]
@@ -9773,7 +9759,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 646,
+          "event": 645,
           "result": ""
         },
         {
@@ -9781,7 +9767,7 @@
           "competitor2": "Evgeny Malko",
           "bib": "129",
           "studio": "The Ballroom Of Sacremento",
-          "event": 646,
+          "event": 645,
           "result": ""
         }
       ]
@@ -9798,7 +9784,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 647,
+          "event": 646,
           "result": ""
         },
         {
@@ -9806,7 +9792,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 648,
+          "event": 647,
           "result": ""
         },
         {
@@ -9814,7 +9800,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 649,
+          "event": 648,
           "result": ""
         }
       ]
@@ -9831,7 +9817,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 650,
+          "event": 649,
           "result": ""
         },
         {
@@ -9839,7 +9825,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 651,
+          "event": 650,
           "result": ""
         },
         {
@@ -9847,7 +9833,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 652,
+          "event": 651,
           "result": ""
         }
       ]
@@ -9864,7 +9850,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 653,
+          "event": 652,
           "result": ""
         },
         {
@@ -9872,7 +9858,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 654,
+          "event": 653,
           "result": ""
         },
         {
@@ -9880,7 +9866,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 655,
+          "event": 654,
           "result": ""
         }
       ]
@@ -9897,7 +9883,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 656,
+          "event": 655,
           "result": ""
         },
         {
@@ -9905,7 +9891,7 @@
           "competitor2": "Anna Shahbazyan",
           "bib": "329",
           "studio": "Anna Shahbazyan",
-          "event": 657,
+          "event": 656,
           "result": ""
         }
       ]
@@ -9922,15 +9908,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 658,
+          "event": 657,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 659,
+          "event": 658,
           "result": ""
         },
         {
@@ -9938,7 +9924,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 659,
+          "event": 658,
           "result": ""
         }
       ]
@@ -9955,15 +9941,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 660,
+          "event": 659,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 661,
+          "event": 660,
           "result": ""
         },
         {
@@ -9971,7 +9957,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 661,
+          "event": 660,
           "result": ""
         }
       ]
@@ -9988,15 +9974,15 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 662,
+          "event": 661,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 663,
+          "event": 662,
           "result": ""
         },
         {
@@ -10004,7 +9990,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 663,
+          "event": 662,
           "result": ""
         }
       ]
@@ -10021,7 +10007,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 664,
+          "event": 663,
           "result": ""
         }
       ]
@@ -10038,7 +10024,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 665,
+          "event": 664,
           "result": ""
         },
         {
@@ -10046,7 +10032,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 666,
+          "event": 665,
           "result": ""
         }
       ]
@@ -10063,7 +10049,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 667,
+          "event": 666,
           "result": ""
         },
         {
@@ -10071,7 +10057,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 668,
+          "event": 667,
           "result": ""
         }
       ]
@@ -10088,7 +10074,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 669,
+          "event": 668,
           "result": ""
         },
         {
@@ -10096,7 +10082,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 670,
+          "event": 669,
           "result": ""
         }
       ]
@@ -10113,7 +10099,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 671,
+          "event": 670,
           "result": ""
         }
       ]
@@ -10130,7 +10116,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 672,
+          "event": 671,
           "result": ""
         },
         {
@@ -10138,7 +10124,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 673,
+          "event": 672,
           "result": ""
         },
         {
@@ -10146,7 +10132,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 674,
+          "event": 673,
           "result": ""
         }
       ]
@@ -10163,7 +10149,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 675,
+          "event": 674,
           "result": ""
         },
         {
@@ -10171,7 +10157,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 676,
+          "event": 675,
           "result": ""
         },
         {
@@ -10179,7 +10165,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 677,
+          "event": 676,
           "result": ""
         }
       ]
@@ -10196,7 +10182,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 678,
+          "event": 677,
           "result": ""
         },
         {
@@ -10204,7 +10190,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 679,
+          "event": 678,
           "result": ""
         }
       ]
@@ -10221,7 +10207,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 680,
+          "event": 679,
           "result": ""
         }
       ]
@@ -10238,7 +10224,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 681,
+          "event": 680,
           "result": ""
         }
       ]
@@ -10255,7 +10241,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 682,
+          "event": 681,
           "result": ""
         },
         {
@@ -10263,7 +10249,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 683,
+          "event": 682,
           "result": ""
         },
         {
@@ -10271,7 +10257,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 683,
+          "event": 682,
           "result": ""
         },
         {
@@ -10279,7 +10265,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 684,
+          "event": 683,
           "result": ""
         },
         {
@@ -10287,7 +10273,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 685,
+          "event": 684,
           "result": ""
         },
         {
@@ -10295,7 +10281,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 686,
+          "event": 685,
           "result": ""
         },
         {
@@ -10303,7 +10289,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 687,
+          "event": 686,
           "result": ""
         }
       ]
@@ -10320,7 +10306,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 688,
+          "event": 687,
           "result": ""
         },
         {
@@ -10328,7 +10314,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 689,
+          "event": 688,
           "result": ""
         },
         {
@@ -10336,7 +10322,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 689,
+          "event": 688,
           "result": ""
         },
         {
@@ -10344,7 +10330,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 690,
+          "event": 689,
           "result": ""
         },
         {
@@ -10352,7 +10338,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 691,
+          "event": 690,
           "result": ""
         },
         {
@@ -10360,7 +10346,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 692,
+          "event": 691,
           "result": ""
         },
         {
@@ -10368,7 +10354,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 693,
+          "event": 692,
           "result": ""
         }
       ]
@@ -10385,7 +10371,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 694,
+          "event": 693,
           "result": ""
         },
         {
@@ -10393,7 +10379,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 695,
+          "event": 694,
           "result": ""
         },
         {
@@ -10401,7 +10387,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 695,
+          "event": 694,
           "result": ""
         },
         {
@@ -10409,7 +10395,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 696,
+          "event": 695,
           "result": ""
         },
         {
@@ -10417,7 +10403,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 697,
+          "event": 696,
           "result": ""
         },
         {
@@ -10425,7 +10411,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 698,
+          "event": 697,
           "result": ""
         }
       ]
@@ -10442,7 +10428,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 699,
+          "event": 698,
           "result": ""
         },
         {
@@ -10450,7 +10436,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 700,
+          "event": 699,
           "result": ""
         },
         {
@@ -10458,7 +10444,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 700,
+          "event": 699,
           "result": ""
         },
         {
@@ -10466,15 +10452,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 701,
-          "result": ""
-        },
-        {
-          "competitor1": "Anne Montserrat",
-          "competitor2": "Duane Scholz",
-          "bib": "317",
-          "studio": "La Vida Dance",
-          "event": 702,
+          "event": 700,
           "result": ""
         },
         {
@@ -10482,7 +10460,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 703,
+          "event": 701,
           "result": ""
         }
       ]
@@ -10499,7 +10477,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 704,
+          "event": 702,
           "result": ""
         },
         {
@@ -10507,7 +10485,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 705,
+          "event": 703,
           "result": ""
         },
         {
@@ -10515,7 +10493,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 706,
+          "event": 704,
           "result": ""
         },
         {
@@ -10523,7 +10501,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 707,
+          "event": 705,
           "result": ""
         },
         {
@@ -10531,7 +10509,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 706,
+          "event": 704,
           "result": ""
         },
         {
@@ -10539,7 +10517,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 708,
+          "event": 706,
           "result": ""
         },
         {
@@ -10547,7 +10525,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 709,
+          "event": 707,
           "result": ""
         }
       ]
@@ -10564,7 +10542,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 710,
+          "event": 708,
           "result": ""
         },
         {
@@ -10572,7 +10550,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 711,
+          "event": 709,
           "result": ""
         },
         {
@@ -10580,7 +10558,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 712,
+          "event": 710,
           "result": ""
         },
         {
@@ -10588,7 +10566,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 711,
+          "event": 709,
           "result": ""
         },
         {
@@ -10596,7 +10574,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 713,
+          "event": 711,
           "result": ""
         },
         {
@@ -10604,7 +10582,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 714,
+          "event": 712,
           "result": ""
         }
       ]
@@ -10621,7 +10599,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 715,
+          "event": 713,
           "result": ""
         },
         {
@@ -10629,7 +10607,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 716,
+          "event": 714,
           "result": ""
         },
         {
@@ -10637,7 +10615,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 717,
+          "event": 715,
           "result": ""
         },
         {
@@ -10645,7 +10623,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 718,
+          "event": 716,
           "result": ""
         },
         {
@@ -10653,7 +10631,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 719,
+          "event": 717,
           "result": ""
         },
         {
@@ -10661,7 +10639,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 720,
+          "event": 718,
           "result": ""
         }
       ]
@@ -10678,7 +10656,7 @@
           "competitor2": "Tekierius Green",
           "bib": "108",
           "studio": "The Art Of Ballroom",
-          "event": 721,
+          "event": 719,
           "result": ""
         },
         {
@@ -10686,7 +10664,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 722,
+          "event": 720,
           "result": ""
         },
         {
@@ -10694,7 +10672,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 723,
+          "event": 721,
           "result": ""
         },
         {
@@ -10702,7 +10680,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 724,
+          "event": 722,
           "result": ""
         },
         {
@@ -10710,7 +10688,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 725,
+          "event": 723,
           "result": ""
         }
       ]
@@ -10727,7 +10705,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 726,
+          "event": 724,
           "result": ""
         }
       ]
@@ -10744,7 +10722,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 727,
+          "event": 725,
           "result": ""
         },
         {
@@ -10752,7 +10730,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 727,
+          "event": 725,
           "result": ""
         },
         {
@@ -10760,7 +10738,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 728,
+          "event": 726,
           "result": ""
         },
         {
@@ -10768,7 +10746,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 729,
+          "event": 727,
           "result": ""
         },
         {
@@ -10776,7 +10754,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 730,
+          "event": 728,
           "result": ""
         }
       ]
@@ -10793,7 +10771,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 731,
+          "event": 729,
           "result": ""
         },
         {
@@ -10801,7 +10779,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 731,
+          "event": 729,
           "result": ""
         },
         {
@@ -10809,7 +10787,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 732,
+          "event": 730,
           "result": ""
         },
         {
@@ -10817,7 +10795,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 733,
+          "event": 731,
           "result": ""
         },
         {
@@ -10825,7 +10803,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 734,
+          "event": 732,
           "result": ""
         }
       ]
@@ -10842,7 +10820,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 735,
+          "event": 733,
           "result": ""
         },
         {
@@ -10850,7 +10828,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 735,
+          "event": 733,
           "result": ""
         },
         {
@@ -10858,7 +10836,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 736,
+          "event": 734,
           "result": ""
         },
         {
@@ -10866,7 +10844,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 737,
+          "event": 735,
           "result": ""
         },
         {
@@ -10874,7 +10852,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 736,
+          "event": 734,
           "result": ""
         },
         {
@@ -10882,7 +10860,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 738,
+          "event": 736,
           "result": ""
         },
         {
@@ -10890,7 +10868,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 739,
+          "event": 737,
           "result": ""
         }
       ]
@@ -10907,7 +10885,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 740,
+          "event": 738,
           "result": ""
         },
         {
@@ -10915,7 +10893,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 740,
+          "event": 738,
           "result": ""
         },
         {
@@ -10923,7 +10901,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 741,
+          "event": 739,
           "result": ""
         },
         {
@@ -10931,7 +10909,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 742,
+          "event": 740,
           "result": ""
         },
         {
@@ -10939,7 +10917,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 741,
+          "event": 739,
           "result": ""
         },
         {
@@ -10947,7 +10925,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 743,
+          "event": 741,
           "result": ""
         }
       ]
@@ -10964,7 +10942,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 744,
+          "event": 742,
           "result": ""
         },
         {
@@ -10972,7 +10950,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 745,
+          "event": 743,
           "result": ""
         },
         {
@@ -10980,7 +10958,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 746,
+          "event": 744,
           "result": ""
         },
         {
@@ -10988,7 +10966,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 747,
+          "event": 745,
           "result": ""
         }
       ]
@@ -11005,7 +10983,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 748,
+          "event": 746,
           "result": ""
         },
         {
@@ -11013,7 +10991,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 749,
+          "event": 747,
           "result": ""
         },
         {
@@ -11021,7 +10999,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 750,
+          "event": 748,
           "result": ""
         },
         {
@@ -11029,7 +11007,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 751,
+          "event": 749,
           "result": ""
         }
       ]
@@ -11046,7 +11024,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 752,
+          "event": 750,
           "result": ""
         },
         {
@@ -11054,7 +11032,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 753,
+          "event": 751,
           "result": ""
         },
         {
@@ -11062,7 +11040,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 754,
+          "event": 752,
           "result": ""
         },
         {
@@ -11070,7 +11048,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 755,
+          "event": 753,
           "result": ""
         }
       ]
@@ -11087,7 +11065,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 756,
+          "event": 754,
           "result": ""
         },
         {
@@ -11095,7 +11073,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 757,
+          "event": 755,
           "result": ""
         },
         {
@@ -11103,7 +11081,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 758,
+          "event": 756,
           "result": ""
         },
         {
@@ -11111,7 +11089,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 759,
+          "event": 757,
           "result": ""
         }
       ]
@@ -11128,7 +11106,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 760,
+          "event": 758,
           "result": ""
         },
         {
@@ -11136,7 +11114,15 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 760,
+          "event": 758,
+          "result": ""
+        },
+        {
+          "competitor1": "Anne Montserrat",
+          "competitor2": "Duane Scholz",
+          "bib": "317",
+          "studio": "La Vida Dance",
+          "event": 759,
           "result": ""
         }
       ]
@@ -11153,7 +11139,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 761,
+          "event": 760,
           "result": ""
         },
         {
@@ -11161,6 +11147,14 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
+          "event": 760,
+          "result": ""
+        },
+        {
+          "competitor1": "Anne Montserrat",
+          "competitor2": "Duane Scholz",
+          "bib": "317",
+          "studio": "La Vida Dance",
           "event": 761,
           "result": ""
         }
@@ -11188,6 +11182,14 @@
           "studio": "Leon Dance",
           "event": 762,
           "result": ""
+        },
+        {
+          "competitor1": "Anne Montserrat",
+          "competitor2": "Duane Scholz",
+          "bib": "317",
+          "studio": "La Vida Dance",
+          "event": 763,
+          "result": ""
         }
       ]
     },
@@ -11203,7 +11205,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 763,
+          "event": 764,
           "result": ""
         },
         {
@@ -11211,7 +11213,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 763,
+          "event": 764,
           "result": ""
         }
       ]
@@ -11228,7 +11230,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 764,
+          "event": 765,
           "result": ""
         },
         {
@@ -11236,7 +11238,15 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 765,
+          "event": 766,
+          "result": ""
+        },
+        {
+          "competitor1": "Anne Montserrat",
+          "competitor2": "Duane Scholz",
+          "bib": "317",
+          "studio": "La Vida Dance",
+          "event": 767,
           "result": ""
         },
         {
@@ -11244,7 +11254,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 766,
+          "event": 768,
           "result": ""
         }
       ]
@@ -11261,7 +11271,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 767,
+          "event": 769,
           "result": ""
         },
         {
@@ -11269,7 +11279,15 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 768,
+          "event": 770,
+          "result": ""
+        },
+        {
+          "competitor1": "Anne Montserrat",
+          "competitor2": "Duane Scholz",
+          "bib": "317",
+          "studio": "La Vida Dance",
+          "event": 771,
           "result": ""
         },
         {
@@ -11277,7 +11295,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 769,
+          "event": 772,
           "result": ""
         }
       ]
@@ -11294,7 +11312,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 770,
+          "event": 773,
           "result": ""
         },
         {
@@ -11302,7 +11320,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 771,
+          "event": 774,
           "result": ""
         }
       ]
@@ -11319,7 +11337,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 772,
+          "event": 775,
           "result": ""
         },
         {
@@ -11327,7 +11345,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 773,
+          "event": 776,
           "result": ""
         }
       ]
@@ -11344,7 +11362,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 774,
+          "event": 777,
           "result": ""
         }
       ]
@@ -11361,7 +11379,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 775,
+          "event": 778,
           "result": ""
         }
       ]
@@ -11371,55 +11389,6 @@
       "heat_number": "325",
       "session": "04",
       "time": "2026-11-29T11:13:09",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Luisa Alvarez",
-          "competitor2": "Milo Pestana",
-          "bib": "314",
-          "studio": "Master Dance Club",
-          "event": 776,
-          "result": ""
-        },
-        {
-          "competitor1": "Danielle Blunt",
-          "competitor2": "Oleg Teleha",
-          "bib": "121",
-          "studio": "La Vida Dance",
-          "event": 777,
-          "result": ""
-        },
-        {
-          "competitor1": "Vickie Le",
-          "competitor2": "Dominic Seigler",
-          "bib": "115",
-          "studio": "Sway Ballroom Dance",
-          "event": 777,
-          "result": ""
-        },
-        {
-          "competitor1": "Kelley Maddox",
-          "competitor2": "Evgeny Malko",
-          "bib": "129",
-          "studio": "The Ballroom Of Sacremento",
-          "event": 777,
-          "result": ""
-        },
-        {
-          "competitor1": "Patty Mathis",
-          "competitor2": "Oleg Suvorov",
-          "bib": "128",
-          "studio": "Dance All You Can",
-          "event": 778,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "04_326_112920261117",
-      "heat_number": "326",
-      "session": "04",
-      "time": "2026-11-29T11:17:12",
       "round": "Final",
       "entries": [
         {
@@ -11439,7 +11408,7 @@
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
@@ -11465,6 +11434,55 @@
       ]
     },
     {
+      "key": "04_326_112920261117",
+      "heat_number": "326",
+      "session": "04",
+      "time": "2026-11-29T11:17:12",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Luisa Alvarez",
+          "competitor2": "Milo Pestana",
+          "bib": "314",
+          "studio": "Master Dance Club",
+          "event": 782,
+          "result": ""
+        },
+        {
+          "competitor1": "Danielle Blunt",
+          "competitor2": "Oleg Teleha",
+          "bib": "121",
+          "studio": "La Vida Dance",
+          "event": 783,
+          "result": ""
+        },
+        {
+          "competitor1": "Vicky Le",
+          "competitor2": "Dominic Seigler",
+          "bib": "115",
+          "studio": "Sway Ballroom Dance",
+          "event": 783,
+          "result": ""
+        },
+        {
+          "competitor1": "Kelley Maddox",
+          "competitor2": "Evgeny Malko",
+          "bib": "129",
+          "studio": "The Ballroom Of Sacremento",
+          "event": 783,
+          "result": ""
+        },
+        {
+          "competitor1": "Patty Mathis",
+          "competitor2": "Oleg Suvorov",
+          "bib": "128",
+          "studio": "Dance All You Can",
+          "event": 784,
+          "result": ""
+        }
+      ]
+    },
+    {
       "key": "04_327_112920261121",
       "heat_number": "327",
       "session": "04",
@@ -11476,7 +11494,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 782,
+          "event": 785,
           "result": ""
         },
         {
@@ -11484,7 +11502,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 782,
+          "event": 785,
           "result": ""
         },
         {
@@ -11492,15 +11510,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 783,
-          "result": ""
-        },
-        {
-          "competitor1": "Anne Montserrat",
-          "competitor2": "Duane Scholz",
-          "bib": "317",
-          "studio": "La Vida Dance",
-          "event": 784,
+          "event": 786,
           "result": ""
         },
         {
@@ -11508,7 +11518,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 785,
+          "event": 787,
           "result": ""
         }
       ]
@@ -11525,7 +11535,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 786,
+          "event": 788,
           "result": ""
         },
         {
@@ -11533,7 +11543,7 @@
           "competitor2": "Leon Fernandez",
           "bib": "141",
           "studio": "Leon Dance",
-          "event": 786,
+          "event": 788,
           "result": ""
         },
         {
@@ -11541,7 +11551,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 787,
+          "event": 789,
           "result": ""
         },
         {
@@ -11549,7 +11559,7 @@
           "competitor2": "Neerja Saxena",
           "bib": "111",
           "studio": "Vivre Dance Studio",
-          "event": 788,
+          "event": 790,
           "result": ""
         },
         {
@@ -11557,15 +11567,15 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 786,
+          "event": 788,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 789,
+          "event": 791,
           "result": ""
         },
         {
@@ -11573,7 +11583,7 @@
           "competitor2": "Duane Scholz",
           "bib": "317",
           "studio": "La Vida Dance",
-          "event": 786,
+          "event": 788,
           "result": ""
         },
         {
@@ -11581,7 +11591,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 789,
+          "event": 791,
           "result": ""
         }
       ]
@@ -11598,7 +11608,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 790,
+          "event": 792,
           "result": ""
         },
         {
@@ -11606,7 +11616,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "321",
           "studio": "Kristina Kudelko",
-          "event": 791,
+          "event": 793,
           "result": ""
         },
         {
@@ -11614,15 +11624,15 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 791,
+          "event": 793,
           "result": ""
         },
         {
-          "competitor1": "Vickie Le",
+          "competitor1": "Vicky Le",
           "competitor2": "Dominic Seigler",
           "bib": "115",
           "studio": "Sway Ballroom Dance",
-          "event": 792,
+          "event": 794,
           "result": ""
         },
         {
@@ -11630,7 +11640,7 @@
           "competitor2": "Cynthia Thacker",
           "bib": "142",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 791,
+          "event": 793,
           "result": ""
         },
         {
@@ -11638,7 +11648,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 792,
+          "event": 794,
           "result": ""
         }
       ]
@@ -11655,7 +11665,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 793,
+          "event": 795,
           "result": ""
         },
         {
@@ -11663,7 +11673,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 794,
+          "event": 796,
           "result": ""
         },
         {
@@ -11671,7 +11681,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 795,
+          "event": 797,
           "result": ""
         }
       ]
@@ -11688,7 +11698,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 796,
+          "event": 798,
           "result": ""
         },
         {
@@ -11696,7 +11706,7 @@
           "competitor2": "Oleg Teleha",
           "bib": "121",
           "studio": "La Vida Dance",
-          "event": 797,
+          "event": 799,
           "result": ""
         },
         {
@@ -11704,7 +11714,7 @@
           "competitor2": "Rob Carnahan",
           "bib": "303",
           "studio": "The Art Of Ballroom",
-          "event": 798,
+          "event": 800,
           "result": ""
         },
         {
@@ -11712,7 +11722,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 799,
+          "event": 801,
           "result": ""
         }
       ]
@@ -11729,7 +11739,7 @@
           "competitor2": "Deborah Holmes",
           "bib": "146",
           "studio": "Stefan Badea",
-          "event": 800,
+          "event": 802,
           "result": ""
         },
         {
@@ -11737,7 +11747,7 @@
           "competitor2": "Alla Novikova",
           "bib": "328",
           "studio": "Edelweiss Premier Ballroom",
-          "event": 801,
+          "event": 803,
           "result": ""
         }
       ]
@@ -11754,7 +11764,7 @@
           "competitor2": "Lisa Roquemore",
           "bib": "134",
           "studio": "Bernal Dance",
-          "event": 802,
+          "event": 804,
           "result": ""
         },
         {
@@ -11762,7 +11772,7 @@
           "competitor2": "Kristina Kudelko",
           "bib": "320",
           "studio": "Kristina Kudelko",
-          "event": 803,
+          "event": 805,
           "result": ""
         },
         {
@@ -11770,7 +11780,7 @@
           "competitor2": "Illia Sydorenko",
           "bib": "119",
           "studio": "La Vida Dance",
-          "event": 804,
+          "event": 806,
           "result": ""
         }
       ]
@@ -11787,7 +11797,7 @@
           "competitor2": "Alex Zagrean",
           "bib": "154",
           "studio": "Nova Dance",
-          "event": 805,
+          "event": 807,
           "result": ""
         }
       ]
@@ -11804,7 +11814,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 806,
+          "event": 808,
           "result": ""
         },
         {
@@ -11812,7 +11822,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 807,
+          "event": 809,
           "result": ""
         },
         {
@@ -11820,7 +11830,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 808,
+          "event": 810,
           "result": ""
         },
         {
@@ -11828,7 +11838,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 809,
+          "event": 811,
           "result": ""
         }
       ]
@@ -11845,7 +11855,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 810,
+          "event": 812,
           "result": ""
         },
         {
@@ -11853,7 +11863,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 811,
+          "event": 813,
           "result": ""
         },
         {
@@ -11861,7 +11871,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 812,
+          "event": 814,
           "result": ""
         },
         {
@@ -11869,7 +11879,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 813,
+          "event": 815,
           "result": ""
         }
       ]
@@ -11886,7 +11896,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 814,
+          "event": 816,
           "result": ""
         },
         {
@@ -11894,7 +11904,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 815,
+          "event": 817,
           "result": ""
         },
         {
@@ -11902,7 +11912,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 816,
+          "event": 818,
           "result": ""
         },
         {
@@ -11910,7 +11920,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 817,
+          "event": 819,
           "result": ""
         },
         {
@@ -11918,7 +11928,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 818,
+          "event": 820,
           "result": ""
         }
       ]
@@ -11935,7 +11945,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 819,
+          "event": 821,
           "result": ""
         },
         {
@@ -11943,7 +11953,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 820,
+          "event": 822,
           "result": ""
         },
         {
@@ -11951,7 +11961,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 821,
+          "event": 823,
           "result": ""
         }
       ]
@@ -11968,7 +11978,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 822,
+          "event": 824,
           "result": ""
         },
         {
@@ -11976,7 +11986,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 823,
+          "event": 825,
           "result": ""
         },
         {
@@ -11984,7 +11994,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 824,
+          "event": 826,
           "result": ""
         }
       ]
@@ -12001,7 +12011,7 @@
           "competitor2": "Georgeann  Nicol",
           "bib": "151",
           "studio": "Invictus",
-          "event": 825,
+          "event": 827,
           "result": ""
         },
         {
@@ -12009,7 +12019,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 826,
+          "event": 828,
           "result": ""
         },
         {
@@ -12017,7 +12027,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 827,
+          "event": 829,
           "result": ""
         },
         {
@@ -12025,7 +12035,7 @@
           "competitor2": "Windy Yu",
           "bib": "150",
           "studio": "Roma Dance LA",
-          "event": 828,
+          "event": 830,
           "result": ""
         },
         {
@@ -12033,7 +12043,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 825,
+          "event": 827,
           "result": ""
         }
       ]
@@ -12050,7 +12060,7 @@
           "competitor2": "Georgeann  Nicol",
           "bib": "151",
           "studio": "Invictus",
-          "event": 829,
+          "event": 831,
           "result": ""
         },
         {
@@ -12058,7 +12068,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 830,
+          "event": 832,
           "result": ""
         },
         {
@@ -12066,7 +12076,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 831,
+          "event": 833,
           "result": ""
         },
         {
@@ -12074,7 +12084,7 @@
           "competitor2": "Windy Yu",
           "bib": "150",
           "studio": "Roma Dance LA",
-          "event": 832,
+          "event": 834,
           "result": ""
         },
         {
@@ -12082,7 +12092,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 829,
+          "event": 831,
           "result": ""
         }
       ]
@@ -12099,7 +12109,7 @@
           "competitor2": "Elenita Pascua",
           "bib": "124",
           "studio": "Leo Chiriboga",
-          "event": 833,
+          "event": 835,
           "result": ""
         },
         {
@@ -12107,7 +12117,7 @@
           "competitor2": "Georgeann  Nicol",
           "bib": "151",
           "studio": "Invictus",
-          "event": 834,
+          "event": 836,
           "result": ""
         },
         {
@@ -12115,7 +12125,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 835,
+          "event": 837,
           "result": ""
         },
         {
@@ -12123,7 +12133,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 836,
+          "event": 838,
           "result": ""
         },
         {
@@ -12131,7 +12141,7 @@
           "competitor2": "Windy Yu",
           "bib": "150",
           "studio": "Roma Dance LA",
-          "event": 837,
+          "event": 839,
           "result": ""
         },
         {
@@ -12139,7 +12149,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 834,
+          "event": 836,
           "result": ""
         }
       ]
@@ -12156,42 +12166,9 @@
           "competitor2": "Georgeann  Nicol",
           "bib": "151",
           "studio": "Invictus",
-          "event": 838,
-          "result": ""
-        },
-        {
-          "competitor1": "Isabel Eslava",
-          "competitor2": "Dennis Sy",
-          "bib": "110",
-          "studio": "Dennis Sy",
-          "event": 839,
-          "result": ""
-        },
-        {
-          "competitor1": "Roman Italyankin",
-          "competitor2": "Windy Yu",
-          "bib": "150",
-          "studio": "Roma Dance LA",
           "event": 840,
           "result": ""
         },
-        {
-          "competitor1": "Judy Pedersen",
-          "competitor2": "Ievgen Tkachenko",
-          "bib": "102",
-          "studio": "Infinite",
-          "event": 838,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "05_343_112920261120",
-      "heat_number": "343",
-      "session": "05",
-      "time": "2026-11-29T13:12:09",
-      "round": "Final",
-      "entries": [
         {
           "competitor1": "Isabel Eslava",
           "competitor2": "Dennis Sy",
@@ -12213,7 +12190,40 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
+          "event": 840,
+          "result": ""
+        }
+      ]
+    },
+    {
+      "key": "05_343_112920261120",
+      "heat_number": "343",
+      "session": "05",
+      "time": "2026-11-29T13:12:09",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Isabel Eslava",
+          "competitor2": "Dennis Sy",
+          "bib": "110",
+          "studio": "Dennis Sy",
           "event": 843,
+          "result": ""
+        },
+        {
+          "competitor1": "Roman Italyankin",
+          "competitor2": "Windy Yu",
+          "bib": "150",
+          "studio": "Roma Dance LA",
+          "event": 844,
+          "result": ""
+        },
+        {
+          "competitor1": "Judy Pedersen",
+          "competitor2": "Ievgen Tkachenko",
+          "bib": "102",
+          "studio": "Infinite",
+          "event": 845,
           "result": ""
         }
       ]
@@ -12223,31 +12233,6 @@
       "heat_number": "344",
       "session": "05",
       "time": "2026-11-29T13:13:30",
-      "round": "Final",
-      "entries": [
-        {
-          "competitor1": "Delanie Farber",
-          "competitor2": "Marcus Johnson",
-          "bib": "107",
-          "studio": "Mojo Ballroom",
-          "event": 844,
-          "result": ""
-        },
-        {
-          "competitor1": "Sabrina Manzi",
-          "competitor2": "Veronika Qutner",
-          "bib": "145",
-          "studio": "RS Dance",
-          "event": 845,
-          "result": ""
-        }
-      ]
-    },
-    {
-      "key": "05_345_112920261145",
-      "heat_number": "345",
-      "session": "05",
-      "time": "2026-11-29T13:14:51",
       "round": "Final",
       "entries": [
         {
@@ -12269,10 +12254,10 @@
       ]
     },
     {
-      "key": "05_346_112920261161",
-      "heat_number": "346",
+      "key": "05_345_112920261145",
+      "heat_number": "345",
       "session": "05",
-      "time": "2026-11-29T13:16:12",
+      "time": "2026-11-29T13:14:51",
       "round": "Final",
       "entries": [
         {
@@ -12294,6 +12279,31 @@
       ]
     },
     {
+      "key": "05_346_112920261161",
+      "heat_number": "346",
+      "session": "05",
+      "time": "2026-11-29T13:16:12",
+      "round": "Final",
+      "entries": [
+        {
+          "competitor1": "Delanie Farber",
+          "competitor2": "Marcus Johnson",
+          "bib": "107",
+          "studio": "Mojo Ballroom",
+          "event": 850,
+          "result": ""
+        },
+        {
+          "competitor1": "Sabrina Manzi",
+          "competitor2": "Veronika Qutner",
+          "bib": "145",
+          "studio": "RS Dance",
+          "event": 851,
+          "result": ""
+        }
+      ]
+    },
+    {
       "key": "05_347_112920261273",
       "heat_number": "347",
       "session": "05",
@@ -12305,7 +12315,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 850,
+          "event": 852,
           "result": ""
         },
         {
@@ -12313,7 +12323,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 851,
+          "event": 853,
           "result": ""
         },
         {
@@ -12321,7 +12331,7 @@
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 852,
+          "event": 854,
           "result": ""
         }
       ]
@@ -12338,7 +12348,7 @@
           "competitor2": "Georgeann  Nicol",
           "bib": "151",
           "studio": "Invictus",
-          "event": 853,
+          "event": 855,
           "result": ""
         },
         {
@@ -12346,7 +12356,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 854,
+          "event": 856,
           "result": ""
         },
         {
@@ -12354,7 +12364,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 855,
+          "event": 857,
           "result": ""
         },
         {
@@ -12362,7 +12372,7 @@
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 856,
+          "event": 858,
           "result": ""
         }
       ]
@@ -12379,7 +12389,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 857,
+          "event": 859,
           "result": ""
         },
         {
@@ -12387,7 +12397,7 @@
           "competitor2": "Marcus Johnson",
           "bib": "107",
           "studio": "Mojo Ballroom",
-          "event": 858,
+          "event": 860,
           "result": ""
         },
         {
@@ -12395,7 +12405,7 @@
           "competitor2": "Windy Yu",
           "bib": "150",
           "studio": "Roma Dance LA",
-          "event": 859,
+          "event": 861,
           "result": ""
         },
         {
@@ -12403,7 +12413,7 @@
           "competitor2": "Veronika Qutner",
           "bib": "145",
           "studio": "RS Dance",
-          "event": 860,
+          "event": 862,
           "result": ""
         },
         {
@@ -12411,7 +12421,7 @@
           "competitor2": "Alex Zagrean",
           "bib": "154",
           "studio": "Nova Dance",
-          "event": 857,
+          "event": 859,
           "result": ""
         },
         {
@@ -12419,7 +12429,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 859,
+          "event": 861,
           "result": ""
         }
       ]
@@ -12436,7 +12446,7 @@
           "competitor2": "Rebecca Henzie",
           "bib": "301",
           "studio": "Team 106-Henzie",
-          "event": 861,
+          "event": 863,
           "result": ""
         }
       ]
@@ -12453,7 +12463,7 @@
           "competitor2": "Windy Yu",
           "bib": "150",
           "studio": "Roma Dance LA",
-          "event": 862,
+          "event": 864,
           "result": ""
         },
         {
@@ -12461,7 +12471,7 @@
           "competitor2": "Andrey Tarasov",
           "bib": "139",
           "studio": "Andrey Tarasov",
-          "event": 862,
+          "event": 864,
           "result": ""
         },
         {
@@ -12469,7 +12479,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 862,
+          "event": 864,
           "result": ""
         }
       ]
@@ -12486,7 +12496,7 @@
           "competitor2": "Georgeann  Nicol",
           "bib": "151",
           "studio": "Invictus",
-          "event": 863,
+          "event": 865,
           "result": ""
         },
         {
@@ -12494,7 +12504,7 @@
           "competitor2": "Dennis Sy",
           "bib": "110",
           "studio": "Dennis Sy",
-          "event": 864,
+          "event": 866,
           "result": ""
         },
         {
@@ -12502,7 +12512,7 @@
           "competitor2": "Ievgen Tkachenko",
           "bib": "102",
           "studio": "Infinite",
-          "event": 863,
+          "event": 865,
           "result": ""
         }
       ]
@@ -12660,8 +12670,8 @@
     "Tracey Cutler",
     "Umario Diallo",
     "Veronika Qutner",
-    "Vickie Le",
     "Vicky Bich Le",
+    "Vicky Le",
     "Viktoriya Nyemchek",
     "Windy Yu",
     "Yinchieh Wang",
@@ -12764,8 +12774,6 @@
     "Egor Bezukladnikov": "Best Dance Studio",
     "Irene Lee": "Best Dance Studio",
     "Yuriy Kuvshynov": "Arete Dance Center",
-    "Lukasz Switalski": "Dance Discover",
-    "Natalia Switalski": "Dance Discover",
     "Rob Carnahan": "The Art Of Ballroom",
     "Nicolas Gastelum": "FADS Ahwatukee",
     "Hanna Pierce": "FADS Ahwatukee",
@@ -12834,6 +12842,8 @@
     "Alisa Radiush": "Galaxy",
     "David Nyemchek jr": "Nyemchek/Nyemchek",
     "Viktoriya Nyemchek": "Nyemchek/Nyemchek",
+    "Lukasz Switalski": "Dance Discover",
+    "Natalia Switalski": "Dance Discover",
     "Boris Basin": "FADS Diamond Bar-Boris Basin",
     "Natalie Shirota": "FADS Diamond Bar-Boris Basin",
     "Danylo Dobrovolskyi": "FADS-North Scottsdale",
@@ -12852,7 +12862,7 @@
     "Oleg Teleha": "La Vida Dance",
     "Kelley Maddox": "The Ballroom Of Sacremento",
     "Evgeny Malko": "The Ballroom Of Sacremento",
-    "Vickie Le": "Sway Ballroom Dance",
+    "Vicky Le": "Sway Ballroom Dance",
     "Michael O’Bryan": "Anna Shahbazyan",
     "Anna Shahbazyan": "Anna Shahbazyan",
     "Jon Ericksen": "Edelweiss Premier Ballroom",
@@ -12931,7 +12941,7 @@
       "01_2_112720269385",
       "01_29_112720267052",
       "01_3_112720266322",
-      "01_3_112720261008",
+      "01_3_112720261018",
       "01_30_112720267063",
       "01_31_112720267074",
       "01_32_112720267090",
@@ -13101,7 +13111,7 @@
     "Annika Johnson": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_7_112820268405",
       "03_9_112820269064",
       "03_9_112820269402"
@@ -13109,7 +13119,7 @@
     "Cole Ornelas": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_7_112820268405",
       "03_9_112820269064",
       "03_9_112820269402"
@@ -13117,14 +13127,14 @@
     "Zsolt Katona": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "01_4_112720261018",
+      "01_4_112720261008",
       "03_7_112820268405",
       "03_8_112820269252"
     ],
     "Timea Potys": [
       "01_1_112720269261",
       "01_1_112720269594",
-      "01_4_112720261018",
+      "01_4_112720261008",
       "03_7_112820268405",
       "03_8_112820269252"
     ],
@@ -13379,14 +13389,17 @@
       "04_296_112920261026",
       "04_297_112920261028",
       "04_298_112920261029",
-      "04_299_112920261030",
       "04_300_112920261032",
       "04_301_112920261033",
       "04_302_112920261034",
       "04_305_112920261038",
       "04_306_112920261040",
       "04_307_112920261041",
-      "04_327_112920261121",
+      "04_313_112920261049",
+      "04_314_112920261051",
+      "04_315_112920261052",
+      "04_317_112920261055",
+      "04_318_112920261056",
       "04_328_112920261126"
     ],
     "Sharon Koi": [
@@ -13694,21 +13707,21 @@
     ],
     "Egor Bezukladnikov": [
       "01_2_112720269385",
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_6_112820268220",
       "03_9_112820269064",
       "03_9_112820269402"
     ],
     "Irene Lee": [
       "01_2_112720269385",
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_6_112820268220",
       "03_9_112820269064",
       "03_9_112820269402"
     ],
     "Yuriy Kuvshynov": [
       "01_2_112720269385",
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_224_112820267000",
       "03_225_112820267012",
       "03_227_112820267040",
@@ -13726,16 +13739,6 @@
       "03_6_112820268220",
       "03_9_112820269064",
       "03_9_112820269402"
-    ],
-    "Lukasz Switalski": [
-      "01_2_112720269385",
-      "03_5_112820267351",
-      "03_6_112820268220"
-    ],
-    "Natalia Switalski": [
-      "01_2_112720269385",
-      "03_5_112820267351",
-      "03_6_112820268220"
     ],
     "Rob Carnahan": [
       "01_24_112720266592",
@@ -13823,24 +13826,24 @@
       "04_331_112920261140"
     ],
     "Nicolas Gastelum": [
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_5_112820267351",
       "03_9_112820269064",
       "03_9_112820269402"
     ],
     "Hanna Pierce": [
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_5_112820267351",
       "03_9_112820269064",
       "03_9_112820269402"
     ],
     "Melinda Piekstra": [
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_9_112820269064",
       "03_9_112820269402"
     ],
     "Dominic Seigler": [
-      "01_3_112720261008",
+      "01_3_112720261018",
       "03_9_112820269064",
       "03_9_112820269402",
       "04_268_112920269485",
@@ -13858,18 +13861,18 @@
       "04_329_112920261130"
     ],
     "Angela Kuryshova": [
-      "01_4_112720261018",
+      "01_4_112720261008",
       "03_8_112820269252"
     ],
     "Slavik Samokhin": [
-      "01_4_112720261018",
+      "01_4_112720261008",
       "03_8_112820269252"
     ],
     "Ivan Nikitin": [
-      "01_4_112720261018"
+      "01_4_112720261008"
     ],
     "Maggie Sheng": [
-      "01_4_112720261018"
+      "01_4_112720261008"
     ],
     "Tracey Cutler": [
       "01_75_112720268193",
@@ -14158,7 +14161,6 @@
       "02_159_112820261106",
       "02_160_112820261110",
       "02_161_112820261114",
-      "02_163_112820261122",
       "02_165_112820261145"
     ],
     "Ivan Romanov": [
@@ -14175,7 +14177,6 @@
       "02_159_112820261106",
       "02_160_112820261110",
       "02_161_112820261114",
-      "02_163_112820261122",
       "02_165_112820261145"
     ],
     "Caroline Moss": [
@@ -14742,6 +14743,14 @@
       "03_5_112820267351",
       "03_7_112820268405"
     ],
+    "Lukasz Switalski": [
+      "03_5_112820267351",
+      "03_6_112820268220"
+    ],
+    "Natalia Switalski": [
+      "03_5_112820267351",
+      "03_6_112820268220"
+    ],
     "Boris Basin": [
       "03_6_112820268220"
     ],
@@ -14866,7 +14875,7 @@
       "04_325_112920261113",
       "04_326_112920261117"
     ],
-    "Vickie Le": [
+    "Vicky Le": [
       "04_268_112920269485",
       "04_269_112920269501",
       "04_270_112920269513",
@@ -15032,14 +15041,17 @@
       "04_296_112920261026",
       "04_297_112920261028",
       "04_298_112920261029",
-      "04_299_112920261030",
       "04_300_112920261032",
       "04_301_112920261033",
       "04_302_112920261034",
       "04_305_112920261038",
       "04_306_112920261040",
       "04_307_112920261041",
-      "04_327_112920261121",
+      "04_313_112920261049",
+      "04_314_112920261051",
+      "04_315_112920261052",
+      "04_317_112920261055",
+      "04_318_112920261056",
       "04_328_112920261126"
     ],
     "Cynthia Thacker": [
@@ -15338,7 +15350,7 @@
       },
       {
         "opponent_couple": "Anne Montserrat & Duane Scholz",
-        "count": 12,
+        "count": 10,
         "my_bib": "111",
         "their_bib": "317"
       },
@@ -15797,10 +15809,10 @@
         "their_bib": "115"
       },
       {
-        "opponent_couple": "Lukasz Switalski & Natalia Switalski",
+        "opponent_couple": "Igor Colac & Roxane Milotti",
         "count": 2,
         "my_bib": "132",
-        "their_bib": "148"
+        "their_bib": "152"
       }
     ],
     "Kristina Kuvshynov": [
@@ -15829,42 +15841,10 @@
         "their_bib": "115"
       },
       {
-        "opponent_couple": "Lukasz Switalski & Natalia Switalski",
+        "opponent_couple": "Igor Colac & Roxane Milotti",
         "count": 2,
         "my_bib": "109",
-        "their_bib": "148"
-      }
-    ],
-    "Lukasz Switalski": [
-      {
-        "opponent_couple": "Egor Bezukladnikov & Irene Lee",
-        "count": 2,
-        "my_bib": "148",
-        "their_bib": "132"
-      },
-      {
-        "opponent_couple": "Kristina Kuvshynov & Yuriy Kuvshynov",
-        "count": 2,
-        "my_bib": "148",
-        "their_bib": "109"
-      },
-      {
-        "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
-        "count": 1,
-        "my_bib": "148",
-        "their_bib": "114"
-      },
-      {
-        "opponent_couple": "David Nyemchek jr & Viktoriya Nyemchek",
-        "count": 1,
-        "my_bib": "148",
-        "their_bib": "147"
-      },
-      {
-        "opponent_couple": "Boris Basin & Natalie Shirota",
-        "count": 1,
-        "my_bib": "148",
-        "their_bib": "153"
+        "their_bib": "152"
       }
     ],
     "Nicolas Gastelum": [
@@ -16024,7 +16004,7 @@
       },
       {
         "opponent_couple": "Anne Montserrat & Duane Scholz",
-        "count": 12,
+        "count": 13,
         "my_bib": "141",
         "their_bib": "317"
       }
@@ -16845,6 +16825,38 @@
         "their_bib": "133"
       }
     ],
+    "Lukasz Switalski": [
+      {
+        "opponent_couple": "Nicolas Gastelum & Hanna Pierce",
+        "count": 1,
+        "my_bib": "148",
+        "their_bib": "114"
+      },
+      {
+        "opponent_couple": "David Nyemchek jr & Viktoriya Nyemchek",
+        "count": 1,
+        "my_bib": "148",
+        "their_bib": "147"
+      },
+      {
+        "opponent_couple": "Boris Basin & Natalie Shirota",
+        "count": 1,
+        "my_bib": "148",
+        "their_bib": "153"
+      },
+      {
+        "opponent_couple": "Egor Bezukladnikov & Irene Lee",
+        "count": 1,
+        "my_bib": "148",
+        "their_bib": "132"
+      },
+      {
+        "opponent_couple": "Danylo Dobrovolskyi & Anastasiia Malovana",
+        "count": 1,
+        "my_bib": "148",
+        "their_bib": "105"
+      }
+    ],
     "Boris Basin": [
       {
         "opponent_couple": "Egor Bezukladnikov & Irene Lee",
@@ -17079,7 +17091,7 @@
         "their_bib": "303"
       },
       {
-        "opponent_couple": "Vickie Le & Dominic Seigler",
+        "opponent_couple": "Vicky Le & Dominic Seigler",
         "count": 11,
         "my_bib": "121",
         "their_bib": "115"
@@ -17129,13 +17141,13 @@
         "their_bib": "314"
       },
       {
-        "opponent_couple": "Vickie Le & Dominic Seigler",
+        "opponent_couple": "Vicky Le & Dominic Seigler",
         "count": 2,
         "my_bib": "129",
         "their_bib": "115"
       }
     ],
-    "Vickie Le": [
+    "Vicky Le": [
       {
         "opponent_couple": "Dawn Stone & Oleg Teleha",
         "count": 11,
@@ -17181,7 +17193,7 @@
         "their_bib": "121"
       },
       {
-        "opponent_couple": "Vickie Le & Dominic Seigler",
+        "opponent_couple": "Vicky Le & Dominic Seigler",
         "count": 4,
         "my_bib": "329",
         "their_bib": "115"
@@ -17239,6 +17251,12 @@
         "their_bib": "141"
       },
       {
+        "opponent_couple": "Anne Montserrat & Duane Scholz",
+        "count": 9,
+        "my_bib": "134",
+        "their_bib": "317"
+      },
+      {
         "opponent_couple": "Sam Enriquez & Neerja Saxena",
         "count": 8,
         "my_bib": "134",
@@ -17249,12 +17267,6 @@
         "count": 8,
         "my_bib": "134",
         "their_bib": "142"
-      },
-      {
-        "opponent_couple": "Anne Montserrat & Duane Scholz",
-        "count": 7,
-        "my_bib": "134",
-        "their_bib": "317"
       },
       {
         "opponent_couple": "Nikki Carnahan & Rob Carnahan",
@@ -17277,12 +17289,6 @@
         "their_bib": "111"
       },
       {
-        "opponent_couple": "Anne Montserrat & Duane Scholz",
-        "count": 6,
-        "my_bib": "124",
-        "their_bib": "317"
-      },
-      {
         "opponent_couple": "Alexander Novikov & Cynthia Thacker",
         "count": 5,
         "my_bib": "124",
@@ -17293,6 +17299,12 @@
         "count": 4,
         "my_bib": "124",
         "their_bib": "134"
+      },
+      {
+        "opponent_couple": "Anne Montserrat & Duane Scholz",
+        "count": 4,
+        "my_bib": "124",
+        "their_bib": "317"
       }
     ],
     "Steven Dong": [
@@ -17330,36 +17342,42 @@
     "Anne Montserrat": [
       {
         "opponent_couple": "Tracey Cutler & Leon Fernandez",
-        "count": 12,
+        "count": 13,
         "my_bib": "317",
         "their_bib": "141"
       },
       {
         "opponent_couple": "Sam Enriquez & Neerja Saxena",
-        "count": 12,
+        "count": 10,
         "my_bib": "317",
         "their_bib": "111"
       },
       {
-        "opponent_couple": "Alexander Novikov & Cynthia Thacker",
-        "count": 8,
-        "my_bib": "317",
-        "their_bib": "142"
-      },
-      {
         "opponent_couple": "John Bernal & Lisa Roquemore",
-        "count": 7,
+        "count": 9,
         "my_bib": "317",
         "their_bib": "134"
       },
       {
-        "opponent_couple": "Leonardo Chiriboga & Elenita Pascua",
+        "opponent_couple": "Steven Dong & Kristina Kudelko",
         "count": 6,
         "my_bib": "317",
-        "their_bib": "124"
+        "their_bib": "321"
+      },
+      {
+        "opponent_couple": "Alexander Novikov & Cynthia Thacker",
+        "count": 6,
+        "my_bib": "317",
+        "their_bib": "142"
       }
     ],
     "Tamara Morenc Romano": [
+      {
+        "opponent_couple": "Anne Montserrat & Duane Scholz",
+        "count": 5,
+        "my_bib": "119",
+        "their_bib": "317"
+      },
       {
         "opponent_couple": "Tracey Cutler & Leon Fernandez",
         "count": 4,
@@ -17383,12 +17401,6 @@
         "count": 4,
         "my_bib": "119",
         "their_bib": "146"
-      },
-      {
-        "opponent_couple": "Yohsuke Fukami & Kristina Kudelko",
-        "count": 4,
-        "my_bib": "119",
-        "their_bib": "320"
       }
     ],
     "Stefan Badea": [
@@ -17443,16 +17455,16 @@
         "their_bib": "146"
       },
       {
+        "opponent_couple": "Anne Montserrat & Duane Scholz",
+        "count": 2,
+        "my_bib": "320",
+        "their_bib": "317"
+      },
+      {
         "opponent_couple": "Danielle Blunt & Oleg Teleha",
         "count": 1,
         "my_bib": "320",
         "their_bib": "121"
-      },
-      {
-        "opponent_couple": "Nikki Carnahan & Rob Carnahan",
-        "count": 1,
-        "my_bib": "320",
-        "their_bib": "303"
       }
     ],
     "Bella Bautista": [
